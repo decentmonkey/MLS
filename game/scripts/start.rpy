@@ -103,7 +103,8 @@ label start: #for blink here
 
 #########
 
-#    call ep22_5_dialogues4_rayan_3() # студия Райена
+    call ep01_dialogues2_day1_family_1()
+    call ep01_dialogues2_day1_family_2()
 
 #########
 
