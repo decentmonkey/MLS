@@ -14,7 +14,7 @@ label ep01_dialogues2_day1_family_1:
     fadeblack
     sound snd_door_open1
     pause 1.5
-    music Mandeville
+    music Summernight_V
     imgfl 900026
     bardi_t "Это и есть моя комната?!" ##->#####inc
     #####inc bardi_t "Снова эта долбанная комната!"
