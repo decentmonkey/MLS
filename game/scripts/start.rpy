@@ -103,8 +103,10 @@ label start: #for blink here
 
 #########
 
-    call ep01_dialogues2_day1_family_1()
-    call ep01_dialogues2_day1_family_2()
+    call ep01_dialogues1_start_1a() # пляж, показываем геймплей
+    call ep01_dialogues1_start_1b() # подглядывание за Оливией и Марком
+    call ep01_dialogues1_start_2() # поезд
+    call ep01_dialogues1_start_3() # вокзал
 
 #########
 
