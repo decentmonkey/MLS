@@ -103,8 +103,40 @@ label start: #for blink here
 
 #########
 
-    call ep01_dialogues2_day1_family_1()
-    call ep01_dialogues2_day1_family_2()
+    call ep01_dialogues1_start_1a() # пляж, показываем геймплей
+    call ep01_dialogues1_start_1b() # подглядывание за Оливией и Марком
+    call ep01_dialogues1_start_2() # поезд
+    call ep01_dialogues1_start_3() # вокзал
+
+    call ep01_dialogues2_day1_family_1() # комната Барди перед ужином
+    call ep01_dialogues2_day1_family_2() # кухня, ужин с семьей
+    call ep01_dialogues2_day1_family_3() # комната Барди, вечер, клик на кровать (меню)
+    call ep01_dialogues2_day1_family_4() # вечером на кухне, клик на Софи
+    call ep01_dialogues2_day1_family_4_1() # повторный клик на Софи после разговора с ней
+    call ep01_dialogues2_day1_family_5() # вечером в гостиной, клик на Генри
+    call ep01_dialogues2_day1_family_6() # попытка зайти в комнату старшей Оливии вечером
+    call ep01_dialogues2_day1_family_7() # попытка зайти в комнату младшей Синтии
+    call ep01_dialogues2_day1_family_8() # комната Барди, при выборе пункта меню "Лечь спать"
+
+    call ep01_dialogues3_day2_family_1() # комната Барди, утро, перед колледжем
+    call ep01_dialogues3_day2_family_2() # клик на душ утром, в душе младшая сестра Синтия
+    call ep01_dialogues3_day2_family_4() # до колледжа, Софи на кухне, разговор с ней
+    call ep01_dialogues3_day2_family_5() # при повторном клике на Софи утром, если уже разговаривали
+
+    call ep01_dialogues3_day2_college_1() # Барди пришел в колледж
+    call ep01_dialogues3_day2_college_5() # приемная директора
+    call ep01_dialogues3_day2_college_8() # второй этаж, в поисках кабинета инглиша, встреча с информатичкой
+    call ep01_dialogues3_day2_college_9() # урок английского, начало
+    call ep01_dialogues3_day2_college_10() # урок английского, конец
+    call ep01_dialogues3_day2_college_11() # мысли возле колледжа
+    call ep01_dialogues3_day2_college_14() # пришел к Шону
+    call ep01_dialogues3_day2_college_15() # после того, как вышел от Шона
+    call ep01_dialogues3_day2_college_15a() # телефон Барди, клик на строку контакта "sophie"
+    call ep01_dialogues3_day2_college_16() # телефон Барди, клик на строку контакта "cynthia"
+    call ep01_dialogues3_day2_college_17() # телефон Барди, клик на строку контакта "sean"
+
+    call ep01_dialogues3_day2_family_6() # Барди приходит после колледжа, ужин с Софи и Генри
+    call ep01_dialogues3_day2_family_7() # ночь, Барди ложится спать (подглядывание за Оливией + мечты)
 
 #########
 
