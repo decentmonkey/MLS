@@ -122,6 +122,19 @@ label start: #for blink here
     call ep01_dialogues3_day2_family_2() # клик на душ утром, в душе младшая сестра Синтия
     call ep01_dialogues3_day2_family_4() # до колледжа, Софи на кухне, разговор с ней
     call ep01_dialogues3_day2_family_5() # при повторном клике на Софи утром, если уже разговаривали
+
+    call ep01_dialogues3_day2_college_1() # Барди пришел в колледж
+    call ep01_dialogues3_day2_college_5() # приемная директора
+    call ep01_dialogues3_day2_college_8() # второй этаж, в поисках кабинета инглиша, встреча с информатичкой
+    call ep01_dialogues3_day2_college_9() # урок английского, начало
+    call ep01_dialogues3_day2_college_10() # урок английского, конец
+    call ep01_dialogues3_day2_college_11() # мысли возле колледжа
+    call ep01_dialogues3_day2_college_14() # пришел к Шону
+    call ep01_dialogues3_day2_college_15() # после того, как вышел от Шона
+    call ep01_dialogues3_day2_college_15a() # телефон Барди, клик на строку контакта "sophie"
+    call ep01_dialogues3_day2_college_16() # телефон Барди, клик на строку контакта "cynthia"
+    call ep01_dialogues3_day2_college_17() # телефон Барди, клик на строку контакта "sean"
+
     call ep01_dialogues3_day2_family_6() # Барди приходит после колледжа, ужин с Софи и Генри
     call ep01_dialogues3_day2_family_7() # ночь, Барди ложится спать (подглядывание за Оливией + мечты)
 
