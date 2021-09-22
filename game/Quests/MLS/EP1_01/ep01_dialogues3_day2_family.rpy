@@ -21,12 +21,11 @@ label ep01_dialogues3_day2_family_1:
     # утро
     # звон будильника
     # Барди садится в кровати (смотрим его глазами)
-    music2 iphone_alarm
-    music Adventures_of_the_Deaf_Dreamer
+    music iphone_alarm
     imgf 900062
     bardi_t "Что, уже утро?.."
     imgd 900077
-    music2 stop
+    music Adventures_of_the_Deaf_Dreamer
     bardi_t "О нет! Сегодня мой первый день в колледже!"
     bardi_t "!!!"
     bardi_t "Может, мне просто сделать вид, что я пошел в колледж? А на самом деле..."
@@ -54,8 +53,10 @@ label ep01_dialogues3_day2_family_1:
     music Little_Tomcat
     imgf 900067
     w
+    imgd 900066
+    w
     sound vjuh3
-    imgd 900068
+    img 900068 vpunch
     sophie "Ты ведь не хочешь опоздать в свой первый день в колледже?"
     imgd 900069
     bardi_t "Хочууу!"
@@ -85,7 +86,7 @@ label ep01_dialogues3_day2_family_2:
     # Синтию видно со спины и совсем немножко видно голую попу
     music2 snd_shower3
     pause 2.0
-    music Step_By_Step
+    music Adventures_of_the_Deaf_Dreamer
     imgf 900071
     bardi_t "Оу, черт!"
     # Барди быстро выходит обратно в холл и стоит перед дверью
@@ -99,8 +100,9 @@ label ep01_dialogues3_day2_family_2:
     menu:
         "Заглянуть в ванную комнату и сделать фото Синтии.":
             # Барди снова заходит в душ, берет в руки свой телефон
-            sound sneaks_2
+            music Step_By_Step
             music2 snd_shower3
+            sound2 sneaks_2
             imgf 900071
             bardi_t "Наверное неправильно фотографировать ее в душе..."
             bardi_t "А с другой стороны..."
@@ -110,6 +112,7 @@ label ep01_dialogues3_day2_family_2:
             bardi_t "Да, точно! Сохраню себе на память и потом посмотрю."
             # он наводит камеру на Синтию
             # не успевает сделать фото, на телефон приходит сигнал сообщения
+            music stop
             sound iphone_text_message1
             # на экране новое сообщение: "Студент [mcsurname], ждем вас сегодня в 9:00 am в приемной профессора Ричардсон. Администрация колледжа."
             img 900147
@@ -121,14 +124,16 @@ label ep01_dialogues3_day2_family_2:
             cynthia "Ой! Здесь кто-то есть?"
             # а Барди быстро выбегает в холл
             music2 stop
+            music Secretions_Vocal
             img 900076
             bardi_t "Твою мать! Она меня чуть не заметила!"
             bardi_t "Уфф..."
             return
         "Заглянуть в ванную комнату и подсматривать за Синтией.":
             # Барди снова заходит в душ и рассматривает Синтию, она также стоит спиной к нему
-            sound sneaks_2
+            music Step_By_Step
             music2 snd_shower3
+            sound2 sneaks_2
             imgf 900071
             bardi_t "Стоп, а что я делаю? Это же моя соседка и она хорошо меня встретила." ##->#####inc
             #####inc bardi_t "Стоп, а что я делаю? Это же моя младшая сестра."
@@ -152,6 +157,7 @@ label ep01_dialogues3_day2_family_2:
             bardi_t "Она моя соседка и вроде хорошая девчонка. Что она обо мне подумает?" ##->#####inc
             #####inc bardi_t "Она моя младшая сестра. Что она обо мне подумает?"
             return
+    music Adventures_of_the_Deaf_Dreamer
     return
 
 label ep01_dialogues3_day2_family_3:
@@ -196,10 +202,10 @@ label ep01_dialogues3_day2_family_5:
     bardi "Софи..." ##->#####inc
     #####inc bardi "Мам..."
     # она поворачивается к нему
-    label ep01_dialogues3_day2_family_5_loop1:
     music Little_Tomcat
     imgd 900060
     sophie "Ты что-то хотел, милый?"
+    label ep01_dialogues3_day2_family_5_loop1:
     menu:
         "Спросить, где Генри.":
             imgd 900061
@@ -211,6 +217,8 @@ label ep01_dialogues3_day2_family_5:
             sophie "У него очень много работы, милый."
             imgd 900061
             bardi "Ясно."
+            imgd 900060
+            w
             jump ep01_dialogues3_day2_family_5_loop1
         "Спросить, где Оливия.":
             imgd 900061
@@ -231,7 +239,7 @@ label ep01_dialogues3_day2_family_5:
             jump ep01_dialogues3_day2_family_5_loop1
         "Уйти.":
             imgd 900061
-            bardi "Нет, ничего."
+            #bardi "Нет, ничего."
             bardi "До вечера, Софи." ##->#####inc
             #####inc bardi "До вечера, мам."
             imgd 900060
@@ -249,7 +257,7 @@ label ep01_dialogues3_day2_family_6:
     # смена кадра, Барди заходит домой
     # Софи с Генри сидят за столом и ужинают, Оливии и Синтии нет
     # Софи выглядывает из кухни, встречая Барди
-    music Adventures_of_the_Deaf_Dreamer
+    music Visions_Of_Plenty
     imgfl 900078
     sound2 snd_eating
     w
@@ -428,7 +436,7 @@ label ep01_dialogues3_day2_family_6:
     bardi_t "Деньги. Где можно взять денег?.."
     bardi_t "..."
     # смотрит на Софи
-    music Adventures_of_the_Deaf_Dreamer
+    music Visions_Of_Plenty
     imgf 900110
     bardi_t "Кстати, а это идея!.."
     imgd 900111
@@ -494,7 +502,7 @@ label ep01_dialogues3_day2_family_6:
     #####inc bardi "Спасибо, мам."
     # она улыбается ему в ответ
     # Барди задумывается
-    music Adventures_of_the_Deaf_Dreamer
+    music Visions_Of_Plenty
     imgf 900113
     bardi_t "Если я каждую неделю буду откладывать по 5 баксов, то..."
     bardi_t "Да какой смысл считать?!"
@@ -602,6 +610,7 @@ label ep01_dialogues3_day2_family_6:
     olivia "Не твое дело, сопляк."
     # Оливия спускается по лестнице
     # смена кадра на комнату Барди
+    fadeblack 1.0
     music Step_By_Step
     imgf 900140
     bardi_t "Вот и поговорили..."
@@ -706,7 +715,9 @@ label ep01_dialogues3_day2_family_7:
             # и тут Оливия внезапно выключает воду, стоит также спиной к Барди
             imgd 900154
             bardi_t "!!!"
+            sound2 keyboard
             music2 stop
+            pause 1.0
             music stop
             sound plastinka1b
             imgd 900155 hpunch
@@ -745,7 +756,9 @@ label ep01_dialogues3_day2_family_7:
             bardi_t "Ох, какая попка!.."
             bardi_t "Ну же, Оливия, наклонись и покажи, что ты там прячешь!"
             # тут Оливия внезапно выключает воду, стоит также спиной к Барди
+            sound2 keyboard
             music2 stop
+            pause 1.0
             music stop
             sound plastinka1b
             img 900161 hpunch
@@ -988,23 +1001,23 @@ label ep01_dialogues3_day2_family_7:
                     #
                     w
                     imgd 900197
-                    rose "[mcname], я никогда не делала этого..."
+                    student_rose "[mcname], я никогда не делала этого..."
                     imgd 900198
-                    rose "Он такой... Большой."
+                    student_rose "Он такой... Большой."
                     imgd 900197
-                    rose "Ты уверен, что он поместится у меня во рту?"
+                    student_rose "Ты уверен, что он поместится у меня во рту?"
                     # она проводит языком по головке его члена
                     sound lick3
                     imgd 900199
                     w
                     imgd 900200
-                    rose "Мммм..."
+                    student_rose "Мммм..."
                     w
                     imgd 900201
                     w
                     imgd 900202
-                    rose "Он такой приятный. Мне нравится."
-                    rose "Я сейчас попробую сделать это..."
+                    student_rose "Он такой приятный. Мне нравится."
+                    student_rose "Я сейчас попробую сделать это..."
                     # она вводит его член в рот и начинает двигать головой
                     # анимация
                     # Роуз периодически смотрит ему в глаза, отрываясь от члена и улыбаясь ему
@@ -1016,8 +1029,8 @@ label ep01_dialogues3_day2_family_7:
                     imgf 900205
                     w
                     imgd 900206
-                    rose "Мпфхфмм..."
-                    rose "Мммм..."
+                    student_rose "Мпфхфмм..."
+                    student_rose "Мммм..."
                     imgd 900207
                     bardi "О, Роуз, я сейчас кончу!.."
                     menu:
@@ -1042,7 +1055,7 @@ label ep01_dialogues3_day2_family_7:
                             hide screen photoshot_screen
                             sound man moan8
                             sound2 chpok5
-                            rose "Мпфхф!!!"
+                            student_rose "Мпфхф!!!"
                             imgd 900209
                             w
                             # Роуз снимается с его члена
@@ -1073,7 +1086,7 @@ label ep01_dialogues3_day2_family_7:
                             sound man moan8
                             sound2 chpok5
                             imgd 900212
-                            rose "Мммм, [mcname]... Да..."
+                            student_rose "Мммм, [mcname]... Да..."
                             # смотрит ему в глаза, лицо в сперме
                             # улыбается ему
                             pass
@@ -1102,7 +1115,7 @@ label ep01_dialogues3_day2_family_7:
                             bardi "Оооо!!!"
                             sound2 chpok5
                             imgd 900214
-                            rose "Мммм, [mcname]... Да..."
+                            student_rose "Мммм, [mcname]... Да..."
                             imgd 900215
                             w
                             # смотрит ему в глаза, грудь в сперме

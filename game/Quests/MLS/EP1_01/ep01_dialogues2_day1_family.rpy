@@ -212,7 +212,7 @@ label ep01_dialogues2_day1_family_2:
     # Софи и Синтия мило улыбаются Барди
     # Генри бросает в его сторону равнодушный взгляд и снова принимается за еду
     # Оливия отрывается от своего телефона и смотрит зло на Барди
-    music Adventures_of_the_Deaf_Dreamer
+    music Visions_Of_Plenty
     sound2 sneaks_1
     imgfl 900000
     w
@@ -423,7 +423,6 @@ label ep01_dialogues2_day1_family_7:
     imgd 900043
     bardi "Ммм... Да."
     bardi "Спокойной ночи, Синтия."
-    sound Jump2
     imgd 900042
     cynthia "Это так мило с твоей стороны, [mcname]." ##->#####inc
     #####inc cynthia "Это так мило с твоей стороны, братик."
@@ -515,7 +514,6 @@ label ep01_dialogues2_day1_family_8:
     #####inc она улыбается ему, наклоняется и чмокает его в лоб
     #####inc он уворачивается от нее
     # она снова улыбается и еще раз проводит рукой по его волосам
-    sound Jump2
     imgd 900050
     sophie "Не переживай, [mcname]. Все будет хорошо."
     imgd 900053
