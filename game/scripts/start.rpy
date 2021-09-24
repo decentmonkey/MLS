@@ -60,7 +60,7 @@ label start: #for blink here
 
     $ objectives_list = []
     $ map_objects = {
-            "Teleport_HOUSE" : {"text" : t_("ДОМ"), "xpos" : 1507, "ypos" : 396, "base" : "map_marker", "state" : "visible"},
+            "Teleport_HOUSE" : {"text" : t_("ДОМ"), "xpos" : 1507, "ypos" : 396, "base" : "map_marker_house", "state" : "visible"},
             "Teleport_HOUSE_FRIEND" : {"text" : t_("ДОМ ШОНА"), "xpos" : 1303, "ypos" : 318, "base" : "map_marker", "state" : "visible"},
             "Teleport_COLLEGE" : {"text" : t_("КОЛЛЕДЖ"), "xpos" : 982, "ypos" : 268, "base" : "map_marker", "state" : "visible"}
     }
