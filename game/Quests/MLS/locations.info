@@ -1,0 +1,157 @@
+College:
+
+вход, этаж 1
+COLLEGE_Coridor1: image COLLEGE_Coridor1_base - КОЛЛЕДЖ ЭТАЖ 1
+	COLLEGE_Coridor_1_Teleport_Biology - БИОЛОГИЯ 1053x141 arrow_down_2
+	COLLEGE_Coridor_1_Teleport_Hall - АКТОВЫЙ ЗАЛ 279x128 arrow_down_2
+	COLLEGE_Coridor_1_Teleport_LockerMC - ШКАФЧИК 1416x266 arrow_right_2
+	COLLEGE_Coridor_1_Teleport_Stairs - ЛЕСТНИЦА 763x244 arrow_down_2, teleport COLLEGE_Coridor3
+	Screen_Down_Arrow - УЛИЦА, teleport COLLEGE_Street
+
+COLLEGE_Coridor3: image COLLEGE_Coridor_3_base - ЛЕСТНИЦА ЭТАЖ 1
+	Screen_Down_Arrow - ВХОД В КОЛЛЕДЖ, teleport COLLEGE_Coridor1
+	COLLEGE_Coridor_3_Teleport_Floor2 - ЭТАЖ 2 561x81 arrow_left_2, teleport COLLEGE_Coridor7, меню этажей
+	COLLEGE_Coridor_3_Teleport_Coridor2 - КОРИДОР 1644x806 right arrow_up_2, teleport COLLEGE_Coridor2
+    COLLEGE_Coridor_3_Teleport_Geography - ГЕОГРАФИЯ 1090x180 arrow_right_2, teleport COLLEGE_Geography
+
+COLLEGE_Coridor2: image COLLEGE_Coridor_2_base - КОРИДОР ЭТАЖ 1
+	Screen_Down_Arrow - ЛЕСТНИЦА, teleport COLLEGE_Coridor3
+	COLLEGE_Coridor_2_Teleport_Coridor4 - РАЗДЕВАЛКИ 1607x365 arrow_right_2, teleport COLLEGE_Coridor4
+	COLLEGE_Coridor_2_Teleport_Gym - СПОРТЗАЛ, 828x200 arrow_down_2, teleport COLLEGE_Gym
+	COLLEGE_Coridor_2_Teleport_Medical - МЕД КАБИНЕТ 266x321 arrow_right_2, teleport COLLEGE_Medical
+	COLLEGE_Coridor_2_Teleport_Chemistry - ХИМИЯ 1402x211 arrow_down_2, teleport COLLEGE_Chemistry
+
+
+COLLEGE_Coridor4: image COLLEGE_Coridor_4_base - РАЗДЕВАЛКИ ЭТАЖ 1
+	Screen_Down_Arrow - КОРИДОР, teleport COLLEGE_Coridor2
+	COLLEGE_Coridor_4_Teleport_Pool - БАССЕЙН 1280x132 arrow_down_2, teleport COLLEGE_Pool
+	COLLEGE_Coridor_4_Teleport_Locker_Girl - РАЗДЕВАЛКА ДЛЯ ДЕВОЧЕК 850x113 arrow_down_2, teleport COLLEGE_Locker_Girl
+	COLLEGE_Coridor_4_Teleport_Locker_Boy - РАЗДЕВАЛКА ДЛЯ МАЛЬЧИКОВ 1399x654 arrow_up_2, teleport COLLEGE_Locker_Boy
+	COLLEGE_Coridor_4_Teleport_WC_Male - ТУАЛЕТ ДЛЯ МАЛЬЧИКОВ 897x751 arrow_left_2, teleport COLLEGE_WC_Male
+	COLLEGE_Coridor_4_Teleport_WC_Female - ТУАЛЕТ ДЛЯ ДЕВОЧЕК 785x870 arrow_left_2, teleport COLLEGE_WC_Female
+
+этаж 2
+COLLEGE_Coridor7: image COLLEGE_Coridor_7_base - КОЛЛЕДЖ ЭТАЖ 2
+	COLLEGE_Coridor_7_Teleport_Stairs - ЛЕСТНИЦА 1416x193 arrow_right_2, teleport меню этажей
+	COLLEGE_Coridor_7_Teleport_Computer - КОМПЬЮТЕРНЫЙ КЛАСС 525x135, teleport COLLEGE_Computer
+	COLLEGE_Coridor_7_Teleport_Coridor6 КОРИДОР 451x945 arrow_left_2, teleport COLLEGE_Coridor6
+
+COLLEGE_Coridor6: image COLLEGE_Coridor_6_base - КОРИДОР ЭТАЖ 2
+	COLLEGE_Coridor_6_Teleport_Coridor7 - ЛЕСТНИЦА 1393x951 arrow_right_2, teleport COLLEGE_Coridor7
+	COLLEGE_Coridor_6_Teleport_English - АНГЛИЙСКИЙ 1747x192 arrow_down_2, teleport COLLEGE_English
+	COLLEGE_Coridor_6_Teleport_Physics - ФИЗИКА 1178x238 arrow_right_2, teleport COLLEGE_Physics
+	COLLEGE_Coridor_6_Teleport_Coridor5 (Screen_Left_Arrow) КОРИДОР 354x471 - teleport COLLEGE_Coridor5
+
+COLLEGE_Coridor5: image COLLEGE_Coridor_5_base - КОРИДОР ЭТАЖ 2
+	COLLEGE_Coridor_5_Teleport_Coridor6 - КОРИДОР 1450x903 arrow_right_2, teleport COLLEGE_Coridor6
+	COLLEGE_Coridor_5_Teleport_Algebra - АЛГЕБРА 1415x189 arrow_down_2, teleport COLLEGE_Algebra
+	COLLEGE_Coridor_5_Teleport_ArtClass - КЛАСС РИСОВАНИЯ 574x972, teleport COLLEGE_ArtClass
+
+этаж 3
+COLLEGE_Coridor10: image COLLEGE_Coridor_10_base - КОРИДОР ЭТАЖ 3
+	COLLEGE_Coridor_10_Teleport_Stairs - ЛЕСТНИЦА 1765x862 arrow_left_2, teleport меню этажей
+	COLLEGE_Coridor_10_Teleport_Coridor9 - КОРИДОР - 525x959 arrow_left_2, teleport COLLEGE_Coridor9
+	COLLEGE_Coridor_10_Teleport_UtilityRoom - КАБИНЕТ ЗАВХОЗА 1230x1002 arrow_right, teleport COLLEGE_UtilityRoom
+
+COLLEGE_Coridor9: image COLLEGE_Coridor_9_base - КОРИДОР ЭТАЖ 3
+	COLLEGE_Coridor_9_Teleport_Coridor10 - ЛЕСТНИЦА 1657x845 arrow_right_2, teleport COLLEGE_Coridor10
+	COLLEGE_Coridor_9_Teleport_Teachers - УЧИТЕЛЬСКАЯ 1010x555 arrow_right_2, teleport COLLEGE_Teachers
+	COLLEGE_Coridor_9_Teleport_Library - БИБЛИОТЕКА 396x339 arrow_left_2, teleport COLLEGE_Library
+	COLLEGE_Coridor_9_Teleport_Coridor8 - ПРИЕМНАЯ ДИРЕКТОРА 591x930, teleport COLLEGE_Coridor8
+
+COLLEGE_Coridor8: image COLLEGE_Coridor_8_base - КОРИДОР ЭТАЖ 3
+	COLLEGE_Coridor_8_Teleport_Coridor9 - КОРИДОР 1344x948 arrow_right_2, teleport COLLEGE_Coridor9
+	COLLEGE_Coridor_8_Teleport_Principal_Secretary - ПРИЕМНАЯ ДИРЕКТОРА 1111x227 arrow_left_2, teleport COLLEGE_Principal_Secretary
+
+COLLEGE_Algebra: image COLLEGE_Algebra - АЛГЕБРА
+    COLLEGE_Algebra_Teleport_Coridor5 КОРИДОР 436x314 right arrow_right_2, teleport COLLEGE_Coridor5
+
+
+COLLEGE_ArtClass: image COLLEGE_ArtClass - КЛАСС РИСОВАНИЯ
+    COLLEGE_ArtClass_Teleport_Coridor5 - КОРИДОР Screen_Down_Arrow, teleport COLLEGE_Coridor5
+
+COLLEGE_Biology: image COLLEGE_Biology - БИОЛОГИЯ
+    COLLEGE_Biology_Teleport_Coridor1 - КОРИДОР 755x106 arrow_right_2 ,teleport COLLEGE_Coridor1
+
+COLLEGE_Chemistry: image COLLEGE_Chemistry - ХИМИЯ
+    COLLEGE_Chemistry_Teleport_Coridor2 (Screen_Left_Arrow_Tight) - КОРИДОР 287x979 arrow_left_2, teleport COLLEGE_Coridor2
+
+COLLEGE_Computer: image COLLEGE_Computer - КОМПЬЮТЕРНЫЙ КЛАСС
+    COLLEGE_Computer_Teleport_Coridor7 (Screen_Down_Arrow) - КОРИДОР, teleport COLLEGE_Coridor7
+
+COLLEGE_English: image COLLEGE_English - АНГЛИЙСКИЙ
+    COLLEGE_English_Teleport_Coridor6 - КОРИДОР 426x248 left arrow_down_2, teleport COLLEGE_Coridor6
+
+COLLEGE_France: image COLLEGE_France - ФРАНЦУЗСКИЙ
+    COLLEGE_France_Teleport_Coridor - КОРИДОР 402x321, left arrow_down_2 , teleport ???
+
+COLLEGE_Geography: image COLLEGE_Geography - ГЕОГРАФИЯ
+    COLLEGE_Geography_Teleport_Coridor3 - КОРИДОР 230x327 right_arrow_2, teleport COLLEGE_Coridor3
+
+COLLEGE_Gym: image COLLEGE_Gym - СПОРТЗАЛ
+    COLLEGE_Gym_Teleport_Coridor2 - КОРИДОР 1343x994 arrow_right_2, teleport COLLEGE_Coridor2
+
+COLLEGE_Hall: image COLLEGE_Hall - АКТОВЫЙ ЗАЛ
+    COLLEGE_Hall_Teleport_Coridor1 - КОРИДОР 1601x904 right arrow_down_2, teleport COLLEGE_Coridor1
+
+
+COLLEGE_Library: image COLLEGE_Library - БИБЛИОТЕКА
+    COLLEGE_Library_Teleport_Coridor9 (Screen_Right_Arrow_Tight) - КОРИДОР 1581x975 arrow_right_2 , teleport COLLEGE_Coridor9
+
+COLLEGE_Locker_Boy: image COLLEGE_Locker_Boy - РАЗДЕВАЛКА ДЛЯ МАЛЬЧИКОВ
+    COLLEGE_Locker_Boy_Teleport_Coridor4 (Screen_Down_Arrow) - КОРИДОР, teleport COLLEGE_Coridor4
+
+COLLEGE_Locker_Girl: image COLLEGE_Locker_Girl - РАЗДЕВАЛКА ДЛЯ ДЕВОЧЕК
+    COLLEGE_Locker_Girl_Teleport_Coridor4 (Screen_Down_Arrow) - КОРИДОР, teleport COLLEGE_Coridor4
+
+COLLEGE_Medical: image COLLEGE_Medical - МЕД КАБИНЕТ
+    COLLEGE_Medical_Teleport_Coridor2 (Screen_Down_Arrow) - КОРИДОР, teleport COLLEGE_Coridor2
+
+COLLEGE_Physics: image COLLEGE_Physics - ФИЗИКА
+    COLLEGE_Physics_Teleport_Coridor6 - КОРИДОР 1620x993 arrow_right_2, teleport COLLEGE_Coridor6
+
+COLLEGE_Pool: image COLLEGE_Pool - БАССЕЙН
+    COLLEGE_Pool_Teleport_Coridor4 (Screen_Down_Arrow) - КОРИДОР , teleport COLLEGE_Coridor4
+
+
+COLLEGE_Principal: image COLLEGE_Principal - КАБИНЕТ ДИРЕКТОРА
+    COLLEGE_Principal_Teleport_Principal_Secretary СЕКРЕТАРЬ 1474x881 right arrow_down_2, teleport COLLEGE_Principal_Secretary
+
+COLLEGE_Principal_Secretary: image COLLEGE_Principal_Secretary - ПРИЕМНАЯ ДИРЕКТОРА
+    COLLEGE_Principal_Secretary_Teleport_Coridor8 (Screen_Down_Arrow) - КОРИДОР, teleport COLLEGE_Coridor8
+    COLLEGE_Principal_Secretary_Teleport_Principal - КАБИНЕТ ДИРЕКТОРА 616x199 arrow_left_2, teleport COLLEGE_Principal
+
+COLLEGE_Roof: image COLLEGE_Roof - КРЫША КОЛЛЕДЖА
+    COLLEGE_Roof_Teleport_Coridor10 - ЛЕСТНИЦА 1123x222 arrow_right_2, teleport COLLEGE_Coridor10
+
+COLLEGE_Teachers: image COLLEGE_Teachers - УЧИТЕЛЬСКАЯ
+    COLLEGE_Teachers_Teleport_Coridor9 - КОРИДОР 1568x860 right arrow_down_2 , teleport COLLEGE_Coridor9
+
+COLLEGE_UtilityRoom: image COLLEGE_UtilityRoom - КАБИНЕТ ЗАВХОЗА
+    COLLEGE_UtilityRoom_Teleport_Coridor10 (Screen_Down_Arrow) - КОРИДОР , teleport COLLEGE_Coridor10
+
+COLLEGE_WC_Female: image COLLEGE_WC_Female - ТУАЛЕТ ДЛЯ ДЕВОЧЕК
+    COLLEGE_WC_Female_Teleport_Coridor4 (Screen_Down_Arrow) - КОРИДОР, teleport COLLEGE_Coridor4
+
+COLLEGE_WC_Male: image COLLEGE_WC_Male - ТУАЛЕТ ДЛЯ МАЛЬЧИКОВ
+    COLLEGE_WC_Male_Teleport_Coridor4 (Screen_Down_Arrow) - КОРИДОР, teleport COLLEGE_Coridor4
+
+COLLEGE_Street: image COLLEGE_Street
+    COLLEGE_Street_Teleport_MAP (Screen_Down_Arrow) - ГОРОД, teleport map
+    COLLEGE_Street_Teleport_Coridor1 - ВХОД В КОЛЛЕДЖ 1138x555 arrow_right_2 , teleport COLLEGE_Coridor1
+    COLLEGE_Street_Teleport_StreetYard - СПОРТИВНАЯ ПЛОЩАДКА 498x537 left arrow_down_2 , teleport COLLEGE_StreetYard
+
+COLLEGE_StreetYard: image COLLEGE_StreetYard
+    COLLEGE_StreetYard_Teleport_Street - КОЛЛЕДЖ 1542x420 right arrow_up_2, teleport COLLEGE_Street
+
+
+
+
+HOUSE:
+
+
+
+
+
+
+//
