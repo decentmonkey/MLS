@@ -1076,7 +1076,7 @@ screen hud_screen(hud_presets):
 #                            yoffset -2
 #                            xanchor 2
                     if day_time == "evening":
-                        if dialogue_active_flag == True or sceneIsStreet != True or hudDaySkipToEveningEnabled == False or map_enabled != True or owner != "Monica":
+                        if dialogue_active_flag == True or sceneIsStreet != True or hudDaySkipToEveningEnabled == False or map_enabled != True or owner != "Bardie":
                             imagebutton:
                                 yoffset -2
                                 xanchor 5
