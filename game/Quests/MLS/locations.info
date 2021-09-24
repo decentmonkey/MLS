@@ -149,9 +149,56 @@ COLLEGE_StreetYard: image COLLEGE_StreetYard
 
 HOUSE:
 
+House_Street: image House_Street - ДВОР ДОМА
+	House_Street_Teleport_Floor1 - ВХОД В ДОМ 1391x429 left arrow_down_2, teleport House_Floor1
+	House_Street_Teleport_Garage - ГАРАЖ 322x417 right arrow_down_2, teleport House_Garage
+	House_Street_Teleport_StoreRoom - ПОДВАЛ 1638x520 left arrow_down_2, teleport House_StoreRoom
 
+House_Bathroom: image House_Bathroom
+	House_Bathroom_Teleport_Floor1 - НАЗАД 1599x541 arrow_right_2 , teleport House_Floor1
+	House_Bathroom_Shower
+	House_Bathroom_Bath
+	House_Bathroom_Toilet
 
+House_Bedroom_Landlord: image House_Bedroom_Landlord - СПАЛЬНЯ СОФИ И ГЕНРИ
+	House_Bedroom_Landlord_Teleport_Floor2 - НАЗАД 334x972 arrow_left_2 , teleport House_Floor2
 
+House_Bedroom_MC: image House_Bedroom_MC - МОЯ КОМНАТА
+	House_Bedroom_MC_Teleport_Floor2 - ЛЕСТНИЦА ВНИЗ 633x954 left arrow_down_2 , teleport House_Floor2
+	House_Bedroom_MC_Bed
+	House_Bedroom_MC_Typewriter
+
+House_Floor1: image House_Floor1 - ПЕРВЫЙ ЭТАЖ
+	House_Floor1_Teleport_Street - (Screen_Down_Arrow), teleport House_Street
+	House_Floor1_Teleport_Floor2 - ВТОРОЙ ЭТАЖ 711x183 left arrow_up_2, teleport House_Floor2
+	House_Floor1_Teleport_LivingRoomHall, teleport House_LivingRoomHall
+	House_Floor1_Teleport_Kitchen, teleport House_Kitchen
+	House_Floor1_Teleport_Bathroom, teleport House_Bathroom
+
+House_Floor2: image House_Floor2 - ВТОРОЙ ЭТАЖ
+	House_Floor2_Teleport_Floor1 - ЛЕСТНИЦА ВНИЗ 1342x1013 right arrow_up_2, teleport House_Floor1
+	House_Floor2_Teleport_Bedroom_MC - МОЯ КОМНАТА 362x957 left arrow_up_2, teleport House_Bedroom_MC
+	House_Floor2_Teleport_Sister2, teleport House_Sister2
+	House_Floor2_Teleport_Sister1, teleport House_Sister1
+	House_Floor2_Teleport_Bedroom_Landlord, teleport House_Bedroom_Landlord
+
+House_Garage: image House_Garage - ГАРАЖ
+	House_Garage_Teleport_House_Street (Screen_Down_Arrow) - НАЗАД, teleport House_Street
+
+House_Kitchen: image House_Kitchen - КУХНЯ
+	House_Kitchen_Teleport_Floor1 - НАЗАД 1604x573, teleport House_Floor1
+
+House_LivingRoomHall: image House_LivingRoomHall - ГОСТИНАЯ
+	House_LivingRoomHall_Teleport_Floor1 - НАЗАД (Screen_Down_Arrow), teleport House_Floor1
+
+House_Sister1: image House_Sister1 - КОМНАТА ОЛИВИИ
+	House_Sister1_Teleport_Floor2 - НАЗАД (Screen_Down_Arrow), teleport House_Floor2
+
+House_Sister2: image House_Sister2 - КОМНАТА СИНТИИ
+	House_Sister2_Teleport_Floor2 - НАЗАД (Screen_Down_Arrow), teleport House_Floor2
+
+House_StoreRoom: image House_StoreRoom - ПОДВАЛ
+	House_StoreRoom_Teleport_Street - УЛИЦА 1268x993, teleport House_Street
 
 
 //
