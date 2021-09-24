@@ -33,7 +33,7 @@ label miniMapHouseGenerate:
     $ miniMapOpenButtonImg2 = "Open_Button_Map2"
     $ miniMapData = []
     if miniMapHousePreset == "default":
-        if owner == "Monica":
+        if owner == "Bardie":
             $ miniMapData.append({"name":"Bedroom", "caption":t_("Bedroom"), "img":"Bedroom_Map", "teleport_scene":"bedroom2", "teleport_type":"scene"})
             $ miniMapData.append({"name":"Bathroom", "caption":t_("Bathroom"), "img":"Bathroom_Map", "teleport_scene":"bathroom_bath", "teleport_type":"scene"})
             $ miniMapData.append({"name":"Floor1", "caption":t_("Down Floor"), "img":"Floor1_Map", "teleport_scene":"floor1", "teleport_type":"scene"})
@@ -48,7 +48,7 @@ label miniMapHouseGenerate:
             if minimapBettyFloor2Enabled == True:
                 $ miniMapData.append({"name":"Floor2", "caption":t_("Up Floor"), "img":"Floor2_Map", "teleport_scene":"floor2", "teleport_type":"scene"})
     if miniMapHousePreset == "laundry":
-        if owner == "Monica":
+        if owner == "Bardie":
             $ miniMapData.append({"name":"Bedroom", "caption":t_("Bedroom"), "img":"Bedroom_Map", "teleport_scene":"bedroom2", "teleport_type":"scene"})
             $ miniMapData.append({"name":"Bathroom", "caption":t_("Bathroom"), "img":"Bathroom_Map", "teleport_scene":"bathroom_bath", "teleport_type":"scene"})
             $ miniMapData.append({"name":"Floor1", "caption":t_("Down Floor"), "img":"Floor1_Map", "teleport_scene":"floor1", "teleport_type":"scene"})

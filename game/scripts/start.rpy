@@ -39,6 +39,9 @@ default act = ""
 
 default questLogGlobalEnabled = False
 
+#temp vars
+default maxBitchness = 1000
+
 label start: #for blink here
 
     #new game
@@ -63,6 +66,7 @@ label start: #for blink here
     }
 
     call characters_init() from _rcall_characters_init_1
+    call locations_init()
 
 #########
 
@@ -143,7 +147,7 @@ label start: #for blink here
     $ miniMapTurnedOff2 = False
 
     $ scene_refresh_flag = True
-    $ map_scene = "House"
+    $ map_scene = "HOUSE"
     $ map_enabled = True
     $ map_disabled_forced = False
     $ scene_name = "none"
@@ -154,8 +158,8 @@ label start: #for blink here
 
     $ changeDayTime("evening")
 
-    call change_scene("House_Street") from _rcall_change_scene_220
-    call process_change_map_location("House") from _rcall_process_change_map_location_10
+    call change_scene("house_street") from _rcall_change_scene_220
+    call process_change_map_location("HOUSE") from _rcall_process_change_map_location_10
 
     $ questHelpActivated = True
     call questHelp_init() from _rcall_questHelp_init_2

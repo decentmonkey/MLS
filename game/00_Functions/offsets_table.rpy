@@ -1,5 +1,11 @@
 
 define offsets_table = {
+    "screen_down_arrow":(998,420,1079,1499),
+    "screen_down_arrow_short1":(998,420,1079,1499),
+    "screen_left_arrow":(0,0,1079,151),
+    "screen_left_arrow_tight":(0,0,1079,106),
+    "screen_right_arrow":(0,1768,1079,1919),
+    "screen_right_arrow_tight":(0,1813,1079,1919),
 }
 
 init python:

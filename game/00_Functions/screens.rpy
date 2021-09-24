@@ -1301,7 +1301,7 @@ screen hud_screen(hud_presets):
                 pos gui.resolution.hud_screen.face_hud_image_pos
         if hud_presets.has_key("display_bitchmeter") and hud_presets["display_bitchmeter"] == True:
 #            $ bitchmeter_description = get_bitchmeter_description() + " (" + str(bitchmeterValue) + ")"
-            $ bitchmeter_description = get_bitchmeter_description()
+            $ bitchmeter_description = "test"
             if _preferences.language != "chinese":
                 text t__(bitchmeter_description):
                     xpos config.screen_width - gui.resolution.hud_screen.bitchmeter_desc_x_pos

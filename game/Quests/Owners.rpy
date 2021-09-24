@@ -38,7 +38,7 @@ label change_owner_default:
         $ melanie_control_active = False
 
 
-    if new_owner == "Monica":
+    if new_owner == "Bardie":
         $ showObjectsNotOwner = True
         $ faceHudImage = False
         $ hud_preset_current = "default"

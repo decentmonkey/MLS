@@ -400,7 +400,7 @@ label process_object_click(func_name, obj_name_source, obj_data_source):
     $ act = obj_data["action"]
 #    $ print obj_data
     call process_hooks(obj_name, api_scene_name) from _call_process_hooks_10
-    if _return != False and ((obj_data.has_key("owner") == False and owner == "Monica") or (obj_data.has_key("owner") == True and obj_data["owner"] == owner)):
+    if _return != False and ((obj_data.has_key("owner") == False and owner == "Bardie") or (obj_data.has_key("owner") == True and obj_data["owner"] == owner)):
         call expression func_name from _call_expression_1
         if _return != False:
             $ scene_refresh_flag = True
@@ -467,7 +467,7 @@ label process_object_click_alternate_action(idx, actions_list, click_label, name
     $ obj_name = name
     $ obj_data = data
     call process_hooks(obj_name, api_scene_name) from _call_process_hooks_11
-    if _return != False and ((obj_data.has_key("owner") == False and owner == "Monica") or (obj_data.has_key("owner") == True and obj_data["owner"] == owner)):
+    if _return != False and ((obj_data.has_key("owner") == False and owner == "Bardie") or (obj_data.has_key("owner") == True and obj_data["owner"] == owner)):
         call expression func_name from _call_expression_2
         if _return != False:
             $ scene_refresh_flag = True
