@@ -7,12 +7,18 @@ COLLEGE_Coridor1: image COLLEGE_Coridor1_base - КОЛЛЕДЖ ЭТАЖ 1
 	COLLEGE_Coridor_1_Teleport_LockerMC - ШКАФЧИК 1416x266 arrow_right_2
 	COLLEGE_Coridor_1_Teleport_Stairs - ЛЕСТНИЦА 763x244 arrow_down_2, teleport COLLEGE_Coridor3
 	Screen_Down_Arrow - УЛИЦА, teleport COLLEGE_Street
+	Student1
+	Student2
+	Student3
 
 COLLEGE_Coridor3: image COLLEGE_Coridor_3_base - ЛЕСТНИЦА ЭТАЖ 1
 	Screen_Down_Arrow - ВХОД В КОЛЛЕДЖ, teleport COLLEGE_Coridor1
 	COLLEGE_Coridor_3_Teleport_Floor2 - ЭТАЖ 2 561x81 arrow_left_2, teleport COLLEGE_Coridor7, меню этажей
 	COLLEGE_Coridor_3_Teleport_Coridor2 - КОРИДОР 1644x806 right arrow_up_2, teleport COLLEGE_Coridor2
     COLLEGE_Coridor_3_Teleport_Geography - ГЕОГРАФИЯ 1090x180 arrow_right_2, teleport COLLEGE_Geography
+	Student7
+	Student8
+	Student9
 
 COLLEGE_Coridor2: image COLLEGE_Coridor_2_base - КОРИДОР ЭТАЖ 1
 	Screen_Down_Arrow - ЛЕСТНИЦА, teleport COLLEGE_Coridor3
@@ -20,7 +26,9 @@ COLLEGE_Coridor2: image COLLEGE_Coridor_2_base - КОРИДОР ЭТАЖ 1
 	COLLEGE_Coridor_2_Teleport_Gym - СПОРТЗАЛ, 828x200 arrow_down_2, teleport COLLEGE_Gym
 	COLLEGE_Coridor_2_Teleport_Medical - МЕД КАБИНЕТ 266x321 arrow_right_2, teleport COLLEGE_Medical
 	COLLEGE_Coridor_2_Teleport_Chemistry - ХИМИЯ 1402x211 arrow_down_2, teleport COLLEGE_Chemistry
-
+	Student4
+	Student5
+	Student6
 
 COLLEGE_Coridor4: image COLLEGE_Coridor_4_base - РАЗДЕВАЛКИ ЭТАЖ 1
 	Screen_Down_Arrow - КОРИДОР, teleport COLLEGE_Coridor2
@@ -29,23 +37,32 @@ COLLEGE_Coridor4: image COLLEGE_Coridor_4_base - РАЗДЕВАЛКИ ЭТАЖ 1
 	COLLEGE_Coridor_4_Teleport_Locker_Boy - РАЗДЕВАЛКА ДЛЯ МАЛЬЧИКОВ 1399x654 arrow_up_2, teleport COLLEGE_Locker_Boy
 	COLLEGE_Coridor_4_Teleport_WC_Male - ТУАЛЕТ ДЛЯ МАЛЬЧИКОВ 897x751 arrow_left_2, teleport COLLEGE_WC_Male
 	COLLEGE_Coridor_4_Teleport_WC_Female - ТУАЛЕТ ДЛЯ ДЕВОЧЕК 785x870 arrow_left_2, teleport COLLEGE_WC_Female
+	Student10
 
 этаж 2
 COLLEGE_Coridor7: image COLLEGE_Coridor_7_base - КОЛЛЕДЖ ЭТАЖ 2
 	COLLEGE_Coridor_7_Teleport_Stairs - ЛЕСТНИЦА 1416x193 arrow_right_2, teleport меню этажей
 	COLLEGE_Coridor_7_Teleport_Computer - КОМПЬЮТЕРНЫЙ КЛАСС 525x135, teleport COLLEGE_Computer
 	COLLEGE_Coridor_7_Teleport_Coridor6 КОРИДОР 451x945 arrow_left_2, teleport COLLEGE_Coridor6
+	Student15
+	Student16
+	Student17
 
 COLLEGE_Coridor6: image COLLEGE_Coridor_6_base - КОРИДОР ЭТАЖ 2
 	COLLEGE_Coridor_6_Teleport_Coridor7 - ЛЕСТНИЦА 1393x951 arrow_right_2, teleport COLLEGE_Coridor7
 	COLLEGE_Coridor_6_Teleport_English - АНГЛИЙСКИЙ 1747x192 arrow_down_2, teleport COLLEGE_English
 	COLLEGE_Coridor_6_Teleport_Physics - ФИЗИКА 1178x238 arrow_right_2, teleport COLLEGE_Physics
 	COLLEGE_Coridor_6_Teleport_Coridor5 (Screen_Left_Arrow) КОРИДОР 354x471 - teleport COLLEGE_Coridor5
+	Student13
+	Student14
+	Student20
 
 COLLEGE_Coridor5: image COLLEGE_Coridor_5_base - КОРИДОР ЭТАЖ 2
 	COLLEGE_Coridor_5_Teleport_Coridor6 - КОРИДОР 1450x903 arrow_right_2, teleport COLLEGE_Coridor6
 	COLLEGE_Coridor_5_Teleport_Algebra - АЛГЕБРА 1415x189 arrow_down_2, teleport COLLEGE_Algebra
 	COLLEGE_Coridor_5_Teleport_ArtClass - КЛАСС РИСОВАНИЯ 574x972, teleport COLLEGE_ArtClass
+	Student11
+	Student12
 
 этаж 3
 COLLEGE_Coridor10: image COLLEGE_Coridor_10_base - КОРИДОР ЭТАЖ 3
@@ -58,10 +75,12 @@ COLLEGE_Coridor9: image COLLEGE_Coridor_9_base - КОРИДОР ЭТАЖ 3
 	COLLEGE_Coridor_9_Teleport_Teachers - УЧИТЕЛЬСКАЯ 1010x555 arrow_right_2, teleport COLLEGE_Teachers
 	COLLEGE_Coridor_9_Teleport_Library - БИБЛИОТЕКА 396x339 arrow_left_2, teleport COLLEGE_Library
 	COLLEGE_Coridor_9_Teleport_Coridor8 - ПРИЕМНАЯ ДИРЕКТОРА 591x930, teleport COLLEGE_Coridor8
+	Student19
 
 COLLEGE_Coridor8: image COLLEGE_Coridor_8_base - КОРИДОР ЭТАЖ 3
 	COLLEGE_Coridor_8_Teleport_Coridor9 - КОРИДОР 1344x948 arrow_right_2, teleport COLLEGE_Coridor9
 	COLLEGE_Coridor_8_Teleport_Principal_Secretary - ПРИЕМНАЯ ДИРЕКТОРА 1111x227 arrow_left_2, teleport COLLEGE_Principal_Secretary
+	Student18
 
 COLLEGE_Algebra: image COLLEGE_Algebra - АЛГЕБРА
     COLLEGE_Algebra_Teleport_Coridor5 КОРИДОР 436x314 right arrow_right_2, teleport COLLEGE_Coridor5
@@ -81,6 +100,17 @@ COLLEGE_Computer: image COLLEGE_Computer - КОМПЬЮТЕРНЫЙ КЛАСС
 
 COLLEGE_English: image COLLEGE_English - АНГЛИЙСКИЙ
     COLLEGE_English_Teleport_Coridor6 - КОРИДОР 426x248 left arrow_down_2, teleport COLLEGE_Coridor6
+	MC
+	Teacher
+	Visitor1
+	Visitor2
+	Visitor3
+	Visitor4
+	Visitor5
+	Visitor6
+	Visitor7
+	Visitor8
+	Visitor9
 
 COLLEGE_France: image COLLEGE_France - ФРАНЦУЗСКИЙ
     COLLEGE_France_Teleport_Coridor - КОРИДОР 402x321, left arrow_down_2 , teleport ???
@@ -116,10 +146,13 @@ COLLEGE_Pool: image COLLEGE_Pool - БАССЕЙН
 
 COLLEGE_Principal: image COLLEGE_Principal - КАБИНЕТ ДИРЕКТОРА
     COLLEGE_Principal_Teleport_Principal_Secretary СЕКРЕТАРЬ 1474x881 right arrow_down_2, teleport COLLEGE_Principal_Secretary
+	Teacher2_Principal
 
 COLLEGE_Principal_Secretary: image COLLEGE_Principal_Secretary - ПРИЕМНАЯ ДИРЕКТОРА
     COLLEGE_Principal_Secretary_Teleport_Coridor8 (Screen_Down_Arrow) - КОРИДОР, teleport COLLEGE_Coridor8
     COLLEGE_Principal_Secretary_Teleport_Principal - КАБИНЕТ ДИРЕКТОРА 616x199 arrow_left_2, teleport COLLEGE_Principal
+	Principal_Secretary
+
 
 COLLEGE_Roof: image COLLEGE_Roof - КРЫША КОЛЛЕДЖА
     COLLEGE_Roof_Teleport_Coridor10 - ЛЕСТНИЦА 1123x222 arrow_right_2, teleport COLLEGE_Coridor10
@@ -140,6 +173,18 @@ COLLEGE_Street: image COLLEGE_Street
     COLLEGE_Street_Teleport_MAP (Screen_Down_Arrow) - ГОРОД, teleport map
     COLLEGE_Street_Teleport_Coridor1 - ВХОД В КОЛЛЕДЖ 1138x555 arrow_right_2 , teleport COLLEGE_Coridor1
     COLLEGE_Street_Teleport_StreetYard - СПОРТИВНАЯ ПЛОЩАДКА 498x537 left arrow_down_2 , teleport COLLEGE_StreetYard
+	Classmate1
+	Friend_Bardie
+	Crowd1
+	Crowd2
+	Crowd3
+	Crowd4
+	Crowd5
+	Crowd6
+	Crowd7
+	Crowd8
+	Crowd9
+	Crowd10
 
 COLLEGE_StreetYard: image COLLEGE_StreetYard
     COLLEGE_StreetYard_Teleport_Street - КОЛЛЕДЖ 1542x420 right arrow_up_2, teleport COLLEGE_Street
@@ -153,15 +198,22 @@ House_Street: image House_Street - ДВОР ДОМА
 	House_Street_Teleport_Floor1 - ВХОД В ДОМ 1391x429 left arrow_down_2, teleport House_Floor1
 	House_Street_Teleport_Garage - ГАРАЖ 322x417 right arrow_down_2, teleport House_Garage
 	House_Street_Teleport_StoreRoom - ПОДВАЛ 1638x520 left arrow_down_2, teleport House_StoreRoom
+	House_Street_Teleport_Map - ГОРОД (Screen_Down_Arrow), open map
 
 House_Bathroom: image House_Bathroom
 	House_Bathroom_Teleport_Floor1 - НАЗАД 1599x541 arrow_right_2 , teleport House_Floor1
 	House_Bathroom_Shower
 	House_Bathroom_Bath
 	House_Bathroom_Toilet
+	Sister1
+	Sister2
+	Mother
 
 House_Bedroom_Landlord: image House_Bedroom_Landlord - СПАЛЬНЯ СОФИ И ГЕНРИ
 	House_Bedroom_Landlord_Teleport_Floor2 - НАЗАД 334x972 arrow_left_2 , teleport House_Floor2
+	Father
+	Mother
+
 
 House_Bedroom_MC: image House_Bedroom_MC - МОЯ КОМНАТА
 	House_Bedroom_MC_Teleport_Floor2 - ЛЕСТНИЦА ВНИЗ 633x954 left arrow_down_2 , teleport House_Floor2
@@ -187,18 +239,54 @@ House_Garage: image House_Garage - ГАРАЖ
 
 House_Kitchen: image House_Kitchen - КУХНЯ
 	House_Kitchen_Teleport_Floor1 - НАЗАД 1604x573, teleport House_Floor1
+	Mother
 
 House_LivingRoomHall: image House_LivingRoomHall - ГОСТИНАЯ
 	House_LivingRoomHall_Teleport_Floor1 - НАЗАД (Screen_Down_Arrow), teleport House_Floor1
+	Father
+	Mother
 
 House_Sister1: image House_Sister1 - КОМНАТА ОЛИВИИ
 	House_Sister1_Teleport_Floor2 - НАЗАД (Screen_Down_Arrow), teleport House_Floor2
+	Sister1
 
 House_Sister2: image House_Sister2 - КОМНАТА СИНТИИ
 	House_Sister2_Teleport_Floor2 - НАЗАД (Screen_Down_Arrow), teleport House_Floor2
+	Sister2
 
 House_StoreRoom: image House_StoreRoom - ПОДВАЛ
 	House_StoreRoom_Teleport_Street - УЛИЦА 1268x993, teleport House_Street
+
+
+Дом друга Шон
+HouseFriend_Street: image HouseFriend_Street - ДОМ ШОНА
+	HouseFriend_Street_Teleport_Map - ГОРОД (Screen_Down_Arrow), open map
+	HouseFriend_Street_Teleport_LivingRoom - ВХОД В ДОМ 753x414 arrow_right_2 , teleport HouseFriend_LivingRoom
+
+HouseFriend_LivingRoom: image HouseFriend_LivingRoom - ГОСТИНАЯ ШОНА
+	HouseFriend_LivingRoom_Teleport_Street (Screen_Down_Arrow) УЛИЦА, teleport HouseFriend_Street
+	HouseFriend_LivingRoom_Teleport_Kitchen (Screen_Right_Arrow_Tight) - КУХНЯ 1542x898 arrow_right_2 , teleport HouseFriend_Kitchen
+	HouseFriend_LivingRoom_Teleport_Room (Screen_Left_Arrow_Tight) - КОМНАТА ШОНА 350x886 arrow_left_2 , teleport HouseFriend_Room
+	Mother_Friend
+	Friend_Bardie
+
+HouseFriend_Room: image HouseFriend_Room - КОМНАТА ШОНА
+	HouseFriend_Room_Teleport_LivingRoom - НАЗАД В ГОСТИНУЮ 597x1007 arrow_left_2, teleport HouseFriend_LivingRoom
+	Friend_Bardie
+
+HouseFriend_Kitchen: image HouseFriend_Kitchen - КУХНЯ
+	HouseFriend_Kitchen_Teleport_LivingRoom - (Screen_Down_Arrow) НАЗАД В ГОСТИНУЮ, teleport HouseFriend_LivingRoom
+	HouseFriend_Kitchen_Teleport_Bedroom_Parents - СПАЛЬНЯ РОДИТЕЛЕЙ ШОНА 642x218 arrow_left_2 , teleport HouseFriend_Bedroom_Parents
+	Mother_Friend
+
+HouseFriend_Bedroom_Parents: HouseFriend_Bedroom_Parents - СПАЛЬНЯ РОДИТЕЛЕЙ ШОНА
+	HouseFriend_Bedroom_Parents_Teleport_Kitchen - НАЗАД НА КУХНЮ 502x990, teleport HouseFriend_Kitchen
+	Mother_Friend
+
+
+
+
+
 
 
 //
