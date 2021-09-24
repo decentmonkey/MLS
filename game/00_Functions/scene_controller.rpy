@@ -4,13 +4,11 @@ default sceneStages = []
 default lastSceneName = False
 default refreshed_scene_name = False
 default game_version1_screen_ready_to_render = False
-default patch32applied = False
 default scene_caption = ""
 default exitHookCalled = False
 default scene_name = "none"
 default api_scene_name = "none"
 default engine2_inited_flag = False
-#default sprites_hover_dummy_screen_flag = False
 
 label show_scene:
     $ exitHookCalled = False
@@ -18,19 +16,10 @@ label show_scene:
     if scene_refresh_flag == False:
         jump show_scene_loop
     $ hide_screens_for_scene()
-#    if dialogue_active_flag == True:
-#        $ renpy.show_screen("dialogue_down_arrow")
-#        $ renpy.pause()
-#        $ renpy.hide_screen("dialogue_down_arrow")
 
 label show_scene_now:
     if define_version_current != define_version:
         call define_autorun() from _call_define_autorun
-#    $ config.has_autosave = True
-#    $ print "pause_enter"
-#    $ print pause_enter
-#    $ print "pause_exit"
-#    $ print pause_exit
     if rain != True or sceneIsStreet != True:
         hide screen Rain
 
@@ -44,27 +33,19 @@ label show_scene_now:
     $ empty1 = bitchmeterValue
     hide screen sprites_hover_dummy_screen
 
-#    window hide
-#    window show
     $ config.keymap["hide_windows"] = []
-#    config.keymap["hide_windows"] = ["mouseup_3", "mouseup_2", "h"]
 
     if scene_transition != False and gui.scenes_transitions == True:
-#        $ _dismiss_pause = False
         if scene_transition == "Fade" or scene_transition == "Fade_fast":
             if refreshed_scene_name == scene_name and scene_transition != "Fade_fast":
                 scene black_screen
                 with Dissolve(0.2)
-#                $ renpy.pause(0.2, hard=True)
             else:
                 scene black_screen
                 with Dissolve(0.1)
-    #            $ renpy.pause(0.2, hard=True)
         if scene_transition == "Fade_long":
             scene black_screen
             with Dissolve(0.7)
-#            $ renpy.pause(0.7, hard=True)
-#        $ _dismiss_pause = True
 
     $ renpy.scene()
     $ scene_image_file = get_image_filename(parse_str(scene_image), True)
@@ -87,7 +68,6 @@ label show_scene_now:
     $ scene_data = process_character_info_buttons(scene_data) #добавляем кнопки info для персонажей со свойствами
     show screen screen_sprites(scene_data)
     if parse_transition_flag == True:
-#        $ _dismiss_pause = False
         if scene_transition != False and gui.scenes_transitions == True:
             if scene_transition == "Fade":
                 if refreshed_scene_name == scene_name:
@@ -104,7 +84,6 @@ label show_scene_now:
                 with Dissolve(0.7)
             if scene_transition == "Dissolve_10":
                 with Dissolve(1.0)
-#        $ _dismiss_pause = True
     $ scene_transition = False
 
     if refreshed_scene_name != scene_name:
@@ -121,7 +100,6 @@ label show_scene_now:
         $ del scenes_data["autorun"][scene_name]["scene"]
         show screen sprites_hover_dummy_screen()
         call expression autorunFunc from _call_expression_6
-#        hide screen sprites_hover_dummy_screen
         $ scene_refresh_flag = True
         jump show_scene
 
@@ -162,7 +140,6 @@ label show_scene_loop:
 
 
 label show_scene_loop2:
-#    pause
     $ pause_exit += 1
     if show_scene_loop_flag == False:
         show screen screen_sprites(scene_data)
@@ -189,7 +166,6 @@ label change_scene(new_scene_name, in_transition_name="Fade", in_sound_name="hig
     $ scene_transition = in_transition_name
     $ scene_sound = in_sound_name
     $ scene_refresh_flag = True
-#    $ scene_label = get_scene_label(scene_label)
     $ lastSceneName = scene_name
     $ scene_name = new_scene_name
     $ refreshed_scene_name = False
@@ -201,7 +177,6 @@ label change_scene(new_scene_name, in_transition_name="Fade", in_sound_name="hig
         $ sceneSpriteSurfacesCacheIdle = {}
         $ sceneSpriteSurfacesCache = {}
     call process_hooks("before_open", scene_name) from _call_process_hooks_15 #хук до инициализации сцены
-#    $ renpy.free_memory()
     call expression scene_label from _call_expression_7
     call process_hooks("open", scene_name) from _call_process_hooks_16 #хук сразу после инициализации сцены
     return
@@ -241,13 +216,6 @@ label remove_dialogue():
 
 
 label after_load():
-#    $ renpy.free_memory()
-#    if episode2part > 1:
-#        img black_screen
-#        help "Пожалуйста, используйте для загрузки более новую версию игры!"
-#        $ MainMenu(confirm=False)()
-#        return
-
     $ list_files_active = True
     $ refresh_list_files ()
     if renpy.get_screen("show_image_screen") or renpy.get_screen("screen_sprites"):
@@ -258,56 +226,11 @@ label after_load():
         if renpy.get_screen("show_image_screen"):
             show screen show_image_screen(scene_image_file)
         hide screen screen_sprites
-#        if dialogue_active_flag == True or renpy.get_screen("dialogue_image_black_overlay") or renpy.get_screen("show_image_screen"):
-#        if dialogue_active_flag == True or renpy.get_screen("dialogue_image_black_overlay") or renpy.get_screen("show_image_screen"):
-#            pass
-#        else:
-#            show screen show_image_screen(scene_image_file)
         show screen screen_sprites(scene_data)
     $ after_load_ready_to_render = True
 
-#    $ refresh_list_files_forced()
-    if episode < 2:
-        help "Пожалуйста, используйте сохранения первого эпизода в Episode 2 part1!"
-        $ MainMenu(confirm=False)()
-#        call start_saved_game() from _call_start_saved_game
-        return
     $ imagesSizesCache = {}
     if episode2part2_initialized == False:
         jump part2_questions_init_loadgame
-    call process_afterload_part2() from _rcall_process_afterload_part2
-    return
-
-    if patch32applied == False:
-        $ remove_hook("map_teleport", "hook_basement_bedroom_check_exit_cloth_map", scene="global")
-        $ add_hook("map_teleport", "hook_basement_bedroom_check_exit_cloth_map", scene="global", priority=1000)
-        $ patch32applied = True
-    if game_version1_screen_ready_to_render == False:
-        $ game_version1_screen_ready_to_render = True
-        call refresh_scene() from _call_refresh_scene_2
-    if ep23_quests_initialized == False:
-        call ep23_Quests_init() from _call_ep23_Quests_init
-    if ep24_quests_initialized == False:
-        call ep24_quests_init() from _call_ep24_quests_init
-    call ep24_quests_fix() from _call_ep24_quests_fix
-    if ep26_quests_initialized == False:
-        call ep26_quests1() from _call_ep26_quests1
-    if ep27_quests_initialized == False:
-        call ep27_quests1() from _call_ep27_quests1
-    call process_afterload() from _call_process_afterload
-
-    $ imagesSizesCache = {}
-    call run_after_load() from _call_run_after_load
-    return
-    $ scene_refresh_flag = True #???
-    $ show_scene_loop_flag = True
-    jump show_scene
-#    return
-
-label call_save():
-    if interface_blocked_flag == True:
-        return
-    if renpy.get_screen("say") != None or renpy.get_screen("choice") != None:
-        return
-    call screen save()
+    call process_afterload()
     return

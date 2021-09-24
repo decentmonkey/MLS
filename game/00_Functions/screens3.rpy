@@ -6,9 +6,6 @@ screen questhelp_screen():
     $ x1 = int(177 * gui.resolution.koeff)
     $ y1 = int(107 * gui.resolution.koeff)
 
-#    $ rowOffset = getRes(22) #244x137
-
-#    layer "master"
     zorder 110
     modal True
     button:
@@ -33,17 +30,13 @@ screen questhelp_screen():
             ]
         if questHelpActivated == True:
             viewport id "questhelp_viewport_categories":
-    #            xpos getRes(377+10)
-    #            ypos getRes(107+10)
                 xpos 0
                 ypos getRes(85)
                 draggable True
-    #            scrollbars "vertical"
                 xmaximum getRes(381-15)
                 ymaximum getRes(852-85)
                 mousewheel True
                 pagekeys True
-    #            child_size (getRes(852-85), viewportHeight)
 
                 frame:
                     background None
@@ -52,7 +45,6 @@ screen questhelp_screen():
                         # active categories (bold)
                         for category in reversed(questHelpCategoriesHistory):
                             if questHelpDataCategoriesBold.has_key(category):
-    #                    for category in questHelpDataCategoriesBold:
                                 python:
                                     categoryStyle = False
                                     if questHelpDataLastCategoryMemory.has_key(category) == True and questHelpDataCategoriesBold[category] == True:
@@ -65,7 +57,6 @@ screen questhelp_screen():
                                             categoryStyle = "questhelp_category_active"
                                         categoryStyle = categoryStyle + "_bold"
                                         if questHelpCurrentCategory != category:
-    #                                        categoryStyle = categoryStyle + "_bold"
                                             pass
                                         else:
                                             categoryStyle = categoryStyle + "_selected"
@@ -80,8 +71,6 @@ screen questhelp_screen():
                                         ]
 
                         # not-bold inactive categories
-    #                    for category in reversed(questHelpDataLastCategoryMemory):
-    #                    for category in reversed(list(enumerate(questHelpDataLastCategoryMemory))):
                         for category in questHelpCategoriesHistoryStatic:
                             if questHelpDataLastCategoryMemory.has_key(category):
                                 python:
@@ -140,8 +129,6 @@ screen questhelp_screen():
                     size (getRes(381-15), getRes(52))
 
             viewport id "questhelp_viewport_events":
-    #            xpos getRes(377+10)
-    #            ypos getRes(107+10)
                 xpos getRes(381)
                 ypos getRes(85)
                 draggable True
@@ -150,9 +137,6 @@ screen questhelp_screen():
                 ymaximum getRes(852-85)
                 mousewheel True
                 pagekeys True
-    #            unscrollable "hide"
-
-    #            child_size (getRes(852-85), viewportHeight)
                 frame:
                     background None
                     padding (getRes(10), getRes(10))
@@ -171,9 +155,6 @@ screen questhelp_screen():
                             text descriptionText style "questhelp_category_description"
                             #рисуем разделитель
                             null height getRes(20)
-    #                        vbox:
-    #                            add "gui/frame6_delimeter.png"
-        #                            ysize 5
                             frame:
                                 left_margin getRes(20)
                                 xysize(getRes(617 - 15 - 60), 1)
@@ -184,7 +165,6 @@ screen questhelp_screen():
                             # выводим квесты
                             # Сначала жирные или активные
 
-    #                        for idx in range(0, len(questHelpData[questHelpCurrentCategory])):
                             for idx in range(len(questHelpData[questHelpCurrentCategory])-1, -1, -1):
                                 $ questData = questHelpData[questHelpCurrentCategory][idx]
                                 if questData[1] == 0 or (questHelpDataLastQuestsBold.has_key(questData[0]) == True and questHelpDataLastQuestsBold[questData[0]] == True): # если квест не жирный (не только что)
@@ -205,7 +185,6 @@ screen questhelp_screen():
                                             questStyle = questStyle + "_bold"
                                         if questData[0] == questHelpCurrentQuest:
                                             questStyle = questStyle + "_selected"
-    #                                    else:
                                     if questStyle != False:
                                         # выводим
                                         textbutton questTextPrefix + t__(questHelpDataQuests[questData[0]][1]) style questStyle:
@@ -252,32 +231,14 @@ screen questhelp_screen():
                 add "gui/frame6_overlay" + res.suffix + ".png"
 
 
-    #        vbar value YScrollValue("questhelp_viewport_events"):
-    #            xpos getRes(381 + 617 - 15)
-    #            ypos getRes(85)
-    #            xsize getRes(15)
-    #            ysize getRes(852-85)
-    #            ymaximum getRes(852-85)
-    #            unscrollable "hide"
-
-    #            top_bar "images/Icons/vertical_hover2_bar" + res.suffix + ".png"
-    #            bottom_bar "images/Icons/vertical_hover2_thumb" + res.suffix + ".png"
-    #            base_bar "images/Icons/vertical_hover2_bar" + res.suffix + ".png"
-    #            thumb "images/Icons/vertical_hover2_thumb" + res.suffix + ".png"
-    #                thumb_shadow img_name
-
             viewport id "questhelp_viewport_event_descriptions":
-    #            xpos getRes(377+10)
-    #            ypos getRes(107+10)
                 xpos getRes(381 + 617)
                 ypos getRes(85)
                 draggable True
-    #            scrollbars "vertical"
                 xmaximum getRes(617-15)
                 ymaximum getRes(852-85)
                 mousewheel True
                 pagekeys True
-    #            child_size (getRes(852-85), viewportHeight)
                 frame:
                     background None
                     padding (getRes(10), getRes(10))

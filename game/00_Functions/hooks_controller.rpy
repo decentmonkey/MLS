@@ -354,13 +354,13 @@ init python:
 
     def checkObjectOwnerVisible(obj_name, obj_data):
         global owner, scene_name
-        if (obj_data.has_key("owner") == False and owner == "Monica") or (obj_data.has_key("owner") == True and obj_data["owner"] == owner) or (obj_data.has_key("owners_visible_forced") and obj_data["owners_visible_forced"] == True):
+        if (obj_data.has_key("owner") == False and owner == "Bardie") or (obj_data.has_key("owner") == True and obj_data["owner"] == owner) or (obj_data.has_key("owners_visible_forced") and obj_data["owners_visible_forced"] == True):
             return True
         if scenes_data["hooks"].has_key(scene_name) == True and scenes_data["hooks"][scene_name].has_key(obj_name):
             hooks_list = scenes_data["hooks"][scene_name][obj_name]
             for hook_data in hooks_list:
                 if hook_data.has_key("owner") == False:
-                    if owner == "Monica":
+                    if owner == "Bardie":
                         return True
                 if hook_data.has_key("owner") == True and hook_data["owner"] == owner:
                     return True
@@ -395,7 +395,7 @@ label process_hooks(hook_obj_name, room_name = False, sprites_hover_dummy_screen
                 $ sprites_hover_dummy_screen_flag = False
             $ hooks_log[label_name] = hook_log_idx
             $ hook_log_idx += 1
-            if (hook_data.has_key("owner") == False and owner == "Monica") or (hook_data.has_key("owner") == True and hook_data["owner"] == owner) or noowners == True:
+            if (hook_data.has_key("owner") == False and owner == "Bardie") or (hook_data.has_key("owner") == True and hook_data["owner"] == owner) or noowners == True:
                 if hook_data.has_key("act") == False or (act in hook_data["act"]):
                     if hook_data.has_key("once") and hook_data["once"] == True:
                         $ remove_hook()
