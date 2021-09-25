@@ -595,7 +595,7 @@ label ep01_dialogues3_day2_family_6:
     image videov_Observe_Sister_Older_1_25 = Movie(play="video/v_Observe_Sister_Older_1_25.mkv", fps=25, loop=False)
     show videov_Observe_Sister_Older_1_25
     $ renpy.pause(0.5, hard=True)
-    pause 2.5
+    pause 5.5
     bardi_t "Это Оливия?! Ух ты! Да, ее действительно не узнать..."
     wclean
 

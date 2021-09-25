@@ -263,7 +263,7 @@ label ep01_dialogues3_day2_college_1:
                     image videov_Observe_Sister_younger_1_25 = Movie(play="video/v_Observe_Sister_younger_1_25.mkv", fps=25, loop=False)
                     show videov_Observe_Sister_younger_1_25
                     $ renpy.pause(0.5, hard=True)
-                    pause 2.5
+                    pause 3.5
                     bardi_t "Фигурка просто отпад!"
                     wclean
 
@@ -308,7 +308,7 @@ label ep01_dialogues3_day2_college_1:
                     image videov_Observe_Teacher8_1_25 = Movie(play="video/v_Observe_Teacher8_1_25.mkv", fps=25, loop=False)
                     show videov_Observe_Teacher8_1_25
                     $ renpy.pause(0.5, hard=True)
-                    pause 2.5
+                    pause 6.5
                     bardi_t "Хмм... А эта преподавательница ничего."
                     wclean
 
@@ -655,14 +655,13 @@ label ep01_dialogues3_day2_college_5:
             with diss
             pause 1.5
             scene black
-            image videov_Observe_Teacher2_principal_1_25 = Movie(play="video/v_Observe_Teacher2_principal_1_25.mkv", fps=25, loop=False)
+            image videov_Observe_Teacher2_principal_1_25 = Movie(play="video/v_Observe_Teacher2_principal_1_25.mkv", fps=25, loop=False, image="/images/Slides/img_900418.jpg")
             show videov_Observe_Teacher2_principal_1_25
             $ renpy.pause(0.5, hard=True)
-            pause 2.5
+            pause 4.5
+            img 900418
+            w
             bardi_t "Хмм... Профессорша неплохо смотрится сзади..."
-            wclean
-
-            imgf 900418
             bardi_t "Представляю ее затянутую в черный латекс..."
             sound2 vjuh3
             img 900419 hpunch
@@ -1642,7 +1641,7 @@ label ep01_dialogues3_day2_college_10:
                     image videov_Observe_Nice_girl_1_25 = Movie(play="video/v_Observe_Nice_girl_1_25.mkv", fps=25, loop=False)
                     show videov_Observe_Nice_girl_1_25
                     $ renpy.pause(0.5, hard=True)
-                    pause 2.5
+                    pause 5.5
                     bardi_t "Милая, скромная девочка Роуз... Стала очень симпатичной студенткой."
                     wclean
 
@@ -1806,7 +1805,7 @@ label ep01_dialogues3_day2_college_10:
             image videov_Observe_Teacher11_1_25 = Movie(play="video/v_Observe_Teacher11_1_25.mkv", fps=25, loop=False)
             show videov_Observe_Teacher11_1_25
             $ renpy.pause(0.5, hard=True)
-            pause 2.5
+            pause 3.5
             bardi_t "Уааау!!!"
             wclean
 
@@ -2025,6 +2024,7 @@ label ep01_dialogues3_day2_college_14:
     # стучит в дверь
     # на пороге появляется мать друга Шона - Рут, Ruth
     # она приветливо улыбается Барди
+#    label test_video:
     music Shining_Through
     sound2 snd_door_knock
     imgfl 900249
@@ -2040,18 +2040,18 @@ label ep01_dialogues3_day2_college_14:
     with diss
     pause 1.5
     scene black
-    image videov_Observe_Bardie_friend_mother_1_25 = Movie(play="video/v_Observe_Bardie_friend_mother_1_25.mkv", fps=25, loop=False)
+    image videov_Observe_Bardie_friend_mother_1_25 = Movie(play="video/v_Observe_Bardie_friend_mother_1_25.mkv", fps=25, loop=False, image="/images/Slides/img_900251.jpg")
     show videov_Observe_Bardie_friend_mother_1_25
     $ renpy.pause(0.5, hard=True)
-    pause 2.5
+    pause 5.5
+    img 900251
+    w
     bardi_t "Это Рут, мама Шона. Она совсем не изменилась с того времени, когда я ее видел последний раз."
-    wclean
+    bardie_friend_mother "Привет."
 
 
     # мини-анимация, камера медленно скользит по ее фигуре сверху-вниз
     music Shining_Through
-    imgd 900251
-    bardie_friend_mother "Привет."
     bardi "Привет... Эээ..."
     menu:
         "Шон дома?":

@@ -386,15 +386,15 @@ label ep01_dialogues1_start_1b:
     pause 1.5
     scene black
     sound v_Mark_Sister_Older_Sex1_25
-    image videov_Mark_Sister_Older_Sex1_25 = Movie(play="video/v_Mark_Sister_Older_Sex1_25.mkv", fps=25, loop=False)
+    image videov_Mark_Sister_Older_Sex1_25 = Movie(play="video/v_Mark_Sister_Older_Sex1_25.mkv", fps=25, loop=False, image="/images/Slides/v_Mark_Sister_Older_Sex1_1_end.jpg")
     show videov_Mark_Sister_Older_Sex1_25
     $ renpy.pause(0.5, hard=True)
-    pause 2.5
-    wclean
-
+    pause 5.5
+    img v_Mark_Sister_Older_Sex1_1_end
+    w
+    mark "Ооо да, детка!"
 
     imgf 910266
-    mark "Ооо да, детка!"
     w
     sound2 ahhh6
     imgd 910267
@@ -779,7 +779,7 @@ label ep01_dialogues1_start_2:
     image videoINTRO_Animation2_25 = Movie(play="video/INTRO_Animation2_25.mkv", fps=25, loop=False)
     show videoINTRO_Animation2_25
     $ renpy.pause(0.5, hard=True)
-    pause 3.5
+    pause 13.5
 #    wclean
 
     # INTRO_Animation3_25
@@ -791,7 +791,7 @@ label ep01_dialogues1_start_2:
     image videoINTRO_Animation3_25 = Movie(play="video/INTRO_Animation3_25.mkv", fps=25, loop=False)
     show videoINTRO_Animation3_25
     $ renpy.pause(0.5, hard=True)
-    pause 2.5
+    pause 3.5
     wclean
 
     return
