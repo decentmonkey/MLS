@@ -1051,49 +1051,29 @@ screen hud_screen(hud_presets):
         vbox:
             hbox:
                 spacing gui.resolution.hud_screen.spacing2
-                #время дня
-                if hud_presets["display_daytime"] == True:
-                    if day_time == "day":
-                        if dialogue_active_flag == True or sceneIsStreet != True or hudDaySkipToEveningEnabled == False:
-                            imagebutton:
-                                yoffset -2
-                                xanchor 2
-                                idle "/icons/daytime_day" + res.suffix + ".png"
-                                hover "/icons/daytime_day_hover_disabled" + res.suffix + ".png"
-                                action [
-                                    Play("sound", "Sounds/click_denied.ogg")
-                                ]
-                        else:
-                            imagebutton:
-                                yoffset -2
-                                xanchor 2
-                                idle "/icons/daytime_day" + res.suffix + ".png"
-                                hover "/icons/daytime_day_hover" + res.suffix + ".png"
-                                action [
-                                    Return(["time_management_street_wait_until_evening"])
-                                ]
-#                        add "icons/daytime_day" + res.suffix + ".png":
-#                            yoffset -2
-#                            xanchor 2
-                    if day_time == "evening":
-                        if dialogue_active_flag == True or sceneIsStreet != True or hudDaySkipToEveningEnabled == False or map_enabled != True or owner != "Bardie":
-                            imagebutton:
-                                yoffset -2
-                                xanchor 5
-                                idle "/icons/daytime_evening" + res.suffix + ".png"
-                                hover "/icons/daytime_evening" + res.suffix + ".png"
-                                action [
-                                    Play("sound", "Sounds/click_denied.ogg")
-                                ]
-                        else:
-                            imagebutton:
-                                yoffset -2
-                                xanchor 5
-                                idle "/icons/daytime_evening" + res.suffix + ".png"
-                                hover "/icons/daytime_evening_hover" + res.suffix + ".png"
-                                action [
-                                    Return(["time_management_street_fast_sleep"])
-                                ]
+                #кнопка домой
+                null:
+                    width 7
+                if homeButtonEnabled == True:
+                    imagebutton:
+                        yoffset -2
+                        xanchor 2
+                        yalign -1
+                        idle "/icons/icon_home" + res.suffix + ".png"
+                        hover "/icons/icon_home_hover" + res.suffix + ".png"
+                        action [
+                            Play("sound", "Sounds/click_denied.ogg")
+                        ]
+                else:
+                    imagebutton:
+                        yoffset -2
+                        xanchor 2
+                        yalign -1
+                        idle "/icons/icon_home_disabled" + res.suffix + ".png"
+                        hover "/icons/icon_home_disabled" + res.suffix + ".png"
+                        action [
+                            Play("sound", "Sounds/click_denied.ogg")
+                        ]
 
                 if hud_presets["display_calendar"] == True:
                     null:
@@ -1123,7 +1103,53 @@ screen hud_screen(hud_presets):
                                 size gui.resolution.hud_screen.font1_size
                                 outlines [(1, "#ffffff", -0.5,0.5), (1, "#e0e0e0", 0.5, -0.5)]
 
-                if hud_presets["display_money"] == True:
+                #время дня
+                if hud_presets["display_daytime"] == True:
+                    null:
+                        width 0
+                    if day_time == "morning":
+                        add "icons/icon_morning" + res.suffix + ".png":
+                            yoffset -2
+                            xanchor 2
+                        text t__("УТРО"):
+                            color "#ffffff"
+                            xalign 0.0
+                            yalign 0.5
+                            yoffset gui.resolution.hud_screen.yoffset3
+                            outlines [(3, "#000000", 0, 0)]
+                    if day_time == "day":
+                        add "icons/icon_day" + res.suffix + ".png":
+                            yoffset -2
+                            xanchor 2
+                        text t__("ДЕНЬ"):
+                            color "#ffffff"
+                            xalign 0.0
+                            yalign 0.5
+                            yoffset gui.resolution.hud_screen.yoffset3
+                            outlines [(3, "#000000", 0, 0)]
+                    if day_time == "evening":
+                        add "icons/icon_evening" + res.suffix + ".png":
+                            yoffset -2
+                            xanchor 2
+                        text t__("ВЕЧЕР"):
+                            color "#ffffff"
+                            xalign 0.0
+                            yalign 0.5
+                            yoffset gui.resolution.hud_screen.yoffset3
+                            outlines [(3, "#000000", 0, 0)]
+                    if day_time == "night":
+                        add "icons/icon_night" + res.suffix + ".png":
+                            yoffset -2
+                            xanchor 2
+                        text t__("НОЧЬ"):
+                            color "#ffffff"
+                            xalign 0.0
+                            yalign 0.5
+                            yoffset gui.resolution.hud_screen.yoffset3
+                            outlines [(3, "#000000", 0, 0)]
+
+
+                if hud_presets["display_money"] == True and moneyDisplayEnabled == True:
                     if gui.flag720 != True:
                         null:
                             width 0
@@ -1199,14 +1225,14 @@ screen hud_screen(hud_presets):
                                     font gui.text_font_chinese
                                     size gui.resolution.hud_screen.font2_size
                                     outlines [(2, "#000000", 0, 0)]
-                    null:
-                        height gui.resolution.hud_screen.height1
-                    imagebutton:
-                        idle "icons/achievement_icon" + res.suffix + ".png"
-                        hover "icons/achievement_icon_hover" + res.suffix + ".png"
-                        action [
-                            Return(["show_achievements"])
-                        ]
+#                    null:
+#                        height gui.resolution.hud_screen.height1
+#                    imagebutton:
+#                        idle "icons/achievement_icon" + res.suffix + ".png"
+#                        hover "icons/achievement_icon_hover" + res.suffix + ".png"
+#                        action [
+#                            Return(["show_achievements"])
+#                        ]
                     if (hud_presets.has_key("display_questlog") == False or hud_presets["display_questlog"] == True) and questLogGlobalEnabled == True:
                         null:
                             height gui.resolution.hud_screen.height1
@@ -1275,22 +1301,19 @@ screen hud_screen(hud_presets):
                 if hud_presets["display_scene_map"] == True:
                     if map_enabled == True and mapStreetCheckShowing == True and map_disabled_forced == False:
                         imagebutton:
-                            xoffset 7
-                            yoffset -7
-                            idle "icons/map_icon2_idle" + res.suffix + ".png"
-                            hover "icons/map_icon2_hover" + res.suffix + ".png"
-#                           at mega_test_image_anim
-#                           hover "mega_test_image"
-#                           at map_icon_button_transform
+                            xoffset 4
+                            yoffset 0
+                            idle "icons/icon_map" + res.suffix + ".png"
+                            hover "icons/icon_map_hover" + res.suffix + ".png"
                             action [
                                 Return(["map_show"])
-#                                Notify("Map")
                             ]
 
                     else:
-                        add "icons/map_icon2_disabled" + res.suffix + ".png":
+                        add "icons/icon_map_disabled" + res.suffix + ".png":
                             xoffset 7
                             yoffset -7
+
 
     fixed:
 #            size (200, 327)
@@ -1299,94 +1322,24 @@ screen hud_screen(hud_presets):
 #                pos gui.resoultion.hud_screen.face_hud_image_background_pos
             add "/icons/" + faceHudImage + res.suffix + ".png":
                 pos gui.resolution.hud_screen.face_hud_image_pos
-        if hud_presets.has_key("display_bitchmeter") and hud_presets["display_bitchmeter"] == True:
-#            $ bitchmeter_description = get_bitchmeter_description() + " (" + str(bitchmeterValue) + ")"
-            $ bitchmeter_description = "test"
-            if _preferences.language != "chinese":
-                text t__(bitchmeter_description):
-                    xpos config.screen_width - gui.resolution.hud_screen.bitchmeter_desc_x_pos
-                    ypos gui.resolution.hud_screen.bitchmeter_desc_y_pos
-                    xanchor 0.5
-                    yanchor 0.5
-                    xalign 0.5
-                    yalign 0.5
-    #                    color c_blue
-    #                    color "#d3ea5f" #white green
-    #                    color "#e0e85c"
-                    color "#c8da2b"
-    #                    color "#6383c2"
-    #                    font "fonts/arial.ttf"
-                    font "fonts/linotte-semibold.otf"
-    #                        font "fonts/ubuntu-condensed.ttf"
-    #                        font "fonts/tahoma.ttf"
-                    size gui.resolution.hud_screen.bitchmeter_desc_font_size
-                    outlines [(2, "#808080", -1, 1), (2, "#404040", 0, 0)]
-                    at bitchmeter_style_transform
-            else:
-                text t__(bitchmeter_description):
-                    xpos config.screen_width - gui.resolution.hud_screen.bitchmeter_desc_x_pos
-                    ypos gui.resolution.hud_screen.bitchmeter_desc_y_pos
-                    xanchor 0.5
-                    yanchor 0.5
-                    xalign 0.5
-                    yalign 0.5
-                    color "#c8da2b"
-                    font gui.text_font_chinese
-                    size gui.resolution.hud_screen.bitchmeter_desc_font_size
-                    outlines [(2, "#808080", -1, 1), (2, "#404040", 0, 0)]
-                    at bitchmeter_style_transform
 
-            $ corruption_description = "Corruption: " + str(corruption) + ""
-            text t__(corruption_description):
-                xpos config.screen_width - gui.resolution.hud_screen.corruption_desc_x_pos
-                ypos gui.resolution.hud_screen.bitchmeter_desc_y_pos
-                xanchor 0.5
-                yanchor 0.5
-                xalign 0.5
-                yalign 0.5
-#                    color c_blue
-#                    color "#d3ea5f" #white green
-#                    color "#e0e85c"
-                color c_pink
-#                    color "#6383c2"
-#                    font "fonts/arial.ttf"
-                font "fonts/linotte-semibold.otf"
-#                        font "fonts/ubuntu-condensed.ttf"
-#                        font "fonts/tahoma.ttf"
-                size gui.resolution.hud_screen.bitchmeter_desc_font_size
-                outlines [(2, "#000000", 1, -1), (2, "#404040", 0, 0)]
-                at corruption_style_transform
+    if phoneDisplayEnabled == True:
+        if phoneEnabled == True:
+            imagebutton:
+                pos (1815, 95)
+                xoffset 0
+                yoffset 0
+                idle "icons/icon_phone" + res.suffix + ".png"
+                hover "icons/icon_phone_hover" + res.suffix + ".png"
+                action [
+                    Return(["phone_show"])
+                ]
+        else:
+            add "icons/icon_phone_disabled" + res.suffix + ".png":
+                xoffset 0
+                yoffset 0
 
-            $ barValue = (100.0 / maxBitchness * bitchmeterValue) / 100.0
-            bar:
-                xpos config.screen_width - gui.resolution.hud_screen.bitchmeter_x_pos
-                ypos gui.resolution.hud_screen.bitchmeter_y_pos
-#                value (100.0 / maxBitchness * bitchmeterValue) / 100.0
-                value AnimatedValue(barValue, 1.0, 1.0, barValue)
-                xoffset 5
-                xysize(gui.resolution.hud_screen.bitchmeter_x_size,gui.resolution.hud_screen.bitchmeter_y_size)
-                bar_vertical True
-                top_bar "/icons/bar/bar_empty" + res.suffix + ".png"
-                bottom_bar "/icons/bar/bar_full" + res.suffix + ".png"
-                thumb "/icons/bar/bar_thumb" + res.suffix + ".png"
-                bottom_gutter gui.resolution.hud_screen.bitchmeter_bottom_gutter
-                top_gutter gui.resolution.hud_screen.bitchmeter_top_gutter
-                thumb_offset gui.resolution.hud_screen.bitchmeter_thumb_offset
-            $ barValue = (100.0 / corruptionMax * corruption) / 100.0
-            bar:
-                xpos config.screen_width - gui.resolution.hud_screen.corruption_x_pos
-                ypos gui.resolution.hud_screen.bitchmeter_y_pos
-#                value float(100.0 / float(corruptionMax) * float(corruption)) / 100.0
-                value AnimatedValue(barValue, 1.0, 1.0, barValue)
-                xoffset 5
-                xysize(gui.resolution.hud_screen.bitchmeter_x_size,gui.resolution.hud_screen.bitchmeter_y_size)
-                bar_vertical True
-                top_bar "/icons/bar/bar3_empty" + res.suffix + ".png"
-                bottom_bar "/icons/bar/bar3_full" + res.suffix + ".png"
-                thumb "/icons/bar/bar3_thumb" + res.suffix + ".png"
-                bottom_gutter gui.resolution.hud_screen.bitchmeter_bottom_gutter
-                top_gutter gui.resolution.hud_screen.bitchmeter_top_gutter
-                thumb_offset gui.resolution.hud_screen.bitchmeter_thumb_offset
+
 
 screen questlog_screen(inText):
     zorder 60

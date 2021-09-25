@@ -39,6 +39,12 @@ default act = ""
 
 default questLogGlobalEnabled = False
 
+default homeButtonEnabled = True
+default moneyDisplayEnabled = False
+default phoneDisplayEnabled = True
+default phoneEnabled = True
+
+
 #temp vars
 default maxBitchness = 1000
 
