@@ -1,82 +1,46 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Image' u'/images/Slides/910266.jpg'>:
-  File "game/Quests/MLS/EP1_01/ep01_dialogues1_start.rpy", line 395, in script
-    mark "Ооо да, детка!"
-  File "game/00_Functions/01_init_python.rpy", line 241, in saywrapper_execute
-    renpy.say(who, what)
-  File "renpy/common/00library.rpy", line 268, in say
-    who(what, interact=interact, *args, **kwargs)
-IOError: Couldn't find file 'images/Slides/910266.jpg'.
+While running game code:
+  File "game/00_Functions/scene_controller.rpy", line 141, in script call
+    from _rcall_bed_basement_fast_sleep
+  File "game/scripts/start.rpy", line 187, in script call
+    m "here"
+  File "game/00_Functions/06_init_python_user.rpy", line 67, in script call
+    call expression "changeDayTime_" + day_time + "_hooks"
+  File "game/00_Functions/06_init_python_user.rpy", line 152, in script
+    $ remove_hook(label="evening_time_temp")
+  File "game/00_Functions/06_init_python_user.rpy", line 152, in <module>
+    $ remove_hook(label="evening_time_temp")
+  File "game/00_Functions/hooks_controller.rpy", line 120, in remove_hook
+    if check_filter(filter_arr, hooks_list[idx]) == True:
+  File "game/00_Functions/filters.rpy", line 4, in check_filter
+    json_list_type = type(scenes_data["misc"]["list_type"])
+KeyError: u'misc'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/Quests/MLS/EP1_01/ep01_dialogues1_start.rpy", line 395, in script
-    mark "Ооо да, детка!"
-  File "renpy/ast.py", line 1969, in execute
-    self.call("execute")
-  File "renpy/ast.py", line 1957, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "renpy/statements.py", line 278, in call
-    return method(parsed, *args, **kwargs)
-  File "game/00_Functions/01_init_python.rpy", line 241, in saywrapper_execute
-    renpy.say(who, what)
-  File "renpy/exports.py", line 1382, in say
-    renpy.store.say(who, what, *args, **kwargs)
-  File "renpy/common/00library.rpy", line 268, in say
-    who(what, interact=interact, *args, **kwargs)
-  File "renpy/character.py", line 1179, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "renpy/character.py", line 851, in do_display
-    **display_args)
-  File "renpy/character.py", line 601, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3007, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3517, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "renpy/display/core.py", line 2377, in draw_screen
-    renpy.config.screen_height,
-  File "render.pyx", line 492, in renpy.display.render.render_screen
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 751, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 751, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 751, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/transform.py", line 927, in render
-    return transform_render(self, width, height, st, at)
-  File "accelerator.pyx", line 116, in renpy.display.accelerator.transform_render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/image.py", line 501, in render
-    return wrap_render(self.target, width, height, st, at)
-  File "renpy/display/image.py", line 307, in wrap_render
-    rend = render(child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/video.py", line 395, in render
-    surf = renpy.display.render.render(self.image, width, height, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/im.py", line 607, in render
-    return cache.get(self, render=True)
-  File "renpy/display/im.py", line 271, in get
-    surf = image.load()
-  File "renpy/display/im.py", line 676, in load
-    raise e
-IOError: Couldn't find file 'images/Slides/910266.jpg'.
+  File "game/00_Functions/scene_controller.rpy", line 141, in script call
+    from _rcall_bed_basement_fast_sleep
+  File "game/scripts/start.rpy", line 187, in script call
+    m "here"
+  File "game/00_Functions/06_init_python_user.rpy", line 67, in script call
+    call expression "changeDayTime_" + day_time + "_hooks"
+  File "game/00_Functions/06_init_python_user.rpy", line 152, in script
+    $ remove_hook(label="evening_time_temp")
+  File "renpy/ast.py", line 922, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2218, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/00_Functions/06_init_python_user.rpy", line 152, in <module>
+    $ remove_hook(label="evening_time_temp")
+  File "game/00_Functions/hooks_controller.rpy", line 120, in remove_hook
+    if check_filter(filter_arr, hooks_list[idx]) == True:
+  File "game/00_Functions/filters.rpy", line 4, in check_filter
+    json_list_type = type(scenes_data["misc"]["list_type"])
+KeyError: u'misc'
 
 Windows-10-10.0.19041
-Ren'Py 7.4.2.1292
+Ren'Py 7.4.4.1439
  EP3-v4-Extra
-Sat Sep 25 15:46:16 2021
+Sat Sep 25 18:06:06 2021

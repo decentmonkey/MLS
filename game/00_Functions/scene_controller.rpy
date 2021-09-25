@@ -86,7 +86,7 @@ label show_scene_now:
                 with Dissolve(1.0)
     $ scene_transition = False
 
-    if refreshed_scene_name != scene_name:
+    if refreshed_scene_name != scene_name and lastSceneName != "map":
         $ refreshed_scene_name = scene_name
         call process_hooks("enter_scene", "global") from _rcall_process_hooks_51
         if _return != False:
@@ -137,6 +137,8 @@ label show_scene_loop:
             call show_achievements() from _rcall_sprites_action11
         if interact_data[0] == "time_management_street_fast_sleep":
             call bed_basement_fast_sleep() from _rcall_bed_basement_fast_sleep
+        if interact_data[0] == "phone_show":
+            call test1()
 
 
 label show_scene_loop2:
@@ -154,7 +156,8 @@ label change_scene(new_scene_name, in_transition_name="Fade", in_sound_name="hig
     $ target_scene_parent = scene_get_parent(target_scene_name)
     $ _return = None
     if exitHookCalled == False:
-        call process_hooks("exit_scene", scene_name) from _call_process_hooks_14 #хук выхода со сцены
+        if new_scene_name != "map":
+            call process_hooks("exit_scene", scene_name) from _call_process_hooks_14 #хук выхода со сцены
         $ exitHookCalled = False
     if _return == False: #Если False, то прерываем смену сцены
         return
@@ -176,9 +179,11 @@ label change_scene(new_scene_name, in_transition_name="Fade", in_sound_name="hig
     if sceneSpriteSurfacesCacheSceneName != scene_name:
         $ sceneSpriteSurfacesCacheIdle = {}
         $ sceneSpriteSurfacesCache = {}
-    call process_hooks("before_open", scene_name) from _call_process_hooks_15 #хук до инициализации сцены
+    if lastSceneName != "map":
+        call process_hooks("before_open", scene_name) from _call_process_hooks_15 #хук до инициализации сцены
     call expression scene_label from _call_expression_7
-    call process_hooks("open", scene_name) from _call_process_hooks_16 #хук сразу после инициализации сцены
+    if lastSceneName != "map":
+        call process_hooks("open", scene_name) from _call_process_hooks_16 #хук сразу после инициализации сцены
     return
 
 label refresh_scene(fade_param = False):

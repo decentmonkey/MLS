@@ -15,6 +15,7 @@ default currentMusic3 = False
 default storedMusic = []
 default storedMusicPriority = []
 default day_time = "day"
+default day_time_idx = 1
 default day = 0
 default week_day = 1
 default owner = "Bardie"
@@ -43,6 +44,7 @@ default homeButtonEnabled = True
 default moneyDisplayEnabled = False
 default phoneDisplayEnabled = True
 default phoneEnabled = True
+default phoneNotifications = []
 
 
 #temp vars
@@ -138,7 +140,6 @@ label start: #for blink here
     if week_day == 0:
         $ week_day = 7
 
-    $ day_time = "evening"
     $ day_suffix = ""
     $ money = 0.0
 
@@ -163,22 +164,53 @@ label start: #for blink here
     $ scene_sound = False
     $ scene_transition = "Fade_long"
 
-    $ changeDayTime("evening")
+    call changeDayTime("evening")
 
     call change_scene("house_street") from _rcall_change_scene_220
     call process_change_map_location("HOUSE") from _rcall_process_change_map_location_10
 
     $ questHelpActivated = True
     call questHelp_init() from _rcall_questHelp_init_2
+
+    $ add_hook("change_time_morning", "test1_morning", scene="global")
+    $ add_hook("change_time_day", "test1_day", scene="global")
+    $ add_hook("change_time_evening", "test1_evening", scene="global")
+    $ add_hook("change_time_night", "test1_night", scene="global")
+
+    $ add_hook("exit_scene", "test1_exit", scene="house_street")
+    $ add_hook("enter_scene", "test1_enter", scene="house_street")
+
     jump show_scene
 
 
 label empty_label:
     return
 
+label test1:
+    m "here"
+    call changeDayTime("night")
+    call refresh_scene_fade()
+    return
 
+label test1_morning:
+    m "morning hooks!"
+    return
+label test1_day:
+    m "day hooks!"
+    return
+label test1_evening:
+    m "evening hooks!"
+    return
+label test1_night:
+    m "night hooks!"
+    return
 
-
+label test1_exit:
+    m "exit scene!"
+    return
+label test1_enter:
+    m "enter scene!"
+    return
 
 
 

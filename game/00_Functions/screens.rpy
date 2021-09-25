@@ -1329,8 +1329,12 @@ screen hud_screen(hud_presets):
                 pos (1815, 95)
                 xoffset 0
                 yoffset 0
-                idle "icons/icon_phone" + res.suffix + ".png"
-                hover "icons/icon_phone_hover" + res.suffix + ".png"
+                if len(phoneNotifications) == 0:
+                    idle "icons/icon_phone" + res.suffix + ".png"
+                    hover "icons/icon_phone_hover" + res.suffix + ".png"
+                else:
+                    idle "icons/icon_phone_new" + res.suffix + ".png"
+                    hover "icons/icon_phone_new_hover" + res.suffix + ".png"
                 action [
                     Return(["phone_show"])
                 ]
