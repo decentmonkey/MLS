@@ -90,15 +90,6 @@ init python:
             renpy.hide_screen("notify")
         return
 
-    def notif_monica():
-        global monicaBitch
-        if monicaBitch:
-            notif(t_("Моника стерва"))
-        else:
-            notif(t_("Моника приличная"))
-
-        return
-
     def rand(from_int, to_int):
         return renpy.random.randint(from_int,to_int)
 
