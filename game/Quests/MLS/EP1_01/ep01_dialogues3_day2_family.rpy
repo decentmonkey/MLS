@@ -13,6 +13,11 @@ default mlsBardiDay2Family3 = 0 # Барди видел голую Синтию 
 #call ep01_dialogues3_day2_family_7() # ночь, Барди ложится спать (подглядывание за Оливией + мечты)
 #call ep01_dialogues3_day2_family_8() # клик на приложение Инсты в телефоне Барди
 
+define v_Bardie_Sister_Older_Blowjob1_sound_name = "v_Monica_PunksGB_Blowjob1"
+define v_Nice_Girl_Blowjob1_25_sound_name = "v_Monica_PunksGB_Blowjob1"
+define v_Nice_Girl_Blowjob2_25_sound_name = "v_Monica_PunksGB_Blowjob1"
+define v_Teacher1_Titjob1_25_sound_name = "v_Monica_PunksGB_Blowjob1"
+define v_Teacher11_Blowjob1_25_sound_name = "v_Monica_PunksGB_Blowjob1"
 
 ## утром, ДО КОЛЛЕДЖА ##
 
@@ -579,12 +584,26 @@ label ep01_dialogues3_day2_family_6:
     w
     music The_Heat
     imgd 900133
+    w
+
+    # video
+    # v_Observe_Sister_Older_1_25
+    img black_screen
+    with diss
+    pause 1.5
+    scene black
+    image videov_Observe_Sister_Older_1_25 = Movie(play="video/v_Observe_Sister_Older_1_25.mkv", fps=25, loop=False)
+    show videov_Observe_Sister_Older_1_25
+    $ renpy.pause(0.5, hard=True)
+    pause 2.5
     bardi_t "Это Оливия?! Ух ты! Да, ее действительно не узнать..."
+    wclean
+
     # мини-анимация, камера медленно скользит по ее фигуре сверху-вниз
+    imgf 900134
     bardi_t "Выглядит она просто отпадно!" ##->#####inc
     #####inc bardi_t "Выглядит сестра просто отпадно!"
     bardi_t "Надо попытаться поговорить с ней..."
-    imgf 900134
     bardi "Отлично выглядишь!"
     # Оливия отходит от двери своей спальни и насмешливо обращается к Барди
     music Step_By_Step
@@ -855,9 +874,32 @@ label ep01_dialogues3_day2_family_7:
                     w
                     sound chpok8
                     img 900178 hpunch
+                    w
+
+                    # video
+                    # v_Bardie_Sister_Older_Blowjob1
+                    $ localSoundVolume = 1.0
+                    $ localSoundName = v_Bardie_Sister_Older_Blowjob1_sound_name
+                    img black_screen
+                    with diss
+                    stop music2
+                    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+                    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+                    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+                    scene black
+                    image videov_Bardie_Sister_Older_Blowjob1 = Movie(play="video/v_Bardie_Sister_Older_Blowjob1.mkv", fps=30)
+                    show videov_Bardie_Sister_Older_Blowjob1
+                    wclean
                     olivia "Мпфхфмм..."
-                    imgd 900180
+                    wclean
+                    bardi "О, как же это охрененно!.."
                     olivia "Мммм..."
+                    wclean
+                    stop music2
+                    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+                    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+                    imgf 900180
                     olivia "Какой обалденный член... Хочется облизываеть его снова и снова."
                     imgf 900179
                     w
@@ -1012,10 +1054,31 @@ label ep01_dialogues3_day2_family_7:
                     w
                     imgd 900200
                     student_rose "Мммм..."
-                    w
                     imgd 900201
                     w
-                    imgd 900202
+
+                    # video
+                    # v_Nice_Girl_Blowjob1_25
+                    $ localSoundVolume = 1.0
+                    $ localSoundName = v_Nice_Girl_Blowjob1_25_sound_name
+                    img black_screen
+                    with diss
+                    stop music2
+                    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+                    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+                    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+                    scene black
+                    image videov_Nice_Girl_Blowjob1_25 = Movie(play="video/v_Nice_Girl_Blowjob1_25.mkv", fps=25)
+                    show videov_Nice_Girl_Blowjob1_25
+                    wclean
+                    bardi "О, Роуз, ты отлично смотришься..."
+                    bardi "Мммм... А теперь попробуй взять его в свой ротик..."
+                    wclean
+                    stop music2
+                    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+                    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+                    imgf 900202
                     student_rose "Он такой приятный. Мне нравится."
                     student_rose "Я сейчас попробую сделать это..."
                     # она вводит его член в рот и начинает двигать головой
@@ -1026,10 +1089,34 @@ label ep01_dialogues3_day2_family_7:
                     w
                     imgd 900204
                     w
+
+                    # video
+                    # v_Nice_Girl_Blowjob2_25
+                    $ localSoundVolume = 1.0
+                    $ localSoundName = v_Nice_Girl_Blowjob2_25_sound_name
+                    img black_screen
+                    with diss
+                    stop music2
+                    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+                    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+                    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+                    scene black
+                    image videov_Nice_Girl_Blowjob2_25 = Movie(play="video/v_Nice_Girl_Blowjob2_25.mkv", fps=25)
+                    show videov_Nice_Girl_Blowjob2_25
+                    wclean
+                    bardi "О, Роуз, у тебя здорово получается..."
+                    student_rose "Мпфхфмм..."
+                    wclean
+                    bardi "Оооу!.. Только не останавливайся!.."
+                    student_rose "Мммм..."
+                    wclean
+                    stop music2
+                    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+                    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
                     imgf 900205
                     w
                     imgd 900206
-                    student_rose "Мпфхфмм..."
                     student_rose "Мммм..."
                     imgd 900207
                     bardi "О, Роуз, я сейчас кончу!.."
@@ -1168,7 +1255,32 @@ label ep01_dialogues3_day2_family_7:
                     w
                     sound drkanje5
                     imgd 900224
+                    w
+
+                    # video
+                    # v_Teacher1_Titjob1_25
+                    $ localSoundVolume = 1.0
+                    $ localSoundName = v_Teacher1_Titjob1_25_sound_name
+                    img black_screen
+                    with diss
+                    stop music2
+                    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+                    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+                    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+                    scene black
+                    image videov_Teacher1_Titjob1_25 = Movie(play="video/v_Teacher1_Titjob1_25.mkv", fps=25)
+                    show videov_Teacher1_Titjob1_25
+                    wclean
                     teacher_morris "Твой член... Он такой красивый, такой манящий..."
+                    wclean
+                    bardi "О, миссис Морис, не ожидал, что это будет так прикольно..."
+                    teacher_morris "Тебе еще больше понравится, что я хочу сделать дальше, [mcname]..."
+                    wclean
+                    stop music2
+                    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+                    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+
                     # убирает грудь от члена и проводит языком по головке
                     imgf 900225
                     w
@@ -1190,9 +1302,33 @@ label ep01_dialogues3_day2_family_7:
                     w
                     sound chpok8
                     img 900231 hpunch
+                    w
+
+                    # video
+                    # v_Teacher11_Blowjob1_25
+                    $ localSoundVolume = 1.0
+                    $ localSoundName = v_Teacher11_Blowjob1_25_sound_name
+                    img black_screen
+                    with diss
+                    stop music2
+                    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+                    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+                    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+                    scene black
+                    image videov_Teacher11_Blowjob1_25 = Movie(play="video/v_Teacher11_Blowjob1_25.mkv", fps=25)
+                    show videov_Teacher11_Blowjob1_25
+                    wclean
                     teacher_morris "Мпфхфмм..."
+                    wclean
+                    bardi "Оооо, миссис Морис!.. О, дааа!.."
                     teacher_morris "Мммм..."
-                    imgd 900229
+                    bardi "Я скоро кончу, миссис Морис!.. Ооо!.."
+                    wclean
+                    stop music2
+                    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+                    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+                    imgf 900229
                     teacher_morris "Кончи для меня, [mcname]..."
                     menu:
                         "Кончить миссис Морис в рот.":

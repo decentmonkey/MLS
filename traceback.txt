@@ -1,84 +1,82 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Image' u'/icons/bar/bar3_thumb.png'>:
-  File "game/00_Functions/scene_controller.rpy", line 67, in script
-    $ scene_data = process_scene_objects_list(scene_name) #парсим содержимое свойств объектов перед выводом
-  File "game/00_Functions/scene_controller.rpy", line 67, in <module>
-    $ scene_data = process_scene_objects_list(scene_name) #парсим содержимое свойств объектов перед выводом
-  File "game/00_Functions/objects.rpy", line 66, in process_scene_objects_list
-    obj_list[obj_name] = process_scene_object(obj_name, scenes_data["objects"][room_name][obj_name])
-  File "game/00_Functions/objects.rpy", line 86, in process_scene_object
-    obj_data = fill_object_properties(obj_name, obj_data)
-  File "game/00_Functions/objects.rpy", line 31, in fill_object_properties
-    renpy.pause()
-IOError: Couldn't find file 'icons/bar/bar3_thumb.png'.
+While loading <'Image' u'/images/Slides/910266.jpg'>:
+  File "game/Quests/MLS/EP1_01/ep01_dialogues1_start.rpy", line 395, in script
+    mark "Ооо да, детка!"
+  File "game/00_Functions/01_init_python.rpy", line 241, in saywrapper_execute
+    renpy.say(who, what)
+  File "renpy/common/00library.rpy", line 268, in say
+    who(what, interact=interact, *args, **kwargs)
+IOError: Couldn't find file 'images/Slides/910266.jpg'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/00_Functions/scene_controller.rpy", line 67, in script
-    $ scene_data = process_scene_objects_list(scene_name) #парсим содержимое свойств объектов перед выводом
-  File "renpy/ast.py", line 922, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 2218, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/00_Functions/scene_controller.rpy", line 67, in <module>
-    $ scene_data = process_scene_objects_list(scene_name) #парсим содержимое свойств объектов перед выводом
-  File "game/00_Functions/objects.rpy", line 66, in process_scene_objects_list
-    obj_list[obj_name] = process_scene_object(obj_name, scenes_data["objects"][room_name][obj_name])
-  File "game/00_Functions/objects.rpy", line 86, in process_scene_object
-    obj_data = fill_object_properties(obj_name, obj_data)
-  File "game/00_Functions/objects.rpy", line 31, in fill_object_properties
-    renpy.pause()
-  File "renpy/exports.py", line 1525, in pause
-    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay)
+  File "game/Quests/MLS/EP1_01/ep01_dialogues1_start.rpy", line 395, in script
+    mark "Ооо да, детка!"
+  File "renpy/ast.py", line 1969, in execute
+    self.call("execute")
+  File "renpy/ast.py", line 1957, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "renpy/statements.py", line 278, in call
+    return method(parsed, *args, **kwargs)
+  File "game/00_Functions/01_init_python.rpy", line 241, in saywrapper_execute
+    renpy.say(who, what)
+  File "renpy/exports.py", line 1382, in say
+    renpy.store.say(who, what, *args, **kwargs)
+  File "renpy/common/00library.rpy", line 268, in say
+    who(what, interact=interact, *args, **kwargs)
+  File "renpy/character.py", line 1179, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "renpy/character.py", line 851, in do_display
+    **display_args)
+  File "renpy/character.py", line 601, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
   File "renpy/ui.py", line 298, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3101, in interact
+  File "renpy/display/core.py", line 3007, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3611, in interact_core
+  File "renpy/display/core.py", line 3517, in interact_core
     self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "renpy/display/core.py", line 2441, in draw_screen
+  File "renpy/display/core.py", line 2377, in draw_screen
     renpy.config.screen_height,
   File "render.pyx", line 492, in renpy.display.render.render_screen
   File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 777, in render
+  File "renpy/display/layout.py", line 751, in render
     surf = render(child, width, height, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 777, in render
+  File "renpy/display/layout.py", line 751, in render
     surf = render(child, width, height, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 777, in render
+  File "renpy/display/layout.py", line 751, in render
     surf = render(child, width, height, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/screen.py", line 681, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "renpy/display/transform.py", line 927, in render
+    return transform_render(self, width, height, st, at)
+  File "accelerator.pyx", line 116, in renpy.display.accelerator.transform_render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/image.py", line 501, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "renpy/display/image.py", line 307, in wrap_render
+    rend = render(child, w, h, st, at)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 777, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 777, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/behavior.py", line 1827, in render
-    thumb = render(self.style.thumb, width, thumb_dim, st, at)
+  File "renpy/display/video.py", line 395, in render
+    surf = renpy.display.render.render(self.image, width, height, st, at)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 263, in renpy.display.render.render
   File "renpy/display/im.py", line 607, in render
     return cache.get(self, render=True)
   File "renpy/display/im.py", line 271, in get
     surf = image.load()
-  File "renpy/display/im.py", line 680, in load
+  File "renpy/display/im.py", line 676, in load
     raise e
-IOError: Couldn't find file 'icons/bar/bar3_thumb.png'.
+IOError: Couldn't find file 'images/Slides/910266.jpg'.
 
 Windows-10-10.0.19041
-Ren'Py 7.4.4.1439
+Ren'Py 7.4.2.1292
  EP3-v4-Extra
-Fri Sep 24 18:56:12 2021
+Sat Sep 25 15:46:16 2021

@@ -252,8 +252,21 @@ label ep01_dialogues3_day2_college_1:
             menu:
                 "Синтия." if mlsBardiDay2Family3 > 0:
                     # мини-анимация, камера медленно скользит по ее фигуре сверху-вниз
+
                     music Stylish_Fashion_Electronic_Rock
+                    # video
+                    # v_Observe_Sister_younger_1_25
+                    img black_screen
+                    with diss
+                    pause 1.5
+                    scene black
+                    image videov_Observe_Sister_younger_1_25 = Movie(play="video/v_Observe_Sister_younger_1_25.mkv", fps=25, loop=False)
+                    show videov_Observe_Sister_younger_1_25
+                    $ renpy.pause(0.5, hard=True)
+                    pause 2.5
                     bardi_t "Фигурка просто отпад!"
+                    wclean
+
                     #
                     $ notif(_("[mcname] утром видел голую Синтию в душе."))
                     #
@@ -283,13 +296,27 @@ label ep01_dialogues3_day2_college_1:
                     pass
                 "Миссис Кларк.":
                     # мини-анимация, камера медленно скользит по ее фигуре сверху-вниз
+
                     music Stylish_Fashion_Electronic_Rock
+
+                    # video
+                    # v_Observe_Teacher8_1_25
+                    img black_screen
+                    with diss
+                    pause 1.5
+                    scene black
+                    image videov_Observe_Teacher8_1_25 = Movie(play="video/v_Observe_Teacher8_1_25.mkv", fps=25, loop=False)
+                    show videov_Observe_Teacher8_1_25
+                    $ renpy.pause(0.5, hard=True)
+                    pause 2.5
                     bardi_t "Хмм... А эта преподавательница ничего."
+                    wclean
+
+                    imgf 910045
+                    w
                     menu:
                         "Торчащие соски.":
                             # грудь миссис Кларк крупным планом
-                            imgf 910045
-                            w
                             imgd 910046
                             bardi_t "По-моему, у нее под блузкой нет нижнего белья. Я вижу ее торчащие соски..."
                             pass
@@ -609,6 +636,7 @@ label ep01_dialogues3_day2_college_5:
             # Барди подходит к двери и оказывается в приемной
             # директриса стоит руки в боки и отчитывает секретаршу, та стоит, повесив нос
             # директриса стоит спиной к Барди и не замечает его появления
+
             sound snd_door_open1
             imgf 900417
             music Adventures_of_the_Deaf_Dreamer_short
@@ -617,12 +645,25 @@ label ep01_dialogues3_day2_college_5:
             principal_richardson "И приготовить свежую прессу и ГОРЯЧИЙ кофе утром!"
             principal_richardson "ГОРЯЧИЙ, Мисс Янг!!!"
             secretary_young "Я постараюсь больше не..."
-            bardi_t "Хмм... Профессорша неплохо смотрится сзади..."
             # мини-анимация, камера медленно скользит по ее фигуре сверху-вниз
             # потом фокусируется на попе директрисы
-            imgd 900418
-            bardi_t "Представляю ее затянутую в черный латекс..."
+
             music The_Heat
+            # video
+            # v_Observe_Teacher2_principal_1_25
+            img black_screen
+            with diss
+            pause 1.5
+            scene black
+            image videov_Observe_Teacher2_principal_1_25 = Movie(play="video/v_Observe_Teacher2_principal_1_25.mkv", fps=25, loop=False)
+            show videov_Observe_Teacher2_principal_1_25
+            $ renpy.pause(0.5, hard=True)
+            pause 2.5
+            bardi_t "Хмм... Профессорша неплохо смотрится сзади..."
+            wclean
+
+            imgf 900418
+            bardi_t "Представляю ее затянутую в черный латекс..."
             sound2 vjuh3
             img 900419 hpunch
             w
@@ -1590,10 +1631,23 @@ label ep01_dialogues3_day2_college_10:
                     imgd 910133
                     student_rose "Мне кажется, у тебя немного опухла скула..."
                     # мини-анимация, Барди вблизи осматривает ее фигуру
-                    bardi_t "Милая, скромная девочка Роуз..."
+
+                    music Stylish_Fashion_Electronic_Rock
+                    # video
+                    # v_Observe_Nice_girl_1_25
+                    img black_screen
+                    with diss
+                    pause 1.5
+                    scene black
+                    image videov_Observe_Nice_girl_1_25 = Movie(play="video/v_Observe_Nice_girl_1_25.mkv", fps=25, loop=False)
+                    show videov_Observe_Nice_girl_1_25
+                    $ renpy.pause(0.5, hard=True)
+                    pause 2.5
+                    bardi_t "Милая, скромная девочка Роуз... Стала очень симпатичной студенткой."
+                    wclean
+
                     # груди крупным планом
                     imgf 910135
-                    bardi_t "Стала очень симпатичной студенткой."
                     bardi_t "Думаю, я смогу подружиться с ней."
                     bardi_t "А если повезет, то одной дружбой дело не закончится..."
                     bardi "Роуз..."
@@ -1741,8 +1795,21 @@ label ep01_dialogues3_day2_college_10:
             teacher_morris "Гарри! Что тут происходит?!"
             # смотрим глазами Барди, который лежит на полу
             # идет мини-анимация обсматривания фигуры преподовательницы снизу-вверх
-            #music The_Heat
+
+            music The_Heat
+            # video
+            # v_Observe_Teacher11_1_25
+            img black_screen
+            with diss
+            pause 1.5
+            scene black
+            image videov_Observe_Teacher11_1_25 = Movie(play="video/v_Observe_Teacher11_1_25.mkv", fps=25, loop=False)
+            show videov_Observe_Teacher11_1_25
+            $ renpy.pause(0.5, hard=True)
+            pause 2.5
             bardi_t "Уааау!!!"
+            wclean
+
             # она стоит руки в боки и грозно смотрит на здоровяка Гарри
             # тот пытается оправдаться перед ней
             music Montana
@@ -1964,10 +2031,27 @@ label ep01_dialogues3_day2_college_14:
     w
     sound snd_door_open1
     imgf 900250
-    bardie_friend_mother "Привет."
-    bardi_t "Это Рут, мама Шона."
+    w
+
+    music Stylish_Fashion_Electronic_Rock
+    # video
+    # v_Observe_Bardie_friend_mother_1_25
+    img black_screen
+    with diss
+    pause 1.5
+    scene black
+    image videov_Observe_Bardie_friend_mother_1_25 = Movie(play="video/v_Observe_Bardie_friend_mother_1_25.mkv", fps=25, loop=False)
+    show videov_Observe_Bardie_friend_mother_1_25
+    $ renpy.pause(0.5, hard=True)
+    pause 2.5
+    bardi_t "Это Рут, мама Шона. Она совсем не изменилась с того времени, когда я ее видел последний раз."
+    wclean
+
+
     # мини-анимация, камера медленно скользит по ее фигуре сверху-вниз
+    music Shining_Through
     imgd 900251
+    bardie_friend_mother "Привет."
     bardi "Привет... Эээ..."
     menu:
         "Шон дома?":
@@ -1986,7 +2070,7 @@ label ep01_dialogues3_day2_college_14:
         "Не знал, что у Шона есть сестра.":
             # он продолжает пялиться на ее фигуру
             imgd 900251
-            bardi_t "Она совсем не изменилась с того времени, когда я ее видел последний раз."
+            w
             imgf 900252
             bardi_t "Фигура просто отпад!"
             imgd 900253

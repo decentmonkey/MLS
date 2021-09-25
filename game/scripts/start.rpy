@@ -76,6 +76,7 @@ label start: #for blink here
 
 #########
 
+#    call test_video()
 #    call ep01_dialogues1_start_1a() # пляж, показываем геймплей
 #    call ep01_dialogues1_start_1b() # подглядывание за Оливией и Марком
 #    call ep01_dialogues1_start_2() # поезд
