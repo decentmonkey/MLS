@@ -582,6 +582,7 @@ label ep01_dialogues3_day2_family_6:
     sound snd_keys_door_open
     imgd 900132
     w
+    
     music The_Heat
     imgd 900133
     w
@@ -592,12 +593,13 @@ label ep01_dialogues3_day2_family_6:
     with diss
     pause 1.5
     scene black
-    image videov_Observe_Sister_Older_1_25 = Movie(play="video/v_Observe_Sister_Older_1_25.mkv", fps=25, loop=False)
+    image videov_Observe_Sister_Older_1_25 = Movie(play="video/v_Observe_Sister_Older_1_25.mkv", fps=25, loop=False, image="/images/Slides/img_910313.jpg")
     show videov_Observe_Sister_Older_1_25
     $ renpy.pause(0.5, hard=True)
     pause 5.5
+    img 910313
+    w
     bardi_t "Это Оливия?! Ух ты! Да, ее действительно не узнать..."
-    wclean
 
     # мини-анимация, камера медленно скользит по ее фигуре сверху-вниз
     imgf 900134

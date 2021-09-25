@@ -762,7 +762,7 @@ label ep01_dialogues1_start_2:
     imgd 910232
     bardi_t "Нет-нет! Я не допущу этого!"
     # кадр на окно поезда, за которым идет дождь
-
+    
     music Border_Blaster
     imgf 910221
     bardi_t "В этой жалкой дыре я надолго не задержусь!"
@@ -780,7 +780,6 @@ label ep01_dialogues1_start_2:
     show videoINTRO_Animation2_25
     $ renpy.pause(0.5, hard=True)
     pause 13.5
-#    wclean
 
     # INTRO_Animation3_25
     img black_screen
@@ -793,7 +792,6 @@ label ep01_dialogues1_start_2:
     $ renpy.pause(0.5, hard=True)
     pause 3.5
     wclean
-
     return
 
 label ep01_dialogues1_start_3:

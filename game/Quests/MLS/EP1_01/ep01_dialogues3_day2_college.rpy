@@ -260,12 +260,13 @@ label ep01_dialogues3_day2_college_1:
                     with diss
                     pause 1.5
                     scene black
-                    image videov_Observe_Sister_younger_1_25 = Movie(play="video/v_Observe_Sister_younger_1_25.mkv", fps=25, loop=False)
+                    image videov_Observe_Sister_younger_1_25 = Movie(play="video/v_Observe_Sister_younger_1_25.mkv", fps=25, loop=False, image="/images/Slides/img_910314.jpg")
                     show videov_Observe_Sister_younger_1_25
                     $ renpy.pause(0.5, hard=True)
-                    pause 3.5
+                    pause 4.5
+                    img 910314
+                    w
                     bardi_t "Фигурка просто отпад!"
-                    wclean
 
                     #
                     $ notif(_("[mcname] утром видел голую Синтию в душе."))
@@ -305,15 +306,16 @@ label ep01_dialogues3_day2_college_1:
                     with diss
                     pause 1.5
                     scene black
-                    image videov_Observe_Teacher8_1_25 = Movie(play="video/v_Observe_Teacher8_1_25.mkv", fps=25, loop=False)
+                    image videov_Observe_Teacher8_1_25 = Movie(play="video/v_Observe_Teacher8_1_25.mkv", fps=25, loop=False, image="/images/Slides/img_910315.jpg")
                     show videov_Observe_Teacher8_1_25
                     $ renpy.pause(0.5, hard=True)
                     pause 6.5
-                    bardi_t "Хмм... А эта преподавательница ничего."
-                    wclean
-
-                    imgf 910045
+                    img 910315
                     w
+                    bardi_t "Хмм... А эта преподавательница ничего."
+
+                    #imgf 910045
+                    #w
                     menu:
                         "Торчащие соски.":
                             # грудь миссис Кларк крупным планом
@@ -1638,12 +1640,13 @@ label ep01_dialogues3_day2_college_10:
                     with diss
                     pause 1.5
                     scene black
-                    image videov_Observe_Nice_girl_1_25 = Movie(play="video/v_Observe_Nice_girl_1_25.mkv", fps=25, loop=False)
+                    image videov_Observe_Nice_girl_1_25 = Movie(play="video/v_Observe_Nice_girl_1_25.mkv", fps=25, loop=False, image="/images/Slides/img_910316.jpg")
                     show videov_Observe_Nice_girl_1_25
                     $ renpy.pause(0.5, hard=True)
                     pause 5.5
+                    img 910316
+                    w
                     bardi_t "Милая, скромная девочка Роуз... Стала очень симпатичной студенткой."
-                    wclean
 
                     # груди крупным планом
                     imgf 910135
@@ -1802,12 +1805,13 @@ label ep01_dialogues3_day2_college_10:
             with diss
             pause 1.5
             scene black
-            image videov_Observe_Teacher11_1_25 = Movie(play="video/v_Observe_Teacher11_1_25.mkv", fps=25, loop=False)
+            image videov_Observe_Teacher11_1_25 = Movie(play="video/v_Observe_Teacher11_1_25.mkv", fps=25, loop=False, image="/images/Slides/img_910317.jpg")
             show videov_Observe_Teacher11_1_25
             $ renpy.pause(0.5, hard=True)
-            pause 3.5
+            pause 4.5
+            img 910317
+            w
             bardi_t "Уааау!!!"
-            wclean
 
             # она стоит руки в боки и грозно смотрит на здоровяка Гарри
             # тот пытается оправдаться перед ней
@@ -2024,7 +2028,7 @@ label ep01_dialogues3_day2_college_14:
     # стучит в дверь
     # на пороге появляется мать друга Шона - Рут, Ruth
     # она приветливо улыбается Барди
-#    label test_video:
+
     music Shining_Through
     sound2 snd_door_knock
     imgfl 900249
