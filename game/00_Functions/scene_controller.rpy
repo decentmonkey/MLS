@@ -138,7 +138,7 @@ label show_scene_loop:
         if interact_data[0] == "time_management_street_fast_sleep":
             call bed_basement_fast_sleep() from _rcall_bed_basement_fast_sleep
         if interact_data[0] == "phone_show":
-            call test1()
+            call iphone()
 
 
 label show_scene_loop2:
@@ -235,7 +235,5 @@ label after_load():
     $ after_load_ready_to_render = True
 
     $ imagesSizesCache = {}
-    if episode2part2_initialized == False:
-        jump part2_questions_init_loadgame
     call process_afterload()
     return
