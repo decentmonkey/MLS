@@ -1,15 +1,6 @@
 #####inc - обозначение строк для инц патча
 ##->#####inc - обозначение строк, которые заменяются инц патчем
 
-define bardi = Character(_("Игрок"), who_color=c_blue) # ГГ Bardi Jones
-define bardi_t = Character(_("Игрок"), who_color=c_blue, what_color=c_gray, what_italic=True) # ГГ Bardi Jones thinking
-define olivia = Character(_("Оливия"), who_color=c_orange) # соседка, старшая дочь Софи - Olivia Jones
-define mark = Character(_("Марк"), who_color=c_gray) # парень Оливии Mark
-define father = Character(_("Отец"), who_color=c_red) # отец Барди
-define sophie = Character(_("Софи"), who_color=c_pink) # хозяйка дома Sophie Evans
-##### define mother = Character(_("Мама"), who_color=c_pink) # мать Sophie Evans (sophie)
-define girl1 = Character(_("Незнакомка"), who_color=c_blue) # girl1, перед стартом игры
-define girl2 = Character(_("Незнакомка"), who_color=c_red) # girl2, перед стартом игры
 
 define v_Mark_Sister_Older_Blowjob1_sound_name = "v_Monica_PunksGB_Blowjob1"
 define v_Mark_Sister_Older_Blowjob1b_sound_name = "v_Monica_PunksGB_Blowjob1"
@@ -47,10 +38,10 @@ label ep01_dialogues1_start_1a:
     w
     imgf 910197
     w
-    imgd 910198
-    w
-    imgd 910199
-    w
+#    imgd 910198
+#    w
+#    imgd 910199
+#    w
     imgf 910200
     w
     sound Jump2
@@ -73,6 +64,9 @@ label ep01_dialogues1_start_1a:
     if mcname == False:
         $ mcname = t__("Барди")
 
+    $ bardi = Character((mcname), who_color=c_blue) # ГГ Bardi Jones
+    $ bardi_t = Character((mcname), who_color=c_blue, what_color=c_blue, what_italic=True) # ГГ Bardi Jones thinking
+
     $ mcsurname = t__("Джонс")
     if renpy.android == True:
         call screen input_softkeyboard
@@ -87,9 +81,12 @@ label ep01_dialogues1_start_1a:
     # girl1 указывает на свободный шезлонг
     imgd 910205
     girl1 "Составишь нам компанию?"
-    girl2 "Просто кликни на шезлонг и выбери [действие]."
+    girl2 "Просто кликни на любую из нас и выбери [действие]."
     # при этом демонстрируются иконки при наведении курсора на шезлонг
     girl1 "Или ты можешь просто [смотреть], чтобы узнать что-то об этом предмете."
+    return
+
+label ep01_dialogues1_start_1a2:
     music Story_of_One_Success_short
     #music Elle_avait_pas_les_yeux_noirs
     #music Carefree_Ukulele
@@ -101,23 +98,77 @@ label ep01_dialogues1_start_1a:
     # показываем (подсвечиваем) иконку EventList и девушка указывает пальцем на нее
     #music Deeper_For_You
     sound2 Jump1
-    imgd 910208
+    img 910208
+    show screen hud_screen(hud_presets[hud_preset_current])
+    with diss
+    w
+    show screen intro_focus("/images/Other/intro/intro_focus1.png")
+    with diss
     girl1 "Посмотри сюда, [mcname]. Это Event List."
     # разворачиваем Event List
     girl1 "Здесь ты сможешь увидеть текущие задачи, а также получить подсказку по прохождению игры."
     girl1 "Чтобы получить подсказку по конкретному квесту, тебе просто нужно кликнуть на него в Event List."
     # сворачиваем Event List
-    sound Jump2
-    imgd 910209
+    hide screen intro_focus
+    call miniMapHouseGenerate()
+    img 910209
+    $ miniMapOpened = False
+    show screen hud_screen(hud_presets[hud_preset_current])
+    show screen hud_minimap(miniMapData)
+    with fade
+    w
+    $ miniMapOpened = True
+    show screen hud_minimap(miniMapData)
+    show screen intro_focus("/images/Other/intro/intro_focus2.png")
+    sound metal_slide
+    with diss
     girl2 "Также тебе доступно быстрое перемещение по локациям."
     girl2 "Для этого тебе достаточно кликнуть на иконку нужной локации в меню быстрого перемещения."
     # девушка показывает пальцем в сторону иконки
     girl2 "Оно расположено в правом верхнем углу."
     # показываем (подсвечиваем) иконку телефона
     # в телефоне заблокированы иконки соц.сети и иконки галереи (они откроются позже), в сообщениях пока пусто
+    $ miniMapOpened = False
+
+    show screen hud_minimap(miniMapData)
+    show screen intro_focus("/images/Other/intro/intro_focus2.png")
+    sound metal_slide
+#    img 910208
+    with diss
+    pause 1.0
+    show screen intro_focus("/images/Other/intro/intro_focus3.png")
+    with diss
+    girl2 "Здесь ты можешь открыть карту города."
+    return
+
+label ep01_dialogues1_start_1ab3:
+    hide screen action_menu_screen
+    girl2 "Карта города доступна только [на улице] или в твоей комнате."
+    girl2 "По мере истории, здесь будет много мест, которые можно посетить."
+    call map_close()
+    sound open_map
+    imgf 910208
+    show screen hud_screen(hud_presets[hud_preset_current])
+    show screen hud_minimap(miniMapData)
+    pause 1.0
+    show screen intro_focus("/images/Other/intro/intro_focus4.png")
+    with Dissolve(1.0)
+    girl2 "Это [кнопка домой]."
+    girl2 "С помощью нее, ты можешь сразу попасть к себе в комнату."
+    girl1 "Если только доступна карта!"
+    girl2 "Ну да."
+
+
     sound vjuh3
-    imgd 910210
+    img 910210
+    show screen hud_screen(hud_presets[hud_preset_current])
+    show screen hud_minimap(miniMapData)
+    show screen intro_focus("/images/Other/intro/intro_focus5.png")
+    with diss
     girl1 "А это твой смартфон."
+    hide screen intro_focus
+#    show screen iphone_x
+    with diss
     girl1 "В нем ты сможешь найти полезную информацию, а также обмениваться сообщениями и просматривать социальные сети."
     imgf 910211
     girl2 "Ты кое-что забыла расскать, Лили..."
@@ -173,6 +224,8 @@ label ep01_dialogues1_start_1a:
     bardi "Девочки, тише-тише!"
     bardi "Все окей. Я уверен, что сам с этим разберусь."
     imgd 910219
+    sound kiss1
+    pause 1.0
     sound snd_woman_laugh4
     girl2 "Хм, а ты уверенный в себе..."
     girl2 "Мне это нравится."
@@ -191,7 +244,25 @@ label ep01_dialogues1_start_1a:
     music2 stop
     return
 
+label ep01_dialogues1_start_1a3:
+    imgf 910198
+    bardi "Хм, кролик?"
+    return
+label ep01_dialogues1_start_1a4:
+    imgf 910199
+    bardi "Хм, крыска?"
+    return
+label ep01_dialogues1_start_1a5:
+    girl1 "Эй, мы здесь!"
+    return
+
 label ep01_dialogues1_start_1b:
+    scene black_screen
+    with Dissolve(1)
+    music stop
+    call textonblack(t_("НЕДАЛЕКОЕ БУДУЩЕЕ"))
+    scene black_screen
+    with Dissolve(1)
     # темный коридор, в конце коридора через щель приоткрытой двери виден свет
     # взволнованное тяжелое дыхание, затем осторожные шаги и скрип пола
     # дверь с каждым шагом все ближе и ближе
@@ -695,18 +766,38 @@ label ep01_dialogues1_start_2:
     # в кадре окно поезда, за окном идет дождь (смотрим глазами Барди)
     # появляется и исчезает надпись на кадре: Некоторое время назад
     # потом поднимается рука (как будто видим свою руку), проводит пальцем по стеклу и снова опускается
+    scene black_screen
+    with Dissolve(1)
+    music stop
+    call textonblack(t_("СЕЙЧАС"))
+    scene black_screen
+    with Dissolve(1)
     music2 train_ambience
-    imgfl 910221
+#    img 910221
+    scene black_screen
+    show screen train2()
+    show screen train_image("images/Other/train/img_910221_sprite.png")
+    with fadelong
     w
-    imgf 910222
+#    imgf 910222
+    scene black_screen
+    show screen train1()
+    show screen train_image("images/Other/train/img_910222_sprite.png")
+    with fade
     music Border_Blaster
     bardi_t "Это что, какой-то стремный сон?"
-    imgd 910223
+#    imgd 910223
+    show screen train_image("images/Other/train/img_910223_sprite.png")
+    with diss
     bardi_t "Разговор с отцом... Этот поезд..."
-    imgd 910224
+#    imgd 910224
+    show screen train_image("images/Other/train/img_910224_sprite.png")
+    with diss
     w
     sound window_hit
-    img 910230 hpunch
+#    img 910230 hpunch
+    show screen train_image("images/Other/train/img_910230_sprite.png")
+    with hpunch
     bardi_t "Если это и правда сон, то я хочу скорее проснуться."
     # кадры с поезда резко меняются на воспоминания Барди, звук поезда затихает
     # перед нами стоит мужчина в деловом костюме (его лицо не показываем - кадр от нижней части лица (видно только рот) и ниже)
@@ -746,13 +837,21 @@ label ep01_dialogues1_start_2:
     bardi_t "А он..."
     bardi_t "Он просто взял и выбросил меня из своей жизни!"
     # кадр на дождь за окном
-    imgd 910233
+#    imgd 910233
+    scene black_screen
+    show screen train3()
+    show screen train_image("images/Other/train/img_910233_sprite.png")
+    with diss
+
     bardi_t "Как будто и не было огромного мегаполиса, богатого дома и лучшего в стране колледжа..."
     bardi_t "Поверить не могу, что я возвращаюсь в эту дыру."
     bardi_t "Сколько прошло времени с того дня, когда я и отец уехали в большой город?"
     bardi_t "Мне кажется, целая жизнь..."
     sound window_hit
-    img 910230 hpunch
+#    img 910230 hpunch
+    show screen train1()
+    show screen train_image("images/Other/train/img_910230_sprite.png")
+    with hpunch
     bardi_t "..."
     bardi_t "Еще полчаса и я окажусь в этой чертовой деревне, откуда так хотел уехать и не возвращаться никогда."
     bardi_t "Меня затянет в эту серую трясину, как в болото."
@@ -762,36 +861,45 @@ label ep01_dialogues1_start_2:
     imgd 910232
     bardi_t "Нет-нет! Я не допущу этого!"
     # кадр на окно поезда, за которым идет дождь
-    
     music Border_Blaster
-    imgf 910221
+#    imgf 910221
+    scene black
+    show screen train2()
+    show screen train_image("images/Other/train/img_910221_sprite.png")
+    with fade
     bardi_t "В этой жалкой дыре я надолго не задержусь!"
     # звук поезда стихает и кадр меняется на вокзал
     music2 stop
 
+    #4 sec + 14 sec
     # video
-    # INTRO_Animation2_25
+    # INTRO_Animation3_25
     img black_screen
     with diss
     pause 1.5
     scene black
     sound train
-    image videoINTRO_Animation2_25 = Movie(play="video/INTRO_Animation2_25.mkv", fps=25, loop=False)
-    show videoINTRO_Animation2_25
-    $ renpy.pause(0.5, hard=True)
-    pause 13.5
-
-    # INTRO_Animation3_25
-    img black_screen
-    with diss
-#    pause 1.5
-    scene black
-    sound train_ambience
     image videoINTRO_Animation3_25 = Movie(play="video/INTRO_Animation3_25.mkv", fps=25, loop=False)
     show videoINTRO_Animation3_25
     $ renpy.pause(0.5, hard=True)
     pause 3.5
-    wclean
+
+    # INTRO_Animation3_25
+#    img black_screen
+#    with diss
+#    pause 1.5
+#    scene black
+    sound train2
+    image videoINTRO_Animation2_25 = Movie(play="video/INTRO_Animation2_25.mkv", fps=25, loop=False, image="/images/Slides/INTRO_Animation2_end.jpg")
+    show videoINTRO_Animation2_25
+    with fade
+    $ renpy.pause(0.5, hard=True)
+    pause 13.5
+    pause 1.0
+    scene black
+    with fadelong
+#    pause 2.0
+#    wclean
     return
 
 label ep01_dialogues1_start_3:

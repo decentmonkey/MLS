@@ -1324,7 +1324,7 @@ screen hud_screen(hud_presets):
                 pos gui.resolution.hud_screen.face_hud_image_pos
 
     if phoneDisplayEnabled == True:
-        if phoneEnabled == True:
+        if phoneEnabled == True and hud_presets.has_key("display_phone") and hud_presets["display_phone"] == True:
             imagebutton:
                 pos (1815, 95)
                 xoffset 0
@@ -2116,9 +2116,9 @@ screen main_menu():
             hover "gui/web_button_hover.png"
             action OpenURL("http://decent-monkey.com/news/")
 
-        add "gui/resolution_caption.png":
-            xpos get_resolution_x(1345)
-            ypos get_resolution_y(440)
+#        add "gui/resolution_caption.png":
+#            xpos get_resolution_x(1345)
+#            ypos get_resolution_y(440)
 
         frame:
 #            pos (get_resolution_x(1570), get_resolution_y(650))
@@ -2137,10 +2137,10 @@ screen main_menu():
                     text_size gui.resolution.main_menu.font_size2
                 textbutton "German" action Language("german"):
                     text_size gui.resolution.main_menu.font_size2
-                textbutton "French" action Language("french"):
-                    text_size gui.resolution.main_menu.font_size2
-                textbutton "Italian (beta)" action Language("italian"):
-                    text_size gui.resolution.main_menu.font_size2
+#                textbutton "French" action Language("french"):
+#                    text_size gui.resolution.main_menu.font_size2
+#                textbutton "Italian (beta)" action Language("italian"):
+#                    text_size gui.resolution.main_menu.font_size2
 #                textbutton "Spanish (beta)" action Language("spanish"):
 #                    text_size gui.resolution.main_menu.font_size2
                 textbutton "Russian" action Language(None):
@@ -2545,12 +2545,14 @@ screen preferences():
 #                box_wrap True
 
                 vbox:
-                    xminimum gui.resolution.menu_pause_before_change_slide.value
+#                    xminimum gui.resolution.menu_pause_before_change_slide.value
+                    xminimum 600
 
                     style_prefix "radio"
                     label t_("Pause before change slide")
                     textbutton t_("Enable") action SetField(persistent, "pause_before_change_slide", True)
                     textbutton t_("Disable") action SetField(persistent, "pause_before_change_slide", False)
+
 
                 vbox:
                     xmaximum gui.resolution.preferences1
@@ -2578,18 +2580,35 @@ screen preferences():
                         textbutton t_("Mute All"):
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
-
-            null height 20
+            null height 30
             hbox:
                 vbox:
-                    xminimum gui.resolution.menu_pause_before_change_slide.value
+                    xminimum 600
+                    style_prefix "radio"
+                    label _("Rollback Side")
+                    textbutton _("Disable") action Preference("rollback side", "disable")
+                    textbutton _("Left") action Preference("rollback side", "left")
+                    textbutton _("Right") action Preference("rollback side", "right")
+
+                vbox:
+                    style_prefix "check"
+                    label _("Skip")
+                    textbutton _("Unseen Text") action Preference("skip", "toggle")
+                    textbutton _("After Choices") action Preference("after choices", "toggle")
+                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+
+            null height 30
+            hbox:
+                vbox:
+                    xminimum 600
+#                    xminimum gui.resolution.menu_pause_before_change_slide.value
                     style_prefix "pref"
 
                     label t_("Language")
                     textbutton "English" action Language("english")
                     textbutton "German" action Language("german")
-                    textbutton "French" action Language("french")
-                    textbutton "Italian (beta)" action Language("italian")
+#                    textbutton "French" action Language("french")
+#                    textbutton "Italian (beta)" action Language("italian")
 #                    textbutton "Spanish (beta)" action Language("spanish")
                     textbutton "Russian" action Language(None)
 

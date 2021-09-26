@@ -169,7 +169,7 @@ COLLEGE_WC_Female: image scene_COLLEGE_WC_Female - ТУАЛЕТ ДЛЯ ДЕВО�
 COLLEGE_WC_Male: image scene_COLLEGE_WC_Male - ТУАЛЕТ ДЛЯ МАЛЬЧИКОВ
     COLLEGE_WC_Male_Teleport_Coridor4 (Screen_Down_Arrow) - КОРИДОР, teleport COLLEGE_Coridor4
 
-COLLEGE_Street: image scene_COLLEGE_Street
+COLLEGE_Street: image scene_COLLEGE_Street - ДВОР КОЛЛЕДЖА
     COLLEGE_Street_Teleport_MAP (Screen_Down_Arrow) - ГОРОД, teleport map
     COLLEGE_Street_Teleport_Coridor1 - ВХОД В КОЛЛЕДЖ 1138x555 arrow_right_2 , teleport COLLEGE_Coridor1
     COLLEGE_Street_Teleport_StreetYard - СПОРТИВНАЯ ПЛОЩАДКА 498x537 left arrow_down_2 , teleport COLLEGE_StreetYard

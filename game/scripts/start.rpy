@@ -69,8 +69,6 @@ label start: #for blink here
     $ objectives_list = []
     $ map_objects = {
             "Teleport_HOUSE" : {"text" : t_("ДОМ"), "xpos" : 1507, "ypos" : 396, "base" : "map_marker_house", "state" : "visible"},
-            "Teleport_HOUSE_FRIEND" : {"text" : t_("ДОМ ШОНА"), "xpos" : 1303, "ypos" : 318, "base" : "map_marker", "state" : "visible"},
-            "Teleport_COLLEGE" : {"text" : t_("КОЛЛЕДЖ"), "xpos" : 982, "ypos" : 268, "base" : "map_marker", "state" : "visible"}
     }
 
     call characters_init() from _rcall_characters_init_1
@@ -164,9 +162,7 @@ label start: #for blink here
     $ scene_sound = False
     $ scene_transition = "Fade_long"
 
-    call changeDayTime("evening")
 
-    call change_scene("house_street") from _rcall_change_scene_220
     call process_change_map_location("HOUSE") from _rcall_process_change_map_location_10
 
     $ questHelpActivated = True
@@ -180,6 +176,14 @@ label start: #for blink here
     $ add_hook("exit_scene", "test1_exit", scene="house_street")
     $ add_hook("enter_scene", "test1_enter", scene="house_street")
 
+#    call change_scene("house_street") from _rcall_change_scene_220
+    call changeDayTime("day")
+    call change_scene("intro_beach", "Fade_long", False)
+    call ep1_intro_quests1()
+
+#    $ map_objects["Teleport_HOUSE_FRIEND"] = {"text" : t_("ДОМ ШОНА"), "xpos" : 1303, "ypos" : 318, "base" : "map_marker", "state" : "visible"}
+#    $ map_objects["Teleport_COLLEGE"] = {"text" : t_("КОЛЛЕДЖ"), "xpos" : 982, "ypos" : 268, "base" : "map_marker", "state" : "visible"}
+#    call changeDayTime("evening")
     jump show_scene
 
 

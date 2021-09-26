@@ -55,6 +55,9 @@ label show_scene_now:
     call map_street_scene_visibility_check() from _call_map_street_scene_visibility_check
     show screen hud_screen(hud_presets[hud_preset_current])
     show screen hud_minimap(miniMapData)
+    if introHUDBlocked == True:
+        show screen hud_block()
+
     if rain == True and sceneIsStreet == True:
         show screen Rain
         stop music fadeout 1.0
@@ -139,6 +142,11 @@ label show_scene_loop:
             call bed_basement_fast_sleep() from _rcall_bed_basement_fast_sleep
         if interact_data[0] == "phone_show":
             call iphone()
+        if interact_data[0] == "refresh":
+            $ show_scene_loop_flag = False
+            call refresh_scene()
+        if interact_data[0] == "special":
+            call interact_special(interact_data)
 
 
 label show_scene_loop2:
@@ -236,4 +244,20 @@ label after_load():
 
     $ imagesSizesCache = {}
     call process_afterload()
+    return
+
+label interact_special(interact_data):
+    hide screen action_menu_screen
+    show screen sprites_hover_dummy_screen()
+    $ interface_blocked_flag = True
+    $ screenActionHappened = False
+
+    if interact_data[1] == "intro_block":
+        call ep1_intro_quests1_block()
+
+    $ scene_refresh_flag = True
+    $ show_scene_loop_flag = True
+    $ parse_transition_flag = False
+    $ interface_blocked_flag = False
+    call remove_dialogue()
     return

@@ -136,7 +136,8 @@ label define_hudpresets:
             "display_scene_map" : True,
             "display_bitchmeter" : True,
             "display_closemap" : True,
-            "display_face_hud": False
+            "display_face_hud": False,
+            "display_phone": True
         },
         "default_map_disabled" : {
             "display_daytime" : True,
@@ -147,7 +148,8 @@ label define_hudpresets:
             "display_scene_map" : False,
             "display_bitchmeter" : True,
             "display_closemap" : True,
-            "display_face_hud": False
+            "display_face_hud": False,
+            "display_phone": False
         },
         "map": {
             "display_daytime" : True,
@@ -158,7 +160,8 @@ label define_hudpresets:
             "display_scene_map" : False,
             "display_bitchmeter" : False,
             "display_closemap" : True,
-            "display_face_hud": False
+            "display_face_hud": False,
+            "display_phone": False
         },
         "map_locked" : {
             "display_daytime" : True,
@@ -169,7 +172,8 @@ label define_hudpresets:
             "display_scene_map" : False,
             "display_bitchmeter" : False,
             "display_closemap" : False,
-            "display_face_hud": False
+            "display_face_hud": False,
+            "display_phone": False
         },
     }
     return

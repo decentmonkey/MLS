@@ -131,7 +131,7 @@ screen sms_screen:
     add "iphone_x/frame.png" xpos 74 ypos 74
 # копия стандартного экрана say, с небольшими изменениями,
 # которые позволяют скрыть основное окно, если в тексте есть теги для смс
-screen say:
+screen say_duplicate:
     default side_image = None
     default two_window = False
     on "show" action SMS(what, who) # сначала обрабатываем наши теги для СМС

@@ -1,6 +1,7 @@
 label house_street:
     $ miniMapData = []
     $ sceneIsStreet = True
+    call miniMapHouseGenerate()
     $ scene_image = "scene_House_Street[day_suffix]"
     music night_ambience
     return

@@ -103,12 +103,159 @@ screen achievements_screen():
                         anchor (0.5, 0.5)
                 $ curY += int(math.ceil(float(len(cellsList))/float(cellsInRow))) * cellSizeY + gui.resolution.gallery.category_margin_down
 
+screen hud_block:
+    layer "master"
+    zorder 61
+    fixed:
+        imagebutton:
+            focus_mask True
+            idle "/images/Other/intro/hud_block_button.png"
+            hover "/images/Other/intro/hud_block_button.png"
+            action [
+                Return(["special", "intro_block"])
+            ]
+            alternate ShowMenu("save")
 
+screen intro_focus(focus_img_path):
+    layer "master"
+    zorder 61
+    fixed:
+        add focus_img_path
 
+screen train1():
+    layer "master"
+    zorder 10
+    add "/images/Other/train/train_sky.jpg"
+    frame:
+        background None
+        at train1_animation
+        ypos 0
+        add "/images/Other/train_road1.png":
+            xpos 0
+        add "/images/Other/train_road2.png":
+            xpos 1920
+        add "/images/Other/train_road3.png":
+            xpos 3840
+        add "/images/Other/train_road4.png":
+            xpos 5760
+        add "/images/Other/train_road4.png":
+            xpos 6351
+            xzoom -1.0
+        add "/images/Other/train_road3.png":
+            xpos 6351+591
+            xzoom -1.0
+        add "/images/Other/train_road2.png":
+            xpos 6351+591+1920
+            xzoom -1.0
+        add "/images/Other/train_road1.png":
+            xpos 6351+591+1920+1920
+            xzoom -1.0
+        add "/images/Other/train_road1.png":
+            xpos 6351+591+1920+1920+1920
 
+screen train2():
+    layer "master"
+    zorder 10
+    add "/images/Other/train/train_sky.jpg"
+    frame:
+        at train2_animation2
+        background None
+        frame:
+            at train2_animation
+            background None
+            ypos -165
 
+            add "/images/Other/train_road1.png":
+                xpos 0
+            add "/images/Other/train_road2.png":
+                xpos 1920
+            add "/images/Other/train_road3.png":
+                xpos 3840
+            add "/images/Other/train_road4.png":
+                xpos 5760
+            add "/images/Other/train_road4.png":
+                xpos 6351
+                xzoom -1.0
+            add "/images/Other/train_road3.png":
+                xpos 6351+591
+                xzoom -1.0
+            add "/images/Other/train_road2.png":
+                xpos 6351+591+1920
+                xzoom -1.0
+            add "/images/Other/train_road1.png":
+                xpos 6351+591+1920+1920
+                xzoom -1.0
+            add "/images/Other/train_road1.png":
+                xpos 6351+591+1920+1920+1920
+            add "/images/Other/train_road2.png":
+                xpos 6351+591+1920+1920+1920+1920
+                xzoom -1.0
 
+screen train3():
+    layer "master"
+    zorder 10
+    add "/images/Other/train/train_sky.jpg"
+    frame:
+        at train3_animation2
+        background None
+        frame:
+            at train3_animation
+            background None
+            ypos -400
+            add "/images/Other/train_road1.png":
+                xpos 0
+            add "/images/Other/train_road2.png":
+                xpos 1920
+            add "/images/Other/train_road3.png":
+                xpos 3840
+            add "/images/Other/train_road4.png":
+                xpos 5760
+            add "/images/Other/train_road4.png":
+                xpos 6351
+                xzoom -1.0
+            add "/images/Other/train_road3.png":
+                xpos 6351+591
+                xzoom -1.0
+            add "/images/Other/train_road2.png":
+                xpos 6351+591+1920
+                xzoom -1.0
+            add "/images/Other/train_road1.png":
+                xpos 6351+591+1920+1920
+                xzoom -1.0
+            add "/images/Other/train_road1.png":
+                xpos 6351+591+1920+1920+1920
+            add "/images/Other/train_road2.png":
+                xpos 6351+591+1920+1920+1920+1920
 
+screen train_image(train_image_path):
+    layer "master"
+    zorder 20
+    add train_image_path
+
+#6351, 12702
+
+transform train1_animation:
+    xpos 0
+    linear 8.0 xpos -12701
+    repeat
+
+transform train2_animation:
+    zoom 0.7
+    xpos 0
+    linear 8.0 xpos -8890
+    repeat
+
+transform train2_animation2:
+    rotate -3.2
+
+transform train3_animation:
+    zoom 0.8
+    xpos 0
+    linear 8.0 xpos -10160
+    repeat
+
+transform train3_animation2:
+    rotate -1
 
 
 

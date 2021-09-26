@@ -24,7 +24,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "EP3-v4-Extra"
+define config.version = "v1"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -206,7 +206,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "fashionbusiness1_renpy"
+define config.save_directory = "milfs_of_sunville"
 
 
 ## Icon ########################################################################
