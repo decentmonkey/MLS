@@ -147,9 +147,10 @@ label ep01_dialogues1_start_1ab3:
     girl2 "По мере истории, здесь будет много мест, которые можно посетить."
     call map_close()
     sound open_map
-    imgf 910208
+    img 910208
     show screen hud_screen(hud_presets[hud_preset_current])
     show screen hud_minimap(miniMapData)
+    with fade
     pause 1.0
     show screen intro_focus("/images/Other/intro/intro_focus4.png")
     with Dissolve(1.0)

@@ -68,7 +68,7 @@ label start: #for blink here
 
     $ objectives_list = []
     $ map_objects = {
-            "Teleport_HOUSE" : {"text" : t_("ДОМ"), "xpos" : 1507, "ypos" : 396, "base" : "map_marker_house", "state" : "visible"},
+            "Teleport_HOUSE" : {"text" : t_("ДОМ"), "xpos" : 1540, "ypos" : 399, "base" : "map_marker_house", "state" : "visible"},
     }
 
     call characters_init() from _rcall_characters_init_1

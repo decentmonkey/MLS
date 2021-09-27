@@ -5,7 +5,7 @@ label locations_init:
     $ add_location("HOUSE", caption="", label="empty_label", parent="World")
 
     #INTRO
-    $ add_location("intro_beach", caption=t_("ВСТУПЛЕНИЕ"), label="intro_beach", init_label="intro_beach_init", parent="WORLD")
+    $ add_location("intro_beach", caption=t_(""), label="intro_beach", init_label="intro_beach_init", parent="WORLD")
 
     #HOUSE
     $ add_location("house_street", caption=t_("ДВОР ДОМА"), label="house_street", init_label="house_street_init", parent="HOUSE")
