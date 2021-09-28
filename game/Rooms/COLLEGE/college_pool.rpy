@@ -6,7 +6,7 @@ label college_pool:
 
 label college_pool_init:
     $ default_tint = [1.0, 1.0, 1.0]
-    $ add_object_to_scene("Teleport_Coridor4", {"type":3, "text" : t_("КОРИДОР"), "rarrow" : "arrow_down_2", "base":"Screen_Down_Arrow", "click" : "college_pool_environment", "xpos" : 960, "ypos" : 956, "zorder":11, "teleport":True, "group":"teleports"}, scene="college_pool")
+    $ add_object_to_scene("Teleport_Coridor4", {"type":3, "text" : t_("КОРИДОР"), "rarrow" : "arrow_down_2", "base":"Screen_Down_Arrow", "click" : "college_pool_environment", "xpos" : 960, "ypos" : 956, "zorder":11, "teleport":True, "group":"teleports", "high_sprite_hover": True}, scene="college_pool")
     return
 
 #                            $ brightness_adjustment = 0.1

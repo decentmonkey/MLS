@@ -20,4 +20,7 @@ label house_bedroom_mc_environment:
     if obj_name == "Teleport_Floor2":
         call change_scene("house_floor2")
         return
+    if obj_name == "Bed":
+        call bed_management()
+        return
     return

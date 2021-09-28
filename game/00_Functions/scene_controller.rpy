@@ -160,7 +160,7 @@ label show_scene_loop2:
         jump show_scene
 
 
-label change_scene(new_scene_name, in_transition_name="Fade", in_sound_name="highheels_short_walk"):
+label change_scene(new_scene_name, in_transition_name="Fade", in_sound_name="step_stairs_short"):
     $ notifCheckTimeout()
     $ target_scene_name = new_scene_name
     $ target_scene_parent = scene_get_parent(target_scene_name)

@@ -355,13 +355,13 @@ label ep01_dialogues2_day1_family_3:
 
 label ep01_dialogues2_day1_family_3a:
     menu:
-        "Ждать до полудня.":
+        "Ждать до полудня." if day_time_idx == 0:
             return 1
-        "Ждать до вечера.":
+        "Ждать до вечера." if day_time_idx <= 1:
             return 2
-        "Ждать до ночи.":
+        "Ждать до ночи." if day_time_idx <= 2:
             return 3
-        "Лечь спать до утра.":
+        "Лечь спать до утра." if day_time_idx <= 3:
             return 4
         "Уйти.":
             return 0

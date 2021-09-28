@@ -14,6 +14,10 @@ label house_bathroom_init:
     $ add_object_to_scene("Sister2", {"type" : 2, "base" : "House_Bathroom[day_suffix]_Sister2_[houseBathroomSister2Suffix]", "click" : "house_bathroom_environment", "actions" : "l", "zorder":10}, scene="house_bathroom")
     $ add_object_to_scene("Sophie", {"type" : 2, "base" : "House_Bathroom[day_suffix]_Mother_[houseBathroomMotherSuffix]", "click" : "house_bathroom_environment", "actions" : "l", "zorder":10}, scene="house_bathroom")
 
+    $ add_object_to_scene("Shower", {"type" : 2, "base" : "House_Bathroom_Shower", "click" : "house_bathroom_environment", "actions" : "l", "zorder":0}, scene="house_bathroom")
+    $ add_object_to_scene("Bath", {"type" : 2, "base" : "House_Bathroom_Bath", "click" : "house_bathroom_environment", "actions" : "l", "zorder":0}, scene="house_bathroom")
+    $ add_object_to_scene("Toilet", {"type" : 2, "base" : "House_Bathroom_Toilet", "click" : "house_bathroom_environment", "actions" : "l", "zorder":0}, scene="house_bathroom")
+
     $ add_object_to_scene("Teleport_Floor1", {"type":3, "text" : t_("НАЗАД"), "rarrow" : "arrow_right_2", "base":"House_Bathroom_Teleport_Floor1", "click" : "house_bathroom_environment", "xpos" : 1599, "ypos" : 541, "zorder":11, "teleport":True, "group":"teleports"}, scene="house_bathroom")
     return
 

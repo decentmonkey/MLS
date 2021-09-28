@@ -22,13 +22,28 @@ label house_floor2_init:
 
 label house_floor2_environment:
     if obj_name == "Teleport_Sister2":
-        call change_scene("house_sister2")
+        if sister2RoomDoorLocked == True:
+            sound snd_door_locked1
+            pause 1.0
+            call ep01_dialogues2_day1_family_1_6()
+            return
+        call change_scene("house_sister2", "Fade", "snd_door_open1")
         return
     if obj_name == "Teleport_Sister1":
-        call change_scene("house_sister1")
+        if sister1RoomDoorLocked == True:
+            sound snd_door_locked1
+            pause 1.0
+            call ep01_dialogues2_day1_family_1_6()
+            return
+        call change_scene("house_sister1", "Fade", "snd_door_open1")
         return
     if obj_name == "Teleport_Bedroom_Landlord":
-        call change_scene("house_bedroom_landlord")
+        if landLordRoomDoorLocked == True:
+            sound snd_door_locked1
+            pause 1.0
+            call ep01_dialogues2_day1_family_1_6()
+            return
+        call change_scene("house_bedroom_landlord", "Fade", "snd_door_open1")
         return
     if obj_name == "Teleport_Floor1":
         call change_scene("house_floor1")

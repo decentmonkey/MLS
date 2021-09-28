@@ -21,6 +21,6 @@ label house_bedroom_landlord_init:
 
 label house_bedroom_landlord_environment:
     if obj_name == "Teleport_Floor2":
-        call change_scene("house_floor2")
+        call change_scene("house_floor2", "Fade", "snd_door_close1")
         return
     return

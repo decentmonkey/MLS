@@ -6,7 +6,7 @@ label house_garage:
 
 label house_garage_init:
     $ default_tint = [1.0, 1.0, 1.0]
-    $ add_object_to_scene("Teleport_House_Street", {"type":3, "text" : t_("НАЗАД"), "larrow" : "arrow_down_2", "base":"Screen_Down_Arrow", "click" : "house_garage_environment", "xpos" : 960, "ypos" : 956, "zorder":11, "teleport":True, "group":"teleports"}, scene="house_garage")
+    $ add_object_to_scene("Teleport_House_Street", {"type":3, "text" : t_("НАЗАД"), "larrow" : "arrow_down_2", "base":"Screen_Down_Arrow", "click" : "house_garage_environment", "xpos" : 960, "ypos" : 956, "zorder":11, "teleport":True, "group":"teleports", "high_sprite_hover": True}, scene="house_garage")
     return
 
 #                            $ brightness_adjustment = 0.1
