@@ -186,7 +186,7 @@ COLLEGE_Street: image scene_COLLEGE_Street - ДВОР КОЛЛЕДЖА
 	Crowd9
 	Crowd10
 
-COLLEGE_StreetYard: image scene_COLLEGE_StreetYard
+COLLEGE_StreetYard: image scene_COLLEGE_StreetYard - СПОРТИВНАЯ ПЛОЩАДКА
     COLLEGE_StreetYard_Teleport_Street - КОЛЛЕДЖ 1542 x 420 right arrow_up_2, teleport COLLEGE_Street
 
 
