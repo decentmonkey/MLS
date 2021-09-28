@@ -142,6 +142,8 @@ label show_scene_loop:
             call bed_basement_fast_sleep() from _rcall_bed_basement_fast_sleep
         if interact_data[0] == "phone_show":
             call iphone()
+        if interact_data[0] == "return_home":
+            call returnHomeButton()
         if interact_data[0] == "refresh":
             $ show_scene_loop_flag = False
             call refresh_scene()

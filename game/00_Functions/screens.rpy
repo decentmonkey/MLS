@@ -1062,7 +1062,7 @@ screen hud_screen(hud_presets):
                         idle "/icons/icon_home" + res.suffix + ".png"
                         hover "/icons/icon_home_hover" + res.suffix + ".png"
                         action [
-                            Play("sound", "Sounds/click_denied.ogg")
+                            Return(["return_home"])
                         ]
                 else:
                     imagebutton:
