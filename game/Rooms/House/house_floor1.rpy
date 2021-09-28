@@ -1,27 +1,38 @@
-label %scene%:
+label house_floor1:
     $ miniMapData = []
-    $ sceneIsStreet = True
-    $ scene_image = "[day_suffix]"
+    $ scene_image = "scene_House_Floor1[day_suffix]"
     return
 
-label %scene%_init:
+label house_floor1_init:
     $ default_tint = [1.0, 1.0, 1.0]
-    $ add_object_to_scene("Monica", {"type" : 2, "base" : "basement_bedroom1_Monica_[basementBedroom1MonicaSuffix]", "click" : "%scene%_environment", "actions" : "l", "zorder":10}, scene="%scene%")
+#    $ add_object_to_scene("Monica", {"type" : 2, "base" : "basement_bedroom1_Monica_[basementBedroom1MonicaSuffix]", "click" : "house_floor1_environment", "actions" : "l", "zorder":10}, scene="house_floor1")
 
-    $ add_object_to_scene("Teleport_Map", {"type":3, "text" : t_("ГОРОД"), "larrow" : "arrow_down_2", "base":"Screen_Down_Arrow", "click" : "%scene%_environment", "xpos" : 960, "ypos" : 956, "zorder":11, "teleport":True, "group":"teleports"}, scene="%scene%")
-    $ add_object_to_scene("Teleport_Bedroom2", {"type":3, "text" : t_("ГАРДЕРОБ"), "rarrow" : "arrow_right_2", "base":"Screen_Right_Arrow_Tight", "click" : "%scene%_environment", "xpos" : 1630, "ypos" : 920, "zorder":11, "teleport":True, "group":"teleports"}, scene="%scene%")
-    $ add_object_to_scene("Teleport_Bedroom1", {"type":3, "text" : t_("КРОВАТЬ"), "larrow" : "arrow_left_2", "base":"Screen_Left_Arrow_Tight", "click" : "%scene%_environment", "xpos" : 220, "ypos" : 545, "zorder":11, "teleport":True, "group":"teleports"}, scene="%scene%")
+    $ add_object_to_scene("Teleport_LivingRoomHall", {"type" : 2, "base" : "House_Floor1_Teleport_LivingRoomHall", "click" : "house_floor1_environment", "actions" : "l", "zorder":0, "teleport":True}, scene="house_floor1")
+    $ add_object_to_scene("Teleport_Kitchen", {"type" : 2, "base" : "House_Floor1_Teleport_Kitchen", "click" : "house_floor1_environment", "actions" : "l", "zorder":0, "teleport":True}, scene="house_floor1")
+    $ add_object_to_scene("Teleport_Bathroom", {"type" : 2, "base" : "House_Floor1_Teleport_Bathroom", "click" : "house_floor1_environment", "actions" : "l", "zorder":0, "teleport":True}, scene="house_floor1")
+
+    $ add_object_to_scene("Teleport_Street", {"type":3, "text" : t_("УЛИЦА"), "larrow" : "arrow_down_2", "base":"Screen_Down_Arrow", "click" : "house_floor1_environment", "xpos" : 960, "ypos" : 956, "zorder":11, "teleport":True, "group":"teleports"}, scene="house_floor1")
+    $ add_object_to_scene("Teleport_Floor2", {"type":3, "text" : t_("ВТОРОЙ ЭТАЖ"), "rarrow" : "arrow_right_2", "base":"Screen_Right_Arrow_Tight", "click" : "house_floor1_environment", "xpos" : 1630, "ypos" : 920, "zorder":11, "teleport":True, "group":"teleports"}, scene="house_floor1")
     return
 
 #                            $ brightness_adjustment = 0.1
 #                            $ saturation_adjustment = 1.07
 #                            $ contrast_adjustment = 1.3
 
-label %scene%_environment:
-    if obj_name == "Teleport_Map":
-        call map_show()
+label house_floor1_environment:
+    if obj_name == "Teleport_LivingRoomHall":
+        call change_scene("house_livingroomhall")
         return
-    if obj_name == "Teleport_Floor1":
-        call change_scene("house_street_floor1")
+    if obj_name == "Teleport_Kitchen":
+        call change_scene("house_kitchen")
+        return
+    if obj_name == "Teleport_Bathroom":
+        call change_scene("house_bathroom")
+        return
+    if obj_name == "Teleport_Street":
+        call change_scene("house_street")
+        return
+    if obj_name == "Teleport_Floor2":
+        call change_scene("house_floor2")
         return
     return
