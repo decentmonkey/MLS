@@ -14,6 +14,6 @@ label college_chemistry_init:
 
 label college_chemistry_environment:
     if obj_name == "Teleport_Coridor2":
-        call change_scene("college_coridor5")
+        call change_scene("college_coridor2")
         return
     return

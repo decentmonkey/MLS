@@ -1,5 +1,6 @@
 label house_sister1:
     $ miniMapData = []
+    call miniMapHouseGenerate()
     $ scene_image = "scene_House_Sister1[day_suffix]"
     return
 

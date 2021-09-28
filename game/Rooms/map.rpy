@@ -81,16 +81,14 @@ label map_environment:
         call map_close() from _call_map_close_2
         return
 
-    if obj_name == "Teleport_House":
-        if teleportHomeFredBlowjobFlag == True:
-            call afterJailFredDialogue3() from _call_afterJailFredDialogue3
-            call process_drive_teleport("House", "street_house_main_yard") from _call_process_drive_teleport
-            return
-        $ street_house_outside_monica_suffix = 2
-        if gameStage == 2 or gameStage == 3:
-            call process_drive_teleport("House", "street_house_outside") from _call_process_drive_teleport_4
-            return
-        call process_drive_teleport("House", "street_house_main_yard") from _call_process_drive_teleport_5
+    if obj_name == "Teleport_HOUSE":
+        call process_drive_teleport("HOUSE", "house_street")
+        return
+    if obj_name == "Teleport_HOUSE_FRIEND":
+        call process_drive_teleport("HOUSE_FRIEND", "housefriend_street")
+        return
+    if obj_name == "Teleport_COLLEGE":
+        call process_drive_teleport("COLLEGE", "college_street")
         return
     m "drive!"
     return
@@ -107,16 +105,11 @@ label process_drive_teleport(in_target_map_scene, in_target_scene):
     $ map_objects["Teleport_" + target_map_scene]["state"] = "active"
     $ map_scene = target_map_scene
     $ hud_preset_current = map_source_scene_hud_preset
-    if bFredFollowingMonica == True:
-        call start_drive() from _call_start_drive
-        if driveCanceled == True:
-            return
+    $ mapChangedFlag = True
+    if mapTeleportForcedCarSound == False:
+        call start_walk_direct() from _call_start_walk_direct
     else:
-        $ mapChangedFlag = True
-        if mapTeleportForcedCarSound == False:
-            call start_walk_direct() from _call_start_walk_direct
-        else:
-            call start_drive_direct() from _rcall_start_drive_direct
+        call start_drive_direct() from _rcall_start_drive_direct
     $ mapChangedFlag = True
     call process_hooks("map_teleport_after", "global") from _rcall_process_hooks_40
     return
@@ -147,4 +140,8 @@ label process_change_map_location(target_map_scene):
     $ map_objects["Teleport_" + target_map_scene]["state"] = "active"
     $ map_scene = target_map_scene
     $ mapChangedFlag = True
+    return
+
+label start_walk_direct():
+    call change_scene(target_scene, "Fade_long", "run_stairs_floor")
     return

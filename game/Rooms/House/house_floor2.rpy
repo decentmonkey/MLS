@@ -1,6 +1,9 @@
 label house_floor2:
     $ miniMapData = []
+    call miniMapHouseGenerate()
     $ scene_image = "scene_House_Floor2[day_suffix]"
+    if day_time_idx == 3:
+        $ scene_image = "scene_House_Floor2_Evening_Night"
     return
 
 label house_floor2_init:
@@ -9,8 +12,8 @@ label house_floor2_init:
     $ add_object_to_scene("Teleport_Sister1", {"type" : 2, "base" : "House_Floor2_Teleport_Sister1", "click" : "house_floor2_environment", "actions" : "l", "zorder":0, "teleport":True}, scene="house_floor2")
     $ add_object_to_scene("Teleport_Bedroom_Landlord", {"type" : 2, "base" : "House_Floor2_Teleport_Bedroom_Landlord", "click" : "house_floor2_environment", "actions" : "l", "zorder":0, "teleport":True}, scene="house_floor2")
 
-    $ add_object_to_scene("Teleport_Floor1", {"type":3, "text" : t_("ЛЕСТНИЦА ВНИЗ"), "rarrow" : "arrow_up_2", "base":"House_Floor2_Teleport_Floor1", "click" : "house_floor2_environment", "xpos" : 960, "ypos" : 956, "zorder":11, "teleport":True, "group":"teleports"}, scene="house_floor2")
-    $ add_object_to_scene("Teleport_Bedroom_MC", {"type":3, "text" : t_("МОЯ КОМНАТА"), "larrow" : "arrow_up_2_a", "base":"House_Floor2_Teleport_Bedroom_MC", "click" : "house_floor2_environment", "xpos" : 1630, "ypos" : 920, "zorder":11, "teleport":True, "group":"teleports"}, scene="house_floor2")
+    $ add_object_to_scene("Teleport_Floor1", {"type":3, "text" : t_("ЛЕСТНИЦА ВНИЗ"), "rarrow" : "arrow_up_2", "base":"House_Floor2_Teleport_Floor1", "click" : "house_floor2_environment", "xpos" : 1342, "ypos" : 1013, "zorder":11, "teleport":True, "group":"teleports"}, scene="house_floor2")
+    $ add_object_to_scene("Teleport_Bedroom_MC", {"type":3, "text" : t_("МОЯ КОМНАТА"), "larrow" : "arrow_up_2_a", "base":"House_Floor2_Teleport_Bedroom_MC", "click" : "house_floor2_environment", "xpos" : 362, "ypos" : 957, "zorder":11, "teleport":True, "group":"teleports"}, scene="house_floor2")
     return
 
 #                            $ brightness_adjustment = 0.1

@@ -1,5 +1,6 @@
 label college_utilityroom:
     $ miniMapData = []
+    call miniMapCOLLEGEGenerate()
     $ scene_image = "scene_COLLEGE_UtilityRoom"
     return
 

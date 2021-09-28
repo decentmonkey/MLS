@@ -45,10 +45,10 @@ label miniMapCOLLEGEGenerate:
     $ miniMapOpenButtonImg = "Open_Button_COLLEGE_Map1"
     $ miniMapOpenButtonImg2 = "Open_Button_COLLEGE_Map2"
     $ miniMapData = []
-    $ miniMapData.append({"name":"COLLEGE_Floor3", "caption":t_("ЭТАЖ 3"), "img":"COLLEGE_Coridor_10_Map", "teleport_scene":"COLLEGE_Coridor10", "teleport_type":"scene"})
-    $ miniMapData.append({"name":"COLLEGE_Floor2", "caption":t_("ЭТАЖ 2"), "img":"COLLEGE_Coridor_7_Map", "teleport_scene":"COLLEGE_Coridor7", "teleport_type":"scene"})
-    $ miniMapData.append({"name":"COLLEGE_Floor1", "caption":t_("ЭТАЖ 1"), "img":"COLLEGE_Coridor_3_Map", "teleport_scene":"COLLEGE_Coridor3", "teleport_type":"scene"})
-    $ miniMapData.append({"name":"COLLEGE_Street", "caption":t_("ДВОР КОЛЛЕДЖА"), "img":"COLLEGE_Street_Map", "teleport_scene":"COLLEGE_Street", "teleport_type":"scene"})
+    $ miniMapData.append({"name":"COLLEGE_Floor3", "caption":t_("ЭТАЖ 3"), "img":"COLLEGE_Coridor_10_Map", "teleport_scene":"college_coridor10", "teleport_type":"scene"})
+    $ miniMapData.append({"name":"COLLEGE_Floor2", "caption":t_("ЭТАЖ 2"), "img":"COLLEGE_Coridor_7_Map", "teleport_scene":"college_coridor7", "teleport_type":"scene"})
+    $ miniMapData.append({"name":"COLLEGE_Floor1", "caption":t_("ЭТАЖ 1"), "img":"COLLEGE_Coridor_3_Map", "teleport_scene":"college_coridor3", "teleport_type":"scene"})
+    $ miniMapData.append({"name":"COLLEGE_Street", "caption":t_("ДВОР КОЛЛЕДЖА"), "img":"COLLEGE_Street_Map", "teleport_scene":"college_street", "teleport_type":"scene"})
     return
 
 

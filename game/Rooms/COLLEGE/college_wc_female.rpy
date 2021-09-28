@@ -1,5 +1,6 @@
 label college_wc_female:
     $ miniMapData = []
+    call miniMapCOLLEGEGenerate()
     $ scene_image = "scene_COLLEGE_WC_Female"
     return
 

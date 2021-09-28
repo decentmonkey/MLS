@@ -15,10 +15,7 @@ label housefriend_bedroom_parents_init:
 #                            $ contrast_adjustment = 1.3
 
 label housefriend_bedroom_parents_environment:
-    if obj_name == "Teleport_Map":
-        call map_show()
-        return
-    if obj_name == "Teleport_Floor1":
-        call change_scene("house_street_floor1")
+    if obj_name == "Teleport_Kitchen":
+        call change_scene("housefriend_kitchen")
         return
     return

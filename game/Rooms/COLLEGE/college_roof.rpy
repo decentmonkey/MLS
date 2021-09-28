@@ -1,5 +1,6 @@
 label college_roof:
     $ miniMapData = []
+    call miniMapCOLLEGEGenerate()
     $ scene_image = "scene_COLLEGE_Roof"
     return
 

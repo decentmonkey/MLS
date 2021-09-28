@@ -1,5 +1,6 @@
 label house_floor1:
     $ miniMapData = []
+    call miniMapHouseGenerate()
     $ scene_image = "scene_House_Floor1[day_suffix]"
     return
 
@@ -12,7 +13,7 @@ label house_floor1_init:
     $ add_object_to_scene("Teleport_Bathroom", {"type" : 2, "base" : "House_Floor1_Teleport_Bathroom", "click" : "house_floor1_environment", "actions" : "l", "zorder":0, "teleport":True}, scene="house_floor1")
 
     $ add_object_to_scene("Teleport_Street", {"type":3, "text" : t_("УЛИЦА"), "larrow" : "arrow_down_2", "base":"Screen_Down_Arrow", "click" : "house_floor1_environment", "xpos" : 960, "ypos" : 956, "zorder":11, "teleport":True, "group":"teleports"}, scene="house_floor1")
-    $ add_object_to_scene("Teleport_Floor2", {"type":3, "text" : t_("ВТОРОЙ ЭТАЖ"), "rarrow" : "arrow_right_2", "base":"Screen_Right_Arrow_Tight", "click" : "house_floor1_environment", "xpos" : 1630, "ypos" : 920, "zorder":11, "teleport":True, "group":"teleports"}, scene="house_floor1")
+    $ add_object_to_scene("Teleport_Floor2", {"type":3, "text" : t_("ВТОРОЙ ЭТАЖ"), "larrow" : "arrow_up_2_a", "base":"House_Floor1_Teleport_Floor2", "click" : "house_floor1_environment", "xpos" : 450, "ypos" : 946, "zorder":11, "teleport":True, "group":"teleports"}, scene="house_floor1")
     return
 
 #                            $ brightness_adjustment = 0.1

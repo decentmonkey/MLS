@@ -13,10 +13,7 @@ label college_biology_init:
 #                            $ contrast_adjustment = 1.3
 
 label college_biology_environment:
-    if obj_name == "Teleport_Map":
-        call map_show()
-        return
-    if obj_name == "Teleport_Floor1":
-        call change_scene("house_street_floor1")
+    if obj_name == "Teleport_Coridor1":
+        call change_scene("college_coridor1")
         return
     return
