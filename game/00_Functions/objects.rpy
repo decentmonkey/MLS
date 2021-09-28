@@ -1,7 +1,6 @@
 init python:
     obj_properties_prefix = "img"
     obj_properties_suffixes = {" ":"sprite", "_evening":"sprite", "_mask":"mask", "_overlay":"overlay", "_evening_mask":"mask", "_evening_overlay":"overlay"}
-    obj_follow_list = {}
 
     def fill_object_properties(name, obj_data):
         obj_base = obj_data["base"]

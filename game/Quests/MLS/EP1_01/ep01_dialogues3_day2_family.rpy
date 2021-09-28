@@ -161,7 +161,7 @@ label ep01_dialogues3_day2_family_2:
             bardi_t "Нет, это бред... Я не могу просто так взять и вломиться к ней в душ!.."
             bardi_t "Она моя соседка и вроде хорошая девчонка. Что она обо мне подумает?" ##->#####inc
             #####inc bardi_t "Она моя младшая сестра. Что она обо мне подумает?"
-            return
+            return -1
     music Adventures_of_the_Deaf_Dreamer
     return
 
@@ -582,7 +582,7 @@ label ep01_dialogues3_day2_family_6:
     sound snd_keys_door_open
     imgd 900132
     w
-    
+
     music The_Heat
     imgd 900133
     w

@@ -55,6 +55,19 @@ init:
             alpha 1.0
 #        function init_idle_transform
 
+    transform imagebutton_hover_type2(idle_num):
+        on idle:
+            linear 0.5 alpha 1.0
+            linear 0.5 alpha 0.0
+            repeat
+
+        on show, start:
+            alpha 0.0
+
+        on hover:
+            pause 0.01
+            alpha 1.0
+
 
 
     transform hover_text_sprite_transform():

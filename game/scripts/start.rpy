@@ -46,6 +46,7 @@ default phoneDisplayEnabled = True
 default phoneEnabled = True
 default phoneNotifications = []
 
+default obj_follow_list = {}
 
 #temp vars
 default maxBitchness = 1000
@@ -168,21 +169,21 @@ label start: #for blink here
     $ questHelpActivated = True
     call questHelp_init() from _rcall_questHelp_init_2
 
-    $ add_hook("change_time_morning", "test1_morning", scene="global")
-    $ add_hook("change_time_day", "test1_day", scene="global")
-    $ add_hook("change_time_evening", "test1_evening", scene="global")
-    $ add_hook("change_time_night", "test1_night", scene="global")
+#    $ add_hook("change_time_morning", "test1_morning", scene="global")
+#    $ add_hook("change_time_day", "test1_day", scene="global")
+#    $ add_hook("change_time_evening", "test1_evening", scene="global")
+#    $ add_hook("change_time_night", "test1_night", scene="global")
 
-    $ add_hook("exit_scene", "test1_exit", scene="house_street")
-    $ add_hook("enter_scene", "test1_enter", scene="house_street")
+#    $ add_hook("exit_scene", "test1_exit", scene="house_street")
+#    $ add_hook("enter_scene", "test1_enter", scene="house_street")
 
     $ add_hook("before_open", "college_life", scene="college_street", label="college_life")
-    $ add_hook("change_day_time", "college_life_change_daytime", scene="global", label="college_life")
+    $ add_hook("change_day_time", "college_life_change_daytime", scene="global", label="college_life", priority = 200)
 
-    $ add_hook("change_time_morning", "house_life", scene="global", label="house_life")
-    $ add_hook("change_time_day", "house_life", scene="global", label="house_life")
-    $ add_hook("change_time_evening", "house_life", scene="global", label="house_life")
-    $ add_hook("change_time_night", "house_life", scene="global", label="house_life")
+    $ add_hook("change_time_morning", "house_life", scene="global", label="house_life", priority = 200)
+    $ add_hook("change_time_day", "house_life", scene="global", label="house_life", priority = 200)
+    $ add_hook("change_time_evening", "house_life", scene="global", label="house_life", priority = 200)
+    $ add_hook("change_time_night", "house_life", scene="global", label="house_life", priority = 200)
     call house_life()
 
 
@@ -216,23 +217,23 @@ label test1:
     return
 
 label test1_morning:
-    m "morning hooks!"
+#    m "morning hooks!"
     return
 label test1_day:
-    m "day hooks!"
+#    m "day hooks!"
     return
 label test1_evening:
-    m "evening hooks!"
+#    m "evening hooks!"
     return
 label test1_night:
-    m "night hooks!"
+#    m "night hooks!"
     return
 
 label test1_exit:
-    m "exit scene!"
+#    m "exit scene!"
     return
 label test1_enter:
-    m "enter scene!"
+#    m "enter scene!"
     return
 
 

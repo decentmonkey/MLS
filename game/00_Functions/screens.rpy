@@ -341,7 +341,11 @@ screen screen_sprites(data):
                                                 else:
                                                     hovered [SetScreenVariable("idle_num", 0.4)]
                                                 unhovered Hide("sprite_hovered_caption_screen")
-                                                at imagebutton_hover_type1(idle_num)
+                                                if obj_follow_list.has_key(scene_name + "_!_" + i) and obj_follow_list[scene_name + "_!_" + i] == True:
+                                                    at imagebutton_hover_type2(idle_num)
+                                                else:
+                                                    at imagebutton_hover_type1(idle_num)
+
                                                 focus_mask True
                                                 if data[i]["actions"] == "l" and check_object_has_character(i) == False: #если объекту не заданы действия кроме просмотра, то не выводим доп. меню
                                                     action [

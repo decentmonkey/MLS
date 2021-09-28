@@ -174,17 +174,21 @@ label ep01_dialogues2_day1_family_1_11:
 # мысли при клике на входную дверь
 label ep01_dialogues2_day1_family_1_12:
     bardi_t "Мне пока там нечего делать."
-    return
+    return False
 # ванная комната
 # мысли при клике на унитаз
 label ep01_dialogues2_day1_family_1_13:
     bardi_t "Я недавно отлил. Пока не хочу."
-    return
+    return False
+label ep01_dialogues2_day1_family_1_13a:
+    bardi_t "Я предпочитаю душ."
+    return False
 # мысли при клике на душ или ванную
 label ep01_dialogues2_day1_family_1_14:
     imgfl 910311
     bardi_t "В этом старом доме только один душ."
     bardi_t "Это не очень удобно."
+label ep01_dialogues2_day1_family_1_14b:
     menu:
         "Принять душ.":
             # кадры стены душа и капли воды, как будто Барди смотрит
@@ -197,16 +201,25 @@ label ep01_dialogues2_day1_family_1_14:
             bardi_t "Такие контрасты... Жесть."
             bardi_t "Надеюсь, мне недолго придется жить здесь..."
             music2 stop
+            $ mcShowerLastDay = day
         "Позже.":
             imgd 910311
             bardi_t "Я пока не хочу принимать душ."
             pass
     return
+
+label ep01_dialogues2_day1_family_1_14a:
+    bardi_t "В этом старом доме только один душ."
+    bardi_t "Это не очень удобно."
+    return
 # кухня
 # при клике на любой предмет
 label ep01_dialogues2_day1_family_1_15:
+    if introKitchen1Day == day:
+        return
     bardi_t "Какая маленькая кухня. Не то что в новом доме отца." ##->#####inc
     #####inc bardi_t "На кухне совсем ничего не изменилось."
+    $ remove_hook()
     return
 
 
@@ -353,12 +366,13 @@ label ep01_dialogues2_day1_family_3:
     menu:
         "Лечь спать.":
             bardi_t "Уже поздно. Я сегодня очень устал и хочу спать."
-            jump ep01_dialogues2_day1_family_8
+            return True
+#            jump ep01_dialogues2_day1_family_8
         "Позже, я пока не устал.":
             # игрок может побродить по комнате и дому
             pass
     bardi_t "Я пока не хочу спать..."
-    return
+    return False
 
 label ep01_dialogues2_day1_family_3a:
     menu:
@@ -432,12 +446,15 @@ label ep01_dialogues2_day1_family_6:
     olivia "Мам, это ты? Я не хочу сейчас разговаривать..."
     olivia "И вообще, я занята и мне некогда!"
     bardi_t "Чем эта Оливия там занимается, что не может открыть дверь?.."
-    return
+    call refresh_scene_fade()
+    return False
 
 label ep01_dialogues2_day1_family_7:
     # Барди пытается зайти в комнату младшей Синтии
     # клик на ее дверь
     # дверь приоткрывается и выглядывает приветливая мордашка Синтии
+    sound snd_door_open1
+    fadeblack 1.5
     music Little_Tomcat
     imgf 900042
     cynthia "[mcname]? Ты пришел пожелать мне спокойной ночи?"
@@ -451,7 +468,9 @@ label ep01_dialogues2_day1_family_7:
     cynthia "И тебе спокойной ночи. Завтра увидимся."
     # улыбается ему
     # дверь закрывается
-    return
+    sound snd_door_close1
+    call refresh_scene_fade_long()
+    return False
 
 # при выборе пункта меню "Лечь спать"
 label ep01_dialogues2_day1_family_8:
@@ -507,7 +526,7 @@ label ep01_dialogues2_day1_family_8:
     imgd 900048
     bardi "Вот еще! Нисколько!"
     # она садится на край его кровати
-    sound snd_walk_barefoot
+#    sound snd_walk_barefoot
     imgf 900049
     w
     imgd 900050
@@ -545,6 +564,7 @@ label ep01_dialogues2_day1_family_8:
     bardi "Спокойной ночи, Софи." ##->#####inc
     #####inc bardi "Спокойной ночи, мам."
     # Софи уходит
+    fadeblack 2.0
     music stop
     music2 Jail_Clock
     imgf 900044
