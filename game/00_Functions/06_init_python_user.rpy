@@ -103,6 +103,7 @@ label changeDayTime(new_day_time):
 
 label changeDayTime_morning_hooks:
     $ remove_hook(label="evening_time_temp")
+    call process_hooks("change_day_time", "global")
     call process_hooks("morning_" + str(day), "global_day")
     if _return == False:
         return False
@@ -119,6 +120,7 @@ label changeDayTime_morning_hooks:
 
 label changeDayTime_day_hooks:
     $ remove_hook(label="morning_time_temp")
+    call process_hooks("change_day_time", "global")
     call process_hooks("day_" + str(day), "global_day")
     if _return == False:
         return False
@@ -134,6 +136,7 @@ label changeDayTime_day_hooks:
     return
 label changeDayTime_evening_hooks:
     $ remove_hook(label="day_time_temp")
+    call process_hooks("change_day_time", "global")
     call process_hooks("evening_" + str(day), "global_day")
     if _return == False:
         return False
@@ -150,6 +153,7 @@ label changeDayTime_evening_hooks:
 
 label changeDayTime_night_hooks:
     $ remove_hook(label="evening_time_temp")
+    call process_hooks("change_day_time", "global")
     call process_hooks("night_" + str(day), "global_day")
     if _return == False:
         return False

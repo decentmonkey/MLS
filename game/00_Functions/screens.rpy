@@ -297,62 +297,63 @@ screen screen_sprites(data):
                                             if data[i].has_key("xsprite") and data[i].has_key("ysprite"):
                                                 xpos int(float(data[i]["xsprite"]) / 1920.0 * config.screen_width)
                                                 ypos int(float(data[i]["ysprite"]) / 1080.0 * config.screen_height)
-                                    if spriteImageStr == scene_image_file: #добавляем яркость на фоновых предметах
-                                        $ brightness_adjustment = 0.1
-                                        $ saturation_adjustment = 1.07
-                                        $ contrast_adjustment = 1.3
-                                    $ if data[i].has_key("b") == True: brightness_adjustment = data[i]["b"]
-                                    $ if data[i].has_key("s") == True: saturation_adjustment = data[i]["s"]
-                                    $ if data[i].has_key("c") == True: contrast_adjustment = data[i]["c"]
-                                    $ tint_adjustment = False
-                                    $ if data[i].has_key("tint") == True: tint_adjustment = data[i]["tint"]
-                                    if data[i].has_key("hover_enabled") == False or data[i]["hover_enabled"] == True:
-                                        if sceneSpriteSurfacesCache.has_key(scene_name + i) == False or screenCache == False or 1==1:
-                                            if tint_adjustment != False:
-                                                $ hoveredImage = im.MatrixColor(
-                                                    idleImg,
-                                                    im.matrix.brightness(brightness_adjustment) * im.matrix.saturation(saturation_adjustment) * im.matrix.contrast(contrast_adjustment) * im.matrix.tint(tint_adjustment[0], tint_adjustment[1], tint_adjustment[2])
-                                                )
+                                    if data[i].has_key("selectable") == False or data[i]["selectable"] == True:
+                                        if spriteImageStr == scene_image_file: #добавляем яркость на фоновых предметах
+                                            $ brightness_adjustment = 0.1
+                                            $ saturation_adjustment = 1.07
+                                            $ contrast_adjustment = 1.3
+                                        $ if data[i].has_key("b") == True: brightness_adjustment = data[i]["b"]
+                                        $ if data[i].has_key("s") == True: saturation_adjustment = data[i]["s"]
+                                        $ if data[i].has_key("c") == True: contrast_adjustment = data[i]["c"]
+                                        $ tint_adjustment = False
+                                        $ if data[i].has_key("tint") == True: tint_adjustment = data[i]["tint"]
+                                        if data[i].has_key("hover_enabled") == False or data[i]["hover_enabled"] == True:
+                                            if sceneSpriteSurfacesCache.has_key(scene_name + i) == False or screenCache == False or 1==1:
+                                                if tint_adjustment != False:
+                                                    $ hoveredImage = im.MatrixColor(
+                                                        idleImg,
+                                                        im.matrix.brightness(brightness_adjustment) * im.matrix.saturation(saturation_adjustment) * im.matrix.contrast(contrast_adjustment) * im.matrix.tint(tint_adjustment[0], tint_adjustment[1], tint_adjustment[2])
+                                                    )
+                                                else:
+                                                    $ hoveredImage = im.MatrixColor(
+                                                        hoverImg,
+                                                        im.matrix.brightness(brightness_adjustment) * im.matrix.saturation(saturation_adjustment) * im.matrix.contrast(contrast_adjustment)
+                                                    )
+                                                #$ hoveredImage = Flatten(hoveredImage)
+                                                #$ sceneSpriteSurfacesCache[scene_name + i] = hoveredImage
                                             else:
-                                                $ hoveredImage = im.MatrixColor(
-                                                    hoverImg,
-                                                    im.matrix.brightness(brightness_adjustment) * im.matrix.saturation(saturation_adjustment) * im.matrix.contrast(contrast_adjustment)
-                                                )
-                                            #$ hoveredImage = Flatten(hoveredImage)
-                                            #$ sceneSpriteSurfacesCache[scene_name + i] = hoveredImage
-                                        else:
-                                            $ hoveredImage = sceneSpriteSurfacesCache[scene_name + i]
-                                        imagebutton:
-                                            if canvas_offset != False:
-                                                xpos canvas_offset[1]
-                                                ypos canvas_offset[0]
-                                            if data[i]["hover_overlay"] == True:
-                                                xpos overlay_canvas_offset[1]
-                                                ypos overlay_canvas_offset[0]
+                                                $ hoveredImage = sceneSpriteSurfacesCache[scene_name + i]
+                                            imagebutton:
+                                                if canvas_offset != False:
+                                                    xpos canvas_offset[1]
+                                                    ypos canvas_offset[0]
+                                                if data[i]["hover_overlay"] == True:
+                                                    xpos overlay_canvas_offset[1]
+                                                    ypos overlay_canvas_offset[0]
 
-                                            if data[i].has_key("xsprite") and data[i].has_key("ysprite"):
-                                                xpos int(float(data[i]["xsprite"]) / 1920.0 * config.screen_width)
-                                                ypos int(float(data[i]["ysprite"]) / 1080.0 * config.screen_height)
-                                            idle hoveredImage
-                                            hover hoveredImage
-                                            if data[i].has_key("hovered_caption"):
-                                                hovered [SetScreenVariable("idle_num", 0.4), Show("sprite_hovered_caption_screen", None, data[i]["hovered_caption"])]
-                                            else:
-                                                hovered [SetScreenVariable("idle_num", 0.4)]
-                                            unhovered Hide("sprite_hovered_caption_screen")
-                                            at imagebutton_hover_type1(idle_num)
-                                            focus_mask True
-                                            if data[i]["actions"] == "l" and check_object_has_character(i) == False: #если объекту не заданы действия кроме просмотра, то не выводим доп. меню
-                                                action [
-                                                    Return(["process_object_click", data[i]["click"], i, data[i]]),
-                                                ]
-                                            else:
-                                                action [
-                                                    Show("action_menu_screen", None, data[i]["click"], i, data[i]),
-                                                ]
+                                                if data[i].has_key("xsprite") and data[i].has_key("ysprite"):
+                                                    xpos int(float(data[i]["xsprite"]) / 1920.0 * config.screen_width)
+                                                    ypos int(float(data[i]["ysprite"]) / 1080.0 * config.screen_height)
+                                                idle hoveredImage
+                                                hover hoveredImage
+                                                if data[i].has_key("hovered_caption"):
+                                                    hovered [SetScreenVariable("idle_num", 0.4), Show("sprite_hovered_caption_screen", None, data[i]["hovered_caption"])]
+                                                else:
+                                                    hovered [SetScreenVariable("idle_num", 0.4)]
+                                                unhovered Hide("sprite_hovered_caption_screen")
+                                                at imagebutton_hover_type1(idle_num)
+                                                focus_mask True
+                                                if data[i]["actions"] == "l" and check_object_has_character(i) == False: #если объекту не заданы действия кроме просмотра, то не выводим доп. меню
+                                                    action [
+                                                        Return(["process_object_click", data[i]["click"], i, data[i]]),
+                                                    ]
+                                                else:
+                                                    action [
+                                                        Show("action_menu_screen", None, data[i]["click"], i, data[i]),
+                                                    ]
 
-            #                                alternate Show("action_menu_screen", None, data[i]["click"], i, data[i])
-#                                            alternate Call("call_save")
+                #                                alternate Show("action_menu_screen", None, data[i]["click"], i, data[i])
+    #                                            alternate Call("call_save")
 
                             if data[i]["type"] == 3: #text with image
                                 $ button_layout = data[i]["layout"] if data[i].has_key("layout") else text_button_default_layout

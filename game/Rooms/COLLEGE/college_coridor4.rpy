@@ -8,7 +8,7 @@ label college_coridor4:
 
 label college_coridor4_init:
     $ default_tint = [1.0, 1.0, 1.0]
-    $ add_object_to_scene("Student10", {"type" : 2, "base" : "COLLEGE_Coridor_4_Student10_[collegeStudent10_Suffix]", "click" : "college_coridor4_environment", "actions" : "l", "zorder":10, "selectable": False}, scene="college_coridor4")
+    $ add_object_to_scene("Student10", {"type" : 2, "base" : "COLLEGE_Coridor_4_Student10_[collegeStudent10_Suffix]", "click" : "college_coridor4_environment", "actions" : "l", "zorder":3, "selectable": False, "group":"students"}, scene="college_coridor4")
 
     $ add_object_to_scene("Teleport_Coridor2", {"type":3, "text" : t_("КОРИДОР"), "rarrow" : "arrow_down_2", "base":"Screen_Down_Arrow", "click" : "college_coridor4_environment", "xpos" : 960, "ypos" : 956, "zorder":11, "teleport":True, "group":"teleports"}, scene="college_coridor4")
     $ add_object_to_scene("Teleport_Pool", {"type":3, "text" : t_("БАССЕЙН"), "rarrow" : "arrow_down_2", "base":"COLLEGE_Coridor_4_Teleport_Pool", "click" : "college_coridor4_environment", "xpos" : 1280, "ypos" : 132, "zorder":11, "teleport":True, "group":"teleports"}, scene="college_coridor4")

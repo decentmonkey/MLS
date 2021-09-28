@@ -176,6 +176,10 @@ label start: #for blink here
     $ add_hook("exit_scene", "test1_exit", scene="house_street")
     $ add_hook("enter_scene", "test1_enter", scene="house_street")
 
+    $ add_hook("before_open", "college_life", scene="college_street", label="college_life")
+    $ add_hook("change_day_time", "college_life_change_daytime", scene="global", label="college_life")
+
+
 #    call change_scene("house_street") from _rcall_change_scene_220
     call changeDayTime("day")
 
