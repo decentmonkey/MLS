@@ -1,3 +1,16 @@
+default collegeStreetCrowd1_Suffix = 1
+default collegeStreetCrowd1_Suffix = 2
+default collegeStreetCrowd1_Suffix = 3
+default collegeStreetCrowd1_Suffix = 4
+default collegeStreetCrowd1_Suffix = 5
+default collegeStreetCrowd1_Suffix = 6
+default collegeStreetCrowd1_Suffix = 7
+default collegeStreetCrowd1_Suffix = 8
+default collegeStreetCrowd1_Suffix = 9
+default collegeStreetCrowd1_Suffix = 10
+default collegeStreetFriendBardie_Suffix = 1
+default collegeStreetClassmate1_Suffix = 1
+
 label college_street:
     $ miniMapData = []
     call miniMapCOLLEGEGenerate()
@@ -10,7 +23,18 @@ label college_street:
 
 label college_street_init:
     $ default_tint = [1.0, 1.0, 1.0]
-#    $ add_object_to_scene("Monica", {"type" : 2, "base" : "basement_bedroom1_Monica_[basementBedroom1MonicaSuffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10}, scene="college_street")
+    $ add_object_to_scene("Crowd1", {"type" : 2, "base" : "COLLEGE_Street_Crowd1_[collegeStreetCrowd1_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10, "selectable": False}, scene="college_street")
+    $ add_object_to_scene("Crowd2", {"type" : 2, "base" : "COLLEGE_Street_Crowd2_[collegeStreetCrowd2_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10, "selectable": False}, scene="college_street")
+    $ add_object_to_scene("Crowd3", {"type" : 2, "base" : "COLLEGE_Street_Crowd3_[collegeStreetCrowd3_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10, "selectable": False}, scene="college_street")
+    $ add_object_to_scene("Crowd4", {"type" : 2, "base" : "COLLEGE_Street_Crowd4_[collegeStreetCrowd4_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10, "selectable": False}, scene="college_street")
+    $ add_object_to_scene("Crowd5", {"type" : 2, "base" : "COLLEGE_Street_Crowd5_[collegeStreetCrowd5_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10, "selectable": False}, scene="college_street")
+    $ add_object_to_scene("Crowd6", {"type" : 2, "base" : "COLLEGE_Street_Crowd6_[collegeStreetCrowd6_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10, "selectable": False}, scene="college_street")
+    $ add_object_to_scene("Crowd7", {"type" : 2, "base" : "COLLEGE_Street_Crowd7_[collegeStreetCrowd7_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10, "selectable": False}, scene="college_street")
+    $ add_object_to_scene("Crowd8", {"type" : 2, "base" : "COLLEGE_Street_Crowd8_[collegeStreetCrowd8_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10, "selectable": False}, scene="college_street")
+    $ add_object_to_scene("Crowd9", {"type" : 2, "base" : "COLLEGE_Street_Crowd9_[collegeStreetCrowd9_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10, "selectable": False}, scene="college_street")
+    $ add_object_to_scene("Crowd10", {"type" : 2, "base" : "COLLEGE_Street_Crowd10_[collegeStreetCrowd10_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10, "selectable": False}, scene="college_street")
+    $ add_object_to_scene("Classmate1", {"type" : 2, "base" : "COLLEGE_Street_Classmate1_[collegeStreetClassmate1_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10, "selectable": False}, scene="college_street")
+    $ add_object_to_scene("Friend_Bardie", {"type" : 2, "base" : "COLLEGE_Street_Friend_Bardie_[collegeStreetFriendBardie_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10}, scene="college_street")
 
     $ add_object_to_scene("Teleport_Map", {"type":3, "text" : t_("ГОРОД"), "larrow" : "arrow_down_2", "base":"Screen_Down_Arrow", "click" : "college_street_environment", "xpos" : 960, "ypos" : 956, "zorder":11, "teleport":True, "group":"teleports"}, scene="college_street")
     $ add_object_to_scene("Teleport_Coridor1", {"type":3, "text" : t_("ВХОД В КОЛЛЕДЖ"), "rarrow" : "arrow_right_2", "base":"COLLEGE_Street_Teleport_Coridor1", "click" : "college_street_environment", "xpos" : 1138, "ypos" : 555, "zorder":11, "teleport":True, "group":"teleports"}, scene="college_street")

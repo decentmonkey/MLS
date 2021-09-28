@@ -1,3 +1,5 @@
+default collegeStudent19_Suffix = 1
+
 label college_coridor9:
     $ miniMapData = []
     call miniMapCOLLEGEGenerate()
@@ -6,7 +8,7 @@ label college_coridor9:
 
 label college_coridor9_init:
     $ default_tint = [1.0, 1.0, 1.0]
-#    $ add_object_to_scene("Monica", {"type" : 2, "base" : "basement_bedroom1_Monica_[basementBedroom1MonicaSuffix]", "click" : "college_coridor9_environment", "actions" : "l", "zorder":10}, scene="college_coridor9")
+    $ add_object_to_scene("Student19", {"type" : 2, "base" : "COLLEGE_Coridor_9_Student19_[collegeStudent19_Suffix]", "click" : "college_coridor9_environment", "actions" : "l", "zorder":10, "selectable": False}, scene="college_coridor9")
 
     $ add_object_to_scene("Teleport_Coridor10", {"type":3, "text" : t_("ЛЕСТНИЦА"), "rarrow" : "arrow_down_2", "base":"COLLEGE_Coridor_9_Teleport_Coridor10", "click" : "college_coridor9_environment", "xpos" : 1657, "ypos" : 845, "zorder":11, "teleport":True, "group":"teleports"}, scene="college_coridor9")
     $ add_object_to_scene("Teleport_Teachers", {"type":3, "text" : t_("УЧИТЕЛЬСКАЯ"), "rarrow" : "arrow_right_2", "base":"COLLEGE_Coridor_9_Teleport_Teachers", "click" : "college_coridor9_environment", "xpos" : 1010, "ypos" : 555, "zorder":11, "teleport":True, "group":"teleports"}, scene="college_coridor9")

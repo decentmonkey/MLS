@@ -1,3 +1,6 @@
+default houseLivingRoomSophieSuffix = 1
+default houseLivingRoomFatherSuffix = 1
+
 label house_livingroomhall:
     $ miniMapData = []
     call miniMapHouseGenerate()
@@ -6,7 +9,8 @@ label house_livingroomhall:
 
 label house_livingroomhall_init:
     $ default_tint = [1.0, 1.0, 1.0]
-#    $ add_object_to_scene("Monica", {"type" : 2, "base" : "basement_bedroom1_Monica_[basementBedroom1MonicaSuffix]", "click" : "house_livingroomhall_environment", "actions" : "l", "zorder":10}, scene="house_livingroomhall")
+    $ add_object_to_scene("Sophie", {"type" : 2, "base" : "House_LivingRoomHall[day_suffix]_Mother_[houseLivingRoomSophieSuffix]", "click" : "house_livingroomhall_environment", "actions" : "l", "zorder":10}, scene="house_livingroomhall")
+    $ add_object_to_scene("Henry", {"type" : 2, "base" : "House_LivingRoomHall[day_suffix]_Father_[houseLivingRoomFatherSuffix]", "click" : "house_livingroomhall_environment", "actions" : "l", "zorder":10}, scene="house_livingroomhall")
 
     $ add_object_to_scene("Teleport_Floor1", {"type":3, "text" : t_("НАЗАД"), "larrow" : "arrow_down_2", "base":"Screen_Down_Arrow", "click" : "house_livingroomhall_environment", "xpos" : 960, "ypos" : 956, "zorder":11, "teleport":True, "group":"teleports"}, scene="house_livingroomhall")
     return

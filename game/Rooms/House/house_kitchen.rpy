@@ -1,3 +1,5 @@
+default houseKitchenSophieSuffix = 1
+
 label house_kitchen:
     $ miniMapData = []
     call miniMapHouseGenerate()
@@ -6,7 +8,7 @@ label house_kitchen:
 
 label house_kitchen_init:
     $ default_tint = [1.0, 1.0, 1.0]
-#    $ add_object_to_scene("Monica", {"type" : 2, "base" : "basement_bedroom1_Monica_[basementBedroom1MonicaSuffix]", "click" : "house_kitchen_environment", "actions" : "l", "zorder":10}, scene="house_kitchen")
+    $ add_object_to_scene("Sophie", {"type" : 2, "base" : "House_Kitchen[day_suffix]_Mother_[houseKitchenSophieSuffix]", "click" : "house_kitchen_environment", "actions" : "l", "zorder":10}, scene="house_kitchen")
 
     $ add_object_to_scene("Teleport_Floor1", {"type":3, "text" : t_("НАЗАД"), "rarrow" : "arrow_right_2", "base":"House_Kitchen_Teleport_Floor1", "click" : "house_kitchen_environment", "xpos" : 1604, "ypos" : 573, "zorder":11, "teleport":True, "group":"teleports"}, scene="house_kitchen")
     return

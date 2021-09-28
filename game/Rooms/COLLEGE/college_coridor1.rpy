@@ -1,3 +1,7 @@
+default collegeStudent1_Suffix = 1
+default collegeStudent2_Suffix = 1
+default collegeStudent3_Suffix = 1
+
 label college_coridor1:
     $ miniMapData = []
     call miniMapCOLLEGEGenerate()
@@ -6,7 +10,9 @@ label college_coridor1:
 
 label college_coridor1_init:
     $ default_tint = [1.0, 1.0, 1.0]
-#    $ add_object_to_scene("Monica", {"type" : 2, "base" : "basement_bedroom1_Monica_[basementBedroom1MonicaSuffix]", "click" : "college_coridor1_environment", "actions" : "l", "zorder":10}, scene="college_coridor1")
+    $ add_object_to_scene("Student1", {"type" : 2, "base" : "COLLEGE_Coridor_1_Student1_[collegeStudent1_Suffix]", "click" : "college_coridor1_environment", "actions" : "l", "zorder":10, "selectable": False}, scene="college_coridor1")
+    $ add_object_to_scene("Student2", {"type" : 2, "base" : "COLLEGE_Coridor_1_Student1_[collegeStudent2_Suffix]", "click" : "college_coridor1_environment", "actions" : "l", "zorder":10, "selectable": False}, scene="college_coridor1")
+    $ add_object_to_scene("Student3", {"type" : 2, "base" : "COLLEGE_Coridor_1_Student1_[collegeStudent3_Suffix]", "click" : "college_coridor1_environment", "actions" : "l", "zorder":10, "selectable": False}, scene="college_coridor1")
 
     $ add_object_to_scene("Teleport_Biology", {"type":3, "text" : t_("БИОЛОГИЯ"), "rarrow" : "arrow_down_2", "base":"COLLEGE_Coridor_1_Teleport_Biology", "click" : "college_coridor1_environment", "xpos" : 1053, "ypos" : 141, "zorder":11, "teleport":True, "group":"teleports"}, scene="college_coridor1")
     $ add_object_to_scene("Teleport_Hall", {"type":3, "text" : t_("АКТОВЫЙ ЗАЛ"), "larrow" : "arrow_down_2_a", "base":"COLLEGE_Coridor_1_Teleport_Hall", "click" : "college_coridor1_environment", "xpos" : 279, "ypos" : 178, "zorder":11, "teleport":True, "group":"teleports"}, scene="college_coridor1")

@@ -1,3 +1,7 @@
+default houseBathroomSister1Suffix = 1
+default houseBathroomSister2Suffix = 1
+default houseBathroomMotherSuffix = 1
+
 label house_bathroom:
     $ miniMapData = []
     call miniMapHouseGenerate()
@@ -6,7 +10,9 @@ label house_bathroom:
 
 label house_bathroom_init:
     $ default_tint = [1.0, 1.0, 1.0]
-#    $ add_object_to_scene("Monica", {"type" : 2, "base" : "basement_bedroom1_Monica_[basementBedroom1MonicaSuffix]", "click" : "house_bathroom_environment", "actions" : "l", "zorder":10}, scene="house_bathroom")
+    $ add_object_to_scene("Sister1", {"type" : 2, "base" : "House_Bathroom[day_suffix]_Sister1_[houseBathroomSister1Suffix]", "click" : "house_bathroom_environment", "actions" : "l", "zorder":10}, scene="house_bathroom")
+    $ add_object_to_scene("Sister2", {"type" : 2, "base" : "House_Bathroom[day_suffix]_Sister2_[houseBathroomSister2Suffix]", "click" : "house_bathroom_environment", "actions" : "l", "zorder":10}, scene="house_bathroom")
+    $ add_object_to_scene("Sophie", {"type" : 2, "base" : "House_Bathroom[day_suffix]_Mother_[houseBathroomMotherSuffix]", "click" : "house_bathroom_environment", "actions" : "l", "zorder":10}, scene="house_bathroom")
 
     $ add_object_to_scene("Teleport_Floor1", {"type":3, "text" : t_("НАЗАД"), "rarrow" : "arrow_right_2", "base":"House_Bathroom_Teleport_Floor1", "click" : "house_bathroom_environment", "xpos" : 1599, "ypos" : 541, "zorder":11, "teleport":True, "group":"teleports"}, scene="house_bathroom")
     return
