@@ -393,7 +393,12 @@ screen screen_sprites(data):
                                         ypos int(float(data[i]["ypos"]) / 1080.0 * config.screen_height)
                                         anchor (0.5,0.5)
                                         frame:
+#                                            if obj_follow_list.has_key(scene_name + "_!_" + i) and obj_follow_list[scene_name + "_!_" + i] == True:
+#                                                background Solid("#18181a") at object_follow_flashing
+#                                            else:
                                             background Solid("#18181a")
+#                                            if obj_follow_list.has_key(scene_name + "_!_" + i) and obj_follow_list[scene_name + "_!_" + i] == True:
+#                                                at object_follow_flashing
                                             margin (0,0)
                                             padding text_button_layouts[button_layout]["text_button.padding"]
                                             style "sprite_textbutton_frm"
@@ -402,6 +407,8 @@ screen screen_sprites(data):
                                                     null:
                                                         width text_button_layouts[button_layout]["text_button.spacing1"]
                                                     add left_arrow:
+                                                        if obj_follow_list.has_key(scene_name + "_!_" + i) and obj_follow_list[scene_name + "_!_" + i] == True:
+                                                            at object_follow_flashing
                                                         yalign 0.5
                                                 null:
                                                     width text_button_layouts[button_layout]["text_button.spacing2"]
@@ -414,6 +421,8 @@ screen screen_sprites(data):
                                                     width text_button_layouts[button_layout]["text_button.spacing2"]
                                                 if right_arrow != False:
                                                     add right_arrow:
+                                                        if obj_follow_list.has_key(scene_name + "_!_" + i) and obj_follow_list[scene_name + "_!_" + i] == True:
+                                                            at object_follow_flashing
                                                         yalign 0.5
                                                     null:
                                                         width text_button_layouts[button_layout]["text_button.spacing1"]

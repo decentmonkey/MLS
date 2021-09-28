@@ -184,6 +184,9 @@ label start: #for blink here
 
     $ map_objects["Teleport_HOUSE_FRIEND"] = {"text" : t_("ДОМ ШОНА"), "xpos" : 1303, "ypos" : 318, "base" : "map_marker", "state" : "visible"}
     $ map_objects["Teleport_COLLEGE"] = {"text" : t_("КОЛЛЕДЖ"), "xpos" : 982, "ypos" : 268, "base" : "map_marker", "state" : "visible"}
+
+    $ set_object_follow("Teleport_Coridor1", scene="college_street")
+
     music stop
     call change_scene("college_street")
 

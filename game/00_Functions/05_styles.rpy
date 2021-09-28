@@ -215,3 +215,8 @@ transform blur(child):
         alpha 0.2 yoffset 30
 #translate german python:
 #    objectivesFont = "fonts/OpenSans-Regular.ttf"
+
+transform object_follow_flashing:
+    linear 0.7 alpha 0.5
+    linear 0.7 alpha 1.0
+    repeat
