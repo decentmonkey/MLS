@@ -19,6 +19,11 @@ label college_street:
         $ scene_image = "scene_COLLEGE_Street_Night"
     else:
         $ scene_image = "scene_COLLEGE_Street[day_suffix]"
+
+    if day_time_idx < 3:
+        music Market
+    else:
+        music night_ambience
     return
 
 label college_street_init:
@@ -34,7 +39,7 @@ label college_street_init:
     $ add_object_to_scene("Crowd9", {"type" : 2, "base" : "COLLEGE_Street_Crowd9_[collegeStreetCrowd9_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10, "selectable": False, "group":"students"}, scene="college_street")
     $ add_object_to_scene("Crowd10", {"type" : 2, "base" : "COLLEGE_Street_Crowd10_[collegeStreetCrowd10_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10, "selectable": False, "group":"students"}, scene="college_street")
     $ add_object_to_scene("Classmate1", {"type" : 2, "base" : "COLLEGE_Street_Classmate1_[collegeStreetClassmate1_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10, "selectable": False, "group":"students"}, scene="college_street")
-    $ add_object_to_scene("Friend_Bardie", {"type" : 2, "base" : "COLLEGE_Street_Friend_Bardie_[collegeStreetFriendBardie_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10}, scene="college_street")
+    $ add_object_to_scene("Friend_Bardie", {"type" : 2, "base" : "COLLEGE_Street_Friend_Bardie_[collegeStreetFriendBardie_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":15}, scene="college_street")
 
     $ add_object_to_scene("Teleport_Map", {"type":3, "text" : t_("ГОРОД"), "larrow" : "arrow_down_2", "base":"Screen_Down_Arrow", "click" : "college_street_environment", "xpos" : 960, "ypos" : 956, "zorder":11, "teleport":True, "group":"teleports", "high_sprite_hover": True}, scene="college_street")
     $ add_object_to_scene("Teleport_Coridor1", {"type":3, "text" : t_("ВХОД В КОЛЛЕДЖ"), "rarrow" : "arrow_right_2", "base":"COLLEGE_Street_Teleport_Coridor1", "click" : "college_street_environment", "xpos" : 1138, "ypos" : 555, "zorder":0, "teleport":True, "group":"teleports"}, scene="college_street")

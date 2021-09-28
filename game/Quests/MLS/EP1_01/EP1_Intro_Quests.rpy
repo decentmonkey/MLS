@@ -146,6 +146,7 @@ label ep1_intro_quests5_bed: # ложится спать
     call ep01_dialogues2_day1_family_3()
     if _return == False:
         return False
+    $ remove_hook(label="ep1_intro_quests5_bed")
     $ questHelp("house_2", True)
     call ep01_dialogues2_day1_family_8()
     $ questHelp("house_3")
@@ -197,6 +198,7 @@ label ep1_intro_quests6_sophie: # Софи с утра на кухне
         $ questHelp("house_4", True)
         $ questHelp("college_1")
         $ questHelpDesc("college_desc1")
+        $ remove_hook(label="house_block")
         $ miniMapDisabled = {}
         $ map_objects["Teleport_COLLEGE"] = {"text" : t_("КОЛЛЕДЖ"), "xpos" : 982, "ypos" : 268, "base" : "map_marker", "state" : "visible"}
         $ set_object_follow("Teleport_Coridor1", scene="college_street")
@@ -204,6 +206,7 @@ label ep1_intro_quests6_sophie: # Софи с утра на кухне
         $ add_hook("Friend_Bardie", "ep1_college_sean", scene="college_street", label="college_sean")
         $ clear_object_follow_all()
         $ sophieKitchenTalkLastDay = day
+        $ autorun_to_object("ep01_dialogues3_day2_family_4a", scene="house_street")
         call refresh_scene_fade()
         return False
     call ep01_dialogues3_day2_family_5()

@@ -94,6 +94,7 @@ label ep01_dialogues3_day2_family_2:
     music Adventures_of_the_Deaf_Dreamer
     imgf 900071
     bardi_t "Оу, черт!"
+    bardi_t "Синтия!"
     # Барди быстро выходит обратно в холл и стоит перед дверью
     music2 stop
     sound run_stairs_floor
@@ -194,6 +195,8 @@ label ep01_dialogues3_day2_family_4:
     sophie "Вечером жду тебя дома с подробностями, как прошел твой первый день в колледже."
     bardi "Окей."
     # она снова ему мило улыбается и принимается что-то делать на кухне
+    return
+label ep01_dialogues3_day2_family_4a:
     help "Что бы попасть в нужную тебе локацию вне дома, используй карту города."
     # иконка карты подсвечивается
     help "Просто кликни на эту иконку и выбери нужную локацию."
