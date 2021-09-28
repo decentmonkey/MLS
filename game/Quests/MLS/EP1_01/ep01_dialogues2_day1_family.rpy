@@ -353,6 +353,20 @@ label ep01_dialogues2_day1_family_3:
     bardi_t "Я пока не хочу спать..."
     return
 
+label ep01_dialogues2_day1_family_3a:
+    menu:
+        "Ждать до полудня.":
+            return 1
+        "Ждать до вечера.":
+            return 2
+        "Ждать до ночи.":
+            return 3
+        "Лечь спать до утра.":
+            return 4
+        "Уйти.":
+            return 0
+    return
+
 label ep01_dialogues2_day1_family_4:
     # Барди зашел вечером на кухню, Софи стоит у столешницы и что-то делает (например, моет посуду)
     # клик на Софи
