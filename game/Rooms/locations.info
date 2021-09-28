@@ -334,4 +334,15 @@ HouseFriend_Bedroom_Parents: scene_HouseFriend_Bedroom_Parents - СПАЛЬНЯ 
 
 # student11 == 1, or student12 disabled
 
+
+сделать маски:
+floor2
+флипчарт - ep01_dialogues2_day1_family_1_7
+стол - ep01_dialogues2_day1_family_1_8
+картины- ep01_dialogues2_day1_family_1_9
+
+гостиная
+телевизор
+
+
 //

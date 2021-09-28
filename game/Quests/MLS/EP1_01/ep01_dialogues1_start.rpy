@@ -268,10 +268,12 @@ label ep01_dialogues1_start_1b:
     # взволнованное тяжелое дыхание, затем осторожные шаги и скрип пола
     # дверь с каждым шагом все ближе и ближе
     # рука (как будто видим свою руку) медленно поднимается и берется за ручку двери
-    sound heavy_breathing_male2
+    sound floor_creak
     imgfl 910242
+    sound heavy_breathing_male2
     sound2 woman_moan12
     bardi_t "Главное, не шуметь. Если они заметят меня - это будет конец."
+    sound floor_creak
     imgf 910304
     sound sneaks_2
     bardi_t "Фак! У меня дрожат колени, но я не могу остановиться."
@@ -490,6 +492,7 @@ label ep01_dialogues1_start_1b:
     wclean
     mark "Ооох!.. Я готов трахаться с тобой сутки напролет!"
     olivia "Даааа!"
+    wclean
     stop music2
     $ renpy.music.set_volume(1.0, 0.5, channel="music2")
     $ renpy.music.set_volume(1.0, 0.5, channel="music")
@@ -628,6 +631,7 @@ label ep01_dialogues1_start_1b:
     wclean
     mark "Вот так тебе нравится?"
     olivia "О, да, Марк! О, как же кайфово!"
+    wclean
     stop music2
     $ renpy.music.set_volume(1.0, 0.5, channel="music2")
     $ renpy.music.set_volume(1.0, 0.5, channel="music")
@@ -720,6 +724,7 @@ label ep01_dialogues1_start_1b:
     wclean
     olivia "Не останавливайся, Марк, трахай меня! Да-да!"
     mark "Да, детка! Я хочу, чтобы ты кончила!"
+    wclean
     stop music2
     $ renpy.music.set_volume(1.0, 0.5, channel="music2")
     $ renpy.music.set_volume(1.0, 0.5, channel="music")
@@ -770,7 +775,7 @@ label ep01_dialogues1_start_2:
     scene black_screen
     with Dissolve(1)
     music stop
-    call textonblack(t_("СЕЙЧАС"))
+    call textonblack(t_("НАСТОЯЩЕЕ ВРЕМЯ"))
     scene black_screen
     with Dissolve(1)
     music2 train_ambience

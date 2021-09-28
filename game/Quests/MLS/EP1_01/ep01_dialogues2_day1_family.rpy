@@ -37,6 +37,12 @@ label ep01_dialogues2_day1_family_1:
     # кадр на комнату Барди
     # звук шагов, звук открывающейся двери
     # на пол или на кровать падает рюкзак
+    scene black_screen
+    with Dissolve(1)
+    call textonblack(t_("СПУСТЯ ЧАС"))
+    scene black_screen
+    with Dissolve(1)
+
     music Dont_Close_Your_Eyes
     imgfl 900026
     bardi_t "Это и есть моя комната?!" ##->#####inc
@@ -67,7 +73,8 @@ label ep01_dialogues2_day1_family_1:
     w
     menu:
         "Пойти на кухню.":
-            jump ep01_dialogues2_day1_family_2
+#            jump ep01_dialogues2_day1_family_2
+            return True
         "Позже, сначала осмотреться.":
             # уход на движок
             # игрок может побродить по комнате и дому
@@ -75,7 +82,7 @@ label ep01_dialogues2_day1_family_1:
             pass
     imgf 900034
     bardi_t "Думаю, ничего страшного, что им придется немного подождать меня..."
-    return
+    return False
 
 # в телефоне в Инсте можно сделать в аккаунте Барди один опубликованный (или сохраненный в галерее) пост
 # фотка - селфи Барди на фоне вокзала, он показывает фак в камеру
@@ -95,7 +102,7 @@ label ep01_dialogues2_day1_family_1:
 # мысли при клике на кровать, если утро или день, вечером и ночью меню из лейбла ep01_dialogues2_day1_family_3
 label ep01_dialogues2_day1_family_1_1:
     bardi_t "Мне еще рано ложиться спать."
-    return
+    return False
 # мысли при клике на окно
 label ep01_dialogues2_day1_family_1_2:
     bardi_t "Может, сбежать отсюда? Вокзал, поезд..."

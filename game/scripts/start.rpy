@@ -189,16 +189,16 @@ label start: #for blink here
 #    call change_scene("house_street") from _rcall_change_scene_220
     call changeDayTime("day")
 
-#    call change_scene("intro_beach", "Fade_long", False)
-#    call ep1_intro_quests1()
+    call change_scene("intro_beach", "Fade_long", False)
+    call ep1_intro_quests1()
 
-    $ map_objects["Teleport_HOUSE_FRIEND"] = {"text" : t_("ДОМ ШОНА"), "xpos" : 1303, "ypos" : 318, "base" : "map_marker", "state" : "visible"}
-    $ map_objects["Teleport_COLLEGE"] = {"text" : t_("КОЛЛЕДЖ"), "xpos" : 982, "ypos" : 268, "base" : "map_marker", "state" : "visible"}
+#    $ map_objects["Teleport_HOUSE_FRIEND"] = {"text" : t_("ДОМ ШОНА"), "xpos" : 1303, "ypos" : 318, "base" : "map_marker", "state" : "visible"}
+#    $ map_objects["Teleport_COLLEGE"] = {"text" : t_("КОЛЛЕДЖ"), "xpos" : 982, "ypos" : 268, "base" : "map_marker", "state" : "visible"}
 
-    $ set_object_follow("Teleport_Coridor1", scene="college_street")
+#    $ set_object_follow("Teleport_Coridor1", scene="college_street")
 
-    music stop
-    call change_scene("college_street")
+#    music stop
+#    call change_scene("college_street")
 
 #    $ map_objects["Teleport_HOUSE_FRIEND"] = {"text" : t_("ДОМ ШОНА"), "xpos" : 1303, "ypos" : 318, "base" : "map_marker", "state" : "visible"}
 #    $ map_objects["Teleport_COLLEGE"] = {"text" : t_("КОЛЛЕДЖ"), "xpos" : 982, "ypos" : 268, "base" : "map_marker", "state" : "visible"}
