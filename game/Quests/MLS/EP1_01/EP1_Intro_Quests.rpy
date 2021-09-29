@@ -122,6 +122,11 @@ label ep1_intro_quests4: # кухня
     $ add_hook("Teleport_Sister2", "ep01_dialogues2_day1_family_7", scene="house_floor2", label="talk_evening")
     $ add_hook("Bed", "ep1_intro_quests5_bed", scene="house_bedroom_mc", label="ep1_intro_quests5_bed")
 
+    # делаем ведение по указателям
+    $ set_object_follow("Teleport_Floor1", scene="house_kitchen")
+    $ set_object_follow("Teleport_Floor2", scene="house_floor1")
+    $ set_object_follow("Teleport_Bedroom_MC", scene="house_floor2")
+
     call refresh_scene_fade_long()
     return
 
@@ -147,6 +152,7 @@ label ep1_intro_quests5_bed: # ложится спать
     if _return == False:
         return False
     $ remove_hook(label="ep1_intro_quests5_bed")
+    $ clear_object_follow_all()
     $ questHelp("house_2", True)
     call ep01_dialogues2_day1_family_8()
     $ questHelp("house_3")
@@ -156,8 +162,8 @@ label ep1_intro_quests5_bed: # ложится спать
     call ep01_dialogues3_day2_family_1()
 
     python:
-        move_object("Sister1", "house_bathroom")
-        move_object("Sister2", "house_sister2")
+        move_object("Sister2", "house_bathroom")
+        move_object("Sister1", "house_sister1")
         move_object("Henry", "empty")
         move_object("Sophie", "house_kitchen")
 
@@ -165,7 +171,7 @@ label ep1_intro_quests5_bed: # ложится спать
         sister2RoomDoorLocked = True
         landLordRoomDoorLocked = True
 
-        add_hook("before_open", "ep1_intro_quests6_cynthia_bathroom", scene="house_bathroom", label="day1_morning")
+        add_hook("Teleport_Bathroom", "ep1_intro_quests6_cynthia_bathroom", scene="house_floor1", label="day1_morning")
         add_hook("Sophie", "ep1_intro_quests6_sophie2", scene="house_kitchen", label="sophie_morning_regular")
         add_hook("Sophie", "ep1_intro_quests6_sophie", scene="house_kitchen", label="day1_morning")
 
@@ -177,6 +183,8 @@ label ep1_intro_quests5_bed: # ложится спать
     return False
 
 label ep1_intro_quests6_cynthia_bathroom: # душ Синтия
+    if get_active_objects("Sister2", scene="house_bathroom") == False:
+        return
     if ep1_intro_quests6_cynthia_bathroom_Flag == False:
         call ep01_dialogues3_day2_family_2()
         if _return == -1:
@@ -207,6 +215,12 @@ label ep1_intro_quests6_sophie: # Софи с утра на кухне
         $ clear_object_follow_all()
         $ sophieKitchenTalkLastDay = day
         $ autorun_to_object("ep01_dialogues3_day2_family_4a", scene="house_street")
+
+        $ clear_object_follow_all()
+        $ set_object_follow("Teleport_Floor1", scene="house_kitchen")
+        $ set_object_follow("Teleport_Street", scene="house_floor1")
+        $ set_object_follow("Teleport_Map", scene="house_street")
+
         call refresh_scene_fade()
         return False
     call ep01_dialogues3_day2_family_5()

@@ -23,6 +23,18 @@ define v_Teacher11_Blowjob1_25_sound_name = "v_Monica_PunksGB_Blowjob1"
 
 label ep01_dialogues3_day2_family_1:
     # анимация рассвета, заставка игры
+    img black_screen
+    with diss
+    pause 1.5
+    scene black
+    sound train
+    image videoINTRO_Animation1_premiere = Movie(play="video/INTRO_Animation1_premiere.mkv", fps=25, loop=False)
+    show videoINTRO_Animation1_premiere
+    with fade
+    $ renpy.pause(2.0, hard=True)
+    pause 24.0
+
+
     # утро
     # звон будильника
     # Барди садится в кровати (смотрим его глазами)

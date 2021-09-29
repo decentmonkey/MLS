@@ -359,6 +359,7 @@ init python:
         return
 
     def clear_object_follow_all():
+        global obj_follow_list
         obj_follow_list = {}
 
     def set_var(obj_name, **kwargs):
@@ -383,7 +384,6 @@ init python:
 label process_object_click(func_name, obj_name_source, obj_data_source):
 #    $ config.has_autosave = False
 #    $ config.autosave_on_choice = False
-
     $ obj_name = obj_name_source
     $ obj_data = obj_data_source
     $ clear_object_follow(obj_name, scene=scene_name)

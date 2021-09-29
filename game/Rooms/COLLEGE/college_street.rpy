@@ -41,7 +41,7 @@ label college_street_init:
     $ add_object_to_scene("Classmate1", {"type" : 2, "base" : "COLLEGE_Street_Classmate1_[collegeStreetClassmate1_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":10, "selectable": False, "group":"students"}, scene="college_street")
     $ add_object_to_scene("Friend_Bardie", {"type" : 2, "base" : "COLLEGE_Street_Friend_Bardie_[collegeStreetFriendBardie_Suffix][day_suffix]", "click" : "college_street_environment", "actions" : "l", "zorder":15}, scene="college_street")
 
-    $ add_object_to_scene("Teleport_Map", {"type":3, "text" : t_("ГОРОД"), "larrow" : "arrow_down_2", "base":"Screen_Down_Arrow", "click" : "college_street_environment", "xpos" : 960, "ypos" : 956, "zorder":11, "teleport":True, "group":"teleports", "high_sprite_hover": True}, scene="college_street")
+    $ add_object_to_scene("Teleport_Map", {"type":3, "text" : t_("ГОРОД"), "larrow" : "arrow_down_2", "base":"Screen_Down_Arrow", "click" : "college_street_environment", "xpos" : 960, "ypos" : 956, "zorder":20, "teleport":True, "group":"teleports", "high_sprite_hover": True}, scene="college_street")
     $ add_object_to_scene("Teleport_Coridor1", {"type":3, "text" : t_("ВХОД В КОЛЛЕДЖ"), "rarrow" : "arrow_right_2", "base":"COLLEGE_Street_Teleport_Coridor1", "click" : "college_street_environment", "xpos" : 1138, "ypos" : 555, "zorder":0, "teleport":True, "group":"teleports"}, scene="college_street")
     $ add_object_to_scene("Teleport_StreetYard", {"type":3, "text" : t_("СПОРТИВНАЯ ПЛОЩАДКА"), "larrow" : "arrow_down_2_a", "base":"COLLEGE_Street_Teleport_StreetYard", "click" : "college_street_environment", "xpos" : 498, "ypos" : 537, "zorder":11, "teleport":True, "group":"teleports"}, scene="college_street")
     return

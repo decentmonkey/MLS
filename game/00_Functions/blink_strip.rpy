@@ -19,6 +19,7 @@ init python:
             self.frames = args
             self.index = 0
             self.stage = 0
+            self.firstBlink = True
 
         def render(self, width, height, st, at):
             if self.stage == 0:
@@ -28,6 +29,9 @@ init python:
 
                 if self.index == 0:
                     delay1 = float(self.preset_data[0])
+                    if self.firstBlink == True:
+                        self.firstBlink = False
+                        delay1 = 1.0
                 else:
                     delay1 = float(self.preset_data[1] / (len(self.frames)-1))
                 t = self.frames[self.index]

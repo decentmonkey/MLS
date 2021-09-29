@@ -230,6 +230,6 @@ transform blur(child):
 #    objectivesFont = "fonts/OpenSans-Regular.ttf"
 
 transform object_follow_flashing:
-    linear 0.7 alpha 0.5
+    linear 0.7 alpha 0.2
     linear 0.7 alpha 1.0
     repeat
