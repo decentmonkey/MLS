@@ -2109,6 +2109,11 @@ style navigation_button_text:
 
 screen main_menu():
 
+    add Movie(size=(1920, 1080))
+    on "show" action Play("movie", "video/INTRO_Animation1_premiere.mkv")
+    on "hide" action Stop("movie")
+    on "replaced" action Stop("movie")
+
     ## This ensures that any other menu screen is replaced.
     tag menu
 
@@ -2117,26 +2122,29 @@ screen main_menu():
     add gui.main_menu_background
     fixed:
         imagebutton:
-            xpos get_resolution_x(1525)
-            ypos get_resolution_y(35)
+            xpos get_resolution_x(437)
+            ypos get_resolution_y(116)
             idle "gui/patreon_button.png"
             hover "gui/patreon_button_hover.png"
             action OpenURL("https://www.patreon.com/decentmonkey")
 
         imagebutton:
-            xpos get_resolution_x(1524)
-            ypos get_resolution_y(162)
+            xpos get_resolution_x(437)
+            ypos get_resolution_y(28)
             idle "gui/web_button.png"
             hover "gui/web_button_hover.png"
             action OpenURL("http://decent-monkey.com/news/")
 
+        add "gui/logo.png":
+            xpos get_resolution_x(1025)
+            ypos get_resolution_y(00)
 #        add "gui/resolution_caption.png":
 #            xpos get_resolution_x(1345)
 #            ypos get_resolution_y(440)
 
         frame:
 #            pos (get_resolution_x(1570), get_resolution_y(650))
-            pos (gui.resolution.main_menu.lang.left, get_resolution_y(650))
+            pos (gui.resolution.main_menu.lang.left, get_resolution_y(720))
             padding (gui.resolution.main_menu.lang.padding1,gui.resolution.main_menu.lang.padding2)
             xysize (get_resolution_x(gui.resolution.main_menu.lang.width), get_resolution_y(gui.resolution.main_menu.lang.height))
             anchor (0,0)
@@ -2162,7 +2170,7 @@ screen main_menu():
 
         if language_credits.has_key(str(_preferences.language)):
             frame:
-                pos (get_resolution_x(1475) + getRes(20), get_resolution_y(650) + get_resolution_y(gui.resolution.main_menu.lang.height) + getRes(10))
+                pos (gui.resolution.main_menu.lang.left + getRes(20), get_resolution_y(720) + get_resolution_y(gui.resolution.main_menu.lang.height) + getRes(10))
                 anchor (0, 0)
                 background None
                 text t__(language_credits[str(_preferences.language)]) style "main_menu_credits_text"
@@ -2181,7 +2189,11 @@ screen main_menu():
         vbox:
             text "[config.name!t]":
                 style "main_menu_title"
-
+        frame:
+            background None
+            ypos 435
+            xpos 1600
+            xmaximum 260
             text "[config.version]":
                 style "main_menu_version"
 
@@ -2212,9 +2224,12 @@ style main_menu_title:
     properties gui.text_properties("title")
 
 style main_menu_version:
+    text_align 1.0
     properties gui.text_properties("version")
     color "f6861f"
-    outlines [(0, "#000000", 1, 1)]
+    size 60
+#    outlines [(0, "#000000", 2, 2)]
+    outlines [(6, "#0f0f0f", 0, 0)]
 #    outlines [(0, "#000000", 0, 0)]
 #    outlines [(0, "#696935", 1, 1)]
 
