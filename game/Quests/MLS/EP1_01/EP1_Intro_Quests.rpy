@@ -85,6 +85,7 @@ label ep1_intro_quests3:
     return
 
 label ep1_intro_quests3_shower1:
+    sound snd_door_open1
     call ep01_dialogues2_day1_family_1_14()
     call refresh_scene_fade()
     return False
@@ -194,7 +195,7 @@ label ep1_intro_quests6_cynthia_bathroom: # душ Синтия
 
         $ ep1_intro_quests6_cynthia_bathroom_Flag = True
         $ questHelp("house_3", True)
-        $ questHelpDesc("house_desc2")
+        $ questHelpDesc("house_desc1", "house_desc2")
         call refresh_scene_fade_long()
         return False
     call ep01_dialogues3_day2_family_3()

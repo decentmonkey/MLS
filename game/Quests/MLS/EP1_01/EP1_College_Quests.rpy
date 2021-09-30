@@ -146,7 +146,7 @@ label ep1_college5_college_end:
     $ remove_hook()
     $ remove_hook(label="day1_college")
     $ questHelp("college_13", True)
-    call ep1_college5_college_init_house()
+    call ep1_home_quests1_init()
 
     call ep01_dialogues3_day2_college_11()
 
@@ -171,18 +171,34 @@ label ep1_college5_college_init_sean:
     $ add_hook("Teleport_LivingRoom", "ep1_college5_college_sean_home", scene="housefriend_street", label="sean_visit")
     return
 
-label ep1_college5_college_init_house:
-    $ questHelp("house_5")
-    $ set_object_follow("Teleport_Floor1", scene="house_street")
-    return
-
 label ep1_college5_college_sean_home:
     $ remove_hook(label="sean_visit")
     call ep01_dialogues3_day2_college_14()
-    $ questHelp("sean_1", True)
-    call ep01_dialogues3_day2_college_15()
-    $ add_hook("Teleport_LivingRoom", "ep01_dialogues2_day1_family_1_12", label="sean_block")
+    $ set_active("Teleport_LivingRoom", False, scene="housefriend_room")
+    $ move_object("Friend_Bardie", "housefriend_room")
+    $ houseFriendRoom_Friend_BardieSuffix1 = 3
+    $ housefriend_room_forced_evening_Flag = "_Evening"
+    $ phoneEnabled = False
+    $ set_var("Friend_Bardie", base="HouseFriend_Room[housefriend_room_forced_evening_time_suffix]_Friend_Bardie_[houseFriendRoom_Friend_BardieSuffix1]", scene="housefriend_room")
+    $ add_hook("Friend_Bardie", "ep1_college5_college_sean_home2", scene="housefriend_room")
+    call change_scene("housefriend_room", "Fade_long")
     return False
+
+label ep1_college5_college_sean_home2:
+    $ remove_hook()
+    call ep01_dialogues3_day2_college_14a()
+    call changeDayTime("evening")
+    $ phoneEnabled = True
+    call ep01_dialogues3_day2_college_15()
+#    $ set_var("Friend_Bardie", base="HouseFriend_Room[day_suffix]_Friend_Bardie_[houseFriendRoom_Friend_BardieSuffix1]", scene="housefriend_room")
+    $ set_active("Teleport_LivingRoom", True, scene="housefriend_room")
+    $ add_hook("Teleport_LivingRoom", "ep01_dialogues2_day1_family_1_12", label="sean_block")
+    $ questHelp("sean_1", True)
+    $ questHelpDesc("sean_desc1")
+    call change_scene("housefriend_street", "Fade_long")
+    return False
+
+
 
 
 

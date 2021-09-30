@@ -1353,9 +1353,15 @@ screen hud_screen(hud_presets):
                     Return(["phone_show"])
                 ]
         else:
-            add "icons/icon_phone_disabled" + res.suffix + ".png":
+            imagebutton:
+                pos (1815, 95)
                 xoffset 0
                 yoffset 0
+                idle "icons/icon_phone_disabled" + res.suffix + ".png"
+                hover "icons/icon_phone_disabled" + res.suffix + ".png"
+                action [
+                    Play("sound", "Sounds/click_denied.ogg")
+                ]
 
 
 

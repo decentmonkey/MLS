@@ -2095,7 +2095,7 @@ label ep01_dialogues3_day2_college_14:
     show videov_Observe_Bardie_friend_mother_1_25
     $ renpy.pause(0.5, hard=True)
     pause 5.5
-    img 900251
+    imgd 900251
     w
     bardi_t "Это Рут, мама Шона. Она совсем не изменилась с того времени, когда я ее видел последний раз."
     bardie_friend_mother "Привет."
@@ -2206,6 +2206,8 @@ label ep01_dialogues3_day2_college_14:
     sound highheels_short_walk
     imgf 900268
     bardie_friend_mother "Если вам что-то понадобится, мальчики, то я буду в гостиной."
+    return
+label ep01_dialogues3_day2_college_14a:
     # смена кадра на комнату Шона
     # Шон валяется на кровати с телефоном
     # радостно улыбается Барди
@@ -2432,6 +2434,7 @@ label ep01_dialogues3_day2_college_14:
     return
 
 label ep01_dialogues3_day2_college_15:
+    fadeblack 2.0
     music Shining_Through
     sound2 snd_door_open1
     imgf 900307

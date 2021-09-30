@@ -27,7 +27,6 @@ label ep01_dialogues3_day2_family_1:
     with diss
     pause 1.5
     scene black
-    sound train
     image videoINTRO_Animation1_premiere = Movie(play="video/INTRO_Animation1_premiere.mkv", fps=25, loop=False)
     show videoINTRO_Animation1_premiere
     with fade
@@ -277,6 +276,7 @@ label ep01_dialogues3_day2_family_6:
     # смена кадра, Барди заходит домой
     # Софи с Генри сидят за столом и ужинают, Оливии и Синтии нет
     # Софи выглядывает из кухни, встречая Барди
+    sound snd_door_open1
     music Visions_Of_Plenty
     imgfl 900078
     sound2 snd_eating
@@ -349,6 +349,10 @@ label ep01_dialogues3_day2_family_6:
     w
     menu:
         "Сказать правду.":
+            $ questHelp("house_5", True)
+            $ questHelp("house_5a", False)
+            $ questHelp("house6")
+            $ questHelpDesc("house_desc3", "house_desc4")
             # балл RR -5
             music Step_By_Step
             imgd 900092
@@ -400,6 +404,10 @@ label ep01_dialogues3_day2_family_6:
             sophie "..."
             pass
         "Солгать.":
+            $ questHelp("house_5", False)
+            $ questHelp("house_5a", True)
+            $ questHelp("house6")
+            $ questHelpDesc("house_desc3", "house_desc5")
             # балл RR +5
             $ mlsBardiDay2Family1 = day # Барди солгал Софи про синяк
             music Step_By_Step
@@ -586,6 +594,8 @@ label ep01_dialogues3_day2_family_6:
     sophie "Иди, отдыхай. Спокойной ночи."
     imgd 900130
     bardi "Спокойной ночи."
+    return
+label ep01_dialogues3_day2_family_6a3:
     # смена кадра на лестницу, ведущую на второй этаж (смотрим глазами Барди)
     imgf 900131
     sound sneaks_2
@@ -598,9 +608,9 @@ label ep01_dialogues3_day2_family_6:
     imgd 900132
     w
 
-    music The_Heat
     imgd 900133
     w
+    music The_Heat
 
     # video
     # v_Observe_Sister_Older_1_25
@@ -673,15 +683,25 @@ label ep01_dialogues3_day2_family_6:
 # мысли Барди
 label ep01_dialogues3_day2_family_6a:
     # не рендерить!!
+    sound snd_door_locked1
     bardi_t "Оливия куда-то ушла. Ее до сих пор нет дома."
-    return
+    return False
+
+label ep01_dialogues3_day2_family_6a2:
+    bardi_t "Сначала я хочу посмотреть инстаграм Оливии."
+    show screen intro_focus("/images/Other/intro/intro_focus5.png")
+    with diss
+    help "Нажми иконку телефона. И выбери приложение инстаграм."
+    call refresh_scene()
+    return False
 
 # клик на дверь в комнату Синтии - дверь закрыта
 # мысли Барди
 label ep01_dialogues3_day2_family_6b:
     # не рендерить!!
+    sound snd_door_locked1
     bardi_t "Синтия, наверное, еще не вернулась из гостей."
-    return
+    return False
 
 label ep01_dialogues3_day2_family_7:
     # ночь, Барди ложится спать
@@ -751,7 +771,8 @@ label ep01_dialogues3_day2_family_7:
             # и тут Оливия внезапно выключает воду, стоит также спиной к Барди
             imgd 900154
             bardi_t "!!!"
-            sound2 keyboard
+            #sound2 keyboard
+            sound2 iphone_text_message1
             music2 stop
             pause 1.0
             music stop
@@ -792,7 +813,8 @@ label ep01_dialogues3_day2_family_7:
             bardi_t "Ох, какая попка!.."
             bardi_t "Ну же, Оливия, наклонись и покажи, что ты там прячешь!"
             # тут Оливия внезапно выключает воду, стоит также спиной к Барди
-            sound2 keyboard
+#            sound2 keyboard
+            sound2 iphone_text_message1
             music2 stop
             pause 1.0
             music stop
@@ -846,8 +868,14 @@ label ep01_dialogues3_day2_family_7:
                     # у него перед глазами возникает голая Оливия
                     # уже не его рука двигается на члене, а ее
                     # она ему улыбается игриво и пристально смотрит в глаза
+                    music stop
+                    img white_screen
+                    with diss
+                    pause 2.0
+#                    fadeblack 2.0
                     music Stylish_Hip_Hop_Rock
-                    imgf 900168
+                    img 900168
+                    with Dissolve(1.0)
                     #
                     $ notif(_("[mcname] подсматривал за Оливией в душе."))
                     #
@@ -1001,7 +1029,7 @@ label ep01_dialogues3_day2_family_7:
                             bardi "Хочу сделать это на твою грудь!.. Ооо!"
                             # Оливия снимается с его члена и доводит его до оргазма грудью
                             # Барди бурно кончает на ее грудь
-                            img 900189
+                            imgd 900189
                             bardi "Оооо!!!"
                             img 900190
                             sound bulk1
@@ -1010,7 +1038,7 @@ label ep01_dialogues3_day2_family_7:
                             pause 0.7
                             hide screen photoshot_screen
                             w
-                            img 900191
+                            imgd 900191
                             sound bulk1
                             show screen photoshot_screen()
                             with hpunch
@@ -1030,7 +1058,7 @@ label ep01_dialogues3_day2_family_7:
                     w
                     imgd 900194
                     w
-                    img 900220
+                    imgd 900220
                     sophie "[mcname], милый, пора вставать." ##->#####inc
                     #####inc mother "[mcname], сынок, пора вставать."
                     # Барди пугается
@@ -1053,8 +1081,13 @@ label ep01_dialogues3_day2_family_7:
                     # у него перед глазами возникает голая Роуз
                     # уже не его рука двигается на члене, а ее
                     # она ему смущенно улыбается и смотрит в глаза
+                    music stop
+                    img white_screen
+                    with diss
+                    pause 2.0
                     music Stylish_Hip_Hop_Rock
-                    imgf 900196
+                    img 900196
+                    with Dissolve(1.0)
                     #
                     $ notif(_("[mcname] в колледже общался с Роуз."))
                     #
@@ -1231,7 +1264,7 @@ label ep01_dialogues3_day2_family_7:
                     w
                     imgd 900217
                     w
-                    img 900218
+                    imgd 900218
                     sophie "[mcname], милый, пора вставать." ##->#####inc
                     #####inc mother "[mcname], сынок, пора вставать."
                     # Барди пугается
@@ -1254,8 +1287,13 @@ label ep01_dialogues3_day2_family_7:
                     # у него перед глазами возникает голая преподавательница
                     # уже не его рука двигается на члене, а ее
                     # она ему призывно улыбается и трется голой грудью о член
+                    music stop
+                    img white_screen
+                    with diss
+                    pause 2.0
                     music Stylish_Hip_Hop_Rock
-                    imgf 900221
+                    img 900221
+                    with Dissolve(1.0)
                     #
                     $ notif(_("[mcname] в колледже познакомился с миссис Морис."))
                     #
@@ -1484,7 +1522,12 @@ label ep01_dialogues3_day2_family_7:
     # Софи переводит взгляд с его лица на область паха
     # одеяло торчит из-за стояка
     # она смотрит на это, не отрывая глаз
-    imgf 900069
+#    music stop
+    img white_screen
+    with diss
+    pause 1.0
+    imgd 900069
+    with Dissolve(1.0)
     w
     imgd 900247
     w
