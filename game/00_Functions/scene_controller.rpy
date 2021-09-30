@@ -189,10 +189,10 @@ label change_scene(new_scene_name, in_transition_name="Fade", in_sound_name="ste
     if sceneSpriteSurfacesCacheSceneName != scene_name:
         $ sceneSpriteSurfacesCacheIdle = {}
         $ sceneSpriteSurfacesCache = {}
-    if lastSceneName != "map":
+    if lastSceneName != "map" or mapChangedTeleportFlag == True:
         call process_hooks("before_open", scene_name) from _call_process_hooks_15 #хук до инициализации сцены
     call expression scene_label from _call_expression_7
-    if lastSceneName != "map":
+    if lastSceneName != "map" or mapChangedTeleportFlag == True:
         call process_hooks("open", scene_name) from _call_process_hooks_16 #хук сразу после инициализации сцены
     return
 

@@ -7,6 +7,7 @@ default movingByCar = False
 default visitedPlaces = {}
 default mapFocusedObjects = []
 default mapChangedFlag = True
+default mapChangedTeleportFlag = False
 default map_hud_preset_current = "map"
 default mapStreetCheckShowing = False
 default mapTeleportForcedCarSound = False
@@ -143,5 +144,7 @@ label process_change_map_location(target_map_scene):
     return
 
 label start_walk_direct():
+    $ mapChangedTeleportFlag = True
     call change_scene(target_scene, "Fade_long", "run_stairs_floor")
+    $ mapChangedTeleportFlag = False
     return
