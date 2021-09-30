@@ -2119,9 +2119,9 @@ screen main_menu():
 #    add gui.main_menu_background
     add Movie(size=(1920, 1080)):
         pos(0,0)
-    on "show" action Play("movie", "video/INTRO_Animation1_premiere.mkv", loop=True)
+    on "show" action Play("movie", "video/v_Mainmenu_1d.mkv", loop=True)
     on "hide" action Stop("movie")
-    on "replace" action Play("movie", "video/INTRO_Animation1_premiere.mkv", loop=True)
+    on "replace" action Play("movie", "video/v_Mainmenu_1d.mkv", loop=True)
     on "replaced" action Stop("movie")
     fixed:
         imagebutton:

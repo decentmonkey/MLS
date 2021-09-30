@@ -124,7 +124,8 @@ define config.has_voice = False
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-define config.main_menu_music = "Music/Prelude_in_C_BWV_846.ogg"
+#define config.main_menu_music = "Music/Write_Your_Story.ogg"
+define config.main_menu_music = "Music/Deeper_For_You.ogg"
 
 
 ## Transitions #################################################################
