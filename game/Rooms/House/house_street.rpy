@@ -3,7 +3,10 @@ label house_street:
     $ sceneIsStreet = True
     call miniMapHouseGenerate()
     $ scene_image = "scene_House_Street[day_suffix]"
-    music night_ambience
+    if day_time_idx <= 1:
+        music rich_hotel_park
+    else:
+        music night_ambience
     return
 
 label house_street_init:

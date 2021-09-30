@@ -126,6 +126,9 @@ define config.has_voice = False
 
 #define config.main_menu_music = "Music/Write_Your_Story.ogg"
 define config.main_menu_music = "Music/Deeper_For_You.ogg"
+#define config.main_menu_music = "Music/Baby_Baby_Vocal.ogg"
+#define config.main_menu_music = "Music/Fun_Happy_Energetic_Rock.ogg"
+#define config.main_menu_music = "Music/Happy_Acoustic.ogg"
 
 
 ## Transitions #################################################################
