@@ -194,6 +194,9 @@ label start: #for blink here
     call change_scene("intro_beach", "Fade_long", False)
     call ep1_intro_quests1()
 
+    $ set_active("Teleport_Garage", False, scene="house_street")
+    $ set_active("Teleport_StoreRoom", False, scene="house_street")
+
 #    $ map_objects["Teleport_HOUSE_FRIEND"] = {"text" : t_("ДОМ ШОНА"), "xpos" : 1303, "ypos" : 318, "base" : "map_marker", "state" : "visible"}
 #    $ map_objects["Teleport_COLLEGE"] = {"text" : t_("КОЛЛЕДЖ"), "xpos" : 982, "ypos" : 268, "base" : "map_marker", "state" : "visible"}
 

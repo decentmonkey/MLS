@@ -89,7 +89,7 @@ label show_scene_now:
                 with Dissolve(1.0)
     $ scene_transition = False
 
-    if refreshed_scene_name != scene_name and lastSceneName != "map":
+    if refreshed_scene_name != scene_name and (lastSceneName != "map" or mapChangedTeleportFlag == True):
         $ refreshed_scene_name = scene_name
         call process_hooks("enter_scene", "global") from _rcall_process_hooks_51
         if _return != False:
@@ -97,6 +97,8 @@ label show_scene_now:
         call remove_dialogue() from _call_remove_dialogue_2
     if scene_refresh_flag == True:
         jump show_scene
+
+    $ mapChangedTeleportFlag = False
 
     if scenes_data["autorun"].has_key(scene_name) and scenes_data["autorun"][scene_name].has_key("scene"):
         $ autorunFunc = scenes_data["autorun"][scene_name]["scene"]

@@ -130,8 +130,12 @@ label ep1_college4_english_student_harry:
     $ clear_object_follow_all()
     $ questHelp("college_8a", True)
     call ep01_dialogues3_day2_college_10()
-    call changeDayTime("evening")
-    $ move_object("FRIEND_BARDIE", "housefriend_room")
+    call changeDayTime("day")
+
+    $ miniMapEnabledOnly = []
+    $ miniMapDisabled["COLLEGE"] = ["COLLEGE_Floor1", "COLLEGE_Floor2", "COLLEGE_Floor3"]
+
+    $ move_object("Friend_Bardie", "housefriend_room")
     $ add_hook("enter_scene", "ep1_college5_college_end", scene="college_street")
     call change_scene("college_street", "Fade_long")
 

@@ -146,5 +146,4 @@ label process_change_map_location(target_map_scene):
 label start_walk_direct():
     $ mapChangedTeleportFlag = True
     call change_scene(target_scene, "Fade_long", "run_stairs_floor")
-    $ mapChangedTeleportFlag = False
     return
