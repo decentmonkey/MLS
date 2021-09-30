@@ -2109,17 +2109,20 @@ style navigation_button_text:
 
 screen main_menu():
 
-    add Movie(size=(1920, 1080))
-    on "show" action Play("movie", "video/INTRO_Animation1_premiere.mkv")
-    on "hide" action Stop("movie")
-    on "replaced" action Stop("movie")
 
     ## This ensures that any other menu screen is replaced.
     tag menu
-
+    window:
+        style "mm_root"
     style_prefix "main_menu"
 
-    add gui.main_menu_background
+#    add gui.main_menu_background
+    add Movie(size=(1920, 1080)):
+        pos(0,0)
+    on "show" action Play("movie", "video/INTRO_Animation1_premiere.mkv", loop=True)
+    on "hide" action Stop("movie")
+    on "replace" action Play("movie", "video/INTRO_Animation1_premiere.mkv", loop=True)
+    on "replaced" action Stop("movie")
     fixed:
         imagebutton:
             xpos get_resolution_x(437)
