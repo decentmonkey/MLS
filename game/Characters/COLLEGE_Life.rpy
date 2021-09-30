@@ -10,6 +10,7 @@ label college_life_change_daytime:
 label college_life:
     if college_life_last_init_daytime == day_time_idx:
         return
+label college_life_forced:
     python:
         college_life_last_init_daytime = day_time_idx
         set_active(False, group="students", scene="college_street", recursive=True)

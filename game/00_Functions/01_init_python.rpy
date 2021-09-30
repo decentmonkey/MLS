@@ -48,7 +48,7 @@ python early:
         return (l.simple_expression(), "fl")
 
     def img_exec(s_in):
-        global dialogue_active_flag, screenActionHappened, config, blink_preset, blink_preset2, blink_preset3, blink_preset4, blink_preset5, blink_preset6
+        global dialogue_active_flag, screenActionHappened, config, blink_preset, blink_preset2, blink_preset3, blink_preset4, blink_preset5, blink_preset6, images_history_list, day
 #        config.has_autosave = False
 #        config.autosave_on_choice = False
         s = s_in[0]
@@ -64,6 +64,7 @@ python early:
         if renpy.exists(imagePath) == False and not renpy.android:
             imagePath = "images/Overlays/black_screen.jpg"
 
+        images_history_list[imagePathExt[1]] = day
         check_achievement(imagePathExt[1])
         if (renpy.get_screen("say") != None or renpy.get_screen("choice") != None or renpy.get_screen("window") != None or dialogue_active_flag == True) and persistent.pause_before_change_slide == True and renpy.get_screen("show_image_screen_image") != None:
             renpy.hide_screen("say")

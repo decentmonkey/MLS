@@ -19,7 +19,7 @@ init python:
         return False
 
 label map_street_scene_visibility_check: #проверка того надо-ли показывать значок вызова карты в локациях не улица
-    if sceneIsStreet == True or scene_name == "basement_bedroom1" or scene_name == "basement_bedroom2" or scene_name == "juliahome_livingroom":
+    if sceneIsStreet == True or scene_name == "house_bedroom_mc":
         $ mapStreetCheckShowing = True
         return
     $ mapStreetCheckShowing = False

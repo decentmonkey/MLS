@@ -47,6 +47,7 @@ default phoneEnabled = True
 default phoneNotifications = []
 
 default obj_follow_list = {}
+default images_history_list = {}
 
 #temp vars
 default maxBitchness = 1000

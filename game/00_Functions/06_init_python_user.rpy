@@ -63,6 +63,7 @@ label changeDayTime(new_day_time):
     $ day_time_idx += 1
     if day_time_idx > 3:
         $ day_time_idx = 0
+        $ day += 1
     $ setDayTimeVars()
     call expression "changeDayTime_" + day_time + "_hooks"
     if day_time == new_day_time:
@@ -73,6 +74,7 @@ label changeDayTime(new_day_time):
     $ day_time_idx += 1
     if day_time_idx > 3:
         $ day_time_idx = 0
+        $ day += 1
     $ setDayTimeVars()
     call expression "changeDayTime_" + day_time + "_hooks"
     if day_time == new_day_time:
@@ -83,6 +85,7 @@ label changeDayTime(new_day_time):
     $ day_time_idx += 1
     if day_time_idx > 3:
         $ day_time_idx = 0
+        $ day += 1
     $ setDayTimeVars()
     call expression "changeDayTime_" + day_time + "_hooks"
     if day_time == new_day_time:
@@ -93,6 +96,7 @@ label changeDayTime(new_day_time):
     $ day_time_idx += 1
     if day_time_idx > 3:
         $ day_time_idx = 0
+        $ day += 1
     $ setDayTimeVars()
     call expression "changeDayTime_" + day_time + "_hooks"
     if day_time == new_day_time:

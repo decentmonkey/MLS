@@ -9,7 +9,7 @@ define student_emily = Character(t_("Эмили"), who_color=c_orange) # одн�
 define student_rose = Character(t_("Роуз"), who_color=c_pink) # одноклассница милая Роуз, Rose
 define student_harry = Character(t_("Гарри"), who_color=c_red) # одноклассник хулиган Гарри, Harry
 define classmate_harry = Character(t_("Гарри"), who_color=c_red) # тот же одноклассник хулиган Гарри Harry, но в детстве из воспоминаний
-define student_jacob = Character(t_("Джейкб"), who_color=c_orange) # одноклассник фрик синие волосы Джейкб, Jacob
+define student_jacob = Character(t_("Джейкоб"), who_color=c_orange) # одноклассник фрик синие волосы Джейкб, Jacob
 define student_leo = Character(t_("Лео"), who_color=c_blue) # одноклассник ботан в очках Лео, Leo
 define principal_richardson = Character(t_("Профессор Ричардсон"), who_color=c_red) # директор колледжа Миссис Ричардсон, Professor Richardson
 define secretary_young = Character(t_("Мисс Янг"), who_color=c_pink) # секретарь в приемной директора Мисс Янг, Miss Young

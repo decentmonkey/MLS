@@ -1068,7 +1068,7 @@ screen hud_screen(hud_presets):
                 #кнопка домой
                 null:
                     width 7
-                if homeButtonEnabled == True:
+                if homeButtonEnabled == True and mapStreetCheckShowing == True:
                     imagebutton:
                         yoffset -2
                         xanchor 2

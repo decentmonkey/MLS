@@ -170,6 +170,7 @@ label ep01_dialogues3_day2_college_1:
     cynthia "У меня сейчас занятие по живописи, так что я побежала. Не хочу опаздывать."
     # она улыбается, машет ему рукой и делает шаг назад, не видя, что сзади мимо проходит преподша Teacher8 Миссис Кларк
     # сталкивается с миссис Кларк и та от неожиданности роняет на пол учебник или папку
+    $ questHelp("college_3", True)
     imgd 910018
     w
     music2 stop
@@ -246,6 +247,8 @@ label ep01_dialogues3_day2_college_1:
             sound snd_paper2
             imgd 910039
             w
+            $ questHelp("college_4")
+            $ questHelp("college_5")
             # выбрать можно только один пункт меню
             imgd 910040
             w
@@ -287,6 +290,8 @@ label ep01_dialogues3_day2_college_1:
                             imgd 910044
                             bardi_t "Сюда бы еще чулки и каблуки! Она бы выглядела вообще отпадно..."
                     # разглядывание Синтии прерывает голос преподши
+                    $ questHelp("college_4", True)
+                    $ questHelp("college_5", False)
                     music stop
                     sound plastinka1b
                     img 910043 hpunch
@@ -330,6 +335,8 @@ label ep01_dialogues3_day2_college_1:
                             bardi_t "Интересно, а трусики она тоже не носит?.."
                             pass
                     # камера резко на ее лицо (Барди смотрит на нее снизу вверх), она недовольна
+                    $ questHelp("college_5", True)
+                    $ questHelp("college_4", False)
                     music stop
                     sound plastinka1b
                     img 910043 hpunch
@@ -406,6 +413,7 @@ label ep01_dialogues3_day2_college_1:
             # Синтия тоже уходит
             imgd 910033
             sound step_stairs
+            $ questHelp("college_4", False)
             w
             pass
     # Шон говорит Барди
@@ -431,7 +439,7 @@ label ep01_dialogues3_day2_college_1:
 label ep01_dialogues3_day2_college_2:
     bardi_t "Сначала мне нужно пойти на третий этаж."
     bardi_t "Меня ждут в приемной директора колледжа."
-    return
+    return False
 
 # при клике на туалет
 # не рендерить!!
@@ -445,6 +453,10 @@ label ep01_dialogues3_day2_college_3:
 label ep01_dialogues3_day2_college_4:
     bardi_t "Где-то здесь мой шкафчик..."
     bardi_t "Нужно взять ключи от него в приемной директора."
+    return
+
+label ep01_dialogues3_day2_college_4a:
+    bardi_t "Кажется, это здесь..."
     return
 
 label ep01_dialogues3_day2_college_5:
@@ -504,6 +516,7 @@ label ep01_dialogues3_day2_college_5:
     bardi "Здрасьте."
     # директорша бросает небрежный взгляд на Барди, не отвечает на его приветствие
     music Adventures_of_the_Deaf_Dreamer
+    music Fly_With_Me_short
     imgd 900399
     w
     imgd 900400
@@ -524,6 +537,7 @@ label ep01_dialogues3_day2_college_5:
     img 900405 vpunch
     principal_richardson "Чтобы никаких нарушений дисциплины в моем колледже, [mcsurname]!"
     principal_richardson "Я этого не терплю! Ясно тебе?"
+    music Adventures_of_the_Deaf_Dreamer
     imgd 900404
     bardi "Эээ... Да..."
     imgd 900406
@@ -647,6 +661,8 @@ label ep01_dialogues3_day2_college_5:
             principal_richardson "И приготовить свежую прессу и ГОРЯЧИЙ кофе утром!"
             principal_richardson "ГОРЯЧИЙ, Мисс Янг!!!"
             secretary_young "Я постараюсь больше не..."
+            bardi_t "..."
+            bardi_t "Похоже, директриса меня не видит..."
             # мини-анимация, камера медленно скользит по ее фигуре сверху-вниз
             # потом фокусируется на попе директрисы
 
@@ -659,14 +675,16 @@ label ep01_dialogues3_day2_college_5:
             scene black
             image videov_Observe_Teacher2_principal_1_25 = Movie(play="video/v_Observe_Teacher2_principal_1_25.mkv", fps=25, loop=False, image="/images/Slides/img_900418.jpg")
             show videov_Observe_Teacher2_principal_1_25
-            $ renpy.pause(0.5, hard=True)
-            pause 4.5
+            $ renpy.pause(1.0, hard=True)
+            pause 4.0
             img 900418
             w
             bardi_t "Хмм... Профессорша неплохо смотрится сзади..."
             bardi_t "Представляю ее затянутую в черный латекс..."
+#            img 900419 hpunch
+            img 900419 diss
             sound2 vjuh3
-            img 900419 hpunch
+            with hpunch
             w
             imgd 900420
             w
@@ -989,8 +1007,10 @@ label ep01_dialogues3_day2_college_5:
                     bardi_t "..."
                     # попа в обтягивающих штанах превращается в попу в одних трусиках
                     music The_Heat
-                    sound2 vjuh3
-                    img 900358 hpunch
+#                    sound2 vjuh3
+#                    img 900358 hpunch
+                    img 900358
+                    with Dissolve(1.0)
                     bardi_t "Ееее..."
                     # взгляд скользит выше от попы по телу Эмили
                     imgd 900359
@@ -1052,7 +1072,7 @@ label ep01_dialogues3_day2_college_6:
 label ep01_dialogues3_day2_college_7:
     bardi_t "Мне нужно пойти в кабинет английского языка."
     bardi_t "Занятия уже начались. Я опаздываю."
-    return
+    return False
 
 # как только игрок попадает на второй этаж
 label ep01_dialogues3_day2_college_8:
@@ -1192,7 +1212,7 @@ label ep01_dialogues3_day2_college_8:
             sound Jump1
             imgd 900334
             w
-            img 900333
+            imgd 900333
             teacher_hill "Еще увидимся."
             # подмигивает и улыбается ему, уходит, он смотрит ей вслед
             imgf 900326
@@ -1202,6 +1222,8 @@ label ep01_dialogues3_day2_college_8:
             bardi_t "Какой она предмет ведет? Информатику?"
             bardi_t "Что ж, мне кажется, я определился с дополнительным предметом..."
             pass
+    return
+label ep01_dialogues3_day2_college_8a:
     # Барди поворачивает голову и смотрит на дверью кабинета английского
     bardi_t "Я уже сильно опоздал на занятие по английскому."
     bardi_t "Надеюсь, преподавательница окажется адекватной..."
@@ -1346,6 +1368,9 @@ label ep01_dialogues3_day2_college_9:
 
 # при клике на Гарри, который продолжает злобно смотреть на Барди
 label ep01_dialogues3_day2_college_10:
+    menu:
+        "Оглядеться по сторонам.":
+            pass
     music Montana
     # Барди сидит злится
     imgf 910078
@@ -1469,8 +1494,10 @@ label ep01_dialogues3_day2_college_10:
             imgf 910091
             bardi_t "Хотелось бы мне посмотреть на эту миссис Адамс без одежды."
             # блузка исчезает и училка стоит перед ним в одном лифчике
+            img 910099
+            with Dissolve(1.0)
             sound vjuh3
-            img 910099 vpunch
+            with vpunch
             bardi_t "Да... Было бы круто увидеть ее с голой грудью."
             bardi_t "А еще лучше, не только увидеть, но и..."
             teacher_adams "Договорились, [mcname]?"
@@ -1533,6 +1560,7 @@ label ep01_dialogues3_day2_college_10:
             bardi "Как был в школе безмозглым придурком, так им и остался!"
             bardi "Школьные времена давно прошли, если ты не заметил!"
             bardi "Ты чего от меня хочешь, а?"
+            $ questHelp("college_9", True)
             # здоровяк офигевает от того, что Барди впервые что-то возразил ему
             imgd 910113
             student_harry "Слышь, ты как со мной разговариваешь, лузер?!"
@@ -1568,6 +1596,7 @@ label ep01_dialogues3_day2_college_10:
             sound snd_kick_fred1
             img 910121 hpunch
             student_harry "Ыыыы!!!"
+            fadeblack 1.5
             music Montana
             imgf 910122
             student_rose "[mcname], я хотела сказать тебе..."
@@ -1683,8 +1712,10 @@ label ep01_dialogues3_day2_college_10:
                             imgf 910139
                             w
                             music Stylish_Fashion_Electronic_Rock
+                            img 910140
+                            with Dissolve(1.0)
                             sound vjuh3
-                            img 910140 hpunch
+                            with hpunch
                             bardi_t "Под этой одеждой, наверняка, спрятано стройное, красивое тело."
                             imgd 910141
                             bardi_t "С аккуратной грудью и упругой попкой..."
@@ -1759,6 +1790,11 @@ label ep01_dialogues3_day2_college_10:
                     bardi_t "Нужно будет узнать, встречается ли она с кем-нибудь..."
                     # она уходит
                     pass
+            $ questHelp("college_9", True)
+            $ questHelp("college_11", True)
+            $ questHelp("college_10", False)
+            $ questHelp("college_13")
+            $ questHelpDesc("college_desc3")
             pass
         "Толкнуть его!": # скипнется разговор с милашкой Роуз, перенесется на другой учебный день
             # балл RR +5
@@ -1962,6 +1998,11 @@ label ep01_dialogues3_day2_college_10:
                     imgd 910183
                     teacher_morris "До встречи, [mcname]."
                     pass
+            $ questHelp("college_9", False)
+            $ questHelp("college_10", True)
+            $ questHelp("college_12", True)
+            $ questHelp("college_13")
+            $ questHelpDesc("college_desc4")
             # она уходит вдоль коридора, Барди смотрит ей вслед
             # анимация обсматривания училки, камера по ее фигуре
             music The_Heat
@@ -2008,6 +2049,12 @@ label ep01_dialogues3_day2_college_11:
 
 # мысли возле колледжа, не рендерить!!
 label ep01_dialogues3_day2_college_12:
+    # Барди прочитал сообщение от Шона
+    bardi_t "Шон предложил заглянуть к нему после колледжа."
+    bardi_t "Возможно, это неплохая идея... Мне не помешало бы немного отвлечься."
+    return
+
+label ep01_dialogues3_day2_college_12a:
     # Барди прочитал сообщение от Шона
     bardi_t "Шон предложил заглянуть к нему после колледжа."
     bardi_t "Возможно, это неплохая идея... Мне не помешало бы немного отвлечься."

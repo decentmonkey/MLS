@@ -216,6 +216,8 @@ label ep1_intro_quests6_sophie: # Софи с утра на кухне
         $ sophieKitchenTalkLastDay = day
         $ autorun_to_object("ep01_dialogues3_day2_family_4a", scene="house_street")
 
+        $ add_hook("before_open", "ep1_college_open", scene="college_street", once=True)
+
         $ clear_object_follow_all()
         $ set_object_follow("Teleport_Floor1", scene="house_kitchen")
         $ set_object_follow("Teleport_Street", scene="house_floor1")
