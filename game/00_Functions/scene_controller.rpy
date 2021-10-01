@@ -143,7 +143,7 @@ label show_scene_loop:
         if interact_data[0] == "time_management_street_fast_sleep":
             call bed_basement_fast_sleep() from _rcall_bed_basement_fast_sleep
         if interact_data[0] == "phone_show":
-            call iphone()
+            call phone_open()
         if interact_data[0] == "return_home":
             call returnHomeButton()
         if interact_data[0] == "refresh":
