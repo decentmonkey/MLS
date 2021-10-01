@@ -2,6 +2,16 @@ label splashscreen:
     call init_launch() from _rcall_init_launch
     if debugMode == True:
         return
+    img black_screen
+    with Dissolve(0.5)
+    img all_over_18
+    with Dissolve(0.7)
+    $ renpy.pause(2.0)
+    imgd black_screen
+    $ renpy.pause(1.5)
+
+
+    return
 
     scene black
     image videoIntro_Video = Movie(play="video/Intro_Video.webm", fps=30)
