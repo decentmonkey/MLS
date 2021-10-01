@@ -343,7 +343,12 @@ define offsets_table = {
     "housefriend_room_evening_friend_bardie_3":(384,1053,766,1307),
     "housefriend_room_evening_friend_bardie_3_overlay":(429,1005,807,1370),
     "intro_beach_girl1":(39,1011,885,1622),
-    "intro_beach_girl2":(271,256,1003,724)
+    "intro_beach_girl2":(271,256,1003,724),
+    "college_coridor_1_lockermc_mask":(806,982,911,1077),
+    "house_bedroom_mc_tablenear_typewriter_mask":(304,496,723,975),
+    "housefriend_room_friend_bardie_3":(384,1053,766,1307),
+    "housefriend_room_friend_bardie_3_overlay":(410,907,852,1419),
+    "scene_housefriend_room_friend_bardie_3":(0,25,1079,1919)
 }
 
 init python:
