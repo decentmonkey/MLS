@@ -29,3 +29,5 @@ define sophie = Character(_("Софи"), who_color=c_pink) # хозяйка до
 ##### define mother = Character(_("Мама"), who_color=c_pink) # мать Sophie Evans (sophie)
 define girl1 = Character(_("Незнакомка"), who_color=c_blue) # girl1, перед стартом игры
 define girl2 = Character(_("Незнакомка"), who_color=c_red) # girl2, перед стартом игры
+
+define unknown_writer = Character(_("Неизвестный писатель"), who_color=c_gray, what_color=c_blue) # girl1, перед стартом игры

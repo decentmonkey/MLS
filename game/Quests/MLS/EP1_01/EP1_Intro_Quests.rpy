@@ -77,6 +77,8 @@ label ep1_intro_quests3:
         set_object_follow("Teleport_Floor1", scene="house_floor2")
         set_object_follow("Teleport_Kitchen", scene="house_floor1")
 
+        autorun_to_object("ep01_dialogues2_day1_family_1_3", scene="house_bedroom_mc_tablenear")
+
 
     if _return == True:
         call change_scene("house_kitchen", "Fade_long")

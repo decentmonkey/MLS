@@ -13,6 +13,7 @@ label locations_init:
     $ add_location("house_bathroom", caption=t_("ДУШЕВАЯ КОМНАТА"), label="house_bathroom", init_label="house_bathroom_init", parent="house_floor1")
     $ add_location("house_bedroom_landlord", caption=t_("СПАЛЬНЯ СОФИ И ГЕНРИ"), label="house_bedroom_landlord", init_label="house_bedroom_landlord_init", parent="college_street")
     $ add_location("house_bedroom_mc", caption=t_("МОЯ КОМНАТА"), label="house_bedroom_mc", init_label="house_bedroom_mc_init", parent="house_floor2")
+    $ add_location("house_bedroom_mc_tablenear", caption=t_("МОЯ КОМНАТА"), label="house_bedroom_mc_tablenear", init_label="house_bedroom_mc_tablenear_init", parent="house_bedroom_mc")
     $ add_location("house_floor1", caption=t_("ПЕРВЫЙ ЭТАЖ"), label="house_floor1", init_label="house_floor1_init", parent="house_street")
     $ add_location("house_floor2", caption=t_("ВТОРОЙ ЭТАЖ"), label="house_floor2", init_label="house_floor2_init", parent="house_floor1")
     $ add_location("house_garage", caption=t_("ГАРАЖ"), label="house_garage", init_label="house_garage_init", parent="house_street")

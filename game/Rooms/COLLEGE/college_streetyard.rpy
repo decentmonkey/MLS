@@ -2,7 +2,9 @@ label college_streetyard:
     $ miniMapData = []
     call miniMapCOLLEGEGenerate()
     $ sceneIsStreet = True
-    $ scene_image = "scene_COLLEGE_StreetYard"
+    $ scene_image = "scene_COLLEGE_StreetYard[day_suffix]"
+    if day_time_idx == 3:
+        $ scene_image = "scene_COLLEGE_StreetYard_Night"
     return
 
 label college_streetyard_init:

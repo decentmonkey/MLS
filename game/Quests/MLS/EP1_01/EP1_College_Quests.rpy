@@ -177,9 +177,8 @@ label ep1_college5_college_sean_home:
     $ set_active("Teleport_LivingRoom", False, scene="housefriend_room")
     $ move_object("Friend_Bardie", "housefriend_room")
     $ houseFriendRoom_Friend_BardieSuffix1 = 3
-    $ housefriend_room_forced_evening_Flag = "_Evening"
     $ phoneEnabled = False
-    $ set_var("Friend_Bardie", base="HouseFriend_Room[housefriend_room_forced_evening_time_suffix]_Friend_Bardie_[houseFriendRoom_Friend_BardieSuffix1]", scene="housefriend_room")
+#    $ set_var("Friend_Bardie", base="HouseFriend_Room[housefriend_room_forced_evening_time_suffix]_Friend_Bardie_[houseFriendRoom_Friend_BardieSuffix1]", scene="housefriend_room")
     $ add_hook("Friend_Bardie", "ep1_college5_college_sean_home2", scene="housefriend_room")
     call change_scene("housefriend_room", "Fade_long")
     return False

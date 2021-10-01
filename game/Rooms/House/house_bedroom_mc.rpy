@@ -29,4 +29,6 @@ label house_bedroom_mc_environment:
         if act=="l":
             call ep01_dialogues2_day1_family_1_3()
             return
+        call change_scene("house_bedroom_mc_tablenear")
+        return
     return
