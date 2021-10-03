@@ -453,7 +453,7 @@ label ep01_dialogues3_day2_college_3:
 label ep01_dialogues3_day2_college_4:
     bardi_t "Где-то здесь мой шкафчик..."
     bardi_t "Нужно взять ключи от него в приемной директора."
-    return
+    return False
 
 label ep01_dialogues3_day2_college_4a:
     bardi_t "Кажется, это здесь..."
@@ -2444,6 +2444,11 @@ label ep01_dialogues3_day2_college_15:
     imgd 900308
     bardi_t "Хмм..."
     bardi_t "С кем это Шон был на фотке?.."
+    return
+
+label ep01_dialogues3_day2_college_15b:
+    bardi_t "А это что за игрушка?"
+    bardi_t "Где-то я уже видел такую..."
     return
 
 # телефон Барди

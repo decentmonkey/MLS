@@ -33,7 +33,7 @@ label college_coridor1_environment:
         call change_scene("college_hall")
         return
     if obj_name == "Teleport_LockerMC":
-        call change_scene("college_lockermc")
+        call change_scene("college_coridor1_locker_mc", "Fade_long", "school_locker_open")
         return
     if obj_name == "Teleport_Stairs":
         call change_scene("college_coridor3")
