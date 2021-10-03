@@ -68,13 +68,14 @@ init python:
 #        print objectives_list
 
     def questLog(questLogIdx, status):
-        global questLogDataEnabled, questLogLinesUpdated, questLogJustUpdated, questLogUpdatedDay, day
+        global questLogDataEnabled, questLogLinesUpdated, questLogJustUpdated, questLogUpdatedDay, day, phone_buttons_new
         if status == True and (questLogDataEnabled.has_key(str(questLogIdx)) == False or questLogDataEnabled[str(questLogIdx)] != True):
-            if day > 0 and questLogGlobalEnabled == True:
-                notif(t__("Журнал обновлен"))
+#            if day > 0 and questLogGlobalEnabled == True:
+            notif(t__("Блокнот обновлен"))
             questLogLinesUpdated.append(str(questLogIdx))
             questLogJustUpdated = True
             questLogUpdatedDay = day
+            phone_buttons_new["notes"] = True
         questLogDataEnabled[str(questLogIdx)] = status
 #        for idx in range(0, len(questLogData)):
 #            if questLogData[idx][0] == questLogIdx:

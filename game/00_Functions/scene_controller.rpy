@@ -229,6 +229,7 @@ label remove_dialogue():
         renpy.hide_screen("choice")
         renpy.hide("window")
         dialogue_active_flag = False
+    window hide
     return
 
 

@@ -3,7 +3,7 @@ screen phone(phone_menu_active):
     tag phone
     zorder 110
     button:
-        background "#00000030"
+        background "#00000050"
         xfill True
         yfill True
         action [
@@ -233,9 +233,9 @@ screen phone_chat_live_screen():
 
         pos(747,170)
         xmaximum 378
-        add "#ffffff" xsize 376 ysize 630 pos(28, 160)
-        add "#c2c2c2" xsize 376 ysize 1 pos(28,160)
-        add "#c2c2c2" xsize 376 ysize 1 pos(28,130+660)
+        add "#ffffff" xsize 374 ysize 630 pos(28, 160)
+        add "#c2c2c2" xsize 374 ysize 1 pos(28,160)
+        add "#c2c2c2" xsize 374 ysize 1 pos(28,130+660)
         $ contactImg = Transform(phone_contact["img"], size=(65,65))
         add AlphaMask(contactImg, "/images/Phone/mess/contact_circle.png"):
             pos (180,60)
@@ -259,7 +259,6 @@ screen phone_chat_live_screen():
                 # изображение пустого экрана
                 background None
 #                yfill True
-                xminimum 352
                 xmaximum 352
                 yminimum 629
                 top_padding 0
@@ -278,6 +277,7 @@ screen phone_chat_live_screen():
                                 right_padding 20
                                 top_padding 10
                                 bottom_padding 10
+                                xminimum 180
                                 if chat_line[1] == "image":
                                     add chat_line[2]:
                                         xsize 250
@@ -294,6 +294,7 @@ screen phone_chat_live_screen():
                                 right_padding 20
                                 top_padding 10
                                 bottom_padding 10
+                                xminimum 180
                                 if chat_line[1] == "image":
                                     add chat_line[2]:
                                         xsize 250
@@ -306,7 +307,7 @@ screen phone_chat_live_screen():
 
 
 
-        vbar value YScrollValue("vp1") xpos 397 ypos 161 xsize 8 ysize 629
+        vbar value YScrollValue("vp1") xpos 394 ypos 161 xsize 8 ysize 629
         if phone_typing == True:
             fixed:
                 pos(50,795)
@@ -344,8 +345,8 @@ screen phone_messages_list_screen():
                     $ message = ""
                     if len(history_cell["chat_content"]) > 0:
                         $ message = t__(history_cell["chat_content"][0][1])
-                        if len(message) > 30:
-                            $ message = message[:30] + "..."
+                        if len(message) > 25:
+                            $ message = message[:25] + "..."
                     $ contactImg = Transform(contact["img"], size=(28,28))
                     $ contactImgCircle = Transform("/images/Phone/mess/contact_circle.png", size=(28,28))
                     $ newMessage = False

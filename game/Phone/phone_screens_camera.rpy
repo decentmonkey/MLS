@@ -3,7 +3,7 @@ screen phone_camera_screen(phone_camera_image):
     layer "master"
     zorder 130
     button:
-        background "#00000030"
+        background "#00000050"
         xfill True
         yfill True
         action [

@@ -1339,11 +1339,20 @@ screen hud_screen(hud_presets):
 
     if phoneDisplayEnabled == True:
         if phoneEnabled == True and hud_presets.has_key("display_phone") and hud_presets["display_phone"] == True:
+            $ phoneNew = False
+            for new1 in phone_buttons_new:
+                if phone_buttons_new[new1] == True:
+                    $ phoneNew = True
             imagebutton:
                 pos (1815, 95)
-                xoffset 0
-                yoffset 0
-                if len(phoneNotifications) == 0:
+                if phoneNew == False:
+                    xoffset 0
+                    yoffset 0
+                else:
+                    xoffset -8
+                    yoffset -8
+#                if len(phoneNotifications) == 0:
+                if phoneNew == False:
                     idle "icons/icon_phone" + res.suffix + ".png"
                     hover "icons/icon_phone_hover" + res.suffix + ".png"
                 else:

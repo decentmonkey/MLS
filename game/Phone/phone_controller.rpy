@@ -23,6 +23,8 @@ default phone_background = 0
 default phone_backgrounds_list = []
 default phone_preferences_list = []
 default phone_instagram_posts = []
+default phone_inited = False
+default phone_notes_text = ""
 #history:
 # [{"chat_name":name, "contact_name":contact_name, "chat_content":[]}]
 # chat format:
@@ -35,12 +37,17 @@ default phone_instagram_posts = []
 # call phone_hide() - закрывается
 # call phone_camera_open() - открывается в режиме камеры
 label phone_open:
+    sound metal_slide
+    if phone_inited == False:
+        call phone_init()
     $ phone_menu_active = "main"
     $ phone_orientation = 0
     call phone_controller()
     return
 
 label phone_open_menu(menu_active):
+    if phone_inited == False:
+        call phone_init()
     $ phone_menu_active = "main"
     $ phone_orientation = 0
     call phone_controller()
@@ -51,6 +58,7 @@ label phone_hide:
     return
 
 label phone_camera_open:
+    sound camera_lens1
     $ phone_menu_active = "camera"
     $ phone_orientation = 1
     $ phone_camera_image = phone_camera_get_current_image()
@@ -77,19 +85,13 @@ label phone_init:
     $ phone_buttons_new = {
         "contacts": False,
         "messages": False,
-        "gallery": True,
+        "gallery": False,
         "notes": False,
         "camera": False,
-        "instagram": True,
+        "instagram": False,
         "preferences": False
     }
-    $ phone_contacts = [
-        {"name": "Sophie", "caption":t_("Sophie"), "img":"/images/Phone/contacts/Contacts_Sophie.png"},
-        {"name": "Sean", "caption":t_("Sean"), "img":"/images/Phone/contacts/Contacts_Sean.png"},
-        {"name": "Olivia", "caption":t_("Sophie"), "img":"/images/Phone/contacts/Contacts_Olivia.png"},
-        {"name": "Cynthia", "caption":t_("Cynthia"), "img":"/images/Phone/contacts/Contacts_Cynthia.png"}
-    ]
-
+    call phone_contacts1()
     $ phone_buttons_list = [
         {"name": "contacts", "caption": "Contacts", "img":"/images/Phone/icons/contacts.png", "img_new":"/images/Phone/icons/contacts_new.png", "active":True},
         {"name": "messages", "caption": "Messages",  "img":"/images/Phone/icons/messager.png", "img_new":"/images/Phone/icons/messager_new.png", "active":True},
@@ -114,6 +116,7 @@ label phone_init:
         "/images/Phone/bg_1.png",
         "/images/Phone/option/bg_2.png"
     ]
+    $ phone_inited = True
 
     return
 
@@ -157,6 +160,7 @@ label phone_open_loop1:
                 $ phone_gallery_page = 0
                 jump phone_open_loop1
             if interact_data[1] == "camera":
+                sound camera_lens1
                 $ phone_menu_active = "camera"
                 $ phone_orientation = 1
                 $ phone_camera_image = phone_camera_get_current_image()
@@ -169,30 +173,43 @@ label phone_open_loop1:
                 jump phone_open_loop1
             if interact_data[1] == "instagram":
                 $ phone_menu_active = "instagram"
+                $ phone_buttons_new["instagram"] = False
                 jump phone_open_loop1
             if interact_data[1] == "notes":
+                $ phone_buttons_new["notes"] = False
                 $ phone_menu_active = "notes"
+                call show_questlog()
+                $ phone_notes_text = _return
+                if phone_notes_text == "":
+                    $ phone_notes_text = ":-)"
+
                 jump phone_open_loop1
 
         if interact_data[0] == "close":
             if phone_menu_active == "main" or phone_menu_active == "chat_live":
+                sound vjuh3
                 hide screen phone
                 hide screen phone_chat_live_screen
                 return
             if phone_menu_active == "contacts" or phone_menu_active == "preferences_menu" or phone_menu_active == "preferences_backgrounds" or phone_menu_active == "instagram" or phone_menu_active == "notes" or phone_menu_active=="preferences_rrmeter":
+                sound phone_click
                 $ phone_menu_active = "main"
                 jump phone_open_loop1
             if phone_menu_active == "messages_list":
+                sound phone_click
                 $ phone_menu_active = "main"
                 jump phone_open_loop1
             if phone_menu_active == "open_history_chat":
+                sound phone_click
                 $ phone_menu_active = "messages_list"
                 jump phone_open_loop1
             if phone_menu_active == "gallery":
+                sound phone_click
                 $ phone_menu_active = "main"
                 jump phone_open_loop1
 
             if phone_menu_active == "camera":
+                sound vjuh3
                 hide screen phone_camera_screen
                 return
 #                $ phone_menu_active = "main"
@@ -200,6 +217,7 @@ label phone_open_loop1:
 
 
         if interact_data[0] == "call_contact":
+            sound phone_click
             $ obj_name = interact_data[1]
             $ phone_contact = interact_data[2]
             $ phone_menu_active = "calling_screen"
@@ -211,6 +229,7 @@ label phone_open_loop1:
             jump phone_open_loop1
 
         if interact_data[0] == "open_history_chat":
+            sound phone_click
             if phone_chat_history_new_flags.has_key(interact_data[2]["chat_name"]):
                 $ phone_chat_history_new_flags[interact_data[2]["chat_name"]] = False
             $ phone_contact = phone_get_contact_by_contact_name(interact_data[1])
@@ -219,6 +238,7 @@ label phone_open_loop1:
             jump phone_open_loop1
 
         if interact_data[0] == "gallery_pagination":
+            sound phone_click
             if interact_data[1] == "left" and phone_gallery_page > 0:
                 $ phone_gallery_page -= 1
             if interact_data[1] == "right" and len(phone_gallery) - (phone_gallery_page+1)*phone_gallery_items_on_page > 0:
@@ -226,6 +246,7 @@ label phone_open_loop1:
             jump phone_open_loop1
 
         if interact_data[0] == "open_gallery_image":
+            sound phone_click
             $ galleryImagePath = phone_get_gallery_image_path(phone_gallery[interact_data[1]])
             if galleryImagePath != False:
                 show screen phone_gallery_image_screen(galleryImagePath)
@@ -235,14 +256,17 @@ label phone_open_loop1:
             jump phone_open_loop1
 
         if interact_data[0] == "preferences_rrmeter":
+            sound phone_click
             $ phone_menu_active = "preferences_rrmeter"
             jump phone_open_loop1
 
         if interact_data[0] == "preferences_backgrounds":
+            sound phone_click
             $ phone_menu_active = "preferences_backgrounds"
             jump phone_open_loop1
 
         if interact_data[0] == "preferences_backgrounds_select":
+            sound phone_click
             $ phone_background = interact_data[1]
             $ phone_menu_active = "main"
             jump phone_open_loop1
@@ -278,7 +302,7 @@ label phone_chat_loop1:
         phone_typing = True
 
     if chat_line[0] == "" or chat_line[0] == "bardie" or chat_line[0] == "bardie_t":
-#        sound iphone_typing
+        sound iphone_typing
         $ phone_typing_name = "[mcname]"
         pass
     else:
@@ -287,7 +311,7 @@ label phone_chat_loop1:
     show screen phone_chat_live_screen()
     pause float(message_pause)
     if chat_line[0] != "" and chat_line[0] != "bardie" and chat_line[0] != "bardie_t":
-#        sound iphone_text_message2
+        sound iphone_text_message2
         pass
     $ phone_typing = False
     $ phone_current_chat.append(chat_line)

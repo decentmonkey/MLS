@@ -6,6 +6,9 @@ default questLogLinesUpdated = []
 
 label questLog_init:
     $ questLogData = [
+        [0, t_("Миссис Морис"), True, t_("Список желаний")],
+        [1, t_("Роуз"), True, t_("Список желаний")],
+        [2, t_("Оливия"), True, t_("Список желаний")]
     ]
     return
 
@@ -150,16 +153,16 @@ label show_questlog:
             if str(questLogLine[0]) in questLogDataEnabled and questLogDataEnabled[str(questLogLine[0])] == True and questLogLine[2] == True:
                 if t__(questLogLine[3]) != lastCategory:
                     lastCategory = t__(questLogLine[3])
-                    inText = inText + "{=questlog_text_category_style}{u}" + t__(lastCategory) + "{/u}{/=questlog_text_category_style}\n{vspace=5}"
+                    inText = inText + "{=phone_notes_category_text}{u}" + t__(lastCategory) + "{/u}{/=questlog_text_category_style}\n{vspace=5}"
                 if str(questLogLine[0]) in questLogLinesUpdated:
-                    inText = inText + "{b}{color=#002810}" + t__(questLogLine[1]) + "{/color}{/b}\n\n"
+                    inText = inText + "{b}{color=#002810}" + t__(questLogLine[1]) + "{/color}{/b}\n"
                 else:
-                    inText = inText + t__(questLogLine[1]) + "\n\n"
-    sound open_map
-    call screen questlog_screen(inText)
+                    inText = inText + t__(questLogLine[1]) + "\n"
+#    sound open_map
+#    call screen questlog_screen(inText)
     $ questLogLinesUpdated = []
-    sound open_map
-    return
+#    sound open_map
+    return inText
 
 label show_questhelp:
     $ questHelpJustUpdated = False

@@ -12,6 +12,6 @@ screen phone_notes_screen():
                 padding (20,10)
                 background None
                 xsize 368
-                text "Test: gdggdfg rlgkerlk regklerglk lergkelrk {s}gergre{/s}" style "phone_notes_text"
+                text phone_notes_text style "phone_notes_text"
 
     vbar value YScrollValue("vp9") xpos 396 ypos 96 xsize 8 ysize 730

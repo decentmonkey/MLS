@@ -191,6 +191,10 @@ label start: #for blink here
 #    call change_scene("house_street") from _rcall_change_scene_220
     call changeDayTime("day")
 
+    call phone_init()
+    call phone_instagram1()
+    call phone_contacts1()
+
     call change_scene("intro_beach", "Fade_long", False)
     call ep1_intro_quests1()
 

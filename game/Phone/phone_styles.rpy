@@ -126,6 +126,11 @@ style phone_notes_text:
     color "#38383a"
 #    font "fonts/tahoma.ttf"
     font "fonts/baskerville_bolditalic_win95bt.ttf"
+#    font "fonts/SF-Pro-Display-Regular.otf"
 
 style phone_notes_category_text:
     underline True
+    size 36
+    color "#38383a"
+#    font "fonts/baskerville_bolditalic_win95bt.ttf"
+    font "fonts/SF-Pro-Display-Bold.otf"
