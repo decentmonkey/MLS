@@ -48,6 +48,9 @@ default phoneNotifications = []
 
 default obj_follow_list = {}
 default images_history_list = {}
+default current_slide = False
+define steamVersion = False
+default rrmeter = 0
 
 #temp vars
 default maxBitchness = 1000
@@ -193,7 +196,7 @@ label start: #for blink here
 
     call phone_init()
     call phone_instagram1()
-    call phone_contacts1()
+    $ camera_icon_enabled = False
 
     call change_scene("intro_beach", "Fade_long", False)
     call ep1_intro_quests1()

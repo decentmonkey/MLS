@@ -73,8 +73,8 @@ label ep1_home_quests5_bed: # ложится спать
     $ remove_hook(label="day1_college")
     $ remove_hook(quest="day1")
     call ep01_dialogues3_day2_family_7()
-    m "end"
-    return False
+    jump end_update
+#    return False
 
 label ep1_home_quests6_instagram:
     $ questHelp("house_6", True)

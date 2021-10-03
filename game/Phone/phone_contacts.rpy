@@ -1,4 +1,6 @@
 label phone_contacts1:
+    $ notif(t__("Добавлен новый контакт"))
+    $ phone_set_new("contacts")
     $ phone_contacts = [
         {"name": "Sophie", "caption":t_("Sophie"), "img":"/images/Phone/contacts/Contacts_Sophie.png"}
 #        {"name": "Sean", "caption":t_("Sean"), "img":"/images/Phone/contacts/Contacts_Sean.png"},

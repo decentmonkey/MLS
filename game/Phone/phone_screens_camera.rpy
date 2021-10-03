@@ -66,6 +66,7 @@ screen phone_camera_screen2(phone_camera_image):
             Return(["close"])
         ]
         alternate ShowMenu("save")
+        at phone_background_fill
     frame:
         at camera_show
         pos(740+432/2,170 + 886/2)
@@ -108,3 +109,38 @@ screen phone_camera_screen2(phone_camera_image):
                 Return(["close"])
             ]
         add "/images/Phone/frame.png"
+
+screen phone_camera_capture_hud_screen_intro(flag):
+    layer "master"
+    zorder 50
+    tag hud
+    fixed:
+        if flag == False:
+            add "/images/Phone/icons/photo_capture_icon.png"
+            pos (1880, 20)
+        else:
+            add "/images/Phone/icons/photo_capture_icon_hover.png"
+            pos (1827, 12)
+
+screen phone_camera_capture_hud_screen():
+    layer "master"
+    zorder 50
+    tag hud
+    if camera_icon_enabled == True:
+        fixed:
+            if camera_enabled == True:
+                imagebutton:
+                    pos (1880, 20)
+                    idle "/images/Phone/icons/photo_capture_icon.png"
+                    hover "/images/Phone/icons/photo_capture_icon_hover.png"
+                    action [
+                        Return(False)
+                    ]
+            else:
+                imagebutton:
+                    pos (1880, 20)
+                    idle "/images/Phone/icons/photo_capture_icon_Disabled.png"
+                    hover "/images/Phone/icons/photo_capture_icon_Disabled_hover.png"
+                    action [
+                        Return(False)
+                    ]

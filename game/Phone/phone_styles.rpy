@@ -24,7 +24,7 @@ transform camera_rotate:
     linear 0.7 rotate 90 ypos 500
 #    linear 0.7 rotate 90 xalign 0.5 yalign -0.1
     on hide:
-        linear 0.7 ypos 1900
+        linear 0.5 ypos 1900
 
 transform camera_show:
     ypos 1900
@@ -32,7 +32,7 @@ transform camera_show:
 #    on show:
     linear 0.7 ypos 513
     on hide:
-        linear 0.7 ypos 1900
+        linear 0.5 ypos 1900
 
 transform camera_picture:
     alpha 0.0

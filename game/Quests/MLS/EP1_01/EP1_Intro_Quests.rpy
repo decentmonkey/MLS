@@ -39,6 +39,9 @@ label ep1_intro_quests3:
     call changeDayTime("evening")
     call ep01_dialogues2_day1_family_1() # комната Барди перед ужином
 
+    call phone_contacts1()
+    $ camera_icon_enabled = True
+
     python:
         questHelp("house_1")
 

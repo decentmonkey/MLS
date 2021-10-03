@@ -48,15 +48,17 @@ python early:
         return (l.simple_expression(), "fl")
 
     def img_exec(s_in):
-        global dialogue_active_flag, screenActionHappened, config, blink_preset, blink_preset2, blink_preset3, blink_preset4, blink_preset5, blink_preset6, images_history_list, day
+        global dialogue_active_flag, screenActionHappened, config, blink_preset, blink_preset2, blink_preset3, blink_preset4, blink_preset5, blink_preset6, images_history_list, day, current_slide
 #        config.has_autosave = False
 #        config.autosave_on_choice = False
         s = s_in[0]
         transition = s_in[1]
         try:
             imagePathExt = img_find_path_ext(renpy.eval(s))
+            current_slide = renpy.eval(s)
         except:
             imagePathExt = img_find_path_ext(s)
+            current_slide = s
         if imagePathExt[0] == False:
             imagePath = "images/Slides/img_" + imagePathExt[1] + ".jpg"
         else:

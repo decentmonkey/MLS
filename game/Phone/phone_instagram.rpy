@@ -2,6 +2,7 @@ label phone_instagram1:
     $ phone_instagram_posts = [
         ["/images/Phone/insta/Feed_past.jpg", t_("Наконец-то, этот долгожданный день настал! Сегодня я оставляю это гребаное захолустье!")]
     ]
+    return
 
 label phone_instagram1_Olivia:
     $ phone_instagram_posts = [

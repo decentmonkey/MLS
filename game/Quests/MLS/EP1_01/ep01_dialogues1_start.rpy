@@ -32,6 +32,7 @@ label ep01_dialogues1_start_1a:
     # они лежат в бикини на шезлонгах, загорают, в руках коктейли
     # рядом с ними стоит один пустой шезлонг
     # girl1 смотрит в камеру и расплывается в улыбке
+    fadeblack 2.0
     music Deeper_For_You
     music2 ocean_waves
     imgfl 910196
@@ -170,12 +171,38 @@ label ep01_dialogues1_start_1ab3:
     hide screen intro_focus
 #    show screen iphone_x
     with diss
+#    pause 0.5
+    $ phone_menu_active = "main"
+    sound metal_slide
+    show screen phone(phone_menu_active)
+    pause 0.5
+    show screen intro_focus("/images/Other/intro/intro_focus8.png")
+    with diss
     girl1 "В нем ты сможешь найти полезную информацию, а также обмениваться сообщениями и просматривать социальные сети."
     imgf 910211
     girl2 "Ты кое-что забыла расскать, Лили..."
     imgd 910212
-    girl2 "[mcname], видишь, иконку камеры рядом с телефоном?"
     girl1 "Ах, да!"
+#    girl2 "[mcname], видишь, иконку камеры рядом с телефоном?"
+#    hide screen phone
+    show screen phone_camera_capture_hud_screen_intro(False)
+    show screen intro_focus("/images/Other/intro/intro_focus6.png")
+    with diss
+    girl1 "[mcname], видишь, иконку камеры сверху экрана?"
+    show screen phone_camera_capture_hud_screen_intro(True)
+    show screen intro_focus("/images/Other/intro/intro_focus6.png")
+    with diss
+    girl1 "При наведении мышки, она загорается."
+    hide screen phone_camera_capture_hud_screen_intro
+    hide screen intro_focus
+    with diss
+    $ phone_menu_active = "camera"
+    $ phone_orientation = 1
+    $ phone_camera_image = phone_camera_get_current_image()
+    show screen phone_camera_screen2(phone_camera_image)
+    pause 1.0
+    show screen intro_focus("/images/Other/intro/intro_focus7.png")
+    with diss
     girl1 "В некоторых сценах, используя эту камеру, ты сможешь делать фото."
     # girl2 с хитрой улыбочкой
     #music Story_of_One_Success_short
@@ -189,10 +216,23 @@ label ep01_dialogues1_start_1ab3:
     img 910214
     girl2 "Есть один важный момент, [mcname]..."
     # подсвечиваем шкалу RR, девушка уазывает на нее рукой
+    $ phone_orientation = 0
+#    $ phone_menu_active = "main"
+    sound metal_slide
+#    show screen phone(phone_menu_active)
+#    pause 1.5
+#    sound phone_click
+    $ phone_menu_active = "preferences_rrmeter"
+    show screen phone(phone_menu_active)
+    pause 0.7
+    show screen intro_focus("/images/Other/intro/intro_focus8.png")
+    with diss
+    pause 0.5
     girl2 "Это твой RabbitRat-meter. Я называю его проще - RR-meter."
+    girl2 "Он находится в Настройках твоего телефона."
     girl2 "Эта шкала будет отображать твой путь в соответствии с твоими поступками."
-    girl1 "Точно! Как я могла забыть?!"
     imgd 910210
+    girl1 "Точно! Как я могла забыть?!"
     girl1 "Это важно, так как твой уровень RR влияет на развитие сюжета..."
     girl1 "А также на доступность опеределенных действий и сцен."
     imgf 910213

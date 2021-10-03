@@ -25,6 +25,8 @@ default phone_preferences_list = []
 default phone_instagram_posts = []
 default phone_inited = False
 default phone_notes_text = ""
+default camera_enabled = True
+default camera_icon_enabled = True
 #history:
 # [{"chat_name":name, "contact_name":contact_name, "chat_content":[]}]
 # chat format:
@@ -40,6 +42,7 @@ label phone_open:
     sound metal_slide
     if phone_inited == False:
         call phone_init()
+        call phone_contacts1()
     $ phone_menu_active = "main"
     $ phone_orientation = 0
     call phone_controller()
@@ -48,6 +51,7 @@ label phone_open:
 label phone_open_menu(menu_active):
     if phone_inited == False:
         call phone_init()
+        call phone_contacts1()
     $ phone_menu_active = "main"
     $ phone_orientation = 0
     call phone_controller()
@@ -91,7 +95,6 @@ label phone_init:
         "instagram": False,
         "preferences": False
     }
-    call phone_contacts1()
     $ phone_buttons_list = [
         {"name": "contacts", "caption": "Contacts", "img":"/images/Phone/icons/contacts.png", "img_new":"/images/Phone/icons/contacts_new.png", "active":True},
         {"name": "messages", "caption": "Messages",  "img":"/images/Phone/icons/messager.png", "img_new":"/images/Phone/icons/messager_new.png", "active":True},
@@ -147,15 +150,18 @@ label phone_open_loop1:
     if interact_data != None and interact_data != False:
         if interact_data[0] == "click_main_icon":
             if interact_data[1] == "contacts":
+                sound phone_click
                 $ phone_menu_active = "contacts"
                 $ phone_last_contacts_count = len(phone_contacts)
 #                $ phone_buttons_new["contacts"] = False
                 jump phone_open_loop1
             if interact_data[1] == "messages":
+                sound phone_click
 #                $ phone_buttons_new["messages"] = False
                 $ phone_menu_active = "messages_list"
                 jump phone_open_loop1
             if interact_data[1] == "gallery":
+                sound phone_click
                 $ phone_menu_active = "gallery"
                 $ phone_gallery_page = 0
                 jump phone_open_loop1
@@ -169,13 +175,16 @@ label phone_open_loop1:
                 show screen phone_camera_screen(phone_camera_image)
                 jump phone_open_loop1
             if interact_data[1] == "preferences":
+                sound phone_click
                 $ phone_menu_active = "preferences_menu"
                 jump phone_open_loop1
             if interact_data[1] == "instagram":
+                sound phone_click
                 $ phone_menu_active = "instagram"
                 $ phone_buttons_new["instagram"] = False
                 jump phone_open_loop1
             if interact_data[1] == "notes":
+                sound phone_click
                 $ phone_buttons_new["notes"] = False
                 $ phone_menu_active = "notes"
                 call show_questlog()
@@ -271,6 +280,15 @@ label phone_open_loop1:
             $ phone_menu_active = "main"
             jump phone_open_loop1
 
+        if interact_data[0] == "camera_shoot":
+            python:
+                if phone_camera_image in phone_gallery:
+                    phone_gallery.remove(phone_camera_image)
+                phone_gallery.insert(0, phone_camera_image)
+            call photoshop_flash()
+#            pause 0.2
+            hide screen phone_camera_screen
+            return
 
 
     jump phone_open_loop1
@@ -390,9 +408,17 @@ init python:
         return
 
     def phone_get_gallery_image_path(image_name):
-        return image_name
+        imagePathExt = img_find_path_ext(image_name)
+        imagePath = imagePathExt[0]
+        return imagePath
 
     def phone_camera_get_current_image():
-        return "/images/Slides/img_900002.jpg"
+        global scene_image, current_slide
+        if renpy.get_screen("show_image_screen_image") != None:
+            if current_slide != False:
+                return current_slide
+        if renpy.get_screen("show_image_screen") != None and renpy.get_screen("screen_sprites") != None:
+            return parse_str(scene_image)
+        return "black_screen"
 
 #

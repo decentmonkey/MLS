@@ -1059,6 +1059,7 @@ screen hud_minimap(minimapData):
 
 screen hud_screen(hud_presets):
     layer "master"
+    tag hud
     zorder 50
     fixed:
         pos (gui.resolution.hud_screen.value1_1,gui.resolution.hud_screen.value1_2)
@@ -2084,9 +2085,10 @@ screen navigation():
 
             textbutton t_("Main Menu") action MainMenu()
 
-        textbutton t_("New Episodes") action OpenURL("https://decent-monkey.com/news/")
+        textbutton t_("New Episodes") action OpenURL("https://love7team.com/news/")
         textbutton t_("Guide") action OpenURL("https://wiki.decent-monkey.com/wiki/Walkthrough_Episode_2")
-        textbutton ("Become Supporter") action OpenURL("https://www.patreon.com/decentmonkey/")
+        if steamVersion == False:
+            textbutton ("Become Supporter") action OpenURL("https://www.patreon.com/Love7/")
         $ flag1 = False
         if game.extra == True and renpy.current_screen().screen_name[0] == "load":
             if check_saves_for_migration() == True:
@@ -2139,19 +2141,20 @@ screen main_menu():
     on "replace" action Play("movie", "video/v_Mainmenu_1b.mkv", loop=True)
     on "replaced" action Stop("movie")
     fixed:
-        imagebutton:
-            xpos get_resolution_x(437)
-            ypos get_resolution_y(116)
-            idle "gui/patreon_button.png"
-            hover "gui/patreon_button_hover.png"
-            action OpenURL("https://www.patreon.com/decentmonkey")
+        if steamVersion == False:
+            imagebutton:
+                xpos get_resolution_x(437)
+                ypos get_resolution_y(116)
+                idle "gui/patreon_button.png"
+                hover "gui/patreon_button_hover.png"
+                action OpenURL("https://www.patreon.com/Love7")
 
         imagebutton:
             xpos get_resolution_x(437)
             ypos get_resolution_y(28)
             idle "gui/web_button.png"
             hover "gui/web_button_hover.png"
-            action OpenURL("http://decent-monkey.com/news/")
+            action OpenURL("http://love7team.com/news/")
 
         add "gui/logo.png":
             xpos get_resolution_x(1025)
