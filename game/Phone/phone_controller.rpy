@@ -252,9 +252,12 @@ label phone_open_loop1:
                 $ phone_menu_active = "camera"
                 $ phone_orientation = 1
                 $ phone_camera_image = phone_camera_get_current_image()
+                $ phone_camera_image_path = phone_get_gallery_image_path(phone_camera_image)
+                $ phone_camera_scene_data = get_camera_scene_shoot_data()
+                $ phone_camera_image_combined = draw_camera_scene_shoot_data(phone_camera_image_path, phone_camera_scene_data)
 #                hide screen phone
 #                show screen phone_camera_screen()
-                show screen phone_camera_screen(phone_camera_image)
+                show screen phone_camera_screen(phone_camera_image_combined)
                 jump phone_open_loop1
             if interact_data[1] == "preferences":
                 sound phone_click
@@ -362,10 +365,12 @@ label phone_open_loop1:
 
         if interact_data[0] == "open_gallery_image":
             sound phone_click
-            $ galleryImagePath = phone_get_gallery_image_path(phone_gallery[interact_data[1]])
+            $ galleryImageCombined = False
+            $ galleryImagePath = phone_get_gallery_image_path(phone_gallery[interact_data[1]][0])
+
             call process_hooks("open_gallery_image", "phone")
             if galleryImagePath != False:
-                show screen phone_gallery_image_screen(galleryImagePath)
+                show screen phone_gallery_image_screen(galleryImagePath, phone_gallery[interact_data[1]][1])
 #                with fade
                 pause
                 sound keyboard_click
@@ -396,9 +401,13 @@ label phone_open_loop1:
             if _return == False:
                 return
             python:
-                if phone_camera_image in phone_gallery:
-                    phone_gallery.remove(phone_camera_image)
-                phone_gallery.insert(0, phone_camera_image)
+                for idx in range(len(phone_gallery)-1,-1,-1):
+                    if phone_gallery[idx][0] == phone_camera_image:
+                        del phone_gallery[idx]
+#                if phone_camera_image in phone_gallery:
+#                    phone_gallery.remove(phone_camera_image)
+                phone_gallery.insert(0, [phone_camera_image, get_camera_scene_shoot_data()])
+                print get_camera_scene_shoot_data()
             call photoshop_flash()
 #            pause 0.2
             hide screen phone_camera_screen
@@ -590,11 +599,55 @@ init python:
             renpy.hide_screen("phone_camera_screen2")
             return
         if action_name == "shoot":
-            if phone_camera_image in phone_gallery:
-                phone_gallery.remove(phone_camera_image)
-            phone_gallery.insert(0, phone_camera_image)
+            for idx in range(len(phone_gallery)-1,-1,-1):
+                if phone_gallery[idx][0] == phone_camera_image:
+                    del phone_gallery[idx]
+#            if phone_camera_image in phone_gallery:
+#                phone_gallery.remove(phone_camera_image)
+            phone_gallery.insert(0, [phone_camera_image, {"sprites": [], "overlaysList" : []}])
             renpy.play("/Sounds/snd_photo_capture.ogg")
             renpy.show_screen("phone_camera_screen2_shoot")
             return
         return
+
+    def get_camera_scene_shoot_data(): # собираем данные спрайтов и оверлеев из сцены
+        global scene_data, day_time
+        overlaysList = []
+        spritesList = []
+        zorder_list = []
+        for i in scene_data: zorder_list.append([i, scene_data[i]["zorder"]])
+        zorder_list.sort(key=lambda x:x[1])
+        for zorder_ptr in zorder_list:
+            i = zorder_ptr[0]
+            day_time_suffix = "_" + day_time if day_time in ["evening"] else ""
+            if scene_data[i]["type"] == 2: # обрабатываем только type 2
+                spriteImageStr = scene_data[i]["img" + day_time_suffix] if scene_data[i]["img" + day_time_suffix] != False else scene_data[i]["img"] if scene_data[i]["img"] != False else False
+                canvas_offset = scene_data[i]["canvas_img" + day_time_suffix] if scene_data[i].has_key("canvas_img" + day_time_suffix) != False else scene_data[i]["canvas_img"] if scene_data[i].has_key("canvas_img") else False
+                if spriteImageStr != False and canvas_offset != False: # обрабатываем только если есть картинка спрайта
+                    spritesList.append([spriteImageStr, canvas_offset])
+                overlayName = scene_data[i]["img" + day_time_suffix + "_overlay"] if scene_data[i]["img" + day_time_suffix + "_overlay"] != False else scene_data[i]["img" + "_overlay"] if scene_data[i]["img" + "_overlay"] != False else False
+                overlay_canvas_offset = scene_data[i]["canvas_img" + day_time_suffix + "_overlay"] if scene_data[i].has_key("canvas_img" + day_time_suffix + "_overlay") != False else scene_data[i]["canvas_img_overlay"] if scene_data[i].has_key("canvas_img_overlay") else False
+                if overlayName != False and overlay_canvas_offset != False: # обрабатываем оверлеи
+                    overlaysList.append([overlayName, overlay_canvas_offset])
+
+        return {"sprites": spritesList, "overlaysList" : overlaysList}
+
+    def draw_camera_scene_shoot_data(image_name, data):
+        global scene_data, day_time
+#        img = Image(image_name)
+        compositeList = [(1920,1080), (0,0), image_name]
+        try:
+            for overlay in data["overlaysList"]:
+                if renpy.exists(overlay[0]):
+                    compositeList.append((overlay[1][1], overlay[1][0]))
+                    compositeList.append(overlay[0])
+            for sprite in data["sprites"]:
+                if renpy.exists(sprite[0]):
+                    compositeList.append((sprite[1][1], sprite[1][0]))
+                    compositeList.append(sprite[0])
+            img = im.Composite(*compositeList)
+        except:
+            img = Image(image_name)
+        return img
+
 #

@@ -23,7 +23,10 @@ screen phone_gallery_screen:
             box_wrap True
             for gal_idx in range(phone_gallery_page*phone_gallery_items_on_page, phone_gallery_page*phone_gallery_items_on_page+phone_gallery_items_on_page):
                 if gal_idx < len(phone_gallery):
-                    $ galleryImg = Transform(phone_get_gallery_image_path(phone_gallery[gal_idx]), size=(175,103))
+                    $ galleryImgPath = phone_get_gallery_image_path(phone_gallery[gal_idx][0])
+                    $ img = draw_camera_scene_shoot_data(galleryImgPath, phone_gallery[gal_idx][1])
+                    $ galleryImg = Transform(img, size=(175,103))
+#                    $ galleryImg = Transform(phone_get_gallery_image_path(phone_gallery[gal_idx][0]), size=(175,103))
                     button:
                         margin (0,0)
                         padding (0,0)
@@ -57,8 +60,8 @@ screen phone_gallery_screen:
             pos(185,17)
             xanchor 0.5
 
-screen phone_gallery_image_screen(gallery_image):
+screen phone_gallery_image_screen(gallery_image, data):
     layer "master"
     zorder 130
-    add gallery_image
-    
+    $ img = draw_camera_scene_shoot_data(gallery_image, data)
+    add img

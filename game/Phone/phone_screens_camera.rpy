@@ -36,7 +36,7 @@ screen phone_camera_screen(phone_camera_image):
                 action [
                     Return(["camera_shoot"])
                 ]
-            add phone_get_gallery_image_path(phone_camera_image):
+            add phone_camera_image:
                 xsize 645
                 ysize 380
                 pos(190, 330)
