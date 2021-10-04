@@ -275,13 +275,13 @@ label phone_open_loop1:
             pause 0.5
             sound snd_phone1
             pause 2.0
+            $ phone_current_chat = []
             call process_hooks("call_contact", "phone")
             if _return == False:
                 $ phone_menu_active = "main"
                 jump phone_open_loop1
 
-            $ phone_current_chat = []
-            call cynthia_chat1()
+#            call cynthia_chat1()
             jump phone_open_loop1
 
         if interact_data[0] == "open_history_chat":
@@ -469,9 +469,11 @@ init python:
         return imagePath
 
     def phone_camera_get_current_image():
-        global scene_image, current_slide
+        global scene_image, current_slide, phone_camera_subst
         if renpy.get_screen("show_image_screen_image") != None:
             if current_slide != False:
+                if phone_camera_subst.has_key(str(current_slide)):
+                    return phone_camera_subst[str(current_slide)]
                 return current_slide
         if renpy.get_screen("show_image_screen") != None and renpy.get_screen("screen_sprites") != None:
             return parse_str(scene_image)

@@ -28,9 +28,11 @@ label ep1_college_sean: # встреча с Шоном
     $ set_active("Teleport_Stairs", True, scene="college_coridor1")
     $ set_active("Teleport_Street", True, scene="college_coridor1")
     $ set_active("Teleport_LockerMC", True, scene="college_coridor1")
+    $ set_active("Teleport_Coridor1", True, scene="college_coridor1_locker_mc")
     $ add_hook("Teleport_Stairs", "ep1_college1_principal_search", scene="college_coridor1")
     $ add_hook("Teleport_Street", "ep01_dialogues3_day2_college_2", scene="college_coridor1", label="day1_college")
     $ add_hook("Teleport_LockerMC", "ep01_dialogues3_day2_college_4", scene="college_coridor1", label="day1_college_locker")
+
 
     # коридор у входа к секретарю
     $ autorun_to_object("ep01_dialogues3_day2_college_4a", scene="college_coridor8")

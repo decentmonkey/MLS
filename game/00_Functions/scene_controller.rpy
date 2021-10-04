@@ -32,6 +32,7 @@ label show_scene_now:
     $ empty1 = "Bitchiness"
     $ empty1 = bitchmeterValue
     hide screen sprites_hover_dummy_screen
+    hide screen phone_camera_capture_hud_screen
 
     $ config.keymap["hide_windows"] = []
 

@@ -37,9 +37,9 @@ label ep1_intro_quests3:
     call ep01_dialogues1_start_3() # вокзал
 
     call changeDayTime("evening")
+    call phone_contacts1()
     call ep01_dialogues2_day1_family_1() # комната Барди перед ужином
 
-    call phone_contacts1()
     $ camera_icon_enabled = True
 
     python:
