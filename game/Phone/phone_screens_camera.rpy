@@ -56,17 +56,16 @@ screen phone_camera_screen(phone_camera_image):
 
 screen phone_camera_screen2(phone_camera_image):
     tag phone
-    layer "master"
-    zorder 130
+    zorder 500
     button:
-        background "#00000030"
+        background "#00000080"
         xfill True
         yfill True
         action [
-            Return(["close"])
+            Function(phone_open_camera_capture_action, "close")
         ]
         alternate ShowMenu("save")
-        at phone_background_fill
+        at phone_background_fill2
     frame:
         at camera_show
         pos(740+432/2,170 + 886/2)
@@ -78,7 +77,7 @@ screen phone_camera_screen2(phone_camera_image):
             xsize 432
             ysize 886
             action [
-                Return("None")
+#                Return("None")
             ]
             alternate ShowMenu("save")
 
@@ -91,7 +90,8 @@ screen phone_camera_screen2(phone_camera_image):
                 idle "/images/Phone/icons/photo_button.png"
                 hover "/images/Phone/icons/photo_button_hover.png"
                 action [
-                    Return(["camera_shoot"])
+                    Function(phone_open_camera_capture_action, "shoot")
+                    #Return(["camera_shoot"])
                 ]
             add phone_get_gallery_image_path(phone_camera_image):
                 xsize 645
@@ -106,9 +106,19 @@ screen phone_camera_screen2(phone_camera_image):
             idle "/images/Icons/window_close.png"
             hover im.MatrixColor("/images/Icons/window_close.png", im.matrix.brightness(0.1))
             action [
-                Return(["close"])
+                Function(phone_open_camera_capture_action, "close")
+#                Return(["close"])
             ]
         add "/images/Phone/frame.png"
+
+screen phone_camera_screen2_shoot():
+    zorder 100
+    fixed:
+        add "Overlays/white_screen.jpg" at camera_shoot
+    timer 1.0 action [
+        Hide("phone_camera_screen2_shoot"),
+        Hide("phone_camera_screen2")
+    ]
 
 screen phone_camera_capture_hud_screen_intro(flag):
     layer "master"
@@ -117,30 +127,32 @@ screen phone_camera_capture_hud_screen_intro(flag):
     fixed:
         if flag == False:
             add "/images/Phone/icons/photo_capture_icon.png"
-            pos (1880, 20)
+            pos (1827, 12)
         else:
             add "/images/Phone/icons/photo_capture_icon_hover.png"
             pos (1827, 12)
 
 screen phone_camera_capture_hud_screen():
-    layer "master"
-    zorder 50
+#    layer "master"
+    zorder 500
     tag hud
     if camera_icon_enabled == True:
         fixed:
             if camera_enabled == True:
                 imagebutton:
-                    pos (1880, 20)
+                    pos (1827, 12)
                     idle "/images/Phone/icons/photo_capture_icon.png"
                     hover "/images/Phone/icons/photo_capture_icon_hover.png"
                     action [
-                        Return(False)
+                        Function(phone_open_camera_capture, _update_screens=True)
+#                        Return(False)
                     ]
             else:
                 imagebutton:
-                    pos (1880, 20)
+                    pos (1827, 12)
                     idle "/images/Phone/icons/photo_capture_icon_Disabled.png"
                     hover "/images/Phone/icons/photo_capture_icon_Disabled_hover.png"
                     action [
-                        Return(False)
+                        Function(phone_open_camera_capture_action, "denied")
+#                        Return(False)
                     ]

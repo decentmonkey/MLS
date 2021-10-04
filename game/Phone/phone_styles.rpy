@@ -6,6 +6,14 @@ transform phone_background_fill:
         alpha 1.0
         linear 0.5 alpha 0.0
 
+transform phone_background_fill2:
+    on show:
+        alpha 0.0
+        linear 0.5 alpha 1.0
+    on hide:
+        alpha 1.0
+        linear 0.5 alpha 0.0
+
 transform phone_up_down:
     on show:
         yoffset 1220
@@ -40,6 +48,10 @@ transform camera_picture:
 #        alpha 0.0
     pause 0.7
     linear 0.5 alpha 1.0
+
+transform camera_shoot:
+    alpha 0.8
+    linear 0.7 alpha 0.0
 
 style phone_main_icon_caption:
 #    font "fonts/OpenSans-Regular.ttf"

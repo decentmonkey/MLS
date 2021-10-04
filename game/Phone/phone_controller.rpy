@@ -38,6 +38,7 @@ default camera_icon_enabled = True
 # call phone_open_menu(menu_name) - открывается на определенном меню
 # call phone_hide() - закрывается
 # call phone_camera_open() - открывается в режиме камеры
+
 label phone_open:
     sound metal_slide
     if phone_inited == False:
@@ -79,7 +80,7 @@ label phone_camera_open_loop1:
                 if phone_camera_image in phone_gallery:
                     phone_gallery.remove(phone_camera_image)
                 phone_gallery.insert(0, phone_camera_image)
-            m "shoot!"
+#            m "shoot!"
             hide screen phone_camera_screen2
             return
 
@@ -231,6 +232,8 @@ label phone_open_loop1:
             $ phone_contact = interact_data[2]
             $ phone_menu_active = "calling_screen"
             show screen phone(phone_menu_active)
+            pause 0.5
+            sound snd_phone1
             pause 2.0
 #            call process_hooks("call_contact", "phone")
             $ phone_current_chat = []
@@ -261,6 +264,7 @@ label phone_open_loop1:
                 show screen phone_gallery_image_screen(galleryImagePath)
 #                with fade
                 pause
+                sound keyboard_click
                 hide screen phone_gallery_image_screen
             jump phone_open_loop1
 
@@ -421,4 +425,31 @@ init python:
             return parse_str(scene_image)
         return "black_screen"
 
+    def phone_open_camera_capture():
+        global phone_menu_active, phone_orientation, phone_camera_image
+        print "capture!"
+        renpy.play("/Sounds/camera_lens1.ogg")
+        phone_menu_active = "camera"
+        phone_orientation = 1
+        phone_camera_image = phone_camera_get_current_image()
+        renpy.show_screen("phone_camera_screen2", phone_camera_image)
+        return
+
+    def phone_open_camera_capture_action(action_name):
+        global phone_gallery, phone_camera_image
+        if action_name == "denied":
+            renpy.play("/Sounds/denied.ogg")
+            return
+        if action_name == "close":
+            renpy.play("/Sounds/vjuh3.ogg")
+            renpy.hide_screen("phone_camera_screen2")
+            return
+        if action_name == "shoot":
+            if phone_camera_image in phone_gallery:
+                phone_gallery.remove(phone_camera_image)
+            phone_gallery.insert(0, phone_camera_image)
+            renpy.play("/Sounds/snd_photo_capture.ogg")
+            renpy.show_screen("phone_camera_screen2_shoot")
+            return
+        return
 #

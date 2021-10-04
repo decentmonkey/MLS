@@ -79,7 +79,8 @@ python early:
         storeImagesList(imagePath, s)
         renpy.scene()
         renpy.show_screen("show_image_screen_image", imagePath)
-
+        renpy.show_screen("phone_camera_capture_hud_screen")
+        
         #blink controller
         blinkBase = imagePathExt[1]
         if offsets_blink.has_key(blinkBase):
