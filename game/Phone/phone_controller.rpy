@@ -172,7 +172,7 @@ label phone_open_loop1:
     if phone_menu_active != "camera":
         show screen phone(phone_menu_active)
 
-    call process_hooks("phone", scene="phone")
+    call process_hooks("phone", "phone")
 
     $ interact_data = None
     $ interact_data = ui.interact()
