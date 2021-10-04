@@ -55,6 +55,8 @@ label ep1_home_quests4_sister1: # встреча с сестрой на 2-ом �
     $ questHelp("house_6")
     $ questHelpDesc("house_desc6")
     $ add_hook("Bed", "ep01_dialogues3_day2_family_6a2", scene="house_bedroom_mc", quest="day1", label="bed_block_instagram")
+    call phone_instagram1_Olivia()
+    $ add_hook("instagram", "ep1_home_quests6_instagram", scene="phone", label="ep1_home_quests4_sophie", once=True)
     call change_scene("house_bedroom_mc", "Fade_long", False)
     call refresh_scene_fade_long()
     return False
@@ -81,6 +83,8 @@ label ep1_home_quests6_instagram:
     $ questHelp("house_7")
     $ questHelp("house_8")
     $ remove_hook(label="bed_block_instagram")
+    call ep01_dialogues3_day2_family_8a()
+    $ add_hook("phone_close", "ep01_dialogues3_day2_family_8b", scene="phone", label="ep01_dialogues3_day2_family_8b", once=True)
     return
 
 

@@ -129,7 +129,7 @@ init python:
 #    if check_object_has_character(i) == True:
 #        $ data["actions"] = data["actions"] + "i"
 
-label bitch(amount, place=False):
+label rrmeter(amount, place=False):
     $ global bitchmeter_places
     if place != False:
         if bitchmeter_places.has_key(place):
@@ -137,20 +137,21 @@ label bitch(amount, place=False):
         $ bitchmeter_places[place] = amount
 
 
-    if bitchmeterValue > maxBitchness / 2 and amount < 0:
-        $ amount *= 3
-    if bitchmeterValue <= maxBitchness / 2 and amount > 0:
-        $ amount *= 3
+#    if rrmeterValue > maxRRMeter / 2 and amount < 0:
+#        $ amount *= 3
+#    if rrmeterValue <= maxRRMeter / 2 and amount > 0:
+#        $ amount *= 3
 
-    $ bitchmeterValue += amount
-    if bitchmeterValue < 0:
-        $ bitchmeterValue = 0
-    if bitchmeterValue > maxBitchness:
-        $ bitchmeterValue = maxBitchness
+    $ rrmeterValue += amount
+    if rrmeterValue < -50:
+        $ rrmeterValue = 50
+    if rrmeterValue > 50:
+        $ rrmeterValue = 50
+    sound level_up
     if amount > 0:
-        show screen notify ("Bitchness increased!")
+        show screen notify (t_("Rabbit increased!"))
     else:
-        show screen notify ("Bitchness decreased!")
+        show screen notify (t_("Rat increased!"))
     return
 
 label low_corruption(req):

@@ -228,7 +228,7 @@ label ep1_college5_college_sean_home2:
     call sophie_chat1()
 #    $ set_var("Friend_Bardie", base="HouseFriend_Room[day_suffix]_Friend_Bardie_[houseFriendRoom_Friend_BardieSuffix1]", scene="housefriend_room")
     $ set_active("Teleport_LivingRoom", True, scene="housefriend_room")
-    $ add_hook("Teleport_LivingRoom", "ep01_dialogues2_day1_family_1_12", label="sean_block")
+    $ add_hook("Teleport_LivingRoom", "ep01_dialogues2_day1_family_1_12", scene="housefriend_street", label="sean_block")
     $ questHelp("sean_1", True)
     $ questHelpDesc("sean_desc1")
     call change_scene("housefriend_street", "Fade_long")

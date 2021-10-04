@@ -218,6 +218,10 @@ label phone_open_loop1:
         show screen phone(phone_menu_active)
 
     call process_hooks("phone", "phone")
+    if phone_menu_active == "instagram":
+        call process_hooks("instagram", "phone")
+    if phone_menu_active == "notes":
+        call process_hooks("notes", "phone")
 
     $ interact_data = None
     $ interact_data = ui.interact()
@@ -259,13 +263,11 @@ label phone_open_loop1:
                 jump phone_open_loop1
             if interact_data[1] == "instagram":
                 sound phone_click
-                call process_hooks("instagram", "phone")
                 $ phone_menu_active = "instagram"
                 $ phone_buttons_new["instagram"] = False
                 jump phone_open_loop1
             if interact_data[1] == "notes":
                 sound phone_click
-                call process_hooks("notes", "phone")
                 $ phone_buttons_new["notes"] = False
                 $ phone_menu_active = "notes"
                 call show_questlog()
@@ -280,6 +282,7 @@ label phone_open_loop1:
                 sound vjuh3
                 hide screen phone
                 hide screen phone_chat_live_screen
+                call process_hooks("phone_close", "phone")
                 return
             if phone_menu_active == "chat_live":
                 sound vjuh3
@@ -287,6 +290,7 @@ label phone_open_loop1:
                 hide screen phone_chat_live_screen
 #                pause 0.5
                 call process_hooks("call_contact_end_close", "phone")
+                call process_hooks("phone_close", "phone")
                 return
 
 
@@ -310,6 +314,7 @@ label phone_open_loop1:
             if phone_menu_active == "camera":
                 sound vjuh3
                 hide screen phone_camera_screen
+                call process_hooks("phone_close", "phone")
                 return
 #                $ phone_menu_active = "main"
 #                jump phone_open_loop1
@@ -397,6 +402,7 @@ label phone_open_loop1:
             call photoshop_flash()
 #            pause 0.2
             hide screen phone_camera_screen
+            call process_hooks("phone_close", "phone")
             return
 
 

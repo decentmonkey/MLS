@@ -355,6 +355,7 @@ label ep01_dialogues3_day2_family_6:
             $ questHelp("house6")
             $ questHelpDesc("house_desc3", "house_desc4")
             # балл RR -5
+            call rrmeter(5, "ep01_dialogues3_day2_family_6")
             music Step_By_Step
             imgd 900092
             bardi "Софи, да все в порядке. Не стоит так волноваться."  ##->#####inc
@@ -410,6 +411,7 @@ label ep01_dialogues3_day2_family_6:
             $ questHelp("house6")
             $ questHelpDesc("house_desc3", "house_desc5")
             # балл RR +5
+            call rrmeter(-5, "ep01_dialogues3_day2_family_6")
             $ mlsBardiDay2Family1 = day # Барди солгал Софи про синяк
             music Step_By_Step
             imgd 900092
@@ -1550,9 +1552,12 @@ label ep01_dialogues3_day2_family_8:
     olivia "Найти себя невозможно — себя можно только создать."
     olivia "Я в восторге от факта собственного существования!"
     olivia "Всё самое лучшее случается неожиданно."
+label ep01_dialogues3_day2_family_8a:
     # Барди листает ленту ее аккаунта
     bardi_t "Хмм... Какой прикольный аккаунт у старшей дочери Софи..." ##->#####inc
     #####inc bardi_t "Хмм... Какой прикольный аккаунт у моей старшей сестры..."
+    return
+label ep01_dialogues3_day2_family_8b:
     bardi_t "Хотел бы я быть на месте того, кто ее фоткает для Инсты."
     bardi_t "Она настоящая красотка... Такая уверенная в себе и... Секси."
     bardi_t "Нужно почаще сюда заглядывать..."

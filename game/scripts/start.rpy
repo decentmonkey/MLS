@@ -50,10 +50,10 @@ default obj_follow_list = {}
 default images_history_list = {}
 default current_slide = False
 define steamVersion = False
-default rrmeter = 0
+default rrmeterValue = 0
 
 #temp vars
-default maxBitchness = 1000
+default maxRRMeter = 100
 
 label start: #for blink here
 

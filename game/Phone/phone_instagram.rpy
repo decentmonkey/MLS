@@ -5,6 +5,7 @@ label phone_instagram1:
     return
 
 label phone_instagram1_Olivia:
+    $ phone_set_new("instagram")
     $ phone_instagram_posts = [
         ["/images/Phone/insta/Olivia_feed1.jpg", t_("Я не художник, но рисую свои мечты. Я не писатель, но пишу свою книгу жизни.")],
         ["/images/Phone/insta/Olivia_feed2.jpg", t_("Забудь о том, кто ты есть сейчас и стань тем, кем хочешь быть.")],

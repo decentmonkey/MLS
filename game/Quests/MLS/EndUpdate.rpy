@@ -128,6 +128,7 @@ transform transform_end_update_button:
     linear 0.7 alpha 1.0
 
 label end_update:
+    $ camera_icon_enabled = False
     stop music
     sound snd_cinematic_impact
     img black_screen

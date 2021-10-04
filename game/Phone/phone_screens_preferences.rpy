@@ -1,6 +1,6 @@
 screen phone_preferences_rrmeter():
     fixed:
-        $ barValue = float(rrmeter + 50)/100
+        $ barValue = float(rrmeterValue + 50)/100
         if barValue >= 0.5:
             bar:
                 xpos 170
