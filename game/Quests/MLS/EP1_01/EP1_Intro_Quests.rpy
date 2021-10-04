@@ -7,7 +7,7 @@ default sophieKitchenTalkLastDay = 0
 
 label ep1_intro_quests1:
     call ep01_dialogues1_start_1a() # пляж, показываем геймплей
-    call refresh_scene_fade()
+    call refresh_scene_fade_long()
     $ introHUDBlocked = True
 #    $ questHelp("start_1")
     return
