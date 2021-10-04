@@ -2089,8 +2089,8 @@ screen navigation():
 
             textbutton t_("Main Menu") action MainMenu()
 
-        textbutton t_("New Episodes") action OpenURL("https://love7team.com/news/")
-        textbutton t_("Guide") action OpenURL("https://wiki.decent-monkey.com/wiki/Walkthrough_Episode_2")
+        textbutton t_("New Updates") action OpenURL("https://love7team.com/news/")
+#        textbutton t_("Guide") action OpenURL("https://wiki.decent-monkey.com/wiki/Walkthrough_Episode_2")
         if steamVersion == False:
             textbutton ("Become Supporter") action OpenURL("https://www.patreon.com/Love7/")
         $ flag1 = False
@@ -2099,6 +2099,7 @@ screen navigation():
 #                textbutton t_("MIGRATE FROM 720p") action Start("migrate_saves") text_color "#e8b131" text_hover_color "#f8f131"
 #                $ flag1 = True
         if flag1 == False:
+            textbutton t_("Licenses") action ShowMenu("licenses")
             textbutton t_("My Thanks") action ShowMenu("about")
 
 
@@ -2412,6 +2413,18 @@ screen about():
                 text "[gui.about]\n"
 
 #            text t_("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+
+screen licenses():
+    tag menu
+
+    use game_menu(t_("Licenses"), scroll="viewport"):
+
+        style_prefix "about"
+
+        vbox:
+
+            label "Licenses"
+            text t__(licenses_text)
 
 
 ## This is redefined in options.rpy to add text to the about screen.

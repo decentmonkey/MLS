@@ -45,3 +45,4 @@ screen phone_instagram_screen():
                     ]
 
     vbar value YScrollValue("vp8") xpos 396 ypos 96 xsize 8 ysize 730
+#        style_prefix "blue"
