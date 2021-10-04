@@ -306,5 +306,5 @@ define config.conditionswitch_predict_all = True
 define config.developer = "auto"
 define config.predict_screen_statements = True
 define config.predict_screens = True
-define config.autosave_on_choice = False
-define config.has_autosave = False
+#define config.autosave_on_choice = False
+#define config.has_autosave = False

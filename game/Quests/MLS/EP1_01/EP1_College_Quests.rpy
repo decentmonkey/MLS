@@ -1,3 +1,6 @@
+default ep1_college_talk_sean_agree = False
+default ep1_college5_college_init_sean_Flag = False
+
 label ep1_college_open:
     $ questHelp("college_1", True)
     $ questHelp("college_2")
@@ -8,6 +11,7 @@ label ep1_college_sean: # встреча с Шоном
     $ remove_hook(label="day1_morning")
     if ep1_intro_quests6_cynthia_bathroom_Flag == False:
         $ questHelp("college_4", False)
+        $ questHelp("house_3", False)
     $ clear_object_follow_all()
 
 
@@ -15,6 +19,13 @@ label ep1_college_sean: # встреча с Шоном
     $ questHelp("college_3")
 
     call ep01_dialogues3_day2_college_1()
+
+    $ move_object("Friend_Bardie", "college_empty")
+
+    # добавляем контакт Шона
+    call phone_contacts2()
+    # добавляем контакт Синтии
+    call phone_contacts3()
 
     # выключаем все указатели в колледже
     $ set_active(False, group="teleports", scene="college_coridor1", recursive=True)
@@ -150,36 +161,59 @@ label ep1_college5_college_end:
     $ questHelp("college_13", True)
     call ep1_home_quests1_init()
 
+    $ add_hook("enter_scene", "ep1_college5_college_end2_cynthia_call", scene="house_street", label="ep1_college5_college_end2_cynthia_call", once=True)
+
+#    $ add_hook("call_contact_end_close", "ep1_college5_college_end2", scene="phone", label="ep1_college5_college_end2", once=True)
+
     call ep01_dialogues3_day2_college_11()
 
     # блокируем колледж
     $ add_hook("Teleport_Coridor1", "ep01_dialogues2_day1_family_1_12", scene="college_street", label="day1_college")
 
-    call ep1_college5_college_init_sean()
+    $ seanCallStage = 1
+    $ cynthiaCallStage = 1
+    $ phone_incoming_call("Sean")
+#    $ add_hook("call_contact_end_close", "ep1_college5_college_init_sean", scene="phone", label="ep1_college5_college_init_sean")
+#    $ add_hook("call_contact_end_close", "ep1_college5_college_end_cynthia_call", scene="phone", label="ep1_college5_college_end_cynthia_call")
+#    call ep1_college5_college_init_sean() - делается в звонке
+
     $ set_object_follow("Teleport_Map", scene="college_street")
 
-    call refresh_scene_fade()
+#    call refresh_scene_fade()
     return
+
+label ep1_college5_college_end2_cynthia_call:
+    $ phone_incoming_call("Cynthia")
+    return
+
 
 label ep1_college5_college_init_sean:
     # инитим Шона
-    $ questHelp("sean_1")
-    $ autorun_to_object("ep01_dialogues3_day2_college_12", scene="college_street")
+    if ep1_college_talk_sean_agree == True:
+        $ questHelp("sean_1")
+        $ add_hook("call_contact_end_close", "ep01_dialogues3_day2_college_12", scene="phone", label="ep01_dialogues3_day2_college_12", once=True)
+#        $ autorun_to_object("ep01_dialogues3_day2_college_12", scene=scene_name)
+#        call refresh_scene_fade()
+    if ep1_college5_college_init_sean_Flag == True:
+        return
+    $ ep1_college5_college_init_sean_Flag = True
     $ map_objects["Teleport_HOUSE_FRIEND"] = {"text" : t_("ДОМ ШОНА"), "xpos" : 1303, "ypos" : 318, "base" : "map_marker", "state" : "visible"}
     $ autorun_to_object("ep01_dialogues3_day2_college_13", scene="housefriend_street")
     $ add_hook("enter_scene", "ep01_dialogues3_day2_college_12", scene="house_street", label="sean_visit", once=True)
 #    $ focus_map("HOUSE_FRIEND", "ep01_dialogues3_day2_college_12a")
     $ set_object_follow("Teleport_LivingRoom", scene="housefriend_street")
     $ add_hook("Teleport_LivingRoom", "ep1_college5_college_sean_home", scene="housefriend_street", label="sean_visit")
+#    call refresh_scene_fade()
     return
 
 label ep1_college5_college_sean_home:
+    $ seanCallStage = 0
     $ remove_hook(label="sean_visit")
     call ep01_dialogues3_day2_college_14()
     $ set_active("Teleport_LivingRoom", False, scene="housefriend_room")
     $ move_object("Friend_Bardie", "housefriend_room")
     $ houseFriendRoom_Friend_BardieSuffix1 = 3
-    $ phoneEnabled = False
+#    $ phoneEnabled = False
 #    $ set_var("Friend_Bardie", base="HouseFriend_Room[housefriend_room_forced_evening_time_suffix]_Friend_Bardie_[houseFriendRoom_Friend_BardieSuffix1]", scene="housefriend_room")
     $ add_hook("Friend_Bardie", "ep1_college5_college_sean_home2", scene="housefriend_room")
     call change_scene("housefriend_room", "Fade_long")
@@ -189,8 +223,9 @@ label ep1_college5_college_sean_home2:
     $ remove_hook()
     call ep01_dialogues3_day2_college_14a()
     call changeDayTime("evening")
-    $ phoneEnabled = True
+#    $ phoneEnabled = True
     call ep01_dialogues3_day2_college_15()
+    call sophie_chat1()
 #    $ set_var("Friend_Bardie", base="HouseFriend_Room[day_suffix]_Friend_Bardie_[houseFriendRoom_Friend_BardieSuffix1]", scene="housefriend_room")
     $ set_active("Teleport_LivingRoom", True, scene="housefriend_room")
     $ add_hook("Teleport_LivingRoom", "ep01_dialogues2_day1_family_1_12", label="sean_block")

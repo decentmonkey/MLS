@@ -195,6 +195,7 @@ label start: #for blink here
     call changeDayTime("day")
 
     call phone_init()
+    call phone1()
     call phone_instagram1()
     $ camera_icon_enabled = False
 

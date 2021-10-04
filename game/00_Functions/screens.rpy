@@ -1344,6 +1344,8 @@ screen hud_screen(hud_presets):
             for new1 in phone_buttons_new:
                 if phone_buttons_new[new1] == True:
                     $ phoneNew = True
+            if phoneNewForced == True:
+                $ phoneNew = True
             imagebutton:
                 pos (1815, 95)
                 if phoneNew == False:
@@ -1362,6 +1364,8 @@ screen hud_screen(hud_presets):
                 action [
                     Return(["phone_show"])
                 ]
+                if phone_icon_flashing == True:
+                    at phone_icon_flashing_transform
         else:
             imagebutton:
                 pos (1815, 95)

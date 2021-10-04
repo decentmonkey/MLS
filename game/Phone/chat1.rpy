@@ -1,14 +1,7 @@
 label cynthia_chat1:
     $ phone_start_new_chat("cynthia1", "Cynthia")
     call phone_chat([
-        ["cynthia", t_("[mcname], как дела? Ты еще в колледже?")],
-        ["cynthia", "image", "/images/Phone/insta/1.jpg", 2]
-#        ["", t_("Привет. Да, еще в колледже.")],
-#        ["", t_("Скоро буду дома. А ты где?")],
-#        ["cynthia", t_("Я сегодня задержусь у кузины.")],
-#        ["cynthia", t_("Ей нужно помочь с заданием по математике.")],
-#        ["", t_("Окей. Если вечером не увидимся, завтра поболтаем :)")],
-#        ["cynthia", t_("Окей :)")]
+        ["cynthia", t_("[mcname], как дела? Ты еще в колледже?")]
     ])
     call phone_chat_menu([
         t__("Ответить."),
@@ -33,6 +26,7 @@ label cynthia_chat1:
         call phone_chat([
             ["cynthia", t_("Я сегодня задержусь у кузины.")],
             ["cynthia", "Ей нужно помочь с заданием по математике."],
+            ["cynthia", "image", "/images/Phone/Photos/cynthia_math2.png", 2],
             ["", t_("Окей. Если вечером не увидимся, завтра поболтаем :)")],
             ["cynthia", t_("Окей :)")],
         ])
@@ -40,37 +34,63 @@ label cynthia_chat1:
 
     if _return == 1:
         # не отвечать
-        m "Позже ей отвечу."
+        bardie_t "Позже ей отвечу."
         return
     return
-    pause
-    m "chat_end"
-    return
-    cynthia "[mcname], как дела? Ты еще в колледже?"
-    menu:
-        "Ответить.":
-            menu:
-                "Я еще в колледже.":
-#                    sound iphone_typing
-                    bardi "Привет. Да, еще в колледже."
-                    bardi "А ты где?"
-                    pass
-                "Уже освободился.":
-#                    sound iphone_typing
-                    bardi "Привет. Уже освободился."
-                    bardi "Скоро буду дома. А ты где?"
-                    pass
-#            sound iphone_text_message2
-            cynthia "Я сегодня задержусь у кузины."
-            cynthia "Ей нужно помочь с заданием по математике."
-#            sound iphone_typing
-            bardi "Окей. Если вечером не увидимся, завтра поболтаем :)"
-#            sound iphone_text_message2
-            cynthia "Окей :)"
-            return
-        "Не отвечать.":
-            bardi_t "Позже ей отвечу."
-            return
 
-    m "here"
+label cynthia_chat2:
+    $ phone_start_new_chat("cynthia2", "Cynthia")
+    call phone_chat([
+        ["cynthia", t_("[mcname], не могу говорить. Я на занятиях.")],
+        ["cynthia", "Спишемся позже! :)"]
+    ])
+    return
+
+label sean_chat1:
+    $ phone_start_new_chat("sean_chat1", "Sean")
+    $ ep1_college_talk_sean_agree = False
+    call phone_chat([
+        ["sean", t_("Эй, чувак. Я уже дома. Решил свалить с занятий с тренером.")],
+        ["sean", t_("Как дела? Ты еще долго будешь в колледже?")],
+    ])
+    call phone_chat_menu([
+        t__("Ответить."),
+        t__("Не отвечать.")
+    ])
+    if _return == 0:
+        # Ответить
+        call phone_chat_menu([
+            t__("Уже освободился.")
+        ])
+        call phone_chat([
+            ["", t_("Дела норм, бро.")],
+            ["", t_("Я только вышел из колледжа.")],
+            ["sean", t_("Какие планы на вечер?")],
+            ["", t_("Домой сейчас пойду.")],
+            ["sean", t_("Хочешь, заглядывай ко мне.")],
+            ["", t_("А ты также в квартире недалеко от колледжа живешь?")],
+            ["sean", t_("Не, бро. Мы уже давно переехали в дом.")],
+            ["sean", t_("Он недалеко от твоего :)")],
+            ["", t_("Окей. Тогда я к тебе.")],
+            ["sean", t_("Жду.")],
+        ])
+        $ ep1_college_talk_sean_agree = True
+
+    if _return == 1:
+        bardi_t "Позже ему отвечу."
+    call ep1_college5_college_init_sean()
+    return
+
+label sean_chat2:
+    $ phone_start_new_chat("sean_chat2", "Sean")
+    call phone_chat([
+        ["sean", t_("Эй, чувак. Я на занятиях.")],
+        ["sean", t_("Спишемся позже! Удачи, бро!")]
+    ])
+    return
+
+label sophie_chat1:
+    $ phone_add_history("sophie_chat1", "Sophie", [
+        ["sophie", t_("[mcname], у тебя все в порядке? Занятия в колледже уже давно закончились. Ты где, милый?")],
+    ])
     return

@@ -10,6 +10,13 @@ label phone_contacts1:
     return
 
 label phone_contacts2:
+    $ notif(t__("Добавлен новый контакт"))
+    $ phone_set_new("contacts")
     $ phone_contacts.append({"name": "Sean", "caption":t_("Sean"), "img":"/images/Phone/contacts/Contacts_Sean.png"})
+    return
+
+label phone_contacts3:
+    $ notif(t__("Добавлен новый контакт"))
+    $ phone_set_new("contacts")
     $ phone_contacts.append({"name": "Cynthia", "caption":t_("Cynthia"), "img":"/images/Phone/contacts/Contacts_Cynthia.png"})
     return

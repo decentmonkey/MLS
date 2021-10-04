@@ -32,6 +32,7 @@ label locations_init:
 #    $ add_location("", caption=t_(""), label="", init_label="_init", parent="college_street")
 
     #COLLEGE
+
     $ add_location("college_street", caption=t_("ДВОР КОЛЛЕДЖА"), label="college_street", init_label="college_street_init", parent="COLLEGE")
     $ add_location("college_coridor1", caption=t_("КОЛЛЕДЖ ЭТАЖ 1"), label="college_coridor1", init_label="college_coridor1_init", parent="college_street")
     $ add_location("college_coridor1_locker_mc", caption=t_("МОЙ ШКАФЧИК"), label="college_coridor1_locker_mc", init_label="college_coridor1_locker_mc_init", parent="college_coridor1")
@@ -68,6 +69,7 @@ label locations_init:
     $ add_location("college_wc_female", caption=t_("ТУАЛЕТ ДЛЯ ДЕВОЧЕК"), label="college_wc_female", init_label="college_wc_female_init", parent="college_coridor4")
     $ add_location("college_wc_male", caption=t_("ТУАЛЕТ ДЛЯ МАЛЬЧИКОВ"), label="college_wc_male", init_label="college_wc_male_init", parent="college_coridor4")
     $ add_location("college_streetyard", caption=t_("СПОРТИВНАЯ ПЛОЩАДКА"), label="college_streetyard", init_label="college_streetyard_init", parent="college_street")
+    $ add_location("college_empty", caption=t_("ДВОР КОЛЛЕДЖА"), label="college_empty", init_label="college_empty_init", parent="college_street")
 
     return
 #

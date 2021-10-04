@@ -8,7 +8,9 @@ label questLog_init:
     $ questLogData = [
         [0, t_("Миссис Морис"), True, t_("Список желаний")],
         [1, t_("Роуз"), True, t_("Список желаний")],
-        [2, t_("Оливия"), True, t_("Список желаний")]
+        [2, t_("Оливия"), True, t_("Список желаний")],
+        [3, t_("Найти способ получать деньги."), True, t_("Жизнь в городе")]
+
     ]
     return
 
@@ -155,7 +157,7 @@ label show_questlog:
                     lastCategory = t__(questLogLine[3])
                     inText = inText + "{=phone_notes_category_text}{u}" + t__(lastCategory) + "{/u}{/=questlog_text_category_style}\n{vspace=5}"
                 if str(questLogLine[0]) in questLogLinesUpdated:
-                    inText = inText + "{b}{color=#002810}" + t__(questLogLine[1]) + "{/color}{/b}\n"
+                    inText = inText + "{=phone_notes_text_new}" + t__(questLogLine[1]) + "{/=phone_notes_text_new}\n"
                 else:
                     inText = inText + t__(questLogLine[1]) + "\n"
 #    sound open_map

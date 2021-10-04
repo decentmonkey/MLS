@@ -8,6 +8,9 @@ label college_life_change_daytime:
     return
 
 label college_life:
+    if day_time_idx == 0 and week_day != 7:
+        $ move_object("Sister2", "college_empty")
+
     if college_life_last_init_daytime == day_time_idx:
         return
 label college_life_forced:

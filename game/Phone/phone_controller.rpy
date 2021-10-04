@@ -27,13 +27,22 @@ default phone_inited = False
 default phone_notes_text = ""
 default camera_enabled = True
 default camera_icon_enabled = True
+default phoneNewForced = False
+default phone_incoming_call_active = False
+default phone_incoming_call_name = False
+default phone_icon_flashing = False
+
 #history:
 # [{"chat_name":name, "contact_name":contact_name, "chat_content":[]}]
 # chat format:
 # ["speaker", "message", pause]
 
+# phone_focus_icon(True/False) - фокусировка на иконке телефона, new message if true
+# phone_incoming_call(contact_name) - фокусировка на иконке телефона, начало чата при открытии
+
 # phone_add_history(chat_name, contact_name, chat_list)
 # phone_set_new(menu_name)
+
 # call phone_open() - открывается на главном меню
 # call phone_open_menu(menu_name) - открывается на определенном меню
 # call phone_hide() - закрывается
@@ -41,6 +50,7 @@ default camera_icon_enabled = True
 
 # add_hook("phone_open", "", scene="phone") - open phone
 # add_hook("phone", "", scene="phone") - every phone iteration
+# add_hook("phone_close", "", scene="phone") - close phone
 
 # add_hook("contacts", "", scene="phone") - open contacts
 # add_hook("before_call_contact", "", scene="phone")
@@ -64,6 +74,12 @@ default camera_icon_enabled = True
 
 
 label phone_open:
+    $ phoneNewForced = False
+    $ phone_icon_flashing = False
+    if phone_incoming_call_active == True:
+        $ phone_incoming_call_active = False
+        jump phone_incoming_call
+    hide screen phone_icon_focus
     sound metal_slide
     if phone_inited == False:
         call phone_init()
@@ -75,6 +91,9 @@ label phone_open:
     return
 
 label phone_open_menu(menu_active):
+    hide screen phone_icon_focus
+    $ phoneNewForced = False
+    $ phone_icon_flashing = False
     if phone_inited == False:
         call phone_init()
         call phone_contacts1()
@@ -83,6 +102,31 @@ label phone_open_menu(menu_active):
     $ phone_orientation = 0
     call phone_controller()
     return
+
+label phone_incoming_call:
+    hide screen phone_icon_focus
+    $ phone_orientation = 0
+    $ obj_name = phone_incoming_call_name
+    $ phone_contact = phone_get_contact_by_contact_name(obj_name)
+    $ phone_menu_active = "calling_screen"
+    call process_hooks("before_call_contact", "phone")
+    if _return == False:
+        $ phone_menu_active = "main"
+        jump phone_open_loop1
+
+    show screen phone(phone_menu_active)
+    sound snd_phone_notification1
+#    pause
+    pause 1.0
+    $ phone_menu_active = "chat_live"
+    $ phone_current_chat = []
+    call process_hooks("call_contact", "phone")
+    if _return == False:
+        $ phone_menu_active = "main"
+        jump phone_open_loop1
+    sound snd_phone_notification5
+    call process_hooks("call_contact_end", "phone")
+    jump phone_open_loop1
 
 label phone_hide:
     hide screen phone
@@ -154,6 +198,7 @@ label phone_controller:
 label phone_open_loop1:
     window hide
     call remove_dialogue()
+    hide screen phone_icon_focus
 
     python:
         # check new history messages
@@ -231,11 +276,20 @@ label phone_open_loop1:
                 jump phone_open_loop1
 
         if interact_data[0] == "close":
-            if phone_menu_active == "main" or phone_menu_active == "chat_live":
+            if phone_menu_active == "main":
                 sound vjuh3
                 hide screen phone
                 hide screen phone_chat_live_screen
                 return
+            if phone_menu_active == "chat_live":
+                sound vjuh3
+                hide screen phone
+                hide screen phone_chat_live_screen
+#                pause 0.5
+                call process_hooks("call_contact_end_close", "phone")
+                return
+
+
             if phone_menu_active == "contacts" or phone_menu_active == "preferences_menu" or phone_menu_active == "preferences_backgrounds" or phone_menu_active == "instagram" or phone_menu_active == "notes" or phone_menu_active=="preferences_rrmeter":
                 sound phone_click
                 $ phone_menu_active = "main"
@@ -280,8 +334,7 @@ label phone_open_loop1:
             if _return == False:
                 $ phone_menu_active = "main"
                 jump phone_open_loop1
-
-#            call cynthia_chat1()
+            sound snd_phone_notification5
             jump phone_open_loop1
 
         if interact_data[0] == "open_history_chat":
@@ -356,6 +409,7 @@ label phone_chat(chat):
     $ chat_line_idx = 0
     $ phone_close_enabled = False
     $ phone_live_chat_closing = False
+    hide screen phone_icon_focus
     show screen phone(phone_menu_active)
 label phone_chat_loop1:
     $ chat_line = chat[chat_line_idx]
@@ -385,11 +439,15 @@ label phone_chat_loop1:
     show screen phone_chat_live_screen()
     pause float(message_pause)
     if chat_line[0] != "" and chat_line[0] != "bardie" and chat_line[0] != "bardie_t":
-        sound iphone_text_message2
+#        sound iphone_text_message2
+        sound snd_phone_notification2
         pass
+    else:
+        sound snd_phone_notification3
     $ phone_typing = False
     $ phone_current_chat.append(chat_line)
     $ phone_add_history_line(phone_current_chat_name, chat_line)
+
     hide screen phone_chat_live_screen
     show screen phone_chat_live_screen()
     pause float(phone_pause_before_typing_time)
@@ -401,6 +459,7 @@ label phone_chat_loop1:
     return
 label phone_chat_loop2:
     show screen phone(phone_menu_active)
+    call process_hooks("call_contact_end", "phone")
     $ interact_data = None
     $ interact_data = ui.interact()
     if interact_data != None and interact_data != False:
@@ -408,6 +467,7 @@ label phone_chat_loop2:
             $ phone_live_chat_closing = True
             hide screen phone
             hide screen phone_chat_live_screen
+            call process_hooks("call_contact_end_close", "phone")
             return
     jump phone_chat_loop2
     return
@@ -420,9 +480,32 @@ label phone_chat_menu(chat_menu):
 
 
 init python:
+    def phone_incoming_call(call_name):
+        global phoneNewForced, phone_incoming_call_active, phone_incoming_call_name, phone_icon_flashing
+        phone_incoming_call_name = call_name
+        phone_incoming_call_active = True
+        phoneNewForced = True
+        phone_icon_flashing = True
+#        renpy.play("/Sounds/iphone_text_message1.ogg")
+        renpy.play("/Sounds/snd_phone_notification4.ogg")
+        notif(t_("Новое сообщение!"))
+        renpy.show_screen("phone_icon_focus")
+        return
+
+    def phone_focus_icon(new_message = False):
+        global phoneNewForced, phone_icon_flashing
+        if new_message == True:
+            phoneNewForced = True
+            phone_icon_flashing = True
+            #renpy.play("/Sounds/iphone_text_message1.ogg")
+            renpy.play("/Sounds/snd_phone_notification4.ogg")
+            notif(t_("Новое сообщение!"))
+        renpy.show_screen("phone_icon_focus")
+        return
+
     def phone_start_new_chat(chat_name, contact_name):
         global phone_chat_history, phone_current_chat_name
-        for idx in range(0, len(phone_chat_history)):
+        for idx in range(len(phone_chat_history)-1, -1, -1):
             if phone_chat_history[idx]["chat_name"] == chat_name:
                 # нашли такой же чат, удаляем
                 del phone_chat_history[idx]
@@ -440,13 +523,16 @@ init python:
 
     def phone_add_history(chat_name, contact_name, chat_list):
         global phone_chat_history, phone_chat_history_new_flags
-        for idx in range(0, len(phone_chat_history)):
+        for idx in range(len(phone_chat_history)-1, -1, -1):
             if phone_chat_history[idx]["chat_name"] == chat_name:
                 # нашли такой же чат, удаляем
                 del phone_chat_history[idx]
+        renpy.play("/Sounds/snd_phone_notification4.ogg")
+        notif(t_("Новое сообщение!"))
         new_chat = {"chat_name": chat_name, "contact_name": contact_name, "chat_content":chat_list}
         phone_chat_history.insert(0, new_chat)
         phone_chat_history_new_flags[chat_name] = True
+        phone_set_new("messages")
         return
 
 
@@ -481,7 +567,6 @@ init python:
 
     def phone_open_camera_capture():
         global phone_menu_active, phone_orientation, phone_camera_image
-        print "capture!"
         renpy.play("/Sounds/camera_lens1.ogg")
         phone_menu_active = "camera"
         phone_orientation = 1

@@ -14,6 +14,13 @@ transform phone_background_fill2:
         alpha 1.0
         linear 0.5 alpha 0.0
 
+transform phone_background_fill3:
+    alpha 0.0
+    linear 0.7 alpha 0.8
+    on hide:
+        alpha 1.0
+        linear 0.5 alpha 0.8
+
 transform phone_up_down:
     on show:
         yoffset 1220
@@ -52,6 +59,13 @@ transform camera_picture:
 transform camera_shoot:
     alpha 0.8
     linear 0.7 alpha 0.0
+
+transform phone_icon_flashing_transform:
+    alpha 1.0
+    linear 0.3 alpha 0.6
+    alpha 0.6
+    linear 0.3 alpha 1.0
+    repeat
 
 style phone_main_icon_caption:
 #    font "fonts/OpenSans-Regular.ttf"
@@ -134,15 +148,22 @@ style phone_instagram_caption:
     font "fonts/SF-Pro-Display-Bold.otf"
 
 style phone_notes_text:
-    size 32
+    size 28
     color "#38383a"
+#    font "fonts/tahoma.ttf"
+    font "fonts/baskerville_bolditalic_win95bt.ttf"
+#    font "fonts/SF-Pro-Display-Regular.otf"
+
+style phone_notes_text_new:
+    size 28
+    color "#90383a"
 #    font "fonts/tahoma.ttf"
     font "fonts/baskerville_bolditalic_win95bt.ttf"
 #    font "fonts/SF-Pro-Display-Regular.otf"
 
 style phone_notes_category_text:
     underline True
-    size 36
+    size 30
     color "#38383a"
 #    font "fonts/baskerville_bolditalic_win95bt.ttf"
     font "fonts/SF-Pro-Display-Bold.otf"

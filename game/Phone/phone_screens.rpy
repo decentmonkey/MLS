@@ -342,54 +342,54 @@ screen phone_messages_list_screen():
                     for contact in phone_contacts:
                         if contact["name"] == history_cell["contact_name"]:
                             $ contact_caption = contact["caption"]
-                    $ message = ""
-                    if len(history_cell["chat_content"]) > 0:
-                        $ message = t__(history_cell["chat_content"][0][1])
-                        if len(message) > 25:
-                            $ message = message[:25] + "..."
-                    $ contactImg = Transform(contact["img"], size=(28,28))
-                    $ contactImgCircle = Transform("/images/Phone/mess/contact_circle.png", size=(28,28))
-                    $ newMessage = False
-                    if phone_chat_history_new_flags.has_key(history_cell["chat_name"]) and phone_chat_history_new_flags[history_cell["chat_name"]] == True:
-                        $ newMessage = True
-                    button:
-                        margin (0,0)
-                        padding (0,0)
-                        ypos 0
-                        xpos 0
-                        ysize 79
-                        xsize 378
-    #                    xpos -64
+                            $ message = ""
+                            if len(history_cell["chat_content"]) > 0:
+                                $ message = t__(history_cell["chat_content"][0][1])
+                                if len(message) > 25:
+                                    $ message = message[:25] + "..."
+                            $ contactImg = Transform(contact["img"], size=(28,28))
+                            $ contactImgCircle = Transform("/images/Phone/mess/contact_circle.png", size=(28,28))
+                            $ newMessage = False
+                            if phone_chat_history_new_flags.has_key(history_cell["chat_name"]) and phone_chat_history_new_flags[history_cell["chat_name"]] == True:
+                                $ newMessage = True
+                            button:
+                                margin (0,0)
+                                padding (0,0)
+                                ypos 0
+                                xpos 0
+                                ysize 79
+                                xsize 378
+            #                    xpos -64
 
-                        if newMessage == True:
-                            idle_background "#e5ffe5"
-                            hover_background "#e0f0e0"
-                        else:
-                            idle_background "#feffff"
-                            hover_background "#e0e0e0"
-                        add "/images/Phone/mess/bg_contact.png":
-                            pos (0,0)
-                        add AlphaMask(contactImg, contactImgCircle):
-#                        add contactImg:
-                            pos (18,9)
-                        text t__(contact_caption) style "phone_contact_name_history":
-                            if newMessage == True:
-                                xpos 75
-                            else:
-                                xpos 56
-                            ypos 10
-                        text t__(message) style "phone_contact_name_history_text":
-                            xmaximum 370 - 42
-                            xpos 18
-                            ypos 42
-                            if newMessage == True:
-                                color "#606060"
-                        if newMessage == True:
-                            add Transform("/images/Phone/new_mess.png", size=(16,16)):
-                                pos(50,16)
-                        action [
-                            Return(["open_history_chat", history_cell["contact_name"], history_cell])
-                        ]
+                                if newMessage == True:
+                                    idle_background "#e5ffe5"
+                                    hover_background "#e0f0e0"
+                                else:
+                                    idle_background "#feffff"
+                                    hover_background "#e0e0e0"
+                                add "/images/Phone/mess/bg_contact.png":
+                                    pos (0,0)
+                                add AlphaMask(contactImg, contactImgCircle):
+        #                        add contactImg:
+                                    pos (18,9)
+                                text t__(contact_caption) style "phone_contact_name_history":
+                                    if newMessage == True:
+                                        xpos 75
+                                    else:
+                                        xpos 56
+                                    ypos 10
+                                text t__(message) style "phone_contact_name_history_text":
+                                    xmaximum 370 - 42
+                                    xpos 18
+                                    ypos 42
+                                    if newMessage == True:
+                                        color "#606060"
+                                if newMessage == True:
+                                    add Transform("/images/Phone/new_mess.png", size=(16,16)):
+                                        pos(50,16)
+                                action [
+                                    Return(["open_history_chat", history_cell["contact_name"], history_cell])
+                                ]
         vbar value YScrollValue("vp3") xpos 343 ypos 70 xsize 8 ysize 654
 
 
@@ -542,6 +542,20 @@ screen phone_preferences_list_screen():
                         ]
         vbar value YScrollValue("vp5") xpos 343 ypos 70 xsize 8 ysize 654
 
+screen phone_icon_focus(): # фокусировка на телефон
+    layer "master"
+    zorder 500
+    fixed:
+        pos(-6,-6)
+        button:
+            xfill True
+            yfill True
+            focus_mask True
+            pos(0,0)
+            add "/images/Other/intro/intro_focus5.png" at phone_background_fill3
+            action [
+                Return(False)
+            ]
 
 
 
