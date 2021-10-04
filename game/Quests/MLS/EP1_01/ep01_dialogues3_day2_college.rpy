@@ -1766,6 +1766,7 @@ label ep01_dialogues3_day2_college_10:
                     sound highheels_short_walk
                     bardi_t "Милашка Роуз..."
                     bardi_t "Нужно будет узнать, встречается ли она с кем-нибудь..."
+                    $ questLog(1, True)
                     # она уходит
                     pass
                 "Поблагодарить Роуз.":
@@ -2014,6 +2015,7 @@ label ep01_dialogues3_day2_college_10:
             bardi_t "Ей бы не живопись преподавать, а в порно сниматься..."
             bardi_t "Мне нужно обязательно попасть к ней на занятия."
             bardi_t "Живопись - это скучно. Но мне пофиг. Буду старательно изображать интерес к ее предмету."
+            $ questLog(0, True)
             pass
     # Барди остается один в коридоре
     music Postcard_From_Hell
