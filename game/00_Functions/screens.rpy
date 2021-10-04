@@ -2501,12 +2501,16 @@ screen file_slots(title):
 
                         add FileScreenshot(slot) xalign 0.5
 
-#                        text FileTime(slot, format=t_("{#file_time}%A, %B %d %Y, %H:%M"), empty=t_("empty slot")):
-#                            style "slot_time_text"
-                        null height 10
-                        text _name:
-                            style "slot_name_text"
-                            size 27
+                        if _name:
+                            null height 10
+                            text _name:
+                                style "slot_name_text"
+                                size 27
+                        else:
+                            null height 10
+                            text FileTime(slot, format=t_("{#file_time}%A, %B %d %Y, %H:%M"), empty=t_("empty slot")):
+                                style "slot_time_text"
+                                size 27
 
                         key "save_delete" action FileDelete(slot)
 
