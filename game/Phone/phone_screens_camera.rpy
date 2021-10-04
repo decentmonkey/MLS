@@ -36,7 +36,10 @@ screen phone_camera_screen(phone_camera_image):
                 action [
                     Return(["camera_shoot"])
                 ]
-            add phone_camera_image:
+            $ img = im.MatrixColor(
+                phone_camera_image, im.matrix.saturation(1.0))
+#                im.matrix.contrast(1.3) * im.matrix.saturation(1.1) * im.matrix.brightness(0.1))
+            add img:
                 xsize 645
                 ysize 380
                 pos(190, 330)
@@ -81,7 +84,10 @@ screen phone_camera_screen2_intro(phone_camera_image):
 
             add "/images/Phone/icons/photo_button.png":
                 pos(150,700)
-            add phone_get_gallery_image_path(phone_camera_image):
+            $ img = im.MatrixColor(
+                phone_get_gallery_image_path(phone_camera_image), im.matrix.saturation(1.0))
+#                im.matrix.contrast(1.3) * im.matrix.saturation(1.1))
+            add img:
                 xsize 645
                 ysize 380
                 pos(190, 330)
@@ -132,7 +138,10 @@ screen phone_camera_screen2(phone_camera_image):
                     Function(phone_open_camera_capture_action, "shoot")
                     #Return(["camera_shoot"])
                 ]
-            add phone_get_gallery_image_path(phone_camera_image):
+            $ img = im.MatrixColor(
+                phone_get_gallery_image_path(phone_camera_image), im.matrix.saturation(1.0))
+#                im.matrix.contrast(1.1) * im.matrix.saturation(1.1))
+            add img:
                 xsize 645
                 ysize 380
                 pos(190, 330)
