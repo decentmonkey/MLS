@@ -2490,21 +2490,23 @@ screen file_slots(title):
                 for i in range(gui.file_slot_cols * gui.file_slot_rows):
 
                     $ slot = i + 1
-
+                    $ _name = FileSaveName(slot)
                     button:
-                        action [
-                            FileAction(slot),
-                        ]
+#                        action [
+#                            FileAction(slot),
+#                        ]
 
+                        action If(title.lower() == "save", true=Show("give_save_name", okay=FileSave(slot)), false=FileLoad(slot))
                         has vbox
 
                         add FileScreenshot(slot) xalign 0.5
 
-                        text FileTime(slot, format=t_("{#file_time}%A, %B %d %Y, %H:%M"), empty=t_("empty slot")):
-                            style "slot_time_text"
-
-                        text FileSaveName(slot):
+#                        text FileTime(slot, format=t_("{#file_time}%A, %B %d %Y, %H:%M"), empty=t_("empty slot")):
+#                            style "slot_time_text"
+                        null height 10
+                        text _name:
                             style "slot_name_text"
+                            size 27
 
                         key "save_delete" action FileDelete(slot)
 
@@ -2531,6 +2533,57 @@ screen file_slots(title):
 
                 textbutton t_(">") action FilePageNext()
 
+screen give_save_name(okay=NullAction()):
+    modal True
+    add Solid("#000000") alpha 0.5
+
+    on "show":
+        action MouseMove(900, 550, 0.1)
+
+    frame:
+        xalign .5
+        yalign .5
+        background Frame("gui/frame_lang.png", left=0, top=0, right=5, bottom=0)
+
+        vbox:
+            xalign 0.5
+            xsize 650
+            ysize 280
+            spacing 40
+            first_spacing 10
+            label t_("ENTER SAVE NAME"):
+                #text_color "#ffffff"
+                text_color "#e8b131"
+                xalign 0.5
+                top_padding 30
+
+            null height 10
+
+            button:
+                id "save_name_input"
+                xysize (400, 40)
+                action NullAction()
+                add Input(size=40, color="#ffffff", default="", changed=name_func, length=25, button=renpy.get_widget("get_save_name","save_name_input")) yalign 1.0
+
+                xalign 0.5
+
+            textbutton t_("Save"):
+#                idle_background Frame("gui/help/Controls-Unselected.png", Borders(35, 35, 35, 35))
+#                hover_background Frame("gui/help/Controls-Selected.png", Borders(35, 35, 35, 35))
+                idle_background "#202020"
+                hover_background "#303030"
+                padding (40, 10, 40, 10)
+                bottom_margin 35
+                text_color "#ffffff"
+                text_size 45
+
+                action [okay, Hide("give_save_name")]
+                xalign 0.5
+    key 'K_RETURN' action [okay, Hide("give_save_name")]
+
+init python:
+    def name_func(newstring):
+        store.save_name = newstring
 
 style page_label is gui_label
 style page_label_text is gui_label_text
