@@ -414,7 +414,7 @@ label process_hooks(hook_obj_name, room_name = False, sprites_hover_dummy_screen
             $ hooks_list = scenes_data["hooks"][room_name][hook_obj_name] #повтор для цикла
         else:
             $ hooks_list = []
-        if _return == False: #для продолжения череды выполнения хуков, надо возвращать не False
+        if _return == False or _return == 0: #для продолжения череды выполнения хуков, надо возвращать не False и не 0
             return _return
         label .hooks_call_loop2:
             $ idx = idx - 1

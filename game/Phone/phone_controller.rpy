@@ -39,11 +39,36 @@ default camera_icon_enabled = True
 # call phone_hide() - закрывается
 # call phone_camera_open() - открывается в режиме камеры
 
+# add_hook("phone_open", "", scene="phone") - open phone
+# add_hook("phone", "", scene="phone") - every phone iteration
+
+# add_hook("contacts", "", scene="phone") - open contacts
+# add_hook("before_call_contact", "", scene="phone")
+# add_hook("call_contact", "", scene="phone")
+# add_hook("open_history_chat", "", scene="phone")
+# add_hook("open_gallery_image", "", scene="phone")
+
+# add_hook("messages", "", scene="phone") - open messages
+# add_hook("gallery", "", scene="phone") - open gallery
+# add_hook("camera", "", scene="phone") - open camera in scene
+# add_hook("camera_shoot", "", scene="phone") - shoot camera in scene
+
+# add_hook("preferences", "", scene="phone") - open preferences
+# add_hook("preferences_rrmeter", "", scene="phone")
+# add_hook("preferences_backgrounds", "", scene="phone")
+# add_hook("preferences_backgrounds_select", "", scene="phone")
+
+# add_hook("instagram", "", scene="phone") - open instagram
+# add_hook("notes", "", scene="phone") - open notes
+
+
+
 label phone_open:
     sound metal_slide
     if phone_inited == False:
         call phone_init()
         call phone_contacts1()
+    call process_hooks("phone_open", "phone")
     $ phone_menu_active = "main"
     $ phone_orientation = 0
     call phone_controller()
@@ -53,6 +78,7 @@ label phone_open_menu(menu_active):
     if phone_inited == False:
         call phone_init()
         call phone_contacts1()
+    call process_hooks("phone_open", "phone")
     $ phone_menu_active = "main"
     $ phone_orientation = 0
     call phone_controller()
@@ -62,29 +88,28 @@ label phone_hide:
     hide screen phone
     return
 
-label phone_camera_open:
-    sound camera_lens1
-    $ phone_menu_active = "camera"
-    $ phone_orientation = 1
-    $ phone_camera_image = phone_camera_get_current_image()
-    show screen phone_camera_screen2(phone_camera_image)
-label phone_camera_open_loop1:
-    $ interact_data = None
-    $ interact_data = ui.interact()
-    if interact_data != None and interact_data != False:
-        if interact_data[0] == "close":
-            hide screen phone_camera_screen2
-            return
-        if interact_data[0] == "camera_shoot":
-            python:
-                if phone_camera_image in phone_gallery:
-                    phone_gallery.remove(phone_camera_image)
-                phone_gallery.insert(0, phone_camera_image)
-#            m "shoot!"
-            hide screen phone_camera_screen2
-            return
-
-    jump phone_camera_open_loop1
+#label phone_camera_open:
+#    sound camera_lens1
+#    $ phone_menu_active = "camera"
+#    $ phone_orientation = 1
+#    $ phone_camera_image = phone_camera_get_current_image()
+#    show screen phone_camera_screen2(phone_camera_image)
+#label phone_camera_open_loop1:
+#    $ interact_data = None
+#    $ interact_data = ui.interact()
+#    if interact_data != None and interact_data != False:
+#        if interact_data[0] == "close":
+#            hide screen phone_camera_screen2
+#            return
+#        if interact_data[0] == "camera_shoot":
+#            python:
+#                if phone_camera_image in phone_gallery:
+#                    phone_gallery.remove(phone_camera_image)
+#                phone_gallery.insert(0, phone_camera_image)
+##            m "shoot!"
+#            hide screen phone_camera_screen2
+#            return
+#    jump phone_camera_open_loop1
 
 label phone_init:
     $ phone_buttons_new = {
@@ -146,28 +171,35 @@ label phone_open_loop1:
 
     if phone_menu_active != "camera":
         show screen phone(phone_menu_active)
+
+    call process_hooks("phone", scene="phone")
+
     $ interact_data = None
     $ interact_data = ui.interact()
     if interact_data != None and interact_data != False:
         if interact_data[0] == "click_main_icon":
             if interact_data[1] == "contacts":
                 sound phone_click
+                call process_hooks("contacts", "phone")
                 $ phone_menu_active = "contacts"
                 $ phone_last_contacts_count = len(phone_contacts)
 #                $ phone_buttons_new["contacts"] = False
                 jump phone_open_loop1
             if interact_data[1] == "messages":
                 sound phone_click
+                call process_hooks("messages", "phone")
 #                $ phone_buttons_new["messages"] = False
                 $ phone_menu_active = "messages_list"
                 jump phone_open_loop1
             if interact_data[1] == "gallery":
                 sound phone_click
+                call process_hooks("gallery", "phone")
                 $ phone_menu_active = "gallery"
                 $ phone_gallery_page = 0
                 jump phone_open_loop1
             if interact_data[1] == "camera":
                 sound camera_lens1
+                call process_hooks("camera", "phone")
                 $ phone_menu_active = "camera"
                 $ phone_orientation = 1
                 $ phone_camera_image = phone_camera_get_current_image()
@@ -177,15 +209,18 @@ label phone_open_loop1:
                 jump phone_open_loop1
             if interact_data[1] == "preferences":
                 sound phone_click
+                call process_hooks("preferences", "phone")
                 $ phone_menu_active = "preferences_menu"
                 jump phone_open_loop1
             if interact_data[1] == "instagram":
                 sound phone_click
+                call process_hooks("instagram", "phone")
                 $ phone_menu_active = "instagram"
                 $ phone_buttons_new["instagram"] = False
                 jump phone_open_loop1
             if interact_data[1] == "notes":
                 sound phone_click
+                call process_hooks("notes", "phone")
                 $ phone_buttons_new["notes"] = False
                 $ phone_menu_active = "notes"
                 call show_questlog()
@@ -231,11 +266,20 @@ label phone_open_loop1:
             $ obj_name = interact_data[1]
             $ phone_contact = interact_data[2]
             $ phone_menu_active = "calling_screen"
+            call process_hooks("before_call_contact", "phone")
+            if _return == False:
+                $ phone_menu_active = "main"
+                jump phone_open_loop1
+
             show screen phone(phone_menu_active)
             pause 0.5
             sound snd_phone1
             pause 2.0
-#            call process_hooks("call_contact", "phone")
+            call process_hooks("call_contact", "phone")
+            if _return == False:
+                $ phone_menu_active = "main"
+                jump phone_open_loop1
+
             $ phone_current_chat = []
             call cynthia_chat1()
             jump phone_open_loop1
@@ -247,6 +291,7 @@ label phone_open_loop1:
             $ phone_contact = phone_get_contact_by_contact_name(interact_data[1])
             $ phone_current_chat = interact_data[2]["chat_content"]
             $ phone_menu_active = "open_history_chat"
+            call process_hooks("open_history_chat", "phone")
             jump phone_open_loop1
 
         if interact_data[0] == "gallery_pagination":
@@ -260,6 +305,7 @@ label phone_open_loop1:
         if interact_data[0] == "open_gallery_image":
             sound phone_click
             $ galleryImagePath = phone_get_gallery_image_path(phone_gallery[interact_data[1]])
+            call process_hooks("open_gallery_image", "phone")
             if galleryImagePath != False:
                 show screen phone_gallery_image_screen(galleryImagePath)
 #                with fade
@@ -271,20 +317,26 @@ label phone_open_loop1:
         if interact_data[0] == "preferences_rrmeter":
             sound phone_click
             $ phone_menu_active = "preferences_rrmeter"
+            call process_hooks("preferences_rrmeter", "phone")
             jump phone_open_loop1
 
         if interact_data[0] == "preferences_backgrounds":
             sound phone_click
             $ phone_menu_active = "preferences_backgrounds"
+            call process_hooks("preferences_backgrounds", "phone")
             jump phone_open_loop1
 
         if interact_data[0] == "preferences_backgrounds_select":
             sound phone_click
             $ phone_background = interact_data[1]
             $ phone_menu_active = "main"
+            call process_hooks("preferences_backgrounds_select", "phone")
             jump phone_open_loop1
 
         if interact_data[0] == "camera_shoot":
+            call process_hooks("camera_shoot", "phone")
+            if _return == False:
+                return
             python:
                 if phone_camera_image in phone_gallery:
                     phone_gallery.remove(phone_camera_image)
