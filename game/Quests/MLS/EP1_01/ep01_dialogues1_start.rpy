@@ -33,7 +33,9 @@ label ep01_dialogues1_start_1a:
     # рядом с ними стоит один пустой шезлонг
     # girl1 смотрит в камеру и расплывается в улыбке
     fadeblack 2.0
-    music Deeper_For_You
+#    music Deeper_For_You
+    music Carefree_Ukulele
+#    music Elle_avait_pas_les_yeux_noirs
     music2 ocean_waves
     imgfl 910196
     w
@@ -199,7 +201,7 @@ label ep01_dialogues1_start_1ab3:
     $ phone_menu_active = "camera"
     $ phone_orientation = 1
     $ phone_camera_image = phone_camera_get_current_image()
-    show screen phone_camera_screen2(phone_camera_image)
+    show screen phone_camera_screen2_intro(phone_camera_image)
     pause 1.0
     show screen intro_focus("/images/Other/intro/intro_focus7.png")
     with diss

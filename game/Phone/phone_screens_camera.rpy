@@ -53,6 +53,45 @@ screen phone_camera_screen(phone_camera_image):
             ]
         add "/images/Phone/frame.png"
 
+screen phone_camera_screen2_intro(phone_camera_image):
+    tag phone
+    layer "master"
+    zorder 150
+    button:
+        background "#00000080"
+        xfill True
+        yfill True
+        at phone_background_fill2
+    frame:
+        at camera_show
+        pos(740+432/2,170 + 886/2)
+        background None
+        xysize(432,886)
+        xanchor(0.5)
+        yanchor(0.5)
+        button:
+            xsize 432
+            ysize 886
+            action [
+            ]
+
+        fixed:
+            pos (28,22)
+            add "/images/Phone/bg_photo.png"
+
+            add "/images/Phone/icons/photo_button.png":
+                pos(150,700)
+            add phone_get_gallery_image_path(phone_camera_image):
+                xsize 645
+                ysize 380
+                pos(190, 330)
+                xanchor 0.5
+                yanchor 0.5
+                rotate -90
+                at camera_picture
+        add "/images/Icons/window_close.png":
+            pos(45,42)
+        add "/images/Phone/frame.png"
 
 screen phone_camera_screen2(phone_camera_image):
     tag phone
