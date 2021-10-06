@@ -2414,19 +2414,6 @@ screen about():
 
 #            text t_("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
-screen licenses():
-    tag menu
-
-    use game_menu(t_("Licenses"), scroll="viewport"):
-
-        style_prefix "about"
-
-        vbox:
-
-            label "Licenses"
-            text t__(licenses_text)
-
-
 ## This is redefined in options.rpy to add text to the about screen.
 define gui.about = ""
 
