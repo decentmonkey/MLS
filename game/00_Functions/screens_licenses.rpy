@@ -1,52 +1,41 @@
 init python:
-    licenses_text = "\nFollowing music compositions used in project 'MILFs of Sunville' are licensed by Jamendo S.A. (licensing.jamendo.com)\n\n\
-3 A.M. (ABOVE ENVY)\n\
-A Little More (Acoustic) (NEMO WILSON)\n\
-A New Perspective On Life (BDKSONIC)\n\
-Adventures of the Deaf Dreamer (JOSH WOODWARD)\n\
-Baby Baby (LEO DYNAMIC)\n\
-I'll Be Right Behing You (JOSH WOODWARD)\n\
-Border Blaster (JOSH WOODWARD)\n\
-Boy Loves Girl (FADING AUTUMN)\n\
-Carefree Ukulele (SEASTOCK)\n\
-Corporate_BPM120 (ARACHANG)\n\
-Crazy Glue (MELANIE UNGAR)\n\
-Deeper For You (MELANIE UNGAR)\n\
-Don't Close Your Eyes (JOSH WOODWARD)\n\
-Elle avait pas les yeux noirs (LÖHSTANA DAVID)\n\
-Et c'est triste (LÖHSTANA DAVID)\n\
-Fly With Me (STEEP)\n\
-Fun Happy Energetic Rock (SOUNDATELIER)\n\
-Future Bass (ALEXGROHL)\n\
-Happy Acoustic (AKASHIC RECORDS)\n\
-Happy Whistling Ukulele (SEASTOCK)\n\
-Have A Good Day (MICHAEL HAHN)\n\
-He Wants (LAU)\n\
-Acoustic Inspiration (JOYSTOCK)\n\
-Let Me Let You Let Go (ABOVE ENVY)\n\
-Light it Up (SAMUEL HANSON)\n\
-Little Tomcat (JOSH WOODWARD)\n\
-Montana (DANIEL ROBINSON)\n\
-Motivating Inspiring (ALEXGROHL)\n\
-Never Been Gone (ABOVE ENVY)\n\
-Postcard From Hell (JOSH WOODWARD)\n\
-Remember Me (SEASTOCK)\n\
-Right Now (LAU)\n\
-Sandy Shoes (FADING AUTUMN)\n\
-Secretions (HELLO CITIZEN)\n\
-She Lost Her Wings (JOSH WOODWARD)\n\
-Shining Through (ALUMO)\n\
-Step By Step (STEFANO VITA)\n\
-Story of One Success (AKASHIC RECORDS)\n\
-Stylish Fashion Electronic Rock (ALEXGROHL)\n\
-Stylish Hip Hop Rock (ALEXGROHL)\n\
-Summernight (SLEEPING SKY)\n\
-The Brave Worms of the Future (HELLO CITIZEN)\n\
-The Heat (INFRACTION)\n\
-Upbeat Summer Electro-Pop (JOYSTOCK)\n\
-Visions Of Plenty (KEN VERHEECKE)\n\
-Write Your Story (JOYSTOCK)\n\
-"
+    licenses_text = "\nFollowing music compositions used in project 'MILFs of Sunville' are licensed by Jamendo S.A. (licensing.jamendo.com)\n\n"
+
+    licenses_music_list = [
+        ["Adventures of the Deaf Dreamer (JOSH WOODWARD)", "Music/Adventures_of_the_Deaf_Dreamer.ogg"],
+        ["Border Blaster (JOSH WOODWARD)", "Music/Border_Blaster.ogg"],
+        ["Carefree Ukulele (SEASTOCK)", "Music/Carefree_Ukulele.ogg"],
+        ["Corporate_BPM120 (ARACHANG)", "Music/Corporate_BPM120.ogg"],
+        ["Deeper For You (MELANIE UNGAR)", "Music/Deeper_For_You.ogg"],
+        ["Don't Close Your Eyes (JOSH WOODWARD)", "Music/Dont_Close_Your_Eyes.ogg"],
+        ["Fly With Me (STEEP)", "Music/Fly_With_Me_short.ogg"],
+        ["Little Tomcat (JOSH WOODWARD)", "Music/Little_Tomcat.ogg"],
+        ["Montana (DANIEL ROBINSON)", "Music/Montana.ogg"],
+        ["Postcard From Hell (JOSH WOODWARD)", "Music/Postcard_From_Hell.ogg"],
+        ["Right Now (LAU)", "Music/Right_Now_Vocal.ogg"],
+        ["Secretions (HELLO CITIZEN)", "Music/Secretions_Vocal.ogg"],
+        ["Shining Through (ALUMO)", "Music/Shining_Through.ogg"],
+        ["Step By Step (STEFANO VITA)", "Music/Step_By_Step.ogg"],
+        ["Story of One Success (AKASHIC RECORDS)", "Music/Story_of_One_Success_1.ogg"],
+        ["Stylish Fashion Electronic Rock (ALEXGROHL)", "Music/Stylish_Fashion_Electronic_Rock.ogg"],
+        ["Stylish Hip Hop Rock (ALEXGROHL)", "Music/Stylish_Hip_Hop_Rock.ogg"],
+        ["The Heat (INFRACTION)", "Music/The_Heat.ogg"],
+        ["Visions Of Plenty (KEN VERHEECKE)", "Music/Visions_Of_Plenty.ogg"],
+        ["Write Your Story (JOYSTOCK)", "Music/Write_Your_Story.ogg"]
+    ]
+    licenses_music_list_playing_idx = -1
+
+    def licenses_play_music(idx):
+        global licenses_music_list_playing_idx, licenses_music_list
+        renpy.music.play(licenses_music_list[idx][1], fadein=0.5, fadeout=0.5)
+        licenses_music_list_playing_idx = idx
+        return
+
+    def licenses_stop_music(idx):
+        global licenses_music_list_playing_idx, licenses_music_list
+        licenses_music_list_playing_idx = -1
+        renpy.music.stop(channel=u'music', fadeout=1.0)
+        return
 
 screen licenses():
     tag menu
@@ -59,3 +48,32 @@ screen licenses():
 
             label "Licenses"
             text t__(licenses_text)
+
+            for idx in range(0, len(licenses_music_list)):
+                hbox:
+                    frame:
+                        background None
+                        pos (0,4)
+                        text (licenses_music_list[idx][0])
+                    if idx == licenses_music_list_playing_idx:
+                        imagebutton:
+                            idle "/images/Icons/play_pause_icon_selected.png"
+                            hover im.MatrixColor("/images/Icons/play_pause_icon_selected.png", im.matrix.brightness(0.1))
+                            action [
+                                Function(licenses_stop_music, idx)
+    #                            Play("music", music_cell[1])
+                            ]
+                    else:
+                        imagebutton:
+                            idle "/images/Icons/play_pause_icon.png"
+                            hover im.MatrixColor("/images/Icons/play_pause_icon.png", im.matrix.brightness(0.1))
+                            action [
+                                Function(licenses_play_music, idx)
+    #                            Play("music", music_cell[1])
+                            ]
+
+
+
+
+
+#

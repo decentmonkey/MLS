@@ -31,66 +31,12 @@ define config.version = "v1"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = ("""
-Thanks to:
+Thanks from L7team to:
 Ragnaroekr
-Keks\n
 Londo Mollari
 bambam
-YoyoRTx
-5n4k3
-EraRamp
-razor
-
-Abelardo
-aIMissRyu23
-ArminG
-Bill Lee
-Binnoc9
-DJ96
-edison123
-Emroz
-Ferdixxy
-Hazer Hazersen
-Jaewon Kang
-Jetvoice
-Just
-Joe Swenson
-Joshua Ashbaugh
-Lee kanghoon
-Miguel
-Olli P.
-onstant
-Prometheus
-Ronny schönherr
-rui zhang
-Ryan
-SimonLee
-Stefan Kemske
-Taylor Fox
-The big Dog
-Виталий Рябоконь
-Kurt
-mi
-mrboom90
-Emroz
-Juha Salmelin
-longyu
-David Wilson
-InfiniteAntonym
-Vevalde
-for great support!
-\n
-Ragnaroekr, Meli_x3, Koskesh, GND53, razor and ColdBlade\nfor English correction
-\n
-Ragnaroekr, Londo Mollari, Keks and BruceLee73\nfor German translation
-\n
-YoyoRTx\nfor French translation
-\n
-5n4k3\nfor Italian translation
 \n
 renpytom (Tom Rothamel)\nfor the Ren'Py Game Engine
-\n
-This game made under the inspiration of Terebonkoff Studio creations.
 \n
 """)
 #ColdBlade
@@ -100,7 +46,7 @@ This game made under the inspiration of Terebonkoff Studio creations.
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "FashionBusiness"
+define build.name = "MilfsOfSunville"
 
 
 ## Sounds and music ############################################################
@@ -155,7 +101,7 @@ define config.after_load_transition = None
 
 ## Used when entering the main menu after the game has ended.
 
-define config.end_game_transition = None
+define config.end_game_transition = dissolve
 
 
 ## A variable to set the transition used when the game starts does not exist.
