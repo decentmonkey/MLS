@@ -61,7 +61,6 @@ screen licenses():
                             hover im.MatrixColor("/images/Icons/play_pause_icon_selected.png", im.matrix.brightness(0.1))
                             action [
                                 Function(licenses_stop_music, idx)
-    #                            Play("music", music_cell[1])
                             ]
                     else:
                         imagebutton:
@@ -69,7 +68,6 @@ screen licenses():
                             hover im.MatrixColor("/images/Icons/play_pause_icon.png", im.matrix.brightness(0.1))
                             action [
                                 Function(licenses_play_music, idx)
-    #                            Play("music", music_cell[1])
                             ]
 
 
