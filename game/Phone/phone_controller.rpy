@@ -664,7 +664,8 @@ init python:
 
     def phone_gallery_delete_action(gal_idx):
         global phone_gallery
-        renpy.play("/Sounds/snd_cardboard1.ogg")
+#        renpy.play("/Sounds/snd_cardboard1.ogg")
+        renpy.play("/Sounds/click1.ogg")
         del phone_gallery[gal_idx]
         return
 
