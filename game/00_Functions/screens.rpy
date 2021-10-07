@@ -2164,9 +2164,17 @@ screen main_menu():
             hover "gui/web_button_hover.png"
             action OpenURL("http://l7-team.com/news/")
 
-        add "gui/logo.png":
-            xpos get_resolution_x(1025)
-            ypos get_resolution_y(00)
+#        add "gui/logo.png":
+#            xpos get_resolution_x(1025)
+#            ypos get_resolution_y(00)
+        add "gui/logo1.png" at logo1_transform:
+            pos (1024,0)
+        add "gui/logo2.png" at logo2_transform:
+            pos (1024,252)
+
+
+
+
 #        add "gui/resolution_caption.png":
 #            xpos get_resolution_x(1345)
 #            ypos get_resolution_y(440)

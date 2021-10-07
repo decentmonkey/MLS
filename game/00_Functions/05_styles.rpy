@@ -233,3 +233,16 @@ transform object_follow_flashing:
     linear 0.7 alpha 0.2
     linear 0.7 alpha 1.0
     repeat
+
+transform logo1_transform:
+    xoffset 20
+    linear 3.0 xoffset -20
+    linear 3.0 xoffset 20
+    repeat
+
+
+transform logo2_transform:
+    xoffset -20
+    linear 2.0 xoffset 20
+    linear 2.0 xoffset -20
+    repeat
