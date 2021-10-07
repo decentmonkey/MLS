@@ -48,7 +48,7 @@ screen end_update_screen():
                 ypos 915
                 idle "gui/patreon_button.png"
                 hover "gui/patreon_button_hover.png"
-                action OpenURL("https://www.patreon.com/Love7")
+                action OpenURL("https://www.patreon.com/L7team")
                 at transform_end_update_button
 
             imagebutton:
@@ -56,7 +56,7 @@ screen end_update_screen():
                 ypos 909
                 idle "gui/web_button.png"
                 hover "gui/web_button_hover.png"
-                action OpenURL("http://love7team.com/news/")
+                action OpenURL("http://l7-team.com/news/")
                 at transform_end_update_button
 
 style end_update_text1:

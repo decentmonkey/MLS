@@ -2092,10 +2092,10 @@ screen navigation():
 
             textbutton t_("Main Menu") action MainMenu()
 
-        textbutton t_("New Updates") action OpenURL("https://love7team.com/news/")
+        textbutton t_("New Updates") action OpenURL("https://l7-team.com/news/")
 #        textbutton t_("Guide") action OpenURL("https://wiki.decent-monkey.com/wiki/Walkthrough_Episode_2")
         if steamVersion == False:
-            textbutton ("Become Supporter") action OpenURL("https://www.patreon.com/Love7/")
+            textbutton ("Become Supporter") action OpenURL("https://www.patreon.com/L7team/")
         $ flag1 = False
 #        if game.extra == True and renpy.current_screen().screen_name[0] == "load":
 #            if check_saves_for_migration() == True:
@@ -2103,7 +2103,7 @@ screen navigation():
 #                $ flag1 = True
         if flag1 == False:
             textbutton t_("Licenses") action ShowMenu("licenses")
-            textbutton t_("My Thanks") action ShowMenu("about")
+            textbutton t_("Our Thanks") action ShowMenu("about")
 
 
         if renpy.variant("pc"):
@@ -2155,14 +2155,14 @@ screen main_menu():
                 ypos get_resolution_y(116)
                 idle "gui/patreon_button.png"
                 hover "gui/patreon_button_hover.png"
-                action OpenURL("https://www.patreon.com/Love7")
+                action OpenURL("https://www.patreon.com/L7team")
 
         imagebutton:
             xpos get_resolution_x(437)
             ypos get_resolution_y(28)
             idle "gui/web_button.png"
             hover "gui/web_button_hover.png"
-            action OpenURL("http://love7team.com/news/")
+            action OpenURL("http://l7-team.com/news/")
 
         add "gui/logo.png":
             xpos get_resolution_x(1025)
