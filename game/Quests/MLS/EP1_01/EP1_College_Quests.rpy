@@ -161,6 +161,7 @@ label ep1_college5_college_end:
     $ questHelp("college_13", True)
     call ep1_home_quests1_init()
 
+    $ add_hook("before_open", "hook_return_false", scene="house_street", priority = 2, label="cynthia_call_home_teleport_block", once=True)
     $ add_hook("enter_scene", "ep1_college5_college_end2_cynthia_call", scene="house_street", label="ep1_college5_college_end2_cynthia_call", once=True)
 
 #    $ add_hook("call_contact_end_close", "ep1_college5_college_end2", scene="phone", label="ep1_college5_college_end2", once=True)
@@ -234,7 +235,8 @@ label ep1_college5_college_sean_home2:
     call change_scene("housefriend_street", "Fade_long")
     return False
 
-
+label hook_return_false:
+    return False
 
 
 

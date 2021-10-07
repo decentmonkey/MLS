@@ -34,7 +34,7 @@ label cynthia_chat1:
 
     if _return == 1:
         # не отвечать
-        bardie_t "Позже ей отвечу."
+        bardi_t "Позже ей отвечу."
         return
     return
 
