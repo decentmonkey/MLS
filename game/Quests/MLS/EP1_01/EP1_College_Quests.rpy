@@ -1,5 +1,6 @@
 default ep1_college_talk_sean_agree = False
 default ep1_college5_college_init_sean_Flag = False
+default ep1_college_minimap_enabled = False
 
 label ep1_college_open:
     $ questHelp("college_1", True)
@@ -13,7 +14,7 @@ label ep1_college_sean: # встреча с Шоном
         $ questHelp("college_4", False)
         $ questHelp("house_3", False)
     $ clear_object_follow_all()
-
+    $ ep1_college_minimap_enabled = True
 
     $ questHelp("college_2", True)
     $ questHelp("college_3")

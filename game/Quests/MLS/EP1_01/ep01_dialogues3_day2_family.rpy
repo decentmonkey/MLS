@@ -22,6 +22,12 @@ define v_Teacher11_Blowjob1_25_sound_name = "v_Monica_PunksGB_Blowjob1"
 ## утром, ДО КОЛЛЕДЖА ##
 
 label ep01_dialogues3_day2_family_1:
+    scene black_screen
+    with Dissolve(1)
+    call textonblack(t_("ЯСНОЕ УТРО"))
+    scene black_screen
+    with Dissolve(1)
+
     # анимация рассвета, заставка игры
     img black_screen
     with diss

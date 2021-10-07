@@ -13,7 +13,8 @@ default collegeStreetClassmate1_Suffix = 1
 
 label college_street:
     $ miniMapData = []
-    call miniMapCOLLEGEGenerate()
+    if ep1_college_minimap_enabled == True:
+        call miniMapCOLLEGEGenerate()
     $ sceneIsStreet = True
     if day_time_idx == 3:
         $ scene_image = "scene_COLLEGE_Street_Night"

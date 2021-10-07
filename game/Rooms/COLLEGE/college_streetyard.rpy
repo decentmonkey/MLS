@@ -1,6 +1,7 @@
 label college_streetyard:
     $ miniMapData = []
-    call miniMapCOLLEGEGenerate()
+    if ep1_college_minimap_enabled == True:
+        call miniMapCOLLEGEGenerate()
     $ sceneIsStreet = True
     $ scene_image = "scene_COLLEGE_StreetYard[day_suffix]"
     if day_time_idx == 3:
