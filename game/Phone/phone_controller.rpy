@@ -586,6 +586,8 @@ init python:
         phone_menu_active = "camera"
         phone_orientation = 1
         phone_camera_image = phone_camera_get_current_image()
+        if phone_camera_image == "black_screen":
+            return
         renpy.show_screen("phone_camera_screen2", phone_camera_image)
         return
 

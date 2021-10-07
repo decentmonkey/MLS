@@ -866,6 +866,7 @@ label ep01_dialogues3_day2_family_7:
             imgd 900164
             w
             # он начинает водить рукой по члену вверх-вниз
+            $ camera_enabled = False
             menu:
                 "Оливия." if mlsBardiDay2Family2 > 0: # disabled, если не стал подглядывать
                     # у него перед глазами возникает голая Оливия
@@ -1511,6 +1512,7 @@ label ep01_dialogues3_day2_family_7:
                     pass
                 "Миссис Морис ([mcname] нагрубил Гарри и не разговаривал с миссис Морис) (disabled)" if mlsBardiFirstDayCollege1 == 0:
                     pass
+            $ camera_enabled = True
         "Лечь спать.":
             imgd 900143
             bardi_t "Уже поздно. Я сегодня очень устал и хочу спать."
