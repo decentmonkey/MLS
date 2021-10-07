@@ -16,6 +16,7 @@ default phone_live_chat_closing = False
 default phone_gallery = []
 default phone_gallery_page = 0
 default phone_gallery_items_on_page = 10
+default phone_gallery_delete_mode = False
 default phone_last_contacts_count = 0
 default phone_orientation = 0
 default phone_camera_image = False
@@ -245,6 +246,7 @@ label phone_open_loop1:
                 call process_hooks("gallery", "phone")
                 $ phone_menu_active = "gallery"
                 $ phone_gallery_page = 0
+                $ phone_gallery_delete_mode = False
                 jump phone_open_loop1
             if interact_data[1] == "camera":
                 sound camera_lens1
@@ -401,9 +403,9 @@ label phone_open_loop1:
             if _return == False:
                 return
             python:
-                for idx in range(len(phone_gallery)-1,-1,-1):
-                    if phone_gallery[idx][0] == phone_camera_image:
-                        del phone_gallery[idx]
+#                for idx in range(len(phone_gallery)-1,-1,-1):
+#                    if phone_gallery[idx][0] == phone_camera_image:
+#                        del phone_gallery[idx]
 #                if phone_camera_image in phone_gallery:
 #                    phone_gallery.remove(phone_camera_image)
                 phone_gallery.insert(0, [phone_camera_image, get_camera_scene_shoot_data()])
@@ -601,9 +603,9 @@ init python:
             renpy.hide_screen("phone_camera_screen2")
             return
         if action_name == "shoot":
-            for idx in range(len(phone_gallery)-1,-1,-1):
-                if phone_gallery[idx][0] == phone_camera_image:
-                    del phone_gallery[idx]
+#            for idx in range(len(phone_gallery)-1,-1,-1):
+#                if phone_gallery[idx][0] == phone_camera_image:
+#                    del phone_gallery[idx]
 #            if phone_camera_image in phone_gallery:
 #                phone_gallery.remove(phone_camera_image)
             phone_gallery.insert(0, [phone_camera_image, {"sprites": [], "overlaysList" : []}])
@@ -651,5 +653,19 @@ init python:
         except:
             img = Image(image_name)
         return img
+
+    def phone_gallery_switch_delete():
+        global phone_gallery_delete_mode
+        if phone_gallery_delete_mode == True:
+            phone_gallery_delete_mode = False
+        else:
+            phone_gallery_delete_mode = True
+        return
+
+    def phone_gallery_delete_action(gal_idx):
+        global phone_gallery
+        renpy.play("/Sounds/snd_cardboard1.ogg")
+        del phone_gallery[gal_idx]
+        return
 
 #

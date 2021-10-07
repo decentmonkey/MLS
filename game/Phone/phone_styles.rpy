@@ -137,6 +137,24 @@ style phone_gallery_pagination:
     size 46
     font "fonts/tahoma.ttf"
 
+style phone_gallery_delete_button:
+    color "#303030"
+    hover_color "#606060"
+    size 18
+    font "fonts/SF-Pro-Display-Regular.otf"
+
+style phone_gallery_delete_caption:
+    color "#ffffff"
+    size 20
+    font "fonts/SF-Pro-Display-Regular.otf"
+    outlines [(2, "#000000", 0, 0)]
+
+style phone_gallery_delete_button_selected:
+    color "#ff3030"
+    size 18
+    font "fonts/SF-Pro-Display-Regular.otf"
+
+
 style phone_preferences_menu:
     color "#060606"
     size 30
