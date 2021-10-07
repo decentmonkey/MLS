@@ -24,6 +24,11 @@ label college_street:
         music Market
     else:
         music night_ambience
+
+    if collegeStreetClassmate1_Suffix == 1:
+        $ set_var("Classmate1", zorder = 12, scene="college_street")
+    else:
+        $ set_var("Classmate1", zorder = 0, scene="college_street")
     return
 
 label college_street_init:
