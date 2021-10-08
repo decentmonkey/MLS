@@ -29,7 +29,7 @@ screen end_update_screen():
                     text t__("И обновления выходить регулярно и вовремя!") style "end_update_text2" at transform_end_update_text3
     #                    pos
                     null height 30
-                    text t__("Станьте частью чего-то большего и поддержите нашу идею подпиской на {color=#303030}{a=https://patreon.com/Love7}Patreon{/a}{/color}!") style "end_update_text2" at transform_end_update_text4
+                    text t__("Станьте частью чего-то большего и поддержите нашу идею подпиской на {color=#303030}{a=https://patreon.com/L7team}Patreon{/a}{/color}!") style "end_update_text2" at transform_end_update_text4
             frame:
     #            background "#30303080"
                 background None
