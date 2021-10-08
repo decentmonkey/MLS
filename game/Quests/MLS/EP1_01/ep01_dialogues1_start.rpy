@@ -1,7 +1,3 @@
-#####inc - обозначение строк для инц патча
-##->#####inc - обозначение строк, которые заменяются инц патчем
-
-
 define v_Mark_Sister_Older_Blowjob1_sound_name = "v_Monica_PunksGB_Blowjob1"
 define v_Mark_Sister_Older_Blowjob1b_sound_name = "v_Monica_PunksGB_Blowjob1"
 define v_Mark_Sister_Older_Kissing1_25_sound_name = "snd_longkiss1"
@@ -11,13 +7,6 @@ define v_Mark_Sister_Older_Sex1_25_sound_name = "v_Monica_PunksGangbang_Sex1"
 define v_Mark_Sister_Older_Sex2_25_sound_name = "v_Monica_PunksGangbang_Sex1"
 define v_Mark_Sister_Older_Sex3_sound_name = "v_Monica_PunksGangbang_Sex1"
 define v_Mark_Sister_Older_Sex3b_sound_name = "v_Monica_PunksGangbang_Sex1"
-
-# в начале игры обязательно прописать, что все герои достигли 18 лет
-# по умолчанию мать Софи Эванс - это подруга детства отца Барди, которая согласилась принять Барди к себе
-# дочери Софи не являются сестрами Барди, просто соседки
-#####inc в инцест-патче задается вопрос, кем является Софи для Барди
-#####inc варианты: мать или хозяйка дома
-#####inc если в патче выбран вариант, что Софи - это мать, то автоматически дочерям Софи присваивается статус сестер Барди
 
 
 #call ep01_dialogues1_start_1a() # пляж, показываем геймплей
@@ -853,13 +842,10 @@ label ep01_dialogues1_start_2:
     music2 stop
     imgf 910225
     father "Сын, пойми, так будет лучше для всех."
-    father "Давний друг нашей семьи Софи обрадовалась твоему возвращению в родной город." ##->#####inc
-    father "Она с радостью согласилась принять тебя в своей семье." ##->#####inc
+    father "Давний друг нашей семьи Софи обрадовалась твоему возвращению в родной город."
+    father "Она с радостью согласилась принять тебя в своей семье."
     imgd 910226
-    father "Тем более, что я уже оплатил аренду комнаты в их доме для тебя." ##->#####inc
-    #####inc father "Твоя мать очень обрадовалась, что ты возвращаешься к ней."
-    #####inc father "Уверен, ты быстро найдешь общий язык с ее мужем..."
-    #####inc father "И подружишься со своими сестрами."
+    father "Тем более, что я уже оплатил аренду комнаты в их доме для тебя."
     img 910227
     bardi "Но, отец!!"
     bardi "Я не хочу возвращаться! Я хочу остаться здесь, с тобой!.."
@@ -975,8 +961,7 @@ label ep01_dialogues1_start_3:
     w
     imgd 910238
     sophie "О, Боже! Как же я рада!"
-    sophie "С возвращением, милый!" ##->#####inc
-    #####inc mother "С возвращением, сынок!"
+    sophie "С возвращением, милый!" 
     sound Jump2
     img 910239
     w
