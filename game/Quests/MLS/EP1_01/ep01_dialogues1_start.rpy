@@ -47,14 +47,14 @@ label ep01_dialogues1_start_1a:
     girl2 "Хм, пожалуй, он ничего..."
     girl2 "Как тебя зовут, красавчик?"
     # здесь ввод имени главного героя [mcname] [mcsurname], по дефолту Барди Джонс (Bardi Jones)
-    $ mcname = t__("Барди")
+    $ mcname = t__("Томас")
     if renpy.android == True:
         call screen input_softkeyboard
         $ mcname = _return
     else:
         $ mcname = renpy.input(t__("Меня зовут... (enter для ввода)"), mcname)
     if mcname == False:
-        $ mcname = t__("Барди")
+        $ mcname = t__("Томас")
 
     $ bardi = Character((mcname), who_color=c_blue) # ГГ Bardi Jones
     $ bardi_t = Character((mcname), who_color=c_blue, what_color=c_blue, what_italic=True) # ГГ Bardi Jones thinking
@@ -961,7 +961,7 @@ label ep01_dialogues1_start_3:
     w
     imgd 910238
     sophie "О, Боже! Как же я рада!"
-    sophie "С возвращением, милый!" 
+    sophie "С возвращением, милый!"
     sound Jump2
     img 910239
     w
