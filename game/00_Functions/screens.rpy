@@ -2552,8 +2552,8 @@ screen give_save_name(okay=NullAction()):
     modal True
     add Solid("#000000") alpha 0.5
 
-#    on "show":
-#        action MouseMove(900, 550, 0.1)
+    on "show":
+        action MouseMove(900, 550, 0.1)
 
     frame:
         xalign .5

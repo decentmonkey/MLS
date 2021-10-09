@@ -1,29 +1,29 @@
 label cynthia_chat1:
     $ phone_start_new_chat("cynthia1", "Cynthia")
-    call phone_chat([ from _rcall_phone_chat
+    call phone_chat([
         ["cynthia", t_("[mcname], как дела? Ты еще в колледже?")]
     ])
-    call phone_chat_menu([ from _rcall_phone_chat_menu
+    call phone_chat_menu([
         t__("Ответить."),
         t__("Не отвечать.")
     ])
     if _return == 0:
         # ответить
-        call phone_chat_menu([ from _rcall_phone_chat_menu_1
+        call phone_chat_menu([
             t__("Я еще в колледже."),
             t__("Уже освободился.")
         ])
         if _return == 0:
-            call phone_chat([ from _rcall_phone_chat_1
+            call phone_chat([
                 ["", t_("Привет. Да, еще в колледже.")],
                 ["", t_("А ты где?")]
             ])
         if _return == 1:
-            call phone_chat([ from _rcall_phone_chat_2
+            call phone_chat([
                 ["", t_("Привет. Уже освободился.")],
                 ["", t_("Скоро буду дома. А ты где?")]
             ])
-        call phone_chat([ from _rcall_phone_chat_3
+        call phone_chat([
             ["cynthia", t_("Я сегодня задержусь у кузины.")],
             ["cynthia", "Ей нужно помочь с заданием по математике."],
             ["cynthia", "image", "/images/Phone/Photos/cynthia_math2.png", 2],
@@ -40,7 +40,7 @@ label cynthia_chat1:
 
 label cynthia_chat2:
     $ phone_start_new_chat("cynthia2", "Cynthia")
-    call phone_chat([ from _rcall_phone_chat_4
+    call phone_chat([
         ["cynthia", t_("[mcname], не могу говорить. Я на занятиях.")],
         ["cynthia", t_("Спишемся позже! :)")]
     ])
@@ -49,20 +49,20 @@ label cynthia_chat2:
 label sean_chat1:
     $ phone_start_new_chat("sean_chat1", "Sean")
     $ ep1_college_talk_sean_agree = False
-    call phone_chat([ from _rcall_phone_chat_5
+    call phone_chat([
         ["sean", t_("Эй, чувак. Я уже дома. Решил свалить с занятий с тренером.")],
         ["sean", t_("Как дела? Ты еще долго будешь в колледже?")],
     ])
-    call phone_chat_menu([ from _rcall_phone_chat_menu_2
+    call phone_chat_menu([
         t__("Ответить."),
         t__("Не отвечать.")
     ])
     if _return == 0:
         # Ответить
-        call phone_chat_menu([ from _rcall_phone_chat_menu_3
+        call phone_chat_menu([
             t__("Уже освободился.")
         ])
-        call phone_chat([ from _rcall_phone_chat_6
+        call phone_chat([
             ["", t_("Дела норм, бро.")],
             ["", t_("Я только вышел из колледжа.")],
             ["sean", t_("Какие планы на вечер?")],
@@ -83,7 +83,7 @@ label sean_chat1:
 
 label sean_chat2:
     $ phone_start_new_chat("sean_chat2", "Sean")
-    call phone_chat([ from _rcall_phone_chat_7
+    call phone_chat([
         ["sean", t_("Эй, чувак. Я на занятиях.")],
         ["sean", t_("Спишемся позже! Удачи, бро!")]
     ])
