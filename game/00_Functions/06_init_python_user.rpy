@@ -107,67 +107,67 @@ label changeDayTime(new_day_time):
 
 label changeDayTime_morning_hooks:
     $ remove_hook(label="evening_time_temp")
-    call process_hooks("change_day_time", "global")
-    call process_hooks("morning_" + str(day), "global_day")
+    call process_hooks("change_day_time", "global") from _rcall_process_hooks
+    call process_hooks("morning_" + str(day), "global_day") from _rcall_process_hooks_1
     if _return == False:
         return False
-    call process_hooks("week_morning_" + str(week_day), "global_week_day")
+    call process_hooks("week_morning_" + str(week_day), "global_week_day") from _rcall_process_hooks_2
     if _return == False:
         return False
-    call process_hooks("change_time_morning_global", "global")
+    call process_hooks("change_time_morning_global", "global") from _rcall_process_hooks_3
     if _return == False:
         return False
-    call process_hooks("change_time_morning", "global")
+    call process_hooks("change_time_morning", "global") from _rcall_process_hooks_4
     if _return == False:
         return False
     return
 
 label changeDayTime_day_hooks:
     $ remove_hook(label="morning_time_temp")
-    call process_hooks("change_day_time", "global")
-    call process_hooks("day_" + str(day), "global_day")
+    call process_hooks("change_day_time", "global") from _rcall_process_hooks_5
+    call process_hooks("day_" + str(day), "global_day") from _rcall_process_hooks_6
     if _return == False:
         return False
-    call process_hooks("week_day_" + str(week_day), "global_week_day")
+    call process_hooks("week_day_" + str(week_day), "global_week_day") from _rcall_process_hooks_7
     if _return == False:
         return False
-    call process_hooks("change_time_day_global", "global")
+    call process_hooks("change_time_day_global", "global") from _rcall_process_hooks_8
     if _return == False:
         return False
-    call process_hooks("change_time_day", "global")
+    call process_hooks("change_time_day", "global") from _rcall_process_hooks_9
     if _return == False:
         return False
     return
 label changeDayTime_evening_hooks:
     $ remove_hook(label="day_time_temp")
-    call process_hooks("change_day_time", "global")
-    call process_hooks("evening_" + str(day), "global_day")
+    call process_hooks("change_day_time", "global") from _rcall_process_hooks_10
+    call process_hooks("evening_" + str(day), "global_day") from _rcall_process_hooks_11
     if _return == False:
         return False
-    call process_hooks("week_evening_" + str(week_day), "global_week_day")
+    call process_hooks("week_evening_" + str(week_day), "global_week_day") from _rcall_process_hooks_12
     if _return == False:
         return False
-    call process_hooks("change_time_evening_global", "global")
+    call process_hooks("change_time_evening_global", "global") from _rcall_process_hooks_13
     if _return == False:
         return False
-    call process_hooks("change_time_evening", "global")
+    call process_hooks("change_time_evening", "global") from _rcall_process_hooks_14
     if _return == False:
         return False
     return
 
 label changeDayTime_night_hooks:
     $ remove_hook(label="evening_time_temp")
-    call process_hooks("change_day_time", "global")
-    call process_hooks("night_" + str(day), "global_day")
+    call process_hooks("change_day_time", "global") from _rcall_process_hooks_15
+    call process_hooks("night_" + str(day), "global_day") from _rcall_process_hooks_16
     if _return == False:
         return False
-    call process_hooks("week_night_" + str(week_day), "global_week_day")
+    call process_hooks("week_night_" + str(week_day), "global_week_day") from _rcall_process_hooks_17
     if _return == False:
         return False
-    call process_hooks("change_time_night_global", "global")
+    call process_hooks("change_time_night_global", "global") from _rcall_process_hooks_18
     if _return == False:
         return False
-    call process_hooks("change_time_night", "global")
+    call process_hooks("change_time_night", "global") from _rcall_process_hooks_19
     if _return == False:
         return False
     return

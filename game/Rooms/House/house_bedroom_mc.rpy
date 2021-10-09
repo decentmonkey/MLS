@@ -1,6 +1,6 @@
 label house_bedroom_mc:
     $ miniMapData = []
-    call miniMapHouseGenerate()
+    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate_3
     $ scene_image = "scene_House_Bedroom_MC[day_suffix]"
     return
 
@@ -19,16 +19,16 @@ label house_bedroom_mc_init:
 
 label house_bedroom_mc_environment:
     if obj_name == "Teleport_Floor2":
-        call change_scene("house_floor2")
+        call change_scene("house_floor2") from _rcall_change_scene_85
         return
     if obj_name == "Bed":
-        call bed_management()
+        call bed_management() from _rcall_bed_management
         return
 
     if obj_name == "Table":
         if act=="l":
-            call ep01_dialogues2_day1_family_1_3()
+            call ep01_dialogues2_day1_family_1_3() from _rcall_ep01_dialogues2_day1_family_1_3
             return
-        call change_scene("house_bedroom_mc_tablenear")
+        call change_scene("house_bedroom_mc_tablenear") from _rcall_change_scene_86
         return
     return

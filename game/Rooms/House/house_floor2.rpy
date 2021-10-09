@@ -1,6 +1,6 @@
 label house_floor2:
     $ miniMapData = []
-    call miniMapHouseGenerate()
+    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate_6
     $ scene_image = "scene_House_Floor2[day_suffix]"
     if day_time_idx == 3:
         $ scene_image = "scene_House_Floor2_Evening_Night"
@@ -26,40 +26,40 @@ label house_floor2_init:
 
 label house_floor2_environment:
     if obj_name == "FlipChart":
-        call ep01_dialogues2_day1_family_1_7()
+        call ep01_dialogues2_day1_family_1_7() from _rcall_ep01_dialogues2_day1_family_1_7
         $ open_secret_object(obj_name)
         return
     if obj_name == "Picture1" or obj_name == "Picture2":
-        call ep01_dialogues2_day1_family_1_9()
+        call ep01_dialogues2_day1_family_1_9() from _rcall_ep01_dialogues2_day1_family_1_9
         return
     if obj_name == "Teleport_Sister2":
         if sister2RoomDoorLocked == True:
             sound snd_door_locked1
             pause 1.0
-            call ep01_dialogues2_day1_family_1_6()
+            call ep01_dialogues2_day1_family_1_6() from _rcall_ep01_dialogues2_day1_family_1_6
             return
-        call change_scene("house_sister2", "Fade", "snd_door_open1")
+        call change_scene("house_sister2", "Fade", "snd_door_open1") from _rcall_change_scene_93
         return
     if obj_name == "Teleport_Sister1":
         if sister1RoomDoorLocked == True:
             sound snd_door_locked1
             pause 1.0
-            call ep01_dialogues2_day1_family_1_6()
+            call ep01_dialogues2_day1_family_1_6() from _rcall_ep01_dialogues2_day1_family_1_6_1
             return
-        call change_scene("house_sister1", "Fade", "snd_door_open1")
+        call change_scene("house_sister1", "Fade", "snd_door_open1") from _rcall_change_scene_94
         return
     if obj_name == "Teleport_Bedroom_Landlord":
         if landLordRoomDoorLocked == True:
             sound snd_door_locked1
             pause 1.0
-            call ep01_dialogues2_day1_family_1_6()
+            call ep01_dialogues2_day1_family_1_6() from _rcall_ep01_dialogues2_day1_family_1_6_2
             return
-        call change_scene("house_bedroom_landlord", "Fade", "snd_door_open1")
+        call change_scene("house_bedroom_landlord", "Fade", "snd_door_open1") from _rcall_change_scene_95
         return
     if obj_name == "Teleport_Floor1":
-        call change_scene("house_floor1")
+        call change_scene("house_floor1") from _rcall_change_scene_96
         return
     if obj_name == "Teleport_Bedroom_MC":
-        call change_scene("house_bedroom_mc")
+        call change_scene("house_bedroom_mc") from _rcall_change_scene_97
         return
     return

@@ -4,7 +4,7 @@ default houseBathroomMotherSuffix = 1
 
 label house_bathroom:
     $ miniMapData = []
-    call miniMapHouseGenerate()
+    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate_1
     $ scene_image = "scene_House_Bathroom[day_suffix]"
     return
 
@@ -27,6 +27,6 @@ label house_bathroom_init:
 
 label house_bathroom_environment:
     if obj_name == "Teleport_Floor1":
-        call change_scene("house_floor1")
+        call change_scene("house_floor1") from _rcall_change_scene_83
         return
     return

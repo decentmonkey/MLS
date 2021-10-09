@@ -24,7 +24,7 @@ define v_Teacher11_Blowjob1_25_sound_name = "v_Monica_PunksGB_Blowjob1"
 label ep01_dialogues3_day2_family_1:
     scene black_screen
     with Dissolve(1)
-    call textonblack(t_("ЯСНОЕ УТРО"))
+    call textonblack(t_("ЯСНОЕ УТРО")) from _rcall_textonblack_3
     scene black_screen
     with Dissolve(1)
 
@@ -135,9 +135,9 @@ label ep01_dialogues3_day2_family_2:
             # не успевает сделать фото, на телефон приходит сигнал сообщения
             music stop
 #            sound iphone_text_message1
-            call phone_contacts1a_college()
+            call phone_contacts1a_college() from _rcall_phone_contacts1a_college
             $ phone_last_contacts_count = len(phone_contacts)
-            call college_chat1()
+            call college_chat1() from _rcall_college_chat1
 #            call phone_open_menu("messages")
             # на экране новое сообщение: "Студент [mcsurname], ждем вас сегодня в 9:00 am в приемной профессора Ричардсон. Администрация колледжа."
             w
@@ -352,7 +352,7 @@ label ep01_dialogues3_day2_family_6:
             $ questHelp("house6")
             $ questHelpDesc("house_desc3", "house_desc4")
             # балл RR -5
-            call rrmeter(5, "ep01_dialogues3_day2_family_6")
+            call rrmeter(5, "ep01_dialogues3_day2_family_6") from _rcall_rrmeter
             music Step_By_Step
             imgd 900092
             bardi "Софи, да все в порядке. Не стоит так волноваться."
@@ -404,7 +404,7 @@ label ep01_dialogues3_day2_family_6:
             $ questHelp("house6")
             $ questHelpDesc("house_desc3", "house_desc5")
             # балл RR +5
-            call rrmeter(-5, "ep01_dialogues3_day2_family_6")
+            call rrmeter(-5, "ep01_dialogues3_day2_family_6") from _rcall_rrmeter_1
             $ mlsBardiDay2Family1 = day # Барди солгал Софи про синяк
             music Step_By_Step
             imgd 900092
@@ -674,7 +674,7 @@ label ep01_dialogues3_day2_family_6a2:
     show screen intro_focus("/images/Other/intro/intro_focus5.png")
     with diss
     help "Нажми иконку телефона. И выбери приложение инстаграм."
-    call refresh_scene()
+    call refresh_scene() from _rcall_refresh_scene_1
     return False
 
 # клик на дверь в комнату Синтии - дверь закрыта

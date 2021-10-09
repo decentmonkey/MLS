@@ -3,7 +3,7 @@ default houseLivingRoomFatherSuffix = 1
 
 label house_livingroomhall:
     $ miniMapData = []
-    call miniMapHouseGenerate()
+    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate_9
     $ scene_image = "scene_House_LivingRoomHall[day_suffix]"
     return
 
@@ -22,9 +22,9 @@ label house_livingroomhall_init:
 
 label house_livingroomhall_environment:
     if obj_name == "Teleport_Floor1":
-        call change_scene("house_floor1")
+        call change_scene("house_floor1") from _rcall_change_scene_100
         return
     if obj_name == "TV":
-        call ep01_dialogues2_day1_family_1_10()
+        call ep01_dialogues2_day1_family_1_10() from _rcall_ep01_dialogues2_day1_family_1_10
         return
     return

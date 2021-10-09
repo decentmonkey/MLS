@@ -1,7 +1,7 @@
 label college_streetyard:
     $ miniMapData = []
     if ep1_college_minimap_enabled == True:
-        call miniMapCOLLEGEGenerate()
+        call miniMapCOLLEGEGenerate() from _rcall_miniMapCOLLEGEGenerate_16
     $ sceneIsStreet = True
     $ scene_image = "scene_COLLEGE_StreetYard[day_suffix]"
     if day_time_idx == 3:
@@ -19,6 +19,6 @@ label college_streetyard_init:
 
 label college_streetyard_environment:
     if obj_name == "Teleport_Street":
-        call change_scene("college_street")
+        call change_scene("college_street") from _rcall_change_scene_78
         return
     return

@@ -22,12 +22,12 @@ label housefriend_livingroom_init:
 
 label housefriend_livingroom_environment:
     if obj_name == "Teleport_Street":
-        call change_scene("housefriend_street")
+        call change_scene("housefriend_street") from _rcall_change_scene_110
         return
     if obj_name == "Teleport_Kitchen":
-        call change_scene("housefriend_kitchen")
+        call change_scene("housefriend_kitchen") from _rcall_change_scene_111
         return
     if obj_name == "Teleport_Room":
-        call change_scene("housefriend_room")
+        call change_scene("housefriend_room") from _rcall_change_scene_112
         return
     return

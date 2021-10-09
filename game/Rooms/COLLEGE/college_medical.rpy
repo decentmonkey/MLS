@@ -14,6 +14,6 @@ label college_medical_init:
 
 label college_medical_environment:
     if obj_name == "Teleport_Coridor2":
-        call change_scene("college_coridor2")
+        call change_scene("college_coridor2") from _rcall_change_scene_69
         return
     return

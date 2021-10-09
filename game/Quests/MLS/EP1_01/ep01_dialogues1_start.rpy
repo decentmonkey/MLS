@@ -102,7 +102,7 @@ label ep01_dialogues1_start_1a2:
     girl1 "Чтобы получить подсказку по конкретному квесту, тебе просто нужно кликнуть на него в Event List."
     # сворачиваем Event List
     hide screen intro_focus
-    call miniMapHouseGenerate()
+    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate
     img 910209
     $ miniMapOpened = False
     show screen hud_screen(hud_presets[hud_preset_current])
@@ -137,7 +137,7 @@ label ep01_dialogues1_start_1ab3:
     hide screen action_menu_screen
     girl2 "Карта города доступна только [на улице] или в твоей комнате."
     girl2 "По мере истории, здесь будет много мест, которые можно посетить."
-    call map_close()
+    call map_close() from _rcall_map_close
     sound open_map
     img 910208
     show screen hud_screen(hud_presets[hud_preset_current])
@@ -292,7 +292,7 @@ label ep01_dialogues1_start_1b:
     scene black_screen
     with Dissolve(1)
     music stop
-    call textonblack(t_("НЕДАЛЕКОЕ БУДУЩЕЕ"))
+    call textonblack(t_("НЕДАЛЕКОЕ БУДУЩЕЕ")) from _rcall_textonblack
     scene black_screen
     with Dissolve(1)
     # темный коридор, в конце коридора через щель приоткрытой двери виден свет
@@ -806,7 +806,7 @@ label ep01_dialogues1_start_2:
     scene black_screen
     with Dissolve(1)
     music stop
-    call textonblack(t_("НАСТОЯЩЕЕ ВРЕМЯ"))
+    call textonblack(t_("НАСТОЯЩЕЕ ВРЕМЯ")) from _rcall_textonblack_1
     scene black_screen
     with Dissolve(1)
     music2 train_ambience

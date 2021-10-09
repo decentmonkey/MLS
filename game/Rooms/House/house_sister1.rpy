@@ -2,7 +2,7 @@ default houseSister1_Sister1Suffix = 1
 
 label house_sister1:
     $ miniMapData = []
-    call miniMapHouseGenerate()
+    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate_10
     $ scene_image = "scene_House_Sister1[day_suffix]"
     return
 
@@ -19,6 +19,6 @@ label house_sister1_init:
 
 label house_sister1_environment:
     if obj_name == "Teleport_Floor2":
-        call change_scene("house_floor2", "Fade", "snd_door_close1")
+        call change_scene("house_floor2", "Fade", "snd_door_close1") from _rcall_change_scene_101
         return
     return

@@ -17,15 +17,15 @@ label intro_beach_init:
 label intro_beach_environment:
     if obj_name == "Girl1":
         if act=="l":
-            call ep01_dialogues1_start_1a3()
+            call ep01_dialogues1_start_1a3() from _rcall_ep01_dialogues1_start_1a3
         if act=="t":
-            call ep1_intro_quests2()
+            call ep1_intro_quests2() from _rcall_ep1_intro_quests2
             return
     if obj_name == "Girl2":
         if act=="l":
-            call ep01_dialogues1_start_1a4()
+            call ep01_dialogues1_start_1a4() from _rcall_ep01_dialogues1_start_1a4
         if act=="t":
-            call ep1_intro_quests2()
+            call ep1_intro_quests2() from _rcall_ep1_intro_quests2_1
             return
-    call refresh_scene_fade()
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_10
     return

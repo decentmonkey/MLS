@@ -1,6 +1,6 @@
 label college_roof:
     $ miniMapData = []
-    call miniMapCOLLEGEGenerate()
+    call miniMapCOLLEGEGenerate() from _rcall_miniMapCOLLEGEGenerate_14
     $ scene_image = "scene_COLLEGE_Roof"
     return
 
@@ -15,6 +15,6 @@ label college_roof_init:
 
 label college_roof_environment:
     if obj_name == "Teleport_Coridor10":
-        call change_scene("college_coridor10")
+        call change_scene("college_coridor10") from _rcall_change_scene_75
         return
     return

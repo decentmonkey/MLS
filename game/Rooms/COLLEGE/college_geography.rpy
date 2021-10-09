@@ -14,6 +14,6 @@ label college_geography_init:
 
 label college_geography_environment:
     if obj_name == "Teleport_Coridor3":
-        call change_scene("college_coridor3")
+        call change_scene("college_coridor3") from _rcall_change_scene_63
         return
     return

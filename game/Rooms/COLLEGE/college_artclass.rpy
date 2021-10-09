@@ -14,6 +14,6 @@ label college_artclass_init:
 
 label college_artclass_environment:
     if obj_name == "Teleport_Coridor5":
-        call change_scene("college_coridor5")
+        call change_scene("college_coridor5") from _rcall_change_scene_20
         return
     return

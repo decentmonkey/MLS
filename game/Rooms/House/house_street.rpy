@@ -1,7 +1,7 @@
 label house_street:
     $ miniMapData = []
     $ sceneIsStreet = True
-    call miniMapHouseGenerate()
+    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate_13
     $ scene_image = "scene_House_Street[day_suffix]"
     if day_time_idx <= 1:
         music rich_hotel_park
@@ -30,16 +30,16 @@ label house_street_init:
 
 label house_street_environment:
     if obj_name == "Teleport_Map":
-        call map_show()
+        call map_show() from _rcall_map_show_2
         return
     if obj_name == "Teleport_Floor1":
-        call change_scene("house_floor1")
+        call change_scene("house_floor1") from _rcall_change_scene_104
         return
     if obj_name == "Teleport_Garage":
-        call change_scene("house_garage")
+        call change_scene("house_garage") from _rcall_change_scene_105
         return
     if obj_name == "Teleport_StoreRoom":
-        call change_scene("house_storeroom")
+        call change_scene("house_storeroom") from _rcall_change_scene_106
         return
 
     return

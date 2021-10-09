@@ -77,7 +77,7 @@ label start: #for blink here
     }
 
     call characters_init() from _rcall_characters_init_1
-    call locations_init()
+    call locations_init() from _rcall_locations_init
 
 #########
 
@@ -188,19 +188,19 @@ label start: #for blink here
     $ add_hook("change_time_day", "house_life", scene="global", label="house_life", priority = 200)
     $ add_hook("change_time_evening", "house_life", scene="global", label="house_life", priority = 200)
     $ add_hook("change_time_night", "house_life", scene="global", label="house_life", priority = 200)
-    call house_life()
+    call house_life() from _rcall_house_life
 
 
 #    call change_scene("house_street") from _rcall_change_scene_220
-    call changeDayTime("day")
+    call changeDayTime("day") from _rcall_changeDayTime_10
 
-    call phone_init()
-    call phone1()
-    call phone_instagram1()
+    call phone_init() from _rcall_phone_init_2
+    call phone1() from _rcall_phone1
+    call phone_instagram1() from _rcall_phone_instagram1
     $ camera_icon_enabled = False
 
-    call change_scene("intro_beach", "Fade_long", False)
-    call ep1_intro_quests1()
+    call change_scene("intro_beach", "Fade_long", False) from _rcall_change_scene_116
+    call ep1_intro_quests1() from _rcall_ep1_intro_quests1
 
     $ set_active("Teleport_Garage", False, scene="house_street")
     $ set_active("Teleport_StoreRoom", False, scene="house_street")
@@ -224,8 +224,8 @@ label empty_label:
 
 label test1:
     m "here"
-    call changeDayTime("night")
-    call refresh_scene_fade()
+    call changeDayTime("night") from _rcall_changeDayTime_11
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_11
     return
 
 label test1_morning:

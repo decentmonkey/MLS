@@ -18,6 +18,6 @@ label housefriend_room_init:
 
 label housefriend_room_environment:
     if obj_name == "Teleport_LivingRoom":
-        call change_scene("housefriend_livingroom")
+        call change_scene("housefriend_livingroom") from _rcall_change_scene_113
         return
     return

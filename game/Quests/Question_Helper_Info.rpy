@@ -142,12 +142,16 @@ label show_questlog:
     call questLog_init() from __rcall_questLog_inita1
     $ inText = ""
     python:
+        firstCategory = True
         lastCategory = False
         for questLogLine in questLogData:
             if str(questLogLine[0]) in questLogDataEnabled and questLogDataEnabled[str(questLogLine[0])] == True and questLogLine[2] == True:
                 if t__(questLogLine[3]) != lastCategory:
                     lastCategory = t__(questLogLine[3])
+                    if firstCategory != True:
+                        inText = inText + "\n"
                     inText = inText + "{=phone_notes_category_text}{u}" + t__(lastCategory) + "{/u}{/=questlog_text_category_style}\n{vspace=5}"
+                    firstCategory = False
                 if str(questLogLine[0]) in questLogLinesUpdated:
                     inText = inText + "{=phone_notes_text_new}" + t__(questLogLine[1]) + "{/=phone_notes_text_new}\n"
                 else:

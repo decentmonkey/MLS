@@ -3,7 +3,7 @@ default houseBedroomLandlordHenrySuffix = 1
 
 label house_bedroom_landlord:
     $ miniMapData = []
-    call miniMapHouseGenerate()
+    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate_2
     $ scene_image = "scene_House_Bedroom_Landlord[day_suffix]"
     return
 
@@ -21,6 +21,6 @@ label house_bedroom_landlord_init:
 
 label house_bedroom_landlord_environment:
     if obj_name == "Teleport_Floor2":
-        call change_scene("house_floor2", "Fade", "snd_door_close1")
+        call change_scene("house_floor2", "Fade", "snd_door_close1") from _rcall_change_scene_84
         return
     return

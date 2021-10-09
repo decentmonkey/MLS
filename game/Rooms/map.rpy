@@ -83,13 +83,13 @@ label map_environment:
         return
 
     if obj_name == "Teleport_HOUSE":
-        call process_drive_teleport("HOUSE", "house_street")
+        call process_drive_teleport("HOUSE", "house_street") from _rcall_process_drive_teleport
         return
     if obj_name == "Teleport_HOUSE_FRIEND":
-        call process_drive_teleport("HOUSE_FRIEND", "housefriend_street")
+        call process_drive_teleport("HOUSE_FRIEND", "housefriend_street") from _rcall_process_drive_teleport_1
         return
     if obj_name == "Teleport_COLLEGE":
-        call process_drive_teleport("COLLEGE", "college_street")
+        call process_drive_teleport("COLLEGE", "college_street") from _rcall_process_drive_teleport_2
         return
     m "drive!"
     return
@@ -145,5 +145,5 @@ label process_change_map_location(target_map_scene):
 
 label start_walk_direct():
     $ mapChangedTeleportFlag = True
-    call change_scene(target_scene, "Fade_long", "run_stairs_floor")
+    call change_scene(target_scene, "Fade_long", "run_stairs_floor") from _rcall_change_scene_115
     return

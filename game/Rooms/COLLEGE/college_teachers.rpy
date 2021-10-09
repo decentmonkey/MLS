@@ -14,6 +14,6 @@ label college_teachers_init:
 
 label college_teachers_environment:
     if obj_name == "Teleport_Coridor9":
-        call change_scene("college_coridor9")
+        call change_scene("college_coridor9") from _rcall_change_scene_79
         return
     return

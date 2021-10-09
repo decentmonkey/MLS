@@ -1,6 +1,6 @@
 label house_floor1:
     $ miniMapData = []
-    call miniMapHouseGenerate()
+    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate_5
     $ scene_image = "scene_House_Floor1[day_suffix]"
     return
 
@@ -22,18 +22,18 @@ label house_floor1_init:
 
 label house_floor1_environment:
     if obj_name == "Teleport_LivingRoomHall":
-        call change_scene("house_livingroomhall")
+        call change_scene("house_livingroomhall") from _rcall_change_scene_88
         return
     if obj_name == "Teleport_Kitchen":
-        call change_scene("house_kitchen")
+        call change_scene("house_kitchen") from _rcall_change_scene_89
         return
     if obj_name == "Teleport_Bathroom":
-        call change_scene("house_bathroom")
+        call change_scene("house_bathroom") from _rcall_change_scene_90
         return
     if obj_name == "Teleport_Street":
-        call change_scene("house_street")
+        call change_scene("house_street") from _rcall_change_scene_91
         return
     if obj_name == "Teleport_Floor2":
-        call change_scene("house_floor2")
+        call change_scene("house_floor2") from _rcall_change_scene_92
         return
     return

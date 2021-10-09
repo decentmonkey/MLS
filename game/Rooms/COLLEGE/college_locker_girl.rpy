@@ -1,6 +1,6 @@
 label college_locker_girl:
     $ miniMapData = []
-    call miniMapCOLLEGEGenerate()
+    call miniMapCOLLEGEGenerate() from _rcall_miniMapCOLLEGEGenerate_12
     $ scene_image = "scene_COLLEGE_Locker_Girl"
     return
 
@@ -15,6 +15,6 @@ label college_locker_girl_init:
 
 label college_locker_girl_environment:
     if obj_name == "Teleport_Coridor4":
-        call change_scene("college_coridor4")
+        call change_scene("college_coridor4") from _rcall_change_scene_68
         return
     return

@@ -4,7 +4,7 @@ default collegeStudent20_Suffix = 1
 
 label college_coridor6:
     $ miniMapData = []
-    call miniMapCOLLEGEGenerate()
+    call miniMapCOLLEGEGenerate() from _rcall_miniMapCOLLEGEGenerate_6
     $ scene_image = "scene_COLLEGE_Coridor_6_base"
     return
 
@@ -26,15 +26,15 @@ label college_coridor6_init:
 
 label college_coridor6_environment:
     if obj_name == "Teleport_Coridor7":
-        call change_scene("college_coridor7")
+        call change_scene("college_coridor7") from _rcall_change_scene_49
         return
     if obj_name == "Teleport_English":
-        call change_scene("college_english")
+        call change_scene("college_english") from _rcall_change_scene_50
         return
     if obj_name == "Teleport_Physics":
-        call change_scene("college_physics")
+        call change_scene("college_physics") from _rcall_change_scene_51
         return
     if obj_name == "Teleport_Coridor5":
-        call change_scene("college_coridor5")
+        call change_scene("college_coridor5") from _rcall_change_scene_52
         return
     return

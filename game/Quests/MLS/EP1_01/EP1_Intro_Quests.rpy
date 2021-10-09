@@ -6,39 +6,39 @@ default mcShowerLastDay = 0
 default sophieKitchenTalkLastDay = 0
 
 label ep1_intro_quests1:
-    call ep01_dialogues1_start_1a() # пляж, показываем геймплей
-    call refresh_scene_fade_long()
+    call ep01_dialogues1_start_1a() from _rcall_ep01_dialogues1_start_1a # пляж, показываем геймплей
+    call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_7
     $ introHUDBlocked = True
 #    $ questHelp("start_1")
     return
 
 label ep1_intro_quests1_block:
     hide screen hud_block
-    call ep01_dialogues1_start_1a5()
-    call refresh_scene_fade()
+    call ep01_dialogues1_start_1a5() from _rcall_ep01_dialogues1_start_1a5
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_2
     return
 
 label ep1_intro_quests2:
     hide screen hud_block
     $ introHUDBlocked = False
-    call ep01_dialogues1_start_1a2()
+    call ep01_dialogues1_start_1a2() from _rcall_ep01_dialogues1_start_1a2
     hide screen hud_screen
     $ add_hook("enter_scene", "ep1_intro_quests3", scene="map")
-    call map_show()
+    call map_show() from _rcall_map_show
     return
 
 label ep1_intro_quests3:
     $ remove_hook()
     show screen sprites_hover_dummy_screen()
-    call ep01_dialogues1_start_1ab3()
+    call ep01_dialogues1_start_1ab3() from _rcall_ep01_dialogues1_start_1ab3
     $ questHelp("start_1", True)
-    call ep01_dialogues1_start_1b() # подглядывание за Оливией и Марком
-    call ep01_dialogues1_start_2() # поезд
-    call ep01_dialogues1_start_3() # вокзал
+    call ep01_dialogues1_start_1b() from _rcall_ep01_dialogues1_start_1b # подглядывание за Оливией и Марком
+    call ep01_dialogues1_start_2() from _rcall_ep01_dialogues1_start_2 # поезд
+    call ep01_dialogues1_start_3() from _rcall_ep01_dialogues1_start_3 # вокзал
 
-    call changeDayTime("evening")
-    call phone_contacts1()
-    call ep01_dialogues2_day1_family_1() # комната Барди перед ужином
+    call changeDayTime("evening") from _rcall_changeDayTime_8
+    call phone_contacts1() from _rcall_phone_contacts1_2
+    call ep01_dialogues2_day1_family_1() from _rcall_ep01_dialogues2_day1_family_1 # комната Барди перед ужином
 
     $ camera_icon_enabled = True
 
@@ -84,23 +84,23 @@ label ep1_intro_quests3:
 
 
     if _return == True:
-        call change_scene("house_kitchen", "Fade_long")
+        call change_scene("house_kitchen", "Fade_long") from _rcall_change_scene_17
         return
-    call change_scene("house_bedroom_mc", "Fade_long")
+    call change_scene("house_bedroom_mc", "Fade_long") from _rcall_change_scene_18
     return
 
 label ep1_intro_quests3_shower1:
     sound snd_door_open1
-    call ep01_dialogues2_day1_family_1_14()
-    call refresh_scene_fade()
+    call ep01_dialogues2_day1_family_1_14() from _rcall_ep01_dialogues2_day1_family_1_14
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_3
     return False
 label ep1_intro_quests3_shower2:
-    call ep01_dialogues2_day1_family_1_14b()
-    call refresh_scene_fade()
+    call ep01_dialogues2_day1_family_1_14b() from _rcall_ep01_dialogues2_day1_family_1_14b
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_4
     return False
 
 label ep1_intro_quests4: # кухня
-    call ep01_dialogues2_day1_family_2() # кухня, ужин с семьей
+    call ep01_dialogues2_day1_family_2() from _rcall_ep01_dialogues2_day1_family_2 # кухня, ужин с семьей
 
     $ remove_hook(label="ep1_intro_quests4")
 
@@ -133,39 +133,39 @@ label ep1_intro_quests4: # кухня
     $ set_object_follow("Teleport_Floor2", scene="house_floor1")
     $ set_object_follow("Teleport_Bedroom_MC", scene="house_floor2")
 
-    call refresh_scene_fade_long()
+    call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_8
     return
 
 label ep1_intro_quests5_sophie: # разговор вечером
     if ep1_intro_quests5_sophie_Flag == False:
-        call ep01_dialogues2_day1_family_4()
+        call ep01_dialogues2_day1_family_4() from _rcall_ep01_dialogues2_day1_family_4
         $ ep1_intro_quests5_sophie_Flag = True
-        call refresh_scene_fade()
+        call refresh_scene_fade() from _rcall_refresh_scene_fade_5
         return False
-    call ep01_dialogues2_day1_family_4_1()
-    call refresh_scene_fade()
+    call ep01_dialogues2_day1_family_4_1() from _rcall_ep01_dialogues2_day1_family_4_1_1
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_6
     return False
 
 label ep1_intro_quests5_henry: # разговор вечером
     if get_active_objects("Henry", scene="house_livingroomhall") == False:
         return
-    call ep01_dialogues2_day1_family_5()
-    call refresh_scene_fade()
+    call ep01_dialogues2_day1_family_5() from _rcall_ep01_dialogues2_day1_family_5
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_7
     return False
 
 label ep1_intro_quests5_bed: # ложится спать
-    call ep01_dialogues2_day1_family_3()
+    call ep01_dialogues2_day1_family_3() from _rcall_ep01_dialogues2_day1_family_3_1
     if _return == False:
         return False
     $ remove_hook(label="ep1_intro_quests5_bed")
     $ clear_object_follow_all()
     $ questHelp("house_2", True)
-    call ep01_dialogues2_day1_family_8()
+    call ep01_dialogues2_day1_family_8() from _rcall_ep01_dialogues2_day1_family_8
     $ questHelp("house_3")
     $ questHelp("house_4")
-    call changeDayTime("morning")
+    call changeDayTime("morning") from _rcall_changeDayTime_9
     $ remove_hook(label="talk_evening")
-    call ep01_dialogues3_day2_family_1()
+    call ep01_dialogues3_day2_family_1() from _rcall_ep01_dialogues3_day2_family_1
 
     python:
         move_object("Sister2", "house_bathroom")
@@ -185,14 +185,14 @@ label ep1_intro_quests5_bed: # ложится спать
         set_object_follow("Teleport_Floor1", scene="house_floor2")
         set_object_follow("Teleport_Kitchen", scene="house_floor1")
 
-    call refresh_scene_fade_long()
+    call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_9
     return False
 
 label ep1_intro_quests6_cynthia_bathroom: # душ Синтия
     if get_active_objects("Sister2", scene="house_bathroom") == False:
         return
     if ep1_intro_quests6_cynthia_bathroom_Flag == False:
-        call ep01_dialogues3_day2_family_2()
+        call ep01_dialogues3_day2_family_2() from _rcall_ep01_dialogues3_day2_family_2
         if _return == -1:
             $ questHelp("college_4", False)
         else:
@@ -201,14 +201,14 @@ label ep1_intro_quests6_cynthia_bathroom: # душ Синтия
         $ ep1_intro_quests6_cynthia_bathroom_Flag = True
         $ questHelp("house_3", True)
         $ questHelpDesc("house_desc1", "house_desc2")
-        call refresh_scene_fade_long()
+        call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_10
         return False
-    call ep01_dialogues3_day2_family_3()
+    call ep01_dialogues3_day2_family_3() from _rcall_ep01_dialogues3_day2_family_3
     return False
 
 label ep1_intro_quests6_sophie: # Софи с утра на кухне
     if sophieKitchenTalkLastDay < day:
-        call ep01_dialogues3_day2_family_4()
+        call ep01_dialogues3_day2_family_4() from _rcall_ep01_dialogues3_day2_family_4
         $ questHelp("house_4", True)
         $ questHelp("college_1")
         $ questHelpDesc("college_desc1")
@@ -229,15 +229,15 @@ label ep1_intro_quests6_sophie: # Софи с утра на кухне
         $ set_object_follow("Teleport_Street", scene="house_floor1")
         $ set_object_follow("Teleport_Map", scene="house_street")
 
-        call refresh_scene_fade()
+        call refresh_scene_fade() from _rcall_refresh_scene_fade_8
         return False
-    call ep01_dialogues3_day2_family_5()
+    call ep01_dialogues3_day2_family_5() from _rcall_ep01_dialogues3_day2_family_5
     return False
 
 label ep1_intro_quests6_sophie2: # Софи утром регулярно
     if day_time_idx == 0:
-        call ep01_dialogues3_day2_family_5()
-        call refresh_scene_fade()
+        call ep01_dialogues3_day2_family_5() from _rcall_ep01_dialogues3_day2_family_5_1
+        call refresh_scene_fade() from _rcall_refresh_scene_fade_9
         return False
     return
 

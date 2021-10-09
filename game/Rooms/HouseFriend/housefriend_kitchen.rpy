@@ -19,9 +19,9 @@ label housefriend_kitchen_init:
 
 label housefriend_kitchen_environment:
     if obj_name == "Teleport_LivingRoom":
-        call change_scene("housefriend_livingroom")
+        call change_scene("housefriend_livingroom") from _rcall_change_scene_108
         return
     if obj_name == "Teleport_Bedroom_Parents":
-        call change_scene("housefriend_bedroom_parents")
+        call change_scene("housefriend_bedroom_parents") from _rcall_change_scene_109
         return
     return

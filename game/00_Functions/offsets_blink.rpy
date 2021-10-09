@@ -152,7 +152,7 @@ define offsets_blink = {
     "img_900117" : {"Mother":[1160,230,5,"1"]},
     "img_900118" : {"Mother":[1184,220,5,"1"]},
     "img_900251" : {"Bardie_friend_mother":[998,355,5,"1"]},
-    "img_910300" : {"Sister_older":[995,330,5,"1"]}
+    "img_910300" : {"Sister_older":[995,330,5,"2"]}
 #offsets_blink_finish
 }
 
