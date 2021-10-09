@@ -94,3 +94,9 @@ label sophie_chat1:
         ["sophie", t_("[mcname], у тебя все в порядке? Занятия в колледже уже давно закончились. Ты где, милый?")],
     ])
     return
+
+label college_chat1:
+    $ phone_add_history("college_chat1", "College", [
+        ["college", t_("Студент [mcsurname], ждем вас сегодня в 9:00 am в приемной профессора Ричардсон. Администрация колледжа.")],
+    ])
+    return

@@ -99,7 +99,8 @@ label phone_open_menu(menu_active):
         call phone_init()
         call phone_contacts1()
     call process_hooks("phone_open", "phone")
-    $ phone_menu_active = "main"
+#    $ phone_menu_active = "main"
+    $ phone_menu_active = menu_active
     $ phone_orientation = 0
     call phone_controller()
     return

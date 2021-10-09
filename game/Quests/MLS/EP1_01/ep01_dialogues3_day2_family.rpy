@@ -134,8 +134,13 @@ label ep01_dialogues3_day2_family_2:
             # он наводит камеру на Синтию
             # не успевает сделать фото, на телефон приходит сигнал сообщения
             music stop
-            sound iphone_text_message1
+#            sound iphone_text_message1
+            call phone_contacts1a_college()
+            $ phone_last_contacts_count = len(phone_contacts)
+            call college_chat1()
+#            call phone_open_menu("messages")
             # на экране новое сообщение: "Студент [mcsurname], ждем вас сегодня в 9:00 am в приемной профессора Ричардсон. Администрация колледжа."
+            w
             img 900147
             bardi_t "!!!"
             bardi_t "Чееерт!"

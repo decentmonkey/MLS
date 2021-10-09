@@ -172,38 +172,39 @@ screen phone_contacts():
                 box_wrap_spacing 0
                 for contact in phone_contacts:
 #                    $ contactImg = Image(contact["img"])
-                    $ contactImg = Transform(contact["img"], size=(65,65))
+                    if contact.has_key("visible") == False or (contact.has_key("visible") == True and contact["visible"] == True):
+                        $ contactImg = Transform(contact["img"], size=(65,65))
 
-                    button:
-                        margin (0,0)
-                        padding (0,0)
-                        ypos 0
-                        xpos 0
-                        ysize 79
-                        xsize 378
-    #                    xpos -64
+                        button:
+                            margin (0,0)
+                            padding (0,0)
+                            ypos 0
+                            xpos 0
+                            ysize 79
+                            xsize 378
+        #                    xpos -64
 
-                        idle_background "#feffff"
-                        hover_background "#e0e0e0"
-                        add "/images/Phone/mess/bg_contact.png":
-                            pos (0,0)
-                        add AlphaMask(contactImg, "/images/Phone/mess/contact_circle.png"):
-                            pos (8,4)
-#                            xsize 65
-#                            ysize 65
-                        text t__(contact["caption"]) style "phone_contact_name":
-                            xpos 83
-                            ypos 5
-                        add "/images/Phone/mess/ico1.png":
-                            pos (83, 47)
-                            xsize 15
-                            ysize 15
-                        text t__("Сообщения") style "phone_contact_name_underline":
-                            xpos 102
-                            ypos 43
-                        action [
-                            Return(["call_contact", contact["name"], contact])
-                        ]
+                            idle_background "#feffff"
+                            hover_background "#e0e0e0"
+                            add "/images/Phone/mess/bg_contact.png":
+                                pos (0,0)
+                            add AlphaMask(contactImg, "/images/Phone/mess/contact_circle.png"):
+                                pos (8,4)
+    #                            xsize 65
+    #                            ysize 65
+                            text t__(contact["caption"]) style "phone_contact_name":
+                                xpos 83
+                                ypos 5
+                            add "/images/Phone/mess/ico1.png":
+                                pos (83, 47)
+                                xsize 15
+                                ysize 15
+                            text t__("Сообщения") style "phone_contact_name_underline":
+                                xpos 102
+                                ypos 43
+                            action [
+                                Return(["call_contact", contact["name"], contact])
+                            ]
         vbar value YScrollValue("vp2") xpos 343 ypos 70 xsize 8 ysize 654
 
 
