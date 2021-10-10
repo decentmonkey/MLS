@@ -348,7 +348,9 @@ define offsets_table = {
     "house_bedroom_mc_tablenear_typewriter_mask":(304,496,723,975),
     "housefriend_room_friend_bardie_3":(384,1053,766,1307),
     "housefriend_room_friend_bardie_3_overlay":(410,907,852,1419),
-    "scene_housefriend_room_friend_bardie_3":(0,25,1079,1919)
+    "scene_housefriend_room_friend_bardie_3":(0,25,1079,1919),
+    "college_coridor_1_lockermc_backpack":(539,626,1009,1035),
+    "college_coridor_1_lockermc_backpack_overlay":(517,715,1055,1068)
 }
 
 init python:
