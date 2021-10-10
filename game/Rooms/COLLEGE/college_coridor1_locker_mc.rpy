@@ -7,9 +7,11 @@ label college_coridor1_locker_mc:
 label college_coridor1_locker_mc_init:
     $ default_tint = [1.0, 1.0, 1.0]
     $ add_object_to_scene("Bunny", {"type" : 2, "base" : "COLLEGE_Coridor_1_LockerMC", "click" : "college_coridor1_locker_mc_environment", "actions" : "l", "zorder":3}, scene="college_coridor1_locker_mc")
+    $ add_object_to_scene("Backpack", {"type" : 2, "base" : "COLLEGE_Coridor_1_LockerMC_Backpack", "click" : "college_coridor1_locker_mc_environment", "actions" : "l", "zorder":5, "selectable": False}, scene="college_coridor1_locker_mc")
 
     $ add_object_to_scene("Teleport_Coridor1", {"type":3, "text" : t_("НАЗАД"), "rarrow" : "arrow_down_2", "base":"Screen_Down_Arrow", "click" : "college_coridor1_locker_mc_environment", "xpos" : 960, "ypos" : 956, "zorder":11, "teleport":True, "group":"teleports"}, scene="college_coridor1_locker_mc")
     return
+
 
 #                            $ brightness_adjustment = 0.1
 #                            $ saturation_adjustment = 1.07
