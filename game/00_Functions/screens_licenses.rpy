@@ -5,7 +5,7 @@ init python:
         ["Adventures of the Deaf Dreamer (JOSH WOODWARD)", "Music/Adventures_of_the_Deaf_Dreamer.ogg"],
         ["Border Blaster (JOSH WOODWARD)", "Music/Border_Blaster.ogg"],
         ["Carefree Ukulele (SEASTOCK)", "Music/Carefree_Ukulele.ogg"],
-        ["Corporate_BPM120 (ARACHANG)", "Music/Corporate_BPM120.ogg"],
+        ["Corporate BPM120 (ARACHANG)", "Music/Corporate_BPM120.ogg"],
         ["Deeper For You (MELANIE UNGAR)", "Music/Deeper_For_You.ogg"],
         ["Don't Close Your Eyes (JOSH WOODWARD)", "Music/Dont_Close_Your_Eyes.ogg"],
         ["Fly With Me (STEEP)", "Music/Fly_With_Me_short.ogg"],
