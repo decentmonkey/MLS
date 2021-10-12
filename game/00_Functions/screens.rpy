@@ -2079,8 +2079,8 @@ screen navigation():
 
         textbutton t_("Load") action ShowMenu("load")
 
-        if renpy.android != True:
-            textbutton t_("UPDATE GAME") action Start("show_game_updater") text_color "#31e8b1" text_hover_color "#9ff5dd"
+#        if renpy.android != True:
+#            textbutton t_("UPDATE GAME") action Start("show_game_updater") text_color "#31e8b1" text_hover_color "#9ff5dd"
 
         textbutton t_("Preferences") action ShowMenu("preferences")
 
@@ -2092,9 +2092,9 @@ screen navigation():
 
             textbutton t_("Main Menu") action MainMenu()
 
-        textbutton t_("New Updates") action OpenURL("https://l7-team.com/news/")
 #        textbutton t_("Guide") action OpenURL("https://wiki.decent-monkey.com/wiki/Walkthrough_Episode_2")
         if steamVersion == False:
+            textbutton t_("New Updates") action OpenURL("https://l7-team.com/news/")
             textbutton ("Become Supporter") action OpenURL("https://www.patreon.com/L7team/")
         $ flag1 = False
 #        if game.extra == True and renpy.current_screen().screen_name[0] == "load":
@@ -2103,7 +2103,8 @@ screen navigation():
 #                $ flag1 = True
         if flag1 == False:
             textbutton t_("Licenses") action ShowMenu("licenses")
-            textbutton t_("Our Thanks") action ShowMenu("about")
+            if steamVersion == False:
+                textbutton t_("Our Thanks") action ShowMenu("about")
 
 
         if renpy.variant("pc"):
@@ -2179,38 +2180,39 @@ screen main_menu():
 #            xpos get_resolution_x(1345)
 #            ypos get_resolution_y(440)
 
-        frame:
-#            pos (get_resolution_x(1570), get_resolution_y(650))
-            pos (gui.resolution.main_menu.lang.left, get_resolution_y(720))
-            padding (gui.resolution.main_menu.lang.padding1,gui.resolution.main_menu.lang.padding2)
-            xysize (get_resolution_x(gui.resolution.main_menu.lang.width), get_resolution_y(gui.resolution.main_menu.lang.height))
-            anchor (0,0)
-            background Frame("gui/frame_lang.png", left=0, top=0, right=5, bottom=0)
-            vbox:
-                pos (0,0)
-                anchor (0,0)
-                style_prefix "navigation"
-                label t_("Language"):
-                    text_size gui.resolution.main_menu.font_size1
-                textbutton "English" action Language("english"):
-                    text_size gui.resolution.main_menu.font_size2
-                textbutton "German" action Language("german"):
-                    text_size gui.resolution.main_menu.font_size2
-#                textbutton "French" action Language("french"):
-#                    text_size gui.resolution.main_menu.font_size2
-#                textbutton "Italian (beta)" action Language("italian"):
-#                    text_size gui.resolution.main_menu.font_size2
-#                textbutton "Spanish (beta)" action Language("spanish"):
-#                    text_size gui.resolution.main_menu.font_size2
-                textbutton "Russian" action Language(None):
-                    text_size gui.resolution.main_menu.font_size2
-
-        if language_credits.has_key(str(_preferences.language)):
+        if 1==2:
             frame:
-                pos (gui.resolution.main_menu.lang.left + getRes(20), get_resolution_y(720) + get_resolution_y(gui.resolution.main_menu.lang.height) + getRes(10))
-                anchor (0, 0)
-                background None
-                text t__(language_credits[str(_preferences.language)]) style "main_menu_credits_text"
+    #            pos (get_resolution_x(1570), get_resolution_y(650))
+                pos (gui.resolution.main_menu.lang.left, get_resolution_y(720))
+                padding (gui.resolution.main_menu.lang.padding1,gui.resolution.main_menu.lang.padding2)
+                xysize (get_resolution_x(gui.resolution.main_menu.lang.width), get_resolution_y(gui.resolution.main_menu.lang.height))
+                anchor (0,0)
+                background Frame("gui/frame_lang.png", left=0, top=0, right=5, bottom=0)
+                vbox:
+                    pos (0,0)
+                    anchor (0,0)
+                    style_prefix "navigation"
+                    label t_("Language"):
+                        text_size gui.resolution.main_menu.font_size1
+                    textbutton "English" action Language("english"):
+                        text_size gui.resolution.main_menu.font_size2
+#                    textbutton "German" action Language("german"):
+#                        text_size gui.resolution.main_menu.font_size2
+    #                textbutton "French" action Language("french"):
+    #                    text_size gui.resolution.main_menu.font_size2
+    #                textbutton "Italian (beta)" action Language("italian"):
+    #                    text_size gui.resolution.main_menu.font_size2
+    #                textbutton "Spanish (beta)" action Language("spanish"):
+    #                    text_size gui.resolution.main_menu.font_size2
+                    textbutton "Russian" action Language(None):
+                        text_size gui.resolution.main_menu.font_size2
+
+            if language_credits.has_key(str(_preferences.language)):
+                frame:
+                    pos (gui.resolution.main_menu.lang.left + getRes(20), get_resolution_y(720) + get_resolution_y(gui.resolution.main_menu.lang.height) + getRes(10))
+                    anchor (0, 0)
+                    background None
+                    text t__(language_credits[str(_preferences.language)]) style "main_menu_credits_text"
 
 
     ## This empty frame darkens the main menu.
@@ -2728,7 +2730,7 @@ screen preferences():
 
                     label t_("Language")
                     textbutton "English" action Language("english")
-                    textbutton "German" action Language("german")
+#                    textbutton "German" action Language("german")
 #                    textbutton "French" action Language("french")
 #                    textbutton "Italian (beta)" action Language("italian")
 #                    textbutton "Spanish (beta)" action Language("spanish")
