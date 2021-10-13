@@ -11,6 +11,7 @@ python early:
     import pygame
     import types
     import hashlib
+    import unicodedata
     from shutil import copyfile
     from random import shuffle
 

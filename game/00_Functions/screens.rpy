@@ -2173,6 +2173,13 @@ screen main_menu():
         add "gui/logo2.png" at logo2_transform:
             pos (1024,252)
 
+        if language_count1 != language_count_all:
+            frame:
+                background None
+                xanchor 1.0
+                pos (1860, 900)
+                xmaximum 1200
+                text "Unofficial modified version detected!\nDeveloper is not responsible for the changes made!" style "modified_version"
 
 
 

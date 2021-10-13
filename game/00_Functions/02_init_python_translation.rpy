@@ -4,7 +4,6 @@ python early:
     #str1 = renpy.file("language_dict.json").read().replace('\r\n', '\n')
     #hash = hashlib.md5(str1).hexdigest()
     language_dict = {}
-    language_dict_hash = "729657222"
     list_files = renpy.list_files()
     language_files_list = []
     for fileName in list_files:
@@ -13,18 +12,24 @@ python early:
                 language_files_list.append(fileName)
     language_files_list.sort()
     language_flag1 = False
+    language_count1 = 0
+    language_count_all = 0
     for langFileName in language_files_list:
         languageFile = json.loads(renpy.file(str(langFileName)).read())
         if language_flag1 == False:
             language_dict = languageFile
             hash1 = hashlib.md5(renpy.file(str(langFileName)).read()).hexdigest()
+            language_count_all = len(language_dict)
+            language_count1 = len(language_dict)
             language_flag1 = True
         else:
             for langLine in languageFile:
                 language_dict[langLine] = languageFile[langLine]
+            language_count_all += len(languageFile)
     languageFile = False
-    hash2 = hashlib.md5(json.dumps(language_dict)).hexdigest()
-    open(config.basedir + "/game/" + "test.json", "wb").write(json.dumps(language_dict))
+#    hash2 = hashlib.md5(json.dumps(language_dict)).hexdigest()
+#    test1 = json.dumps(language_dict)
+#    open(config.basedir + "/game/" + "test.json", "wb").write(json.dumps(language_dict))
 
 #    for line in language_dict2:
 #        language_dict[line] = language_dict2[line]

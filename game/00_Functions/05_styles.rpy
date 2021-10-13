@@ -179,6 +179,12 @@ style choice_button_text_chinese:
 style text_chinese:
     font gui.text_font_chinese
 
+style modified_version:
+    color c_red
+    size 60
+    outlines [(6, "#000000", 0, 0)]
+
+
 transform credits_black_overlay:
     alpha 0.0
     linear 5.0 alpha 0.8
