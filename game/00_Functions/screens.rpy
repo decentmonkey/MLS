@@ -1326,8 +1326,8 @@ screen hud_screen(hud_presets):
 
                     else:
                         add "icons/icon_map_disabled" + res.suffix + ".png":
-                            xoffset 7
-                            yoffset -7
+                            xoffset 4
+                            yoffset 0
 
 
     fixed:
