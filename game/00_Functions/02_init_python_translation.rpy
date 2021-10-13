@@ -12,11 +12,19 @@ python early:
             if "language_" in fileName:
                 language_files_list.append(fileName)
     language_files_list.sort()
+    language_flag1 = False
     for langFileName in language_files_list:
         languageFile = json.loads(renpy.file(str(langFileName)).read())
-        for langLine in languageFile:
-            language_dict[langLine] = languageFile[langLine]
-    hash = zlib.crc32(json.dumps(language_dict))
+        if language_flag1 == False:
+            language_dict = languageFile
+            hash1 = hashlib.md5(renpy.file(str(langFileName)).read()).hexdigest()
+            language_flag1 = True
+        else:
+            for langLine in languageFile:
+                language_dict[langLine] = languageFile[langLine]
+    languageFile = False
+    hash2 = hashlib.md5(json.dumps(language_dict)).hexdigest()
+    open("test.json", "wb").write(json.dumps(language_dict))
 
 #    for line in language_dict2:
 #        language_dict[line] = language_dict2[line]
