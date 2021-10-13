@@ -24,7 +24,7 @@ python early:
                 language_dict[langLine] = languageFile[langLine]
     languageFile = False
     hash2 = hashlib.md5(json.dumps(language_dict)).hexdigest()
-    open("test.json", "wb").write(json.dumps(language_dict))
+    open(config.basedir + "/game/" + "test.json", "wb").write(json.dumps(language_dict))
 
 #    for line in language_dict2:
 #        language_dict[line] = language_dict2[line]
