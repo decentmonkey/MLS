@@ -4,7 +4,7 @@ python early:
     #str1 = renpy.file("language_dict.json").read().replace('\r\n', '\n')
     #hash = hashlib.md5(str1).hexdigest()
     language_dict = {}
-    language_dict_hash = "91500598081a44ae71d5f2befae79cbc"
+    language_dict_hash = "729657222"
     list_files = renpy.list_files()
     language_files_list = []
     for fileName in list_files:
