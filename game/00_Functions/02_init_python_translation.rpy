@@ -1,7 +1,7 @@
 python early:
     language_dict = json.loads(renpy.file("language_dict.json").read())
     language_dict2 = json.loads(renpy.file("language_dict2.json").read())
-    language_dict_hash = "91500598081a44ae71d5f2befae79cbc"
+    language_dict_hash = "729657222"
     str1 = renpy.file("language_dict.json").read().replace('\r\n', '\n')
     hash = hashlib.md5(str1).hexdigest()
 
