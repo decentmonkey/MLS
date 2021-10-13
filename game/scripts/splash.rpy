@@ -11,15 +11,15 @@ label splashscreen:
     $ renpy.pause(2.0)
     img black_screen
     with Dissolve(0.5)
-
-    scene black
-    image videoIntro_Video = Movie(play="video/MLS_Trailer1.mkv", fps=30)
-    show videoIntro_Video
-    $ renpy.pause(0.5, hard=True)
-    $ renpy.pause(47.5)
-    stop music fadeout 0.5
-    img black_screen
-    with Dissolve(0.5)
+    if preferences.get_volume("music") != 0.0:
+        scene black
+        image videoIntro_Video = Movie(play="video/MLS_Trailer1.mkv", fps=30)
+        show videoIntro_Video
+        $ renpy.pause(0.5, hard=True)
+        $ renpy.pause(47.5)
+        stop music fadeout 0.5
+        img black_screen
+        with Dissolve(0.5)
     imgd black_screen
     $ renpy.pause(1.5)
 

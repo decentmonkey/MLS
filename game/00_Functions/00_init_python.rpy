@@ -10,6 +10,7 @@ python early:
     import copy
     import pygame
     import types
+    import hashlib
     from shutil import copyfile
     from random import shuffle
 

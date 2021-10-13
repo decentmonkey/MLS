@@ -1,6 +1,15 @@
 python early:
     language_dict = json.loads(renpy.file("language_dict.json").read())
     language_dict2 = json.loads(renpy.file("language_dict2.json").read())
+    language_dict_hash = "563dc7d0eae02ace269f44a4becef517"
+    str1 = renpy.file("language_dict.json").read().replace('\r\n', '\n')
+#    str2 = renpy.file("language_dict2.json").read()
+#    str2 = open(renpy.loader.transfn("language_dict2.json"),"rb").read()
+#    str2 = bytes(str2)
+    hash = hashlib.md5(str1).hexdigest()
+#    astr1 = ":" + str2 + ":"
+#    hash = hashlib.md5("test1").hexdigest()
+#    print hash
     for line in language_dict2:
         language_dict[line] = language_dict2[line]
 #    language_dict = renpy.file("language_dict.json").read()
@@ -90,4 +99,3 @@ python early:
         st = re.sub("Mrs\.\\n", "Mrs. ", st)
         st = re.sub("Ms\.\\n", "Ms. ", st)
         return st
-    language_dict_hash = "563dc7d0eae02ace269f44a4becef517"
