@@ -22,6 +22,7 @@ define v_Teacher11_Blowjob1_25_sound_name = "v_Monica_PunksGB_Blowjob1"
 ## утром, ДО КОЛЛЕДЖА ##
 
 label ep01_dialogues3_day2_family_1:
+    $ camera_icon_enabled = False
     scene black_screen
     with Dissolve(1)
     call textonblack(t_("ЯСНОЕ УТРО")) from _rcall_textonblack_3
@@ -39,6 +40,7 @@ label ep01_dialogues3_day2_family_1:
     $ renpy.pause(2.0, hard=True)
     pause 24.0
 
+    $ camera_icon_enabled = True
 
     # утро
     # звон будильника

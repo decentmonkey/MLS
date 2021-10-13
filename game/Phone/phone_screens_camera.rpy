@@ -184,7 +184,7 @@ screen phone_camera_capture_hud_screen():
 #    layer "master"
     zorder 500
     tag hud
-    if camera_icon_enabled == True:
+    if camera_icon_enabled == True and splashMode == False:
         fixed:
             if camera_enabled == True:
                 imagebutton:

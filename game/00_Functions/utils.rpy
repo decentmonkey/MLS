@@ -169,6 +169,8 @@ init python:
         stage_Molly_Excitement_Last = stage_Molly_Excitement_Current
         return
 
+default textonblack_camera_state = False
+
 label mycopytext_label(txt):
     $ mycopytext(txt)
     return
@@ -182,6 +184,8 @@ label photoshop_flash():
     return
 
 label textonblack(in_text):
+    $ textonblack_camera_state = camera_icon_enabled
+    $ camera_icon_enabled = False
     scene black_screen
     with Dissolve(1)
     show screen textonblack_screen(in_text)
@@ -190,10 +194,13 @@ label textonblack(in_text):
     pause 0.5
     scene black_screen
     with Dissolve(1)
+    $ camera_icon_enabled = textonblack_camera_state
     return
 
 
 label textonblack_long(in_text):
+    $ textonblack_camera_state = camera_icon_enabled
+    $ camera_icon_enabled = False
     scene black_screen
     with Dissolve(1)
     show screen textonblack_screen(in_text)
@@ -201,6 +208,7 @@ label textonblack_long(in_text):
     $ renpy.pause(5.0, hard=True)
     scene black_screen
     with Dissolve(1)
+    $ camera_icon_enabled = textonblack_camera_state
     return
 
 label textonblack_pause(in_text):
