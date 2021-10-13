@@ -1,12 +1,25 @@
 python early:
-    language_dict = json.loads(renpy.file("language_dict.json").read())
-    language_dict2 = json.loads(renpy.file("language_dict2.json").read())
-    language_dict_hash = "729657222"
-    str1 = renpy.file("language_dict.json").read().replace('\r\n', '\n')
-    hash = hashlib.md5(str1).hexdigest()
+    #json.loads(renpy.file("language_dict.json").read())
+    #language_dict2 = json.loads(renpy.file("language_dict2.json").read())
+    #str1 = renpy.file("language_dict.json").read().replace('\r\n', '\n')
+    #hash = hashlib.md5(str1).hexdigest()
+    language_dict = {}
+    language_dict_hash = "91500598081a44ae71d5f2befae79cbc"
+    list_files = renpy.list_files()
+    language_files_list = []
+    for fileName in list_files:
+        if fileName[-5:] == ".json":
+            if "language_" in fileName:
+                language_files_list.append(fileName)
+    language_files_list.sort()
+    for langFileName in language_files_list:
+        languageFile = json.loads(renpy.file(str(langFileName)).read())
+        for langLine in languageFile:
+            language_dict[langLine] = languageFile[langLine]
+    hash = zlib.crc32(json.dumps(language_dict))
 
-    for line in language_dict2:
-        language_dict[line] = language_dict2[line]
+#    for line in language_dict2:
+#        language_dict[line] = language_dict2[line]
 #    language_dict = renpy.file("language_dict.json").read()
 
 #    open(config.basedir + "/game/update_data.json", "wb").write(str)
