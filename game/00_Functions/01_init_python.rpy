@@ -1,4 +1,15 @@
 python early:
+    language_fields = {None:1, "english":2, "german":3, "spanish":4, "chinese":5, "french":6, "turkish":7, "italian":8}
+
+    language_credits = {
+        "english": "Thanks for the English translation to\n[Aesthetic Dialectic] & [bambam]",
+        "german": "Thanks for the German translation to\n[Ragnaroekr] & [Londo Mollari]",
+        "spanish": "Thanks for the Spanish translation to\n[CG7]",
+        "french": "Thanks for the French translation to\n[YoyoRTx]",
+        "italian": "Thanks for the Italian translation to\n[5n4k3]",
+        "None": "Thanks for the Russian proofread to\n[Ms. Mansfield] & [EraRamp]"
+    }
+
     def overlay_parse(lex):
         img = lex.simple_expression()
         overlay = lex.simple_expression()
@@ -80,7 +91,7 @@ python early:
         renpy.scene()
         renpy.show_screen("show_image_screen_image", imagePath)
         renpy.show_screen("phone_camera_capture_hud_screen")
-        
+
         #blink controller
         blinkBase = imagePathExt[1]
         if offsets_blink.has_key(blinkBase):

@@ -1,16 +1,9 @@
 python early:
     language_dict = json.loads(renpy.file("language_dict.json").read())
+    language_dict2 = json.loads(renpy.file("language_dict2.json").read())
+    for line in language_dict2:
+        language_dict[line] = language_dict2[line]
 #    language_dict = renpy.file("language_dict.json").read()
-    language_fields = {None:1, "english":2, "german":3, "spanish":4, "chinese":5, "french":6, "turkish":7, "italian":8}
-
-    language_credits = {
-        "english": "Thanks for the English translation to\n[Aesthetic Dialectic] & [bambam]",
-        "german": "Thanks for the German translation to\n[Ragnaroekr] & [Londo Mollari]",
-        "spanish": "Thanks for the Spanish translation to\n[CG7]",
-        "french": "Thanks for the French translation to\n[YoyoRTx]",
-        "italian": "Thanks for the Italian translation to\n[5n4k3]",
-        "None": "Thanks for the Russian proofread to\n[Ms. Mansfield] & [EraRamp]"
-    }
 
 #    open(config.basedir + "/game/update_data.json", "wb").write(str)
     def parse_tstr(str1):
