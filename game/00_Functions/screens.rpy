@@ -2176,16 +2176,10 @@ screen main_menu():
         if language_count1 != language_count_all:
             frame:
                 background None
-                xanchor 1.0
-                pos (1860, 900)
+                xanchor 0.0
+                pos (437, 900)
                 xmaximum 1200
                 text "Unofficial modified version detected!\nDeveloper is not responsible for the changes made!" style "modified_version"
-
-
-
-#        add "gui/resolution_caption.png":
-#            xpos get_resolution_x(1345)
-#            ypos get_resolution_y(440)
 
         if 1==2:
             frame:
