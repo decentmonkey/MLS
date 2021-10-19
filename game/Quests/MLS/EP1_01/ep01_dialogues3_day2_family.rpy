@@ -13,11 +13,11 @@ default mlsBardiDay2Family3 = 0 # Барди видел голую Синтию 
 #call ep01_dialogues3_day2_family_7() # ночь, Барди ложится спать (подглядывание за Оливией + мечты)
 #call ep01_dialogues3_day2_family_8() # клик на приложение Инсты в телефоне Барди
 
-define v_Bardie_Sister_Older_Blowjob1_sound_name = "v_Monica_PunksGB_Blowjob1"
-define v_Nice_Girl_Blowjob1_25_sound_name = "v_Monica_PunksGB_Blowjob1"
-define v_Nice_Girl_Blowjob2_25_sound_name = "v_Monica_PunksGB_Blowjob1"
-define v_Teacher1_Titjob1_25_sound_name = "v_Monica_PunksGB_Blowjob1"
-define v_Teacher11_Blowjob1_25_sound_name = "v_Monica_PunksGB_Blowjob1"
+define v_Bardie_Sister_Older_Blowjob1_sound_name = "v_Bardie_Sister_Older_Blowjob1"
+define v_Nice_Girl_Blowjob1_25_sound_name = "v_Nice_Girl_Blowjob1_25"
+define v_Nice_Girl_Blowjob2_25_sound_name = "v_Nice_Girl_Blowjob2_25"
+define v_Teacher1_Titjob1_25_sound_name = "v_Teacher1_Titjob1_25"
+define v_Teacher11_Blowjob1_25_sound_name = "v_Teacher11_Blowjob1_25"
 
 ## утром, ДО КОЛЛЕДЖА ##
 
@@ -851,6 +851,7 @@ label ep01_dialogues3_day2_family_7:
                     # у него перед глазами возникает голая Оливия
                     # уже не его рука двигается на члене, а ее
                     # она ему улыбается игриво и пристально смотрит в глаза
+
                     music stop
                     img white_screen
                     with diss
@@ -1059,6 +1060,7 @@ label ep01_dialogues3_day2_family_7:
                     # у него перед глазами возникает голая Роуз
                     # уже не его рука двигается на члене, а ее
                     # она ему смущенно улыбается и смотрит в глаза
+
                     music stop
                     img white_screen
                     with diss
@@ -1263,6 +1265,7 @@ label ep01_dialogues3_day2_family_7:
                     # у него перед глазами возникает голая преподавательница
                     # уже не его рука двигается на члене, а ее
                     # она ему призывно улыбается и трется голой грудью о член
+                    
                     music stop
                     img white_screen
                     with diss

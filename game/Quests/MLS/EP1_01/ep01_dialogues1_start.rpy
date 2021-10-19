@@ -1,12 +1,12 @@
-define v_Mark_Sister_Older_Blowjob1_sound_name = "v_Monica_PunksGB_Blowjob1"
-define v_Mark_Sister_Older_Blowjob1b_sound_name = "v_Monica_PunksGB_Blowjob1"
-define v_Mark_Sister_Older_Kissing1_25_sound_name = "snd_longkiss1"
-define v_Mark_Sister_Older_Licking1_25_sound_name = "v_Monica_Perry_Licking1"
-define v_Mark_Sister_Older_Licking2_sound_name = "v_Monica_Perry_Licking1"
-define v_Mark_Sister_Older_Sex1_25_sound_name = "v_Monica_PunksGangbang_Sex1"
-define v_Mark_Sister_Older_Sex2_25_sound_name = "v_Monica_PunksGangbang_Sex1"
-define v_Mark_Sister_Older_Sex3_sound_name = "v_Monica_PunksGangbang_Sex1"
-define v_Mark_Sister_Older_Sex3b_sound_name = "v_Monica_PunksGangbang_Sex1"
+define v_Mark_Sister_Older_Blowjob1_sound_name = "v_Mark_Sister_Older_Blowjob1"
+define v_Mark_Sister_Older_Blowjob1b_sound_name = "v_Mark_Sister_Older_Blowjob1b"
+define v_Mark_Sister_Older_Kissing1_25_sound_name = "v_Mark_Sister_Older_Kissing1_25"
+define v_Mark_Sister_Older_Licking1_25_sound_name = "v_Mark_Sister_Older_Licking1_25"
+define v_Mark_Sister_Older_Licking2_sound_name = "v_Mark_Sister_Older_Licking2"
+define v_Mark_Sister_Older_Sex1_25_sound_name = "v_Mark_Sister_Older_Sex1_25"
+define v_Mark_Sister_Older_Sex2_25_sound_name = "v_Mark_Sister_Older_Sex2_25"
+define v_Mark_Sister_Older_Sex3_sound_name = "v_Mark_Sister_Older_Sex3"
+define v_Mark_Sister_Older_Sex3b_sound_name = "v_Mark_Sister_Older_Sex3b"
 
 
 #call ep01_dialogues1_start_1a() # пляж, показываем геймплей
@@ -486,6 +486,8 @@ label ep01_dialogues1_start_1b:
 
     # video
     # v_Mark_Sister_Older_Sex1_25
+    $ localSoundVolume = 1.0
+    $ localSoundName = v_Mark_Sister_Older_Sex1_25_sound_name
     img black_screen
     with diss
     pause 1.5
