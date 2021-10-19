@@ -2182,7 +2182,7 @@ screen main_menu():
                 xmaximum 1200
                 text "Unofficial modified version detected!\nDeveloper is not responsible for the changes made!" style "modified_version"
 
-        if 1==2:
+        if 1==1:
             frame:
     #            pos (get_resolution_x(1570), get_resolution_y(650))
                 pos (gui.resolution.main_menu.lang.left, get_resolution_y(720))
@@ -2198,8 +2198,8 @@ screen main_menu():
                         text_size gui.resolution.main_menu.font_size1
                     textbutton "English" action Language("english"):
                         text_size gui.resolution.main_menu.font_size2
-#                    textbutton "German" action Language("german"):
-#                        text_size gui.resolution.main_menu.font_size2
+                    textbutton "German" action Language("german"):
+                        text_size gui.resolution.main_menu.font_size2
     #                textbutton "French" action Language("french"):
     #                    text_size gui.resolution.main_menu.font_size2
     #                textbutton "Italian (beta)" action Language("italian"):
@@ -2732,7 +2732,7 @@ screen preferences():
 
                     label t_("Language")
                     textbutton "English" action Language("english")
-#                    textbutton "German" action Language("german")
+                    textbutton "German" action Language("german")
 #                    textbutton "French" action Language("french")
 #                    textbutton "Italian (beta)" action Language("italian")
 #                    textbutton "Spanish (beta)" action Language("spanish")
