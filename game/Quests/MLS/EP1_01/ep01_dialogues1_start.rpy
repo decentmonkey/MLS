@@ -484,6 +484,9 @@ label ep01_dialogues1_start_1b:
     imgf 910265
     w
 
+    stop music2
+    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+    $ renpy.music.set_volume(0.2, 0.5, channel="music")
     # video
     # v_Mark_Sister_Older_Sex1_25
     $ localSoundVolume = 1.0
@@ -499,6 +502,9 @@ label ep01_dialogues1_start_1b:
     pause 5.5
     img v_Mark_Sister_Older_Sex1_1_end
     w
+    stop music2
+    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+    $ renpy.music.set_volume(1.0, 0.5, channel="music")
     mark "Ооо да, детка!"
 
     imgf 910266
