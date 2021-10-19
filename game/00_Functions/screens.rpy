@@ -1472,19 +1472,20 @@ screen textonblack_screen(in_text):
         xfill True
         yfill True
         background Solid("#000000")
-        if _preferences.language != "chinese":
-            text t__(in_text) style "text_on_black_style":
-                xanchor 0.5
-                yanchor 0.5
-                xalign 0.5
-                yalign 0.5
-        else:
-            text t__(in_text) style "text_on_black_style":
-                xanchor 0.5
-                yanchor 0.5
-                xalign 0.5
-                yalign 0.5
-                font gui.text_font_chinese
+        frame:
+            background Frame("/images/Icons2/text_frame1.png", 91, 91)
+            xpadding 91
+            top_padding 87
+            bottom_padding 91
+            xanchor 0.5
+            yanchor 0.5
+            xalign 0.5
+            yalign 0.5
+            if _preferences.language != "chinese":
+                text t__(in_text) style "text_on_black_style"
+            else:
+                text t__(in_text) style "text_on_black_style":
+                    font gui.text_font_chinese
 
 screen intro_image(image_name):
     zorder 190
