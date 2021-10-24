@@ -410,7 +410,9 @@ label phone_open_loop1:
 #                if phone_camera_image in phone_gallery:
 #                    phone_gallery.remove(phone_camera_image)
                 phone_gallery.insert(0, [phone_camera_image, get_camera_scene_shoot_data()])
-                print get_camera_scene_shoot_data()
+                if len(phone_gallery) >= 30:
+                    steam_achievement("ach_photo1")
+#                print get_camera_scene_shoot_data()
             call photoshop_flash() from _rcall_photoshop_flash
 #            pause 0.2
             hide screen phone_camera_screen
@@ -609,7 +611,10 @@ init python:
 #                    del phone_gallery[idx]
 #            if phone_camera_image in phone_gallery:
 #                phone_gallery.remove(phone_camera_image)
+
             phone_gallery.insert(0, [phone_camera_image, {"sprites": [], "overlaysList" : []}])
+            if len(phone_gallery) >= 30:
+                steam_achievement("ach_photo1")
             renpy.play("/Sounds/snd_photo_capture.ogg")
             renpy.show_screen("phone_camera_screen2_shoot")
             return

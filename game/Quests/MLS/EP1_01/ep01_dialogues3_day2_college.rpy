@@ -252,7 +252,7 @@ label ep01_dialogues3_day2_college_1:
             imgd 910040
             w
             menu:
-                "Синтия." if mlsBardiDay2Family3 > 0:
+                "Синтия." if mlsBardiDay2Family3 > 0 or steamVersion == True:
                     # мини-анимация, камера медленно скользит по ее фигуре сверху-вниз
 
                     music Stylish_Fashion_Electronic_Rock
@@ -296,7 +296,7 @@ label ep01_dialogues3_day2_college_1:
                     teacher_clark "Студент, мне долго еще ждать мою папку?"
                     bardi_t "!!!"
                     pass
-                "Синтия ([mcname] не видел голую Синтию в душе) (disabled)" if mlsBardiDay2Family3 == 0:
+                "Синтия ([mcname] не видел голую Синтию в душе) (disabled)" if mlsBardiDay2Family3 == 0 and steamVersion != True:
                     pass
                 "Миссис Кларк.":
                     # мини-анимация, камера медленно скользит по ее фигуре сверху-вниз

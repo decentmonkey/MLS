@@ -11,6 +11,12 @@ screen end_update_screen():
                 xanchor 0.5
                 pos(1920/2, 460)
                 at transform_end_update_text1b
+        if steamVersion == True:
+            text ("{a=https://steamcommunity.com/app/1794470/}https://steamcommunity.com/app/1794470/{/a}") style "end_update_text2":
+                xanchor 0.5
+                pos(1920/2, 560)
+                at transform_end_update_text2
+
         if steamVersion == False:
             frame:
     #            background "#30303080"

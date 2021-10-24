@@ -935,6 +935,7 @@ label ep01_dialogues3_day2_family_7:
                     w
                     imgd 900176
                     olivia "Кончи для меня, [mcname]..."
+                    $ steam_achievement("ach_dream_olivia")
                     menu:
                         "Кончить Оливии в рот.":
                             imgd 900178
@@ -1035,23 +1036,36 @@ label ep01_dialogues3_day2_family_7:
                             pass
                     # лицо Оливии внезапно становится лицом Софи
                     # она улыбается и говорит Барди, находясь прямо перед его членом
-                    imgf 900193
-                    w
-                    imgd 900194
-                    w
-                    imgd 900220
-                    sophie "[mcname], милый, пора вставать."
-                    # Барди пугается
-                    music stop
-                    sound plastinka1b
-                    img 900195 hpunch
-                    bardi "Фак!!!"
-                    music Fly_With_Me_short
-                    bardi "Софи?!"
-                    bardi "Что ты тут делаешь?!"
-                    music Little_Tomcat
-                    imgd 900220
-                    sophie "Я пришла разбудить тебя, милый..."
+                    if steamVersion == False:
+                        imgf 900193
+                        w
+                        imgd 900194
+                        w
+                        imgd 900220
+                        sophie "[mcname], милый, пора вставать."
+                        # Барди пугается
+                        music stop
+                        sound plastinka1b
+                        img 900195 hpunch
+                        bardi "Фак!!!"
+                        music Fly_With_Me_short
+                        bardi "Софи?!"
+                        bardi "Что ты тут делаешь?!"
+                        music Little_Tomcat
+                        imgd 900220
+                        sophie "Я пришла разбудить тебя, милый..."
+                    else:
+                        imgf 900193
+                        w
+                        imgd white_screen
+                        w
+                        sophie "[mcname], милый, пора вставать."
+                        music stop
+                        sound plastinka1b
+                        bardi "Фак!!!"
+                        music Little_Tomcat
+                        bardi "Софи?!"
+                        sophie "Я пришла разбудить тебя, милый..."
                     # Барди резко распахивает глаза (уже утро), над ним склонилось лицо Софи
                     pass
                 "Оливия ([mcname] не подсматривал за Оливией в душе) (disabled)" if mlsBardiDay2Family2 == 0:
@@ -1150,6 +1164,7 @@ label ep01_dialogues3_day2_family_7:
                     student_rose "Мммм..."
                     imgd 900207
                     bardi "О, Роуз, я сейчас кончу!.."
+                    $ steam_achievement("ach_dream_rose")
                     menu:
                         "Кончить Роуз в рот.":
                             imgd 900206
@@ -1244,19 +1259,30 @@ label ep01_dialogues3_day2_family_7:
                     w
                     imgd 900217
                     w
-                    imgd 900218
-                    sophie "[mcname], милый, пора вставать."
-                    # Барди пугается
-                    music stop
-                    sound plastinka1b
-                    img 900219 hpunch
-                    bardi "Фак!!!"
-                    music Fly_With_Me_short
-                    bardi "Софи?!"
-                    bardi "Что ты тут делаешь?!"
-                    music Little_Tomcat
-                    imgd 900218
-                    sophie "Я пришла разбудить тебя, милый..."
+                    if steamVersion == False:
+                        imgd 900218
+                        sophie "[mcname], милый, пора вставать."
+                        # Барди пугается
+                        music stop
+                        sound plastinka1b
+                        img 900219 hpunch
+                        bardi "Фак!!!"
+                        music Fly_With_Me_short
+                        bardi "Софи?!"
+                        bardi "Что ты тут делаешь?!"
+                        music Little_Tomcat
+                        imgd 900218
+                        sophie "Я пришла разбудить тебя, милый..."
+                    else:
+                        imgd white_screen
+                        sophie "[mcname], милый, пора вставать."
+                        music stop
+                        sound plastinka1b
+                        bardi "Фак!!!"
+                        music Little_Tomcat
+                        bardi "Софи?!"
+                        music Little_Tomcat
+                        sophie "Я пришла разбудить тебя, милый..."
                     # Барди резко распахивает глаза (уже утро), над ним склонилось лицо Софи
                     pass
                 "Роуз ([mcname] толкнул Гарри и не разговаривал с Роуз) (disabled)" if mlsBardiFirstDayCollege1 > 0:
@@ -1364,6 +1390,7 @@ label ep01_dialogues3_day2_family_7:
 
                     imgf 900229
                     teacher_morris "Кончи для меня, [mcname]..."
+                    $ steam_achievement("ach_dream_maurice")
                     menu:
                         "Кончить миссис Морис в рот.":
                             imgd 900231
@@ -1468,19 +1495,31 @@ label ep01_dialogues3_day2_family_7:
                     w
                     imgd 900244
                     w
-                    img 900245
-                    sophie "[mcname], милый, пора вставать."
-                    # Барди пугается
-                    music stop
-                    sound plastinka1b
-                    img 900246 hpunch
-                    bardi "Фак!!!"
-                    music Fly_With_Me_short
-                    bardi "Софи?!"
-                    bardi "Что ты тут делаешь?!"
-                    music Little_Tomcat
-                    imgd 900245
-                    sophie "Я пришла разбудить тебя, милый..."
+                    if steamVersion == False:
+                        img 900245
+                        sophie "[mcname], милый, пора вставать."
+                        # Барди пугается
+                        music stop
+                        sound plastinka1b
+                        img 900246 hpunch
+                        bardi "Фак!!!"
+                        music Fly_With_Me_short
+                        bardi "Софи?!"
+                        bardi "Что ты тут делаешь?!"
+                        music Little_Tomcat
+                        imgd 900245
+                        sophie "Я пришла разбудить тебя, милый..."
+                    else:
+                        imgd white_screen
+                        sophie "[mcname], милый, пора вставать."
+                        # Барди пугается
+                        music stop
+                        sound plastinka1b
+                        bardi "Фак!!!"
+                        music Little_Tomcat
+                        bardi "Софи?!"
+                        music Little_Tomcat
+                        sophie "Я пришла разбудить тебя, милый..."
                     # Барди резко распахивает глаза (уже утро), над ним склонилось лицо Софи
                     pass
                 "Миссис Морис ([mcname] нагрубил Гарри и не разговаривал с миссис Морис) (disabled)" if mlsBardiFirstDayCollege1 == 0:
@@ -1503,9 +1542,10 @@ label ep01_dialogues3_day2_family_7:
     img white_screen
     with diss
     pause 1.0
-    imgd 900069
+    img 900069
     with Dissolve(1.0)
-    w
+    sophie "[mcname], милый, пора вставать."
+#    w
     imgd 900247
     w
     music stop

@@ -11,8 +11,9 @@ label ep1_college_sean: # встреча с Шоном
     $ remove_hook(label="college_sean")
     $ remove_hook(label="day1_morning")
     if ep1_intro_quests6_cynthia_bathroom_Flag == False:
-        $ questHelp("college_4", False)
-        $ questHelp("house_3", False)
+        if steamVersion == False:
+            $ questHelp("college_4", False)
+            $ questHelp("house_3", False)
     $ clear_object_follow_all()
     $ ep1_college_minimap_enabled = True
 

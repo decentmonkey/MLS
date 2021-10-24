@@ -161,7 +161,8 @@ label ep1_intro_quests5_bed: # ложится спать
     $ clear_object_follow_all()
     $ questHelp("house_2", True)
     call ep01_dialogues2_day1_family_8() from _rcall_ep01_dialogues2_day1_family_8
-    $ questHelp("house_3")
+    if steamVersion == False:
+        $ questHelp("house_3")
     $ questHelp("house_4")
     call changeDayTime("morning") from _rcall_changeDayTime_9
     $ remove_hook(label="talk_evening")
@@ -177,7 +178,10 @@ label ep1_intro_quests5_bed: # ложится спать
         sister2RoomDoorLocked = True
         landLordRoomDoorLocked = True
 
-        add_hook("Teleport_Bathroom", "ep1_intro_quests6_cynthia_bathroom", scene="house_floor1", label="day1_morning")
+        if steamVersion == True:
+            move_object("Sister2", "house_sister2")
+        else:
+            add_hook("Teleport_Bathroom", "ep1_intro_quests6_cynthia_bathroom", scene="house_floor1", label="day1_morning")
         add_hook("Sophie", "ep1_intro_quests6_sophie2", scene="house_kitchen", label="sophie_morning_regular")
         add_hook("Sophie", "ep1_intro_quests6_sophie", scene="house_kitchen", label="day1_morning")
 

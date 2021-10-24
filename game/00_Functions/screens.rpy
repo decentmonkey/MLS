@@ -2209,7 +2209,7 @@ screen main_menu():
                     textbutton "Russian" action Language(None):
                         text_size gui.resolution.main_menu.font_size2
 
-            if language_credits.has_key(str(_preferences.language)):
+            if language_credits.has_key(str(_preferences.language)) and steamVersion == False:
                 frame:
                     pos (gui.resolution.main_menu.lang.left + getRes(20), get_resolution_y(720) + get_resolution_y(gui.resolution.main_menu.lang.height) + getRes(10))
                     anchor (0, 0)
