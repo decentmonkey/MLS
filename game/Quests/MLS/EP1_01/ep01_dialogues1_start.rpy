@@ -353,7 +353,7 @@ label ep01_dialogues1_start_1b:
     with diss
     stop music2
     $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
     play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
     scene black
     image videov_Mark_Sister_Older_Licking1_25 = Movie(play="video/v_Mark_Sister_Older_Licking1_25.mkv", fps=25)
@@ -402,7 +402,7 @@ label ep01_dialogues1_start_1b:
     with diss
     stop music2
     $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
     play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
     scene black
     image videov_Mark_Sister_Older_Blowjob1 = Movie(play="video/v_Mark_Sister_Older_Blowjob1.mkv", fps=30)
@@ -424,7 +424,7 @@ label ep01_dialogues1_start_1b:
     with diss
     stop music2
     $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
     play music2 "<from " + str(float(rand(0,4))*1.16666667) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
     scene black
     image videov_Mark_Sister_Older_Blowjob1b= Movie(play="video/v_Mark_Sister_Older_Blowjob1b.mkv")
@@ -469,7 +469,7 @@ label ep01_dialogues1_start_1b:
     with diss
     stop music2
     $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
     play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
     scene black
     image videov_Mark_Sister_Older_Kissing1_25 = Movie(play="video/v_Mark_Sister_Older_Kissing1_25.mkv", fps=25)
@@ -486,7 +486,7 @@ label ep01_dialogues1_start_1b:
 
     stop music2
     $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
     # video
     # v_Mark_Sister_Older_Sex1_25
     $ localSoundVolume = 1.0
@@ -521,7 +521,7 @@ label ep01_dialogues1_start_1b:
     with diss
     stop music2
     $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
     play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
     scene black
     image videov_Mark_Sister_Older_Sex2_25 = Movie(play="video/v_Mark_Sister_Older_Sex2_25.mkv", fps=25)
@@ -582,7 +582,7 @@ label ep01_dialogues1_start_1b:
     with diss
     stop music2
     $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
     play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
     scene black
     image videov_Mark_Sister_Older_Licking2 = Movie(play="video/v_Mark_Sister_Older_Licking2.mkv", fps=30)
@@ -660,7 +660,7 @@ label ep01_dialogues1_start_1b:
     with diss
     stop music2
     $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
     play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
     scene black
     image videov_Mark_Sister_Older_Sex3 = Movie(play="video/v_Mark_Sister_Older_Sex3.mkv", fps=30)
@@ -753,7 +753,7 @@ label ep01_dialogues1_start_1b:
     with diss
     stop music2
     $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
     play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
     scene black
     image videov_Mark_Sister_Older_Sex3b = Movie(play="video/v_Mark_Sister_Older_Sex3b.mkv", fps=30)

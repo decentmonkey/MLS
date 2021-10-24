@@ -203,6 +203,12 @@ python early:
         splittedFileName[-2] = splittedFileName[-2] + res.suffix
         return ".".join(splittedFileName)
 
+    def getMusicScenes(volume):
+#        global persistent.music_scenes
+        if persistent.music_scenes == True:
+            return volume
+        return 0.0
+
 
 init -3 python:
     if persistent.lang is None:

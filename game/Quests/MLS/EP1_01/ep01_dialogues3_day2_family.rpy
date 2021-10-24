@@ -911,7 +911,7 @@ label ep01_dialogues3_day2_family_7:
                     with diss
                     stop music2
                     $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-                    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+                    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
                     play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
                     scene black
                     image videov_Bardie_Sister_Older_Blowjob1 = Movie(play="video/v_Bardie_Sister_Older_Blowjob1.mkv", fps=30)
@@ -1095,7 +1095,7 @@ label ep01_dialogues3_day2_family_7:
                     with diss
                     stop music2
                     $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-                    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+                    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
                     play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
                     scene black
                     image videov_Nice_Girl_Blowjob1_25 = Movie(play="video/v_Nice_Girl_Blowjob1_25.mkv", fps=25)
@@ -1128,7 +1128,7 @@ label ep01_dialogues3_day2_family_7:
                     with diss
                     stop music2
                     $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-                    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+                    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
                     play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
                     scene black
                     image videov_Nice_Girl_Blowjob2_25 = Movie(play="video/v_Nice_Girl_Blowjob2_25.mkv", fps=25)
@@ -1299,7 +1299,7 @@ label ep01_dialogues3_day2_family_7:
                     with diss
                     stop music2
                     $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-                    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+                    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
                     play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
                     scene black
                     image videov_Teacher1_Titjob1_25 = Movie(play="video/v_Teacher1_Titjob1_25.mkv", fps=25)
@@ -1346,7 +1346,7 @@ label ep01_dialogues3_day2_family_7:
                     with diss
                     stop music2
                     $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-                    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+                    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
                     play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
                     scene black
                     image videov_Teacher11_Blowjob1_25 = Movie(play="video/v_Teacher11_Blowjob1_25.mkv", fps=25)
