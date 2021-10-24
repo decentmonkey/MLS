@@ -1,5 +1,6 @@
 default persistent.pause_before_change_slide = False
 default persistent.auto_clipboard = False
+default persistent.music_scenes = True
 
 default map_enabled = True
 default map_disabled_forced = False

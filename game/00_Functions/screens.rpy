@@ -2070,42 +2070,42 @@ screen navigation():
 
         if main_menu:
 
-            textbutton t_("Start") action Start()
+            textbutton t__("Start") action Start()
 
         else:
 
-            textbutton t_("History") action ShowMenu("history")
+            textbutton t__("History") action ShowMenu("history")
 
-            textbutton t_("Save") action ShowMenu("save")
+            textbutton t__("Save") action ShowMenu("save")
 
-        textbutton t_("Load") action ShowMenu("load")
+        textbutton t__("Load") action ShowMenu("load")
 
 #        if renpy.android != True:
 #            textbutton t_("UPDATE GAME") action Start("show_game_updater") text_color "#31e8b1" text_hover_color "#9ff5dd"
 
-        textbutton t_("Preferences") action ShowMenu("preferences")
+        textbutton t__("Preferences") action ShowMenu("preferences")
 
         if _in_replay:
 
-            textbutton t_("End Replay") action EndReplay(confirm=True)
+            textbutton t__("End Replay") action EndReplay(confirm=True)
 
         elif not main_menu:
 
-            textbutton t_("Main Menu") action MainMenu()
+            textbutton t__("Main Menu") action MainMenu()
 
 #        textbutton t_("Guide") action OpenURL("https://wiki.decent-monkey.com/wiki/Walkthrough_Episode_2")
         if steamVersion == False:
-            textbutton t_("New Updates") action OpenURL("https://l7-team.com/news/")
-            textbutton ("Become Supporter") action OpenURL("https://www.patreon.com/L7team/")
+            textbutton t__("New Updates") action OpenURL("https://l7-team.com/news/")
+            textbutton t__("Become Supporter") action OpenURL("https://www.patreon.com/L7team/")
         $ flag1 = False
 #        if game.extra == True and renpy.current_screen().screen_name[0] == "load":
 #            if check_saves_for_migration() == True:
 #                textbutton t_("MIGRATE FROM 720p") action Start("migrate_saves") text_color "#e8b131" text_hover_color "#f8f131"
 #                $ flag1 = True
         if flag1 == False:
-            textbutton t_("Licenses") action ShowMenu("licenses")
+            textbutton t__("Licenses") action ShowMenu("licenses")
             if steamVersion == False:
-                textbutton t_("Our Thanks") action ShowMenu("about")
+                textbutton t__("Our Thanks") action ShowMenu("about")
 
 
         if renpy.variant("pc"):
@@ -2114,7 +2114,7 @@ screen navigation():
 #            textbutton t_("Help") action ShowMenu("help")
 
             ## The quit button is banned on iOS and unnecessary on Android.
-            textbutton t_("Quit") action Quit(confirm=not main_menu)
+            textbutton t__("Quit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -2194,7 +2194,7 @@ screen main_menu():
                     pos (0,0)
                     anchor (0,0)
                     style_prefix "navigation"
-                    label t_("Language"):
+                    label t__("Language"):
                         text_size gui.resolution.main_menu.font_size1
                     textbutton "English" action Language("english"):
                         text_size gui.resolution.main_menu.font_size2
@@ -2340,12 +2340,12 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     use navigation
 
-    textbutton t_("Return"):
+    textbutton t__("Return"):
         style "return_button"
 
         action Return()
 
-    label title
+    label t__(title)
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
@@ -2413,7 +2413,7 @@ screen about():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(t_("About"), scroll="viewport"):
+    use game_menu(t__("About"), scroll="viewport"):
 
         style_prefix "about"
 
@@ -2570,7 +2570,7 @@ screen give_save_name(okay=NullAction()):
             ysize 280
             spacing 40
             first_spacing 10
-            label t_("ENTER SAVE NAME"):
+            label t__("ENTER SAVE NAME"):
                 #text_color "#ffffff"
                 text_color "#e8b131"
                 xalign 0.5
@@ -2586,7 +2586,7 @@ screen give_save_name(okay=NullAction()):
 
                 xalign 0.5
 
-            textbutton t_("Save"):
+            textbutton t__("Save"):
 #                idle_background Frame("gui/help/Controls-Unselected.png", Borders(35, 35, 35, 35))
 #                hover_background Frame("gui/help/Controls-Selected.png", Borders(35, 35, 35, 35))
                 idle_background "#202020"
@@ -2647,7 +2647,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(t_("Preferences"), scroll="viewport"):
+    use game_menu(t__("Preferences"), scroll="viewport"):
 
         vbox:
 
@@ -2658,9 +2658,9 @@ screen preferences():
 
                     vbox:
                         style_prefix "radio"
-                        label t_("Display")
-                        textbutton t_("Window") action Preference("display", "window")
-                        textbutton t_("Fullscreen") action Preference("display", "fullscreen")
+                        label t__("Display")
+                        textbutton t__("Window") action Preference("display", "window")
+                        textbutton t__("Fullscreen") action Preference("display", "fullscreen")
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.
@@ -2675,35 +2675,35 @@ screen preferences():
                     xminimum 600
 
                     style_prefix "radio"
-                    label t_("Pause before change slide")
-                    textbutton t_("Enable") action SetField(persistent, "pause_before_change_slide", True)
-                    textbutton t_("Disable") action SetField(persistent, "pause_before_change_slide", False)
+                    label t__("Pause after text")
+                    textbutton t__("Enable") action SetField(persistent, "pause_before_change_slide", True)
+                    textbutton t__("Disable") action SetField(persistent, "pause_before_change_slide", False)
 
 
                 vbox:
                     xmaximum gui.resolution.preferences1
 
                     if config.has_music:
-                        label t_("Music Volume")
+                        label t__("Music Volume")
 
                         hbox:
                             bar value Preference("music volume")
 
                     if config.has_sound:
 
-                        label t_("Sound Volume")
+                        label t__("Sound Volume")
 
                         hbox:
                             bar value Preference("sound volume")
 
                             if config.sample_sound:
-                                textbutton t_("Test") action Play("sound", config.sample_sound)
+                                textbutton t__("Test") action Play("sound", config.sample_sound)
 
 
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing
 
-                        textbutton t_("Mute All"):
+                        textbutton t__("Mute All"):
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
             null height 30
@@ -2711,26 +2711,43 @@ screen preferences():
                 vbox:
                     xminimum 600
                     style_prefix "radio"
-                    label _("Rollback Side")
-                    textbutton _("Disable") action Preference("rollback side", "disable")
-                    textbutton _("Left") action Preference("rollback side", "left")
-                    textbutton _("Right") action Preference("rollback side", "right")
+                    label t__("Rollback Side")
+                    textbutton t__("Disable") action Preference("rollback side", "disable")
+                    textbutton t__("Left") action Preference("rollback side", "left")
+                    textbutton t__("Right") action Preference("rollback side", "right")
 
                 vbox:
+                    xminimum 600
+                    style_prefix "radio"
+                    label t__("Music in animations")
+                    textbutton t__("Enable") action SetField(persistent, "music_scenes", True)
+                    textbutton t__("Disable") action SetField(persistent, "music_scenes", False)
+
+            null height 30
+
+            hbox:
+                vbox:
+                    xminimum 600
                     style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                    label t__("Skip")
+                    textbutton t__("Unseen Text") action Preference("skip", "toggle")
+                    textbutton t__("After Choices") action Preference("after choices", "toggle")
+                    textbutton t__("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                vbox:
+                    style_prefix "radio"
+                    label t__("Auto Clipboard")
+                    textbutton t__("Enable") action SetField(persistent, "auto_clipboard", True)
+                    textbutton t__("Disable") action SetField(persistent, "auto_clipboard", False)
 
             null height 30
             hbox:
                 vbox:
                     xminimum 600
 #                    xminimum gui.resolution.menu_pause_before_change_slide.value
-                    style_prefix "pref"
+#                    style_prefix "pref"
+                    style_prefix "radio"
 
-                    label t_("Language")
+                    label t__("Language")
                     textbutton "English" action Language("english")
                     textbutton "German" action Language("german")
 #                    textbutton "French" action Language("french")
@@ -2738,11 +2755,6 @@ screen preferences():
 #                    textbutton "Spanish (beta)" action Language("spanish")
                     textbutton "Russian" action Language(None)
 
-                vbox:
-                    style_prefix "radio"
-                    label "Auto Clipboard"
-                    textbutton t_("Enable") action SetField(persistent, "auto_clipboard", True)
-                    textbutton t_("Disable") action SetField(persistent, "auto_clipboard", False)
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
@@ -2830,7 +2842,7 @@ screen history():
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    use game_menu(t_("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
+    use game_menu(t__("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
 
         style_prefix "history"
 
@@ -3184,8 +3196,8 @@ screen confirm(message, yes_action, no_action):
                 xalign 0.5
                 spacing 150
 
-                textbutton t_("Yes") action yes_action
-                textbutton t_("No") action no_action
+                textbutton t__("Yes") action yes_action
+                textbutton t__("No") action no_action
 
     ## Right-click and escape answer "no".
     key "game_menu" action no_action
