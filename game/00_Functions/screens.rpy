@@ -2159,12 +2159,12 @@ screen main_menu():
                 hover "gui/patreon_button_hover.png"
                 action OpenURL("https://www.patreon.com/L7team")
 
-        imagebutton:
-            xpos get_resolution_x(437)
-            ypos get_resolution_y(28)
-            idle "gui/web_button.png"
-            hover "gui/web_button_hover.png"
-            action OpenURL("http://l7-team.com/news/")
+            imagebutton:
+                xpos get_resolution_x(437)
+                ypos get_resolution_y(28)
+                idle "gui/web_button.png"
+                hover "gui/web_button_hover.png"
+                action OpenURL("http://l7-team.com/news/")
 
 #        add "gui/logo.png":
 #            xpos get_resolution_x(1025)
