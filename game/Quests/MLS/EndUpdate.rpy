@@ -144,7 +144,7 @@ label end_update:
     if steamVersion == False:
         $ renpy.pause(16.0, hard=True)
     else:
-        $ renpy.pause(3.0, hard=True)
+        $ renpy.pause(6.0, hard=True)
     w
     music stop
     scene black

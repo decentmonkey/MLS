@@ -270,19 +270,28 @@ label ep01_dialogues3_day2_college_1:
                     w
                     bardi_t "Фигурка просто отпад!"
 
-                    #
-                    $ notif(_("[mcname] утром видел голую Синтию в душе."))
-                    #
                     imgf 910002
-                    bardi_t "Забавно. Совсем недавно я видел свою соседку в душе голой."
-                    bardi_t "А она этого даже не знает..."
+                    if steamVersion == False:
+                        #
+                        $ notif(_("[mcname] утром видел голую Синтию в душе."))
+                        #
+                        bardi_t "Забавно. Совсем недавно я видел свою соседку в душе голой."
+                        bardi_t "А она этого даже не знает..."
+                    else:
+                        w
                     menu:
                         "Классная попка.":
                             # попа Синтии крупным планом
-                            imgd 910041
-                            bardi_t "Эта попка сегодня с утра выглядела привлекательнее!"
-                            imgd 910042
-                            bardi_t "Хотя, в одежде ей тоже хорошо..."
+                            if steamVersion == False:
+                                imgd 910041
+                                bardi_t "Эта попка сегодня с утра выглядела привлекательнее!"
+                                imgd 910042
+                                bardi_t "Хотя, в одежде ей тоже хорошо..."
+                            else:
+                                imgd 910041
+                                w
+                                imgd 910042
+                                w
                         "Красивые ножки.":
                             # попа и ноги Синтии крупным планом
                             imgd 910044
@@ -312,8 +321,8 @@ label ep01_dialogues3_day2_college_1:
                     image videov_Observe_Teacher8_1_25 = Movie(play="video/v_Observe_Teacher8_1_25.mkv", fps=25, loop=False, image="/images/Slides/img_910315.jpg")
                     show videov_Observe_Teacher8_1_25
                     $ renpy.pause(0.5, hard=True)
-                    pause 6.5
-                    img 910315
+                    pause 6.8
+                    imgd 910315
                     w
                     bardi_t "Хмм... А эта преподавательница ничего."
 
