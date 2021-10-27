@@ -31,3 +31,5 @@ define girl1 = Character(_("Незнакомка"), who_color=c_blue) # girl1, �
 define girl2 = Character(_("Незнакомка"), who_color=c_red) # girl2, перед стартом игры
 
 define unknown_writer = Character(_("Неизвестный писатель"), who_color=c_gray, what_color=c_blue) # girl1, перед стартом игры
+
+define girl3 = Character(_("Незнакомка"), who_color=c_pink) # girl3, доп. сцена из жизни в городе
