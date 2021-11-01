@@ -102,7 +102,8 @@ label ep01_dialogues1_start_1a2:
     girl1 "Чтобы получить подсказку по конкретному квесту, тебе просто нужно кликнуть на него в Event List."
     # сворачиваем Event List
     hide screen intro_focus
-    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate
+    call miniMapHouseGenerate()
+ from _rcall_miniMapHouseGenerate
     img 910209
     $ miniMapOpened = False
     show screen hud_screen(hud_presets[hud_preset_current])
@@ -137,7 +138,8 @@ label ep01_dialogues1_start_1ab3:
     hide screen action_menu_screen
     girl2 "Карта города доступна только [на улице] или в твоей комнате."
     girl2 "По мере истории, здесь будет много мест, которые можно посетить."
-    call map_close() from _rcall_map_close
+    call map_close()
+ from _rcall_map_close
     sound open_map
     img 910208
     show screen hud_screen(hud_presets[hud_preset_current])
@@ -265,6 +267,7 @@ label ep01_dialogues1_start_1ab3:
     girl2 "Мне это нравится."
     girl1 "Удачи тебе, [mcname]."
     # девушки откидываются обратно на свои шезлонги
+    label test_video:
     fadeblack 1.5
     music Deeper_For_You
     imgf 910200
@@ -274,23 +277,26 @@ label ep01_dialogues1_start_1ab3:
     girl2 "Думаю, что да... Во время учебы в колледже в городе он стал таким уверенным в себе, целеустремленным."
     girl2 "Он не может так быстро растерять все это."
     girl2 "Парню нужно совсем немного времени и он придет в себя."
-    img 910389
+    imgf 910389
     girl1 "Я уверена, Меган, что у него все получится."
     girl2 "Ну, кто знает... Возможно, в попытках достичь одной цели он приобретет что-то более ценное..."
     girl1 "Возможно..."
     girl1 "Например, откроет для себя новые удовольствия? Что это может быть? Как ты думаешь, Меган?"
-    img 910390
+    sound vjuh3
+    imgd 910390
     girl2 "Хочешь пофантазировать, Лили? Ха-ха!"
     girl1 "Интересно, о чем он сейчас думает?"
     girl2 "Я бы предпочла что-то запретное..."
-    img 910391
+    imgd 910391
+    sound snd_woman_laugh4
     girl2 "Обман, подглядывание, может быть шантаж..."
     girl2 "Хи-хи!"
-    img 910392
+    imgd 910392
     girl1 "А я бы предпочла что-нибудь светлое!"
     girl1 "Ему есть о чем вспомнить!"
     girl1 "Он может быть хорошим Rabbit!"
-    img 910393
+    #sound Jump2
+    imgd 910393
     girl2 "Давай посмотрим?"
     girl1 "Давай!"
     ###
@@ -329,214 +335,395 @@ label ep01_dialogues1_start_1a5:
 
 # сцена из прошлого
 label ep01_dialogues1_start_1b1:
-    scene black_screen
-    with Dissolve(1)
-    music stop
-    call textonblack(t_("НЕДАЛЕКОЕ ПРОШЛОЕ"))
-    scene black_screen
-    with Dissolve(1)
+    fadeblack 1.5
+    #music Step_By_Step
+    music The_Heat
     # номер отеля, где проходила встреча в ФБ Линды и инвестора
     # смотрим глазами Барди
     # он полулежа валяется на кровати, в руке бутылка пива
     # у кровати стоит девушка и пьяно улыбается ему, флиртует
-    img 910321
+    imgfl 910321
     w
-    img 910322
+    imgf 910322
     w
-    img 910320
+    imgd 910320
     w
-    img 910323
+    imgf 910323
     bardi "Эй, детка, не заставляй меня долго ждать..."
 #    bardi "[mcname] хочет увидеть, как ты раздеваешься для него."
     # он делает глоток, другой рукой демонстративно хватает себя за пах
-    img 910324
+    sound snd_drinking_water
+    imgd 910324
     bardi "Начинай!"
     # она пьяно хихикает
-    img 910325
+    imgd 910325
     w
-    img 910324
+    imgd 910324
     w
-    img 910326
+    sound snd_drinking_water
+    imgf 910326
     w
-    img 910327
+    imgd 910327
     girl3 "[mcname], тебе так не терпится?"
     bardi "Мне не терпится увидеть тебя под собой!"
     girl3 "Именно меня?"
     girl3 "Сегодня на вечеринке было много красивых девочек!"
     bardi "Ты знаешь, что ты самая классная!"
-    img 910328
+    imgd 910328
+    sound snd_woman_laugh4
     girl3 "Знаю, хи-хи..."
     # она бросает на пол платье, остается в одном нижнем белье
     # встает в сексуальную позу и призывно улыбается Барди (возможно, обсматривание)
-    img 910329
+    sound vjuh3
+    img 910329 hpunch
     w
-    img 910330
+    sound vjuh3
+    img 910330 vpunch
     w
-    img 910331
+    imgf 910331
     girl3 "Так тебе больше нравится, красавчик?"
     # еще глоток пива
-    img 910332
+    sound snd_drinking_water
+    imgd 910332
     w
-    img 910333
+    imgd 910333
     bardi "Снимай с себя все!"
     bardi "И иди сюда!"
-    img 910334
+    imgd 910334
     bardi "Я кое-что приготовил для тебя."
     # расстегивает ширинку и достает стояк
     # девушка жадно смотрит на его член
-    img 910335
+    sound Jump2
+    img 910335 vpunch
+    sound2 oooh4
     girl3 "Ох!.. Так это правда!.. Я думала, девчонки преувеличивали, когда обсуждали твой..." # указывает пальчиком на стояк Барди
     # Барди садится на кровать, ставит бутылку на пол и хватает девушку за руку, она хихикает
+    sound vjuh3
     img 910336
-    girl3 "Хи-хи-хи..."
+#    girl3 "Хи-хи-хи..."
     bardi "Ну все, хватит болтать!" # дергает ее на себя
     ## возможно стоит добавить фразу типа "Спукайся на пол, сейчас дам тебе попробовать"
     # смена кадра
     # на той же кровати, они оба уже голые
     # она лежит на спине, а Барди нависает над ее лицом, член Барди у нее во рту (может быть та поза, в которой Моника, лежа на столе, делала минет Гарри в квартире у Эбби)
     # он толкается в ее рот
-    img 910337
+    fadeblack 1.0
+    music Stylish_Hip_Hop_Rock
+    imgfl 910337
     w
-    img 910338
+    imgf 910338
     w
-    img 910339
+    imgd 910339
     girl3 "Мммм..."
-    img 910340
-    girl3 "Мпфхфмм..."
-    img 910341
+    sound drkanje5
+    imgd 910340
     w
-    img 910339
+    sound drkanje5
+    imgd 910339
+    w
+    sound drkanje5
+    imgd 910340
+    girl3 "Мпфхфмм..."
+    imgf 910341
+    w
+    imgd 910339
     bardi "О, еее!.."
-    img 910342
+    sound chpok7
+    imgd 910342
     bardi "А еще глубже сможешь, м?"
-    img 910339
+    imgd 910339
     w
-    img 910343
-    girl3 "Мпфхфмм..."
-    bardi "Дааа!.. Ты супер, малышка!.."
-    bardi "Давай еще!.."
-    img 910344
-    girl3 "Мммм..."
+    sound chpok6
+    img 910343 hpunch
     bardi "Оооо..."
-    # выходит из ее рта, она смотрит на него и жадно облизывается
-    img 910345
+    imgf 910344
     w
-    img 910346
+
+    # video
+    # v_MC_Intro1_25
+#    $ localSoundVolume = 1.0
+#    $ localSoundName = v_MC_Intro1_25_sound_name
+#    img black_screen
+#    with diss
+#    stop music2
+#    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+#    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+#    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+#    scene black
+#    image videov_MC_Intro1_25 = Movie(play="video/v_MC_Intro1_25.mkv", fps=25)
+#    show videov_MC_Intro1_25
+#    wclean
+#    girl3 "Мпфхфмм..."
+#    bardi "Дааа!.. Ты супер, малышка!.."
+#    wclean
+#    bardi "Давай еще!.."
+#    girl3 "Мммм..."
+#    wclean
+#    stop music2
+#    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+#    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+
+    # выходит из ее рта, она смотрит на него и жадно облизывается
+    sound chpok7
+    imgd 910345
+    w
+    imgd 910346
+    w
     # смена позы через затемнение
     ## немного титсджоб
-    img 910347
+    sound Jump1
+    img 910347 hpunch
     w
-    img 910348
+    sound vjuh3
+    img 910348 vpunch
     w
-    img 910349
+    imgf 910349
     w
-    img 910350
+    imgd 910350
     w
-    img 910351
+    sound drkanje5
+    imgd 910351
     w
-    img 910352
+    sound drkanje5
+    imgd 910350
+    w
+    sound drkanje5
+    imgd 910351
+    w
+    imgd 910352
+    w
     # Барди на спине, она страстно прыгает на нем
-    img 910353
+    fadeblack 0.5
+    music Stylish_Hip_Hop_Rock
+    imgfl 910353
     w
-    img 910354
+    imgf 910354
     w
-    img 910355
+    imgd 910355
     w
-    img 910356
+    sound chpok6
+    img 910356 hpunch
     w
-    img 910357
+    sound2 woman_moan7
+    imgd 910357
     girl3 "Ооо! Вот это кайф!!!"
-    img 910358
+    imgd 910358
     girl3 "Твой член, какой же он охрененный!"
     girl3 "Он заполняет меня всю! Ооох!"
-    img 910359
+    imgf 910359
     w
-    img 910360
-    bardi "Дааа, детка..."
-    img 910361
+    sound drkanje5
+    imgd 910360
     w
-    img 910362
-    girl3 "Хочу тебя, [mcname]! Еще-еще!"
-    img 910363
+    sound drkanje5
+    imgd 910359
     w
-    img 910364
+    sound drkanje5
+    imgd 910360
     w
-    img 910365
+
+    # video
+    # v_MC_Intro_Sex1
+#    $ localSoundVolume = 1.0
+#    $ localSoundName = v_MC_Intro_Sex1_sound_name
+#    img black_screen
+#    with diss
+#    stop music2
+#    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+#    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+#    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+#    scene black
+#    image videov_MC_Intro_Sex1 = Movie(play="video/v_MC_Intro_Sex1.mkv", fps=30)
+#    show videov_MC_Intro_Sex1
+#    wclean
+#    bardi "Дааа, детка..."
+#    wclean
+#    girl3 "Хочу тебя, [mcname]! Еще-еще!"
+#    wclean
+#    stop music2
+#    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+#    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+    imgf 910361
+    w
+    sound ahhh11
+    imgd 910362
+    w
+    imgd 910363
+    w
+    sound vjuh3
+    img 910364 hpunch
+    w
+    imgd 910365
     bardi "Мммм..."
-    img 910366
+    sound drkanje5
+    imgd 910366
+    w
+    sound drkanje5
+    imgd 910365
+    w
+    sound drkanje5
+    imgd 910366
+    w
+    sound drkanje5
+    imgd 910365
+    w
+    sound drkanje5
+    imgd 910366
     girl3 "Обожаю твой член! Дааа!!!"
-    img 910367
+    sound Jump1
+    img 910367 hpunch
+    sound2 ahhh11
     girl3 "Ооо! Я скоро кончу, [mcname]!"
     # ставит на четвереньки, держа за волосы
     # и начинает вколачиваться в нее, шлепает по попе
     # она кайфует
-    img 910368
+    fadeblack 0.5
+    music Stylish_Hip_Hop_Rock
+    imgf 910368
     w
-    img 910369
+    imgd 910369
     w
-    img 910370
+    sound drkanje5
+    imgd 910370
     w
-    img 910371
+    sound drkanje5
+    imgd 910369
     w
-    img 910372
+    sound drkanje5
+    imgd 910370
+    w
+    sound drkanje5
+    imgd 910369
+    w
+    sound drkanje5
+    imgd 910370
+    w
+    sound vjuh3
+    imgd 910371
+    w
+    sound chpok6
+    img 910372 hpunch
     girl3 "Да! О, да!"
     img 910373
+    sound2 woman_moan15
     girl3 "Вытрахай всю меня, [mcname]!"
-    img 910374
+    imgd 910374
     girl3 "Сделай это! Быстрее!"
-    img 910375
+    sound drkanje5
+    imgd 910375
+    w
+    sound drkanje5
+    imgd 910374
+    w
+    sound drkanje5
+    imgd 910375
+    w
+    sound drkanje5
+    imgd 910374
+    w
+    sound drkanje5
+    imgd 910375
     bardi "Дааа!!!"
-    img 910376
+    imgd 910376
     girl3 "Еще! Оооо!"
-    img 910377
+    sound ahhh11
+    imgd 910377
     girl3 "Оооо!!!"
     # девушка кончает
     img 910376
+    show screen photoshot_screen()
+    with hpunch
+    pause 0.7
+    hide screen photoshot_screen
     girl3 "АААА!!!"
-    girl3 "АААААААА!!!"
     img 910377
+    show screen photoshot_screen()
+    with hpunch
+    pause 0.7
+    hide screen photoshot_screen
+    sound woman_moan14
+    girl3 "АААААААА!!!"
     bardi "О, дааа!!!"
     menu:
         "Кончить в нее.":
             # Барди бурно кончает в нее
-            img 910374
+            imgd 910374
             w
-            img 910375
+            sound drkanje5
+            imgd 910375
             bardi "Дааа!!!"
             img 910378
+            sound bulk1
+            show screen photoshot_screen()
+            with hpunch
+            pause 0.7
+            hide screen photoshot_screen
             bardi "Оооо!!!"
             img 910379
+            sound bulk1
+            show screen photoshot_screen()
+            with hpunch
+            pause 0.7
+            hide screen photoshot_screen
             w
             img 910380
+            sound bulk1
+            show screen photoshot_screen()
+            with hpunch
+            pause 0.7
+            hide screen photoshot_screen
+            sound man moan8
             bardi "О, какой кайф..."
-            img 910382
+            imgd 910382
             w
-            img 910383
+            sound chpok5
+            imgd 910383
+            w
             # она резко распахивает глаза
-            img 910373
+            sound ahhh11
+            imgf 910373
             w
-            img 910381
+            sound Jump2
+            img 910381 hpunch
             girl3 "Эй, [mcname], какого хрена ты не вытащил?!"
             pass
         "Кончить на нее.":
             # Барди бурно кончает на девушку
-            img 910374
+            imgd 910374
             w
-            img 910375
+            sound drkanje5
+            imgd 910375
             w
-            img 910371
+            sound chpok7
+            imgd 910371
             w
             img 910384
+            sound bulk1
+            show screen photoshot_screen()
+            with hpunch
+            pause 0.7
+            hide screen photoshot_screen
             bardi "Дааа!!!"
-            img 910385
+            sound2 chpok5
+            imgd 910385
             w
             img 910386
+            sound bulk1
+            show screen photoshot_screen()
+            with hpunch
+            pause 0.7
+            hide screen photoshot_screen
+            sound man moan8
             bardi "Оооо!!!"
-            img 910387
+            sound2 chpok5
+            imgd 910387
             bardi "О, какой кайф..."
             # она смотрит ему в глаза, вся в сперме
             # подмигивает ему и улыбается
-            img 910388
+            sound ahhh11
+            imgd 910388
             girl3 "О, дааа!.."
             girl3 "Ты лучший, красавчик!.."
             pass
@@ -550,7 +737,8 @@ label ep01_dialogues1_start_1b:
 #    scene black_screen
 #    with Dissolve(1)
 #    music stop
-#    call textonblack(t_("НЕДАЛЕКОЕ БУДУЩЕЕ")) from _rcall_textonblack
+#    call textonblack(t_("НЕДАЛЕКОЕ БУДУЩЕЕ"))
+ from _rcall_textonblack
 #    scene black_screen
 #    with Dissolve(1)
     fadeblack 1.5
@@ -1079,7 +1267,8 @@ label ep01_dialogues1_start_2:
 #    scene black_screen
 #    with Dissolve(1)
 #    music stop
-#    call textonblack(t_("НАСТОЯЩЕЕ ВРЕМЯ")) from _rcall_textonblack_1
+#    call textonblack(t_("НАСТОЯЩЕЕ ВРЕМЯ"))
+ from _rcall_textonblack_1
 #    scene black_screen
 #    with Dissolve(1)
     music2 train_ambience
