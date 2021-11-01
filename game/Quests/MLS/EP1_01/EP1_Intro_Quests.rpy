@@ -32,7 +32,7 @@ label ep1_intro_quests3:
     show screen sprites_hover_dummy_screen()
     call ep01_dialogues1_start_1ab3() from _rcall_ep01_dialogues1_start_1ab3
     $ questHelp("start_1", True)
-    call ep01_dialogues1_start_1b() from _rcall_ep01_dialogues1_start_1b # подглядывание за Оливией и Марком
+#    call ep01_dialogues1_start_1b() from _rcall_ep01_dialogues1_start_1b # подглядывание за Оливией и Марком
     call ep01_dialogues1_start_2() from _rcall_ep01_dialogues1_start_2 # поезд
     call ep01_dialogues1_start_3() from _rcall_ep01_dialogues1_start_3 # вокзал
 

@@ -258,3 +258,26 @@ screen questhelp_screen():
     key "e" action [
         Return(False)
     ]
+
+screen rat_rabbit_choice():
+    zorder 100
+    modal True
+    fixed:
+        imagebutton:
+#            pos(640,560)
+            pos (0.4,0.65)
+            anchor (0.5, 0.5)
+            idle "/images/Icons2/rat_button.png"
+            hover im.MatrixColor("/images/Icons2/rat_button.png", im.matrix.brightness(0.1))
+            action [
+                Return("rat")
+            ]
+        imagebutton:
+#            pos(640,560)
+            pos (0.6,0.65)
+            anchor (0.5, 0.5)
+            idle "/images/Icons2/rabbit_button.png"
+            hover im.MatrixColor("/images/Icons2/rabbit_button.png", im.matrix.brightness(0.1))
+            action [
+                Return("rabbit")
+            ]

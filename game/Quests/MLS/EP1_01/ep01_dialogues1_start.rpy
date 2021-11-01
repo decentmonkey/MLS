@@ -8,7 +8,7 @@ define v_Mark_Sister_Older_Sex2_25_sound_name = "v_Mark_Sister_Older_Sex2_25"
 define v_Mark_Sister_Older_Sex3_sound_name = "v_Mark_Sister_Older_Sex3"
 define v_Mark_Sister_Older_Sex3b_sound_name = "v_Mark_Sister_Older_Sex3b"
 
-
+default intro_choice1 = False
 #call ep01_dialogues1_start_1a() # пляж, показываем геймплей
 #call ep01_dialogues1_start_1b() # подглядывание за Оливией и Марком
 #call ep01_dialogues1_start_2() # поезд
@@ -293,17 +293,26 @@ label ep01_dialogues1_start_1ab3:
     img 910393
     girl2 "Давай посмотрим?"
     girl1 "Давай!"
-    girl2 "Но чтобы ты там себе не представляла... Случится ли это на самом деле или так и останется твоими фантазиями - все зависит только от [mcname]..."
     ###
-    menu:
-        "Светлое.":
-            fadeblack 1.0
-            music2 stop
-            jump ep01_dialogues1_start_1b1
-        "Темное.":
-            fadeblack 1.0
-            music2 stop
-            jump ep01_dialogues1_start_1b
+    label ep01_dialogues1_start_1ab3_loot1:
+    call screen rat_rabbit_choice()
+    if _return != "rat" and _return != "rabbit":
+        jump ep01_dialogues1_start_1ab3_loot1
+
+    imgd 910393
+    girl2 "Но чтобы ты там себе не представляла... Случится ли это на самом деле или так и останется твоими фантазиями - все зависит только от [mcname]..."
+#    menu:
+#        "Светлое.":
+    $ intro_choice1 = _return
+    if _return == "rabbit":
+        fadeblack 1.0
+        music2 stop
+        jump ep01_dialogues1_start_1b1
+#        "Темное.":
+    if _return == "rat":
+        fadeblack 1.0
+        music2 stop
+        jump ep01_dialogues1_start_1b
     return
 
 label ep01_dialogues1_start_1a3:
@@ -532,6 +541,7 @@ label ep01_dialogues1_start_1b1:
             girl3 "Ты лучший, красавчик!.."
             pass
     # затемнение
+    call rrmeter(5, "intro1")
     pause 4.0
     return
 
@@ -1054,6 +1064,7 @@ label ep01_dialogues1_start_1b:
     sound run_stairs_floor
     bardi_t "Черт! Какого хрена?!"
     bardi_t "Я должен был быть на его месте!"
+    call rrmeter(-5, "intro1")
     pause 4.0
     # затемнение, звук быстрых шагов по коридору, бег
     # потом все затихает и сразу резкая смена кадра на поезд
@@ -1064,12 +1075,13 @@ label ep01_dialogues1_start_2:
     # в кадре окно поезда, за окном идет дождь (смотрим глазами Барди)
     # появляется и исчезает надпись на кадре: Некоторое время назад
     # потом поднимается рука (как будто видим свою руку), проводит пальцем по стеклу и снова опускается
-    scene black_screen
-    with Dissolve(1)
-    music stop
-    call textonblack(t_("НАСТОЯЩЕЕ ВРЕМЯ")) from _rcall_textonblack_1
-    scene black_screen
-    with Dissolve(1)
+    fadeblack 1.5
+#    scene black_screen
+#    with Dissolve(1)
+#    music stop
+#    call textonblack(t_("НАСТОЯЩЕЕ ВРЕМЯ")) from _rcall_textonblack_1
+#    scene black_screen
+#    with Dissolve(1)
     music2 train_ambience
 #    img 910221
     scene black_screen
