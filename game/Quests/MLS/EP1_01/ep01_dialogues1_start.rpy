@@ -8,8 +8,14 @@ define v_Mark_Sister_Older_Sex2_25_sound_name = "v_Mark_Sister_Older_Sex2_25"
 define v_Mark_Sister_Older_Sex3_sound_name = "v_Mark_Sister_Older_Sex3"
 define v_Mark_Sister_Older_Sex3b_sound_name = "v_Mark_Sister_Older_Sex3b"
 
-define v_MC_Intro_Sex1_sound_name = "v_Mark_Sister_Older_Sex1_25"
 define v_MC_Intro1_25_sound_name = "v_Mark_Sister_Older_Blowjob1"
+define v_MC_Intro_Titjob1_25_sound_name = "v_Mark_Sister_Older_Licking2"
+define v_MC_Intro_Sex1_sound_name = "v_Mark_Sister_Older_Sex1_25"
+define v_MC_Intro_Sex2_25_sound_name = "v_Mark_Sister_Older_Sex1_25"
+define v_MC_Intro_Sex2b_25_sound_name = "v_Mark_Sister_Older_Sex1_25"
+define v_MC_Intro_Sex2b2_25_sound_name = "v_Mark_Sister_Older_Sex1_25"
+define v_MC_Intro_Sex2c_25_sound_name = "v_Mark_Sister_Older_Sex1_25"
+define v_MC_Intro_Sex3_25_sound_name = "v_Mark_Sister_Older_Sex1_25"
 
 default intro_choice1 = False
 #call ep01_dialogues1_start_1a() # пляж, показываем геймплей
@@ -268,7 +274,6 @@ label ep01_dialogues1_start_1ab3:
     girl2 "Мне это нравится."
     girl1 "Удачи тебе, [mcname]."
     # девушки откидываются обратно на свои шезлонги
-#    label test_video:
     fadeblack 1.5
     music Deeper_For_You
     imgf 910200
@@ -412,6 +417,7 @@ label ep01_dialogues1_start_1b1:
     # на той же кровати, они оба уже голые
     # она лежит на спине, а Барди нависает над ее лицом, член Барди у нее во рту (может быть та поза, в которой Моника, лежа на столе, делала минет Гарри в квартире у Эбби)
     # он толкается в ее рот
+#    label test_video:
     fadeblack 1.0
     music Stylish_Hip_Hop_Rock
     imgfl 910337
@@ -446,27 +452,27 @@ label ep01_dialogues1_start_1b1:
 
     # video
     # v_MC_Intro1_25
-#    $ localSoundVolume = 1.0
-#    $ localSoundName = v_MC_Intro1_25_sound_name
-#    img black_screen
-#    with diss
-#    stop music2
-#    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-#    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
-#    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
-#    scene black
-#    image videov_MC_Intro1_25 = Movie(play="video/v_MC_Intro1_25.mkv", fps=25)
-#    show videov_MC_Intro1_25
-#    wclean
-#    girl3 "Мпфхфмм..."
-#    bardi "Дааа!.. Ты супер, малышка!.."
-#    wclean
-#    bardi "Давай еще!.."
-#    girl3 "Мммм..."
-#    wclean
-#    stop music2
-#    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
-#    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+    $ localSoundVolume = 1.0
+    $ localSoundName = v_MC_Intro1_25_sound_name
+    img black_screen
+    with diss
+    stop music2
+    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+    scene black
+    image videov_MC_Intro1_25 = Movie(play="video/v_MC_Intro1_25.mkv", fps=25)
+    show videov_MC_Intro1_25
+    wclean
+    girl3 "Мпфхфмм..."
+    bardi "Дааа!.. Ты супер, малышка!.."
+    wclean
+    bardi "Давай еще!.."
+    girl3 "Мммм..."
+    wclean
+    stop music2
+    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+    $ renpy.music.set_volume(1.0, 0.5, channel="music")
 
 
     # выходит из ее рта, она смотрит на него и жадно облизывается
@@ -496,7 +502,30 @@ label ep01_dialogues1_start_1b1:
     sound drkanje5
     imgd 910351
     w
-    imgd 910352
+
+    # video
+    # v_MC_Intro_Titjob1_25
+    $ localSoundVolume = 1.0
+    $ localSoundName = v_MC_Intro_Titjob1_25_sound_name
+    img black_screen
+    with diss
+    stop music2
+    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+    play music2 "<from " + str(float(rand(0,4))*1.4) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+    scene black
+    image videov_MC_Intro_Titjob1_25= Movie(play="video/v_MC_Intro_Titjob1_25.mkv")
+    show videov_MC_Intro_Titjob1_25
+    with fade
+    bardi "Оооо..."
+    wclean
+    bardi "Ооо да, детка!"
+    stop music2
+    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+    imgf 910352
     w
     # Барди на спине, она страстно прыгает на нем
     fadeblack 0.5
@@ -505,11 +534,36 @@ label ep01_dialogues1_start_1b1:
     w
     imgf 910354
     w
-    imgd 910355
+
+    stop music2
+    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+    # video
+    # v_MC_Intro_Sex2c_25
+    $ localSoundVolume = 1.0
+    $ localSoundName = v_MC_Intro_Sex2c_25_sound_name
+    img black_screen
+    with diss
+    pause 1.5
+    scene black
+    sound v_MC_Intro_Sex2c_25
+    image videov_MC_Intro_Sex2c_25 = Movie(play="video/v_MC_Intro_Sex2c_25.mkv", fps=25, loop=False, image="/images/Slides/v_MC_Intro_Sex2c_2_end.jpg")
+    show videov_MC_Intro_Sex2c_25
+    $ renpy.pause(0.5, hard=True)
+    pause 6.5
+    img v_MC_Intro_Sex2c_2_end
     w
-    sound chpok6
-    img 910356 hpunch
+    stop music2
+    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+    bardi "Мммм..."
+
+    imgf 910355
     w
+    sound drkanje5
+    imgd 910356
+    w
+
     sound2 woman_moan7
     imgd 910357
     girl3 "Ооо! Вот это кайф!!!"
@@ -530,25 +584,25 @@ label ep01_dialogues1_start_1b1:
 
     # video
     # v_MC_Intro_Sex1
-#    $ localSoundVolume = 1.0
-#    $ localSoundName = v_MC_Intro_Sex1_sound_name
-#    img black_screen
-#    with diss
-#    stop music2
-#    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-#    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
-#    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
-#    scene black
-#    image videov_MC_Intro_Sex1 = Movie(play="video/v_MC_Intro_Sex1.mkv", fps=30)
-#    show videov_MC_Intro_Sex1
-#    wclean
-#    bardi "Дааа, детка..."
-#    wclean
-#    girl3 "Хочу тебя, [mcname]! Еще-еще!"
-#    wclean
-#    stop music2
-#    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
-#    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+    $ localSoundVolume = 1.0
+    $ localSoundName = v_MC_Intro_Sex1_sound_name
+    img black_screen
+    with diss
+    stop music2
+    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+    scene black
+    image videov_MC_Intro_Sex1 = Movie(play="video/v_MC_Intro_Sex1.mkv", fps=30)
+    show videov_MC_Intro_Sex1
+    wclean
+    bardi "Дааа, детка..."
+    wclean
+    girl3 "Хочу тебя, [mcname]! Еще-еще!"
+    wclean
+    stop music2
+    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+    $ renpy.music.set_volume(1.0, 0.5, channel="music")
 
     imgf 910361
     w
@@ -576,11 +630,34 @@ label ep01_dialogues1_start_1b1:
     w
     sound drkanje5
     imgd 910366
-    girl3 "Обожаю твой член! Дааа!!!"
+    w
     sound Jump1
     img 910367 hpunch
-    sound2 ahhh11
+    w
+
+    # video
+    # v_MC_Intro_Sex3_25
+    $ localSoundVolume = 1.0
+    $ localSoundName = v_MC_Intro_Sex3_25_sound_name
+    img black_screen
+    with diss
+    stop music2
+    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+    scene black
+    image videov_MC_Intro_Sex3_25 = Movie(play="video/v_MC_Intro_Sex3_25.mkv", fps=25)
+    show videov_MC_Intro_Sex3_25
+    wclean
+    girl3 "Обожаю твой член! Дааа!!!"
+    wclean
     girl3 "Ооо! Я скоро кончу, [mcname]!"
+    wclean
+    stop music2
+    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+
     # ставит на четвереньки, держа за волосы
     # и начинает вколачиваться в нее, шлепает по попе
     # она кайфует
@@ -593,45 +670,103 @@ label ep01_dialogues1_start_1b1:
     sound drkanje5
     imgd 910370
     w
-    sound drkanje5
-    imgd 910369
-    w
-    sound drkanje5
-    imgd 910370
-    w
-    sound drkanje5
-    imgd 910369
-    w
-    sound drkanje5
-    imgd 910370
-    w
-    sound vjuh3
-    imgd 910371
+
+    # video
+    # v_MC_Intro_Sex2b_25
+    $ localSoundVolume = 1.0
+    $ localSoundName = v_MC_Intro_Sex2b_25_sound_name
+    img black_screen
+    with diss
+    stop music2
+    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+    scene black
+    image videov_MC_Intro_Sex2b_25 = Movie(play="video/v_MC_Intro_Sex2b_25.mkv", fps=25)
+    show videov_MC_Intro_Sex2b_25
+    wclean
+    girl3 "Сделай это! Быстрее!"
+    wclean
+    bardi "Дааа, детка..."
+    wclean
+    stop music2
+    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+    imgf 910371
     w
     sound chpok6
+    sound2 woman_moan15
     img 910372 hpunch
     girl3 "Да! О, да!"
-    img 910373
-    sound2 woman_moan15
+    imgd 910373
+    w
+
+    # video
+    # v_MC_Intro_Sex2_25
+    $ localSoundVolume = 1.0
+    $ localSoundName = v_MC_Intro_Sex2_25_sound_name
+    img black_screen
+    with diss
+    stop music2
+    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+    scene black
+    image videov_MC_Intro_Sex2_25 = Movie(play="video/v_MC_Intro_Sex2_25.mkv", fps=25)
+    show videov_MC_Intro_Sex2_25
+    wclean
     girl3 "Вытрахай всю меня, [mcname]!"
-    imgd 910374
-    girl3 "Сделай это! Быстрее!"
-    sound drkanje5
-    imgd 910375
-    w
-    sound drkanje5
-    imgd 910374
-    w
-    sound drkanje5
-    imgd 910375
-    w
-    sound drkanje5
-    imgd 910374
-    w
-    sound drkanje5
-    imgd 910375
     bardi "Дааа!!!"
-    imgd 910376
+    wclean
+    girl3 "Еще! Оооо!"
+    wclean
+    stop music2
+    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+
+    imgf 910374
+    w
+    sound drkanje5
+    imgd 910375
+    w
+    sound drkanje5
+    imgd 910374
+    w
+    sound drkanje5
+    imgd 910375
+    w
+    sound drkanje5
+    imgd 910374
+    w
+    sound drkanje5
+    imgd 910375
+    w
+
+    # video
+    # v_MC_Intro_Sex2b2_25
+    $ localSoundVolume = 1.0
+    $ localSoundName = v_MC_Intro_Sex2b2_25_sound_name
+    img black_screen
+    with diss
+    stop music2
+    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+    $ renpy.music.set_volume(0.2, 0.5, channel="music")
+    play music2 "<from " + str(float(rand(0,4))*1.4) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+    scene black
+    image videov_MC_Intro_Sex2b2_25= Movie(play="video/v_MC_Intro_Sex2b2_25.mkv")
+    show videov_MC_Intro_Sex2b2_25
+    with fade
+    girl3 "Оооо!!!"
+    wclean
+    bardi "Дааа!!!"
+    stop music2
+    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+    imgf 910376
     girl3 "Еще! Оооо!"
     sound ahhh11
     imgd 910377
