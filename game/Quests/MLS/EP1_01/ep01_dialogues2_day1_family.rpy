@@ -424,11 +424,11 @@ label ep01_dialogues2_day1_family_7:
     # Барди пытается зайти в комнату младшей Синтии
     # клик на ее дверь
     # дверь приоткрывается и выглядывает приветливая мордашка Синтии
-    if steamVersion == True:
-        sound snd_door_locked1
-        pause 1.0
-        call ep01_dialogues2_day1_family_1_6()
-        return False
+#    if steamVersion == True:
+#        sound snd_door_locked1
+#        pause 1.0
+#        call ep01_dialogues2_day1_family_1_6()
+#        return False
     sound snd_door_open1
     fadeblack 1.5
     music Little_Tomcat
