@@ -24,7 +24,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "v1"
+define config.version = "v1.1"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -201,7 +201,7 @@ init python:
     build.classify('**/thumbs.db', None)
     build.classify('**.info', None)
     build.classify('**.DS_Store', None)
-    
+
     ## To archive files, classify them as 'archive'.
 
     # build.classify('game/**.png', 'archive')
