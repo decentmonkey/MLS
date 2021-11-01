@@ -302,21 +302,25 @@ label ep01_dialogues1_start_1ab3:
     girl1 "Давай!"
     ###
     label ep01_dialogues1_start_1ab3_loot1:
-    call screen rat_rabbit_choice()
-    if _return != "rat" and _return != "rabbit":
+    $ interact_data = None
+    show screen rat_rabbit_choice()
+    $ interact_data = ui.interact()
+    if interact_data != "rat" and interact_data != "rabbit":
         jump ep01_dialogues1_start_1ab3_loot1
 
+    sound click1
+    hide screen rat_rabbit_choice
     imgd 910393
     girl2 "Но чтобы ты там себе не представляла... Случится ли это на самом деле или так и останется твоими фантазиями - все зависит только от [mcname]..."
 #    menu:
 #        "Светлое.":
-    $ intro_choice1 = _return
-    if _return == "rabbit":
+    $ intro_choice1 = interact_data
+    if intro_choice1 == "rabbit":
         fadeblack 1.0
         music2 stop
         jump ep01_dialogues1_start_1b1
 #        "Темное.":
-    if _return == "rat":
+    if intro_choice1 == "rat":
         fadeblack 1.0
         music2 stop
         jump ep01_dialogues1_start_1b

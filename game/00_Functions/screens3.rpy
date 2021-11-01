@@ -261,7 +261,12 @@ screen questhelp_screen():
 
 screen rat_rabbit_choice():
     zorder 100
-    modal True
+    button:
+        xfill True
+        yfill True
+        action [
+            Return(False)
+        ]
     fixed:
         imagebutton:
 #            pos(640,560)
