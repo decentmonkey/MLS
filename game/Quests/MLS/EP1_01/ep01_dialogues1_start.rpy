@@ -8,6 +8,9 @@ define v_Mark_Sister_Older_Sex2_25_sound_name = "v_Mark_Sister_Older_Sex2_25"
 define v_Mark_Sister_Older_Sex3_sound_name = "v_Mark_Sister_Older_Sex3"
 define v_Mark_Sister_Older_Sex3b_sound_name = "v_Mark_Sister_Older_Sex3b"
 
+define v_MC_Intro_Sex1_sound_name = "v_Mark_Sister_Older_Sex1_25"
+define v_MC_Intro1_25_sound_name = "v_Mark_Sister_Older_Blowjob1"
+
 default intro_choice1 = False
 #call ep01_dialogues1_start_1a() # пляж, показываем геймплей
 #call ep01_dialogues1_start_1b() # подглядывание за Оливией и Марком
@@ -102,8 +105,7 @@ label ep01_dialogues1_start_1a2:
     girl1 "Чтобы получить подсказку по конкретному квесту, тебе просто нужно кликнуть на него в Event List."
     # сворачиваем Event List
     hide screen intro_focus
-    call miniMapHouseGenerate()
- from _rcall_miniMapHouseGenerate
+    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate
     img 910209
     $ miniMapOpened = False
     show screen hud_screen(hud_presets[hud_preset_current])
@@ -138,8 +140,7 @@ label ep01_dialogues1_start_1ab3:
     hide screen action_menu_screen
     girl2 "Карта города доступна только [на улице] или в твоей комнате."
     girl2 "По мере истории, здесь будет много мест, которые можно посетить."
-    call map_close()
- from _rcall_map_close
+    call map_close() from _rcall_map_close
     sound open_map
     img 910208
     show screen hud_screen(hud_presets[hud_preset_current])
@@ -267,7 +268,7 @@ label ep01_dialogues1_start_1ab3:
     girl2 "Мне это нравится."
     girl1 "Удачи тебе, [mcname]."
     # девушки откидываются обратно на свои шезлонги
-    label test_video:
+#    label test_video:
     fadeblack 1.5
     music Deeper_For_You
     imgf 910200
@@ -738,7 +739,7 @@ label ep01_dialogues1_start_1b:
 #    with Dissolve(1)
 #    music stop
 #    call textonblack(t_("НЕДАЛЕКОЕ БУДУЩЕЕ"))
- from _rcall_textonblack
+# from _rcall_textonblack
 #    scene black_screen
 #    with Dissolve(1)
     fadeblack 1.5
@@ -1268,7 +1269,7 @@ label ep01_dialogues1_start_2:
 #    with Dissolve(1)
 #    music stop
 #    call textonblack(t_("НАСТОЯЩЕЕ ВРЕМЯ"))
- from _rcall_textonblack_1
+# from _rcall_textonblack_1
 #    scene black_screen
 #    with Dissolve(1)
     music2 train_ambience
