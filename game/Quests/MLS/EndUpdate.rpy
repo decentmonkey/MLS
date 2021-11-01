@@ -12,10 +12,14 @@ screen end_update_screen():
                 pos(1920/2, 460)
                 at transform_end_update_text1b
         if steamVersion == True:
-            text ("{a=https://steamcommunity.com/app/1794470/}https://steamcommunity.com/app/1794470/{/a}") style "end_update_text2":
+            text ("This is the Early Access game and it will be updated for free on a regular basis") style "end_update_text2":
                 xanchor 0.5
                 pos(1920/2, 560)
                 at transform_end_update_text2
+            text ("Follow the game news: {a=https://steamcommunity.com/app/1794470/}https://steamcommunity.com/app/1794470/{/a}") style "end_update_text2":
+                xanchor 0.5
+                pos(1920/2, 630)
+                at transform_end_update_text3
 
         if steamVersion == False:
             frame:
@@ -144,7 +148,7 @@ label end_update:
     if steamVersion == False:
         $ renpy.pause(16.0, hard=True)
     else:
-        $ renpy.pause(6.0, hard=True)
+        $ renpy.pause(10.0, hard=True)
     w
     music stop
     scene black
