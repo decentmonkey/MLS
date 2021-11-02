@@ -12,7 +12,7 @@ screen end_update_screen():
                 pos(1920/2, 460)
                 at transform_end_update_text1b
         if steamVersion == True:
-            text ("This is the Early Access game and it will be updated for free on a regular basis") style "end_update_text2":
+            text ("This is the Early Access game. It will get regular free updates in the future") style "end_update_text2":
                 xanchor 0.5
                 pos(1920/2, 560)
                 at transform_end_update_text2
