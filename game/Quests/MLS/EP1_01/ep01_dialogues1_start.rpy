@@ -550,8 +550,8 @@ label ep01_dialogues1_start_1b1:
     image videov_MC_Intro_Sex2c_25 = Movie(play="video/v_MC_Intro_Sex2c_25.mkv", fps=25, loop=False, image="/images/Slides/v_MC_Intro_Sex2c_2_end.jpg")
     show videov_MC_Intro_Sex2c_25
     $ renpy.pause(0.5, hard=True)
-    pause 6.5
-    img v_MC_Intro_Sex2c_2_end
+    pause 7.5
+    imgd v_MC_Intro_Sex2c_2_end
     w
     stop music2
     $ renpy.music.set_volume(1.0, 0.5, channel="music2")
