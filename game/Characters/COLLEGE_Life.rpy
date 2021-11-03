@@ -46,6 +46,7 @@ label college_life_forced:
             # вечер
             set_active("Crowd1", True, scene="college_street")
             set_active("Crowd3", True, scene="college_street")
+            collegeStreetCrowd3_Suffix = 1
             set_active("Crowd7", True, scene="college_street")
             set_active("Crowd9", True, scene="college_street")
             set_active("Crowd10", True, scene="college_street")
