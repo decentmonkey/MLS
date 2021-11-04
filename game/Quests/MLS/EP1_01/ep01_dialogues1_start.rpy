@@ -867,7 +867,7 @@ label ep01_dialogues1_start_1b1:
             girl3 "Ты лучший, красавчик!.."
             pass
     # затемнение
-    call rrmeter(5, "intro1")
+#    call rrmeter(5, "intro1")
     pause 4.0
     return
 
@@ -1391,7 +1391,7 @@ label ep01_dialogues1_start_1b:
     sound run_stairs_floor
     bardi_t "Черт! Какого хрена?!"
     bardi_t "Я должен был быть на его месте!"
-    call rrmeter(-5, "intro1")
+#    call rrmeter(-5, "intro1")
     pause 4.0
     # затемнение, звук быстрых шагов по коридору, бег
     # потом все затихает и сразу резкая смена кадра на поезд
