@@ -2196,9 +2196,9 @@ screen main_menu():
                     style_prefix "navigation"
                     label t__("Language"):
                         text_size gui.resolution.main_menu.font_size1
-                    textbutton "English" action Language("english"):
+                    textbutton "English" + persistent.lang_suffixes["english"] action Language("english"):
                         text_size gui.resolution.main_menu.font_size2
-                    textbutton "German" action Language("german"):
+                    textbutton "German" + persistent.lang_suffixes["german"] action Language("german"):
                         text_size gui.resolution.main_menu.font_size2
     #                textbutton "French" action Language("french"):
     #                    text_size gui.resolution.main_menu.font_size2
@@ -2206,7 +2206,7 @@ screen main_menu():
     #                    text_size gui.resolution.main_menu.font_size2
     #                textbutton "Spanish (beta)" action Language("spanish"):
     #                    text_size gui.resolution.main_menu.font_size2
-                    textbutton "Russian" action Language(None):
+                    textbutton "Russian" + persistent.lang_suffixes[None] action Language(None):
                         text_size gui.resolution.main_menu.font_size2
 
             if language_credits.has_key(str(_preferences.language)) and steamVersion == False:
@@ -2768,12 +2768,12 @@ screen preferences():
                     style_prefix "radio"
 
                     label t__("Language")
-                    textbutton "English" action Language("english")
-                    textbutton "German" action Language("german")
+                    textbutton "English" + persistent.lang_suffixes["english"] action Language("english")
+                    textbutton "German" + persistent.lang_suffixes["german"] action Language("german")
 #                    textbutton "French" action Language("french")
 #                    textbutton "Italian (beta)" action Language("italian")
 #                    textbutton "Spanish (beta)" action Language("spanish")
-                    textbutton "Russian" action Language(None)
+                    textbutton "Russian" + persistent.lang_suffixes[None] action Language(None)
 
 
 style pref_label is gui_label

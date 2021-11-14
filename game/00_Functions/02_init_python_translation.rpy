@@ -1,8 +1,5 @@
-python early:
-    #json.loads(renpy.file("language_dict.json").read())
-    #language_dict2 = json.loads(renpy.file("language_dict2.json").read())
-    #str1 = renpy.file("language_dict.json").read().replace('\r\n', '\n')
-    #hash = hashlib.md5(str1).hexdigest()
+#python early:
+init python:
     language_dict = {}
     list_files = renpy.list_files()
     language_files_list = []
@@ -26,24 +23,27 @@ python early:
             for langLine in languageFile:
                 language_dict[langLine] = languageFile[langLine]
             language_count_all += len(languageFile)
+
+    language_dict_len = len(language_dict)
+    if persistent.lang_suffixes is None or persistent.lang_count != language_dict_len:
+        language_completed_list = [0]*(max(language_fields.values())+1)
+        for lang_line_key, lang_line in language_dict.items():
+            for lang_key, lang_value in language_fields.items():
+                if lang_line[lang_value] != "":
+                    language_completed_list[lang_value] += 1
+        lang_suffixes = {}
+        for lang_key in language_fields:
+            if language_completed_list[language_fields[lang_key]] != language_dict_len:
+                lang_suffixes[lang_key] = " (" + str(int(float(language_completed_list[language_fields[lang_key]]) / float(language_dict_len)*100)) + "%)"
+            else:
+                lang_suffixes[lang_key] = ""
+        persistent.lang_suffixes = lang_suffixes
+        persistent.lang_count = language_dict_len
     languageFile = False
-#    hash2 = hashlib.md5(json.dumps(language_dict)).hexdigest()
-#    test1 = json.dumps(language_dict)
-#    open(config.basedir + "/game/" + "test.json", "wb").write(json.dumps(language_dict))
 
-#    for line in language_dict2:
-#        language_dict[line] = language_dict2[line]
-#    language_dict = renpy.file("language_dict.json").read()
-
-#    open(config.basedir + "/game/update_data.json", "wb").write(str)
     def parse_tstr(str1):
         global item1
         result = re.findall(r'\[(.*?)\]', str1)
-#        str1 = str1.replace("{c}", "{")
-#        str1 = str1.replace("{/c}", "}")
-#        str1 = str1.replace("{", "{c}")
-#        str1 = str1.replace("}", "{/c}")
-#        str1 = str1.replace("{c{/c}", "{c}")
         for var1 in result:
             var2 = var1
             translateVarFlag = False
@@ -63,11 +63,6 @@ python early:
         return str1
     def t_(s):
         return s
-#        global _preferences, language_fields, language_dict
-#        lang = _preferences.language
-#        if language_dict.has_key(s):
-#            s = language_dict[s][language_fields[lang]]
-#        return parse_tstr(s)
     def t__(s):
         global _preferences, language_fields, language_dict
         lang = _preferences.language
