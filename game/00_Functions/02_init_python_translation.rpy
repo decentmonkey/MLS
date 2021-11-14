@@ -25,7 +25,7 @@ init python:
             language_count_all += len(languageFile)
 
     language_dict_len = len(language_dict)
-    if persistent.lang_suffixes is None or persistent.lang_count != language_dict_len:
+    if persistent.lang_suffixes is None or persistent.lang_count != len(json.dumps(language_dict)):
         language_completed_list = [0]*(max(language_fields.values())+1)
         for lang_line_key, lang_line in language_dict.items():
             for lang_key, lang_value in language_fields.items():
@@ -38,7 +38,7 @@ init python:
             else:
                 lang_suffixes[lang_key] = ""
         persistent.lang_suffixes = lang_suffixes
-        persistent.lang_count = language_dict_len
+        persistent.lang_count = len(json.dumps(language_dict))
     languageFile = False
 
     def parse_tstr(str1):
