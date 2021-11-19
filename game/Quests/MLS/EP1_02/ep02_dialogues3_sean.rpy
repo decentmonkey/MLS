@@ -275,7 +275,7 @@ label ep02_dialogues3_sean_3:
             w
             img 900591
             w
-            
+
             teacher_clark "Миссис Кларк просто обожает..."
             teacher_clark "Отсасывать у своих студентов после математики."
             # снова резко и глубоко вбирает в себя член
@@ -656,7 +656,7 @@ label ep02_dialogues3_sean_5b:
     return
 
 # после переписки со шлюхой
-label ep02_dialogues3_sean_5a:
+label ep02_dialogues3_sean_5c:
     # мысли, не рендерить!!
     bardi_t "Вот это прайс у проститутки Бекки!"
     bardi_t "Фак!"

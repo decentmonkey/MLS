@@ -1,66 +1,87 @@
 default mlsBardiDay3SophieMoney1 = 0 # Барди взял у Софи первые 5 долларов (крыса)
 default mlsBardiDay3SophieMoney2 = 0 # Барди взял у Софи первые 5 долларов, пообещав отдать их (кролик)
 
+#call ep02_dialogues1_family_1() # утро, комната Барди, душ
+#call ep02_dialogues1_family_2() # кухня, разговор с Софи
+
 
 # момент, на котором закончился 1-й апдейт
 # комната Барди
 label ep02_dialogues1_family_1:
     # Софи, шикоро раскрыв глаза, удивленно смотрит на оттопыренное одеяло в районе паха Барди
     # он в шоке смотрит на нее (мы всю сцену смотрим глазами Барди)
-    img 900450
+    music Story_of_One_Success_1
+    imgf 900450
     bardi_t "Вот тебе и 'доброе утро', твою мать!"
     # немая пауза
-    img 900451
+    sound vjuh3
+    imgd 900451
     sophie_t "Это?.. О, Боже!"
     sophie_t "Как неловко вышло!.."
     # Софи прикрывает глаза рукой
     # Барди выходит из ступора, садится на кровати, прикрывая стояк рукой
-    img 900452
+    sound vjuh3
+    img 900452 vpunch
     bardi "Софи, я.."
     # она его перебивает, быстро проговорив
-    img 900454
+    music Little_Tomcat
+    imgf 900454
     sophie "[mcname], милый..."
     sophie "Тебе не стоит волноваться из-за этого..."
+    imgd 900455
     sophie "В твоем возрасте это... В общем, это нормально."
     sophie "И мне очень неудобно, что я поставила тебя в такую неловкую ситуацию."
     # неловкая пауза
-    img 900453
+    imgd 900453
     bardi "..."
     sophie "..."
     # Софи смущенно опускает взгляд и говорит
-    img 900455
+    imgd 900455
     sophie "Жду тебя на кухне, милый. Завтрак уже готов."
     # и она быстро выходит из его комнаты, он ей бросает в догонку
-    img 900456
+    imgf 900456
+    sound snd_walk_barefoot
     bardi "Хорошо, Софи."
     # Барди остается один в своей комнате, психует
-    img 900457
+    music Adventures_of_the_Deaf_Dreamer
+    imgd 900457
     bardi_t "Вот какого хрена!?"
     bardi_t "Мне такой сон прикольный снился!.."
     bardi_t "И такой облом!"
     # Барди откидывает одеяло и встает, смотрит на свой стояк
-    img 900458
+    sound snd_walk_barefoot
+    imgf 900458
     bardi_t "С ЭТИМ на кухню точно не стоит идти..."
     bardi_t "Сначала нужно сбросить напряжение."
     bardi_t "Самое время принять душ."
+    fadeblack
+    sound sneaks_1
+    pause 1.5
     # затемнение, шаги
     # смена локации на душ, шум воды
     # Барди стоит в душе голый, со стояком
     # обхватывает стояк рукой и начинает водить по нему
-    img 900471
+    music Adventures_of_the_Deaf_Dreamer
+    music2 snd_shower3
+    imgf 900471
     bardi_t "Здесь мне точно никто не помешает..."
+    imgd 900472
     w
-    img 900472
+    sound drkanje5
+    imgd 900473
     w
-    img 900473
+    sound drkanje5
+    imgd 900474
     w
-    img 900474
+    sound drkanje5
+    imgd 900473
     w
-    img 900472
+    sound drkanje5
+    imgd 900472
     w
-    img 900473
+    sound drkanje5
+    imgd 900473
     w
-    img 900474
     menu:
         "Оливия." if mlsBardiDay2Family2 > 0:
             # у него перед глазами возникает голая Оливия (с ним в душе)
@@ -71,65 +92,104 @@ label ep02_dialogues1_family_1:
             $ notif(_("[mcname] подсматривал за Оливией в душе."))
             #
             # Оливия пошло улыбается ему и подмигивает
-            img 900475
+            music Stylish_Hip_Hop_Rock
+            imgf 900475
             olivia "[mcname], пошалим немного, пока Софи не видит?"
-            img 900476
+            sound vjuh3
+            imgd 900476
             olivia "Мне так нравится твой член..."
             # она водит рукой по члену, прикасаясь к головке
-            img 900477
+            sound drkanje5
+            imgd 900477
             olivia "Мммм..."
-            img 900476
+            sound drkanje5
+            imgd 900476
+            w
+            sound drkanje5
+            imgd 900477
+            w
+            sound drkanje5
+            imgd 900476
             olivia "Он такой большой и твердый..."
-            img 900477
+            sound drkanje5
+            imgd 900477
+            w
             # Оливия пристально смотрит на лицо Барди и пошло улыбается
-            img 900478
+            imgf 900478
             olivia "Я вижу, как ты хочешь меня, [mcname]..."
             olivia "Хочешь прикасаться ко мне... Целовать меня..."
-            img 900479
+            imgd 900479
             bardi "Даа..."
-            img 900478
+            imgd 900478
             olivia "Хочешь трахнуть меня?.."
-            img 900480
+            imgd 900480
             bardi "О, даа!.."
-            img 900481
+            imgd 900481
             olivia "Мммм... Да, я вижу, как ты этого хочешь."
             # лицо Оливии приближается к Барди и она томно шепчет
-            img 900482
+            imgf 900482
             w
-            img 900483
+            imgd 900483
             olivia "А я хочу, чтобы ты кончил, [mcname]..."
             # Барди смотрит вниз на свой член, как рука Оливии двигается по нему
-            img 900484
+            imgf 900484
             olivia "Сделай это... Ну давай же..."
-            img 900485
+            sound drkanje5
+            imgd 900485
             w
-            img 900484
+            sound drkanje5
+            imgd 900484
             w
-            img 900485
+            sound drkanje5
+            imgd 900485
             w
-            img 900484
+            sound drkanje5
+            imgd 900484
+            w
             # Барди поднимает глаза на лицо Оливии и внезапно вместо него видит лицо Софи (лицо крупным планом, тела не видно)
-            img 900486
+            sound vjuh3
+            img 900486 vpunch
             sophie "Сделай это для меня, [mcname]..."
             # Барди при ее появлении бурно кончает
             img 900487
+            sound bulk1
+            show screen photoshot_screen()
+            with hpunch
+            pause 0.7
+            hide screen photoshot_screen
+            w
+            sound bulk1
+            show screen photoshot_screen()
+            with hpunch
+            pause 0.7
+            hide screen photoshot_screen
             bardi "Оооо!.."
             bardi "ОООООО!!!"
             img 900486
+            sound bulk1
+            show screen photoshot_screen()
+            with hpunch
+            pause 0.7
+            hide screen photoshot_screen
+            sound man moan8
             bardi "О, ЧЕЕЕРТ!!!"
-            # Софи улыбается и исчезает, Барди снова один в душе, психует
-            img 900489
+            sound2 chpok5
+            img 900488
             w
-            img 900490
+            # Софи улыбается и исчезает, Барди снова один в душе, психует
+            imgf 900489
+            w
+            music Adventures_of_the_Deaf_Dreamer_short
+            imgd 900490
             bardi_t "Да что за хрень со мной происходит?!"
             bardi_t "Фак!!!"
             # смотрит вниз на свой опавший член, он в ступоре
-            img 900491
+            imgd 900491
             bardi_t "..."
             bardi_t "....."
             bardi_t "Что это было сейчас?!"
             bardi_t "Я же не мог так отреагировать на появление Софи?.."
-            img 900492
+            imgf 900492
             bardi_t "Или..."
             bardi_t "Да твою мать! Что за идиотские мысли?"
             bardi_t "Конечно, не мог! Что за бред?!"
@@ -147,81 +207,111 @@ label ep02_dialogues1_family_1:
             $ notif(_("[mcname] в колледже общался с Роуз."))
             #
             # Роуз смущена
-            img 900493
+            music Stylish_Hip_Hop_Rock
+            imgf 900493
             student_rose "[mcname], а ты уверен, что Софи нас не застанет?"
             student_rose "Это будет крайне неловко для меня..."
             # она опускает взгляд и смотрит на его член, водит рукой по нему
-            img 900494
+            imgd 900494
             w
-            img 900495
+            sound vjuh3
+            imgd 900495
             student_rose "Мне так нравится прикасаться к твоему члену."
-            img 900496
+            imgd 900496
             student_rose "А тебе нравится, как я делаю это?"
-            img 900497
+            imgf 900497
             bardi "Да, Роуз... Главное, не останавливайся..."
             # Роуз снова поднимает лицо и смотрит на лицо Барди
-            img 900498
+            imgd 900498
             student_rose "Хи-хи. Я стараюсь, [mcname]."
-            img 900499
+            imgd 900499
             bardi "Обхвати его сильнее, Роуз."
             # Роуз вновь смотрит на член
-            img 900500
+            imgf 900500
             student_rose "Вот так?"
-            img 900501
+            sound drkanje5
+            imgd 900501
             bardi "Даа!.. И двигай быстрее рукой."
-            img 900502
+            sound drkanje5
+            imgd 900502
             student_rose "Ох, еще быстрее? Сейчас."
-            img 900501
+            sound drkanje5
+            imgd 900501
             w
-            img 900500
+            sound drkanje5
+            imgd 900500
             w
-            img 900501
+            sound drkanje5
+            imgd 900501
             w
-            img 900502
+            sound drkanje5
+            imgd 900502
             w
-            img 900501
+            sound drkanje5
+            imgd 900501
             w
-            img 900502
+            sound drkanje5
+            imgd 900502
             w
-            img 900503
+            imgf 900503
             student_rose "Вот так хорошо?"
             bardi "Мммм... Еще!.."
             # Роуз снова смотрит на лицо Барди
             # Барди смотрит вниз на свой член, как рука Роуз двигается по нему
-            img 900498
+            imgd 900498
             student_rose "Я все правильно делаю, [mcname]?"
             # Барди фокусируется на своем члене и руке на нем, не смотрит на лицо
-            img 900504
+            imgd 900504
             student_rose "Думаю, что все правильно. Ты совсем скоро кончишь..."
-            img 900505
+            sound drkanje5
+            imgd 900505
             w
-            img 900504
+            sound drkanje5
+            imgd 900504
             w
-            img 900505
+            sound drkanje5
+            imgd 900505
             w
-            img 900504
+            sound drkanje5
+            imgd 900504
+            w
             # Барди переводит фокус на лицо Роуз и внезапно вместо него видит лицо Софи  (лицо крупным планом, тела не видно)
-            img 900486
+            sound vjuh3
+            img 900486 vpunch
             sophie "Сделай это для меня, [mcname]..."
             # Барди при ее появлении бурно кончает
             img 900506
+            sound bulk1
+            show screen photoshot_screen()
+            with hpunch
+            pause 0.7
+            hide screen photoshot_screen
+            w
+            sound bulk1
+            show screen photoshot_screen()
+            with hpunch
+            pause 0.7
+            hide screen photoshot_screen
+            sound man moan8
             bardi "Оооо!.."
             bardi "ОООООО!!!"
+            sound2 chpok5
             img 900507
             bardi "О, ЧЕЕЕРТ!!!"
             # Софи улыбается и исчезает, Барди снова один в душе, психует
-            img 900489
+            imgf 900489
             w
-            img 900490
+            music Adventures_of_the_Deaf_Dreamer_short
+            imgd 900490
             bardi_t "Да что за хрень со мной происходит?!"
             bardi_t "Фак!!!"
             # смотрит вниз на свой опавший член, он в ступоре
-            img 900491
+            imgd 900491
             bardi_t "..."
             bardi_t "....."
             bardi_t "Что это было сейчас?!"
             bardi_t "Я же не мог так отреагировать на появление Софи?.."
-            img 900492
+            imgf 900492
             bardi_t "Или..."
             bardi_t "Да твою мать! Что за идиотские мысли?"
             bardi_t "Конечно, не мог! Что за бред?!"
@@ -239,79 +329,112 @@ label ep02_dialogues1_family_1:
             $ notif(_("[mcname] в колледже познакомился с миссис Морис."))
             #
             # училка игриво улыбается и смотрит в глаза снизу вверх
-            img 900508
+            music Stylish_Hip_Hop_Rock
+            imgf 900508
             teacher_morris "[mcname], мне так нравится, когда ты такой возбужденный..."
             teacher_morris "Меня так заводит это..."
-            img 900509
+            imgd 900509
+            w
             # она опускает взгляд и смотрит на его член, водит рукой по нему
-            img 900510
+            imgd 900510
             teacher_morris "Может, в следующий раз попробуем сделать это в кабинете живописи?"
-            img 900511
+            imgf 900511
             teacher_morris "Останешься после занятий, мы закроем дверь и уединимся с тобой..."
             bardi "Да, миссис Морис..."
             # училка смотрит на его член
             # медленно приближает к нему лицо и облизывает головку языком
-            img 900512
+            imgd 900512
             teacher_morris "Мммм... Как же мне нравится твой член."
-            img 900513
+            sound vjuh3
+            imgd 900513
             teacher_morris "Такой твердый, такой горячий..."
-            img 900514
+            sound lick3
+            imgd 900514
+            w
             # еще раз проводит языком
-            img 900515
+            imgf 900515
             bardi "Даа!.. Еще!.."
-            img 900516
+            sound lick3
+            imgd 900516
             w
-            img 900517
+            sound lick3
+            imgd 900517
+            w
             # она продолжает работать рукой
-            img 900518
+            imgf 900518
             w
-            img 900508
+            imgd 900508
             teacher_morris "Тебе нравится?"
-            img 900519
+            imgd 900519
             bardi "Даа... О, даа!.."
-            img 900520
+            imgf 900520
             teacher_morris "Хочешь заняться чем-то более интимным со мной, [mcname]?."
             # училка снова смотрит на лицо Барди
             # Барди смотрит вниз на свой член, как рука училки двигается по нему
-            img 900521
+            imgd 900521
             teacher_morris "Мммм... Да, я вижу, как ты этого хочешь."
-            img 900522
+            sound drkanje5
+            imgd 900522
+            w
             # Барди фокусируется на своем члене и руке на нем, не смотрит на лицо
-            img 900523
+            sound drkanje5
+            imgd 900523
             w
-            img 900522
+            sound drkanje5
+            imgd 900522
             teacher_morris "А я хочу, чтобы ты кончил, [mcname]..."
-            img 900521
+            sound drkanje5
+            imgd 900521
             w
-            img 900522
+            sound drkanje5
+            imgd 900522
             w
-            img 900523
+            sound drkanje5
+            imgd 900523
             w
-            img 900522
+            sound drkanje5
+            imgd 900522
             w
-            img 900521
+            sound drkanje5
+            imgd 900521
+            w
             # Барди переводит фокус на лицо училки и внезапно вместо него видит лицо Софи (лицо крупным планом, тела не видно)
-            img 900486
+            sound vjuh3
+            img 900486 vpunch
             sophie "Сделай это для меня, [mcname]..."
             # Барди при ее появлении бурно кончает
             img 900524
+            sound bulk1
+            show screen photoshot_screen()
+            with hpunch
+            pause 0.7
+            hide screen photoshot_screen
+            w
+            sound bulk1
+            show screen photoshot_screen()
+            with hpunch
+            pause 0.7
+            hide screen photoshot_screen
+            sound man moan8
             bardi "Оооо!.."
             bardi "ОООООО!!!"
+            sound2 chpok5
             img 900525
             bardi "О, ЧЕЕЕРТ!!!"
             # Софи улыбается и исчезает, Барди снова один в душе, психует
-            img 900489
+            imgf 900489
             w
-            img 900490
+            music Adventures_of_the_Deaf_Dreamer_short
+            imgd 900490
             bardi_t "Да что за хрень со мной происходит?!"
             bardi_t "Фак!!!"
             # смотрит вниз на свой опавший член, он в ступоре
-            img 900491
+            imgd 900491
             bardi_t "..."
             bardi_t "....."
             bardi_t "Что это было сейчас?!"
             bardi_t "Я же не мог так отреагировать на появление Софи?.."
-            img 900492
+            imgf 900492
             bardi_t "Или..."
             bardi_t "Да твою мать! Что за идиотские мысли?"
             bardi_t "Конечно, не мог! Что за бред?!"
@@ -321,6 +444,8 @@ label ep02_dialogues1_family_1:
             pass
         "Миссис Морис ([mcname] нагрубил Гарри и не разговаривал с миссис Морис) (disabled)" if mlsBardiFirstDayCollege1 == 0:
             pass
+    music2 stop
+    fadeblack 1.5
     # шум воды прекращается - Барди выключает душ
     # затемнение
     # квест-лог "Идти на кухню."
@@ -330,54 +455,58 @@ label ep02_dialogues1_family_1:
 label ep02_dialogues1_family_2:
     # Барди заходит на кухню, Софи стоит там у столешницы
     # при клике на нее (она все еще немного смущена)
-    img 900459
+    music Little_Tomcat
+    imgf 900459
     sophie "[mcname], ты так долго..."
     sophie "Завтракай и бегом в колледж, иначе ты опоздаешь."
-    img 900058
+    imgd 900058
     bardi "Хорошо, Софи."
-    img 900460
+    imgd 900460
     sophie "Я еще хотела сказать..."
     sophie "Может быть, это не совсем удобно для тебя, что я бужу тебя по утрам, [mcname]?"
-    img 900461
+    imgd 900461
     bardi_t "Черт!.. Она снова об этом."
     bardi_t "Нужно сделать вид, что ничего особого не произошло."
     bardi_t "В том числе, и в душевой..."
     bardi "Все окей, Софи."
     bardi "Будильник вряд ли справится с этой сложной задачей."
     # Софи улыбается ему
-    img 900057
+    imgd 900057
     sophie "Хорошо, милый."
     # она прикасается к его лицу
-    img 900462
+    sound snd_walk_barefoot
+    imgf 900462
     sophie "Как твой синяк? Не болит?"
-    img 900463
+    imgd 900463
     bardi "Не-а."
     # если солгал Софи про синяк
     if mlsBardiDay2Family1 > 0:
         #
         $ notif(_("[mcname] солгал Софи и сказал, что ударился о шкафчик."))
         #
-        img 900464
+        imgd 900464
         sophie "Ты поаккуратнее сегодня с этим коварным шкафчиком в колледже."
-        img 900463
+        imgd 900463
         bardi "Хорошо, Софи."
     # если сказал правду про синяк
     else:
-        img 900464
+        imgd 900464
         sophie "Если этот хулиган Гарри и дальше тебя будет доставать..."
-        img 900463
+        imgd 900463
         bardi "Перестань беспокоиться об этом, Софи. Я сам с ним разберусь."
     # она улыбается и треплет его по волосам
-    img 900464
+    imgd 900464
     sophie "Надеюсь, тебя ждет удачный день."
     sophie "Ох, я чуть не забыла!"
     # она берет со столешницы или из кармана халата купюру и протягивает ее Барди
-    img 900465
+    sound swish
+    imgf 900465
     w
-    img 900466
+    sound vjuh3
+    imgd 900466
     sophie "Вот твои пять долларов, о которых мы вчера говорили."
     # Барди смотрит на руку Софи с зажатой купюрой
-    img 900467
+    imgd 900467
     bardi_t "По ее реакции за ужином было понятно, что эти пять баксов для нее совсем не лишние."
     bardi_t "..."
     $ menu_rr = {
@@ -386,45 +515,46 @@ label ep02_dialogues1_family_2:
     }
     menu:
         "Мне эти деньги нужнее.": # (+Rat)
-            img 900467
+            imgd 900467
             bardi_t "Но мне эти деньги нужнее."
             bardi_t "Притом, что такое пять баксов? Это же ерунда..."
             # Барди протягивает руку и забирает деньги
-            img 900468
+            imgf 900468
             bardi "Спасибо, Софи."
-            img 900056
+            imgd 900056
             bardi "Следующие пять баксов будут через неделю?"
             # она смущенно улыбается
-            img 900469
+            imgd 900469
             sophie "Да, [mcname]. Я смогу дать тебе еще денег не раньше, чем через неделю..."
-            img 900056
+            imgd 900056
             bardi "Окей."
             $ mlsBardiDay3SophieMoney1 = day # Барди взял у Софи первые 5 долларов (крыса)
             pass
         "Взять в долг.": # (+Rabbit)
-            img 900467
+            imgd 900467
             bardi_t "Но мне они тоже нужны. Мне нужно собирать деньги на билет..."
             bardi_t "Я могу сейчас взять эти деньги в долг."
             # Барди протягивает руку и забирает деньги
-            img 900468
+            imgf 900468
             bardi "Софи, я тут подумал..."
-            img 900056
+            imgd 900056
             bardi "Если у Генри получится договориться о моей подработке..."
             bardi "То я тебе отдам эти пять долларов, когда заработаю денег."
             # Софи умиляется
-            img 900469
+            imgd 900469
             sophie "Хорошо, [mcname]."
             sophie "[mcname], как же ты повзрослел..."
             $ mlsBardiDay3SophieMoney2 = day # Барди взял у Софи первые 5 долларов, пообещав отдать их (кролик)
             pass
     # + 5 баксов у Барди
-    img 900056
+    imgd 900056
     bardi "До вечера, Софи."
-    img 900057
+    imgd 900057
     sophie "До вечера, милый."
     # она снова ему мило улыбается и принимается что-то делать на кухне
+    sound snd_walk_barefoot
+    imgf 900470
     if mlsBardiDay3SophieMoney1 > 0:
-        img 900470
         bardi_t "Еее! Первые деньги на билет уже в кармане. Начало положено!"
     bardi_t "Надо бы вечером поинтересоваться у Генри про подработку в велопрокате..."
     # квест-лог "Идти в колледж."
