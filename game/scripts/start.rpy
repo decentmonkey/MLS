@@ -82,7 +82,6 @@ label start: #for blink here
 #########
 
 #    call ep02_dialogues1_family_1() # утро, комната Барди, душ
-#    call ep02_dialogues1_family_2() # кухня, разговор с Софи
 
 
 #########
