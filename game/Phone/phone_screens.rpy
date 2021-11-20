@@ -269,6 +269,10 @@ screen phone_chat_live_screen():
                     yanchor 1.0
                     yalign 1.0
                     for chat_line in phone_current_chat:
+                        python:
+                            speaker = chat_line[0]
+                            if speaker == "":
+                                speaker = "bardi"
                         if chat_line[0] == "" or chat_line[0] == "bardie" or chat_line[0] == "bardie_t":
                             # говорим мы
                             button:
@@ -284,7 +288,7 @@ screen phone_chat_live_screen():
                                         xsize 250
                                         fit "cover"
                                 else:
-                                    text t__(chat_line[1]) style "phone_chatting_bubble_right":
+                                    text t__(chat_line[1], speaker) style "phone_chatting_bubble_right":
     #                                    justify True
                                         xmaximum 250
                         else:
@@ -301,7 +305,7 @@ screen phone_chat_live_screen():
                                         xsize 250
                                         fit "cover"
                                 else:
-                                    text t__(chat_line[1]) style "phone_chatting_bubble_left":
+                                    text t__(chat_line[1], speaker) style "phone_chatting_bubble_left":
 #                                    justify True
                                         xmaximum 250
                     null ysize 10
@@ -434,6 +438,10 @@ screen phone_open_history_chat_screen():
                     yalign 1.0
                     null ysize 20
                     for chat_line in phone_current_chat:
+                        python:
+                            speaker = chat_line[0]
+                            if speaker == "":
+                                speaker = "bardi"
                         if chat_line[0] == "" or chat_line[0] == "bardie" or chat_line[0] == "bardie_t":
                             # говорим мы
                             button:
@@ -448,7 +456,7 @@ screen phone_open_history_chat_screen():
                                         xsize 250
                                         fit "cover"
                                 else:
-                                    text t__(chat_line[1]) style "phone_chatting_bubble_right":
+                                    text t__(chat_line[1], speaker) style "phone_chatting_bubble_right":
     #                                    justify True
                                         xmaximum 250
                         else:
@@ -464,7 +472,7 @@ screen phone_open_history_chat_screen():
                                         xsize 250
                                         fit "cover"
                                 else:
-                                    text t__(chat_line[1]) style "phone_chatting_bubble_left":
+                                    text t__(chat_line[1], speaker) style "phone_chatting_bubble_left":
 #                                    justify True
                                         xmaximum 250
                     null ysize 10

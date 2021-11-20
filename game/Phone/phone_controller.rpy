@@ -449,6 +449,10 @@ label phone_chat_loop1:
             message_pause = 0.3
         phone_typing = True
 
+        last_dialogue_character = chat_line[0]
+        if last_dialogue_character == "":
+            last_dialogue_character = "bardie"
+
     if chat_line[0] == "" or chat_line[0] == "bardie" or chat_line[0] == "bardie_t":
         sound iphone_typing
         $ phone_typing_name = "[mcname]"
@@ -494,6 +498,7 @@ label phone_chat_loop2:
 
 label phone_chat_menu(chat_menu):
     $ phone_close_enabled = False
+    $ last_dialogue_character = "bardie"
     call screen phone_live_chat_menu_screen(chat_menu)
     $ phone_close_enabled = True
     return _return

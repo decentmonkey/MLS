@@ -21,7 +21,10 @@ init python:
             language_flag1 = True
         else:
             for langLine in languageFile:
-                language_dict[langLine] = languageFile[langLine]
+                langLine1 = langLine
+                if "_!_" not in langLine1:
+                    langLine1 = langLine1 + "_!_" + languageFile[langLine][0]
+                language_dict[langLine1] = languageFile[langLine]
             language_count_all += len(languageFile)
 
     language_dict_len = len(language_dict)
@@ -63,45 +66,71 @@ init python:
         return str1
     def t_(s):
         return s
-    def t__(s):
-        global _preferences, language_fields, language_dict
+    def t__(s, speaker = None):
+        global _preferences, language_fields, language_dict, last_dialogue_character
+        if speaker == None:
+            speaker = last_dialogue_character
         lang = _preferences.language
         if language_fields.has_key(lang) == False:
             lang = "english"
         st = s
-        if language_dict.has_key(s):
-            st = language_dict[s][language_fields[lang]]
+        sKey = s
+        if language_dict.has_key(s + "_!_" + speaker):
+            sKey = s + "_!_" + speaker
+        else:
+            if language_dict.has_key(s):
+                sKey = s
+            else:
+                sKey = False
+        if sKey:
+            st = language_dict[sKey][language_fields[lang]]
             if st == "":
-                st = language_dict[s][language_fields["english"]]
+                st = language_dict[sKey][language_fields["english"]]
                 if st == "":
                     st = s
             st = st.split("#")[0]
         return parse_tstr(st)
 
     def ts__(s):
-        global _preferences, language_fields, language_dict
+        global _preferences, language_fields, language_dict, last_dialogue_character
         lang = _preferences.language
         st = s
-        if language_dict.has_key(s):
-            st = language_dict[s][language_fields[lang]]
+        sKey = s
+        if language_dict.has_key(s + "_!_" + last_dialogue_character):
+            sKey = s + "_!_" + last_dialogue_character
+        else:
+            if language_dict.has_key(s):
+                sKey = s
+            else:
+                sKey = False
+        if sKey:
+            st = language_dict[sKey][language_fields[lang]]
             if st == "":
-                st = language_dict[s][language_fields["english"]]
+                st = language_dict[sKey][language_fields["english"]]
                 if st == "":
                     st = s
             st = st.split("#")[0]
         return parse_tstr(st)
 
     def t___(s):
-        global _preferences, language_fields, language_dict
+        global _preferences, language_fields, language_dict, last_dialogue_character
         s = re.sub(r'(\n\s*)', " ", s)
         lang = _preferences.language
         if language_fields.has_key(lang) == False:
             lang = "english"
         st = s
-        if language_dict.has_key(s):
-            st = language_dict[s][language_fields[lang]]
+        sKey = s
+        if language_dict.has_key(s + "_!_" + last_dialogue_character):
+            sKey = s + "_!_" + last_dialogue_character
+        else:
+            if language_dict.has_key(s):
+                sKey = s
+            else:
+                sKey = False
+        if sKey:
+            st = language_dict[sKey][language_fields[lang]]
             if st == "":
-                st = language_dict[s][language_fields["english"]]
+                st = language_dict[sKey][language_fields["english"]]
                 if st == "":
                     st = s
             st = st.split("#")[0]
