@@ -33,7 +33,7 @@ init python:
         language_completed_list = [0]*(max(language_fields.values())+1)
         for lang_line_key, lang_line in language_dict.items():
             for lang_key, lang_value in language_fields.items():
-                if lang_value < language_dict_fields_len:
+                if lang_value < len(lang_line):
                     if lang_line[lang_value] != "":
                         language_completed_list[lang_value] += 1
         lang_suffixes = {}
