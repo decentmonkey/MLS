@@ -1,5 +1,5 @@
 python early:
-    language_fields = {None:1, "english":2, "german":3, "spanish":4, "chinese":5, "french":6, "turkish":7, "italian":8, "ukrainian":9, "hungary":10}
+    language_fields = {None:1, "english":2, "german":3, "spanish":4, "chinese":5, "french":6, "turkish":7, "italian":8, "ukrainian":9, "hungarian":10}
 
     language_credits = {
         "english": "Thanks for the English translation to\n[Aesthetic Dialectic] & [bambam]",
