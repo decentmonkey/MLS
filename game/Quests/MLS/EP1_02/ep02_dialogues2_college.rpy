@@ -8,6 +8,8 @@ default mlsBardiDay3College4 = 0 # Барди опубликовал фотку 
 default mlsBardiDay3College5 = 0 # Барди, убегая от Гарри, выбрал женский туалет
 default mlsBardiDay3College6 = 0 # Барди, убегая от Гарри, выбрал раздевалку для девочек
 default mlsBardiDay3College7 = 0 # Барди не стал убегать от Гарри
+default mlsBardiDay3College8 = 0 # Барди переписывался с Шоном в колледже
+
 
 # при клике на локацию Колледж на карте города
 label ep02_dialogues2_college_1:
@@ -30,6 +32,7 @@ label ep02_dialogues2_college_2:
     sean "Все, мне пора. Спишемся позже."
     bardi "Окей. Ты меня заинтриговал, бро."
     sean ";)"
+    $ mlsBardiDay3College8 = day # Барди переписывался с Шоном в колледже
     return
 
 # Барди заходит в колледж

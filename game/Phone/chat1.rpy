@@ -81,8 +81,7 @@ label sean_chat1:
 
     if _return == 1:
         bardi_t "Позже ему отвечу."
-    call ep1_college5_college_init_sean()
- from _rcall_ep1_college5_college_init_sean
+    call ep1_college5_college_init_sean() from _rcall_ep1_college5_college_init_sean
     return
 
 label sean_chat2:
