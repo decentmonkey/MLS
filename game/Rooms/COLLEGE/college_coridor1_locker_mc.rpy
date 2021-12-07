@@ -19,9 +19,9 @@ label college_coridor1_locker_mc_init:
 
 label college_coridor1_locker_mc_environment:
     if obj_name == "Teleport_Coridor1":
-        call change_scene("college_coridor1", "Fade_long", "school_locker_close") from _rcall_change_scene_31
+        call change_scene("college_coridor1", "Fade_long", "school_locker_close") from _rcall_change_scene_31
         return
     if obj_name == "Bunny":
-        call ep01_dialogues3_day2_college_15b() from _rcall_ep01_dialogues3_day2_college_15b
+        call ep01_dialogues3_day2_college_15b() from _rcall_ep01_dialogues3_day2_college_15b
         $ open_secret_object("Bunny")
     return

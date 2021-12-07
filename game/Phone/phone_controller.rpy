@@ -83,12 +83,12 @@ label phone_open:
     hide screen phone_icon_focus
     sound metal_slide
     if phone_inited == False:
-        call phone_init() from _rcall_phone_init
-        call phone_contacts1() from _rcall_phone_contacts1
-    call process_hooks("phone_open", "phone") from _rcall_process_hooks_21
+        call phone_init() from _rcall_phone_init
+        call phone_contacts1() from _rcall_phone_contacts1
+    call process_hooks("phone_open", "phone") from _rcall_process_hooks_21
     $ phone_menu_active = "main"
     $ phone_orientation = 0
-    call phone_controller() from _rcall_phone_controller
+    call phone_controller() from _rcall_phone_controller
     return
 
 label phone_open_menu(menu_active):
@@ -96,13 +96,13 @@ label phone_open_menu(menu_active):
     $ phoneNewForced = False
     $ phone_icon_flashing = False
     if phone_inited == False:
-        call phone_init() from _rcall_phone_init_1
-        call phone_contacts1() from _rcall_phone_contacts1_1
-    call process_hooks("phone_open", "phone") from _rcall_process_hooks_22
+        call phone_init() from _rcall_phone_init_1
+        call phone_contacts1() from _rcall_phone_contacts1_1
+    call process_hooks("phone_open", "phone") from _rcall_process_hooks_22
 #    $ phone_menu_active = "main"
     $ phone_menu_active = menu_active
     $ phone_orientation = 0
-    call phone_controller() from _rcall_phone_controller_1
+    call phone_controller() from _rcall_phone_controller_1
     return
 
 label phone_incoming_call:
@@ -111,7 +111,7 @@ label phone_incoming_call:
     $ obj_name = phone_incoming_call_name
     $ phone_contact = phone_get_contact_by_contact_name(obj_name)
     $ phone_menu_active = "calling_screen"
-    call process_hooks("before_call_contact", "phone") from _rcall_process_hooks_23
+    call process_hooks("before_call_contact", "phone") from _rcall_process_hooks_23
     if _return == False:
         $ phone_menu_active = "main"
         jump phone_open_loop1
@@ -122,12 +122,12 @@ label phone_incoming_call:
     pause 1.0
     $ phone_menu_active = "chat_live"
     $ phone_current_chat = []
-    call process_hooks("call_contact", "phone") from _rcall_process_hooks_24
+    call process_hooks("call_contact", "phone") from _rcall_process_hooks_24
     if _return == False:
         $ phone_menu_active = "main"
         jump phone_open_loop1
     sound snd_phone_notification5
-    call process_hooks("call_contact_end", "phone") from _rcall_process_hooks_25
+    call process_hooks("call_contact_end", "phone") from _rcall_process_hooks_25
     jump phone_open_loop1
 
 label phone_hide:
@@ -199,7 +199,7 @@ label phone_controller:
 
 label phone_open_loop1:
     window hide
-    call remove_dialogue() from _rcall_remove_dialogue_1
+    call remove_dialogue() from _rcall_remove_dialogue_1
     hide screen phone_icon_focus
 
     python:
@@ -219,11 +219,11 @@ label phone_open_loop1:
     if phone_menu_active != "camera":
         show screen phone(phone_menu_active)
 
-    call process_hooks("phone", "phone") from _rcall_process_hooks_26
+    call process_hooks("phone", "phone") from _rcall_process_hooks_26
     if phone_menu_active == "instagram":
-        call process_hooks("instagram", "phone") from _rcall_process_hooks_27
+        call process_hooks("instagram", "phone") from _rcall_process_hooks_27
     if phone_menu_active == "notes":
-        call process_hooks("notes", "phone") from _rcall_process_hooks_28
+        call process_hooks("notes", "phone") from _rcall_process_hooks_28
 
     $ interact_data = None
     $ interact_data = ui.interact()
@@ -231,27 +231,27 @@ label phone_open_loop1:
         if interact_data[0] == "click_main_icon":
             if interact_data[1] == "contacts":
                 sound phone_click
-                call process_hooks("contacts", "phone") from _rcall_process_hooks_29
+                call process_hooks("contacts", "phone") from _rcall_process_hooks_29
                 $ phone_menu_active = "contacts"
                 $ phone_last_contacts_count = len(phone_contacts)
 #                $ phone_buttons_new["contacts"] = False
                 jump phone_open_loop1
             if interact_data[1] == "messages":
                 sound phone_click
-                call process_hooks("messages", "phone") from _rcall_process_hooks_30
+                call process_hooks("messages", "phone") from _rcall_process_hooks_30
 #                $ phone_buttons_new["messages"] = False
                 $ phone_menu_active = "messages_list"
                 jump phone_open_loop1
             if interact_data[1] == "gallery":
                 sound phone_click
-                call process_hooks("gallery", "phone") from _rcall_process_hooks_31
+                call process_hooks("gallery", "phone") from _rcall_process_hooks_31
                 $ phone_menu_active = "gallery"
                 $ phone_gallery_page = 0
                 $ phone_gallery_delete_mode = False
                 jump phone_open_loop1
             if interact_data[1] == "camera":
                 sound camera_lens1
-                call process_hooks("camera", "phone") from _rcall_process_hooks_32
+                call process_hooks("camera", "phone") from _rcall_process_hooks_32
                 $ phone_menu_active = "camera"
                 $ phone_orientation = 1
                 $ phone_camera_image = phone_camera_get_current_image()
@@ -264,7 +264,7 @@ label phone_open_loop1:
                 jump phone_open_loop1
             if interact_data[1] == "preferences":
                 sound phone_click
-                call process_hooks("preferences", "phone") from _rcall_process_hooks_33
+                call process_hooks("preferences", "phone") from _rcall_process_hooks_33
                 $ phone_menu_active = "preferences_menu"
                 jump phone_open_loop1
             if interact_data[1] == "instagram":
@@ -276,7 +276,7 @@ label phone_open_loop1:
                 sound phone_click
                 $ phone_buttons_new["notes"] = False
                 $ phone_menu_active = "notes"
-                call show_questlog() from _rcall_show_questlog
+                call show_questlog() from _rcall_show_questlog
                 $ phone_notes_text = _return
                 if phone_notes_text == "":
                     $ phone_notes_text = ":-)"
@@ -288,15 +288,15 @@ label phone_open_loop1:
                 sound vjuh3
                 hide screen phone
                 hide screen phone_chat_live_screen
-                call process_hooks("phone_close", "phone") from _rcall_process_hooks_34
+                call process_hooks("phone_close", "phone") from _rcall_process_hooks_34
                 return
             if phone_menu_active == "chat_live":
                 sound vjuh3
                 hide screen phone
                 hide screen phone_chat_live_screen
 #                pause 0.5
-                call process_hooks("call_contact_end_close", "phone") from _rcall_process_hooks_35
-                call process_hooks("phone_close", "phone") from _rcall_process_hooks_36
+                call process_hooks("call_contact_end_close", "phone") from _rcall_process_hooks_35
+                call process_hooks("phone_close", "phone") from _rcall_process_hooks_36
                 return
 
 
@@ -320,7 +320,7 @@ label phone_open_loop1:
             if phone_menu_active == "camera":
                 sound vjuh3
                 hide screen phone_camera_screen
-                call process_hooks("phone_close", "phone") from _rcall_process_hooks_37
+                call process_hooks("phone_close", "phone") from _rcall_process_hooks_37
                 return
 #                $ phone_menu_active = "main"
 #                jump phone_open_loop1
@@ -331,7 +331,7 @@ label phone_open_loop1:
             $ obj_name = interact_data[1]
             $ phone_contact = interact_data[2]
             $ phone_menu_active = "calling_screen"
-            call process_hooks("before_call_contact", "phone") from _rcall_process_hooks_38
+            call process_hooks("before_call_contact", "phone") from _rcall_process_hooks_38
             if _return == False:
                 $ phone_menu_active = "main"
                 jump phone_open_loop1
@@ -341,7 +341,7 @@ label phone_open_loop1:
             sound snd_phone1
             pause 2.0
             $ phone_current_chat = []
-            call process_hooks("call_contact", "phone") from _rcall_process_hooks_39
+            call process_hooks("call_contact", "phone") from _rcall_process_hooks_39
             if _return == False:
                 $ phone_menu_active = "main"
                 jump phone_open_loop1
@@ -355,7 +355,7 @@ label phone_open_loop1:
             $ phone_contact = phone_get_contact_by_contact_name(interact_data[1])
             $ phone_current_chat = interact_data[2]["chat_content"]
             $ phone_menu_active = "open_history_chat"
-            call process_hooks("open_history_chat", "phone") from _rcall_process_hooks_42
+            call process_hooks("open_history_chat", "phone") from _rcall_process_hooks_42
             jump phone_open_loop1
 
         if interact_data[0] == "gallery_pagination":
@@ -371,7 +371,7 @@ label phone_open_loop1:
             $ galleryImageCombined = False
             $ galleryImagePath = phone_get_gallery_image_path(phone_gallery[interact_data[1]][0])
 
-            call process_hooks("open_gallery_image", "phone") from _rcall_process_hooks_43
+            call process_hooks("open_gallery_image", "phone") from _rcall_process_hooks_43
             if galleryImagePath != False:
                 show screen phone_gallery_image_screen(galleryImagePath, phone_gallery[interact_data[1]][1])
 #                with fade
@@ -383,24 +383,24 @@ label phone_open_loop1:
         if interact_data[0] == "preferences_rrmeter":
             sound phone_click
             $ phone_menu_active = "preferences_rrmeter"
-            call process_hooks("preferences_rrmeter", "phone") from _rcall_process_hooks_44
+            call process_hooks("preferences_rrmeter", "phone") from _rcall_process_hooks_44
             jump phone_open_loop1
 
         if interact_data[0] == "preferences_backgrounds":
             sound phone_click
             $ phone_menu_active = "preferences_backgrounds"
-            call process_hooks("preferences_backgrounds", "phone") from _rcall_process_hooks_45
+            call process_hooks("preferences_backgrounds", "phone") from _rcall_process_hooks_45
             jump phone_open_loop1
 
         if interact_data[0] == "preferences_backgrounds_select":
             sound phone_click
             $ phone_background = interact_data[1]
             $ phone_menu_active = "main"
-            call process_hooks("preferences_backgrounds_select", "phone") from _rcall_process_hooks_46
+            call process_hooks("preferences_backgrounds_select", "phone") from _rcall_process_hooks_46
             jump phone_open_loop1
 
         if interact_data[0] == "camera_shoot":
-            call process_hooks("camera_shoot", "phone") from _rcall_process_hooks_47
+            call process_hooks("camera_shoot", "phone") from _rcall_process_hooks_47
             if _return == False:
                 return
             python:
@@ -413,10 +413,10 @@ label phone_open_loop1:
                 if len(phone_gallery) >= 30:
                     steam_achievement("ach_photo1")
 #                print get_camera_scene_shoot_data()
-            call photoshop_flash() from _rcall_photoshop_flash
+            call photoshop_flash() from _rcall_photoshop_flash
 #            pause 0.2
             hide screen phone_camera_screen
-            call process_hooks("phone_close", "phone") from _rcall_process_hooks_48
+            call process_hooks("phone_close", "phone") from _rcall_process_hooks_48
             return
 
 
@@ -424,7 +424,7 @@ label phone_open_loop1:
 
 label phone_chat(chat):
     window hide
-    call remove_dialogue() from _rcall_remove_dialogue_2
+    call remove_dialogue() from _rcall_remove_dialogue_2
     $ phone_menu_active = "chat_live"
     $ chat_line_idx = 0
     $ phone_close_enabled = False
@@ -483,7 +483,7 @@ label phone_chat_loop1:
     return
 label phone_chat_loop2:
     show screen phone(phone_menu_active)
-    call process_hooks("call_contact_end", "phone") from _rcall_process_hooks_49
+    call process_hooks("call_contact_end", "phone") from _rcall_process_hooks_49
     $ interact_data = None
     $ interact_data = ui.interact()
     if interact_data != None and interact_data != False:
@@ -491,7 +491,7 @@ label phone_chat_loop2:
             $ phone_live_chat_closing = True
             hide screen phone
             hide screen phone_chat_live_screen
-            call process_hooks("call_contact_end_close", "phone") from _rcall_process_hooks_50
+            call process_hooks("call_contact_end_close", "phone") from _rcall_process_hooks_50
             return
     jump phone_chat_loop2
     return

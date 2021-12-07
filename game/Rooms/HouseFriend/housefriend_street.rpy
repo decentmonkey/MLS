@@ -16,9 +16,9 @@ label housefriend_street_init:
 
 label housefriend_street_environment:
     if obj_name == "Teleport_Map":
-        call map_show() from _rcall_map_show_3
+        call map_show() from _rcall_map_show_3
         return
     if obj_name == "Teleport_LivingRoom":
-        call change_scene("housefriend_livingroom") from _rcall_change_scene_114
+        call change_scene("housefriend_livingroom") from _rcall_change_scene_114
         return
     return

@@ -36,7 +36,7 @@ label ep01_dialogues2_day1_family_1:
     # на пол или на кровать падает рюкзак
     scene black_screen
     with Dissolve(1)
-    call textonblack(t_("СПУСТЯ ЧАС")) from _rcall_textonblack_2
+    call textonblack(t_("СПУСТЯ ЧАС")) from _rcall_textonblack_2
     scene black_screen
     with Dissolve(1)
     imgfl scene_House_Street_Evening
@@ -417,7 +417,7 @@ label ep01_dialogues2_day1_family_6:
     olivia "Мам, это ты? Я не хочу сейчас разговаривать..."
     olivia "И вообще, я занята и мне некогда!"
     bardi_t "Чем эта Оливия там занимается, что не может открыть дверь?.."
-    call refresh_scene_fade() from _rcall_refresh_scene_fade
+    call refresh_scene_fade() from _rcall_refresh_scene_fade
     return False
 
 label ep01_dialogues2_day1_family_7:
@@ -444,7 +444,7 @@ label ep01_dialogues2_day1_family_7:
     # улыбается ему
     # дверь закрывается
     sound snd_door_close1
-    call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_4
+    call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_4
     return False
 
 # при выборе пункта меню "Лечь спать"

@@ -2,7 +2,7 @@ default collegeStudent10_Suffix = 1
 
 label college_coridor4:
     $ miniMapData = []
-    call miniMapCOLLEGEGenerate() from _rcall_miniMapCOLLEGEGenerate_4
+    call miniMapCOLLEGEGenerate() from _rcall_miniMapCOLLEGEGenerate_4
     $ scene_image = "scene_COLLEGE_Coridor_4_base"
     return
 
@@ -24,21 +24,21 @@ label college_coridor4_init:
 
 label college_coridor4_environment:
     if obj_name == "Teleport_Coridor2":
-        call change_scene("college_coridor2") from _rcall_change_scene_40
+        call change_scene("college_coridor2") from _rcall_change_scene_40
         return
     if obj_name == "Teleport_Pool":
-        call change_scene("college_pool") from _rcall_change_scene_41
+        call change_scene("college_pool") from _rcall_change_scene_41
         return
     if obj_name == "Teleport_Locker_Girl":
-        call change_scene("college_locker_girl") from _rcall_change_scene_42
+        call change_scene("college_locker_girl") from _rcall_change_scene_42
         return
     if obj_name == "Teleport_Locker_Boy":
-        call change_scene("college_locker_boy") from _rcall_change_scene_43
+        call change_scene("college_locker_boy") from _rcall_change_scene_43
         return
     if obj_name == "Teleport_WC_Male":
-        call change_scene("college_wc_male") from _rcall_change_scene_44
+        call change_scene("college_wc_male") from _rcall_change_scene_44
         return
     if obj_name == "Teleport_WC_Female":
-        call change_scene("college_wc_female") from _rcall_change_scene_45
+        call change_scene("college_wc_female") from _rcall_change_scene_45
         return
     return

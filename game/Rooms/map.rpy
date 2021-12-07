@@ -83,13 +83,13 @@ label map_environment:
         return
 
     if obj_name == "Teleport_HOUSE":
-        call process_drive_teleport("HOUSE", "house_street") from _rcall_process_drive_teleport
+        call process_drive_teleport("HOUSE", "house_street") from _rcall_process_drive_teleport
         return
     if obj_name == "Teleport_HOUSE_FRIEND":
-        call process_drive_teleport("HOUSE_FRIEND", "housefriend_street") from _rcall_process_drive_teleport_1
+        call process_drive_teleport("HOUSE_FRIEND", "housefriend_street") from _rcall_process_drive_teleport_1
         return
     if obj_name == "Teleport_COLLEGE":
-        call process_drive_teleport("COLLEGE", "college_street") from _rcall_process_drive_teleport_2
+        call process_drive_teleport("COLLEGE", "college_street") from _rcall_process_drive_teleport_2
         return
     m "drive!"
     return
@@ -112,7 +112,7 @@ label process_drive_teleport(in_target_map_scene, in_target_scene):
     else:
         call start_drive_direct() from _rcall_start_drive_direct
     $ mapChangedFlag = True
-    call process_hooks("map_teleport_after", "global") from _rcall_process_hooks_40
+    call process_hooks("map_teleport_after", "global") from _rcall_process_hooks_40
     return
 
 label process_drive_teleport_direct(in_target_map_scene, in_target_scene):
@@ -130,7 +130,7 @@ label process_drive_teleport_direct(in_target_map_scene, in_target_scene):
         return
     $ visitedPlaces[target_map_scene] = True
     $ mapChangedFlag = True
-    call process_hooks("map_teleport_after", "global") from _rcall_process_hooks_41
+    call process_hooks("map_teleport_after", "global") from _rcall_process_hooks_41
     return
 label process_change_map_location(target_map_scene):
     $ map_objects["Teleport_" + map_scene]["state"] = "visible"
@@ -145,5 +145,5 @@ label process_change_map_location(target_map_scene):
 
 label start_walk_direct():
     $ mapChangedTeleportFlag = True
-    call change_scene(target_scene, "Fade_long", "run_stairs_floor") from _rcall_change_scene_115
+    call change_scene(target_scene, "Fade_long", "run_stairs_floor") from _rcall_change_scene_115
     return

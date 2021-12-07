@@ -1,6 +1,6 @@
 label house_garage:
     $ miniMapData = []
-    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate_7
+    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate_7
     $ scene_image = "scene_House_Garage[day_suffix]"
     return
 
@@ -15,6 +15,6 @@ label house_garage_init:
 
 label house_garage_environment:
     if obj_name == "Teleport_House_Street":
-        call change_scene("house_street") from _rcall_change_scene_98
+        call change_scene("house_street") from _rcall_change_scene_98
         return
     return

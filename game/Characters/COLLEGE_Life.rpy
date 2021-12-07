@@ -3,7 +3,7 @@ default college_life_last_init_daytime = -1
 
 label college_life_change_daytime:
     if scene_name == "college_street" or scene_name == "college_streetyard":
-        call college_life() from _rcall_college_life
+        call college_life() from _rcall_college_life
         return
     return
 

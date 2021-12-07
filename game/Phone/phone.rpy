@@ -25,14 +25,14 @@ label phone_before_call_contact:
 label phone_call_contact:
     if obj_name == "Cynthia":
         if cynthiaCallStage == 1 and day_suffix != 3:
-            call cynthia_chat1() from _rcall_cynthia_chat1
+            call cynthia_chat1() from _rcall_cynthia_chat1
             return
         if get_active_objects("Sister2", scene="COLLEGE", recursive=True) != False:
             call cynthia_chat2() from _rcall_cynthia_chat2 # регулярный чат днем, Синтия не может говорить, учится
             return
     if obj_name == "Sean":
         if seanCallStage == 1:
-            call sean_chat1() from _rcall_sean_chat1
+            call sean_chat1() from _rcall_sean_chat1
             return
         if get_active_objects("Friend_Bardie", scene="COLLEGE", recursive=True) != False:
             call sean_chat2() from _rcall_sean_chat2 # регулярный чат днем, Шон не может говорить, учится

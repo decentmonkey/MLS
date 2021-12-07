@@ -14,6 +14,6 @@ label college_physics_init:
 
 label college_physics_environment:
     if obj_name == "Teleport_Coridor6":
-        call change_scene("college_coridor6") from _rcall_change_scene_70
+        call change_scene("college_coridor6") from _rcall_change_scene_70
         return
     return

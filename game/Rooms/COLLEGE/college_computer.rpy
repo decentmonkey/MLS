@@ -14,6 +14,6 @@ label college_computer_init:
 
 label college_computer_environment:
     if obj_name == "Teleport_Coridor7":
-        call change_scene("college_coridor7") from _rcall_change_scene_23
+        call change_scene("college_coridor7") from _rcall_change_scene_23
         return
     return

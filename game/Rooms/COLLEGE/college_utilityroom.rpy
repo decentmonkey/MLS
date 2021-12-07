@@ -1,6 +1,6 @@
 label college_utilityroom:
     $ miniMapData = []
-    call miniMapCOLLEGEGenerate() from _rcall_miniMapCOLLEGEGenerate_17
+    call miniMapCOLLEGEGenerate() from _rcall_miniMapCOLLEGEGenerate_17
     $ scene_image = "scene_COLLEGE_UtilityRoom"
     return
 
@@ -15,6 +15,6 @@ label college_utilityroom_init:
 
 label college_utilityroom_environment:
     if obj_name == "Teleport_Coridor10":
-        call change_scene("college_coridor10") from _rcall_change_scene_80
+        call change_scene("college_coridor10") from _rcall_change_scene_80
         return
     return

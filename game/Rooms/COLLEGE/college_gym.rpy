@@ -14,6 +14,6 @@ label college_gym_init:
 
 label college_gym_environment:
     if obj_name == "Teleport_Coridor2":
-        call change_scene("college_coridor2") from _rcall_change_scene_64
+        call change_scene("college_coridor2") from _rcall_change_scene_64
         return
     return

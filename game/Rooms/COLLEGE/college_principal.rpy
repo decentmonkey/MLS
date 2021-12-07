@@ -18,6 +18,6 @@ label college_principal_init:
 
 label college_principal_environment:
     if obj_name == "Teleport_Principal_Secretary":
-        call change_scene("college_principal_secretary") from _rcall_change_scene_72
+        call change_scene("college_principal_secretary") from _rcall_change_scene_72
         return
     return

@@ -14,7 +14,7 @@ default collegeStreetClassmate1_Suffix = 1
 label college_street:
     $ miniMapData = []
     if ep1_college_minimap_enabled == True:
-        call miniMapCOLLEGEGenerate() from _rcall_miniMapCOLLEGEGenerate_15
+        call miniMapCOLLEGEGenerate() from _rcall_miniMapCOLLEGEGenerate_15
     $ sceneIsStreet = True
     if day_time_idx == 3:
         $ scene_image = "scene_COLLEGE_Street_Night"
@@ -58,12 +58,12 @@ label college_street_init:
 
 label college_street_environment:
     if obj_name == "Teleport_Map":
-        call map_show() from _rcall_map_show_1
+        call map_show() from _rcall_map_show_1
         return
     if obj_name == "Teleport_Coridor1":
-        call change_scene("college_coridor1") from _rcall_change_scene_76
+        call change_scene("college_coridor1") from _rcall_change_scene_76
         return
     if obj_name == "Teleport_StreetYard":
-        call change_scene("college_streetyard") from _rcall_change_scene_77
+        call change_scene("college_streetyard") from _rcall_change_scene_77
         return
     return

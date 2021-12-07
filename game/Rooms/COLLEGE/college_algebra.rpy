@@ -14,6 +14,6 @@ label college_algebra_init:
 
 label college_algebra_environment:
     if obj_name == "Teleport_Coridor5":
-        call change_scene("college_coridor5") from _rcall_change_scene_19
+        call change_scene("college_coridor5") from _rcall_change_scene_19
         return
     return

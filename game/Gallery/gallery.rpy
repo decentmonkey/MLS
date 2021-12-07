@@ -22,5 +22,5 @@ label process_gallery(gallery_label):
 #            globals()[key1] = storedVar[key1]
 #        storedVar = False
 
-    call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_29
+    call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_29
     return

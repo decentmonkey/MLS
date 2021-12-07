@@ -1,6 +1,6 @@
 label college_pool:
     $ miniMapData = []
-    call miniMapCOLLEGEGenerate() from _rcall_miniMapCOLLEGEGenerate_13
+    call miniMapCOLLEGEGenerate() from _rcall_miniMapCOLLEGEGenerate_13
     $ scene_image = "scene_COLLEGE_Pool"
     return
 
@@ -15,6 +15,6 @@ label college_pool_init:
 
 label college_pool_environment:
     if obj_name == "Teleport_Coridor4":
-        call change_scene("college_coridor4") from _rcall_change_scene_71
+        call change_scene("college_coridor4") from _rcall_change_scene_71
         return
     return

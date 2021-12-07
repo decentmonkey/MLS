@@ -2,7 +2,7 @@ default houseKitchenSophieSuffix = 1
 
 label house_kitchen:
     $ miniMapData = []
-    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate_8
+    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate_8
     $ scene_image = "scene_House_Kitchen[day_suffix]"
     return
 
@@ -19,6 +19,6 @@ label house_kitchen_init:
 
 label house_kitchen_environment:
     if obj_name == "Teleport_Floor1":
-        call change_scene("house_floor1") from _rcall_change_scene_99
+        call change_scene("house_floor1") from _rcall_change_scene_99
         return
     return

@@ -1,6 +1,6 @@
 label college_wc_male:
     $ miniMapData = []
-    call miniMapCOLLEGEGenerate() from _rcall_miniMapCOLLEGEGenerate_19
+    call miniMapCOLLEGEGenerate() from _rcall_miniMapCOLLEGEGenerate_19
     $ scene_image = "scene_COLLEGE_WC_Male"
     return
 
@@ -15,6 +15,6 @@ label college_wc_male_init:
 
 label college_wc_male_environment:
     if obj_name == "Teleport_Coridor4":
-        call change_scene("college_coridor4") from _rcall_change_scene_82
+        call change_scene("college_coridor4") from _rcall_change_scene_82
         return
     return

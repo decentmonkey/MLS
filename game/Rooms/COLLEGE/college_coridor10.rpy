@@ -1,6 +1,6 @@
 label college_coridor10:
     $ miniMapData = []
-    call miniMapCOLLEGEGenerate() from _rcall_miniMapCOLLEGEGenerate_1
+    call miniMapCOLLEGEGenerate() from _rcall_miniMapCOLLEGEGenerate_1
     $ scene_image = "scene_COLLEGE_Coridor_10_base"
     return
 
@@ -17,12 +17,12 @@ label college_coridor10_init:
 
 label college_coridor10_environment:
     if obj_name == "Teleport_Stairs":
-        call college_stairs_menu() from _rcall_college_stairs_menu
+        call college_stairs_menu() from _rcall_college_stairs_menu
         return
     if obj_name == "Teleport_Coridor9":
-        call change_scene("college_coridor9") from _rcall_change_scene_29
+        call change_scene("college_coridor9") from _rcall_change_scene_29
         return
     if obj_name == "Teleport_UtilityRoom":
-        call change_scene("college_utilityroom") from _rcall_change_scene_30
+        call change_scene("college_utilityroom") from _rcall_change_scene_30
         return
     return
