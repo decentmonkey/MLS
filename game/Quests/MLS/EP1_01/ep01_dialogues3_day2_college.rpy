@@ -267,6 +267,7 @@ label ep01_dialogues3_day2_college_1:
                     $ renpy.pause(0.5, hard=True)
                     pause 4.5
                     img 910314
+                    show screen image_shake("/images/Slides/img_910314.jpg")
                     w
                     bardi_t "Фигурка просто отпад!"
 
@@ -684,6 +685,7 @@ label ep01_dialogues3_day2_college_5:
             $ renpy.pause(1.0, hard=True)
             pause 4.0
             img 900418
+            show screen image_shake("/images/Slides/img_900418.jpg")
             w
             bardi_t "Хмм... Профессорша неплохо смотрится сзади..."
             bardi_t "Представляю ее затянутую в черный латекс..."
@@ -691,6 +693,7 @@ label ep01_dialogues3_day2_college_5:
             img 900419 diss
             sound2 vjuh3
             with hpunch
+            show screen image_shake("/images/Slides/img_900419.jpg")
             w
             imgd 900420
             w

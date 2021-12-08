@@ -24,6 +24,10 @@ default phone_background = 0
 default phone_backgrounds_list = []
 default phone_preferences_list = []
 default phone_instagram_posts = []
+default phone_instagram_posts_multi = {}
+default phone_instagram_current_name = False
+default phone_instagram_new = []
+default phone_instagram_mode = 0
 default phone_inited = False
 default phone_notes_text = ""
 default camera_enabled = True
@@ -221,7 +225,11 @@ label phone_open_loop1:
 
     call process_hooks("phone", "phone") from _rcall_process_hooks_26
     if phone_menu_active == "instagram":
-        call process_hooks("instagram", "phone") from _rcall_process_hooks_27
+        if phone_instagram_mode == 0:
+            call process_hooks("instagram", "phone") from _rcall_process_hooks_27
+    if phone_menu_active == "instagram_page":
+        call process_hooks("instagram", "phone")
+
     if phone_menu_active == "notes":
         call process_hooks("notes", "phone") from _rcall_process_hooks_28
 
@@ -269,8 +277,8 @@ label phone_open_loop1:
                 jump phone_open_loop1
             if interact_data[1] == "instagram":
                 sound phone_click
-                $ phone_menu_active = "instagram"
                 $ phone_buttons_new["instagram"] = False
+                $ phone_menu_active = "instagram"
                 jump phone_open_loop1
             if interact_data[1] == "notes":
                 sound phone_click
@@ -315,6 +323,10 @@ label phone_open_loop1:
             if phone_menu_active == "gallery":
                 sound phone_click
                 $ phone_menu_active = "main"
+                jump phone_open_loop1
+            if phone_menu_active == "instagram_page":
+                sound phone_click
+                $ phone_menu_active = "instagram"
                 jump phone_open_loop1
 
             if phone_menu_active == "camera":
@@ -398,6 +410,15 @@ label phone_open_loop1:
             $ phone_menu_active = "main"
             call process_hooks("preferences_backgrounds_select", "phone") from _rcall_process_hooks_46
             jump phone_open_loop1
+
+        if interact_data[0] == "open_instagram_page":
+            sound phone_click
+            $ phone_menu_active = "instagram_page"
+            $ phone_instagram_current_name = interact_data[1]
+            python: # remove notif new
+                while phone_instagram_current_name in phone_instagram_new: phone_instagram_new.remove(phone_instagram_current_name)  
+            jump phone_open_loop1
+
 
         if interact_data[0] == "camera_shoot":
             call process_hooks("camera_shoot", "phone") from _rcall_process_hooks_47

@@ -1,4 +1,4 @@
-define debugMode = False
+define debugMode = True
 
 default gameStage = 0
 default gameSubStage = 0
@@ -216,4 +216,4 @@ label test1_enter:
 
 
 
-#
+#/Applications/renpy-7.4.10-sdk/lib/mac-x86_64/pythonw

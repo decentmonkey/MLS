@@ -80,9 +80,21 @@ screen phone(phone_menu_active):
             use phone_preferences_backgrounds()
 
         if phone_menu_active == "instagram":
-            add "#f8f9fa" xsize 376 ysize 812 pos(28, 25)
-            use phone_button_close()
-            use phone_instagram_screen()
+            if phone_instagram_mode == 0:
+                add "#f8f9fa" xsize 376 ysize 812 pos(28, 25)
+                use phone_button_close()
+                use phone_instagram_screen()
+            if phone_instagram_mode == 1:
+                add "#f8f9fa" xsize 376 ysize 812 pos(28, 25)
+                use phone_button_close()
+                use phone_instagram_list_screen()
+
+        if phone_menu_active == "instagram_page":
+            if phone_instagram_mode == 1:
+                add "#f8f9fa" xsize 376 ysize 812 pos(28, 25)
+                use phone_button_close()
+                use phone_instagram_screen()
+
 
         if phone_menu_active == "notes":
             add "/images/Phone/bg_notes.png" pos(28, 25)

@@ -19,6 +19,9 @@ init python:
             rooms_list = [room_name]
         kwargs.pop("recursive", None)
 
+        if kwargs.has_key("label") != True:
+            kwargs["label"] = hook_label
+
         hook_data = {"hook_label":hook_label}
         for var1, value1 in kwargs.items():
             hook_data[var1] = value1

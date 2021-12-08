@@ -286,3 +286,8 @@ screen rat_rabbit_choice():
             action [
                 Return("rabbit")
             ]
+
+screen image_shake(imagePath):
+    layer "master"
+    zorder 15
+    add imagePath at image_shake1

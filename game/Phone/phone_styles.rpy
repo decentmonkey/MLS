@@ -185,3 +185,8 @@ style phone_notes_category_text:
     color "#38383a"
 #    font "fonts/baskerville_bolditalic_win95bt.ttf"
     font "fonts/SF-Pro-Display-Bold.otf"
+
+style phone_instagram_contact_name:
+    color "#151516"
+    size 28
+    font "fonts/SF-Pro-Display-Regular.otf"
