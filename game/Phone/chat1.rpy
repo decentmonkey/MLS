@@ -1,3 +1,6 @@
+
+#export_speaker_off
+#call_labels_off
 label cynthia_chat1:
     $ phone_start_new_chat("cynthia1", "Cynthia")
     call phone_chat([
@@ -100,3 +103,6 @@ label college_chat1:
         ["college", t_("Студент [mcsurname], ждем вас сегодня в 9:00 am в приемной профессора Ричардсон. Администрация колледжа.")],
     ])
     return
+
+#call_labels_on
+#export_speaker_on

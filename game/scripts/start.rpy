@@ -80,10 +80,7 @@ label start: #for blink here
     call locations_init() from _rcall_locations_init
 
 #########
-
-#    jump test_video
-
-
+#    call ep02_dialogues3_sean_3() # комната Шона, сцена с Бекки
 #########
 
 
