@@ -364,26 +364,26 @@ label ep02_dialogues3_sean_3:
             imgd 900622
             w
             imgd 900591
-#            w
-#            sound vjuh3
-#            img 900594 vpunch
-#            w
-#            sound lick3
-#            imgd 900595
-#            w
-#            imgd 900593
-            whore "Миссис Кларк просто обожает..."
-            whore "Отсасывать у своих студентов после математики."
-            imgd 900622
             w
+            sound vjuh3
+            img 900594 vpunch
+            w
+            sound lick3
+            imgd 900595
+            w
+            imgd 900593
+            teacher_clark "Миссис Кларк просто обожает..."
+            teacher_clark "Отсасывать у своих студентов после математики."
+#            imgd 900622
+#            w
             # снова резко и глубоко вбирает в себя член
             sound chpok6
-#            img 900592 hpunch
-            img 900588 hpunch
+            img 900592 hpunch
+#            img 900588 hpunch
+            teacher_clark "Мпфх!.."
             bardi "Оооох..."
             bardi "Даа!.."
             # лицо шлюхи возвращается
-#            whore "Мпфх!.."
             sound chpok7
             imgd 900587
             w
@@ -421,14 +421,16 @@ label ep02_dialogues3_sean_3:
             img 900602 hpunch
             w
             # смена лица на Кларк
-#            sound vjuh3
-#            img 900603 vpunch
             # смена лица обратно на шлюху
             sound highheels_short_walk
             imgd 900604
             whore "Обожаю..."
-            whore "Трахни меня скорее, студент!.."
-            whore "Давай быстрее, мне не терпится!"
+            sound vjuh3
+            img 900603 vpunch
+            teacher_clark "Трахни меня скорее, студент!.."
+            teacher_clark "Давай быстрее, мне не терпится!"
+            imgd 900604
+            w
             imgf 900605
             w
             sound Jump1
@@ -488,13 +490,11 @@ label ep02_dialogues3_sean_3:
             whore "Аааа!"
             imgf 900625
             sound ahhh6
-            whore "Оттрахай миссис Кларк, студент! Оттрахай как следует!"
-#            w
-#            sound vjuh3
-#            img 900626 vpunch
-#            imgd 900627
-#            imgd 900626
-            whore "Миссис Кларк сейчас кончит!"
+            w
+            img 900626 vpunch
+            teacher_clark "Оттрахай миссис Кларк, студент! Оттрахай как следует!"
+            imgd 900627
+            teacher_clark "Миссис Кларк сейчас кончит!"
             bardi "О, ееее!.."
             img 900617
             show screen photoshot_screen()
@@ -646,30 +646,30 @@ label ep02_dialogues3_sean_3:
             imgd 900622
             w
             imgd 900591
-#            w
-#            sound vjuh3
-#            img 900597 vpunch
-#            w
-#            sound lick3
-#            imgd 900598
-#            w
-#            sound lick3
-#            imgd 900599
-#            w
-#            imgd 900600
-            whore "Миссис Адамс просто обожает..."
-            whore "Отсасывать у своих студентов после английского."
-            imgd 900622
             w
+            sound vjuh3
+            img 900597 vpunch
+            w
+            sound lick3
+            imgd 900598
+            w
+            sound lick3
+            imgd 900599
+            w
+            imgd 900600
+            teacher_adams "Миссис Адамс просто обожает..."
+            teacher_adams "Отсасывать у своих студентов после английского."
+#            imgd 900622
+#            w
             # снова резко и глубоко вбирает в себя член
             sound chpok6
-#            img 900596 hpunch
-            img 900588 hpunch
+            img 900596 hpunch
+            teacher_adams "Мпфх!.."
+#            img 900588 hpunch
             bardi "Оооох..."
             bardi "Даа!.."
             # лицо шлюхи возвращается
-#            whore "Мпфх!.."
-            whore "Мммм..."
+            #whore "Мммм..."
             # шлюха вытаскивает член изо рта
             sound chpok7
             imgd 900587
@@ -707,12 +707,14 @@ label ep02_dialogues3_sean_3:
             whore "Миссис Адамс любит, когда наглые студенты трогают ее попку..."
             # она поднимается на ноги и толкает Барди на кровать
             # смена лица на Кларк
-#            sound vjuh3
-#            img 900633 vpunch
             sound highheels_short_walk
             imgd 900634
-            whore "И еще я просто обожаю, когда член заполняет всю мою киску."
-            whore "Хочу скорее трахнуть тебя, студент!.."
+            w
+            sound vjuh3
+            img 900633 vpunch
+            teacher_adams "И еще я просто обожаю, когда член заполняет всю мою киску."
+            teacher_adams "Хочу скорее трахнуть тебя, студент!.."
+            imgd 900634
             # смена лица обратно на шлюху
             bardi "Приступайте, миссис Адамс."
             # она снимает юбку (она без трусиков)
@@ -756,9 +758,9 @@ label ep02_dialogues3_sean_3:
             imgd 900646
             whore "Аааа!"
 #            sound vjuh3
-#            img 900647 vpunch
-            whore "Оттрахай миссис Адамс, студент! Оттрахай как следует!"
-            whore "Миссис Адамс сейчас кончит!"
+            img 900647 vpunch
+            teacher_adams "Оттрахай миссис Адамс, студент! Оттрахай как следует!"
+            teacher_adams "Миссис Адамс сейчас кончит!"
             bardi "О, ееее!.."
 #            imgd 900646
             img 900645
