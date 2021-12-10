@@ -56,6 +56,12 @@ init python:
                     f.write(s + "\n")
         return
 
+    def checkImageShown(img):
+        global images_history_list
+        if images_history_list.has_key(img):
+            return images_history_list[img]
+        return False
+
     profileTime = time.time()
     def profile(log_message=False):
         global profileTime
