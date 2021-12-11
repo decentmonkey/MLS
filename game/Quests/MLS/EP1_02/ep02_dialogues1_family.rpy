@@ -4,11 +4,11 @@ default mlsBardiDay3SophieMoney2 = 0 # Барди взял у Софи перв�
 #call ep02_dialogues1_family_1() # утро, комната Барди, душ
 #call ep02_dialogues1_family_2() # кухня, разговор с Софи
 
-define v_MC_Dream1_Sister_Older_1_25_sound_name = "v_Bardie_Sister_Older_Blowjob1"
-define v_MC_Dream1_Sister_Older2_25_sound_name = "v_Nice_Girl_Blowjob1_25"
-define v_MC_Dream1_Nice_Girl1_25_sound_name = "v_Nice_Girl_Blowjob2_25"
-define v_MC_Dream1_Maurice1_25_sound_name = "v_Teacher1_Titjob1_25"
-define v_MC_Dream_Maurice2_25_sound_name = "v_Teacher11_Blowjob1_25"
+define v_MC_Dream1_Sister_Older_1_25_sound_name = "v_MC_Dream1_Sister_Older_1_25"
+define v_MC_Dream1_Sister_Older2_25_sound_name = "v_MC_Dream1_Sister_Older2_25"
+define v_MC_Dream1_Nice_Girl1_25_sound_name = "v_MC_Dream1_Nice_Girl1_25"
+define v_MC_Dream1_Maurice1_25_sound_name = "v_MC_Dream1_Maurice1_25"
+define v_MC_Dream_Maurice2_25_sound_name = "v_MC_Dream_Maurice2_25"
 
 # момент, на котором закончился 1-й апдейт
 # комната Барди

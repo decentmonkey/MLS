@@ -1277,7 +1277,7 @@ label ep02_dialogues2_college_6:
                                     bardi "!!!"
                                     bardi "Я с-случайно..."
                                     # Барди бросает попытки собрать ватманы и отходит от Морис
-                                    sound snd_take_paper
+                                    #sound snd_take_paper
                                     imgd 910741
                                     bardi_t "Я хлопнул ее по попке."
                                     bardi_t "Вот бы повторить это еще раз. А потом еще раз..."
@@ -1294,7 +1294,7 @@ label ep02_dialogues2_college_6:
                                     img 910740 vpunch
                                     w
                                     # та поворачивается к нему, она смущена
-                                    sound snd_take_paper
+                                    #sound snd_take_paper
                                     imgd 910741
                                     w
                                     sound highheels_short_walk
@@ -1518,7 +1518,7 @@ label ep02_dialogues2_college_6:
             student_rose "[mcname], ты с ума сошел?!"
             student_rose "Это женская раздевалка! Выйди немедленно!"
             # Барди смотрит на Роуз
-            music Visions_Of_Plenty
+            music Adventures_of_the_Deaf_Dreamer
             sound2 vjuh3
             img 901012 vpunch
             bardi "Роуз, пожалуйста, не кричи! Черт!"
@@ -1610,10 +1610,10 @@ label ep02_dialogues2_college_6:
                         "Открыть глаза.": #(+Rat)
                             pass
                     # Барди открывает глаза, Роуз на него уже не смотрит
+                    music Stylish_Hip_Hop_Rock
                     imgf 901029
                     student_rose "..."
                     # она снимает с себя полотенце и остается в одних трусиках, прикрывает грудь рукой
-                    music Stylish_Hip_Hop_Rock
                     bardi_t "Ееее!"
                     bardi_t "Стесняшка Роуз пошла на такой подвиг!.."
                     # Роуз бросает полотенце на лавку, закрывая ему обзор
@@ -1653,7 +1653,7 @@ label ep02_dialogues2_college_6:
                     trainer_brooks "А ну-ка!.."
                     # она хватает Гарри за ухо
                     sound Jump2
-                    imgd 901038
+                    img 901038 vpunch
                     sound2 ma5
                     student_harry "Ай! Миссис Брукс! Больно!"
                     trainer_brooks "Пошел отсюда вон! Быстро!"
@@ -1716,7 +1716,7 @@ label ep02_dialogues2_college_6:
                     trainer_brooks "А ну-ка!.."
                     # она хватает Гарри за ухо
                     sound Jump2
-                    imgd 901038
+                    img 901038 vpunch
                     sound2 ma5
                     student_harry "Ай! Миссис Брукс! Больно!"
                     trainer_brooks "Пошел отсюда вон! Быстро!"
@@ -1796,7 +1796,7 @@ label ep02_dialogues2_college_6:
             trainer_brooks "А ну-ка!.."
             # она хватает Гарри за ухо
             sound Jump2
-            imgd 901038
+            img 901038 vpunch
             sound2 ma5
             student_harry "Ай! Миссис Брукс! Больно!"
             trainer_brooks "Пошел отсюда вон! Быстро!"
@@ -2271,7 +2271,7 @@ label ep02_dialogues2_college_9:
             imgd 900914
             bardi "Серьезно? А почему?"
             # Синтия пожимает плечами
-            sound Jump2
+            sound vjuh3
             imgd 900915
             w
             imgd 900916
@@ -2287,7 +2287,7 @@ label ep02_dialogues2_college_9:
             bardi "Мне кажется, что Оливия, мягко говоря, не рада, что я теперь живу с вами..."
             bardi "Она заметно нервничает каждый раз, когда я к ней обращаюсь."
             # Синтия пожимает плечами
-            sound Jump1
+            sound vjuh3
             imgd 900915
             w
             imgd 900916

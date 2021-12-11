@@ -4,11 +4,11 @@ define unknown = Character(_("Неизвестный"), who_color=c_orange) # н
 default mlsBardiSeanDay3Whore1 = 0 # Барди назвал шлюху миссис Кларк
 default mlsBardiSeanDay3Whore2 = 0 # Барди назвал шлюху миссис Адамс
 
-define v_MC_Whore_Blowjob1_25_sound_name = "v_Mark_Sister_Older_Blowjob1"
-define v_MC_Whore_Hand1_25_sound_name = "v_Mark_Sister_Older_Kissing1_25"
-define v_MC_Whore_Sex1_25_sound_name = "v_Mark_Sister_Older_Sex1_25"
-define v_MC_Whore_Sex2_25_sound_name = "v_Mark_Sister_Older_Sex1_25"
-define v_MC_Whore_Tits1_25_sound_name = "v_Mark_Sister_Older_Kissing1_25"
+define v_MC_Whore_Blowjob1_25_sound_name = "v_MC_Whore_Blowjob1_25"
+define v_MC_Whore_Hand1_25_sound_name = "v_MC_Whore_Hand1_25"
+define v_MC_Whore_Sex1_25_sound_name = "v_MC_Whore_Sex1_25"
+define v_MC_Whore_Sex2_25_sound_name = "v_MC_Whore_Sex2_25"
+define v_MC_Whore_Tits1_25_sound_name = "v_MC_Whore_Tits1_25"
 
 #call ep02_dialogues3_sean_1() # мысли перед домом Шона
 #call ep02_dialogues3_sean_2() # клик на дом Шона
