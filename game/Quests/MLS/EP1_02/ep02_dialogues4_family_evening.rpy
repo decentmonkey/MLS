@@ -370,13 +370,29 @@ label ep02_dialogues4_family_evening_5:
     sound2 highheels_short_walk
     music The_Heat
     imgf 900736
-    bardi_t "Ого, Оливия! Отличный наряд!"
+    w
     sound highheels_short_walk
     imgd 900737
     w
+
+    # video
+    # v_Observe_Olivia1_25
+    img black_screen
+    with diss
+    pause 1.0
+    scene black
+    image videov_Observe_Olivia1_25 = Movie(play="video/v_Observe_Olivia1_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observe_Olivia1_end.jpg")
+    show videov_Observe_Olivia1_25
+    $ renpy.pause(0.5, hard=True)
+    pause 3.5
+    img v_Observe_Olivia1_end
+    show screen image_shake("/images/Slides/v_Observe_Olivia1_end.jpg")
+    w
+    bardi_t "Ого, Оливия! Отличный наряд!"
+
     # Марк спрашивает Оливию
     music Step_By_Step
-    imgd 900738
+    imgf 900738
     mark "Детка, привет. А зачем нам куда-то идти? Мы же планировали побыть дома..."
     # Оливия недовольно и пристально смотрит на Барди
     imgd 900739

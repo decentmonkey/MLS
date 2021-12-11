@@ -327,14 +327,31 @@ label ep02_dialogues2_college_4:
             imgd 900807
             w
             sound Knock
-            img 900808
+            img 900808 hpunch
             secretary_young "Ой!.."
             # наклоняется, чтобы поднять
             # Барди рассматривает ее попу (Observe)
-            sound2 Jump2
+            sound Jump2
             imgd 900809
+            w
+
             music Future_Bass
+            # video
+            # v_Observe_Principal_Secretary1_25
+            img black_screen
+            with diss
+            pause 1.0
+            scene black
+            image videov_Observe_Principal_Secretary1_25 = Movie(play="video/v_Observe_Principal_Secretary1_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observe_Principal_Secretary1_end.jpg")
+            show videov_Observe_Principal_Secretary1_25
+            $ renpy.pause(0.5, hard=True)
+            pause 4.5
+            img v_Observe_Principal_Secretary1_end
+            show screen image_shake("/images/Slides/v_Observe_Principal_Secretary1_end.jpg")
+            w
             bardi_t "Хмм... Неплохо, мисс Янг."
+
+
             # секретарша поднимает ручку (или лист бумаги), говорит профессорше
             #эти две строчки можно пожалуйста поставить после фразы директора "переделать!СРОЧНО!"
             # секретарь поспешно закрывает дверь и поворачивается к Барди
@@ -365,11 +382,11 @@ label ep02_dialogues2_college_4:
             pass
     # секретарша выглядит расстроено, идет к своему креслу и садится за стол
     music Shining_Through
-    imgf 900810
+    imgfl 900810
     w
     #### отсюда repeat, если не выбрал в первый раз
     sound highheels_short_walk
-    imgd 900811
+    imgf 900811
     secretary_young "[mcname], что ты там хотел?"
     secretary_young "У меня есть всего пара минут..."
     # Барди думает
@@ -1324,7 +1341,23 @@ label ep02_dialogues2_college_6:
                             w
                             # ватманы падают на пол
                             imgd 910748
+                            w
+
+                            # video
+                            # v_Observe_Teacher11_2_25
+                            img black_screen
+                            with diss
+                            pause 1.0
+                            scene black
+                            image videov_Observe_Teacher11_2_25 = Movie(play="video/v_Observe_Teacher11_2_25.mkv", fps=25, loop=False, image="/images/Slides/img_910749.jpg")
+                            show videov_Observe_Teacher11_2_25
+                            $ renpy.pause(0.5, hard=True)
+                            pause 4.5
+                            img 910749
+                            show screen image_shake("/images/Slides/img_910749.jpg")
+                            w
                             bardi "!!!"
+
                             $ menu_rr = {
                                 "Собрать ватманы.": "rabbit"
                             }
@@ -1614,18 +1647,35 @@ label ep02_dialogues2_college_6:
                     imgf 901029
                     student_rose "..."
                     # она снимает с себя полотенце и остается в одних трусиках, прикрывает грудь рукой
-                    bardi_t "Ееее!"
                     bardi_t "Стесняшка Роуз пошла на такой подвиг!.."
                     # Роуз бросает полотенце на лавку, закрывая ему обзор
                     # и Барди теперь видит только ноги Роуз
                     sound Jump2
                     img 901030 hpunch
                     bardi_t "Вот облом!"
+
+                    # video
+                    # v_Observe_Rose_2_25
+                    img black_screen
+                    with diss
+                    pause 1.0
+                    scene black
+                    image videov_Observe_Rose_2_25 = Movie(play="video/v_Observe_Rose_2_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observe_Rose_2_end.jpg")
+                    show videov_Observe_Rose_2_25
+                    $ renpy.pause(0.5, hard=True)
+                    pause 3.5
+                    img v_Observe_Rose_2_end
+                    show screen image_shake("/images/Slides/v_Observe_Rose_2_end.jpg")
+                    w
+                    bardi_t "Ееее!"
+
                     # в раздевалку заходят ноги Гарри (вид из-под лавки)
+                    music stop
+                    sound plastinka1b
                     sound2 snd_door_open1
-                    music Fly_With_Me_short
-                    imgf 901031
+                    img 901031 hpunch
                     bardi_t "!!!"
+                    music Fly_With_Me_short
                     # далее вид со стороны
                     # Роуз прикрывает грудь и трусики руками и начинает истошно визжать
                     sound snd_julia_scream1
@@ -1841,12 +1891,29 @@ label ep02_dialogues2_college_6:
                     bardi_t "Зато я ее рассмотрю получше..."
                     # Роуз стоит спиной к нему, наклоняется в одних трусиках
                     # Барди ее рассматривает
+                    music Stylish_Hip_Hop_Rock
                     imgd 901059
                     bardi_t "..."
                     # потом Роуз поворачивается и Барди не успевает спрятать голову обратно за шкафчики
                     # Роуз его замечает
                     imgf 901060
                     w
+
+                    # video
+                    # v_Observe_NiceGirl2_25
+                    img black_screen
+                    with diss
+                    pause 1.0
+                    scene black
+                    image videov_Observe_NiceGirl2_25 = Movie(play="video/v_Observe_NiceGirl2_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observe_NiceGirl2_end.jpg")
+                    show videov_Observe_NiceGirl2_25
+                    $ renpy.pause(0.5, hard=True)
+                    pause 4.5
+                    img v_Observe_NiceGirl2_end
+                    show screen image_shake("/images/Slides/v_Observe_NiceGirl2_end.jpg")
+                    w
+                    bardi_t "Ееее!"
+
                     music stop
                     sound plastinka1b
                     img 901061 hpunch
@@ -1967,13 +2034,28 @@ label ep02_dialogues2_college_7:
                     bardi_t "Хмм..."
                     bardi_t "Классный костюмчик у этой тренерши. Да сама она очень даже ничего."
                     imgd 900879
-                    bardi_t "Нужно будет посетить следующую тренировку с ней..."
+                    w
                     # она бросает мяч обратно в зал и поворачивается к Барди
                     imgd 900880
                     w
                     sound vjuh3
                     imgd 900881
                     w
+
+                    # video
+                    # v_Observe_Teacher3_1_25
+                    img black_screen
+                    with diss
+                    pause 1.5
+                    scene black
+                    image videov_Observe_Teacher3_1_25 = Movie(play="video/v_Observe_Teacher3_1_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observe_Teacher3_1_end.jpg")
+                    show videov_Observe_Teacher3_1_25
+                    $ renpy.pause(0.5, hard=True)
+                    pause 5.5
+                    img v_Observe_Teacher3_1_end
+                    w
+                    bardi_t "Нужно будет посетить следующую тренировку с ней..."
+
                     music Shining_Through
                     imgf 900883
                     trainer_brooks "Так, жду тебя на следующей тренировке, [mcname]."
@@ -2160,6 +2242,23 @@ label ep02_dialogues2_college_9:
             imgd 900929
             librarian_wilson "Меня зовут миссис Уилсон. И я сама в состоянии справиться..."
             # в этот момент у нее каблук соскальзывает со стула и она оступается
+
+            music The_Heat
+            # video
+            # v_Observe_Teacher6_1_25
+            img black_screen
+            with diss
+            pause 1.0
+            scene black
+            image videov_Observe_Teacher6_1_25 = Movie(play="video/v_Observe_Teacher6_1_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observe_Teacher6_1_end.jpg")
+            show videov_Observe_Teacher6_1_25
+            $ renpy.pause(0.5, hard=True)
+            pause 4.5
+            img v_Observe_Teacher6_1_end
+            show screen image_shake("/images/Slides/v_Observe_Teacher6_1_end.jpg")
+            w
+            bardi_t "Хмм... Возможно, мне стоит почаще заглядывать в библиотеку?.."
+
             imgd 900930
             w
             sound vjuh3
@@ -2170,7 +2269,6 @@ label ep02_dialogues2_college_9:
             librarian_wilson "Ох!.."
             sound Jump2
             img 900933 hpunch
-            music The_Heat
             bardi "Я помогу!"
             # успевает за это время поглазеть на ее попу
             imgd 900934
