@@ -4,6 +4,11 @@ default mlsBardiDay3SophieMoney2 = 0 # Барди взял у Софи перв�
 #call ep02_dialogues1_family_1() # утро, комната Барди, душ
 #call ep02_dialogues1_family_2() # кухня, разговор с Софи
 
+define v_MC_Dream1_Sister_Older_1_25_sound_name = "v_Bardie_Sister_Older_Blowjob1"
+define v_MC_Dream1_Sister_Older2_25_sound_name = "v_Nice_Girl_Blowjob1_25"
+define v_MC_Dream1_Nice_Girl1_25_sound_name = "v_Nice_Girl_Blowjob2_25"
+define v_MC_Dream1_Maurice1_25_sound_name = "v_Teacher1_Titjob1_25"
+define v_MC_Dream_Maurice2_25_sound_name = "v_Teacher11_Blowjob1_25"
 
 # момент, на котором закончился 1-й апдейт
 # комната Барди
@@ -95,25 +100,42 @@ label ep02_dialogues1_family_1:
             music Stylish_Hip_Hop_Rock
             imgf 900475
             olivia "[mcname], пошалим немного, пока Софи не видит?"
-            sound vjuh3
+            #sound vjuh3
             imgd 900476
             olivia "Мне так нравится твой член..."
             # она водит рукой по члену, прикасаясь к головке
             sound drkanje5
             imgd 900477
+            w
+            sound drkanje5
+            imgd 900476
+            w
+            sound drkanje5
+            imgd 900477
+            w
+
+            # video
+            # v_MC_Dream1_Sister_Older_1_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Dream1_Sister_Older_1_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str(float(rand(0,4))*1.4) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Dream1_Sister_Older_1_25= Movie(play="video/v_MC_Dream1_Sister_Older_1_25.mkv")
+            show videov_MC_Dream1_Sister_Older_1_25
+            with fade
             olivia "Мммм..."
-            sound drkanje5
-            imgd 900476
-            w
-            sound drkanje5
-            imgd 900477
-            w
-            sound drkanje5
-            imgd 900476
+            wclean
             olivia "Он такой большой и твердый..."
-            sound drkanje5
-            imgd 900477
-            w
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+
             # Оливия пристально смотрит на лицо Барди и пошло улыбается
             imgf 900478
             olivia "Я вижу, как ты хочешь меня, [mcname]..."
@@ -133,19 +155,35 @@ label ep02_dialogues1_family_1:
             olivia "А я хочу, чтобы ты кончил, [mcname]..."
             # Барди смотрит вниз на свой член, как рука Оливии двигается по нему
             imgf 900484
+            w
+            sound drkanje5
+            imgd 900485
+            w
+            sound drkanje5
+            imgd 900484
+            w
+
+            # video
+            # v_MC_Dream1_Sister_Older2_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Dream1_Sister_Older2_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str(float(rand(0,4))*1.4) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Dream1_Sister_Older2_25= Movie(play="video/v_MC_Dream1_Sister_Older2_25.mkv")
+            show videov_MC_Dream1_Sister_Older2_25
+            with fade
+            olivia "Мммм..."
+            wclean
             olivia "Сделай это... Ну давай же..."
-            sound drkanje5
-            imgd 900485
-            w
-            sound drkanje5
-            imgd 900484
-            w
-            sound drkanje5
-            imgd 900485
-            w
-            sound drkanje5
-            imgd 900484
-            w
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
             # Барди поднимает глаза на лицо Оливии и внезапно вместо него видит лицо Софи (лицо крупным планом, тела не видно)
             sound vjuh3
             img 900486 vpunch
@@ -241,21 +279,30 @@ label ep02_dialogues1_family_1:
             sound drkanje5
             imgd 900500
             w
-            sound drkanje5
-            imgd 900501
-            w
-            sound drkanje5
-            imgd 900502
-            w
-            sound drkanje5
-            imgd 900501
-            w
-            sound drkanje5
-            imgd 900502
-            w
-            imgf 900503
+
+            # video
+            # v_MC_Dream1_Nice_Girl1_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Dream1_Nice_Girl1_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str(float(rand(0,4))*1.4) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Dream1_Nice_Girl1_25= Movie(play="video/v_MC_Dream1_Nice_Girl1_25.mkv")
+            show videov_MC_Dream1_Nice_Girl1_25
+            with fade
             student_rose "Вот так хорошо?"
+            wclean
             bardi "Мммм... Еще!.."
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+            imgf 900503
+            w
             # Роуз снова смотрит на лицо Барди
             # Барди смотрит вниз на свой член, как рука Роуз двигается по нему
             imgd 900498
@@ -361,6 +408,29 @@ label ep02_dialogues1_family_1:
             imgd 900517
             w
             # она продолжает работать рукой
+
+            # video
+            # v_MC_Dream1_Maurice1_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Dream1_Maurice1_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str(float(rand(0,4))*1.4) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Dream1_Maurice1_25= Movie(play="video/v_MC_Dream1_Maurice1_25.mkv")
+            show videov_MC_Dream1_Maurice1_25
+            with fade
+            teacher_morris "Мпфхфмм..."
+            wclean
+            bardi "О, как же это охрененно!.."
+            teacher_morris "Мммм..."
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
             imgf 900518
             w
             imgd 900508
@@ -382,22 +452,32 @@ label ep02_dialogues1_family_1:
             w
             sound drkanje5
             imgd 900522
+            w
+            sound drkanje5
+            imgd 900521
+            w
+
+            # video
+            # v_MC_Dream_Maurice2_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Dream_Maurice2_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str(float(rand(0,4))*1.4) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Dream_Maurice2_25= Movie(play="video/v_MC_Dream_Maurice2_25.mkv")
+            show videov_MC_Dream_Maurice2_25
+            with fade
+            teacher_morris "Мммм..."
+            wclean
             teacher_morris "А я хочу, чтобы ты кончил, [mcname]..."
-            sound drkanje5
-            imgd 900521
-            w
-            sound drkanje5
-            imgd 900522
-            w
-            sound drkanje5
-            imgd 900523
-            w
-            sound drkanje5
-            imgd 900522
-            w
-            sound drkanje5
-            imgd 900521
-            w
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
             # Барди переводит фокус на лицо училки и внезапно вместо него видит лицо Софи (лицо крупным планом, тела не видно)
             sound vjuh3
             img 900486 vpunch

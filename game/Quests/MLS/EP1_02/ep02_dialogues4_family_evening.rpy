@@ -61,9 +61,24 @@ label ep02_dialogues4_family_evening_1:
     bardi_t "Хмм..."
     music The_Heat
     imgf 900749
-    bardi_t "А у Софи отличная фигура..."
-    imgd 900749
     w
+
+    # video
+    # v_Observe_Sophie1_1_25
+    img black_screen
+    with diss
+    pause 1.0
+    scene black
+    image videov_Observe_Sophie1_1_25 = Movie(play="video/v_Observe_Sophie1_1_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observe_Sophie1_1_end.jpg")
+    show videov_Observe_Sophie1_1_25
+    $ renpy.pause(0.5, hard=True)
+    pause 4.5
+    img v_Observe_Sophie1_1_end
+    show screen image_shake("/images/Slides/v_Observe_Sophie1_1_end.jpg")
+    w
+    bardi_t "А у Софи отличная фигура..."
+
+
     # потом он оддергивает сам себя
     music Adventures_of_the_Deaf_Dreamer_short
     imgd 900697

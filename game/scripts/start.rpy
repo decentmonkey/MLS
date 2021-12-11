@@ -80,7 +80,7 @@ label start: #for blink here
     call locations_init() from _rcall_locations_init
 
 #########
-#    call ep02_dialogues2_college_10() # при клике на выход из колледжа (после библиотеки), сцена с Гарри и Эмили у колледжа
+#    jump video_test
 #########
 
 

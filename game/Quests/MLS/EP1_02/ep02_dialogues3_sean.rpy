@@ -4,6 +4,12 @@ define unknown = Character(_("Неизвестный"), who_color=c_orange) # н
 default mlsBardiSeanDay3Whore1 = 0 # Барди назвал шлюху миссис Кларк
 default mlsBardiSeanDay3Whore2 = 0 # Барди назвал шлюху миссис Адамс
 
+define v_MC_Whore_Blowjob1_25_sound_name = "v_Mark_Sister_Older_Blowjob1"
+define v_MC_Whore_Hand1_25_sound_name = "v_Mark_Sister_Older_Kissing1_25"
+define v_MC_Whore_Sex1_25_sound_name = "v_Mark_Sister_Older_Sex1_25"
+define v_MC_Whore_Sex2_25_sound_name = "v_Mark_Sister_Older_Sex1_25"
+define v_MC_Whore_Tits1_25_sound_name = "v_Mark_Sister_Older_Kissing1_25"
+
 #call ep02_dialogues3_sean_1() # мысли перед домом Шона
 #call ep02_dialogues3_sean_2() # клик на дом Шона
 #call ep02_dialogues3_sean_2a() # мысли при клике на выход из дома Шона
@@ -230,22 +236,59 @@ label ep02_dialogues3_sean_3:
     w
     imgd 900561
     w
-    imgd 900560
-    w
-    imgd 900561
+
+    # video
+    # v_MC_Whore_Hand1_25
+    $ localSoundVolume = 1.0
+    $ localSoundName = v_MC_Whore_Hand1_25_sound_name
+    img black_screen
+    with diss
+    stop music2
+    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+    play music2 "<from " + str(float(rand(0,4))*1.4) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+    scene black
+    image videov_MC_Whore_Hand1_25= Movie(play="video/v_MC_Whore_Hand1_25.mkv")
+    show videov_MC_Whore_Hand1_25
+    with fade
     whore "Ох, я вижу, что ты очень-очень хочешь Бекки!"
+    wclean
+    bardi "Да..."
+    stop music2
+    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
     # она начинает водить рукой по его стояку
     imgf 900556
-    bardi "Да..." # мнет ее грудь
+    w
+    # мнет ее грудь
     imgd 900562
-    bardi_t "Хочу! Шон меня убьет, но я хочу трахнуть ее!.."
+    w
     imgd 900556
 #    bardi_t "Это же просто шлюха..."
     w
-    imgd 900562
-    w
-    imgd 900556
-    w
+
+    # video
+    # v_MC_Whore_Tits1_25
+    $ localSoundVolume = 1.0
+    $ localSoundName = v_MC_Whore_Tits1_25_sound_name
+    img black_screen
+    with diss
+    stop music2
+    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+    play music2 "<from " + str(float(rand(0,4))*1.4) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+    scene black
+    image videov_MC_Whore_Tits1_25= Movie(play="video/v_MC_Whore_Tits1_25.mkv")
+    show videov_MC_Whore_Tits1_25
+    with fade
+    whore "Ох..."
+    wclean
+    bardi_t "Хочу! Шон меня убьет, но я хочу трахнуть ее!.."
+    stop music2
+    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
     imgf 900558
     whore "У меня идея!"
     whore "Давай поиграем в мою любимую игру - преподаватель и студент?"
@@ -350,12 +393,30 @@ label ep02_dialogues3_sean_3:
             sound chpok7
             imgd 900588
             w
-            sound chpok7
-            imgd 900587
-            w
-            sound chpok7
-            imgd 900588
-            w
+
+            # video
+            # v_MC_Whore_Blowjob1_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Whore_Blowjob1_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Whore_Blowjob1_25 = Movie(play="video/v_MC_Whore_Blowjob1_25.mkv", fps=25)
+            show videov_MC_Whore_Blowjob1_25
+            wclean
+            whore "Мпфх!.."
+            wclean
+            bardi "Ееее!.."
+            whore "Мммм..."
+            wclean
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
             # вытаскивает и, удерживая член рукой, шлепает себя по губам
             # на несколько кадров, лицо шлюхи в повязке сменяется на лицо Кларк в повязке
             sound chpok8
@@ -481,11 +542,34 @@ label ep02_dialogues3_sean_3:
             sound ahhh7
             whore "Оооо!"
             imgf 900621
+            w
+
+            # video
+            # v_MC_Whore_Sex1_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Whore_Sex1_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Whore_Sex1_25 = Movie(play="video/v_MC_Whore_Sex1_25.mkv", fps=25)
+            show videov_MC_Whore_Sex1_25
+            wclean
             whore "Какой у тебя клевый член!.."
             bardi "Мммм..."
-            imgd 900623
+            wclean
             whore "Даа!.. Как же кайфово!"
             bardi "Чертовски охренительно трахать вас, миссис Кларк!.."
+            wclean
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+            imgf 900623
+            w
             imgd 900624
             whore "Аааа!"
             imgf 900625
@@ -632,12 +716,30 @@ label ep02_dialogues3_sean_3:
             sound chpok7
             imgd 900588
             w
-            sound chpok7
-            imgd 900587
-            w
-            sound chpok7
-            imgd 900588
-            w
+
+            # video
+            # v_MC_Whore_Blowjob1_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Whore_Blowjob1_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Whore_Blowjob1_25 = Movie(play="video/v_MC_Whore_Blowjob1_25.mkv", fps=25)
+            show videov_MC_Whore_Blowjob1_25
+            wclean
+            whore "Мпфх!.."
+            wclean
+            bardi "Ееее!.."
+            whore "Мммм..."
+            wclean
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
             # вытаскивает и, удерживая член рукой, шлепает себя по губам
             # на несколько кадров, лицо шлюхи в повязке сменяется на лицо Кларк в повязке
             sound chpok8
@@ -749,12 +851,35 @@ label ep02_dialogues3_sean_3:
             img 900642 hpunch
             w
             imgf 900643
-            sound ahhh4
+            w
+            #sound ahhh4
+
+            # video
+            # v_MC_Whore_Sex2_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Whore_Sex2_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Whore_Sex2_25 = Movie(play="video/v_MC_Whore_Sex2_25.mkv", fps=25)
+            show videov_MC_Whore_Sex2_25
+            wclean
             whore "Какой у тебя клевый член!.."
             bardi "Мммм..."
-            imgd 900644
+            wclean
             whore "Даа!.. Как же кайфово!"
             bardi "Чертовски охренительно трахать вас, миссис Адамс!.."
+            wclean
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+            imgf 900644
+            w
             imgd 900646
             whore "Аааа!"
 #            sound vjuh3
