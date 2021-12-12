@@ -286,17 +286,22 @@ label ep01_dialogues3_day2_college_1:
                             # попа Синтии крупным планом
                             if steamVersion == False:
                                 imgd 910041
+                                show screen image_shake("/images/Slides/img_910041.jpg")
                                 bardi_t "Эта попка сегодня с утра выглядела привлекательнее!"
                                 imgd 910042
+                                show screen image_shake("/images/Slides/img_910042.jpg")
                                 bardi_t "Хотя, в одежде ей тоже хорошо..."
                             else:
                                 imgd 910041
+                                show screen image_shake("/images/Slides/img_910041.jpg")
                                 w
                                 imgd 910042
+                                show screen image_shake("/images/Slides/img_910042.jpg")
                                 w
                         "Красивые ножки.":
                             # попа и ноги Синтии крупным планом
                             imgd 910044
+                            show screen image_shake("/images/Slides/img_910044.jpg")
                             bardi_t "Сюда бы еще чулки и каблуки! Она бы выглядела вообще отпадно..."
                     # разглядывание Синтии прерывает голос преподши
                     $ questHelp("college_4", True)
@@ -334,13 +339,16 @@ label ep01_dialogues3_day2_college_1:
                         "Торчащие соски.":
                             # грудь миссис Кларк крупным планом
                             imgd 910046
+                            show screen image_shake("/images/Slides/img_910046.jpg")
                             bardi_t "По-моему, у нее под блузкой нет нижнего белья. Я вижу ее торчащие соски..."
                             pass
                         "Красивые ножки.":
                             # камера плавно снизу вверх, но ее движение прерывается строгим голосом училки
                             imgf 910047
+                            show screen image_shake("/images/Slides/img_910047.jpg")
                             w
                             imgd 910048
+                            show screen image_shake("/images/Slides/img_910048.jpg")
                             bardi_t "Интересно, а трусики она тоже не носит?.."
                             pass
                     # камера резко на ее лицо (Барди смотрит на нее снизу вверх), она недовольна
@@ -1020,12 +1028,17 @@ label ep01_dialogues3_day2_college_5:
 #                    sound2 vjuh3
 #                    img 900358 hpunch
                     img 900358
+                    show screen dream()
                     with Dissolve(1.0)
                     bardi_t "Ееее..."
                     # взгляд скользит выше от попы по телу Эмили
-                    imgd 900359
+                    img 900359
+                    show screen dream()
+                    with diss
                     w
-                    imgd 900360
+                    img 900360
+                    show screen dream()
+                    with diss
                     bardi_t "Какая она офигенная!"
                     # внезапно голос Эмили прерывает его мечтания
                     sound vjuh3
@@ -1193,12 +1206,16 @@ label ep01_dialogues3_day2_college_8:
             teacher_hill "Взаимно, [mcname]."
             # Барди смотрит на ее фигуру
             music Future_Bass
-            imgf 900329
+            img 900329
+            with fade
+            show screen image_shake("/imgaes/Slides/img_900329.jpg")
             bardi_t "Какая прикольная преподавательница..."
             bardi_t "И попка у нее просто отпад."
             imgd 900317
             w
             imgd 900330
+            with diss
+            show screen image_shake("/imgaes/Slides/img_900330.jpg")
             bardi_t "И, наверняка, у нее небольшая и аккуратная грудь..."
             bardi_t "Которая полностью помещается в ладони."
             bardi_t "Мммм... Вот бы залезть руками ей под блузку и..."
@@ -1505,6 +1522,7 @@ label ep01_dialogues3_day2_college_10:
             bardi_t "Хотелось бы мне посмотреть на эту миссис Адамс без одежды."
             # блузка исчезает и училка стоит перед ним в одном лифчике
             img 910099
+            show screen dream()
             with Dissolve(1.0)
             sound vjuh3
             with vpunch
@@ -1723,13 +1741,18 @@ label ep01_dialogues3_day2_college_10:
                             w
                             music Stylish_Fashion_Electronic_Rock
                             img 910140
+                            show screen dream()
                             with Dissolve(1.0)
                             sound vjuh3
                             with hpunch
                             bardi_t "Под этой одеждой, наверняка, спрятано стройное, красивое тело."
-                            imgd 910141
+                            img 910141
+                            show screen dream()
+                            with diss
                             bardi_t "С аккуратной грудью и упругой попкой..."
-                            imgd 910140
+                            img 910140
+                            show screen dream()
+                            with diss
                             student_rose "[mcname], крови нет. Может, сходим к медсестре на всякий случай?"
                             # одежда Роуз возвращается на место
                             sound vjuh3
@@ -1927,9 +1950,11 @@ label ep01_dialogues3_day2_college_10:
                     # Барди просто продолжает на нее пялиться, попа или грудь крупным планом
                     music The_Heat
                     imgd 910172
+                    show screen image_shake("/images/Slides/img_910172.jpg")
                     bardi_t "Офигеть, какая красотка!"
                     bardi_t "Судя по тону, которым она говорила с придурком Гарри, это преподавательница."
                     imgd 910173
+                    show screen image_shake("/images/Slides/img_910173.jpg")
                     bardi_t "Я готов пойти изучать ее предмет, даже если это какая-нибудь квантовая физика."
                     # училка и обеспокоенно смотрит на него, рука на голове у Барди
                     imgd 910167
@@ -2160,11 +2185,13 @@ label ep01_dialogues3_day2_college_14:
             # грудь крупным планом, прижимается к Барди
             music Stylish_Fashion_Electronic_Rock
             imgf 900262
+            show screen image_shake("/images/Slides/img_900262.jpg")
             bardi_t "Ух ты! Вот это грудь!"
             bardi_t "Она такая большая и в то же время упругая."
             bardi_t "Хотел бы я посмотреть на Рут в бикини..."
             bardi_t "А лучше, топлес."
             imgd 900263
+            show screen image_shake("/images/Slides/img_900263.jpg")
             w
             # она отстраняется от него с улыбкой
             music Shining_Through

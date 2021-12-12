@@ -347,6 +347,10 @@ label ep01_dialogues3_day2_family_6:
     sound vjuh3
     img 900091
     w
+    $ menu_data = {
+        "Солгать.": {"info_rat":True},
+        "Сказать правду.": {"info_rabbit":True}
+    }
     menu:
         "Сказать правду.":
             $ questHelp("house_5", True)

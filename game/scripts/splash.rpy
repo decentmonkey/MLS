@@ -1,9 +1,9 @@
 default splashMode = False
 label splashscreen:
-    $ splashMode = True
     call init_launch() from _rcall_init_launch
     if debugMode == True:
         return
+    $ splashMode = True
     img black_screen
     with Dissolve(0.5)
     img all_over_18

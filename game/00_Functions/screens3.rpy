@@ -291,3 +291,8 @@ screen image_shake(imagePath):
     layer "master"
     zorder 15
     add imagePath at image_shake1
+
+screen dream():
+    layer "master"
+    zorder 20
+    add "/images/Sprites/vignette1_white.png"

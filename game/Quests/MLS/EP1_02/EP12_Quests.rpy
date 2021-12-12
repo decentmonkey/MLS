@@ -164,9 +164,10 @@ label ep12_quests7_principal_secretary:
     $ set_object_follow("ЭТАЖ 2", scene="menu")
 
     $ add_hook("Teleport_Algebra", "ep12_quests8_algebra", scene="college_coridor5")
-
+    $ set_active("Student12", False, scene="college_coridor5")
     
     $ add_hook("Teleport_Street", "ep02_dialogues2_college_4b", scene="college_coridor1", label="college_street_block", quest="college_day2")
+    $ add_hook("Teleport_Gym", "ep02_dialogues2_college_4b", scene="college_coridor2", label="gym_blocked", quest="college_day2")
     
 
     $ add_hook("Teleport_Principal_Secretary", "ep02_dialogues2_college_3c", scene="college_coridor9", quest="college_day2")
@@ -186,8 +187,12 @@ label ep12_quests8_algebra:
     return
 
 label ep12_quests9_algebra2:
-    $ remove_hook()
     call ep02_dialogues2_college_6() # при клике на Кларк, урок продолжается
+    if _return == -1:
+        call refresh_scene_fade()
+        return False
+    $ remove_hook(label="ep12_quests9_algebra2")
+
     return False
 
 
