@@ -231,6 +231,7 @@ label ep01_dialogues3_day2_college_1:
             imgf 910033
             sound step_stairs
             w
+            $ questHelp("college_4", False)
             # Синтия тоже уходит
             pass
         "Поднять учебник миссис Кларк.":

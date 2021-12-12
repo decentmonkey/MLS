@@ -6,7 +6,6 @@ define offsets_table = {
     "screen_left_arrow_tight":(0,0,1079,106),
     "screen_right_arrow":(0,1768,1079,1919),
     "screen_right_arrow_tight":(0,1813,1079,1919),
-    "college_algebra_teleport_coridor5_mask":(296,625,599,686),
     "college_biology_teleport_coridor1_mask":(54,966,370,1031),
     "college_coridor_1_teleport_lockermc_mask":(93,1649,718,1790),
     "college_coridor_2_teleport_gym_mask":(272,827,478,1125),

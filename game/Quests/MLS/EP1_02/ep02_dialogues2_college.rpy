@@ -43,6 +43,13 @@ label ep02_dialogues2_college_1:
     imgf 900767
     bardi_t "Шона нет сегодня... Наверное, уже ушел на занятия."
     bardi_t "Жаль. Неплохо было бы поболтать с ним."
+    $ questHelp("college_15")
+    $ map_enabled = False
+    $ seanCallStage = 2
+    $ clear_object_follow_all()
+    $ set_object_follow("Teleport_Coridor1", scene="college_street")
+
+    call refresh_scene_fade()
     return
 
 # если берет телефон
@@ -213,19 +220,22 @@ label ep02_dialogues2_college_3:
 label ep02_dialogues2_college_3a:
     bardi_t "До начала занятий по математике еще есть время."
     bardi_t "Сначала схожу на третий этаж в приемную профессорши..."
-    return
+    return False
 
 # клик на библиотеку
 # не рендерить!!
 label ep02_dialogues2_college_3b:
     bardi_t "Нет, я пока не пойду в библиотеку."
+label ep02_dialogues2_college_3c:
     bardi_t "Я могу опоздать на математику..."
-    return
+    return False
 
 # при клике на дверь приемной
 label ep02_dialogues2_college_4:
     # Барди заходит в кабинет
     # секретарь стоит у входа в кабинет профессора и держит в руках чашку кофе с испуганным видом
+    sound snd_door_open1
+    fadeblack 1.5
     music Shining_Through
     imgfl 900789
     w
@@ -279,107 +289,122 @@ label ep02_dialogues2_college_4:
     bardi_t "А вдруг там какая-нибудь важная инфа?"
     bardi_t "Например, личные данные студенток? Или преподавателей?"
     bardi_t "Возможно, мне могло бы это пригодиться..."
-    sound vjuh3
-    img 900799 vpunch
-    bardi_t "Черт! Отсюда не дотянуться..."
-    w
-    # Барди тянет руку к папке, но не дотягивается
-    # встает и обходит стол со стороны кресла секретаря
-    sound step_stairs_short
-    imgf 900800
-    w
-    imgd 900801
-    bardi_t "..."
     menu:
-        "Открыть папку и посмотреть.":
-            # смотрит на дверь директрисы
-            # голос из-за двери
-            imgf 900802
-            principal_richardson "Мисс Янг! В этом документе полно ошибок!"
-            principal_richardson "Как вы можете работать с таким отвратительным знанием орфографии?!"
-            bardi_t "Монстра в юбке не получилось задобрить горячим кофе."
-            # смотрит на папку
-            imgd 900803
-            bardi_t "В данный момент мне это на руку..."
-            # он тянет руку к папке и в этот момент открывается дверь профессорши
-            ##можно здесь пожалуйста добавить звук, что как-будто дверь открывается,
-            ##Барди не успел взять папку и убегает на место,  секретарь выходит а из-за двери
-            ##директриса продолжает кричать.
+        "Понятнуться к папке.":
             sound vjuh3
-            sound2 snd_door_open1
-            img 900804 vpunch
-            bardi_t "ЧЕЕЕРТ!"
-            music Fly_With_Me_short
-            # секретарь быстро выходит, пятясь попой вперед, вслед ей летят ругательства
-            sound2 snd_runaway
-            img 900805 hpunch
-            bardi_t "!!!"
-            ## bardi_t "!!!"- можно пожалуйста эту строчку поставить суда, а со строки 253 убрать
-            sound snd_door_locked1
-            imgd 900806
-            principal_richardson "Это просто отвратительно!"
-            # Барди бегом возвращается на свой стул
-            # секретарь не замечает его маневров, стоит также попой к нему
-            principal_richardson "Переделать! СРОЧНО!!!"
-            secretary_young "Я сейчас все переделаю, профессор Ричардсон. Через 20 минут все будет готово."
-            principal_richardson "ПЯТЬ МИНУТ!!!"
-            # секретарша роняет на пол ручку или лист бумаги
-            imgd 900807
+            img 900799 vpunch
+            bardi_t "Черт! Отсюда не дотянуться..."
             w
-            sound Knock
-            img 900808 hpunch
-            secretary_young "Ой!.."
-            # наклоняется, чтобы поднять
-            # Барди рассматривает ее попу (Observe)
-            sound Jump2
-            imgd 900809
-            w
+            # Барди тянет руку к папке, но не дотягивается
+            # встает и обходит стол со стороны кресла секретаря
+            menu:
+                "Подойти поближе.":
+                    sound step_stairs_short
+                    imgf 900800
+                    w
+                    imgd 900801
+                    bardi_t "..."
+                    menu:
+                        "Открыть папку и посмотреть.":
+                            # смотрит на дверь директрисы
+                            # голос из-за двери
+                            imgf 900802
+                            principal_richardson "Мисс Янг! В этом документе полно ошибок!"
+                            principal_richardson "Как вы можете работать с таким отвратительным знанием орфографии?!"
+                            bardi_t "Монстра в юбке не получилось задобрить горячим кофе."
+                            # смотрит на папку
+                            imgd 900803
+                            bardi_t "В данный момент мне это на руку..."
+                            # он тянет руку к папке и в этот момент открывается дверь профессорши
+                            ##можно здесь пожалуйста добавить звук, что как-будто дверь открывается,
+                            ##Барди не успел взять папку и убегает на место,  секретарь выходит а из-за двери
+                            ##директриса продолжает кричать.
+                            sound vjuh3
+                            sound2 snd_door_open1
+                            img 900804 vpunch
+                            bardi_t "ЧЕЕЕРТ!"
+                            music Fly_With_Me_short
+                            # секретарь быстро выходит, пятясь попой вперед, вслед ей летят ругательства
+                            sound2 snd_runaway
+                            img 900805 hpunch
+                            bardi_t "!!!"
+                            ## bardi_t "!!!"- можно пожалуйста эту строчку поставить суда, а со строки 253 убрать
+                            sound snd_door_locked1
+                            imgd 900806
+                            principal_richardson "Это просто отвратительно!"
+                            # Барди бегом возвращается на свой стул
+                            # секретарь не замечает его маневров, стоит также попой к нему
+                            principal_richardson "Переделать! СРОЧНО!!!"
+                            secretary_young "Я сейчас все переделаю, профессор Ричардсон. Через 20 минут все будет готово."
+                            principal_richardson "ПЯТЬ МИНУТ!!!"
+                            # секретарша роняет на пол ручку или лист бумаги
+                            imgd 900807
+                            w
+                            music stop
+                            sound Knock
+                            img 900808 hpunch
+                            secretary_young "Ой!.."
+                            # наклоняется, чтобы поднять
+                            # Барди рассматривает ее попу (Observe)
+                            sound Jump2
+                            imgd 900809
+                            w
 
-            music Future_Bass
-            # video
-            # v_Observe_Principal_Secretary1_25
-            img black_screen
-            with diss
-            pause 1.0
-            scene black
-            image videov_Observe_Principal_Secretary1_25 = Movie(play="video/v_Observe_Principal_Secretary1_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observe_Principal_Secretary1_end.jpg")
-            show videov_Observe_Principal_Secretary1_25
-            $ renpy.pause(0.5, hard=True)
-            pause 4.5
-            img v_Observe_Principal_Secretary1_end
-            show screen image_shake("/images/Slides/v_Observe_Principal_Secretary1_end.jpg")
-            w
-            bardi_t "Хмм... Неплохо, мисс Янг."
+                            music Future_Bass
+                            # video
+                            # v_Observe_Principal_Secretary1_25
+                            img black_screen
+                            with diss
+                            pause 1.0
+                            scene black
+                            image videov_Observe_Principal_Secretary1_25 = Movie(play="video/v_Observe_Principal_Secretary1_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observe_Principal_Secretary1_end.jpg")
+                            show videov_Observe_Principal_Secretary1_25
+                            $ renpy.pause(0.5, hard=True)
+                            pause 4.0
+                            img v_Observe_Principal_Secretary1_end
+                            show screen image_shake("/images/Slides/v_Observe_Principal_Secretary1_end.jpg")
+                            w
+                            bardi_t "Хмм... Неплохо, мисс Янг."
+                            $ questHelp("college_18", True)
 
+                            # секретарша поднимает ручку (или лист бумаги), говорит профессорше
+                            #эти две строчки можно пожалуйста поставить после фразы директора "переделать!СРОЧНО!"
+                            # секретарь поспешно закрывает дверь и поворачивается к Барди
+                            pass
+                        "Стащить папку.":
+                            # Барди тянет руку к папке
+                            # в этот момент дверь открывается и попой вперед выходит секретарша
+                            imgf 900803
+                            ##можно здесь пожалуйста добавить звук, что как-будто дверь открывается,
+                            ##Барди не успел взять папку и убегает на место,  секретарь выходит а из-за двери
+                            ##директриса продолжает кричать.
+                            sound vjuh3
+                            sound2 snd_door_open1
+                            img 900804 vpunch
+                            bardi_t "ЧЕЕЕРТ!"
+                            music Fly_With_Me_short
+                            # Барди бегом возвращается на свой стул
+                            sound2 snd_runaway
+                            img 900805 hpunch
+                            bardi_t "!!!"
+                            # секретарь не замечает его маневров, стоит также попой к нему
+                            sound snd_door_locked1
+                            imgd 900806
+                            principal_richardson "Переделать! СРОЧНО!!!"
+                            secretary_young "Я сейчас все переделаю, профессор Ричардсон. Через 20 минут все будет готово."
+                            principal_richardson "ПЯТЬ МИНУТ!!!"
+                            $ questHelp("college_18", False)
+                            # секретарь поспешно закрывает дверь и поворачивается к Барди
+                            pass
+                "Остаться сидеть.":
+                    $ questHelp("college_18", False)
+                    pass
 
-            # секретарша поднимает ручку (или лист бумаги), говорит профессорше
-            #эти две строчки можно пожалуйста поставить после фразы директора "переделать!СРОЧНО!"
-            # секретарь поспешно закрывает дверь и поворачивается к Барди
+        "Остаться сидеть.":
+            $ questHelp("college_18", False)
             pass
-        "Стащить папку.":
-            # Барди тянет руку к папке
-            # в этот момент дверь открывается и попой вперед выходит секретарша
-            imgf 900803
-            ##можно здесь пожалуйста добавить звук, что как-будто дверь открывается,
-            ##Барди не успел взять папку и убегает на место,  секретарь выходит а из-за двери
-            ##директриса продолжает кричать.
-            sound vjuh3
-            sound2 snd_door_open1
-            img 900804 vpunch
-            bardi_t "ЧЕЕЕРТ!"
-            music Fly_With_Me_short
-            # Барди бегом возвращается на свой стул
-            sound2 snd_runaway
-            img 900805 hpunch
-            bardi_t "!!!"
-            # секретарь не замечает его маневров, стоит также попой к нему
-            sound snd_door_locked1
-            imgd 900806
-            principal_richardson "Переделать! СРОЧНО!!!"
-            secretary_young "Я сейчас все переделаю, профессор Ричардсон. Через 20 минут все будет готово."
-            principal_richardson "ПЯТЬ МИНУТ!!!"
-            # секретарь поспешно закрывает дверь и поворачивается к Барди
-            pass
+
+
     # секретарша выглядит расстроено, идет к своему креслу и садится за стол
     music Shining_Through
     imgfl 900810
@@ -463,6 +488,10 @@ label ep02_dialogues2_college_4:
     # квест-лог "Пойти на второй этаж в кабинет математики."
     return
 
+label ep02_dialogues2_college_4b:
+    bardi_t "Нужно скорее попасть на математику. Сейчас эта Кларк разверещится из-за опоздания."
+    return False
+
 # при клике на кабинета математики
 label ep02_dialogues2_college_5:
     # Барди заходит в кабинет
@@ -516,12 +545,13 @@ label ep02_dialogues2_college_5:
     bardi_t "Шон ведь предупреждал меня, что на ее занятия лучше не опаздывать."
     bardi_t "Надо же было так вляпаться..."
     bardi "Я..."
-    $ menu_rr = {
-        "Извиниться.": "rabbit",
-        "Я особо и не спешил.": "rat"
+    $ menu_data = {
+        "Я особо и не спешил.": {"info_rat":True},
+        "Извиниться.": {"info_rabbit":True}
     }
     menu:
         "Извиниться.": # кролик
+            call rrmeter(2, "ep02_dialogues2_college_5")
             imgd 900831
             bardi "Извините, миссис Кларк."
             bardi "Я новенький, всего второй день в этом колледже..."
@@ -538,6 +568,7 @@ label ep02_dialogues2_college_5:
             teacher_clark "И продолжим занятие."
             pass
         "Я особо и не спешил.": # крыса
+            call rrmeter(-2, "ep02_dialogues2_college_5")
             $ mlsBardiDay3College2 = day # Барди нагло разговаривал с преподом по математике Кларк
             imgd 900831
             bardi "Да я особо и не спешил..."
@@ -676,7 +707,7 @@ label ep02_dialogues2_college_5g:
 # клик на выход из кабинета во время урока
 label ep02_dialogues2_college_5h:
     bardi_t "Злобная Миссис Кларк меня прибьет, если я выйду посреди занятия..."
-    return
+    return False
 
 # при клике на Кларк, урок продолжается
 label ep02_dialogues2_college_6:

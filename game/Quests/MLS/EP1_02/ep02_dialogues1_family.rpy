@@ -62,7 +62,7 @@ label ep02_dialogues1_family_1:
     return 
 
 label ep02_dialogues1_family_1c():
-    fadeblack
+    fadeblack 1.0
     sound sneaks_1
     pause 1.5
     # затемнение, шаги
@@ -100,6 +100,7 @@ label ep02_dialogues1_family_1c():
             $ notif(_("[mcname] подсматривал за Оливией в душе."))
             #
             # Оливия пошло улыбается ему и подмигивает
+            fadeblack 1.5
             music Stylish_Hip_Hop_Rock
             imgf 900475
             olivia "[mcname], пошалим немного, пока Софи не видит?"
@@ -221,7 +222,7 @@ label ep02_dialogues1_family_1c():
             imgf 900489
             w
             music Adventures_of_the_Deaf_Dreamer_short
-            imgd 900490
+            img 900490 vpunch
             bardi_t "Да что за хрень со мной происходит?!"
             bardi_t "Фак!!!"
             # смотрит вниз на свой опавший член, он в ступоре
@@ -248,6 +249,7 @@ label ep02_dialogues1_family_1c():
             $ notif(_("[mcname] в колледже общался с Роуз."))
             #
             # Роуз смущена
+            fadeblack 1.5
             music Stylish_Hip_Hop_Rock
             imgf 900493
             student_rose "[mcname], а ты уверен, что Софи нас не застанет?"
@@ -352,7 +354,7 @@ label ep02_dialogues1_family_1c():
             imgf 900489
             w
             music Adventures_of_the_Deaf_Dreamer_short
-            imgd 900490
+            img 900490 vpunch
             bardi_t "Да что за хрень со мной происходит?!"
             bardi_t "Фак!!!"
             # смотрит вниз на свой опавший член, он в ступоре
@@ -379,6 +381,7 @@ label ep02_dialogues1_family_1c():
             $ notif(_("[mcname] в колледже познакомился с миссис Морис."))
             #
             # училка игриво улыбается и смотрит в глаза снизу вверх
+            fadeblack 1.5
             music Stylish_Hip_Hop_Rock
             imgf 900508
             teacher_morris "[mcname], мне так нравится, когда ты такой возбужденный..."
@@ -508,7 +511,7 @@ label ep02_dialogues1_family_1c():
             imgf 900489
             w
             music Adventures_of_the_Deaf_Dreamer_short
-            imgd 900490
+            img 900490 vpunch
             bardi_t "Да что за хрень со мной происходит?!"
             bardi_t "Фак!!!"
             # смотрит вниз на свой опавший член, он в ступоре
@@ -593,17 +596,19 @@ label ep02_dialogues1_family_2:
     imgd 900467
     bardi_t "По ее реакции за ужином было понятно, что эти пять баксов для нее совсем не лишние."
     bardi_t "..."
-    $ menu_rr = {
-        "Мне эти деньги нужнее.": "rat",
-        "Взять в долг.": "rabbit"
+    $ menu_data = {
+        "Мне эти деньги нужнее.": {"info_rat":True},
+        "Взять в долг.": {"info_rabbit":True}
     }
     menu:
         "Мне эти деньги нужнее.": # (+Rat)
+            call rrmeter(-5, "ep02_dialogues1_family_2")
             imgd 900467
             bardi_t "Но мне эти деньги нужнее."
             bardi_t "Притом, что такое пять баксов? Это же ерунда..."
             # Барди протягивает руку и забирает деньги
             imgf 900468
+            $ add_money(5.0)
             bardi "Спасибо, Софи."
             imgd 900056
             bardi "Следующие пять баксов будут через неделю?"
@@ -615,11 +620,13 @@ label ep02_dialogues1_family_2:
             $ mlsBardiDay3SophieMoney1 = day # Барди взял у Софи первые 5 долларов (крыса)
             pass
         "Взять в долг.": # (+Rabbit)
+            call rrmeter(5, "ep02_dialogues1_family_2")
             imgd 900467
             bardi_t "Но мне они тоже нужны. Мне нужно собирать деньги на билет..."
             bardi_t "Я могу сейчас взять эти деньги в долг."
             # Барди протягивает руку и забирает деньги
             imgf 900468
+            $ add_money(5.0)
             bardi "Софи, я тут подумал..."
             imgd 900056
             bardi "Если у Генри получится договориться о моей подработке..."

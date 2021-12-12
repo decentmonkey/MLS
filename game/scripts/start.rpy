@@ -52,6 +52,8 @@ default current_slide = False
 define steamVersion = False
 default rrmeterValue = 0
 
+default menu_data = {}
+
 #temp vars
 default maxRRMeter = 100
 

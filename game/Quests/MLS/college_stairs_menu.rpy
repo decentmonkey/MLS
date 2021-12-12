@@ -1,4 +1,15 @@
+default college_menu_roof_enabled = False
+default college_menu_floor3_enabled = True
+default college_menu_floor2_enabled = True
+default college_menu_floor1_enabled = True
+
 label college_stairs_menu:
+    $ menu_data = {
+        "КРЫША КОЛЛЕДЖА":{"enabled":college_menu_roof_enabled},
+        "ЭТАЖ 3":{"enabled":college_menu_floor3_enabled},
+        "ЭТАЖ 2":{"enabled":college_menu_floor2_enabled},
+        "ЭТАЖ 1":{"enabled":college_menu_floor1_enabled}
+    }
     menu:
         "КРЫША КОЛЛЕДЖА":
             call change_scene("college_roof") from _rcall_change_scene_4

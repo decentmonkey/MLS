@@ -765,6 +765,8 @@ label ep01_dialogues3_day2_family_7:
             img 900156
             sound run_stairs_floor
             w
+            $ questHelp("house_7", True)
+            $ questHelp("house_8", False)
             # он выскакивает из ванной комнаты в холл
             # ее телефон остается лежать на месте
             # затемнение, бег
@@ -810,6 +812,8 @@ label ep01_dialogues3_day2_family_7:
             # он выскакивает из ванной комнаты в холл
             # затемнение, бег
             # смена кадра на комнату Барди
+            $ questHelp("house_7", False)
+            $ questHelp("house_8", True)
             pass
     # Барди у себя в комнате
     music Secretions_Vocal

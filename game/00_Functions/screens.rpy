@@ -418,9 +418,13 @@ screen screen_sprites(data):
                                                 null:
                                                     width text_button_layouts[button_layout]["text_button.spacing2"]
                                                 if _preferences.language != "chinese":
-                                                    text t__(data[i]["text"]) style text_button_layouts[button_layout]["text_button.style"]
+                                                    text t__(data[i]["text"]) style text_button_layouts[button_layout]["text_button.style"]:
+                                                        if scene_name == "map" and obj_follow_list.has_key(scene_name + "_!_" + i) and obj_follow_list[scene_name + "_!_" + i] == True:
+                                                            at object_follow_flashing
                                                 else:
                                                     text t__(data[i]["text"]) style text_button_layouts[button_layout]["text_button.style"]:
+                                                        if scene_name == "map" and obj_follow_list.has_key(scene_name + "_!_" + i) and obj_follow_list[scene_name + "_!_" + i] == True:
+                                                            at object_follow_flashing
                                                         font gui.text_font_chinese
                                                 null:
                                                     width text_button_layouts[button_layout]["text_button.spacing2"]
@@ -1167,58 +1171,71 @@ screen hud_screen(hud_presets):
                 if hud_presets["display_money"] == True and moneyDisplayEnabled == True:
                     if gui.flag720 != True:
                         null:
-                            width 0
-                    if money == 100000000.0:
-                        add "icons/money_rich" + res.suffix + ".png":
-                            yalign 0.5
-                        $ money_text = "$ " + '{:10,.2f}'.format(money)
+                            width 25
+                    if 1==1:
+                        add "icons/wallet_icon" + res.suffix + ".png":
+                            yalign 0.0
+                            yoffset -10
+                        $ money_text = " $ " + '{:2,.2f}'.format(money)
                         text money_text:
                             color "#00a000"
                             xalign 0.0
                             yalign 0.5
                             yoffset gui.resolution.hud_screen.yoffset3
                             outlines [(3, "#000000", 0, 0)]
-                    else:
-                        if money < 10000000:
 
-                            if money == 0:
-                                pass
-                            else:
-                                if money < 5:
-                                    add "icons/money_dollar" + res.suffix + ".png":
-                                        yalign 0.5
+                    else:
+                        if money == 100000000.0:
+                            add "icons/money_rich" + res.suffix + ".png":
+                                yalign 0.5
+                            $ money_text = " $" + '{:10,.2f}'.format(money)
+                            text money_text:
+                                color "#00a000"
+                                xalign 0.0
+                                yalign 0.5
+                                yoffset gui.resolution.hud_screen.yoffset3
+                                outlines [(3, "#000000", 0, 0)]
+                        else:
+                            if money < 10000000:
+
+                                if money == 0:
+                                    pass
                                 else:
-                                    if money < 50:
-                                        add "icons/money_five" + res.suffix + ".png":
+                                    if money < 5:
+                                        add "icons/money_dollar" + res.suffix + ".png":
                                             yalign 0.5
                                     else:
-                                        if money < 10000:
-                                            add "icons/money_lower_100" + res.suffix + ".png":
+                                        if money < 50:
+                                            add "icons/money_five" + res.suffix + ".png":
                                                 yalign 0.5
+                                        else:
+                                            if money < 10000:
+                                                add "icons/money_lower_100" + res.suffix + ".png":
+                                                    yalign 0.5
 
 
-                            $ money_text = "$ " + '{:2,.2f}'.format(money)
-                            if money < 10:
-                                text money_text:
-                                    color "#e80000"
-                                    xalign 0.0
-                                    yalign 0.5
-                                    yoffset gui.resolution.hud_screen.yoffset3
-                                    outlines [(3, "#000000", 0, 0)]
-                            if money >= 10 and money < 5000:
-                                text money_text:
-                                    color c_orange
-                                    xalign 0.0
-                                    yalign 0.5
-                                    yoffset gui.resolution.hud_screen.yoffset3
-                                    outlines [(3, "#000000", 0, 0)]
-                            if money >= 5000:
-                                text money_text:
-                                    color c_green
-                                    xalign 0.0
-                                    yalign 0.5
-                                    yoffset gui.resolution.hud_screen.yoffset3
-                                    outlines [(3, "#000000", 0, 0)]
+                                $ money_text = "$ " + '{:2,.2f}'.format(money)
+                                if money < 10:
+                                    text money_text:
+                                        color "#e80000"
+                                        xalign 0.0
+                                        yalign 0.5
+                                        yoffset gui.resolution.hud_screen.yoffset3
+                                        outlines [(3, "#000000", 0, 0)]
+                                if money >= 10 and money < 5000:
+                                    text money_text:
+                                        color c_orange
+                                        xalign 0.0
+                                        yalign 0.5
+                                        yoffset gui.resolution.hud_screen.yoffset3
+                                        outlines [(3, "#000000", 0, 0)]
+                                if money >= 5000:
+                                    text money_text:
+                                        color c_green
+                                        xalign 0.0
+                                        yalign 0.5
+                                        yoffset gui.resolution.hud_screen.yoffset3
+                                        outlines [(3, "#000000", 0, 0)]
 
             fixed:
                 yoffset gui.resolution.hud_screen.yoffset1
@@ -1878,7 +1895,31 @@ screen choice(items):
                                 button_obj["caption"] = str1
                                 button_obj["active"] = False
 
-
+                    if menu_data != False and menu_data.has_key(imenu.caption):
+                        menu_data_row = menu_data[imenu.caption]
+                        if menu_data_row.has_key("enabled"):
+                            if menu_data_row["enabled"] == True:
+                                button_obj["active"] = True
+                            else:
+                                button_obj["active"] = False
+                        if menu_data_row.has_key("extra") and menu_data_row["extra"] == True:
+                            str1 = str1 + " (Extra version)"
+                            button_obj["caption"] = str1
+                            if game.extra != True:
+                                button_obj["active"] = False
+                        if menu_data_row.has_key("info_rat") and menu_data_row["info_rat"] == True:
+                            button_obj["image"] = "image=/images/Icons2/menu_rat.png"
+                            button_obj["yoffset"] = -22
+                        if menu_data_row.has_key("info_rabbit") and menu_data_row["info_rabbit"] == True:
+                            button_obj["image"] = "image=/images/Icons2/menu_rabbit.png"
+                            button_obj["yoffset"] = -30
+                        if menu_data_row.has_key("yoffset"):
+                            button_obj["yoffset"] = menu_data_row["yoffset"]
+                        if menu_data_row.has_key("color"):
+                            str1 = "{color=" + menu_data_row["color"] + "}" + str1 + "{/color}"
+                    if obj_follow_list.has_key("menu_!_" + imenu.caption):
+                        str1 = "{color=#31e8b1}" + str1 + "{/color}"
+                    button_obj["caption"] = str1
 
                     buttons_list.append(button_obj)
                 priority -= 10
@@ -1907,24 +1948,32 @@ screen choice(items):
         for button_data in buttons_list:
             if button_data["native"] == True:
                 if button_data["active"] == True:
-                    if _preferences.language != "chinese":
-                        textbutton t__(button_data["caption"]):
-                            action [
-                                SetVariable("menu_corruption", False),
-                                SetVariable("menu_price", False),
-                                SetVariable("dialogue_active_flag", False),
-                                SetVariable("menuName", False),
-                                button_data["action"]
-                            ]
-                    else:
-                        textbutton t__(button_data["caption"]) text_style "text_chinese":
-                            action [
-                                SetVariable("menu_corruption", False),
-                                SetVariable("menu_price", False),
-                                SetVariable("dialogue_active_flag", False),
-                                SetVariable("menuName", False),
-                                button_data["action"]
-                            ]
+                    hbox:
+                        if _preferences.language != "chinese":
+                            textbutton t__(button_data["caption"]):
+                                action [
+                                    SetVariable("menu_corruption", False),
+                                    SetVariable("menu_price", False),
+                                    SetVariable("dialogue_active_flag", False),
+                                    SetVariable("menuName", False),
+                                    button_data["action"]
+                                ]
+                        else:
+                            textbutton t__(button_data["caption"]) text_style "text_chinese":
+                                action [
+                                    SetVariable("menu_corruption", False),
+                                    SetVariable("menu_price", False),
+                                    SetVariable("dialogue_active_flag", False),
+                                    SetVariable("menuName", False),
+                                    button_data["action"]
+                                ]
+                        if button_data.has_key("image"):
+                            add button_data["image"]:
+                                yalign 0.5
+                                if button_data.has_key("yoffset"):
+                                    yoffset button_data["yoffset"]
+                                xoffset -200
+                                xanchor 0.0
                 else:
                     if _preferences.language != "chinese":
                         textbutton t__(button_data["caption"]) text_style "choice_button_disabled_text"
@@ -1933,26 +1982,34 @@ screen choice(items):
             else:
                 if button_data["active"] == True:
                     $ menuLastName = menuName
-                    if _preferences.language != "chinese":
-                        textbutton t__(button_data["caption"]):
-                            action [
-                                SetVariable("menu_corruption", False),
-                                SetVariable("menu_price", False),
-                                SetVariable("dialogue_active_flag", False),
-                                SetVariable("menuName", False),
-                                Call("call_hook", button_data["action"], menuLastName)
-#                                Return(["call_hook", button_data["action"], menuLastName]),
-                            ]
-                    else:
-                        textbutton t__(button_data["caption"]) text_style "text_chinese":
-                            action [
-                                SetVariable("menu_corruption", False),
-                                SetVariable("menu_price", False),
-                                SetVariable("dialogue_active_flag", False),
-                                SetVariable("menuName", False),
-                                Call("call_hook", button_data["action"], menuLastName)
-#                                Return(["call_hook", button_data["action"], menuLastName]),
-                            ]
+                    hbox:
+                        if _preferences.language != "chinese":
+                            textbutton t__(button_data["caption"]):
+                                action [
+                                    SetVariable("menu_corruption", False),
+                                    SetVariable("menu_price", False),
+                                    SetVariable("dialogue_active_flag", False),
+                                    SetVariable("menuName", False),
+                                    Call("call_hook", button_data["action"], menuLastName)
+    #                                Return(["call_hook", button_data["action"], menuLastName]),
+                                ]
+                        else:
+                            textbutton t__(button_data["caption"]) text_style "text_chinese":
+                                action [
+                                    SetVariable("menu_corruption", False),
+                                    SetVariable("menu_price", False),
+                                    SetVariable("dialogue_active_flag", False),
+                                    SetVariable("menuName", False),
+                                    Call("call_hook", button_data["action"], menuLastName)
+    #                                Return(["call_hook", button_data["action"], menuLastName]),
+                                ]
+                        if button_data.has_key("image"):
+                            add button_data["image"]:
+                                xanchor 0
+                                yalign 0.5
+                                if button_data.has_key("yoffset"):
+                                    yoffset button_data["yoffset"]
+                                xoffset -200
                 else:
                     if _preferences.language != "chinese":
                         textbutton t__(button_data["caption"]) text_style "choice_button_disabled_text"

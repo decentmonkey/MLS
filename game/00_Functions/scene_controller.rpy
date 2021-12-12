@@ -92,7 +92,7 @@ label show_scene_now:
 
     if refreshed_scene_name != scene_name and (lastSceneName != "map" or mapChangedTeleportFlag == True):
         $ refreshed_scene_name = scene_name
-        call process_hooks("enter_scene", "global") from _rcall_process_hooks_51
+        call process_hooks("enter_scene", "global") from _rcall_process_hooks_51
         if _return != False:
             call process_hooks("enter_scene", scene_name) from _call_process_hooks_13 #хук вызывается после входа на сцену и отрисовки (как autorun)
         call remove_dialogue() from _call_remove_dialogue_2
@@ -142,16 +142,16 @@ label show_scene_loop:
         if interact_data[0] == "show_achievements":
             call show_achievements() from _rcall_sprites_action11
         if interact_data[0] == "time_management_street_fast_sleep":
-            call bed_basement_fast_sleep() from _rcall_bed_basement_fast_sleep
+            call bed_basement_fast_sleep() from _rcall_bed_basement_fast_sleep
         if interact_data[0] == "phone_show":
-            call phone_open() from _rcall_phone_open
+            call phone_open() from _rcall_phone_open
         if interact_data[0] == "return_home":
-            call returnHomeButton() from _rcall_returnHomeButton
+            call returnHomeButton() from _rcall_returnHomeButton
         if interact_data[0] == "refresh":
             $ show_scene_loop_flag = False
-            call refresh_scene() from _rcall_refresh_scene
+            call refresh_scene() from _rcall_refresh_scene
         if interact_data[0] == "special":
-            call interact_special(interact_data) from _rcall_interact_special
+            call interact_special(interact_data) from _rcall_interact_special
 
 
 label show_scene_loop2:
@@ -249,7 +249,7 @@ label after_load():
     $ after_load_ready_to_render = True
 
     $ imagesSizesCache = {}
-    call process_afterload() from _rcall_process_afterload
+    call process_afterload() from _rcall_process_afterload
     return
 
 label interact_special(interact_data):
@@ -259,11 +259,11 @@ label interact_special(interact_data):
     $ screenActionHappened = False
 
     if interact_data[1] == "intro_block":
-        call ep1_intro_quests1_block() from _rcall_ep1_intro_quests1_block
+        call ep1_intro_quests1_block() from _rcall_ep1_intro_quests1_block
 
     $ scene_refresh_flag = True
     $ show_scene_loop_flag = True
     $ parse_transition_flag = False
     $ interface_blocked_flag = False
-    call remove_dialogue() from _rcall_remove_dialogue
+    call remove_dialogue() from _rcall_remove_dialogue
     return

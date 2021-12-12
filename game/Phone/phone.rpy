@@ -31,6 +31,10 @@ label phone_call_contact:
             call cynthia_chat2() from _rcall_cynthia_chat2 # регулярный чат днем, Синтия не может говорить, учится
             return
     if obj_name == "Sean":
+        if seanCallStage == 2:
+            call sean_chat3()
+            $ questHelp("college_15", True)
+            return
         if seanCallStage == 1:
             call sean_chat1() from _rcall_sean_chat1
             return
