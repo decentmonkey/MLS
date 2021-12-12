@@ -42,6 +42,7 @@ label ep02_dialogues3_sean_1:
 # клик на дом Шона
 label ep02_dialogues3_sean_2:
     # Барди поднимается на крыльцо, стучит в дверь, но ему не открывает никто
+    fadeblack 1.5
     music Shining_Through
     imgfl 900526
     sound2 snd_door_knock

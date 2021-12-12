@@ -296,3 +296,39 @@ screen dream():
     layer "master"
     zorder 20
     add "/images/Sprites/vignette1_white.png"
+
+screen close_eyes():
+    layer "master"
+    zorder 20
+    add "/images/Overlays/black_screen.jpg":
+        at close_eyes1
+    add "/images/Overlays/black_screen.jpg":
+        at close_eyes2
+
+transform close_eyes1:
+    xpos 0
+    ypos -1080
+    easein 2.0 ypos -540
+
+transform close_eyes2:
+    xpos 0
+    ypos 1080
+    easein 2.0 ypos 540
+
+screen open_eyes():
+    layer "master"
+    zorder 20
+    add "/images/Overlays/black_screen.jpg":
+        at open_eyes1
+    add "/images/Overlays/black_screen.jpg":
+        at open_eyes2
+
+transform open_eyes1:
+    xpos 0
+    ypos -540
+    easeout 2.0 ypos -1080
+
+transform open_eyes2:
+    xpos 0
+    ypos 540
+    easeout 2.0 ypos 1080

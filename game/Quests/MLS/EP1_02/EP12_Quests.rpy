@@ -19,6 +19,7 @@ label ep12_quests1_init:
     $ questHelp("house_9")
     $ miniMapDisabled["HOUSE"] = []
     $ miniMapEnabledOnly = ["Floor1"]
+    $ set_object_follow("Floor1", scene="minimap")
 
     $ sister1RoomDoorLocked = True
     $ sister2RoomDoorLocked = True
@@ -72,6 +73,7 @@ label ep12_quests4_kitchen:
     $ set_object_follow("Teleport_COLLEGE", scene="map")
     $ miniMapDisabled["HOUSE"] = []
     $ remove_hook(label="house_block")
+    $ set_object_follow("Floor1", scene="minimap")
 
     # init college
     $ add_hook("enter_scene", "ep02_dialogues2_college_1", scene="college_street", once=True)
@@ -124,6 +126,7 @@ label ep12_quests5_college: # Барди заходит в колледж хол
     $ set_object_follow("Teleport_Coridor8", scene="college_coridor9")
     $ set_object_follow("Teleport_Principal_Secretary", scene="college_coridor8")
     $ set_object_follow("ЭТАЖ 3", scene="menu")
+    $ set_object_follow("COLLEGE_Floor3", scene="minimap")
 
     $ add_hook("Teleport_Principal_Secretary", "ep12_quests7_principal_secretary", scene="college_coridor8")
     $ add_hook("Teleport_Library", "ep02_dialogues2_college_3b", scene="college_coridor9", quest="college_day2")
@@ -162,6 +165,7 @@ label ep12_quests7_principal_secretary:
     $ set_object_follow("Teleport_Coridor5", scene="college_coridor6")
     $ set_object_follow("Teleport_Algebra", scene="college_coridor5")
     $ set_object_follow("ЭТАЖ 2", scene="menu")
+    $ set_object_follow("COLLEGE_Floor2", scene="minimap")
 
     $ add_hook("Teleport_Algebra", "ep12_quests8_algebra", scene="college_coridor5")
     $ set_active("Student12", False, scene="college_coridor5")
@@ -181,6 +185,7 @@ label ep12_quests8_algebra:
     fadeblack 1.5
     call college_algebra_init2()
     $ set_active("Teleport_Coridor5", True, scene="college_algebra")
+    $ set_var("Teleport_Coridor5", scene="college_algebra", xpos=282, ypos=202)
     $ add_hook("Teleport_Coridor5", "ep02_dialogues2_college_5h", scene="college_algebra", quest="college_day2")
     $ add_hook("Teacher8", "ep12_quests9_algebra2", scene="college_algebra")
 
@@ -192,7 +197,94 @@ label ep12_quests9_algebra2:
         call refresh_scene_fade()
         return False
     $ remove_hook(label="ep12_quests9_algebra2")
+    $ questHelp("college_21")
+    $ clear_object_follow_all()
+    $ set_object_follow("Teleport_Gym", scene="college_coridor2")
+    $ add_hook("Teleport_Gym", "ep12_quests10_gym", scene="college_coridor2", quest="college_day2")
+    $ set_active("Teleport_Stairs", False, scene="college_coridor2")
+    $ miniMapEnabledOnly = ["empty"]
 
+    call change_scene("college_coridor2", "Fade_long")
+    return False
+
+label ep12_quests10_gym:
+    $ remove_hook()
+    call ep02_dialogues2_college_7()
+    $ add_hook("Teleport_Gym", "ep02_dialogues2_college_8a", scene="college_coridor2", quest="college_day2")
+    $ add_hook("Teleport_Street", "ep02_dialogues2_college_8a", scene="college_coridor1", label="college_street_block", quest="college_day2")
+    $ add_hook("Teleport_Principal_Secretary", "ep02_dialogues2_college_8a", scene="college_coridor8", quest="college_day2")
+    $ add_hook("Teleport_Algebra", "ep02_dialogues2_college_8a", scene="college_coridor5", quest="college_day2")
+    $ add_hook("Teleport_English", "ep02_dialogues2_college_8a", scene="college_coridor6", quest="college_day2")
+
+    $ add_hook("Teleport_Library", "ep12_quests11_library", scene="college_coridor9", quest="college_day2")
+
+    $ autorun_to_object("ep02_dialogues2_college_8a", scene="college_coridor2")
+
+    $ set_active("Teleport_Stairs", True, scene="college_coridor2")
+    $ miniMapEnabledOnly = []
+
+    $ clear_object_follow_all()
+    $ set_object_follow("ЭТАЖ 3", scene="menu")
+    $ set_object_follow("COLLEGE_Floor3", scene="minimap")
+    $ set_object_follow("Teleport_Stairs", scene="college_coridor2")
+    $ set_object_follow("Teleport_Floor2", scene="college_coridor3")
+    $ set_object_follow("Teleport_Coridor9", scene="college_coridor10")
+    $ set_object_follow("Teleport_Library", scene="college_coridor9")
+
+
+    $ questHelp("college_21", True)
+    $ questHelp("college_23")
+
+    call refresh_scene_fade()
+    return False
+
+
+label ep12_quests11_library:
+    $ remove_hook()
+    call ep02_dialogues2_college_9()
+    $ clear_object_follow_all()
+    $ questHelp("college_23", True)
+    call changeDayTime("day")
+    $ add_hook("Teleport_Coridor1", "ep01_dialogues2_day1_family_1_12", scene="college_street", label="college_day2")
+    $ miniMapDisabled["COLLEGE"] = ["COLLEGE_Floor2", "COLLEGE_Floor1", "COLLEGE_Floor3"]
+
+    call ep02_dialogues2_college_10() # при клике на выход из колледжа (после библиотеки)
+
+    $ sophieCallStage = 1
+    $ seanCallStage = 0
+    $ add_hook("enter_scene", "ep12_quests12_phone", scene="college_street")
+    call change_scene("college_street", "Fade_long")
+    return False
+
+label ep12_quests12_phone:
+    $ remove_hook()
+    $ add_hook("phone_close", "ep12_quests13_phone_after", scene="phone", once=True)
+    $ phone_incoming_call("Sophie")
+
+
+    return False
+
+label ep12_quests13_phone_after:
+    if questHelpGetStatus("sean_1") == 0:
+        $ questHelp("sean_1", False)
+    $ questHelp("sean_2")
+    $ remove_hook(label="sean_visit")
+
+    $ map_enabled = True
+    $ set_object_follow("Teleport_Map", scene="college_street")
+    $ set_object_follow("Teleport_HOUSE_FRIEND", scene="map")
+    $ set_object_follow("Teleport_LivingRoom", scene="housefriend_street")
+    $ autorun_to_object("ep02_dialogues3_sean_1", scene="housefriend_street")
+    $ add_hook("Teleport_LivingRoom", "ep12_quests14_sean", scene="housefriend_street")
+
+    return
+
+label ep12_quests14_sean:
+    $ remove_hook()
+    $ clear_object_follow_all()
+    call ep02_dialogues3_sean_2()
+#    call changeDayTime("evening")
+    call change_scene("housefriend_livingroom", "Fade_long")
     return False
 
 

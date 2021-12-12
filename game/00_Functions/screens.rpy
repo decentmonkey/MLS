@@ -1032,6 +1032,11 @@ screen hud_minimap(minimapData):
                                 xysize (int(196 * gui.resolution.koeff), int(110 * gui.resolution.koeff))
                                 padding (0,0)
                                 if locationDisabledFlag == False:
+                                    if obj_follow_list.has_key("minimap_!_" + minimapCell["name"]):
+                                        add "/images/Icons/minimap_green.png":
+                                            xoffset -37
+                                            yoffset -22
+                                            at object_follow_flashing
                                     add get_image_filename(minimapCell["img"] + res.suffix)
                                 else:
                                     add get_image_filename(minimapCell["img"] + "_Disabled" + res.suffix)

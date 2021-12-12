@@ -886,22 +886,32 @@ label ep02_dialogues2_college_6:
     pause 1.0
     sound snd_punch_face2
     sound2 snd_kick_fred1
-    img 910106 hpunch
+    img 910106
+    show screen dream()
+    with hpunch
     bardi_t "ЧЕЕЕРТ!!!"
     fadeblack
     sound snd_bodyfall
     pause 1.5
     music Fly_With_Me_short
-    img 910107 vpunch
+    img 910107
+    show screen dream()
+    with vpunch
     student_harry "Добро пожаловать, лузер."
     w
     sound2 snd_kick_fred1
-    img 900778 hpunch
+    img 900778
+    show screen dream()
+    with hpunch
     w
     sound Jump2
-    img 900784 hpunch
+    img 900784
+    show screen dream()
+    with hpunch
     w
-    imgd 900839
+    img 900839
+    show screen dream()
+    with diss
     sound2 ma5
     w
     fadeblack
@@ -992,6 +1002,9 @@ label ep02_dialogues2_college_6:
     sound snd_door_locked1
     img 910674 vpunch
     bardi "Окей." # взгляд на дверь
+    menu:
+        "Оглядеться вокруг.":
+            pass
     # переводит взгляд на парты - за ножкой стула у парты Эмили на полу лежит телефон (его почти не видно)
     imgf 910675
     bardi "..."
@@ -1007,9 +1020,9 @@ label ep02_dialogues2_college_6:
     sound swish
     imgd 910678
     bardi_t "..."
-    $ menu_rr = {
-        "Догнать Эмили.": "rabbit",
-        "А вдруг он без пароля?..": "rat"
+    $ menu_data = {
+        "Догнать Эмили.": {"info_rabbit":True},
+        "А вдруг он без пароля?..": {"info_rat":True}
     }
     menu:
         "Догнать Эмили.": # (+Rabbit)
@@ -1017,6 +1030,7 @@ label ep02_dialogues2_college_6:
             imgf 910679
             bardi_t "Как она могла его не заметить?"
             bardi_t "Нужно отдать ей телефон, пока она весь колледж не обыскала."
+            call rrmeter(5, "ep02_dialogues2_college_6")
             # он выбегает из кабинета
             fadeblack
             sound snd_door_locked1
@@ -1049,6 +1063,7 @@ label ep02_dialogues2_college_6:
             sound snd_phone_notification2
             imgd 910681
             bardi_t "Готово!"
+            call rrmeter(-5, "ep02_dialogues2_college_6")
             # Барди блокирует телефон Эмили
             imgd 910682
             bardi_t "Это отличный способ взбесить Гарри!"
@@ -1374,6 +1389,7 @@ label ep02_dialogues2_college_6:
                             img 910744 hpunch
                             sound2 fear1
                             teacher_morris "ОЙ!.."
+                            music stop
                             img 910745
                             w
                             sound snd_take_paper
@@ -1385,6 +1401,7 @@ label ep02_dialogues2_college_6:
                             # ватманы падают на пол
                             imgd 910748
                             w
+                            music Stylish_Fashion_Electronic_Rock
 
                             # video
                             # v_Observe_Teacher11_2_25
@@ -1401,8 +1418,8 @@ label ep02_dialogues2_college_6:
                             w
                             bardi "!!!"
 
-                            $ menu_rr = {
-                                "Собрать ватманы.": "rabbit"
+                            $ menu_data = {
+                                "Собрать ватманы.": {"info_rabbit":True},
                             }
                             menu:
                                 "Собрать ватманы.": #(+Rabbit)
@@ -1417,6 +1434,7 @@ label ep02_dialogues2_college_6:
                                     img 910751
                                     teacher_morris "[mcname]!.."
                                     # Барди резко оддергивает руку
+                                    call rrmeter(3, "ep02_dialogues2_college_6b")
                                     imgd 910752
                                     bardi "!!!"
                                     bardi "Я с-случайно..."
@@ -1504,6 +1522,8 @@ label ep02_dialogues2_college_6:
                     bardi "До свидания, миссис Морис."
                     # Барди выходит, затемнение, шаги
                     # оказывается в движке на первом этаже
+                    $ questHelp("college_19", True)
+                    $ questHelp("college_20", False)
                     fadeblack
                     sound step_stairs_short
                     pause 1.5
@@ -1552,6 +1572,8 @@ label ep02_dialogues2_college_6:
             bardi_t "Ничего этот придурок мне не сделает!"
             bardi_t "Я должен приструнить его! И я сделаю это!"
             bardi_t "Я сам его размажу!"
+            $ questHelp("college_19", False)
+            $ questHelp("college_20", False)
             fadeblack 1.5
             return
     # затемнение, бег
@@ -1575,8 +1597,8 @@ label ep02_dialogues2_college_6:
     w
     imgd 901007
     bardi_t "..."
-    $ menu_rr = {
-        "Спрятаться за шкафчиком.": "rabbit"
+    $ menu_data = {
+        "Спрятаться за шкафчиком.": {"info_rabbit":True},
     }
     menu:
         "Спрятаться под скамейкой.":
@@ -1674,20 +1696,28 @@ label ep02_dialogues2_college_6:
                     # Барди резко закрывает глаза - темно
                     bardi "Закрыл."
                     student_rose "Точно?"
+                    
+                    show screen close_eyes()
+                    pause 3.0
                     img black_screen
-                    with diss
+#                   with diss
                     bardi "Да!"
                     student_rose "[mcname], черт! Если ты меня обманешь - я тебя убью! Потом..."
                     bardi "Не переживай, Роуз. Я ничего не вижу."
-                    $ menu_rr = {
-                        "Открыть глаза.": "rat"
+                    $ menu_data = {
+                        "Открыть глаза.": {"info_rat":True}
                     }
+
                     menu:
                         "Открыть глаза.": #(+Rat)
                             pass
+                    call rrmeter(-5, "ep02_dialogues2_college_6_01")
                     # Барди открывает глаза, Роуз на него уже не смотрит
                     music Stylish_Hip_Hop_Rock
-                    imgf 901029
+                    pause 1.0
+                    img 901029
+                    show screen open_eyes()
+                    pause 3.0
                     student_rose "..."
                     # она снимает с себя полотенце и остается в одних трусиках, прикрывает грудь рукой
                     bardi_t "Стесняшка Роуз пошла на такой подвиг!.."
@@ -1696,6 +1726,9 @@ label ep02_dialogues2_college_6:
                     sound Jump2
                     img 901030 hpunch
                     bardi_t "Вот облом!"
+                    menu:
+                        "Выглянуть из-под полотенца.":
+                            pass
 
                     # video
                     # v_Observe_Rose_2_25
@@ -1931,7 +1964,6 @@ label ep02_dialogues2_college_6:
                 "Остаться.":
                     imgd 901056
                     bardi_t "Может, она так и не заметит меня?.."
-                    bardi_t "Зато я ее рассмотрю получше..."
                     # Роуз стоит спиной к нему, наклоняется в одних трусиках
                     # Барди ее рассматривает
                     music Stylish_Hip_Hop_Rock
@@ -1941,11 +1973,13 @@ label ep02_dialogues2_college_6:
                     # Роуз его замечает
                     imgf 901060
                     w
+                    imgd 901052
+                    bardi_t "Зато я ее рассмотрю получше..."
 
                     # video
                     # v_Observe_NiceGirl2_25
-                    img black_screen
-                    with diss
+#                    img black_screen
+#                    with diss
                     pause 1.0
                     scene black
                     image videov_Observe_NiceGirl2_25 = Movie(play="video/v_Observe_NiceGirl2_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observe_NiceGirl2_end.jpg")
@@ -1994,6 +2028,7 @@ label ep02_dialogues2_college_6:
             bardi "Если честно..."
             bardi "Мне даже жаль, что я совсем ничего не успел подсмотреть."
             bardi "Такая красивая девочка, без одежды... А я ничего не увидел."
+            call rrmeter(3, "ep02_dialogues2_college_6_03")
             # Роуз смущенно пускает глаза и улыбается
             imgd 901066
             student_rose "..."
@@ -2007,6 +2042,8 @@ label ep02_dialogues2_college_6:
             pass
     imgd 901046
     bardi "Спасибо, Роуз."
+    $ questHelp("college_19", False)
+    $ questHelp("college_20", True)
     fadeblack
     sound snd_door_open1
     pause 1.5
@@ -2018,6 +2055,8 @@ label ep02_dialogues2_college_7:
     # Барди открывает дверь и заходит в зал
     # на заднем фоне видим девочек с группы (Girl_frik_sport_outfit, Pretty_girl_sport_outfit, Classmate1_sport_outfit, Classmate10_sport_outfit_slim)
     # внезапно перед Барди появляется тренер Брукс
+    sound snd_door_open1
+    fadeblack 1.5
     music Shining_Through
     music2 school-corridor-1
     imgfl 900867
@@ -2074,6 +2113,7 @@ label ep02_dialogues2_college_7:
                     # Барди в это время рассматривает ее
                     music The_Heat
                     imgd 900878
+                    show screen image_shake("/images/Slides/img_900878.jpg")
                     bardi_t "Хмм..."
                     bardi_t "Классный костюмчик у этой тренерши. Да сама она очень даже ничего."
                     imgd 900879
@@ -2106,6 +2146,7 @@ label ep02_dialogues2_college_7:
                     trainer_brooks "Так что, на выход!"
                     # затемнение
                     # Барди оказывается в холле
+                    $ questHelp("college_22, True")
                     music2 stop
                     fadeblack
                     sound step_stairs_short
@@ -2127,6 +2168,7 @@ label ep02_dialogues2_college_7:
                     fadeblack
                     sound step_stairs_short
                     pause 1.5
+                    $ questHelp("college_22", False)
                     # затемнение
                     # Барди оказывается в холле
                     pass
@@ -2151,6 +2193,7 @@ label ep02_dialogues2_college_7:
             pause 1.5
             # затемнение
             # Барди оказывается в холле
+            $ questHelp("college_22", False)
             pass
     music Step_By_Step
     imgf 900884
@@ -2170,7 +2213,7 @@ label ep02_dialogues2_college_8a:
     # мысли, не рендерить!!
     bardi_t "Зануда утром что-то говорила про библиотеку..."
     bardi_t "По-моему, она сказла, что библиотека на третьем этаже."
-    return
+    return False
 
 # при клике на библиотеку
 label ep02_dialogues2_college_9:
@@ -2181,6 +2224,8 @@ label ep02_dialogues2_college_9:
     # библиотекарь (Teacher6_school_outfit (синее обтягивающе платье, длинные волосы и очки), Teacher6_outfit не брать)
     # она стоит у стойки библиотеки, вид строгий
     # Барди подходит к библиотекарше
+    sound snd_door_open1
+    fadeblack 1.5
     music Postcard_From_Hell
     sound2 step_stairs_short
     imgfl 900885
@@ -2247,6 +2292,7 @@ label ep02_dialogues2_college_9:
             w
             # библиотекарша отходит от него, он остается стоять у стеллажа
             # Барди смотрит в сторону Лео
+            $ questHelp("college_24", False)
             pass
         "Попросить достать еще одну книгу.":
             music Step_By_Step
@@ -2315,6 +2361,7 @@ label ep02_dialogues2_college_9:
             bardi "Я помогу!"
             # успевает за это время поглазеть на ее попу
             imgd 900934
+            show screen image_shake("/images/Slides/img_900934.jpg")
             bardi_t "..."
             imgd 900935
             w
@@ -2348,6 +2395,7 @@ label ep02_dialogues2_college_9:
             w
             # бросает ее на стул
             # оборачивается
+            $ questHelp("college_24", True)
             pass
     # и замечает, что спиной к нему сидит Синтия
     music Little_Tomcat
@@ -2370,8 +2418,8 @@ label ep02_dialogues2_college_9:
     # Барди садится напротив нее
     imgf 900905
     w
-    imgd 900906
-    w
+#    imgd 900906
+#    w
     imgf 900907
     cynthia "Как твои дела? С учебой все в порядке?"
     imgd 900908
@@ -2690,6 +2738,7 @@ label ep02_dialogues2_college_10:
         student_harry "Я тебя сейчас об асфальт размажу так, что!.."
         music stop
         sound plastinka1b
+        sound2 snd_bodyfall
         img 900987 hpunch
         student_emily "ГАРРИ!"
         student_emily "ТЫ СОВСЕМ ОХРЕНЕЛ?!"

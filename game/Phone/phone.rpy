@@ -23,6 +23,11 @@ label phone_before_call_contact:
     return
 
 label phone_call_contact:
+    if obj_name == "Sophie":
+        if sophieCallStage == 1:
+            call sophie_chat2()
+            return
+
     if obj_name == "Cynthia":
         if cynthiaCallStage == 1 and day_suffix != 3:
             call cynthia_chat1() from _rcall_cynthia_chat1

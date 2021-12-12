@@ -115,6 +115,41 @@ label sophie_chat1:
     ])
     return
 
+label sophie_chat2:
+    $ phone_start_new_chat("sophie_chat2", "Sophie")
+    call phone_chat([
+        ["sophie", t_("[mcname], надеюсь, сегодня ты не задержишься после колледжа. Мы ждем тебя к ужину.")]
+    ])
+    call phone_chat_menu([
+        t__("Ответить."),
+        t__("Не отвечать.")
+    ])
+    if _return == 0:
+        call phone_chat_menu([
+            t__("Ненадолго зайду к Шону."),
+            t__("Скоро буду дома.")
+        ])
+        if _return == 0:
+            call phone_chat([
+                ["", t_("Привет, Софи. Я еще в колледже.")],
+                ["", t_("После ненадолго заскочу к Шону.")],
+                ["", t_("К ужину буду.")]
+            ])
+        if _return == 1:
+            call phone_chat([
+                ["", t_("Привет, Софи. Я уже освободился.")],
+                ["", t_("Скоро буду дома.")]
+            ])
+        call phone_chat([
+            ["sophie", t_("Хорошо, милый. Жду :)")],
+            ["", t_("Окей :)")]
+        ])
+
+    if _return == 1:
+        bardi_t "Позже ей отвечу."
+    return
+
+        
 label college_chat1:
     $ phone_add_history("college_chat1", "College", [
         ["college", t_("Студент [mcsurname], ждем вас сегодня в 9:00 am в приемной профессора Ричардсон. Администрация колледжа.")],

@@ -386,7 +386,7 @@ label process_object_click(func_name, obj_name_source, obj_data_source):
 #    $ config.autosave_on_choice = False
     $ obj_name = obj_name_source
     $ obj_data = obj_data_source
-    $ clear_object_follow(obj_name, scene=scene_name)
+#    $ clear_object_follow(obj_name, scene=scene_name)
     if clickHoldMode == True and clickHoldFlag == True:
         $ x,y = renpy.get_mouse_pos()
         if time.time() - clickHoldLastTime < 1 and abs(x - clickHoldLastMouseX) < 3 and abs(y - clickHoldLastMouseY) < 3:
@@ -480,7 +480,7 @@ label process_object_click_alternate_action(idx, actions_list, click_label, name
 #    call expression func_name pass (name, data)
     $ obj_name = name
     $ obj_data = data
-    $ clear_object_follow(obj_name, scene=scene_name)
+#    $ clear_object_follow(obj_name, scene=scene_name)
     call process_hooks(obj_name, api_scene_name) from _call_process_hooks_11
     if _return != False and ((obj_data.has_key("owner") == False and owner == "Bardie") or (obj_data.has_key("owner") == True and obj_data["owner"] == owner)):
         call expression func_name from _call_expression_2
@@ -532,7 +532,7 @@ label process_object_click_alternate_inventory(idx, inventory_data, click_label,
     $ interface_blocked_flag = True
     $ act = data["action"]
     $ obj_name = name
-    $ clear_object_follow(obj_name, scene=scene_name)
+#    $ clear_object_follow(obj_name, scene=scene_name)
     if shortFunction == False:
         call expression func_name pass (name, inventory[idx], inventory_data, data) from _call_expression_3
     else:
