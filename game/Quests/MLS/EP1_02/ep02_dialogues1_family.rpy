@@ -59,6 +59,9 @@ label ep02_dialogues1_family_1:
     bardi_t "С ЭТИМ на кухню точно не стоит идти..."
     bardi_t "Сначала нужно сбросить напряжение."
     bardi_t "Самое время принять душ."
+    return 
+
+label ep02_dialogues1_family_1c():
     fadeblack
     sound sneaks_1
     pause 1.5
@@ -530,6 +533,7 @@ label ep02_dialogues1_family_1:
     # затемнение
     # квест-лог "Идти на кухню."
     return
+
 
 # кухня
 label ep02_dialogues1_family_2:
