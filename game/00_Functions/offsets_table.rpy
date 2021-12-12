@@ -350,7 +350,30 @@ define offsets_table = {
     "housefriend_room_friend_bardie_3_overlay":(410,907,852,1419),
     "scene_housefriend_room_friend_bardie_3":(0,25,1079,1919),
     "college_coridor_1_lockermc_backpack":(539,626,1009,1035),
-    "college_coridor_1_lockermc_backpack_overlay":(517,715,1055,1068)
+    "college_coridor_1_lockermc_backpack_overlay":(517,715,1055,1068),
+    "college_algebra_mc_1":(427,690,956,966),
+    "college_algebra_mc_1_overlay":(628,647,1079,1046),
+    "college_algebra_teacher8_1":(124,988,488,1285),
+    "college_algebra_visitor10_1":(288,1048,665,1288),
+    "college_algebra_visitor10_1_overlay":(559,1040,816,1205),
+    "college_algebra_visitor11_1":(269,1585,582,1733),
+    "college_algebra_visitor11_1_overlay":(365,1545,441,1774),
+    "college_algebra_visitor12_1":(239,758,535,890),
+    "college_algebra_visitor12_1_overlay":(334,776,621,908),
+    "college_algebra_visitor1_1":(355,901,776,1085),
+    "college_algebra_visitor1_1_overlay":(493,887,879,1104),
+    "college_algebra_visitor2_1":(279,637,603,767),
+    "college_algebra_visitor2_1_overlay":(381,649,674,785),
+    "college_algebra_visitor3_1":(322,434,709,657),
+    "college_algebra_visitor3_1_overlay":(453,426,914,688),
+    "college_algebra_visitor4_1":(245,1112,559,1288),
+    "college_algebra_visitor4_1_overlay":(350,1139,658,1251),
+    "college_algebra_visitor5_1":(407,46,873,417),
+    "college_algebra_visitor5_1_overlay":(569,96,1079,449),
+    "college_algebra_visitor6_1":(337,1283,837,1875),
+    "college_algebra_visitor6_1_overlay":(547,1558,965,1848),
+    "college_algebra_visitor7_1":(313,1609,682,1751),
+    "college_algebra_visitor7_1_overlay":(437,1583,694,1766)
 }
 
 init python:
