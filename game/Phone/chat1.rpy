@@ -173,6 +173,18 @@ label sophie_chat2:
         bardi_t "Позже ей отвечу."
     return
 
+label sophie_chat3:
+    $ phone_start_new_chat("sophie_chat3", "Sophie")
+    call phone_chat([
+        ["sophie", t_("[mcname], милый, у вас все в порядке?")],
+        ["", t_("Да, Софи, у нас все нормально.")],
+        ["sophie", t_("Отлично! Хотела предупредить вас, что мы с Генри задержимся...")],
+        ["sophie", t_("И будем поздно.")],
+        ["", t_("Я понял, Софи. Буду иметь в виду.")],
+        ["sophie", t_("Хорошо :) Тогда пока!")],
+        ["", t_("Пока!")]
+    ])
+    return
         
 label college_chat1:
     $ phone_add_history("college_chat1", "College", [
@@ -279,9 +291,11 @@ label emily_chat1:
     $ phone_start_new_chat("whore_chat2", "Whore")
     call phone_chat([
         ["student_emily", "image", "/images/Phone/Photos/emily_photo1.png", 3],
-        ["student_emily", t_("Собираюсь спать. Решила написать, что я согласна провести тебе небольшую экскурсию.")],
-        ["student_emily", "",5]
+        ["student_emily", t_("Собираюсь спать. Решила написать, что я согласна провести тебе небольшую экскурсию.")]
+#        ["student_emily", "",5]
     ])
+    $ phone_close_enabled = False
+    pause 2.0
     bardi_t "Ммм... Какая же она красотка!"
     call phone_chat_menu([
         t__("О! Эмили, привет! А как ты узнала мой телефон?")
@@ -292,6 +306,8 @@ label emily_chat1:
         ["", t_("Ясно. И какой у нас план?")],
         ["student_emily", t_("Еще не придумала. Я потом тебе напишу. Все, пока!")]
     ])
+    $ phone_close_enabled = False
+    pause 2.0
     bardi_t "Пока? Вот уж нет! Надо что-то еще ей написать..."
     bardi_t "О, придумал!"
     call phone_chat([
@@ -300,6 +316,8 @@ label emily_chat1:
         ["", t_("Мне кажется или это неслучайно? ;)")],
         ["student_emily", t_("Ты прав...")]
     ])
+    $ phone_close_enabled = False
+    pause 2.0
     bardi_t "Ого!"
     call phone_chat([
         ["student_emily", t_("Тебе кажется.")],
@@ -309,6 +327,8 @@ label emily_chat1:
         ["", t_("Как? Фотка, которую я жду.")],
         ["student_emily", t_("Ах эта! Да, сейчас пришлю...")]
     ])
+    $ phone_close_enabled = False
+    pause 2.0
     bardi_t "Так-так! Интересно, чем Эмили меня порадует?!"
     call phone_chat([
         ["student_emily", t_("Вот, держи! :)")],
@@ -318,17 +338,22 @@ label emily_chat1:
         ["", t_("Да... Ну почти. Сохраню себе на память...")],
         ["student_emily", t_("Отлично! Рада, что тебе понравилось! Пока-пока!")]
     ])
+    $ phone_close_enabled = False
+    pause 2.0
     bardi_t "Да уж. Фотка - огонь! Чего угодно ожидал, но не кота..."
     call phone_chat([
         ["student_emily", t_("Окей! Это была просто шутка!")],
         ["student_emily", t_("Не скучай, шутник. Вот твоя фотка...")],
         ["student_emily", "image", "/images/Phone/Photos/emily_photo2.png", 3]
     ])
+    $ phone_close_enabled = False
+    pause 2.0
+    $ phone_close_enabled = True
     bardi_t "Класс! Эта фотка даже лучше чем первая!"
     bardi_t "Жаль, что их только две..."
     
-    $ phone_gallery_add_image("Emily_Cat")
     $ phone_gallery_add_image("900757")
+    $ phone_gallery_add_image("Emily_Cat")
     $ phone_gallery_add_image("900758")
 
     return

@@ -45,6 +45,9 @@ label phone_call_contact:
             return
 
     if obj_name == "Sophie":
+        if sophieCallStage == 2:
+            call sophie_chat3()
+            return
         if sophieCallStage == 1:
             call sophie_chat2()
             return

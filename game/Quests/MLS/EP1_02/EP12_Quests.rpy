@@ -321,6 +321,7 @@ label ep12_quests15_home:
     $ remove_hook()
     $ clear_object_follow_all()
     $ unfocus_map()
+    $ sophieCallStage = 0
     call ep02_dialogues4_family_evening_1()
     call ep02_dialogues4_family_evening_2()
     $ add_hook("Teleport_Sister1", "ep02_dialogues4_family_evening_3", scene="house_floor2", quest="day2")
@@ -362,6 +363,7 @@ label ep12_quests16_home:
 label ep12_quests17_home:
     $ remove_hook()
     $ clear_object_follow_all()
+    $ miniMapEnabledOnly = ["none"]
     call locations_init2()
     call ep02_dialogues4_family_evening_7()
     if _return == -1: # просто смотрим инстаграм Эмили
@@ -373,7 +375,7 @@ label ep12_quests17_home:
         call change_scene("house_bedroom_mc_onbed", "Fade_long")
         return False
     if _return == 1: # Эмили нам звонит
-        $ add_hook("enter_scene", "ep12_quests18_home", scene="house_bedroom_mc_onbed", quest="day2")
+        $ add_hook("enter_scene", "ep12_quests18_home", scene="house_bedroom_mc_onbed", once=True, quest="day2")
         call change_scene("house_bedroom_mc_onbed", "Fade_long")
         return False
 
@@ -399,6 +401,7 @@ label ep12_quests18_home:
     return
 
 label ep12_quests18a_home:
+    pause 1.0
     call ep02_dialogues4_family_evening_7c()
     $ emilyCallStage = 0
     $ questHelp("house_12", True)
@@ -411,8 +414,63 @@ label ep12_quests18a_home:
 
 
 label ep12_quests19_home: # продолжаем сюжет после Эмили
+    pause 1.0
+    $ miniMapEnabledOnly = []
     call ep02_dialogues4_family_evening_9()
+    call refresh_scene_fade()
+    call change_scene("house_bedroom_mc")
+    $ add_hook("enter_scene", "ep12_quests19a_home", scene="house_bedroom_mc_onbed", quest="day2")
+    call change_scene("house_bedroom_mc_onbed", "Fade_long", False)
     return
+
+label ep12_quests19a_home:
+    $ remove_hook()
+    $ sophieCallStage = 2
+    $ phone_incoming_call("Sophie")
+    call ep02_dialogues4_family_evening_9a()
+    $ add_hook("phone_close", "ep12_quests19b_home", scene="phone", once=True, quest="day2")
+    return
+
+label ep12_quests19b_home:
+    pause 1.0
+    $ questHelp("house_14")
+    call ep02_dialogues4_family_evening_11()
+    if _return == -1:
+        $ questHelp("house_14", False)
+        call ep02_dialogues4_family_evening_12b()
+    else:
+        $ questHelp("house_14", True)
+
+    call ep02_dialogues4_family_evening_13()
+    if _return == -1:
+        call refresh_scene_fade()
+        call change_scene("house_floor1", "Fade_long")
+        $ questHelp("house_15", False)
+    else:
+        call refresh_scene_fade()
+        call change_scene("house_kitchen", "Fade_long")
+        $ questHelp("house_15", True)
+
+
+    call changeDayTime("night")
+    $ move_object("Sister1", "house_sister1")
+
+    $ sister1RoomDoorLocked = True
+    $ sister2RoomDoorLocked = True
+    $ landLordRoomDoorLocked = True
+
+    $ questHelp("house_16")
+    $ add_hook("Bed", "ep12_quests20_home", scene="house_bedroom_mc", quest="day2")
+    return
+
+label ep12_quests20_home:
+    call ep01_dialogues2_day1_family_3()
+    if _return == False:
+        return False
+    call ep02_dialogues4_family_evening_14()
+    jump end_update
+
+#    return False
 
 
 #

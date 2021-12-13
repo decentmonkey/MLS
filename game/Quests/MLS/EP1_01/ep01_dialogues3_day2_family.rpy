@@ -19,6 +19,7 @@ define v_Nice_Girl_Blowjob2_25_sound_name = "v_Nice_Girl_Blowjob2_25"
 define v_Teacher1_Titjob1_25_sound_name = "v_Teacher1_Titjob1_25"
 define v_Teacher11_Blowjob1_25_sound_name = "v_Teacher11_Blowjob1_25"
 
+default dreamSophieFade = True
 ## утром, ДО КОЛЛЕДЖА ##
 
 label ep01_dialogues3_day2_family_1:
@@ -830,6 +831,7 @@ label ep01_dialogues3_day2_family_7:
     music Jail_Clock
     imgf 900143
     bardi_t "Блин! Да я же не усну теперь..."
+label ep01_dialogues3_day2_family_7a_dream:
     # Барди ложится в постель
     menu:
         "Помечтать.":
@@ -1044,7 +1046,7 @@ label ep01_dialogues3_day2_family_7:
                             pass
                     # лицо Оливии внезапно становится лицом Софи
                     # она улыбается и говорит Барди, находясь прямо перед его членом
-                    if steamVersion == False:
+                    if steamVersion == False and dreamSophieFade == True:
                         imgf 900193
                         w
                         imgd 900194
@@ -1267,7 +1269,7 @@ label ep01_dialogues3_day2_family_7:
                     w
                     imgd 900217
                     w
-                    if steamVersion == False:
+                    if steamVersion == False and dreamSophieFade == True:
                         imgd 900218
                         sophie "[mcname], милый, пора вставать."
                         # Барди пугается
@@ -1503,7 +1505,7 @@ label ep01_dialogues3_day2_family_7:
                     w
                     imgd 900244
                     w
-                    if steamVersion == False:
+                    if steamVersion == False and dreamSophieFade == True:
                         img 900245
                         sophie "[mcname], милый, пора вставать."
                         # Барди пугается
