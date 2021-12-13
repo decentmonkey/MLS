@@ -372,7 +372,10 @@ define offsets_table = {
     "college_algebra_visitor6_1":(337,1283,837,1875),
     "college_algebra_visitor6_1_overlay":(547,1558,965,1848),
     "college_algebra_visitor7_1":(313,1609,682,1751),
-    "college_algebra_visitor7_1_overlay":(437,1583,694,1766)
+    "college_algebra_visitor7_1_overlay":(437,1583,694,1766),
+    "college_algebra_ruler_mask":(59,1185,127,1237),
+    "college_algebra_teleport_coridor5_mask":(82,454,452,537),
+    "housefriend_livingroom_tv_mask":(320,276,605,660)
 }
 
 init python:
