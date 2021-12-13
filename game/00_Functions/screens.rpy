@@ -2247,7 +2247,7 @@ screen main_menu():
         if 1==1:
             frame:
     #            pos (get_resolution_x(1570), get_resolution_y(650))
-                pos (gui.resolution.main_menu.lang.left, get_resolution_y(720))
+                pos (gui.resolution.main_menu.lang.left, get_resolution_y(690))
                 padding (gui.resolution.main_menu.lang.padding1,gui.resolution.main_menu.lang.padding2)
                 xysize (get_resolution_x(gui.resolution.main_menu.lang.width), get_resolution_y(gui.resolution.main_menu.lang.height))
                 anchor (0,0)
@@ -2258,12 +2258,17 @@ screen main_menu():
                     style_prefix "navigation"
                     label t__("Language"):
                         text_size gui.resolution.main_menu.font_size1
+                    null height 10
                     textbutton "English" + persistent.lang_suffixes["english"] action Language("english"):
                         text_size gui.resolution.main_menu.font_size2
                     textbutton "German" + persistent.lang_suffixes["german"] action Language("german"):
                         text_size gui.resolution.main_menu.font_size2
-    #                textbutton "French" action Language("french"):
-    #                    text_size gui.resolution.main_menu.font_size2
+                    textbutton "French" + persistent.lang_suffixes["french"] action Language("french"):
+                        text_size gui.resolution.main_menu.font_size2
+                    textbutton "Turkish" + persistent.lang_suffixes["turkish"] action Language("turkish"):
+                        text_size gui.resolution.main_menu.font_size2
+                    textbutton "Ukrainian" + persistent.lang_suffixes["ukrainian"] action Language("ukrainian"):
+                        text_size gui.resolution.main_menu.font_size2
     #                textbutton "Italian (beta)" action Language("italian"):
     #                    text_size gui.resolution.main_menu.font_size2
     #                textbutton "Spanish (beta)" action Language("spanish"):
@@ -2832,7 +2837,9 @@ screen preferences():
                     label t__("Language")
                     textbutton "English" + persistent.lang_suffixes["english"] action Language("english")
                     textbutton "German" + persistent.lang_suffixes["german"] action Language("german")
-#                    textbutton "French" action Language("french")
+                    textbutton "French" + persistent.lang_suffixes["french"] action Language("french")
+                    textbutton "Turkish" + persistent.lang_suffixes["turkish"] action Language("turkish")
+                    textbutton "Ukrainian" + persistent.lang_suffixes["ukrainian"] action Language("ukrainian")
 #                    textbutton "Italian (beta)" action Language("italian")
 #                    textbutton "Spanish (beta)" action Language("spanish")
                     textbutton "Russian" + persistent.lang_suffixes[None] action Language(None)

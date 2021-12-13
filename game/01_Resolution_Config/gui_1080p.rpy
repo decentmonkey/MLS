@@ -109,7 +109,7 @@ define gui.resolution.main_menu.lang.padding2 = 22
 define gui.resolution.main_menu.font_size1 = 28
 define gui.resolution.main_menu.font_size2 = 25
 define gui.resolution.main_menu.lang.width = 280
-define gui.resolution.main_menu.lang.height = 280
+define gui.resolution.main_menu.lang.height = 340
 #720
 #define gui.resolution.main_menu.lang.padding = 20
 #define gui.resolution.main_menu.font_size1 = 22
