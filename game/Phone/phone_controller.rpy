@@ -645,6 +645,11 @@ init python:
             renpy.show_screen("phone_camera_screen2_shoot")
             return
         return
+    
+    def phone_gallery_add_image(phone_camera_image):
+        phone_gallery.insert(0, [phone_camera_image, {"sprites": [], "overlaysList" : []}])
+        return
+
 
     def get_camera_scene_shoot_data(): # собираем данные спрайтов и оверлеев из сцены
         global scene_data, day_time

@@ -272,6 +272,7 @@ label ep12_quests13_phone_after:
 
     # инитим Шона
     $ map_enabled = True
+    $ homeButtonEnabled = True
     $ set_object_follow("Teleport_Map", scene="college_street")
     $ set_object_follow("Teleport_HOUSE_FRIEND", scene="map")
     $ set_object_follow("Teleport_LivingRoom", scene="housefriend_street")
@@ -290,7 +291,6 @@ label ep12_quests14_sean:
     $ remove_hook()
     $ clear_object_follow_all()
     call ep02_dialogues3_sean_2()
-#    call changeDayTime("evening")
     $ move_object("Mother_Friend", "empty")
     call housefriend_livingroom_init2()
     $ add_hook("Teleport_Street", "ep02_dialogues3_sean_2a", scene="housefriend_livingroom", quest="day2")
@@ -304,11 +304,115 @@ label ep12_quests14_sean:
 
 label ep12_quests14a_sean:
     call ep02_dialogues3_sean_3()
+    call changeDayTime("evening")
+    $ focus_map("Teleport_HOUSE", "ep02_dialogues3_sean_4")
+    $ questHelp("sean_2", True)
+    $ questHelp("house_11")
+    $ seanCallStage = 3
+    call change_scene("housefriend_street", "Fade_long")
     return False
 
+label ep12_quests14b_sean_afterphone:
+    call ep02_dialogues3_sean_5c()
+    $ questHelp("sean_3")
+    return
+
 label ep12_quests15_home:
+    $ remove_hook()
     $ clear_object_follow_all()
+    $ unfocus_map()
+    call ep02_dialogues4_family_evening_1()
+    call ep02_dialogues4_family_evening_2()
+    $ add_hook("Teleport_Sister1", "ep02_dialogues4_family_evening_3", scene="house_floor2", quest="day2")
+    $ add_hook("Teleport_Sister2", "ep02_dialogues4_family_evening_4", scene="house_floor2", quest="day2")
+    $ add_hook("before_open", "ep12_quests16_home", scene="house_bedroom_mc", quest="day2")
+
+    $ add_hook("Teleport_Street", "ep01_dialogues2_day1_family_1_12", scene="house_floor1", label="house_block", quest="day2")
+    $ miniMapDisabled["HOUSE"] = ["House_Street"]
+
+    $ move_object("Sophie", "empty")
+    $ move_object("Henry", "empty")
+    $ move_object("Sister1", "house_sister1")
+    $ move_object("Sister2", "house_sister2")
+    $ questHelp("house_11", True)
+    $ questHelp("house_12")
+
+    $ sister1RoomDoorLocked = True
+    $ sister2RoomDoorLocked = True
+    $ landLordRoomDoorLocked = True
+
+    $ set_object_follow("Teleport_Floor2", scene="house_floor1")
+    $ set_object_follow("Teleport_Bedroom_MC", scene="house_floor2")
+    $ set_object_follow("House_Bedroom_MC", scene="minimap")
+
+    call change_scene("house_livingroomhall", "Fade_long")
     return False
+
+label ep12_quests16_home:
+    $ remove_hook()
+    call ep02_dialogues4_family_evening_5()
+    call change_scene("house_floor1", "Fade_long")
+    $ remove_hook(label="ep02_dialogues4_family_evening_3")
+    $ add_hook("Teleport_Sister2", "ep02_dialogues4_family_evening_6", scene="house_floor2", quest="day2")
+    $ move_object("Sister1", "empty")
+    $ add_hook("before_open", "ep12_quests17_home", scene="house_bedroom_mc", quest="day2")
+#    $ questHelp("house_12", True)
+    return False
+
+label ep12_quests17_home:
+    $ remove_hook()
+    $ clear_object_follow_all()
+    call locations_init2()
+    call ep02_dialogues4_family_evening_7()
+    if _return == -1: # просто смотрим инстаграм Эмили
+        $ questHelp("house_12", True)
+        $ questHelp("house_13")
+        $ add_hook("Teleport_Bedroom_MC", "ep02_dialogues4_family_evening_7b", scene="house_bedroom_mc_onbed", quest="day2", label="emily_instagram_block")
+        call phone_instagram3()
+        $ add_hook("instagram", "ep12_quests17a_home", scene="phone", quest="day2")
+        call change_scene("house_bedroom_mc_onbed", "Fade_long")
+        return False
+    if _return == 1: # Эмили нам звонит
+        $ add_hook("enter_scene", "ep12_quests18_home", scene="house_bedroom_mc_onbed", quest="day2")
+        call change_scene("house_bedroom_mc_onbed", "Fade_long")
+        return False
+
+
+    return False
+
+label ep12_quests17a_home: # проверил инстаграм
+    if phone_instagram_current_name != "Emily":
+        return
+    $ remove_hook()
+    $ questHelp("house_13", True)
+    $ remove_hook(label="emily_instagram_block")
+    $ add_hook("phone_close", "ep12_quests19_home", scene="phone", once=True, quest="day2")
+    
+    return
+
+label ep12_quests18_home:
+    call phone_contact5()
+    $ emilyCallStage = 1
+    $ phone_incoming_call("Emily")
+    bardi_t "Интересно, кто это там написал... Посмотрим..."
+    $ add_hook("phone_close", "ep12_quests18a_home", scene="phone", once=True, quest="day2")
+    return
+
+label ep12_quests18a_home:
+    call ep02_dialogues4_family_evening_7c()
+    $ emilyCallStage = 0
+    $ questHelp("house_12", True)
+    $ questHelp("house_13")
+    $ add_hook("Teleport_Bedroom_MC", "ep02_dialogues4_family_evening_7b", scene="house_bedroom_mc_onbed", quest="day2", label="emily_instagram_block")
+    call phone_instagram3()
+    $ add_hook("instagram", "ep12_quests17a_home", scene="phone", quest="day2")
+    call refresh_scene_fade()
+    return False
+
+
+label ep12_quests19_home: # продолжаем сюжет после Эмили
+    call ep02_dialogues4_family_evening_9()
+    return
 
 
 #

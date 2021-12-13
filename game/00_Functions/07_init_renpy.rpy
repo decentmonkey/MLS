@@ -1,7 +1,7 @@
 
 default tt = Tooltip("")
 
-define help = Character(t_("HELP"), who_color=c_blue) #helper in intro
+#define help = Character(t_("HELP"), who_color=c_blue) #helper in intro
 
 define sean = Character(t_("Шон"), who_color=c_green) # друг Шон, Sean
 define student_chloe = Character(t_("Хлоя"), who_color=c_pink) # одноклассница фрик в черном Хлоя, Chloe
@@ -20,16 +20,31 @@ define bardie_friend_mother = Character(t_("Мама Шона"), who_color=c_blu
 define student_sarah = Character(t_("Сара"), who_color=c_blue) # зануда-отличница Сара, Sarah
 define teacher_hill = Character(t_("Мисс Хилл"), who_color=c_blue) # училка информатики Teacher9 Мисс Хилл, Miss Hill
 
-default bardi = Character(_("Игрок"), who_color=c_blue) # ГГ Bardi Jones
-default bardi_t = Character(_("Игрок"), who_color=c_blue, what_color=c_blue, what_italic=True) # ГГ Bardi Jones thinking
-define olivia = Character(_("Оливия"), who_color=c_orange) # соседка, старшая дочь Софи - Olivia Jones
-define mark = Character(_("Марк"), who_color=c_gray) # парень Оливии Mark
-define father = Character(_("Отец"), who_color=c_red) # отец Барди
-define sophie = Character(_("Софи"), who_color=c_pink) # хозяйка дома Sophie Evans
+define help = Character(t_("HELP"), who_color=c_green) # helper
+define sophie_t = Character(t_("Софи"), who_color=c_pink, what_color=c_gray, what_italic=True) # Sophie Evans thinking
+define henry = Character(t_("Генри"), who_color=c_gray) # Henry Evans - муж Софи
+define cynthia = Character(t_("Синтия"), who_color=c_green) # Cynthia Evans - соседка, младшая дочь Софи
+
+default bardi = Character(t_("Игрок"), who_color=c_blue) # ГГ Bardi Jones
+default bardi_t = Character(t_("Игрок"), who_color=c_blue, what_color=c_blue, what_italic=True) # ГГ Bardi Jones thinking
+define olivia = Character(t_("Оливия"), who_color=c_orange) # соседка, старшая дочь Софи - Olivia Jones
+define mark = Character(t_("Марк"), who_color=c_gray) # парень Оливии Mark
+define father = Character(t_("Отец"), who_color=c_red) # отец Барди
+define sophie = Character(t_("Софи"), who_color=c_pink) # хозяйка дома Sophie Evans
 ##### define mother = Character(_("Мама"), who_color=c_pink) # мать Sophie Evans (sophie)
-define girl1 = Character(_("Незнакомка"), who_color=c_blue) # girl1, перед стартом игры
-define girl2 = Character(_("Незнакомка"), who_color=c_red) # girl2, перед стартом игры
+define girl1 = Character(t_("Незнакомка"), who_color=c_blue) # girl1, перед стартом игры
+define girl2 = Character(t_("Незнакомка"), who_color=c_red) # girl2, перед стартом игры
 
-define unknown_writer = Character(_("Неизвестный писатель"), who_color=c_gray, what_color=c_blue) # girl1, перед стартом игры
+define unknown_writer = Character(t_("Неизвестный писатель"), who_color=c_gray, what_color=c_blue) # girl1, перед стартом игры
 
-define girl3 = Character(_("Незнакомка"), who_color=c_pink) # girl3, доп. сцена из жизни в городе
+define girl3 = Character(t_("Незнакомка"), who_color=c_pink) # girl3, доп. сцена из жизни в городе
+
+define olivia_t = Character(t_("Оливия"), who_color=c_orange, what_color=c_gray, what_italic=True) # Olivia Jones thinking
+define actress1 = Character(t_("Актриса"), who_color=c_pink) # актриса в порно
+define actress2 = Character(t_("Актриса"), who_color=c_orange) # актриса в порно
+define actor1 = Character(t_("Актер"), who_color=c_blue) # актер в порно
+define actor2 = Character(t_("Актер"), who_color=c_blue) # актер в порно
+define whore = Character(t_("Бекки"), who_color=c_pink) # проститутка
+define unknown = Character(t_("Неизвестный"), who_color=c_orange) # нежданный гость Шона
+define trainer_brooks = Character(t_("Тренер Брукс"), who_color=c_orange) # училка по физре Тренер Брукс, Mrs Brooks
+define librarian_wilson = Character(t_("Библиотекарь"), who_color=c_red) # библиотекарша миссис Вилсон, Mrs. Wilson

@@ -1,8 +1,7 @@
-define whore = Character(_("Бекки"), who_color=c_pink) # проститутка
-define unknown = Character(_("Неизвестный"), who_color=c_orange) # нежданный гость Шона
 
 default mlsBardiSeanDay3Whore1 = 0 # Барди назвал шлюху миссис Кларк
 default mlsBardiSeanDay3Whore2 = 0 # Барди назвал шлюху миссис Адамс
+default mlsBardiSeanDay3WhorePhone = False
 
 define v_MC_Whore_Blowjob1_25_sound_name = "v_MC_Whore_Blowjob1_25"
 define v_MC_Whore_Hand1_25_sound_name = "v_MC_Whore_Hand1_25"
@@ -1206,6 +1205,10 @@ label ep02_dialogues3_sean_3:
             imgd 900685
             whore "Без проблем."
             whore "Вот мой номер телефона." # + новый контакт в телефоне Барди
+            if mlsBardiSeanDay3WhorePhone == False:
+                call phone_contact4()
+                $ whoreCallStage = 1
+                $ mlsBardiSeanDay3WhorePhone = True
             whore "Напишешь мне, как надумаешь..."
             jump ep02_dialogues3_sean_loop1
         "Уйти.":

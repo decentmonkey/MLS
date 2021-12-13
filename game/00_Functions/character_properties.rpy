@@ -119,10 +119,10 @@ init python:
         money = money + float(amount)
         if amount >= 0:
             notif ("+ $" + str(abs(amount)))
-            renpy.play("Sounds/fx_coins.ogg", channel="sound")
+            renpy.play("Sounds/fx_coins.ogg", channel="sound2")
         else:
             notif ("- $" + str(abs(amount)))
-            renpy.play("Sounds/fx_coins.ogg", channel="sound")
+            renpy.play("Sounds/fx_coins.ogg", channel="sound2")
         renpy.call("process_hooks", "money_change", "global") #процессим хуки
         return
 

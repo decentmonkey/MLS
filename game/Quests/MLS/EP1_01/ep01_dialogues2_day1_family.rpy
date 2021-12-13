@@ -1,8 +1,3 @@
-define help = Character(_("HELP"), who_color=c_green) # helper
-define sophie_t = Character(_("Софи"), who_color=c_pink, what_color=c_gray, what_italic=True) # Sophie Evans thinking
-define henry = Character(_("Генри"), who_color=c_gray) # Henry Evans - муж Софи
-define cynthia = Character(_("Синтия"), who_color=c_green) # Cynthia Evans - соседка, младшая дочь Софи
-
 
 #call ep01_dialogues2_day1_family_1() # комната Барди перед ужином
 #call ep01_dialogues2_day1_family_1_1() # мысли при клике на кровать, если утро или день

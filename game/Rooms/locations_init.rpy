@@ -72,4 +72,12 @@ label locations_init:
     $ add_location("college_empty", caption=t_("ДВОР КОЛЛЕДЖА"), label="college_empty", init_label="college_empty_init", parent="college_street")
 
     return
+
+label locations_init2:
+    $ add_location("house_bedroom_mc_onbed", caption=t_("МОЯ КОМНАТА"), label="house_bedroom_mc_onbed", init_label="house_bedroom_mc_onbed_init", parent="house_bedroom_mc_onbed")
+    return
+
+
+
+
 #

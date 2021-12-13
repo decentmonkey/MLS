@@ -37,6 +37,7 @@ label phone_instagram3: # Emily
             ["/images/Phone/insta/Emily_feed4.jpg", t_("Девчонки, а у вас в шкафу тоже живет забавное существо по имени 'Нечего надеть'?")],
             ["/images/Phone/insta/Emily_feed5.jpg", t_("Так устала… Хочу шампанского, клубники, цветов и на ручки!")]
     ]}
+    $ phone_set_new("instagram")
     $ phone_instagram_new.append("Emily")
     return
 

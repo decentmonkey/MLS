@@ -1,5 +1,3 @@
-define trainer_brooks = Character(_("Тренер Брукс"), who_color=c_orange) # училка по физре Тренер Брукс, Mrs Brooks
-define librarian_wilson = Character(_("Библиотекарь"), who_color=c_red) # библиотекарша миссис Вилсон, Mrs. Wilson
 
 default mlsBardiDay3College1 = 0 # Барди записался на доп. занятия по живописи
 default mlsBardiDay3College2 = 0 # Барди нагло разговаривал с преподом по математике Кларк
@@ -45,6 +43,7 @@ label ep02_dialogues2_college_1:
     bardi_t "Жаль. Неплохо было бы поболтать с ним."
     $ questHelp("college_15")
     $ map_enabled = False
+    $ homeButtonEnabled = False
     $ seanCallStage = 2
     $ clear_object_follow_all()
     $ set_object_follow("Teleport_Coridor1", scene="college_street")

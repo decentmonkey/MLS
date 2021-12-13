@@ -1,9 +1,3 @@
-define olivia_t = Character(_("Оливия"), who_color=c_orange, what_color=c_gray, what_italic=True) # Olivia Jones thinking
-define actress1 = Character(_("Актриса"), who_color=c_pink) # актриса в порно
-define actress2 = Character(_("Актриса"), who_color=c_orange) # актриса в порно
-define actor1 = Character(_("Актер"), who_color=c_blue) # актер в порно
-define actor2 = Character(_("Актер"), who_color=c_blue) # актер в порно
-
 default mlsBardiDay3FamilyEvening1 = 0 # Барди и Синтия смотрели ужастики
 default mlsBardiDay3FamilyEvening2 = 0 # Барди соврал Оливии, когда смотрел ее телефон
 default mlsBardiDay3FamilyEvening3 = 0 # Барди во время массажа ног Оливии пытался делать его как можно выше
@@ -31,6 +25,7 @@ default mlsBardiDay3FamilyEvening5 = 0 # Барди отказался идти 
 # клик на дом Барди, после колледжа и сцены у Шона (вечер)
 label ep02_dialogues4_family_evening_1:
     # Барди заходит в холл и его сразу встречает Софи
+    sound snd_door_open1
     fadeblack 1.5
     music Little_Tomcat
     sound2 sneaks_1
@@ -45,46 +40,51 @@ label ep02_dialogues4_family_evening_1:
     sound snd_walk_barefoot
     imgf 900691
     w
-    imgd 900692
-    w
-    imgf 900693
-    w
-    imgd 900694
-    w
-    sound vjuh3
-    img 900695
-    bardi_t "Вот черт!"
-    sound2 down7
-    # наклоняется, чтобы поднять его и ненамеренно бросает взгляд на Софи, которая поднимается по лестнице
-    # он застывает и смотрит на фигуру, попу и ножки Софи (обсматривает)
-    imgd 900696
-    bardi_t "Хмм..."
-    music The_Heat
-    imgf 900749
-    w
+    menu:
+        "Идти на кухню.":
+            pass
+        "Проверить свой телефон.":
+            imgd 900692
+            w
+            imgf 900693
+            w
+            imgd 900694
+            w
+            sound vjuh3
+            img 900695
+            bardi_t "Вот черт!"
+            sound2 down7
+            # наклоняется, чтобы поднять его и ненамеренно бросает взгляд на Софи, которая поднимается по лестнице
+            # он застывает и смотрит на фигуру, попу и ножки Софи (обсматривает)
+            imgd 900696
+            bardi_t "Хмм..."
+            music The_Heat
+            imgf 900749
+            w
 
-    # video
-    # v_Observe_Sophie1_1_25
-    img black_screen
-    with diss
-    pause 1.0
-    scene black
-    image videov_Observe_Sophie1_1_25 = Movie(play="video/v_Observe_Sophie1_1_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observe_Sophie1_1_end.jpg")
-    show videov_Observe_Sophie1_1_25
-    $ renpy.pause(0.5, hard=True)
-    pause 4.5
-    img v_Observe_Sophie1_1_end
-    show screen image_shake("/images/Slides/v_Observe_Sophie1_1_end.jpg")
-    w
-    bardi_t "А у Софи отличная фигура..."
+            # video
+            # v_Observe_Sophie1_1_25
+            img black_screen
+            with diss
+            pause 1.0
+            scene black
+            image videov_Observe_Sophie1_1_25 = Movie(play="video/v_Observe_Sophie1_1_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observe_Sophie1_1_end.jpg")
+            show videov_Observe_Sophie1_1_25
+            $ renpy.pause(0.5, hard=True)
+            pause 4.5
+            img v_Observe_Sophie1_1_end
+            show screen image_shake("/images/Slides/v_Observe_Sophie1_1_end.jpg")
+            w
+            bardi_t "А у Софи отличная фигура..."
 
 
-    # потом он оддергивает сам себя
-    music Adventures_of_the_Deaf_Dreamer_short
-    imgd 900697
-    bardi_t "Фак! Что я делаю?.."
-    bardi_t "Какого черта я пялюсь на нее?!"
-    bardi_t "Мало мне было утреннего инцидента с ней?!"
+            # потом он оддергивает сам себя
+            music Adventures_of_the_Deaf_Dreamer_short
+            imgd 900697
+            bardi_t "Фак! Что я делаю?.."
+            bardi_t "Какого черта я пялюсь на нее?!"
+            bardi_t "Мало мне было утреннего инцидента с ней?!"
+
     # Барди разворачивается и идет на кухню
     # заходит на кухню, вся семья в сборе
     fadeblack
@@ -289,7 +289,8 @@ label ep02_dialogues4_family_evening_3:
     imgf 900076
     olivia "Синтия, это ты?"
     olivia "Мне некогда! Я собираюсь на встречу с Марком."
-    return
+    call refresh_scene_fade()
+    return False
 
 # при клике на дверь Синтии
 label ep02_dialogues4_family_evening_4:
@@ -314,7 +315,8 @@ label ep02_dialogues4_family_evening_4:
     cynthia "Спасибо!"
     sound snd_door_close1
     # Синтия улыбается и закрывает дверь
-    return
+    call refresh_scene_fade()
+    return False
 
 # при клике на комнату Барди
 label ep02_dialogues4_family_evening_5:
@@ -434,7 +436,8 @@ label ep02_dialogues4_family_evening_6:
     w
     imgd 900750
     bardi_t "Закрыто. Видимо Синтия уже легла спать."
-    return
+    call refresh_scene_fade()
+    return False
 
 # клик на комнату Барди полсе ухода Оливии
 label ep02_dialogues4_family_evening_7:
@@ -459,11 +462,14 @@ label ep02_dialogues4_family_evening_7:
         bardi_t "Кстати! А посмотрю-ка я Инсту Эмили!"
         bardi_t "Тот пост она уже, конечно, удалила. Но вряд ли она заблокировала весь аккаунт."
         bardi_t "Или заблокировала?.. Ну-ка посмотрим..."
+        help "Нажми иконку телефона. И выбери приложение инстаграм."
+        return -1
         #
     # если днем, в колледже, не смотрел фотку Эмили и сразу отдал телефон (кролик)
     else:
         # на телефон Барди приходит сообщение - сигнал
         w
+        return 1
         sound iphone_text_message1
         imgd 900754
         bardi_t "Интересно, кто это там написал... Посмотрим..."
@@ -537,8 +543,15 @@ label ep02_dialogues4_family_evening_7:
     # квест-лог "Посмотреть Инсту Эмили."
 #    show screen intro_focus("/images/Other/intro/intro_focus5.png")
 #    with diss
+label ep02_dialogues4_family_evening_7b:
     help "Нажми иконку телефона. И выбери приложение инстаграм."
 #    call refresh_scene()
+    return False
+
+label ep02_dialogues4_family_evening_7c:
+    imgd 900754
+    bardi_t "А кстати! Посмотрю-ка я инсту Эмили!"
+    bardi_t "Наверняка, там есть другие прикольные фотки..."
     return
 
 # инста Эмили
