@@ -134,13 +134,13 @@ label ep02_dialogues3_sean_2a:
     # мысли, не рендерить!!
     bardi_t "Нужно дождаться Шона."
     bardi_t "Он как-то странно себя ведет. Вдруг ему нужна моя помощь?"
-    return
+    return False
 
 # при клике на телек в гостиной
 label ep02_dialogues3_sean_2b:
     # мысли, не рендерить!!
     bardi_t "Не хочу смотреть телек..."
-    return
+    return False
 
 # при клике на кухню
 label ep02_dialogues3_sean_2c:
