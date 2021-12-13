@@ -4,6 +4,7 @@ label ep1_home_quests1_init:
     $ set_object_follow("Teleport_Kitchen", scene="house_floor1")
     $ set_object_follow("Teleport_Floor1", scene="house_floor2")
     $ set_object_follow("Teleport_Floor2", scene="house_bedroom_mc")
+    $ set_object_follow("House_Bedroom_MC", scene="minimap")
 
     # проверяем на время дня, меняем на вечер, блокируем выход и расставляем персонажей
     $ add_hook("exit_scene", "ep1_home_quests2_check_evening", scene="house_street", quest="day1", label="check_evening")

@@ -52,6 +52,7 @@ label ep12_quests2_bathroom:
 
     $ set_object_follow("Teleport_Floor1", scene="house_bathroom")
     $ set_object_follow("Teleport_Kitchen", scene="house_floor1")
+    $ set_object_follow("Floor1", scene="minimap")
 
     $ add_hook("before_open", "ep12_quests4_kitchen", scene="house_kitchen", quest="day2")
 
@@ -73,7 +74,7 @@ label ep12_quests4_kitchen:
     $ set_object_follow("Teleport_COLLEGE", scene="map")
     $ miniMapDisabled["HOUSE"] = []
     $ remove_hook(label="house_block")
-    $ set_object_follow("Floor1", scene="minimap")
+    $ set_object_follow("House_Street", scene="minimap")
 
     # init college
     $ add_hook("enter_scene", "ep02_dialogues2_college_1", scene="college_street", once=True, quest="day2")
@@ -414,6 +415,7 @@ label ep12_quests18a_home:
 
 
 label ep12_quests19_home: # продолжаем сюжет после Эмили
+    $ questLog(10, True)
     pause 1.0
     $ miniMapEnabledOnly = []
     call ep02_dialogues4_family_evening_9()

@@ -54,6 +54,7 @@ label ep1_college_sean: # встреча с Шоном
     $ questHelp("college_6")
     $ set_object_follow("Teleport_Stairs", scene="college_coridor1")
     $ set_object_follow("Teleport_Principal_Secretary", scene="college_coridor8")
+    $ set_object_follow("COLLEGE_Floor3", scene="minimap")
     $ add_hook("Teleport_Principal_Secretary", "ep1_college2_principal_secretary", scene="college_coridor8")
 
     call change_scene("college_coridor1", "Fade_long", False) from _rcall_change_scene_8
@@ -85,6 +86,7 @@ label ep1_college2_principal_secretary: # идем к секретарю
     $ set_object_follow("Teleport_Stairs", scene="college_coridor1")
     $ set_object_follow("Teleport_Floor2", scene="college_coridor3")
     $ set_object_follow("Teleport_English", scene="college_coridor6")
+    $ set_object_follow("COLLEGE_Floor2", scene="minimap")
 
     $ add_hook("Teleport_Floor2", "ep1_college3_english_location", scene="college_coridor3", label="ep1_college3_english_location")
     $ add_hook("before_open", "ep1_college3_english_location", scene="college_coridor7", label="ep1_college3_english_location")
@@ -181,6 +183,7 @@ label ep1_college5_college_end:
 #    call ep1_college5_college_init_sean() - делается в звонке
 
     $ set_object_follow("Teleport_Map", scene="college_street")
+    $ set_object_follow("Teleport_HOUSE_FRIEND", scene="map")
 
 #    call refresh_scene_fade()
     return
@@ -234,6 +237,8 @@ label ep1_college5_college_sean_home2:
     $ add_hook("Teleport_LivingRoom", "ep01_dialogues2_day1_family_1_12", scene="housefriend_street", label="sean_block")
     $ questHelp("sean_1", True)
     $ questHelpDesc("sean_desc1")
+    $ clear_object_follow_all()
+    $ set_object_follow("Teleport_HOUSE", scene="map")
     call change_scene("housefriend_street", "Fade_long") from _rcall_change_scene_15
     return False
 

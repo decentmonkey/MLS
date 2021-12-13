@@ -354,6 +354,7 @@ label ep01_dialogues3_day2_college_1:
                     # камера резко на ее лицо (Барди смотрит на нее снизу вверх), она недовольна
                     $ questHelp("college_5", True)
                     $ questHelp("college_4", False)
+                    $ questLog(4, True)
                     music stop
                     sound plastinka1b
                     img 910043 hpunch
@@ -698,32 +699,48 @@ label ep01_dialogues3_day2_college_5:
             w
             bardi_t "Хмм... Профессорша неплохо смотрится сзади..."
             bardi_t "Представляю ее затянутую в черный латекс..."
+            $ questLog(5, True)
 #            img 900419 hpunch
-            img 900419 diss
+            img 900419
+            show screen dream()
+            with diss
             sound2 vjuh3
             with hpunch
             show screen image_shake("/images/Slides/img_900419.jpg")
+            show screen dream()
             w
-            imgd 900420
+            img 900420
+            show screen dream()
+            with diss
             w
             # картинка меняется и Барди видит, что директриса стоит не в своем костюме
             # а в черном и облегающем латексном, но в той же позе, что и орала на секретаршу
             # она на него оглядывается и призывно улыбается, подмигивает
-            imgf 900421
+            img 900421
+            show screen dream()
+            with fade
             w
-            imgd 900422
+            img 900422
+            show screen dream()
+            with diss
             w
             sound Jump1
             img 900423
+            show screen dream()
             w
             img 900422
+            show screen dream()
             bardi_t "Потрясно!"
             # выражение лица директрисы меняется на сердитое и она строго ему говорит (оставаясь в латексе)
             music stop
             sound plastinka1b
-            img 900424 hpunch
+            img 900424
+            show screen dream()
+            with hpunch
             principal_richardson "Ты что, оглох?!"
-            imgd 900425
+            img 900425
+            show screen dream()
+            with diss
             bardi_t "Не понял..."
             # картинка резко меняется и директриса стоит в обычной одежде и убийственно смотрит на него
             # поза все та же, только голова повернута к Барди
@@ -1524,12 +1541,14 @@ label ep01_dialogues3_day2_college_10:
             img 910099
             show screen dream()
             with Dissolve(1.0)
+            show screen image_shake("/images/Slides/img_910099.jpg")
             sound vjuh3
             with vpunch
             bardi_t "Да... Было бы круто увидеть ее с голой грудью."
             bardi_t "А еще лучше, не только увидеть, но и..."
             teacher_adams "Договорились, [mcname]?"
             # блузка снова появляется, кадр на лицо училки
+            $ questLog(6, True)
             music stop
             sound plastinka1b
             img 910094 hpunch

@@ -79,6 +79,7 @@ label ep1_intro_quests3:
         set_object_follow("Teleport_Floor2", scene="house_bedroom_mc")
         set_object_follow("Teleport_Floor1", scene="house_floor2")
         set_object_follow("Teleport_Kitchen", scene="house_floor1")
+        set_object_follow("Floor1", scene="minimap")
 
         autorun_to_object("ep01_dialogues2_day1_family_1_3", scene="house_bedroom_mc_tablenear")
 
@@ -132,6 +133,7 @@ label ep1_intro_quests4: # кухня
     $ set_object_follow("Teleport_Floor1", scene="house_kitchen")
     $ set_object_follow("Teleport_Floor2", scene="house_floor1")
     $ set_object_follow("Teleport_Bedroom_MC", scene="house_floor2")
+    $ set_object_follow("House_Bedroom_MC", scene="minimap")
 
     call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_8
     return
@@ -188,6 +190,7 @@ label ep1_intro_quests5_bed: # ложится спать
         set_object_follow("Teleport_Floor2", scene="house_bedroom_mc")
         set_object_follow("Teleport_Floor1", scene="house_floor2")
         set_object_follow("Teleport_Kitchen", scene="house_floor1")
+        set_object_follow("Floor1", scene="minimap")
 
     call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_9
     return False
@@ -232,6 +235,8 @@ label ep1_intro_quests6_sophie: # Софи с утра на кухне
         $ set_object_follow("Teleport_Floor1", scene="house_kitchen")
         $ set_object_follow("Teleport_Street", scene="house_floor1")
         $ set_object_follow("Teleport_Map", scene="house_street")
+        $ set_object_follow("House_Street", scene="minimap")
+        $ set_object_follow("Teleport_COLLEGE", scene="map")
 
         call refresh_scene_fade() from _rcall_refresh_scene_fade_8
         return False

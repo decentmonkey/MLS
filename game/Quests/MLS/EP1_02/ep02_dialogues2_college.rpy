@@ -290,7 +290,7 @@ label ep02_dialogues2_college_4:
     bardi_t "Например, личные данные студенток? Или преподавателей?"
     bardi_t "Возможно, мне могло бы это пригодиться..."
     menu:
-        "Понятнуться к папке.":
+        "Потянуться к папке.":
             sound vjuh3
             img 900799 vpunch
             bardi_t "Черт! Отсюда не дотянуться..."
@@ -365,6 +365,7 @@ label ep02_dialogues2_college_4:
                             show screen image_shake("/images/Slides/v_Observe_Principal_Secretary1_end.jpg")
                             w
                             bardi_t "Хмм... Неплохо, мисс Янг."
+                            $ questLog(13, True)
                             $ questHelp("college_18", True)
 
                             # секретарша поднимает ручку (или лист бумаги), говорит профессорше
@@ -839,6 +840,7 @@ label ep02_dialogues2_college_6:
                 bardi "До свидания, миссис Кларк."
                 imgd 900865
                 teacher_clark "До свидания!"
+                $ questLog(4, True)
                 sound highheels_short_walk
                 imgf 900866
                 w
@@ -1331,8 +1333,9 @@ label ep02_dialogues2_college_6:
                             sound snd_take_paper
                             img 910736 vpunch
                             bardi "!!!"
-                            $ menu_rr = {
-                                "Поймать ватманы.": "rat"
+                            $ menu_data = {
+                                "Поймать ватманы.": {"info_rat":True}
+
                             }
                             menu:
                                 "Поймать ватманы.": #(+Rat)
@@ -1349,6 +1352,7 @@ label ep02_dialogues2_college_6:
                                     img 910740 vpunch
                                     teacher_morris "[mcname]!.."
                                     # Барди резко оддергивает руку
+                                    call rrmeter(-2, "maurice_vatman1")
                                     bardi "!!!"
                                     bardi "Я с-случайно..."
                                     # Барди бросает попытки собрать ватманы и отходит от Морис
@@ -1522,6 +1526,7 @@ label ep02_dialogues2_college_6:
                     bardi "До свидания, миссис Морис."
                     # Барди выходит, затемнение, шаги
                     # оказывается в движке на первом этаже
+                    $ questLog(0, True)
                     $ questHelp("college_19", True)
                     $ questHelp("college_20", False)
                     fadeblack
@@ -1645,10 +1650,10 @@ label ep02_dialogues2_college_6:
             imgd 901014
             bardi "Меня там будет видно!"
             # схема, где именно он прячется на картинке, которую кидала в Дискорд Юле
-            $ menu_rr = {
-                "Залезть под скамейку.": "rat",
-                "Встать за шкафчик.": "rabbit"
-            }
+#            $ menu_rr = {
+#                "Залезть под скамейку.": "rat",
+#                "Встать за шкафчик.": "rabbit"
+#            }
             menu:
                 "Залезть под скамейку.": #(+Rat)
                     imgd 901013
@@ -1710,85 +1715,123 @@ label ep02_dialogues2_college_6:
 
                     menu:
                         "Открыть глаза.": #(+Rat)
-                            pass
-                    call rrmeter(-5, "ep02_dialogues2_college_6_01")
-                    # Барди открывает глаза, Роуз на него уже не смотрит
-                    music Stylish_Hip_Hop_Rock
-                    pause 1.0
-                    img 901029
-                    show screen open_eyes()
-                    pause 3.0
-                    student_rose "..."
-                    # она снимает с себя полотенце и остается в одних трусиках, прикрывает грудь рукой
-                    bardi_t "Стесняшка Роуз пошла на такой подвиг!.."
-                    # Роуз бросает полотенце на лавку, закрывая ему обзор
-                    # и Барди теперь видит только ноги Роуз
-                    sound Jump2
-                    img 901030 hpunch
-                    bardi_t "Вот облом!"
-                    menu:
-                        "Выглянуть из-под полотенца.":
-                            pass
+                            call rrmeter(-5, "ep02_dialogues2_college_6_01")
+                            # Барди открывает глаза, Роуз на него уже не смотрит
+                            music Stylish_Hip_Hop_Rock
+                            pause 1.0
+                            img 901029
+                            show screen open_eyes()
+                            pause 3.0
+                            student_rose "..."
+                            # она снимает с себя полотенце и остается в одних трусиках, прикрывает грудь рукой
+                            bardi_t "Стесняшка Роуз пошла на такой подвиг!.."
+                            # Роуз бросает полотенце на лавку, закрывая ему обзор
+                            # и Барди теперь видит только ноги Роуз
+                            sound Jump2
+                            img 901030 hpunch
+                            bardi_t "Вот облом!"
+                            menu:
+                                "Выглянуть из-под полотенца.":
+                                    pass
 
-                    # video
-                    # v_Observe_Rose_2_25
-                    img black_screen
-                    with diss
-                    pause 1.0
-                    scene black
-                    image videov_Observe_Rose_2_25 = Movie(play="video/v_Observe_Rose_2_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observe_Rose_2_end.jpg")
-                    show videov_Observe_Rose_2_25
-                    $ renpy.pause(0.5, hard=True)
-                    pause 3.5
-                    img v_Observe_Rose_2_end
-                    show screen image_shake("/images/Slides/v_Observe_Rose_2_end.jpg")
-                    w
-                    bardi_t "Ееее!"
+                            # video
+                            # v_Observe_Rose_2_25
+                            img black_screen
+                            with diss
+                            pause 1.0
+                            scene black
+                            image videov_Observe_Rose_2_25 = Movie(play="video/v_Observe_Rose_2_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observe_Rose_2_end.jpg")
+                            show videov_Observe_Rose_2_25
+                            $ renpy.pause(0.5, hard=True)
+                            pause 3.5
+                            img v_Observe_Rose_2_end
+                            show screen image_shake("/images/Slides/v_Observe_Rose_2_end.jpg")
+                            w
+                            bardi_t "Ееее!"
 
-                    # в раздевалку заходят ноги Гарри (вид из-под лавки)
-                    music stop
-                    sound plastinka1b
-                    sound2 snd_door_open1
-                    img 901031 hpunch
-                    bardi_t "!!!"
-                    music Fly_With_Me_short
-                    # далее вид со стороны
-                    # Роуз прикрывает грудь и трусики руками и начинает истошно визжать
-                    sound snd_julia_scream1
-                    img 901032 vpunch
-                    student_rose "АААА!!!"
-                    student_rose "АААААААА!!!"
-                    # Гарри злобно смотрит по сторонам
-                    imgd 901033
-                    student_harry "Где этот лузер?!"
-                    student_harry "Я знаю, что он здесь!!!"
-                    imgd 901034
-                    student_harry "Выходи, лошара!!!"
-                    # Роуз прикрывается и кричит
-                    imgd 901035
-                    student_rose "Пошел вон из женской раздевалки!"
-                    student_rose "АААА!!!"
-                    student_rose "АААААААА!!!"
-                    # на визги и крики прибегает тренер Брукс (Teacher3_outfit)
-                    sound snd_door_open1
-                    img 901036 hpunch
-                    trainer_brooks "Что случилось?!"
-                    # видит Гарри
-                    imgd 901037
-                    trainer_brooks "Ах ты паршивец!"
-                    trainer_brooks "А ну-ка!.."
-                    # она хватает Гарри за ухо
-                    sound Jump2
-                    img 901038 vpunch
-                    sound2 ma5
-                    student_harry "Ай! Миссис Брукс! Больно!"
-                    trainer_brooks "Пошел отсюда вон! Быстро!"
-                    # она выводит его из раздевалки, продолжая держать за ухо
-                    student_harry "АЙ! Да больно же!!!"
-                    # затемнение, шорох одежды (Роуз надевает полотенце)
-                    fadeblack
-                    sound put_dress
-                    pause 1.5
+                            # в раздевалку заходят ноги Гарри (вид из-под лавки)
+                            music stop
+                            sound plastinka1b
+                            sound2 snd_door_open1
+                            img 901031 hpunch
+                            bardi_t "!!!"
+                            music Fly_With_Me_short
+                            # далее вид со стороны
+                            # Роуз прикрывает грудь и трусики руками и начинает истошно визжать
+                            sound snd_julia_scream1
+                            img 901032 vpunch
+                            student_rose "АААА!!!"
+                            student_rose "АААААААА!!!"
+                            # Гарри злобно смотрит по сторонам
+                            imgd 901033
+                            student_harry "Где этот лузер?!"
+                            student_harry "Я знаю, что он здесь!!!"
+                            imgd 901034
+                            student_harry "Выходи, лошара!!!"
+                            # Роуз прикрывается и кричит
+                            imgd 901035
+                            student_rose "Пошел вон из женской раздевалки!"
+                            student_rose "АААА!!!"
+                            student_rose "АААААААА!!!"
+                            # на визги и крики прибегает тренер Брукс (Teacher3_outfit)
+                            sound snd_door_open1
+                            img 901036 hpunch
+                            trainer_brooks "Что случилось?!"
+                            # видит Гарри
+                            imgd 901037
+                            trainer_brooks "Ах ты паршивец!"
+                            trainer_brooks "А ну-ка!.."
+                            # она хватает Гарри за ухо
+                            sound Jump2
+                            img 901038 vpunch
+                            sound2 ma5
+                            student_harry "Ай! Миссис Брукс! Больно!"
+                            trainer_brooks "Пошел отсюда вон! Быстро!"
+                            # она выводит его из раздевалки, продолжая держать за ухо
+                            student_harry "АЙ! Да больно же!!!"
+                            # затемнение, шорох одежды (Роуз надевает полотенце)
+                            fadeblack
+                            sound put_dress
+                            pause 1.5
+                        "Не открывать глаза.":
+                            bardi_t "Стесняшка Роуз пошла на такой подвиг!.."
+                            # в раздевалку заходят ноги Гарри (вид из-под лавки)
+                            music stop
+                            sound plastinka1b
+                            sound2 snd_door_open1
+                            bardi_t "!!!"
+                            music Fly_With_Me_short
+                            # далее вид со стороны
+                            # Роуз прикрывает грудь и трусики руками и начинает истошно визжать
+                            sound snd_julia_scream1
+                            student_rose "АААА!!!"
+                            student_rose "АААААААА!!!"
+                            # Гарри злобно смотрит по сторонам
+                            student_harry "Где этот лузер?!"
+                            student_harry "Я знаю, что он здесь!!!"
+                            student_harry "Выходи, лошара!!!"
+                            # Роуз прикрывается и кричит
+                            student_rose "Пошел вон из женской раздевалки!"
+                            student_rose "АААА!!!"
+                            student_rose "АААААААА!!!"
+                            # на визги и крики прибегает тренер Брукс (Teacher3_outfit)
+                            sound snd_door_open1
+                            trainer_brooks "Что случилось?!"
+                            # видит Гарри
+                            trainer_brooks "Ах ты паршивец!"
+                            trainer_brooks "А ну-ка!.."
+                            # она хватает Гарри за ухо
+                            sound Jump2
+                            sound2 ma5
+                            student_harry "Ай! Миссис Брукс! Больно!"
+                            trainer_brooks "Пошел отсюда вон! Быстро!"
+                            # она выводит его из раздевалки, продолжая держать за ухо
+                            student_harry "АЙ! Да больно же!!!"
+                            # затемнение, шорох одежды (Роуз надевает полотенце)
+                            fadeblack
+                            sound put_dress
+                            pause 1.5
+
                     pass
                 "Встать за шкафчик.": #(+Rabbit)
                     imgd 901013
@@ -2042,6 +2085,7 @@ label ep02_dialogues2_college_6:
             pass
     imgd 901046
     bardi "Спасибо, Роуз."
+    $ questLog(1, True)
     $ questHelp("college_19", False)
     $ questHelp("college_20", True)
     fadeblack
@@ -2138,6 +2182,7 @@ label ep02_dialogues2_college_7:
                     img v_Observe_Teacher3_1_end
                     w
                     bardi_t "Нужно будет посетить следующую тренировку с ней..."
+                    $ questLog(11, True)
 
                     music Shining_Through
                     imgf 900883
@@ -2271,9 +2316,8 @@ label ep02_dialogues2_college_9:
     # Барди смотрит на библиотекаршу
     imgd 900896
     bardi "..."
-    $ menu_rr = {
-        "Окей, все понятно.": "rabbit",
-        "Попросить достать еще одну книгу.": "rat"
+    $ menu_data = {
+        "Попросить достать еще одну книгу.": {"info_rat":True}
     }
     menu:
         "Окей, все понятно.":
@@ -2369,6 +2413,7 @@ label ep02_dialogues2_college_9:
             # говорит ему недовольно
             fadeblack 1.0
             music Step_By_Step
+            call rrmeter(-2, "librarian_book1")
             imgf 900936
             librarian_wilson "Можно было обойтись и без рук!"
             imgd 900937
@@ -2395,6 +2440,7 @@ label ep02_dialogues2_college_9:
             w
             # бросает ее на стул
             # оборачивается
+            $ questLog(12, True)
             $ questHelp("college_24", True)
             pass
     # и замечает, что спиной к нему сидит Синтия
