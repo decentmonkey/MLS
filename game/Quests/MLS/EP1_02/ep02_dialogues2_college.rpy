@@ -30,6 +30,7 @@ default mlsBardiDay3College8 = 0 # Барди переписывался с Шо
 #call ep02_dialogues2_college_9() # библиотека
 #call ep02_dialogues2_college_10() # при клике на выход из колледжа (после библиотеки), сцена с Гарри и Эмили у колледжа
 #call ep02_dialogues2_college_11() # клик на строку контакта "sophie"
+#call ep02_dialogues2_college_12() # клик на линейку над доской
 
 
 
@@ -1695,7 +1696,7 @@ label ep02_dialogues2_college_6:
                     # Барди резко закрывает глаза - темно
                     bardi "Закрыл."
                     student_rose "Точно?"
-                    
+
                     show screen close_eyes()
                     pause 3.0
                     img black_screen
@@ -2896,3 +2897,10 @@ label ep02_dialogues2_college_11:
     return
 
 # если звонит Шону, то тот не отвечает
+
+# при клике на линейку над доской
+label ep02_dialogues2_college_12:
+    bardi_t "Неужели кто-то еще пользуется этой хренью?"
+    bardi_t "Интересно, что ею можно измерять?"
+    bardi_t "Например, можно измерить у всей группы, у кого больше..."
+    return
