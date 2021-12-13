@@ -436,20 +436,37 @@ label ep02_dialogues3_sean_3:
             w
             imgd 900591
             w
-            sound vjuh3
-            img 900594 vpunch
+            show screen dream()
+            with diss
+            show screen dream_focus(1000, 495, 4.5, 0.95)
+            with Dissolve(1.0)
+            pause 0.5
+            sound snd_magic
+            img 900594
+            show screen dream()
+            show screen dream_focus(1000, 495, 4.5, 0.95)
+            with Dissolve(1.0)
             w
             sound lick3
-            imgd 900595
+            img 900595
+            show screen dream()
+            show screen dream_focus(1000, 495, 4.5, 0.95)
+            with diss
             w
-            imgd 900593
+            img 900593
+            show screen dream()
+            show screen dream_focus(1000, 495, 4.5, 0.95)
+            with diss
             teacher_clark "Миссис Кларк просто обожает..."
             teacher_clark "Отсасывать у своих студентов после математики."
 #            imgd 900622
 #            w
             # снова резко и глубоко вбирает в себя член
             sound chpok6
-            img 900592 hpunch
+            img 900592
+            show screen dream()
+            show screen dream_focus(1000, 495, 4.5, 0.95)
+            with hpunch
 #            img 900588 hpunch
             teacher_clark "Мпфх!.."
             bardi "Оооох..."
@@ -496,8 +513,18 @@ label ep02_dialogues3_sean_3:
             sound highheels_short_walk
             imgd 900604
             whore "Обожаю..."
-            sound vjuh3
-            img 900603 vpunch
+            show screen dream()
+            with diss
+            show screen dream_focus(980, 300, 3.0, 0.95)
+            with Dissolve(1.0)
+            pause 0.5
+            sound snd_magic
+#            sound vjuh3
+            img 900603
+            show screen dream()
+            show screen dream_focus(980, 300, 3.0, 0.95)
+            with Dissolve(1.0)
+            with hpunch
             teacher_clark "Трахни меня скорее, студент!.."
             teacher_clark "Давай быстрее, мне не терпится!"
             imgd 900604
@@ -585,9 +612,22 @@ label ep02_dialogues3_sean_3:
             imgf 900625
             sound ahhh6
             w
-            img 900626 vpunch
+            show screen dream()
+            with diss
+            show screen dream_focus(980, 400, 4.0, 0.95)
+            with Dissolve(1.0)
+            pause 0.5
+            sound snd_magic
+            img 900626
+            show screen dream()
+            show screen dream_focus(980, 400, 4.0, 0.95)
+            with Dissolve(1.0)
+            with vpunch
             teacher_clark "Оттрахай миссис Кларк, студент! Оттрахай как следует!"
-            imgd 900627
+            img 900627
+            show screen dream()
+            show screen dream_focus(980, 350, 5.0, 0.95)
+            with diss
             teacher_clark "Миссис Кларк сейчас кончит!"
             bardi "О, ееее!.."
             img 900617
@@ -759,23 +799,43 @@ label ep02_dialogues3_sean_3:
             w
             imgd 900591
             w
-            sound vjuh3
-            img 900597 vpunch
+            show screen dream()
+            with diss
+            show screen dream_focus(1000, 395, 4.5, 0.95)
+            with Dissolve(1.0)
+            pause 0.5
+            sound snd_magic
+            img 900597
+            show screen dream()
+            show screen dream_focus(1000, 395, 4.5, 0.95)
+            with Dissolve(1.0)
             w
             sound lick3
-            imgd 900598
+            img 900598
+            show screen dream()
+            show screen dream_focus(1000, 395, 4.5, 0.95)
+            with diss
             w
             sound lick3
-            imgd 900599
+            img 900599
+            show screen dream()
+            show screen dream_focus(1000, 395, 4.5, 0.95)
+            with diss
             w
-            imgd 900600
+            img 900600
+            show screen dream()
+            show screen dream_focus(1000, 395, 4.5, 0.95)
+            with diss
             teacher_adams "Миссис Адамс просто обожает..."
             teacher_adams "Отсасывать у своих студентов после английского."
 #            imgd 900622
 #            w
             # снова резко и глубоко вбирает в себя член
             sound chpok6
-            img 900596 hpunch
+            img 900596
+            show screen dream()
+            show screen dream_focus(1000, 450, 5.0, 0.95)
+            with hpunch
             teacher_adams "Мпфх!.."
 #            img 900588 hpunch
             bardi "Оооох..."
@@ -822,8 +882,18 @@ label ep02_dialogues3_sean_3:
             sound highheels_short_walk
             imgd 900634
             w
-            sound vjuh3
-            img 900633 vpunch
+            show screen dream()
+            with diss
+            show screen dream_focus(980, 300, 3.0, 0.95)
+            with Dissolve(1.0)
+            pause 0.5
+            sound snd_magic
+#            sound vjuh3
+            img 900633
+            show screen dream()
+            show screen dream_focus(980, 300, 3.0, 0.95)
+            with diss
+            with vpunch
             teacher_adams "И еще я просто обожаю, когда член заполняет всю мою киску."
             teacher_adams "Хочу скорее трахнуть тебя, студент!.."
             imgd 900634
@@ -893,7 +963,10 @@ label ep02_dialogues3_sean_3:
             imgd 900646
             whore "Аааа!"
 #            sound vjuh3
-            img 900647 vpunch
+            img 900647
+            show screen dream()
+            show screen dream_focus(1000, 265, 4.0, 0.95)
+            with vpunch
             teacher_adams "Оттрахай миссис Адамс, студент! Оттрахай как следует!"
             teacher_adams "Миссис Адамс сейчас кончит!"
             bardi "О, ееее!.."

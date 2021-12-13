@@ -275,12 +275,15 @@ label ep12_quests13_phone_after:
     $ set_object_follow("Teleport_Map", scene="college_street")
     $ set_object_follow("Teleport_HOUSE_FRIEND", scene="map")
     $ set_object_follow("Teleport_LivingRoom", scene="housefriend_street")
-    $ autorun_to_object("ep02_dialogues3_sean_1", scene="housefriend_street")
+#    $ autorun_to_object("ep02_dialogues3_sean_1", scene="housefriend_street")
     $ add_hook("Teleport_LivingRoom", "ep12_quests14_sean", scene="housefriend_street", quest="day2")
 
     # инитим дом
     $ add_hook("before_open", "ep12_quests15_home", scene="house_floor1", quest="day2")
     $ miniMapDisabled["HOUSE"] = ["House_Bedroom_MC", "Floor2"]
+
+    call ep02_dialogues3_sean_1()
+
     return
 
 label ep12_quests14_sean:
@@ -288,17 +291,20 @@ label ep12_quests14_sean:
     $ clear_object_follow_all()
     call ep02_dialogues3_sean_2()
 #    call changeDayTime("evening")
+    $ move_object("Mother_Friend", "empty")
+    call housefriend_livingroom_init2()
     $ add_hook("Teleport_Street", "ep02_dialogues3_sean_2a", scene="housefriend_livingroom", quest="day2")
     $ add_hook("TV", "ep02_dialogues3_sean_2b", scene="housefriend_livingroom", quest="day2")
     $ add_hook("Teleport_Kitchen", "ep02_dialogues3_sean_2c", scene="housefriend_livingroom", once=True, quest="day2")
     $ add_hook("Teleport_Room", "ep02_dialogues3_sean_2d", scene="housefriend_livingroom", once=True, quest="day2")
     $ add_hook("before_open", "ep12_quests14a_sean", scene="housefriend_room", once=True, quest="day2")
-    $ add_hook("enter_scene", "ep12_quests14a_sean", scene="housefriend_bedroom_parents", once=True, quest="day2")
+    $ add_hook("enter_scene", "ep02_dialogues3_sean_2c1", scene="housefriend_bedroom_parents", once=True, quest="day2")
     call change_scene("housefriend_livingroom", "Fade_long")
     return False
 
 label ep12_quests14a_sean:
-    return
+    call ep02_dialogues3_sean_3()
+    return False
 
 label ep12_quests15_home:
     $ clear_object_follow_all()

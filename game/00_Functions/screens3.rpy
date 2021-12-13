@@ -292,6 +292,18 @@ screen image_shake(imagePath):
     zorder 15
     add imagePath at image_shake1
 
+screen dream_focus(xpos1, ypos1, scale1, opacity):
+    layer "master"
+    zorder 19
+    add "/images/Sprites/vignette2_white.png":
+        xanchor 0.5
+        yanchor 0.5
+        xpos xpos1
+        ypos ypos1
+        zoom scale1
+        alpha opacity
+
+
 screen dream():
     layer "master"
     zorder 20

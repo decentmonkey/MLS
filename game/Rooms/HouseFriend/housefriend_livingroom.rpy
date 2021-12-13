@@ -16,6 +16,10 @@ label housefriend_livingroom_init:
     $ add_object_to_scene("Teleport_Room", {"type":3, "text" : t_("КОМНАТА ШОНА"), "larrow" : "arrow_left_2", "base":"Screen_Left_Arrow_Tight", "click" : "housefriend_livingroom_environment", "xpos" : 350, "ypos" : 886, "zorder":11, "teleport":True, "group":"teleports"}, scene="housefriend_livingroom")
     return
 
+label housefriend_livingroom_init2:
+    $ add_object_to_scene("TV", {"type" : 2, "base" : "HouseFriend_LivingRoom_TV", "click" : "housefriend_livingroom_environment", "actions" : "l", "zorder":0, "tint":[1.0, 1.0, 0.6]}, scene="housefriend_livingroom")
+    return
+
 #                            $ brightness_adjustment = 0.1
 #                            $ saturation_adjustment = 1.07
 #                            $ contrast_adjustment = 1.3
