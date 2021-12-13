@@ -295,6 +295,7 @@ label ep02_dialogues2_college_4:
             img 900799 vpunch
             bardi_t "Черт! Отсюда не дотянуться..."
             w
+            $ questHelpDesc("college_desc5")
             # Барди тянет руку к папке, но не дотягивается
             # встает и обходит стол со стороны кресла секретаря
             menu:
@@ -1529,6 +1530,7 @@ label ep02_dialogues2_college_6:
                     $ questLog(0, True)
                     $ questHelp("college_19", True)
                     $ questHelp("college_20", False)
+                    $ questHelpDesc("college_desc4", "college_desc7")
                     fadeblack
                     sound step_stairs_short
                     pause 1.5
@@ -2088,6 +2090,7 @@ label ep02_dialogues2_college_6:
     $ questLog(1, True)
     $ questHelp("college_19", False)
     $ questHelp("college_20", True)
+    $ questHelpDesc("college_desc3", "college_desc8")
     fadeblack
     sound snd_door_open1
     pause 1.5
@@ -2192,6 +2195,7 @@ label ep02_dialogues2_college_7:
                     # затемнение
                     # Барди оказывается в холле
                     $ questHelp("college_22, True")
+                    $ questHelpDesc("college_desc9")
                     music2 stop
                     fadeblack
                     sound step_stairs_short
@@ -2442,6 +2446,7 @@ label ep02_dialogues2_college_9:
             # оборачивается
             $ questLog(12, True)
             $ questHelp("college_24", True)
+            $ questHelpDesc("college_desc10")
             pass
     # и замечает, что спиной к нему сидит Синтия
     music Little_Tomcat

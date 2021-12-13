@@ -69,6 +69,9 @@ label ep12_quests4_kitchen:
     $ moneyDisplayEnabled = True
     $ questHelp("house_10", True)
     $ questHelp("college_14")
+    $ questHelpDesc("house_desc4", "house_desc7")
+    $ questHelpDesc("house_desc5", "house_desc7")
+
     $ set_object_follow("Teleport_Street", scene="house_floor1")
     $ set_object_follow("Teleport_Map", scene="house_street")
     $ set_object_follow("Teleport_COLLEGE", scene="map")
@@ -182,6 +185,7 @@ label ep12_quests7_principal_secretary:
 label ep12_quests8_algebra:
     $ remove_hook()
     $ questHelp("college_17", True)
+    $ questHelpDesc("college_desc6")
     call ep02_dialogues2_college_5() # Барди заходит в кабинет
     fadeblack 1.5
     call college_algebra_init2()
@@ -316,6 +320,7 @@ label ep12_quests14a_sean:
 label ep12_quests14b_sean_afterphone:
     call ep02_dialogues3_sean_5c()
     $ questHelp("sean_3")
+    $ questHelpDesc("sean_desc1", "sean_desc2")
     return
 
 label ep12_quests15_home:
@@ -388,6 +393,7 @@ label ep12_quests17a_home: # проверил инстаграм
         return
     $ remove_hook()
     $ questHelp("house_13", True)
+    $ questHelpDesc("college_desc11")
     $ remove_hook(label="emily_instagram_block")
     $ add_hook("phone_close", "ep12_quests19_home", scene="phone", once=True, quest="day2")
     
@@ -442,6 +448,7 @@ label ep12_quests19b_home:
         call ep02_dialogues4_family_evening_12b()
     else:
         $ questHelp("house_14", True)
+        $ questHelpDesc("house_desc2", "house_desc8")
 
     call ep02_dialogues4_family_evening_13()
     if _return == -1:
@@ -452,6 +459,7 @@ label ep12_quests19b_home:
         call refresh_scene_fade()
         call change_scene("house_kitchen", "Fade_long")
         $ questHelp("house_15", True)
+        $ questHelpDesc("house_desc6", "house_desc9")
 
 
     call changeDayTime("night")
