@@ -74,7 +74,7 @@ label college_algebra_environment:
         call refresh_scene_fade()
         return
     if obj_name == "Ruler":
-        
+        call ep02_dialogues2_college_12()
         $ open_secret_object("Ruler")
         return
 
