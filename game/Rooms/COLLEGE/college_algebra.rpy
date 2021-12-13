@@ -34,6 +34,8 @@ label college_algebra_init2:
     $ add_object_to_scene("Visitor10", {"type" : 2, "base" : "COLLEGE_Algebra_Visitor10_[collegeAlgebraVisitor10_Suffix]", "click" : "college_algebra_environment", "actions" : "l", "zorder":2, "group":"students"}, scene="college_algebra")
     $ add_object_to_scene("Visitor11", {"type" : 2, "base" : "COLLEGE_Algebra_Visitor11_[collegeAlgebraVisitor11_Suffix]", "click" : "college_algebra_environment", "actions" : "l", "zorder":1, "group":"students"}, scene="college_algebra")
     $ add_object_to_scene("Visitor12", {"type" : 2, "base" : "COLLEGE_Algebra_Visitor12_[collegeAlgebraVisitor12_Suffix]", "click" : "college_algebra_environment", "actions" : "l", "zorder":1, "group":"students", "selectable":False}, scene="college_algebra")
+    $ add_object_to_scene("Ruler", {"type" : 2, "base" : "COLLEGE_Algebra_Ruler", "click" : "college_algebra_environment", "actions" : "l", "zorder":0}, scene="college_algebra")
+    
     return
 
 #                            $ brightness_adjustment = 0.1
@@ -71,5 +73,9 @@ label college_algebra_environment:
         call ep02_dialogues2_college_5g()
         call refresh_scene_fade()
         return
-    
+    if obj_name == "Ruler":
+        
+        $ open_secret_object("Ruler")
+        return
+
     return
