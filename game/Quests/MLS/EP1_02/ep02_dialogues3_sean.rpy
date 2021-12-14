@@ -1206,7 +1206,7 @@ label ep02_dialogues3_sean_3:
             whore "Без проблем."
             whore "Вот мой номер телефона." # + новый контакт в телефоне Барди
             if mlsBardiSeanDay3WhorePhone == False:
-                call phone_contact4()
+                call phone_contact4() from _rcall_phone_contact4
                 $ whoreCallStage = 1
                 $ mlsBardiSeanDay3WhorePhone = True
             whore "Напишешь мне, как надумаешь..."

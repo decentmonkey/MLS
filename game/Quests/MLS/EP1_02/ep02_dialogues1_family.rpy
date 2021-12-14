@@ -602,7 +602,7 @@ label ep02_dialogues1_family_2:
     }
     menu:
         "Мне эти деньги нужнее.": # (+Rat)
-            call rrmeter(-5, "ep02_dialogues1_family_2")
+            call rrmeter(-5, "ep02_dialogues1_family_2") from _rcall_rrmeter_2
             imgd 900467
             bardi_t "Но мне эти деньги нужнее."
             bardi_t "Притом, что такое пять баксов? Это же ерунда..."
@@ -620,7 +620,7 @@ label ep02_dialogues1_family_2:
             $ mlsBardiDay3SophieMoney1 = day # Барди взял у Софи первые 5 долларов (крыса)
             pass
         "Взять в долг.": # (+Rabbit)
-            call rrmeter(5, "ep02_dialogues1_family_2")
+            call rrmeter(5, "ep02_dialogues1_family_2") from _rcall_rrmeter_3
             imgd 900467
             bardi_t "Но мне они тоже нужны. Мне нужно собирать деньги на билет..."
             bardi_t "Я могу сейчас взять эти деньги в долг."

@@ -77,7 +77,7 @@ label ep1_home_quests5_bed: # ложится спать
     $ remove_hook(quest="day1")
     call ep01_dialogues3_day2_family_7() from _rcall_ep01_dialogues3_day2_family_7
     $ steam_achievement("ach_end1")
-    call ep12_quests1_init()
+    call ep12_quests1_init() from _rcall_ep12_quests1_init
     return False
 
 #    jump end_update

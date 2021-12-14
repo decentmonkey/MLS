@@ -48,33 +48,33 @@ label college_algebra_environment:
         return
 
     if obj_name == "Visitor11":
-        call ep02_dialogues2_college_5a()
+        call ep02_dialogues2_college_5a() from _rcall_ep02_dialogues2_college_5a
         return
     if obj_name == "Visitor5":
-        call ep02_dialogues2_college_5b()
-        call refresh_scene_fade()
+        call ep02_dialogues2_college_5b() from _rcall_ep02_dialogues2_college_5b
+        call refresh_scene_fade() from _rcall_refresh_scene_fade_25
         return
     if obj_name == "Visitor6":
-        call ep02_dialogues2_college_5c()
-        call refresh_scene_fade()
+        call ep02_dialogues2_college_5c() from _rcall_ep02_dialogues2_college_5c
+        call refresh_scene_fade() from _rcall_refresh_scene_fade_26
         return
     if obj_name == "Visitor4":
-        call ep02_dialogues2_college_5d()
-        call refresh_scene_fade()
+        call ep02_dialogues2_college_5d() from _rcall_ep02_dialogues2_college_5d
+        call refresh_scene_fade() from _rcall_refresh_scene_fade_27
         return
     if obj_name == "Visitor7":
-        call ep02_dialogues2_college_5e()
-        call refresh_scene_fade()
+        call ep02_dialogues2_college_5e() from _rcall_ep02_dialogues2_college_5e
+        call refresh_scene_fade() from _rcall_refresh_scene_fade_28
         return
     if obj_name == "Visitor10":
-        call ep02_dialogues2_college_5f()
+        call ep02_dialogues2_college_5f() from _rcall_ep02_dialogues2_college_5f
         return
     if obj_name == "Visitor3":
-        call ep02_dialogues2_college_5g()
-        call refresh_scene_fade()
+        call ep02_dialogues2_college_5g() from _rcall_ep02_dialogues2_college_5g
+        call refresh_scene_fade() from _rcall_refresh_scene_fade_29
         return
     if obj_name == "Ruler":
-        call ep02_dialogues2_college_12()
+        call ep02_dialogues2_college_12() from _rcall_ep02_dialogues2_college_12
         $ open_secret_object("Ruler")
         return
 

@@ -1,6 +1,6 @@
 label house_bedroom_mc_onbed:
     $ miniMapData = []
-    call miniMapHouseGenerate()
+    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate_14
     $ scene_image = "scene_House_Bedroom_MC_OnBed[day_suffix]"
     return
 
@@ -15,7 +15,7 @@ label house_bedroom_mc_onbed_init:
 
 label house_bedroom_mc_onbed_environment:
     if obj_name == "Teleport_Bedroom_MC":
-        call change_scene("house_bedroom_mc")
+        call change_scene("house_bedroom_mc") from _rcall_change_scene_130
         return
 
     return

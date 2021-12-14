@@ -228,7 +228,7 @@ label phone_open_loop1:
         if phone_instagram_mode == 0:
             call process_hooks("instagram", "phone") from _rcall_process_hooks_27
     if phone_menu_active == "instagram_page":
-        call process_hooks("instagram", "phone")
+        call process_hooks("instagram", "phone") from _rcall_process_hooks_52
 
     if phone_menu_active == "notes":
         call process_hooks("notes", "phone") from _rcall_process_hooks_28
