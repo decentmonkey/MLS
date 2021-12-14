@@ -2471,6 +2471,7 @@ label ep02_dialogues2_college_9:
     # Барди садится напротив нее
     imgf 900905
     w
+    sound heel1
 #    imgd 900906
 #    w
     imgf 900907

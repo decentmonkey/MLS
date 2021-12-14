@@ -12,7 +12,7 @@ label phone1:
 label phone_before_call_contact:
     if obj_name == "Whore":
         if whoreCallStage == 3:
-            call ep02_dialogues3_sean_5b() from _rcall_ep02_dialogues3_sean_5b
+            call ep02_dialogues3_sean_5b() from _rcall_ep02_dialogues3_sean_5b
             return False
         if get_active_objects("Whore", scene=scene_name) != False:
             bardi_t "Глупо звонить, когда я нахожусь рядом..."
@@ -34,22 +34,22 @@ label phone_before_call_contact:
 label phone_call_contact:
     if obj_name == "Emily":
         if emilyCallStage == 1:
-            call emily_chat1() from _rcall_emily_chat1
+            call emily_chat1() from _rcall_emily_chat1
             return
     if obj_name == "Whore":
         if whoreCallStage == 2:
-            call whore_chat2() from _rcall_whore_chat2
+            call whore_chat2() from _rcall_whore_chat2
             return
         if whoreCallStage == 1:
-            call whore_chat1() from _rcall_whore_chat1
+            call whore_chat1() from _rcall_whore_chat1
             return
 
     if obj_name == "Sophie":
         if sophieCallStage == 2:
-            call sophie_chat3() from _rcall_sophie_chat3
+            call sophie_chat3() from _rcall_sophie_chat3
             return
         if sophieCallStage == 1:
-            call sophie_chat2() from _rcall_sophie_chat2
+            call sophie_chat2() from _rcall_sophie_chat2
             return
 
     if obj_name == "Cynthia":
@@ -61,10 +61,11 @@ label phone_call_contact:
             return
     if obj_name == "Sean":
         if seanCallStage == 3:
-            call sean_chat4() from _rcall_sean_chat4
+            call sean_chat4() from _rcall_sean_chat4
+            $ questHelp("college_15", True)
             return
         if seanCallStage == 2:
-            call sean_chat3() from _rcall_sean_chat3
+            call sean_chat3() from _rcall_sean_chat3
             $ questHelp("college_15", True)
             return
         if seanCallStage == 1:
