@@ -18,10 +18,11 @@ label college_algebra:
 
 label college_algebra_init:
     $ default_tint = [1.0, 1.0, 1.0]
-    $ add_object_to_scene("Teleport_Coridor5", {"type":3, "text" : t_("КОРИДОР"), "rarrow" : "arrow_right_2", "base":"COLLEGE_Algebra_Teleport_Coridor5", "click" : "college_algebra_environment", "xpos" : 282, "ypos" : 202, "zorder":0, "teleport":True, "group":"teleports"}, scene="college_algebra")
+    $ add_object_to_scene("Teleport_Coridor5", {"type":3, "text" : t_("КОРИДОР"), "rarrow" : "arrow_right_2", "base":"empty", "click" : "college_algebra_environment", "xpos" : 282, "ypos" : 202, "zorder":0, "teleport":True, "group":"teleports"}, scene="college_algebra")
     return
 
 label college_algebra_init2:
+    $ add_object_to_scene("Teleport_Coridor5", {"type":3, "text" : t_("КОРИДОР"), "rarrow" : "arrow_right_2", "base":"empty", "click" : "college_algebra_environment", "xpos" : 282, "ypos" : 202, "zorder":0, "teleport":True, "group":"teleports"}, scene="college_algebra")
     $ add_object_to_scene("MC", {"type" : 2, "base" : "COLLEGE_Algebra_MC_[collegeAlgebraMC_Suffix]", "click" : "college_algebra_environment", "actions" : "l", "zorder":4, "selectable":False}, scene="college_algebra")
     $ add_object_to_scene("Teacher8", {"type" : 2, "base" : "COLLEGE_Algebra_Teacher8_[collegeAlgebraTeacher_Suffix]", "click" : "college_algebra_environment", "actions" : "l", "zorder":0}, scene="college_algebra")
     $ add_object_to_scene("Visitor1", {"type" : 2, "base" : "COLLEGE_Algebra_Visitor1_[collegeAlgebraVisitor1_Suffix]", "click" : "college_algebra_environment", "actions" : "l", "zorder":3, "group":"students", "selectable":False}, scene="college_algebra")
@@ -35,7 +36,7 @@ label college_algebra_init2:
     $ add_object_to_scene("Visitor11", {"type" : 2, "base" : "COLLEGE_Algebra_Visitor11_[collegeAlgebraVisitor11_Suffix]", "click" : "college_algebra_environment", "actions" : "l", "zorder":1, "group":"students"}, scene="college_algebra")
     $ add_object_to_scene("Visitor12", {"type" : 2, "base" : "COLLEGE_Algebra_Visitor12_[collegeAlgebraVisitor12_Suffix]", "click" : "college_algebra_environment", "actions" : "l", "zorder":1, "group":"students", "selectable":False}, scene="college_algebra")
     $ add_object_to_scene("Ruler", {"type" : 2, "base" : "COLLEGE_Algebra_Ruler", "click" : "college_algebra_environment", "actions" : "l", "zorder":0}, scene="college_algebra")
-    
+
     return
 
 #                            $ brightness_adjustment = 0.1
