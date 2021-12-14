@@ -49,7 +49,7 @@ label ep02_dialogues2_college_1:
     $ clear_object_follow_all()
     $ set_object_follow("Teleport_Coridor1", scene="college_street")
 
-    call refresh_scene_fade() from _rcall_refresh_scene_fade_12
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_12
     return
 
 # если берет телефон
@@ -553,7 +553,7 @@ label ep02_dialogues2_college_5:
 #    }
     menu:
         "Извиниться.": # кролик
-#            call rrmeter(2, "ep02_dialogues2_college_5") from _rcall_rrmeter_4
+#            call rrmeter(2, "ep02_dialogues2_college_5") from _rcall_rrmeter_4
             imgd 900831
             bardi "Извините, миссис Кларк."
             bardi "Я новенький, всего второй день в этом колледже..."
@@ -570,7 +570,7 @@ label ep02_dialogues2_college_5:
             teacher_clark "И продолжим занятие."
             pass
         "Я особо и не спешил.": # крыса
-#            call rrmeter(-2, "ep02_dialogues2_college_5") from _rcall_rrmeter_5
+#            call rrmeter(-2, "ep02_dialogues2_college_5") from _rcall_rrmeter_5
             $ mlsBardiDay3College2 = day # Барди нагло разговаривал с преподом по математике Кларк
             imgd 900831
             bardi "Да я особо и не спешил..."
@@ -1035,7 +1035,7 @@ label ep02_dialogues2_college_6:
             imgf 910679
             bardi_t "Как она могла его не заметить?"
             bardi_t "Нужно отдать ей телефон, пока она весь колледж не обыскала."
-            call rrmeter(5, "ep02_dialogues2_college_6") from _rcall_rrmeter_6
+            call rrmeter(5, "ep02_dialogues2_college_6") from _rcall_rrmeter_6
             # он выбегает из кабинета
             fadeblack
             sound snd_door_locked1
@@ -1068,7 +1068,7 @@ label ep02_dialogues2_college_6:
             sound snd_phone_notification2
             imgd 910681
             bardi_t "Готово!"
-            call rrmeter(-5, "ep02_dialogues2_college_6") from _rcall_rrmeter_7
+            call rrmeter(-5, "ep02_dialogues2_college_6") from _rcall_rrmeter_7
             # Барди блокирует телефон Эмили
             imgd 910682
             bardi_t "Это отличный способ взбесить Гарри!"
@@ -1355,7 +1355,7 @@ label ep02_dialogues2_college_6:
                                     img 910740 vpunch
                                     teacher_morris "[mcname]!.."
                                     # Барди резко оддергивает руку
-                                    call rrmeter(-2, "maurice_vatman1") from _rcall_rrmeter_8
+                                    call rrmeter(-2, "maurice_vatman1") from _rcall_rrmeter_8
                                     bardi "!!!"
                                     bardi "Я с-случайно..."
                                     # Барди бросает попытки собрать ватманы и отходит от Морис
@@ -1441,7 +1441,7 @@ label ep02_dialogues2_college_6:
                                     img 910751
                                     teacher_morris "[mcname]!.."
                                     # Барди резко оддергивает руку
-                                    call rrmeter(3, "ep02_dialogues2_college_6b") from _rcall_rrmeter_9
+                                    call rrmeter(3, "ep02_dialogues2_college_6b") from _rcall_rrmeter_9
                                     imgd 910752
                                     bardi "!!!"
                                     bardi "Я с-случайно..."
@@ -1719,7 +1719,7 @@ label ep02_dialogues2_college_6:
 
                     menu:
                         "Открыть глаза.": #(+Rat)
-                            call rrmeter(-5, "ep02_dialogues2_college_6_01") from _rcall_rrmeter_10
+                            call rrmeter(-5, "ep02_dialogues2_college_6_01") from _rcall_rrmeter_10
                             # Барди открывает глаза, Роуз на него уже не смотрит
                             music Stylish_Hip_Hop_Rock
                             pause 1.0
@@ -2075,7 +2075,7 @@ label ep02_dialogues2_college_6:
             bardi "Если честно..."
             bardi "Мне даже жаль, что я совсем ничего не успел подсмотреть."
             bardi "Такая красивая девочка, без одежды... А я ничего не увидел."
-            call rrmeter(3, "ep02_dialogues2_college_6_03") from _rcall_rrmeter_11
+            call rrmeter(3, "ep02_dialogues2_college_6_03") from _rcall_rrmeter_11
             # Роуз смущенно пускает глаза и улыбается
             imgd 901066
             student_rose "..."
@@ -2419,7 +2419,7 @@ label ep02_dialogues2_college_9:
             # говорит ему недовольно
             fadeblack 1.0
             music Step_By_Step
-            call rrmeter(-2, "librarian_book1") from _rcall_rrmeter_12
+            call rrmeter(-2, "librarian_book1") from _rcall_rrmeter_12
             imgf 900936
             librarian_wilson "Можно было обойтись и без рук!"
             imgd 900937
