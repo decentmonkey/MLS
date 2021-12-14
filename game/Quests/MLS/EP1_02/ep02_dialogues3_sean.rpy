@@ -689,6 +689,7 @@ label ep02_dialogues3_sean_3:
                     bardi "О, какой кайф..."
                     pass
             # дверь в комнату Шона резко открывается и он в кипише влетает внутрь
+            $ questLog(4, True)
             music stop
             sound plastinka1b
             img 900664 hpunch
@@ -1030,6 +1031,7 @@ label ep02_dialogues3_sean_3:
                     bardi "О, какой кайф..."
                     pass
             # дверь в комнату Шона резко открывается и он в кипише влетает внутрь
+            $ questLog(6, True)
             music stop
             sound plastinka1b
             img 900652 hpunch
