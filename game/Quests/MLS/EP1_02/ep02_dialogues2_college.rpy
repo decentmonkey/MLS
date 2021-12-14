@@ -883,6 +883,7 @@ label ep02_dialogues2_college_6:
     bardi_t "Еще этот безмозглый качок Гарри..."
     # картинки воспоминаний - пара кадров, как ударил в коридоре в первый день, пара кадров, как толкнул сегодня
     # и кадр, как показывал кулак на уроке математики
+    $ camera_enabled = False
     fadeblack
     img white_screen
     with diss
@@ -922,6 +923,7 @@ label ep02_dialogues2_college_6:
     with diss
     pause 1.0
     music Step_By_Step
+    $ camera_enabled = True
     imgf 901068
     bardi_t "Такое нельзя оставлять безнаказанным!"
     bardi_t "Какую бы гадость ему сделать?.."
