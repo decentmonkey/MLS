@@ -134,13 +134,20 @@ init python:
             lang = "english"
         st = s
         sKey = s
-        if language_dict.has_key(s + "_!_" + last_dialogue_character):
+        if language_dict.has_key(s + "_!_" + last_dialogue_character): #trying to find string of speaker
             sKey = s + "_!_" + last_dialogue_character
         else:
-            if language_dict.has_key(s):
+            if language_dict.has_key(s): #trying to find string w/o speaker
                 sKey = s
             else:
                 sKey = False
+        if sKey == False: #trying to strip the string
+            s = s.strip()
+            if language_dict.has_key(s + "_!_" + last_dialogue_character): #trying to find string of speaker
+                sKey = s + "_!_" + last_dialogue_character
+            else:
+                if language_dict.has_key(s): #trying to find string w/o speaker
+                    sKey = s
         if sKey:
             st = language_dict[sKey][language_fields[lang]]
             if st == "":
