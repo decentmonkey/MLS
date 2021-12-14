@@ -291,8 +291,7 @@ label ep02_dialogues4_family_evening_3:
     imgf 900076
     olivia "Синтия, это ты?"
     olivia "Мне некогда! Я собираюсь на встречу с Марком."
-    call refresh_scene_fade()
- from _rcall_refresh_scene_fade_13
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_13
     return False
 
 # при клике на дверь Синтии
@@ -318,8 +317,7 @@ label ep02_dialogues4_family_evening_4:
     cynthia "Спасибо!"
     sound snd_door_close1
     # Синтия улыбается и закрывает дверь
-    call refresh_scene_fade()
- from _rcall_refresh_scene_fade_14
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_14
     return False
 
 # при клике на комнату Барди
@@ -441,8 +439,7 @@ label ep02_dialogues4_family_evening_6:
         w
         imgd 900750
     bardi_t "Закрыто. Видимо Синтия уже легла спать."
-    call refresh_scene_fade()
- from _rcall_refresh_scene_fade_15
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_15
     return False
 
 # клик на комнату Барди полсе ухода Оливии
@@ -832,8 +829,7 @@ label ep02_dialogues4_family_evening_12:
     music stop
     scene black_screen
     with Dissolve(1)
-    call textonblack(t_("В ЭТО ВРЕМЯ..."))
- from _rcall_textonblack
+    call textonblack(t_("В ЭТО ВРЕМЯ...")) from _rcall_textonblack
     scene black_screen
     with Dissolve(1)
     music2 night_ambience
@@ -932,8 +928,7 @@ label ep02_dialogues4_family_evening_12b:
     music stop
     scene black_screen
     with Dissolve(1)
-    call textonblack(t_("В ЭТО ВРЕМЯ..."))
- from _rcall_textonblack_1
+    call textonblack(t_("В ЭТО ВРЕМЯ...")) from _rcall_textonblack_1
     scene black_screen
     with Dissolve(1)
     music2 night_ambience
@@ -1111,8 +1106,7 @@ label ep02_dialogues4_family_evening_11a:
     w
     imgd 910456
     w
-    call rrmeter(-3, "ep02_dialogues4_family_evening_11a")
- from _rcall_rrmeter_13
+    call rrmeter(-3, "ep02_dialogues4_family_evening_11a") from _rcall_rrmeter_13
     imgd 910457
     cynthia "[mcname], ты что делаешь?"
     bardi "Фильм смотрю..."
@@ -1745,8 +1739,7 @@ label ep02_dialogues4_family_evening_11b:
     imgd 910552
     w
     sound Jump1
-    call rrmeter(3, "ep02_dialogues4_family_evening_11b")
- from _rcall_rrmeter_14
+    call rrmeter(3, "ep02_dialogues4_family_evening_11b") from _rcall_rrmeter_14
     img 910558
     cynthia "Не волнуйся, я никому не скажу!" # подмигивает
     imgd 910552
@@ -2030,15 +2023,13 @@ label ep02_dialogues4_family_evening_13:
     menu:
         "Соврать.": # (+Rat)
             $ mlsBardiDay3FamilyEvening2 = day # Барди соврал Оливии, когда смотрел ее телефон
-            call rrmeter(-2, "ep02_dialogues4_family_evening_13")
- from _rcall_rrmeter_15
+            call rrmeter(-2, "ep02_dialogues4_family_evening_13") from _rcall_rrmeter_15
             imgd 910601
             bardi "Хотел посмотреть фотки твоих подружек!"
             bardi "Правда я не уверен, что они вообще у тебя есть..."
             pass
         "Сказать правду.": # (+Rabbit)
-            call rrmeter(2, "ep02_dialogues4_family_evening_13")
- from _rcall_rrmeter_16
+            call rrmeter(2, "ep02_dialogues4_family_evening_13") from _rcall_rrmeter_16
             imgd 910601
             bardi "Увидел классную фотку на заставке..."
             bardi "И просто решил посмотреть другие фото."
