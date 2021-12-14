@@ -86,7 +86,7 @@ label ep1_home_quests6_instagram:
     $ questHelp("house_6", True)
     $ questHelp("house_7")
     $ questHelp("house_8")
-    $ questLog(0, True)
+    $ questLog(8, True)
     $ remove_hook(label="bed_block_instagram")
     call ep01_dialogues3_day2_family_8a() from _rcall_ep01_dialogues3_day2_family_8a
     $ add_hook("phone_close", "ep01_dialogues3_day2_family_8b", scene="phone", label="ep01_dialogues3_day2_family_8b", once=True)

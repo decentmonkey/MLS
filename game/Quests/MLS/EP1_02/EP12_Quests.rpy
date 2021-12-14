@@ -3,7 +3,7 @@ label ep12_quests1_init:
     $ phone_instagram_mode = 1
 
     call changeDayTime("morning") from _rcall_changeDayTime_12
-    #family 
+    #family
     call ep02_dialogues1_family_1() from _rcall_ep02_dialogues1_family_1 # момент, на котором закончился 1-й апдейт, комната Барди
 
     # убираем залипшие квесты
@@ -140,7 +140,7 @@ label ep12_quests5_college: # Барди заходит в колледж хол
     call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_12
     return
 
-label ep12_quests6_gymclosed: # 
+label ep12_quests6_gymclosed: #
     sound snd_door_locked1
     pause 1.0
     call ep01_dialogues2_day1_family_1_6() from _rcall_ep01_dialogues2_day1_family_1_6_3
@@ -173,10 +173,10 @@ label ep12_quests7_principal_secretary:
 
     $ add_hook("Teleport_Algebra", "ep12_quests8_algebra", scene="college_coridor5", quest="day2")
     $ set_active("Student12", False, scene="college_coridor5")
-    
+
     $ add_hook("Teleport_Street", "ep02_dialogues2_college_4b", scene="college_coridor1", label="college_street_block", quest="college_day2")
     $ add_hook("Teleport_Gym", "ep02_dialogues2_college_4b", scene="college_coridor2", label="gym_blocked", quest="college_day2")
-    
+
 
     $ add_hook("Teleport_Principal_Secretary", "ep02_dialogues2_college_3c", scene="college_coridor9", quest="college_day2")
     call refresh_scene_fade() from _rcall_refresh_scene_fade_18
@@ -396,7 +396,7 @@ label ep12_quests17a_home: # проверил инстаграм
     $ questHelpDesc("college_desc11")
     $ remove_hook(label="emily_instagram_block")
     $ add_hook("phone_close", "ep12_quests19_home", scene="phone", once=True, quest="day2")
-    
+
     return
 
 label ep12_quests18_home:
