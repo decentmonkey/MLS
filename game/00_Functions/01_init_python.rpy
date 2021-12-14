@@ -8,7 +8,7 @@ python early:
         "french": "Thanks for the French translation to\n[Jay Staff] & [Wissssss]",
 #        "italian": "Thanks for the Italian translation to\n[5n4k3]",
         "turkish": "Thanks for the Turkish translation to\n[Shtofig]",
-        "ukrainian": "Thanks for the Turkish translation to\n[EraRamp]",
+        "ukrainian": "Thanks for the Ukrainian translation to\n[EraRamp]",
         "None": "Thanks for the Russian proofread to\n[Ms. Mansfield] & [EraRamp]"
     }
 

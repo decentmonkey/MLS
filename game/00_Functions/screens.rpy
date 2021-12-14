@@ -2247,7 +2247,7 @@ screen main_menu():
         if 1==1:
             frame:
     #            pos (get_resolution_x(1570), get_resolution_y(650))
-                pos (gui.resolution.main_menu.lang.left, get_resolution_y(690))
+                pos (gui.resolution.main_menu.lang.left, get_resolution_y(660))
                 padding (gui.resolution.main_menu.lang.padding1,gui.resolution.main_menu.lang.padding2)
                 xysize (get_resolution_x(gui.resolution.main_menu.lang.width), get_resolution_y(gui.resolution.main_menu.lang.height))
                 anchor (0,0)
@@ -2278,7 +2278,7 @@ screen main_menu():
 
             if language_credits.has_key(str(_preferences.language)) and steamVersion == False:
                 frame:
-                    pos (gui.resolution.main_menu.lang.left + getRes(20), get_resolution_y(720) + get_resolution_y(gui.resolution.main_menu.lang.height) + getRes(10))
+                    pos (gui.resolution.main_menu.lang.left + getRes(20), get_resolution_y(660) + get_resolution_y(gui.resolution.main_menu.lang.height) + getRes(10))
                     anchor (0, 0)
                     background None
                     text t__(language_credits[str(_preferences.language)]) style "main_menu_credits_text"
