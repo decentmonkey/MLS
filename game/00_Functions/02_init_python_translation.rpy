@@ -29,6 +29,7 @@ init python:
 
     language_dict_len = len(language_dict)
     language_dict_fields_len = len(language_dict.items()[0][1])
+    untranslated_lines = []
     if persistent.lang_suffixes is None or persistent.lang_count != len(json.dumps(language_dict)):
         language_completed_list = [0]*(max(language_fields.values())+1)
         for lang_line_key, lang_line in language_dict.items():
@@ -36,6 +37,9 @@ init python:
                 if lang_value < len(lang_line):
                     if lang_line[lang_value] != "":
                         language_completed_list[lang_value] += 1
+#                    else:
+#                        if lang_key == "french":
+#                            untranslated_lines.append(lang_line_key)
         lang_suffixes = {}
         for lang_key in language_fields:
             if language_completed_list[language_fields[lang_key]] != language_dict_len:
