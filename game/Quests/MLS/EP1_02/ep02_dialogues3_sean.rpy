@@ -119,7 +119,7 @@ label ep02_dialogues3_sean_2:
     bardi "Окей."
     sound step_stairs
     imgf 900540
-    unknown "И, кстати, там кроме вазы есть еще одна старинная вещь..."
+    unknown_woman "И, кстати, там кроме вазы есть еще одна старинная вещь..."
     fadeblack
     sound snd_door_open1
     pause 1.5
