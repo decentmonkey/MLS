@@ -46,5 +46,6 @@ define actor1 = Character(t_("Актер"), who_color=c_blue) # актер в п
 define actor2 = Character(t_("Актер"), who_color=c_blue) # актер в порно
 define whore = Character(t_("Бекки"), who_color=c_pink) # проститутка
 define unknown = Character(t_("Неизвестный"), who_color=c_orange) # нежданный гость Шона
+define unknown_woman = Character(t_("Неизвестная"), who_color=c_orange) # нежданный гость Шона
 define trainer_brooks = Character(t_("Тренер Брукс"), who_color=c_orange) # училка по физре Тренер Брукс, Mrs Brooks
 define librarian_wilson = Character(t_("Библиотекарь"), who_color=c_red) # библиотекарша миссис Вилсон, Mrs. Wilson
