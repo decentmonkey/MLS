@@ -547,13 +547,13 @@ label ep02_dialogues2_college_5:
     bardi_t "Шон ведь предупреждал меня, что на ее занятия лучше не опаздывать."
     bardi_t "Надо же было так вляпаться..."
     bardi "Я..."
-    $ menu_data = {
-        "Я особо и не спешил.": {"info_rat":True},
-        "Извиниться.": {"info_rabbit":True}
-    }
+#    $ menu_data = {
+#        "Я особо и не спешил.": {"info_rat":True},
+#        "Извиниться.": {"info_rabbit":True}
+#    }
     menu:
         "Извиниться.": # кролик
-            call rrmeter(2, "ep02_dialogues2_college_5") from _rcall_rrmeter_4
+#            call rrmeter(2, "ep02_dialogues2_college_5") from _rcall_rrmeter_4
             imgd 900831
             bardi "Извините, миссис Кларк."
             bardi "Я новенький, всего второй день в этом колледже..."
@@ -570,7 +570,7 @@ label ep02_dialogues2_college_5:
             teacher_clark "И продолжим занятие."
             pass
         "Я особо и не спешил.": # крыса
-            call rrmeter(-2, "ep02_dialogues2_college_5") from _rcall_rrmeter_5
+#            call rrmeter(-2, "ep02_dialogues2_college_5") from _rcall_rrmeter_5
             $ mlsBardiDay3College2 = day # Барди нагло разговаривал с преподом по математике Кларк
             imgd 900831
             bardi "Да я особо и не спешил..."
