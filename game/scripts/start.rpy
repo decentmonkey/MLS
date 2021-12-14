@@ -1,4 +1,4 @@
-define debugMode = True
+define debugMode = False
 
 default gameStage = 0
 default gameSubStage = 0
