@@ -547,6 +547,8 @@ label ep02_dialogues4_family_evening_7:
 #    show screen intro_focus("/images/Other/intro/intro_focus5.png")
 #    with diss
 label ep02_dialogues4_family_evening_7b:
+    show screen intro_focus("/images/Other/intro/intro_focus5.png")
+    with diss
     help "Нажми иконку телефона. И выбери приложение инстаграм."
 #    call refresh_scene()
     return False

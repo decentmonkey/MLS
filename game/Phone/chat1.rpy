@@ -288,7 +288,7 @@ label whore_chat2:
     return
 
 label emily_chat1:
-    $ phone_start_new_chat("whore_chat2", "Whore")
+    $ phone_start_new_chat("whore_chat2", "Emily")
     call phone_chat([
         ["student_emily", "image", "/images/Phone/Photos/emily_photo1.png", 3],
         ["student_emily", t_("Собираюсь спать. Решила написать, что я согласна провести тебе небольшую экскурсию.")]
