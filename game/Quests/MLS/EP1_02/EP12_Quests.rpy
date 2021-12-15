@@ -342,12 +342,15 @@ label ep12_quests15_home:
     $ add_hook("Teleport_Street", "ep01_dialogues2_day1_family_1_12", scene="house_floor1", label="house_block", quest="day2")
     $ miniMapDisabled["HOUSE"] = ["House_Street"]
 
+    if day_time != "evening":
+        call changeDayTime("evening")
     $ move_object("Sophie", "empty")
     $ move_object("Henry", "empty")
     $ move_object("Sister1", "house_sister1")
     $ move_object("Sister2", "house_sister2")
     $ questHelp("house_11", True)
     $ questHelp("house_12")
+
 
     $ sister1RoomDoorLocked = True
     $ sister2RoomDoorLocked = True

@@ -24,7 +24,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "v2"
+define config.version = "v2.01"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -35,6 +35,10 @@ Thanks from L7team to:
 Ragnaroekr
 Londo Mollari
 bambam
+Jay Staff
+Wissssss
+Shtofig
+EraRamp
 \n
 renpytom (Tom Rothamel)\nfor the Ren'Py Game Engine
 \n
