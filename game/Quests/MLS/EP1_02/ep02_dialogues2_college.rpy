@@ -2322,9 +2322,9 @@ label ep02_dialogues2_college_9:
     # Барди смотрит на библиотекаршу
     imgd 900896
     bardi "..."
-    $ menu_data = {
-        "Попросить достать еще одну книгу.": {"info_rat":True}
-    }
+#    $ menu_data = {
+#        "Попросить достать еще одну книгу.": {"info_rat":True}
+#    }
     menu:
         "Окей, все понятно.":
             imgd 900896
@@ -2419,7 +2419,7 @@ label ep02_dialogues2_college_9:
             # говорит ему недовольно
             fadeblack 1.0
             music Step_By_Step
-            call rrmeter(-2, "librarian_book1") from _rcall_rrmeter_12
+#            call rrmeter(-2, "librarian_book1") from _rcall_rrmeter_12
             imgf 900936
             librarian_wilson "Можно было обойтись и без рук!"
             imgd 900937
