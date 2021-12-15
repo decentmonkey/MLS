@@ -162,7 +162,7 @@ label ep12_quests7_principal_secretary:
     $ set_active("Teleport_Algebra", True, scene="college_coridor5")
     $ set_active("Teleport_Coridor6", True, scene="college_coridor5")
     $ set_active("Teleport_Coridor8", True, scene="college_principal_secretary")
-    
+
     $ add_hook("Principal_Secretary", "ep02_dialogues2_college_4b", scene="college_principal_secretary", quest="day2")
 
     $ set_object_follow("Teleport_Coridor9", scene="college_coridor8")
@@ -485,6 +485,7 @@ label ep12_quests20_home:
     call ep02_dialogues4_family_evening_14() from _rcall_ep02_dialogues4_family_evening_14
     $ remove_hook(label="college_day2")
     $ remove_hook(label="day2")
+    $ steam_achievement("ach_end2")
     jump end_update
 
 #    return False

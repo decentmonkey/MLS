@@ -416,7 +416,7 @@ label phone_open_loop1:
             $ phone_menu_active = "instagram_page"
             $ phone_instagram_current_name = interact_data[1]
             python: # remove notif new
-                while phone_instagram_current_name in phone_instagram_new: phone_instagram_new.remove(phone_instagram_current_name)  
+                while phone_instagram_current_name in phone_instagram_new: phone_instagram_new.remove(phone_instagram_current_name)
             jump phone_open_loop1
 
 
@@ -433,6 +433,8 @@ label phone_open_loop1:
                 phone_gallery.insert(0, [phone_camera_image, get_camera_scene_shoot_data()])
                 if len(phone_gallery) >= 30:
                     steam_achievement("ach_photo1")
+                if len(phone_gallery) >= 60:
+                    steam_achievement("ach_photo2")
 #                print get_camera_scene_shoot_data()
             call photoshop_flash() from _rcall_photoshop_flash
 #            pause 0.2
@@ -641,11 +643,13 @@ init python:
             phone_gallery.insert(0, [phone_camera_image, {"sprites": [], "overlaysList" : []}])
             if len(phone_gallery) >= 30:
                 steam_achievement("ach_photo1")
+            if len(phone_gallery) >= 60:
+                steam_achievement("ach_photo2")
             renpy.play("/Sounds/snd_photo_capture.ogg")
             renpy.show_screen("phone_camera_screen2_shoot")
             return
         return
-    
+
     def phone_gallery_add_image(phone_camera_image):
         phone_gallery.insert(0, [phone_camera_image, {"sprites": [], "overlaysList" : []}])
         return
