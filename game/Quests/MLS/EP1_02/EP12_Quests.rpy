@@ -376,6 +376,17 @@ label ep12_quests16_home:
 
 label ep12_quests17_home:
     $ remove_hook()
+
+    if day_time != "evening": # костыль
+        call changeDayTime("evening")
+        $ move_object("Sophie", "empty")
+        $ move_object("Henry", "empty")
+        $ move_object("Sister1", "house_sister1")
+        $ move_object("Sister2", "house_sister2")
+        $ sister1RoomDoorLocked = True
+        $ sister2RoomDoorLocked = True
+        $ landLordRoomDoorLocked = True
+
     $ clear_object_follow_all()
     $ miniMapEnabledOnly = ["none"]
     call locations_init2() from _rcall_locations_init2
