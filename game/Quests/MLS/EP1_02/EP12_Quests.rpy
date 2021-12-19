@@ -386,6 +386,8 @@ label ep12_quests17_home:
         $ sister1RoomDoorLocked = True
         $ sister2RoomDoorLocked = True
         $ landLordRoomDoorLocked = True
+        $ questHelp("house_11", True)
+        $ questHelp("house_12")
 
     $ clear_object_follow_all()
     $ miniMapEnabledOnly = ["none"]
