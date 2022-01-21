@@ -873,13 +873,12 @@ label ep01_dialogues1_start_1b1:
 
 # сцена из будущего
 label ep01_dialogues1_start_1b:
-#    scene black_screen
-#    with Dissolve(1)
-#    music stop
-#    call textonblack(t_("НЕДАЛЕКОЕ БУДУЩЕЕ"))
-# from _rcall_textonblack
-#    scene black_screen
-#    with Dissolve(1)
+    scene black_screen
+    with Dissolve(1)
+    music stop
+    call textonblack(t_("НЕДАЛЕКОЕ БУДУЩЕЕ"))
+    scene black_screen
+    with Dissolve(1)
     fadeblack 1.5
     # темный коридор, в конце коридора через щель приоткрытой двери виден свет
     # взволнованное тяжелое дыхание, затем осторожные шаги и скрип пола
@@ -889,412 +888,42 @@ label ep01_dialogues1_start_1b:
     imgfl 910242
     sound heavy_breathing_male2
     sound2 woman_moan12
-    bardi_t "Главное, не шуметь. Если они заметят меня - это будет конец."
+    bardi_t "Главное, не шуметь. Мне не нужно, чтобы она меня заметила..."
     sound floor_creak
     imgf 910304
     sound sneaks_2
-    bardi_t "Фак! У меня дрожат колени, но я не могу остановиться."
+    bardi_t "Фак! Я не могу ничего с собой поделать. Какое-то наваждение..."
     sound2 door_creaky
     imgd 910305
-    bardi_t "Я не могу ничего с собой поделать. Какое-то наваждение..."
+    bardi_t "Я просто не в силах отказаться от возможности посмотреть на нее..."
     sound woman_moan8a
     imgd 910306
     w
-    # скрип двери, следом звуки секса - женские стоны
+    # скрип двери
     # кадр на комнату
-    # на кровати Оливия и Марк занимаются страстным сексом, они не видят Барди
-    # анимация их секса
-    ## дописать начало для blowjob
 
+    #### рендерить отсюда
+    #### проставила несколько старых артов, где Барди дрочит на Оливию
+
+    # на кровати Оливия, она не замечает Барди
     music Stylish_Hip_Hop_Rock
-    imgf 910243
-    w
-    imgd 910244
-    mark "Ооо, Оливия, я обожаю, когда ты делаешь это..."
-    olivia "А я обожаю сосать твой член, Марк."
-    ## мысли Барди
-    imgf 910245
+    # Оливия стоит на четвереньках, выпятив попу и развинув ноги
+    # на ней домашний топ (если возможно, приспустить его или задрать, обнажив одну грудь)
+    # шорты Оливии валяются рядом на кровати или на полу у кровати
+    # одна ее рука запущена между ног - Оливия мастурбирует
+    # глаза Оливии закрыты, она прикусывает губу и стонет
+    olivia "Мммм..."
     bardi_t "О, еее... Какой отличный вид..."
-    bardi_t "Уверен, тот день, когда трахать ее буду Я, наступит совсем скоро..."
-    imgd 910246
-    w
-    imgf 910247
-    w
-    imgd 910248
-    w
-    sound lick3
-    imgd 910249
-    w
-    sound lick3
-    imgd 910250
-    w
-    sound lick3
-    imgd 910249
-    w
-
-    # video
-    # v_Mark_Sister_Older_Licking1_25
-    $ localSoundVolume = 1.0
-    $ localSoundName = v_Mark_Sister_Older_Licking1_25_sound_name
-    img black_screen
-    with diss
-    stop music2
-    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
-    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
-    scene black
-    image videov_Mark_Sister_Older_Licking1_25 = Movie(play="video/v_Mark_Sister_Older_Licking1_25.mkv", fps=25)
-    show videov_Mark_Sister_Older_Licking1_25
-    wclean
-    mark "Оооо, да!.."
-    mark "Еще, еще!"
-    wclean
-    stop music2
-    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
-    $ renpy.music.set_volume(1.0, 0.5, channel="music")
-
-
-    imgf 910251
-    w
-    sound lick3
-    imgd 910252
-    w
-    sound lick3
-    imgd 910251
-    w
-    sound lick3
-    imgd 910252
-    w
-    sound lick3
-    imgd 910253
-    w
-    sound chpok9
-    imgd 910254
-    w
-    sound chpok8
-    img 910255 vpunch
-    w
-    imgf 910256
-    w
-    sound chpok7
-    img 910257 hpunch
-    sound2 man_moan1
-    w
-
-    # video
-    # v_Mark_Sister_Older_Blowjob1
-    $ localSoundVolume = 1.0
-    $ localSoundName = v_Mark_Sister_Older_Blowjob1_sound_name
-    img black_screen
-    with diss
-    stop music2
-    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
-    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
-    scene black
-    image videov_Mark_Sister_Older_Blowjob1 = Movie(play="video/v_Mark_Sister_Older_Blowjob1.mkv", fps=30)
-    show videov_Mark_Sister_Older_Blowjob1
-    wclean
-    mark "Оооу, как же круто!"
-    wclean
-    olivia "Мммм..."
-    wclean
-    stop music2
-    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
-    $ renpy.music.set_volume(1.0, 0.5, channel="music")
-
-    # 2
-    # v_Mark_Sister_Older_Blowjob1b
-    $ localSoundVolume = 1.0
-    $ localSoundName = v_Mark_Sister_Older_Blowjob1b_sound_name
-    img black_screen
-    with diss
-    stop music2
-    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
-    play music2 "<from " + str(float(rand(0,4))*1.16666667) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
-    scene black
-    image videov_Mark_Sister_Older_Blowjob1b= Movie(play="video/v_Mark_Sister_Older_Blowjob1b.mkv")
-    show videov_Mark_Sister_Older_Blowjob1b
-    with fade
-    mark "Да, Оливия... Возьми его еще глубже!.."
-    wclean
-    olivia "Мммм..."
-    mark "Оооох!.."
-    stop music2
-    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
-    $ renpy.music.set_volume(1.0, 0.5, channel="music")
-
-    imgf 910258
-    mark "Ооо, детка... Охренеть как круто!"
-    olivia "Сейчас мы с тобой сделаем кое-что покруче, красавчик."
-    imgf 910259
-    w
-    ## мысли Барди
-    imgd 910273
-    bardi_t "Ооох, черт!.. Жаль, я не могу оказаться на месте ее парня..."
-    bardi_t "Пока что..."
-    imgf 910259
-    w
-    sound vjuh3
-    img 910260
-    w
-    imgd 910261
-    music2 audio_longkiss1
-    w
-    imgd 910262
-    w
-    imgd 910263
-    w
-    imgd 910264
-    music2 stop
-
-    # video
-    # v_Mark_Sister_Older_Kissing1_25
-    $ localSoundVolume = 1.0
-    $ localSoundName = v_Mark_Sister_Older_Kissing1_25_sound_name
-    img black_screen
-    with diss
-    stop music2
-    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
-    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
-    scene black
-    image videov_Mark_Sister_Older_Kissing1_25 = Movie(play="video/v_Mark_Sister_Older_Kissing1_25.mkv", fps=25)
-    show videov_Mark_Sister_Older_Kissing1_25
-    wclean
-    olivia "Мммм..."
-    stop music2
-    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
-    $ renpy.music.set_volume(1.0, 0.5, channel="music")
-
-
-    imgf 910265
-    w
-
-    stop music2
-    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
-    # video
-    # v_Mark_Sister_Older_Sex1_25
-    $ localSoundVolume = 1.0
-    $ localSoundName = v_Mark_Sister_Older_Sex1_25_sound_name
-    img black_screen
-    with diss
-    pause 1.5
-    scene black
-    sound v_Mark_Sister_Older_Sex1_25
-    image videov_Mark_Sister_Older_Sex1_25 = Movie(play="video/v_Mark_Sister_Older_Sex1_25.mkv", fps=25, loop=False, image="/images/Slides/v_Mark_Sister_Older_Sex1_1_end.jpg")
-    show videov_Mark_Sister_Older_Sex1_25
-    $ renpy.pause(0.5, hard=True)
-    pause 5.5
-    img v_Mark_Sister_Older_Sex1_1_end
-    w
-    stop music2
-    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
-    $ renpy.music.set_volume(1.0, 0.5, channel="music")
-    mark "Ооо да, детка!"
-
-    imgf 910266
-    w
-    sound2 ahhh6
-    imgd 910267
-    olivia "Ааааа!"
-
-    # video
-    # v_Mark_Sister_Older_Sex2_25
-    $ localSoundVolume = 1.0
-    $ localSoundName = v_Mark_Sister_Older_Sex2_25_sound_name
-    img black_screen
-    with diss
-    stop music2
-    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
-    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
-    scene black
-    image videov_Mark_Sister_Older_Sex2_25 = Movie(play="video/v_Mark_Sister_Older_Sex2_25.mkv", fps=25)
-    show videov_Mark_Sister_Older_Sex2_25
-    wclean
-    mark "Ооо, детка, какая же ты красивая!"
-    wclean
-    mark "Ооох!.. Я готов трахаться с тобой сутки напролет!"
-    olivia "Даааа!"
-    wclean
-    stop music2
-    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
-    $ renpy.music.set_volume(1.0, 0.5, channel="music")
-
-    imgf 910268
-    w
-    imgd 910269
-    w
-    imgd 910270
-    w
-    sound drkanje5
-    imgd 910271
-    w
-    sound drkanje5
-    imgd 910270
-    w
-    sound drkanje5
-    imgd 910271
-    w
-    sound drkanje5
-    imgd 910270
-    w
-    sound drkanje5
-    imgd 910271
-    w
-    ## мысли Барди
-    sound2 ahhh7
-    imgf 910272
-    olivia "Оооо, Мааарк... Еще немного и я так кончуууу!.."
-    ## фраза Марка про смену позы
-    imgd 910274
-    mark "Подожди, не торопись, Оливия!.. Меня тоже так надолго не хватит."
-    mark "Встань на колени на кровати и раздвинь ножки. Хочу приласкать твою киску."
-    olivia "О, мне нравится эта идея. Моей киске уже не терпится!.."
-    ## дописать для куни
-    imgf 910275
-    sound ahhh10
-    olivia "Давай скорее, Марк!"
-    olivia "Проведи своим языком по моей киске! Давай же!"
-    imgd 910276
-    w
-
-    # video
-    # v_Mark_Sister_Older_Licking2
-    $ localSoundVolume = 1.0
-    $ localSoundName = v_Mark_Sister_Older_Licking2_sound_name
-    img black_screen
-    with diss
-    stop music2
-    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
-    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
-    scene black
-    image videov_Mark_Sister_Older_Licking2 = Movie(play="video/v_Mark_Sister_Older_Licking2.mkv", fps=30)
-    show videov_Mark_Sister_Older_Licking2
-    wclean
-    olivia "Оооох!.. Еще, Марк!"
-    wclean
+    # Оливия меняет позу (в сторону двери так и не смотрит, Барди не замечает)
+    # ложится на спину и раскидывает ноги в стороны
+    # начинает ласкать свою киску одной рукой
     olivia "Аааах..."
-    wclean
-    stop music2
-    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
-    $ renpy.music.set_volume(1.0, 0.5, channel="music")
-
-    imgd 910277
-    w
-    sound ahhh11
-    imgd 910278
-    w
-    imgf 910279
-    w
-    sound lick3
-    imgd 910280
-    w
-    sound lick3
-    imgd 910279
-    w
-    sound lick3
-    imgd 910280
-    w
-    sound lick3
-    imgd 910279
-    w
-    sound lick3
-    imgd 910280
-    w
-    imgd 910281
-    sound ahhh12
-    w
-    ## таже поза с пальцем (может какой-то текст)
-    imgd 910282
-    w
-    imgf 910283
-    mark "Мммм... Какая сладкая киска..."
-    imgd 910284
-    w
-    sound drkanje5
-    imgd 910285
-    mark "Такая узкая, такая горячая..."
-    sound drkanje5
-    imgd 910284
-    w
-    sound drkanje5
-    imgd 910285
-    w
-    imgf 910286
-    mark "Сейчас твоей киске мало не покажется..."
-    mark "Сейчас Марк тебя оттрахает, детка."
-    olivia "Да, Марк! Давай! Я так хочу тебя!"
-    imgd 910287
-    w
-    sound chpok6
-    img 910288 hpunch
-    sound2 ahhh6
-    olivia "О, Мааарк!"
-    olivia "Я обожаю, когда ты трахаешь меня!"
-    imgd 910289
-    sound ahhh7
-    w
-
-    # video
-    # v_Mark_Sister_Older_Sex3
-    $ localSoundVolume = 1.0
-    $ localSoundName = v_Mark_Sister_Older_Sex3_sound_name
-    img black_screen
-    with diss
-    stop music2
-    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
-    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
-    scene black
-    image videov_Mark_Sister_Older_Sex3 = Movie(play="video/v_Mark_Sister_Older_Sex3.mkv", fps=30)
-    show videov_Mark_Sister_Older_Sex3
-    wclean
-    olivia "Ооох, глубже, Марк!"
-    wclean
-    mark "Вот так тебе нравится?"
-    olivia "О, да, Марк! О, как же кайфово!"
-    wclean
-    stop music2
-    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
-    $ renpy.music.set_volume(1.0, 0.5, channel="music")
-
-
-    imgf 910290
-    mark "Ооо, да!"
-    sound drkanje5
-    imgd 910291 vpunch
-    sound2 ahhh8
-    olivia "Я хочу чувствать твой огромный член! Полностью!"
-    mark "Да, Оливия, да!"
-    imgf 910293
-    mark "Обожаю трахать тебя, детка!.."
-    olivia "Шлепни меня, Марк!"
-    # он шлепает ее по ягодице
-    imgd 910294
-    w
-    sound snd_slap1
-    img 910295 hpunch
-    olivia "Оооо, еще сильнее!"
-    img 910296
-    mark "Да, еще! Какая же ты дикая, детка!"
-    # еще шлепок по ягодице
-    imgd 910294
-    w
-    sound snd_slap1
-    img 910295 hpunch
-    w
-    img 910296
-    olivia "Ооох, как круто!"
+    # вторую руку кладет на грудь и сжимает сосок (если грудь в топе, то через топ)
+    olivia "О, да..."
+    olivia "Мммм..."
     # смена кадра - взгляд из глаз Барди, его рука лезет в штаны
-    imgf 910292
-    w
-    imgd 910307
-    bardi_t "Какая же она страстная..."
+    imgf 910307
+    bardi_t "Какая же она секси..."
     imgd 910308
     bardi_t "И такая красивая."
     sound Jump2
@@ -1303,95 +932,58 @@ label ep01_dialogues1_start_1b:
     # его рука начинает двигаться по члену вверх-вниз
     sound drkanje5
     imgd 910310
-    bardi_t "Вот бы не Марк, а я сейчас был с ней."
+    bardi_t "Настанет день, когда я попробую ее киску своим членом..."
     sound drkanje5
     imgd 910309
     w
     sound drkanje5
     imgd 910310
-    bardi_t "И она извивалась бы подо мной и стонала."
+    bardi_t "Она будет извиваться подо мной и стонать."
     sound drkanje5
     imgd 910309
     w
     sound drkanje5
     imgd 910310
-    bardi_t "И просила бы трахать ее снова и снова..."
-#    bardi_t "..."
-    # смена кадра на парочку в постели
-    imgf 910292
-    olivia "Еще! Отшлепай меня, Марк! Давай же!"
-    # шлепок, еще шлепок, она стонет
-    imgd 910294
-    w
-    sound snd_slap1
-    img 910295 hpunch
-    w
-    img 910296
-    olivia "Сильнее! Оооо!"
-    # Оливия откидывает голову или поворачивает ее в сторону двери, глаза закрыты, она стонет
-    imgd 910292
-    sound ahhh10
-    w
-
-    # video
-    # v_Mark_Sister_Older_Sex3b
-    $ localSoundVolume = 1.0
-    $ localSoundName = v_Mark_Sister_Older_Sex3b_sound_name
-    img black_screen
-    with diss
-    stop music2
-    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
-    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
-    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
-    scene black
-    image videov_Mark_Sister_Older_Sex3b = Movie(play="video/v_Mark_Sister_Older_Sex3b.mkv", fps=30)
-    show videov_Mark_Sister_Older_Sex3b
-    wclean
-    olivia "О, Марк! Я скоро кончу!"
-    wclean
-    olivia "Не останавливайся, Марк, трахай меня! Да-да!"
-    mark "Да, детка! Я хочу, чтобы ты кончила!"
-    wclean
-    stop music2
-    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
-    $ renpy.music.set_volume(1.0, 0.5, channel="music")
-
-
-    imgf 910297
-    olivia "Ооо! Еще, Марк! Еще!"
-    olivia "Трахай меня!"
-    # Марк в это время продолжает ее жарить
-    imgd 910298
-    w
-    imgf 910299
-    olivia "Заполни меня всю, Марк!"
-    # тут Оливия резко распахивает глаза и смотрит прямо в камеру (т.е. на Барди)
-    # немая пауза, на ее лице испуг
-    imgd 910297
-    w
-    music stop
-    sound plastinka1b
-    img 910300 vpunch
+    bardi_t "И просить трахать ее снова и снова..."
+    bardi_t "..."
+    # снова кадр на Оливию
+    # она засовывает руку под подушку и достает оттуда дилдо (Барди она так и не замечает)
+    # она погружает его в свой рот, облизывая
+    olivia "Мпфхфмм..."
+    # потом прислоняет его к своей киске и начинает водить им туда-сюда
+    olivia "Ооох..."
+    # через несколько движений она направляет его на дырочку и вводит
+    olivia "Оооо!"
+    # откидывает голову на подушку (или кровать) и кайфует, закрыв глаза и кусая губы
+    # начинает сама себя ахать дилдо
+    olivia "Мммм..."
+    olivia "Ооо, как же круто!.."
+    olivia "Офигеееть!.."
+    olivia "О, да..."
+    olivia "Мммм..."
+    # поворачивает голову на подушке (кровати), лицом в сторону Барди
+    # снова кусает губы, прикрыв глаза
+    olivia "Аааах!.."
+    # внезапно Оливия резко распахивает глаза и смотрит прямо в камеру (т.е. на Барди)
+    # застывает, переставая двигать рукой, продолжая держать дилдо в своей киске
     olivia "?!"
-    bardi_t "!!!"
+    # немая пауза, на ее лице испуг
+    bardi_t "Она меня спалила!"
     # испуг меняется на удивление
     music Fly_With_Me_short
-    img 910301
     olivia "?!?!"
-    bardi_t "Она меня спалила!"
     # затем она злобно начинает орать на Барди
-    img 910302 hpunch
     olivia "Какого хрена ты здесь делаешь?!"
+    # резко вытаскивает дилдо из себя и злобно швыряет им в Барди
     olivia "Кретин!"
+    # дилдо падает к ногам Барди
     bardi_t "!!!"
-    imgd 910303
+    # Оливия злобно рычит
     olivia "Пошел вон отсюда, мерзкий ушлепок! Лузер!"
     bardi_t "ФАК!!!"
     fadeblack
     sound run_stairs_floor
-    bardi_t "Черт! Какого хрена?!"
-    bardi_t "Я должен был быть на его месте!"
-#    call rrmeter(-5, "intro1")
+    call rrmeter(-5, "intro1")
     pause 4.0
     # затемнение, звук быстрых шагов по коридору, бег
     # потом все затихает и сразу резкая смена кадра на поезд
@@ -1449,7 +1041,7 @@ label ep01_dialogues1_start_2:
     father "Тем более, что я уже оплатил аренду комнаты в их доме для тебя."
     img 910227
     bardi "Но, отец!!"
-    bardi "Я не хочу возвращаться! Я хочу остаться здесь, с тобой!.."
+    bardi "Я не хочу возвращаться!.."
     # недовольный, жесткий изгиб губ отца
     imgd 910228
     w
