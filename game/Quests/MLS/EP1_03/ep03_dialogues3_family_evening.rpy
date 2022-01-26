@@ -792,7 +792,7 @@ label ep03_dialogues3_family_evening_4:
                             # Барди кончает ей на киску
                             img 901213
                             bardi "Дааа!!!"
-                            img 901214
+                            img 901411
                             bardi "О, дааа!!!"
                             img 901215
                             whore "Мммм..."
