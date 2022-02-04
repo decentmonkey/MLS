@@ -82,7 +82,11 @@ label start: #for blink here
     call locations_init() from _rcall_locations_init
 
 #########
-#    jump video_test
+#    call ep03_dialogues1_family_morning_1() # утро, комната Барди
+#    call ep03_dialogues1_family_morning_1a() # если заходит в душ
+#    call ep03_dialogues1_family_morning_2() # при клике на кухню, разговор с Софи
+#    call ep03_dialogues1_family_morning_5() # утро следующего дня, комната Барди
+#    call ep03_dialogues1_family_morning_6() # при клике на кухню, разговор с Софи
 #########
 
 
