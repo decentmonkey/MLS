@@ -1877,6 +1877,8 @@ screen choice(items):
                         str1 = str1.replace(" (Déactivé)", "")
                         str1 = str1.replace(" (Devredışı)", "")
                         str1 = str1.replace(" (Disabilitato)", "")
+                        str1 = str1.replace(" (devre dışı)", "")
+                        str1 = str1.replace(" (disabilito)", "")
                         button_obj["caption"] = str1
                         button_obj["active"] = False
 
@@ -1950,28 +1952,35 @@ screen choice(items):
             buttons_list.reverse()
 
         # display choices buttons
-        for button_data in buttons_list:
+#        for button_data in buttons_list:
+        for idx1 in range(0, len(buttons_list)):
+            $ button_data = buttons_list[idx1]
             if button_data["native"] == True:
                 if button_data["active"] == True:
                     hbox:
                         if _preferences.language != "chinese":
-                            textbutton t__(button_data["caption"]):
-                                action [
-                                    SetVariable("menu_corruption", False),
-                                    SetVariable("menu_price", False),
-                                    SetVariable("dialogue_active_flag", False),
-                                    SetVariable("menuName", False),
-                                    button_data["action"]
-                                ]
+                            $ buttonTextStyle = "choice_button_text"
                         else:
-                            textbutton t__(button_data["caption"]) text_style "text_chinese":
-                                action [
-                                    SetVariable("menu_corruption", False),
-                                    SetVariable("menu_price", False),
-                                    SetVariable("dialogue_active_flag", False),
-                                    SetVariable("menuName", False),
-                                    button_data["action"]
-                                ]
+                            $ buttonTextStyle = "text_chinese"
+                        textbutton t__(button_data["caption"]) text_style buttonTextStyle:
+                            if currentMenuItem == idx1:
+                                background Frame("/gui/button/choice_hover_background.png")
+                                text_color "#ffffff"
+                            hovered [
+                                SetVariable("currentMenuItem", -1),
+                            ]
+                            unhovered [
+                                SetVariable("currentMenuItem", -1),
+                            ]
+                            action [
+                                SetVariable("menu_data", False),
+                                SetVariable("menu_corruption", False),
+                                SetVariable("menu_price", False),
+                                SetVariable("dialogue_active_flag", False),
+                                SetVariable("menuName", False),
+                                SetVariable("currentMenuItem", -1),
+                                button_data["action"]
+                            ]
                         if button_data.has_key("image"):
                             add button_data["image"]:
                                 yalign 0.5
@@ -1981,33 +1990,47 @@ screen choice(items):
                                 xanchor 0.0
                 else:
                     if _preferences.language != "chinese":
-                        textbutton t__(button_data["caption"]) text_style "choice_button_disabled_text"
+                        $ buttonTextStyle = "choice_button_disabled_text"
                     else:
-                        textbutton t__(button_data["caption"]) text_style "choice_button_disabled_text_chinese"
+                        $ buttonTextStyle = "choice_button_disabled_text_chinese"
+
+                    textbutton t__(button_data["caption"]) text_style buttonTextStyle:
+                        if currentMenuItem == idx1:
+                            background Frame("/gui/button/choice_idle_background_keyboard.png")
+                        hovered [
+                            SetVariable("currentMenuItem", -1),
+                        ]
+                        unhovered [
+                            SetVariable("currentMenuItem", -1),
+                        ]
             else:
                 if button_data["active"] == True:
                     $ menuLastName = menuName
                     hbox:
                         if _preferences.language != "chinese":
-                            textbutton t__(button_data["caption"]):
-                                action [
-                                    SetVariable("menu_corruption", False),
-                                    SetVariable("menu_price", False),
-                                    SetVariable("dialogue_active_flag", False),
-                                    SetVariable("menuName", False),
-                                    Call("call_hook", button_data["action"], menuLastName)
-    #                                Return(["call_hook", button_data["action"], menuLastName]),
-                                ]
+                            $ buttonTextStyle = "choice_button_text"
                         else:
-                            textbutton t__(button_data["caption"]) text_style "text_chinese":
-                                action [
-                                    SetVariable("menu_corruption", False),
-                                    SetVariable("menu_price", False),
-                                    SetVariable("dialogue_active_flag", False),
-                                    SetVariable("menuName", False),
-                                    Call("call_hook", button_data["action"], menuLastName)
-    #                                Return(["call_hook", button_data["action"], menuLastName]),
-                                ]
+                            $ buttonTextStyle = "text_chinese"
+                        textbutton t__(button_data["caption"]) text_style buttonTextStyle:
+                            if currentMenuItem == idx1:
+                                background Frame("/gui/button/choice_hover_background.png")
+                                text_color "#ffffff"
+                            hovered [
+                                SetVariable("currentMenuItem", -1),
+                            ]
+                            unhovered [
+                                SetVariable("currentMenuItem", -1),
+                            ]
+                            action [
+                                SetVariable("menu_data", False),
+                                SetVariable("menu_corruption", False),
+                                SetVariable("menu_price", False),
+                                SetVariable("dialogue_active_flag", False),
+                                SetVariable("menuName", False),
+                                SetVariable("currentMenuItem", -1),
+                                Call("call_hook", button_data["action"], menuLastName)
+#                                Return(["call_hook", button_data["action"], menuLastName]),
+                            ]
                         if button_data.has_key("image"):
                             add button_data["image"]:
                                 xanchor 0
@@ -2017,10 +2040,48 @@ screen choice(items):
                                 xoffset -200
                 else:
                     if _preferences.language != "chinese":
-                        textbutton t__(button_data["caption"]) text_style "choice_button_disabled_text"
+                        $ buttonTextStyle = "choice_button_disabled_text"
                     else:
-                        textbutton t__(button_data["caption"]) text_style "choice_button_disabled_text_chinese"
-
+                        $ buttonTextStyle = "choice_button_disabled_text_chinese"
+                    textbutton t__(button_data["caption"]) text_style buttonTextStyle:
+                        if currentMenuItem == idx1:
+                            background Frame("/gui/button/choice_idle_background_keyboard.png")
+                        hovered [
+                            SetVariable("currentMenuItem", -1),
+                        ]
+                        unhovered [
+                            SetVariable("currentMenuItem", -1),
+                        ]
+#    $ currentMenuItem = 0
+    key "K_UP" action [
+        SetVariable("currentMenuItem", currentMenuItem - 1 if currentMenuItem >= 1 else len(buttons_list)-1),
+    ]
+    key "K_DOWN" action [
+        SetVariable("currentMenuItem", currentMenuItem + 1 if currentMenuItem<len(buttons_list)-1 else 0),
+    ]
+    if currentMenuItem >= 0:
+        if buttons_list[currentMenuItem]["active"] == True:
+            if buttons_list[currentMenuItem]["native"] == True:
+                key 'K_RETURN' action [
+                    SetVariable("menu_data", False),
+                    SetVariable("currentMenuItem", -1),
+                    SetVariable("menu_corruption", False),
+                    SetVariable("menu_price", False),
+                    SetVariable("dialogue_active_flag", False),
+                    SetVariable("menuLastName", menuName),
+                    SetVariable("menuName", False),
+                    buttons_list[currentMenuItem]["action"]
+                ]
+                key 'K_SPACE' action [
+                    SetVariable("menu_data", False),
+                    SetVariable("currentMenuItem", -1),
+                    SetVariable("menu_corruption", False),
+                    SetVariable("menu_price", False),
+                    SetVariable("dialogue_active_flag", False),
+                    SetVariable("menuLastName", menuName),
+                    SetVariable("menuName", False),
+                    buttons_list[currentMenuItem]["action"]
+                ]
 
 
 

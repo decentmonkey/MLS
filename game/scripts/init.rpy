@@ -38,6 +38,7 @@ default sceneSpriteSurfacesCache = {}
 default sceneSpriteSurfacesCacheSceneName = False
 default assetsStorageDirectory = False
 default menuName = False
+default currentMenuItem = -1
 default char_info = {}
 default i = 0
 
