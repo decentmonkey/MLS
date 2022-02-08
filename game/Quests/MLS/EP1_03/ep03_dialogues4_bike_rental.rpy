@@ -42,12 +42,11 @@ label ep03_dialogues4_bike_rental_2:
     music stop
     sound plastinka1b
     img 901355 hpunch
-    w
-    img 901356
-    mr_wright "Ты [mcname]?"
-    music Adventures_of_the_Deaf_Dreamer
-    imgd 901357
     bardi "Оу!"
+    music Adventures_of_the_Deaf_Dreamer
+    imgd 901356
+    mr_wright "Ты [mcname]?"
+    imgd 901357
     bardi "Да, это я. А вы мистер Райт?"
     # Райт довольно улыбается
     imgd 901358
@@ -61,7 +60,6 @@ label ep03_dialogues4_bike_rental_2:
     mr_wright "Слушай, [mcname], я тороплюсь. Так что давай перейдем к делу."
     imgd 901360
     bardi "Ага. Генри сказал мне, что вам нужен работник..."
-    sound vjuh3
     imgd 901361
     mr_wright "Да-да."
     mr_wright "Недалеко отсюда у меня есть велопрокат." # машет в сторону рукой, указывая
@@ -122,13 +120,12 @@ label ep03_dialogues4_bike_rental_2:
     mr_wright "Приходи сюда на днях и я тебе все покажу, [mcname]."
     imgd 901374
     bardi "Окей. Договорились, мистер Райт."
-    sound vjuh3
     imgd 901375
     mr_wright "До встречи."
     imgd 901374
     bardi "До свиданья, мистер Райт."
     imgf 901376
-    sound step_stairs
+    sound steps_park
     w
     # Райт уходит, Барди остается один
     imgd 901377
@@ -209,9 +206,9 @@ label ep03_dialogues4_bike_rental_3:
     imgd 901388
     mr_wright "О! Миссис Брукс! Отличная погодка для пробежки на свежем воздухе!"
     imgd 901389
+    sound steps_park
     trainer_brooks "Добрый день, мистер Райт."
     # она останавливается возле них
-    sound steps_park
     imgf 901390
     bardi "Здрасьте, тренер Брукс."
     # Барди смотрит на ее фигуру, пока она разговаривает с Райтом
@@ -272,9 +269,9 @@ label ep03_dialogues4_bike_rental_3:
     bardi "Думаю, что я мог бы начать работать на днях."
     imgd 901407
     mr_wright "О, понимаю. Наверное, свидание с какой-нибудь подружкой?" # подмигивает Барди
-    imgd 901408
-    w
-    sound vjuh3
+#    imgd 901408
+#    w
+    sound Jump1
     imgd 901409
     w
     imgd 901404
@@ -284,10 +281,11 @@ label ep03_dialogues4_bike_rental_3:
     mr_wright "Приходи сюда на днях после колледжа."
     mr_wright "Я тебе все объясню. И ты сможешь сразу начать работу."
     mr_wright "Первый день я буду работать с тобой и расскажу тебе о всех тонкостях."
-    mr_wright "Договорились, [mcname]."
-    mr_wright "Хорошего тебе дня!"
+    mr_wright "Договорились, [mcname]?"
     imgd 901404
+    bardi "Окей."
     bardi "До свиданья, мистер Райт."
+    mr_wright "Хорошего тебе дня!"
     # Райт отходит к великам у трейлера
     imgf 901410
     sound steps_park

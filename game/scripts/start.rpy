@@ -82,21 +82,7 @@ label start: #for blink here
     call locations_init() from _rcall_locations_init
 
 #########
-#    call ep03_dialogues1_family_morning_1() # утро, комната Барди
-#    call ep03_dialogues1_family_morning_1a() # если заходит в душ
-#    call ep03_dialogues1_family_morning_2() # при клике на кухню, разговор с Софи
-#    call ep03_dialogues1_family_morning_5() # утро следующего дня, комната Барди
-#    call ep03_dialogues1_family_morning_6() # при клике на кухню, разговор с Софи
-
-#    call ep03_dialogues3_family_evening_1() # вечером клик на дом, сцена с Оливией во дворе дома
-#    call ep03_dialogues3_family_evening_2() # заходит в дом, ужин с Софи и Дейзи
-#    call ep03_dialogues3_family_evening_3() # после ужина разговор с Оливией в холле
-#    call ep03_dialogues3_family_evening_4() # ложится спать, регулярное меню перед сном
-#    call ep03_dialogues3_family_evening_6() # визит к Дейзи
-
-#    call ep03_dialogues4_bike_rental_1() # мысли Барди, когда вышел из колледжа
-#    call ep03_dialogues4_bike_rental_2() # клик на пляж, встреча с Райтом
-#    call ep03_dialogues4_bike_rental_3() # клик на пляж на след. день, знакомство с велопрокатом
+#    call ep01_dialogues1_start_1b() # Оливия, старт
 #########
 
 

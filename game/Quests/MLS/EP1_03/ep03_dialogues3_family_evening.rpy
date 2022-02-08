@@ -8,6 +8,10 @@ default ep03_dialogues3_family_evening_6_menu1 = False
 default ep03_dialogues3_family_evening_6_menu2 = False
 default ep03_dialogues3_family_evening_6_menu3 = False
 
+define v_MC_Emily_Handjob1_25_sound_name = "v_MC_Emily_Handjob1_25"
+define v_MC_Whore_Blowjob2_25_sound_name = "v_MC_Whore_Blowjob2_25"
+define v_MC_Whore_Sex3_25_sound_name = "v_MC_Whore_Sex3_25"
+
 #call ep03_dialogues3_family_evening_1() # вечером клик на дом, сцена с Оливией во дворе дома
 #call ep03_dialogues3_family_evening_2() # заходит в дом, ужин с Софи и Дейзи
 #call ep03_dialogues3_family_evening_3() # после ужина разговор с Оливией в холле
@@ -25,6 +29,7 @@ label ep03_dialogues3_family_evening_1:
     fadeblack 1.5
     music2 night_ambience
     imgfl 901129
+    sound2 wow
     bardi_t "Ух ты! Неплохой ракурс, Оливия!" ##->#####inc
     #####inc bardi "Ух ты! Неплохой ракурс, сестра!"
     music Step_By_Step
@@ -39,10 +44,9 @@ label ep03_dialogues3_family_evening_1:
             bardi "Эй, Оливия! Привет!"
             bardi "Наверное, тяжко собирать все это после вчерашнего? Давай, я тебе помогу?"
             # Оливия распрямляется и смотрит на него
-            sound vjuh3
             imgd 901131
             olivia "Так иди и помоги! Чего ты там болтаешь стоишь?!"
-            sound steps_park
+            sound step_stairs_short
             imgf 901136
             w
             # Оливия отворачивается от него и снова принимается за уборку
@@ -53,23 +57,55 @@ label ep03_dialogues3_family_evening_1:
             sound wow
             bardi_t "Ееее... Какая аппетитная попка..."
             bardi_t "Вот бы залезть рукой под эти шортики и..."
+            img white_screen
+            with diss
+            pause 1.0
             music Stylish_Hip_Hop_Rock
-            sound2 vjuh3
-            img 901138 hpunch
-            w
-            sound Jump1
-            img 901139 vpunch
-            w
-            imgd 901140
-            w
-            imgd 901141
+            img 901138
+            show screen dream()
+            with Dissolve(1.0)
             w
             sound vjuh3
-            img 901142 hpunch
+            img 901139
+            show screen dream()
+            with hpunch
             w
-            imgd 901143
+            img 901140
+            show screen dream()
+            with diss
             w
-            imgd 901144
+            img 901141
+            show screen dream()
+            with diss
+            w
+            img 901140
+            show screen dream()
+            with diss
+            w
+            img 901141
+            show screen dream()
+            with diss
+            w
+            img 901140
+            show screen dream()
+            with diss
+            w
+            sound Jump1
+            img 901142
+            show screen dream()
+            with vpunch
+            w
+            img 901143
+            show screen dream()
+            with diss
+            w
+            img 901142
+            show screen dream()
+            with diss
+            w
+            img 901144
+            show screen dream()
+            with diss
             w
             # в кадре с попой Оливии внезапно появляется рука Барди, которая тянется к ней (мечты)
             # все ближе и ближе
@@ -117,9 +153,9 @@ label ep03_dialogues3_family_evening_1:
                 olivia "Иди отсюда!"
             # Оливия отворачивается от него и снова принимается за уборку
             # Барди бросает бутылку обратно на землю, пинает ее и отходит
-            imgf 901152
+            imgfl 901152
             w
-            imgd 901153
+            imgf 901153
             w
             sound down10
             img 901154 vpunch
@@ -127,7 +163,7 @@ label ep03_dialogues3_family_evening_1:
             imgd 901155
             w
             img 901156
-            w
+            pause 0.3
             sound snd_beer_table
             img 901157 hpunch
             w
@@ -149,7 +185,6 @@ label ep03_dialogues3_family_evening_1:
             bardi "Тебя заставили убирать следы вчерашней пьянки? Тяжко, наверное?"
             # Оливия распрямляется и недовольно смотрит на него
             music Adventures_of_the_Deaf_Dreamer
-            sound2 vjuh3
             imgd 901131
             olivia "Какой пьянки?! Что ты несешь, идиот?!"
             olivia "Вали отсюда, пока в тебя не полетела одна из этих бутылок!"
@@ -177,7 +212,7 @@ label ep03_dialogues3_family_evening_1:
             pass
     # Барди подходит к входной двери
     fadeblack
-    sound step_stairs
+    sound step_stairs_short
     pause 1.5
     music Adventures_of_the_Deaf_Dreamer
     imgf 901159
@@ -191,7 +226,7 @@ label ep03_dialogues3_family_evening_1:
 label ep03_dialogues3_family_evening_2:
     # голос Софи из кухни
     music Little_Tomcat
-    sound2 step_stairs
+    sound2 step_stairs_short
     imgf 901160
     sophie "[mcname], это ты?" ##->#####inc
     #####inc mother "Сынок, это ты?"
@@ -206,19 +241,19 @@ label ep03_dialogues3_family_evening_2:
     # также нет Оливии (она убирает двор) и нет Синтии
     # Софи поворачивается к Барди и мило улыбается
     fadeblack
-    sound step_stairs
+    sound step_stairs_short
     pause 1.0
     music Little_Tomcat
     imgfl 901170
     sophie "Милый, садись скорее за стол ужинать."
     # потом указывает на свою сестру
-    sound sneaks_1
+    sound step_stairs_short
     imgf 901171
     w
     imgd 901172
     sophie "Ты же знаком с Дейзи? Она моя младшая сестра." ##->#####inc
     #####inc mother "Помнишь свою тетю Дейзи, сынок?"
-    music Visions_Of_Plenty
+    music Shining_Through
     imgd 901173
     sound2 wow
     bardi_t "Ух ты!.." # кадр на грудь Дейзи
@@ -241,7 +276,8 @@ label ep03_dialogues3_family_evening_2:
     daisy "[mcname], я бы тебя не узнала, если бы встретила на улице!"
     imgd 901222
     daisy "Ты стал такой высокий, такой возмужавший..."
-    imgd 901223
+    sound Jump1
+    img 901223
     daisy "И симпатичный..." # она улыбается ему и подмигивает
     imgd 901224
     bardi "Спасибо, Дейзи..."
@@ -254,7 +290,7 @@ label ep03_dialogues3_family_evening_2:
     sophie "Вот, милый. Приятного аппетита."
     bardi "Угу. Спасибо."
     # Софи садится за стол
-    sound2 sneaks_1
+    sound2 highheels_short_walk
     music Little_Tomcat
     imgf 901227
     sophie "Как прошел твой день в колледже, [mcname]?"
@@ -315,8 +351,8 @@ label ep03_dialogues3_family_evening_2:
     bardi "Но я рассчитывал на большее."
     bardi "В общем, я пока думаю..."
     # Дейзи снова лезет в их разговор
-    music Visions_Of_Plenty
-    img 901245
+    music Shining_Through
+    imgd 901245
     daisy "О, ты ищешь работу, [mcname]?"
     daisy "Слушай, как здорово! Ты мог бы и мне помогать!"
     daisy "У меня, конечно, бизнес пока небольшой и скромный... Но это пока."
@@ -333,7 +369,7 @@ label ep03_dialogues3_family_evening_2:
     # Дейзи улыбается ему и подмигивает
     imgd 901250
     daisy "Завтра вечером, например. Обсудим все детали..."
-    sound vjuh3
+    sound Jump1
     imgd 901251
     w
     imgd 901248
@@ -359,17 +395,16 @@ label ep03_dialogues3_family_evening_2:
     # Дейзи передает Софи свою тарелку, потом подхожит к Барди
     # она наклоняется, вырез на платье приоткрывается, она медлит
     sound highheels_short_walk
-    sound2 sneaks_1
+    sound2 step_stairs_short
     imgf 901258
     w
     sound highheels_short_walk
     imgd 901259
     w
-    sound vjuh3
-    img 901260 hpunch
+    imgd 901260
     daisy "[mcname], могу я убрать твою тарелку?"
     # пристально смотрит на Барди и улыбается (Софи этой сцены не видит, стоит у столешницы спиной к ним)
-    sound Stylish_Hip_Hop_Rock
+    music The_Heat
     imgd 901261
     bardi "Эээм... Да..." # кадры на декольте, либо observing, как она стоит возле Барди
     bardi "Спасибо, Дейзи."
@@ -387,7 +422,7 @@ label ep03_dialogues3_family_evening_2:
     sophie "[mcname], милый, хочешь я тебе сделаю какао? Или, может быть, чай?"
     # Барди встает из-за стола
     music Little_Tomcat
-    sound2 sneaks_1
+    sound2 step_stairs_short
     imgf 901265
     w
     imgd 901266
@@ -404,7 +439,7 @@ label ep03_dialogues3_family_evening_2:
     # Барди выходит из кухни
     $ mlsBardiDay4FamilyEvening2 = day # Дейзи пригласила Барди в гости
     fadeblack
-    sound step_stairs
+    sound step_stairs_short
     pause 1.5
     return
 
@@ -437,13 +472,14 @@ label ep03_dialogues3_family_evening_3:
     imgf 901166
     w
     imgd 901167
+    sound wow
     w
     sound Jump2
     img 901168 hpunch
     olivia "!!!"
     # Оливия скрывается на втором этаже, хлопает дверь
     imgf 901169
-    sound step_stairs
+    sound step_stairs_short
     bardi_t "Как всегда, Оливия очень мила со мной..." ##->#####inc
     #####inc bardi_t "Как всегда, сестра очень мила со мной..."
     # Барди поднимается по лестнице и идет к себе в комнату
@@ -463,15 +499,19 @@ label ep03_dialogues3_family_evening_4:
     menu:
         "Помечтать.":
             # Барди приспускает белье и достает свой стояк
-            img 900163
+            music Adventures_of_the_Deaf_Dreamer
+            sound2 swish
+            imgd 900163
             bardi_t "Черт! С этим я не усну. Мне явно нужна разрядка."
-            img 900164
+            sound Jump2
+            img 900164 vpunch
             w
-            img 900165
+            imgd 900165
             w
-            img 900166
+            imgd 900166
             w
-            img 900167
+            imgd 900167
+            w
             # он начинает водить рукой по члену вверх-вниз
             $ menu_data = {
                     "Оливия.":{"enabled":True if mlsBardiDay2Family2 > 0 or mlsBardiDay3FamilyEvening5 == 0 or mlsBardiDay4FamilyEvening1 > 0 else False},
@@ -577,16 +617,15 @@ label ep03_dialogues3_family_evening_4:
                             pause 0.7
                             hide screen photoshot_screen
                             bardi "Дааа!!!"
-                            bardi "О, дааа!!!"
-                            w
                             sound bulk1
                             show screen photoshot_screen()
                             with hpunch
                             pause 0.7
                             hide screen photoshot_screen
                             sound man moan8
-                            sound2 chpok5
+                            bardi "О, дааа!!!"
                             olivia "Мпфхф!!!"
+                            sound2 chpok5
                             imgd 900182
                             w
                             imgd 900183
@@ -614,15 +653,15 @@ label ep03_dialogues3_family_evening_4:
                             pause 0.7
                             hide screen photoshot_screen
                             bardi "Дааа!!!"
-                            bardi "Оооо!!!"
-                            img 900186
                             sound bulk1
                             show screen photoshot_screen()
                             with hpunch
                             pause 0.7
                             hide screen photoshot_screen
                             sound man moan8
+                            bardi "Оооо!!!"
                             sound2 chpok5
+                            imgd 900186
                             olivia "О, дааа!.."
                             imgd 900187
                             w
@@ -640,15 +679,16 @@ label ep03_dialogues3_family_evening_4:
                             # Оливия снимается с его члена и доводит его до оргазма грудью
                             # Барди бурно кончает на ее грудь
                             imgd 900189
+                            w
+                            imgd 900190
                             bardi "Оооо!!!"
-                            img 900190
+                            img 900191
                             sound bulk1
                             show screen photoshot_screen()
                             with hpunch
                             pause 0.7
                             hide screen photoshot_screen
                             w
-                            imgd 900191
                             sound bulk1
                             show screen photoshot_screen()
                             with hpunch
@@ -662,6 +702,9 @@ label ep03_dialogues3_family_evening_4:
                             # смотрит ему в глаза, грудь в сперме
                             # она берет немного спермы пальчиком и облизывает его, подмигивает
                             pass
+                    fadeblack 2.0
+                    music stop
+                    music2 Jail_Clock
                     pass
                 "Роуз.": # disabled, если не разговаривал с Роуз или если не прятался в раздевалке от Гарри
                     # у него перед глазами возникает голая Роуз
@@ -766,16 +809,15 @@ label ep03_dialogues3_family_evening_4:
                             pause 0.7
                             hide screen photoshot_screen
                             bardi "Дааа!!!"
-                            bardi "О, дааа!!!"
-                            w
                             sound bulk1
                             show screen photoshot_screen()
                             with hpunch
                             pause 0.7
                             hide screen photoshot_screen
                             sound man moan8
-                            sound2 chpok5
+                            bardi "О, дааа!!!"
                             student_rose "Мпфхф!!!"
+                            sound2 chpok5
                             imgd 900209
                             w
                             # Роуз снимается с его члена
@@ -786,24 +828,24 @@ label ep03_dialogues3_family_evening_4:
                             imgd 900206
                             bardi "О, какой кайф..."
                             bardi "О, Роуз!.. Я сейчас!!!"
-                            bardi "Хочу сделать это на твое лицо!.. Ооо!"
                             # Роуз снимается с его члена и подставляет лицо, доводя его до оргазма рукой
                             # он бурно кончает ей на лицо
                             imgd 900210
-                            sound bulk1
-                            show screen photoshot_screen()
-                            with hpunch
-                            pause 0.7
-                            hide screen photoshot_screen
-                            bardi "Дааа!!!"
-                            bardi "Оооо!!!"
+                            bardi "Хочу сделать это на твое лицо!.. Ооо!"
                             img 900211
                             sound bulk1
                             show screen photoshot_screen()
                             with hpunch
                             pause 0.7
                             hide screen photoshot_screen
+                            bardi "Дааа!!!"
+                            sound bulk1
+                            show screen photoshot_screen()
+                            with hpunch
+                            pause 0.7
+                            hide screen photoshot_screen
                             sound man moan8
+                            bardi "Оооо!!!"
                             sound2 chpok5
                             imgd 900212
                             student_rose "Мммм, [mcname]... Да..."
@@ -814,24 +856,23 @@ label ep03_dialogues3_family_evening_4:
                             imgd 900206
                             bardi "О, какой кайф..."
                             bardi "О, Роуз!.. Я сейчас!!!"
-                            bardi "Хочу сделать это на твою грудь!.. Ооо!"
                             # Роуз снимается с его члена и доводит его до оргазма рукой
                             # Барди бурно кончает на ее грудь
-                            img 900210
-                            sound bulk1
-                            show screen photoshot_screen()
-                            with hpunch
-                            pause 0.7
-                            hide screen photoshot_screen
-                            w
+                            imgd 900210
+                            bardi "Хочу сделать это на твою грудь!.. Ооо!"
                             img 900213
                             sound bulk1
                             show screen photoshot_screen()
                             with hpunch
                             pause 0.7
                             hide screen photoshot_screen
-                            sound man moan8
                             bardi "Дааа!!!"
+                            sound bulk1
+                            show screen photoshot_screen()
+                            with hpunch
+                            pause 0.7
+                            hide screen photoshot_screen
+                            sound man moan8
                             bardi "Оооо!!!"
                             sound2 chpok5
                             imgd 900214
@@ -841,6 +882,9 @@ label ep03_dialogues3_family_evening_4:
                             # смотрит ему в глаза, грудь в сперме
                             # улыбается ему
                             pass
+                    fadeblack 2.0
+                    music stop
+                    music2 Jail_Clock
                     pass
                 "Миссис Морис.": # disabled, если не разговаривал с преподавательницей по живописи или не помогал ей с ватманами
                     # у него перед глазами возникает голая преподавательница
@@ -855,9 +899,9 @@ label ep03_dialogues3_family_evening_4:
                     with Dissolve(1.0)
                     w
                     imgd 900222
-                    w
-                    imgf 900223
                     teacher_morris "[mcname], я так хочу сделать тебе приятное..."
+                    imgf 900223
+                    w
                     sound drkanje5
                     imgd 900224
                     w
@@ -954,20 +998,19 @@ label ep03_dialogues3_family_evening_4:
                             pause 0.7
                             hide screen photoshot_screen
                             bardi "Дааа!!!"
-                            bardi "О, дааа!!!"
-                            w
                             sound bulk1
                             show screen photoshot_screen()
                             with hpunch
                             pause 0.7
                             hide screen photoshot_screen
                             sound man moan8
+                            bardi "О, дааа!!!"
                             teacher_morris "Мпфхф!!!"
                             sound2 chpok5
                             imgd 900234
                             w
                             sound Jump1
-                            img 900235
+                            imgd 900235
                             w
                             # миссис Морис снимается с его члена
                             # смотрит ему в глаза, губы в сперме
@@ -976,31 +1019,30 @@ label ep03_dialogues3_family_evening_4:
                         "Кончить на лицо миссис Морис.":
                             imgd 900231
                             bardi "О, какой кайф..."
-                            bardi "Хочу сделать это на твое лицо!.. Ооо!"
                             bardi "О, миссис Морис!.. Я сейчас!!!"
                             # миссис Морис снимается с его члена и подставляет лицо, доводя его до оргазма рукой
                             # Барди бурно кончает ей на лицо
-                            img 900232
-                            sound bulk1
-                            show screen photoshot_screen()
-                            with hpunch
-                            pause 0.7
-                            hide screen photoshot_screen
-                            w
+                            imgd 900232
+                            bardi "Хочу сделать это на твое лицо!.. Ооо!"
                             img 900236
                             sound bulk1
                             show screen photoshot_screen()
                             with hpunch
                             pause 0.7
                             hide screen photoshot_screen
-                            sound man moan8
                             bardi "Дааа!!!"
+                            sound bulk1
+                            show screen photoshot_screen()
+                            with hpunch
+                            pause 0.7
+                            hide screen photoshot_screen
+                            sound man moan8
                             bardi "Оооо!!!"
                             sound2 chpok5
                             imgd 900237
                             teacher_morris "О, дааа!.."
                             sound Jump1
-                            img 900238
+                            imgd 900238
                             w
                             # смотрит ему в глаза, лицо в сперме
                             # подмигивает ему, улыбаясь
@@ -1008,25 +1050,24 @@ label ep03_dialogues3_family_evening_4:
                         "Кончить на грудь миссис Морис.":
                             imgd 900231
                             bardi "О, какой кайф..."
-                            bardi "Хочу сделать это на твою грудь!.. Ооо!"
                             bardi "О, миссис Морис!.. Я сейчас!!!"
                             # миссис Морис снимается с его члена и доводит его до оргазма грудью
                             # Барди бурно кончает на ее грудь
-                            img 900232
-                            sound bulk1
-                            show screen photoshot_screen()
-                            with hpunch
-                            pause 0.7
-                            hide screen photoshot_screen
-                            w
+                            imgd 900232
+                            bardi "Хочу сделать это на твою грудь!.. Ооо!"
                             img 900239
                             sound bulk1
                             show screen photoshot_screen()
                             with hpunch
                             pause 0.7
                             hide screen photoshot_screen
-                            sound man moan8
                             bardi "Дааа!!!"
+                            sound bulk1
+                            show screen photoshot_screen()
+                            with hpunch
+                            pause 0.7
+                            hide screen photoshot_screen
+                            sound man moan8
                             bardi "Оооо!!!"
                             sound2 chpok5
                             imgd 900240
@@ -1034,11 +1075,14 @@ label ep03_dialogues3_family_evening_4:
                             imgd 900241
                             w
                             sound Jump1
-                            img 900242
+                            imgd 900242
                             w
                             # смотрит ему в глаза, грудь в сперме
                             # подмигивает ему, улыбаясь
                             pass
+                    fadeblack 2.0
+                    music stop
+                    music2 Jail_Clock
                     pass
                 "Эмили.": # disabled, если отдал ей телефон и переписывался с ней (кролик)
                     # у него перед глазами возникает Эмили в одном нижнем белье (в котором присылала фотку)
@@ -1067,6 +1111,7 @@ label ep03_dialogues3_family_evening_4:
                     sound lick3
                     imgd 901179
                     w
+
                     # отстраняется и проводит рукой по своей груди (в бра)
                     imgf 901180
                     w
@@ -1092,6 +1137,30 @@ label ep03_dialogues3_family_evening_4:
                     student_emily "Мммм..."
                     imgd 901185
                     student_emily "Покажешь, как ты хочешь меня? Кончишь для меня, [mcname]?"
+
+                    # video
+                    # v_MC_Emily_Handjob1_25
+                    $ localSoundVolume = 1.0
+                    $ localSoundName = v_MC_Emily_Handjob1_25_sound_name
+                    img black_screen
+                    with diss
+                    stop music2
+                    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+                    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+                    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+                    scene black
+                    image videov_MC_Emily_Handjob1_25 = Movie(play="video/v_MC_Emily_Handjob1_25.mkv", fps=25)
+                    show videov_MC_Emily_Handjob1_25
+                    wclean
+                    student_emily "Мпфхфмм..."
+                    wclean
+                    bardi "О, дааа!.."
+                    bardi "Я скоро кончу, Эмили!.. Ооо!.."
+                    wclean
+                    stop music2
+                    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+                    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
                     # движения ее руки ускоряются и Барди кончает
                     menu:
                         "Кончить на грудь Эмили.":
@@ -1106,14 +1175,13 @@ label ep03_dialogues3_family_evening_4:
                             with hpunch
                             pause 0.7
                             hide screen photoshot_screen
-                            w
+                            bardi "Дааа!!!"
                             sound bulk1
                             show screen photoshot_screen()
                             with hpunch
                             pause 0.7
                             hide screen photoshot_screen
                             sound man moan8
-                            bardi "Дааа!!!"
                             bardi "О, дааа!!!"
                             sound2 chpok5
                             imgd 901188
@@ -1132,20 +1200,22 @@ label ep03_dialogues3_family_evening_4:
                             with hpunch
                             pause 0.7
                             hide screen photoshot_screen
-                            w
+                            bardi "Дааа!!!"
                             sound bulk1
                             show screen photoshot_screen()
                             with hpunch
                             pause 0.7
                             hide screen photoshot_screen
                             sound man moan8
-                            bardi "Дааа!!!"
                             bardi "О, дааа!!!"
                             sound2 chpok5
                             imgd 901190
                             student_emily "Мммм..."
                             pass
                     # она смотрит на Барди и призывно улыбается
+                    fadeblack 2.0
+                    music stop
+                    music2 Jail_Clock
                     pass
                 "Бекки.": # disabled, если сцены с Бекки не было
                     # у него перед глазами возникает голая Бекки
@@ -1184,12 +1254,13 @@ label ep03_dialogues3_family_evening_4:
                     # она начинает двигаться на нем
                     imgf 901200
                     whore "Оооо!"
-                    imgd 901201
-                    w
+                    #imgd 901201
+                    #w
                     imgd 901202
                     whore "Оооо, обожаю твой член!"
                     # пара движений и она снимается с члена, наклоняется и вбирает его в рот
-                    sound swish
+                    fadeblack 0.5
+                    music Stylish_Hip_Hop_Rock
                     sound2 chpok6
                     img 901204 hpunch
                     whore "Мпфх!.."
@@ -1199,15 +1270,62 @@ label ep03_dialogues3_family_evening_4:
                     w
                     imgd 901207
                     w
+
+                    # video
+                    # v_MC_Whore_Blowjob2_25
+                    $ localSoundVolume = 1.0
+                    $ localSoundName = v_MC_Whore_Blowjob2_25_sound_name
+                    img black_screen
+                    with diss
+                    stop music2
+                    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+                    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+                    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+                    scene black
+                    image videov_MC_Whore_Blowjob2_25 = Movie(play="video/v_MC_Whore_Blowjob2_25.mkv", fps=25)
+                    show videov_MC_Whore_Blowjob2_25
+                    wclean
+                    whore "Мпфх!.."
+                    wclean
+                    bardi "О, дааа!.."
+                    whore "Мммм..."
+                    wclean
+                    stop music2
+                    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+                    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
                     # потом снова садится на его член, секс
-                    sound swish
-                    imgf 901208
+                    imgfl 901208
                     whore "Даа!.. Как же кайфово!"
                     whore "Аааа!"
                     imgd 901203
+                    w
+                    imgd 901201
+                    w
+
+                    # video
+                    # v_MC_Whore_Sex3_25
+                    $ localSoundVolume = 1.0
+                    $ localSoundName = v_MC_Whore_Sex3_25_sound_name
+                    img black_screen
+                    with diss
+                    stop music2
+                    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+                    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+                    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+                    scene black
+                    image videov_MC_Whore_Sex3_25 = Movie(play="video/v_MC_Whore_Sex3_25.mkv", fps=25)
+                    show videov_MC_Whore_Sex3_25
+                    wclean
                     whore "Оттрахай меня, красавчик! Оттрахай Бекки как следует!"
                     bardi "Дааа!.."
+                    wclean
                     whore "Ооо! Бекки сейчас кончит!"
+                    wclean
+                    stop music2
+                    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+                    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
                     # шлюха кончает
                     img 901209
                     show screen photoshot_screen()
@@ -1283,6 +1401,9 @@ label ep03_dialogues3_family_evening_4:
                             # Бекки снимается с члена и сидит над ним, широко развинув ноги
                             pass
                     # она смотрит на Барди и призывно улыбается, сперма стекает с ее киски
+                    fadeblack 2.0
+                    music stop
+                    music2 Jail_Clock
                     pass
             # виденье тает и комната становится темной
             # тиканье часов
@@ -1291,9 +1412,10 @@ label ep03_dialogues3_family_evening_4:
             bardi_t "Уже поздно. Я сегодня очень устал и хочу спать."
             # затемнение, тиканье часов
             pass
-    fadeblack
-    sound Jail_Clock
-    pause 2.0
+    imgf 900045
+    w
+    # комната, тиканье часов
+    music2 stop
     return
 
 # далее лейбл ep03_dialogues1_family_morning_5 (утро следующего дня)
@@ -1319,7 +1441,7 @@ label ep03_dialogues3_family_evening_6:
     bardi_t "С халупой, где живет Софи конечно не сравнить..." ##->#####inc
     #####inc bardi_t "С халупой, где живем мы с мамой, конечно не сравнить..."
     bardi_t "Интересно, чем занимается ее муж?"
-    sound sneaks_1
+    sound step_stairs_short
     imgf 901270
     sound2 snd_door_bell1
     w
@@ -1329,7 +1451,7 @@ label ep03_dialogues3_family_evening_6:
     fadeblack 1.0
     sound snd_door_open1
     pause 1.5
-    music Visions_Of_Plenty
+    music Shining_Through
     imgf 901271
     sound2 highheels_short_walk
     w
@@ -1355,11 +1477,13 @@ label ep03_dialogues3_family_evening_6:
     daisy "Садись. Будешь чай или кофе? Или чего-нибудь повеселее?"
     imgd 901279
     w
-    imgd 901280
+    sound Jump1
+    img 901280
     w
     imgd 901279
     w
-    imgd 901280
+    sound Jump1
+    img 901280
     w
     imgf 901281
     bardi "Нет, спасибо. У меня еще дела сегодня..."
@@ -1374,8 +1498,7 @@ label ep03_dialogues3_family_evening_6:
     imgd 901283
     daisy "Да брось ты! Знаю я все эти ваши дела..."
     # Барди садится на диван, она двигается к нему ближе
-    fadeblack 1.0
-    music Visions_Of_Plenty
+    sound step_stairs_short
     imgf 901284
     w
     imgd 901285
@@ -1419,6 +1542,7 @@ label ep03_dialogues3_family_evening_6:
     daisy "Ну и, конечно же, читать отзывы заказчиков с фотографиями и благодарностями..."
     daisy "Пожалуй, это лучшее в моей работе!"
     # Дэйзи подмигивает Барди вальяжно и сексуально усевшись на диване
+    sound Jump2
     imgd 901298
     daisy "Да, думаю это самое интересное в этой работе..."
     daisy "Эти фотографии, конечно, конфиденциальные..."
@@ -1447,7 +1571,7 @@ label ep03_dialogues3_family_evening_6:
     # арт сменяется снова на Дейзи
     # она многозначительно улыбается
     imgf 901305
-    music Visions_Of_Plenty
+    music Shining_Through
     daisy "Еще есть предположения?"
     # Барди предполагает вытянув руку ладонью вверх на уровне груди, кончики пальцев направлены в сторону Дэйзи
     imgd 901306
@@ -1482,7 +1606,7 @@ label ep03_dialogues3_family_evening_6:
     bardi_t "Оу!.."
     imgd 901312
     w
-    music Visions_Of_Plenty
+    music Shining_Through
     imgd 901313
     daisy "И снова ты не угадал, [mcname]..."
     daisy "Боже! Откуда ты такой милый и невинный?! Так и хочется тебя затискать!"
@@ -1491,7 +1615,8 @@ label ep03_dialogues3_family_evening_6:
     # рука Дэйзи скользит по бедру Барди чуть выше, он с интересом и удивлением смотрит на этот процесс
     imgf 901311
     w
-    imgd 901314
+    sound vjuh3
+    img 901314 hpunch
     bardi_t "А впрочем, почему бы и нет?.."
     imgd 901310
     bardi "Ну и что в итоге я буду доставлять?"
@@ -1712,6 +1837,7 @@ label ep03_dialogues3_family_evening_6:
     bardi_t "Хмм..."
     bardi_t "Я, конечно, рассчитывал на большее..."
     bardi_t "Но если есть перспектива увеличения оплаты..."
+    music Shining_Through
     imgf 901340
     bardi_t "Да кого я обманываю?!"
     bardi_t "Я буду обходить дома одиноких девушек, которым критически не хватает члена!.."
@@ -1764,7 +1890,7 @@ label ep03_dialogues3_family_evening_6:
     sound snd_door_open1
     pause 1.5
     music Adventures_of_the_Deaf_Dreamer
-    sound2 sneaks_1
+    sound2 step_stairs_short
     imgf 901350
     bardi_t "Уфф!.. Какая горячая штучка эта Дейзи!.." ##->#####inc
     #####inc bardi_t "Уфф!.. Моя тетя Дейзи та еще горячая штучка!.."
