@@ -18,9 +18,6 @@ label ep03_dialogues1_family_morning_1:
     bardi_t "Что, уже утро?!"
     imgd 900065
     bardi_t "Мне такой сон снился... И такой облом на самом интересном месте!.."
-    music Jail_Clock
-    imgd 900066
-    bardi_t "..."
     # в комнату заходит Софи
     sound2 snd_walk_barefoot
     imgf 901076
@@ -30,6 +27,8 @@ label ep03_dialogues1_family_morning_1:
     imgd 901077
     bardi "Доброе..."
     # косится на его одеяло
+    sound Jump1
+    #sound vjuh4
     img 901078 hpunch
     w
     imgd 901079
@@ -60,12 +59,12 @@ label ep03_dialogues1_family_morning_1:
     imgd 901084
     bardi "Эээм... Да-да, пара минут, Софи." ##->#####inc
     #####inc bardi "Эээм... Да-да, пара минут, ма."
-    imgd 901086
-    sound snd_walk_barefoot
+    imgf 901086
     w
     fadeblack
     sound snd_walk_barefoot
     pause 1.5
+    music Adventures_of_the_Deaf_Dreamer
     imgf 901087
     w
     # она снова улыбается ему и выходит из комнаты
@@ -79,6 +78,7 @@ label ep03_dialogues1_family_morning_1:
 label ep03_dialogues1_family_morning_1a:
     # один арт из старых + сделать пару артов, как заглядывает Синтия
     music Adventures_of_the_Deaf_Dreamer
+    sound2 step_stairs_short
     imgfl 910311
     bardi_t "У меня еще есть время до колледжа, чтобы принять душ..."
     menu:
@@ -116,7 +116,7 @@ label ep03_dialogues1_family_morning_1a:
             imgd 900473
             w
             sound drkanje5
-            img 900474
+            imgd 900474
             w
             sound drkanje5
             imgd 900473
@@ -134,7 +134,7 @@ label ep03_dialogues1_family_morning_1a:
             music stop
             sound plastinka1b
             img 901096 hpunch
-            sound2 fear1
+            sound2 fear2
             cynthia "ОЙ!"
             # потом резко прикрывает глаза руками
             music Adventures_of_the_Deaf_Dreamer_short
@@ -142,7 +142,7 @@ label ep03_dialogues1_family_morning_1a:
             img 901097 vpunch
             cynthia "Ой, прости, [mcname]! Я не знала, что ты тут!.."
             # смущенная Синтия выбегает из ванной комнаты
-            sound step_stairs
+            sound run_stairs_floor
             imgd 901098
             cynthia "!!!"
             # Барди смотрит на свой стояк
@@ -181,10 +181,11 @@ label ep03_dialogues1_family_morning_2:
     # Софи стоит на кухне, на столе завтрак, как обычно
     # озадаченно смотрит на него, потом опускает глаза
     fadeblack 1.5
-    sound2 step_stairs
+    sound2 step_stairs_short
     music Little_Tomcat
     imgfl 901101
     w
+    sound snd_walk_barefoot
     imgf 901102
     w
     imgd 901103
@@ -207,7 +208,6 @@ label ep03_dialogues1_family_morning_2:
         #
         $ notif(_("[mcname] делал массаж ног пьяной Оливии."))
         #
-#        img 901106
         bardi_t "Это же был просто массаж ног Оливии. Ничего такого."
         if mlsBardiDay3FamilyEvening3 > 0:
             bardi_t "Ну почти..."
@@ -216,15 +216,12 @@ label ep03_dialogues1_family_morning_2:
         #
         $ notif(_("[mcname] смотрел фильм с Синтией."))
         #
-#        img 901106
         bardi_t "И в просмотре фильма с Синтией я ничего криминального не вижу."
         # если смотрели ужастики
         if mlsBardiDay3FamilyEvening1 > 0:
-#            img 901106
             bardi_t "За исключением одного момента... Но о моем внезапном стояке знаю только я. Или Синтия что-то заметила и рассказала Софи?.."
         # если смотрели боевик
         else:
-#            img 901106
             bardi_t "За исключением одного момента... Но не могла же Синтия рассказать Софи про порнуху? Или могла?.."
     # Софи перебивает его размышления, также пристально глядя на него
     imgd 901105
@@ -242,8 +239,8 @@ label ep03_dialogues1_family_morning_2:
     # волосы растрепаны, на лицо все признаки похмелья, держится за голову
     # Софи удивленно смотрит на нее
     music Adventures_of_the_Deaf_Dreamer
-    imgf 901109
     sound2 snd_walk_barefoot
+    imgf 901109
     w
     imgd 901110
     sophie "Оливия? Что-то ты сегодня рано встала..."
@@ -327,6 +324,7 @@ label ep03_dialogues1_family_morning_2:
 # после урока инглиша, в перерыве между занятиями, у Барди звонок на телефон
 # телефонный разговор с Софи
 label ep03_dialogues1_family_morning_3:
+    # sophie_chat4
     ## не рендерить!
     sophie "[mcname], милый, я тебя не отвлекаю?"
     bardi "Нет. У меня как раз перерыв между занятиями. Что-то случилось?"
@@ -382,6 +380,7 @@ label ep03_dialogues1_family_morning_5:
     fadeblack
     sound snd_walk_barefoot
     pause 1.5
+    music Adventures_of_the_Deaf_Dreamer
     imgf 901087
     w
     # Барди встает с постели
@@ -395,7 +394,7 @@ label ep03_dialogues1_family_morning_6:
     # Барди заходит на кухню
     # Софи стоит на кухне, на столе завтрак, как обычно
     fadeblack 1.5
-    sound2 step_stairs
+    sound2 step_stairs_short
     music Little_Tomcat
     imgf 900055
     sophie "Привет, [mcname]. Вот твой завтрак."
