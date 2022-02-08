@@ -137,6 +137,7 @@ label ep03_dialogues4_bike_rental_2:
     label ep03_dialogues4_bike_rental_2a:
     $ mlsBardiDay4BikeRental1 = day # Барди встретился с Райтом на пляже
     # в этот момент приходит смс от Софи на телефон - сигнал
+    # sophie_chat5
     sophie "[mcname], мы ждем тебя на ужин. Ты не забыл?"
     sophie "Моя сестра Дейзи уже пришла. Поторопись, пожалуйста, милый."  ##->#####inc
     #####inc mother "Твоя тетя Дейзи уже пришла. Поторопись, пожалуйста, милый."
