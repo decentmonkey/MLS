@@ -1,4 +1,4 @@
-define mr_wright = Character(_("Мистер Райт"), who_color=c_orange) # друг Генри, владелец велопроката (Wright)
+define mr_wright = Character(t_("Мистер Райт"), who_color=c_orange) # друг Генри, владелец велопроката (Wright)
 
 default mlsBardiDay4BikeRental1 = 0 # Барди встретился с Райтом на пляже
 default mlsBardiDay4BikeRental2 = 0 # Барди согласился работать в велопрокате

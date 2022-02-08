@@ -1,4 +1,4 @@
-define daisy = Character(_("Дейзи"), who_color=c_pink) # сестра Софи - Daisy Hinton
+define daisy = Character(t_("Дейзи"), who_color=c_pink) # сестра Софи - Daisy Hinton
 
 default mlsBardiDay4FamilyEvening1 = 0 # Барди вызвался помочь Оливии собирать бутылки во дворе
 default mlsBardiDay4FamilyEvening2 = 0 # Дейзи пригласила Барди в гости

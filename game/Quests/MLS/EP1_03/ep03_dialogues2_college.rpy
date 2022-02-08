@@ -1,12 +1,12 @@
-define student_arnie = Character(_("Арни"), who_color=c_blue) # студент из колледжа, Арни Уокер (classmate4)
-define student_girl1 = Character(_("Студентка"), who_color=c_pink) # студентка
-define student_girl2 = Character(_("Студентка"), who_color=c_green) # студентка
-define student_girl3 = Character(_("Студентка"), who_color=c_orange) # студентка - девочка с каре и в джинсах из группы Барди
-define student_girl4 = Character(_("Студентка"), who_color=c_pink) # студентка
-define student_boy1 = Character(_("Студент"), who_color=c_gray) # студент
-define student_boy2 = Character(_("Студент"), who_color=c_blue) # студент
-define student_abby = Character(_("Эбби"), who_color=c_pink) # студентка из группы Барди (Abby)
-define student_katie = Character(_("Кэти"), who_color=c_orange) # студентка - девочка с каре и в джинсах из группы Барди (Katie)
+define student_arnie = Character(t_("Арни"), who_color=c_blue) # студент из колледжа, Арни Уокер (classmate4)
+define student_girl1 = Character(t_("Студентка"), who_color=c_pink) # студентка
+define student_girl2 = Character(t_("Студентка"), who_color=c_green) # студентка
+define student_girl3 = Character(t_("Студентка"), who_color=c_orange) # студентка - девочка с каре и в джинсах из группы Барди
+define student_girl4 = Character(t_("Студентка"), who_color=c_pink) # студентка
+define student_boy1 = Character(t_("Студент"), who_color=c_gray) # студент
+define student_boy2 = Character(t_("Студент"), who_color=c_blue) # студент
+define student_abby = Character(t_("Эбби"), who_color=c_pink) # студентка из группы Барди (Abby)
+define student_katie = Character(t_("Кэти"), who_color=c_orange) # студентка - девочка с каре и в джинсах из группы Барди (Katie)
 
 default mlsBardiDay4College1 = 0 # Эмили согласилась провести Барди экскурсию
 default mlsBardiDay4College2 = 0 # Роуз предложила Барди работать над эссе вместе
@@ -31,79 +31,108 @@ default ep03_dialogues2_college_18_menu2 = False
 default ep03_dialogues2_college_19_menu1 = False
 default ep03_dialogues2_college_19_menu2 = False
 
+#call ep03_dialogues2_college_1() # разговор с Шоном у колледжа
+#call ep03_dialogues2_college_2() # разговор у шкафчиков с Эмили
+#call ep03_dialogues2_college_3() # урок инглиша
+#call ep03_dialogues2_college_3a() # мысли после урока инглиша
+#call ep03_dialogues2_college_4() # встреча в холле с Миссис Морис
+#call ep03_dialogues2_college_5() # урок живописи
+#call ep03_dialogues2_college_5a() # после крока живописи встреча в холле с Шоном
+#call ep03_dialogues2_college_6() # при клике на библиотеку
+#call ep03_dialogues2_college_6a() # при клике на строку контакта "cynthia"
+#call ep03_dialogues2_college_7() # при клике на спортзал
+#call ep03_dialogues2_college_8() # при клике на кабинет математики
+#call ep03_dialogues2_college_9() # при клике на дверь приемной директора колледжа, либо на какие-то другие локации
+#call ep03_dialogues2_college_10() # при клике на выход из колледжа
+#call ep03_dialogues2_college_11() # звонок на телефон от Шона после того, как вышел от тети Дейзи вечером
+#call ep03_dialogues2_college_12() # пришел на вечеринку
+#call ep03_dialogues2_college_13() # при клике на столик с алкоголем
+#call ep03_dialogues2_college_13a() # при клике на Лео до общения с Хлоей
+#call ep03_dialogues2_college_15() # при клике на Эмили и Гарри
+#call ep03_dialogues2_college_16() # при клике на фрика Хлою
+#call ep03_dialogues2_college_14() # подходит к дивану, где сидит Лео
+#call ep03_dialogues2_college_18() # при клике на зануду Сару
+#call ep03_dialogues2_college_19() # при клике на парочку целующихся девчонок
 
 # при клике на локацию Колледж на карте города
 label ep03_dialogues2_college_1:
     # Барди стоит перед входом в колледж
     # внезапно его хлопает по плечу рука Шона
-    img 900767
+    music Shining_Through
+    imgf 900767
     w
-    img 901418
+    sound Jump1
+    img 901418 hpunch
     bardi "Черт!"
     # в кадре возникает его довольная мина
-    img 901419
+    sound Jump2
+    img 901419 vpunch
     sean "Эй, бро! Привет!"
-    img 901420
+    imgd 901420
     bardi "Чувак, ты меня напугал!.."
-    img 901421
+    imgd 901421
+    sound laughing_male2
     sean "Думал, что это твой приятель Гарри с тобой решил поздороваться?" # хихикает
-    img 901422
+    imgd 901422
     bardi "Ага. Поздороваться и пожелать мне хорошего дня... После того, как вчера чуть не прибил меня."
-    img 901423
+    imgd 901423
     sean "О, серьезно?! А что случилось, бро?"
-    img 901424
+    imgd 901424
     bardi "А, ну да. Вчера же кое-кто был очень занят своими делами и все пропустил."
-    img 901425
+    imgd 901425
     sean "Давай рассказывай!"
-    img 901424
+    imgd 901424
     bardi "По ходу, Гарри приревновал меня к Эмили. Прикинь?!"
-    img 901426
+    imgd 901426
     sean "Да ладно! Ты шутишь!"
-    img 901424
+    imgd 901424
     bardi "Вчера мне было не до шуток. Этот придурок гонялся за мной по колледжу."
     # если днем, в колледже, Барди смотрел фотку Эмили и выложил в сеть (крыса)
     if mlsBardiDay3College4 > 0:
-        img 901424
+#        img 901424
         bardi "А после занятий я видел, что он разругался с Эмили."
     # если днем, в колледже, не смотрел фотку Эмили и сразу отдал телефон (кролик)
     else:
-        img 901424
+#        img 901424
         bardi "А после занятий подкараулил у входа в колледж и вцепился в меня."
         bardi "На этот раз обошлось без синяков."
-    img 901427
+    imgd 901427
     sean "Охренеть! А из-за чего он так взбесился?"
-    img 901424
+    imgd 901424
     bardi "Да я ничего такого не сделал... Просто взял Эмили за руку, а он это увидел..."
-    img 901421
+    imgd 901421
     sean "Ты что, решил подкатить к первой красотке колледжа?! Ха-ха, ну ты даешь!"
     sean "Тебе не светит трах с ней, приятель. Она с такими простыми смертными, как мы с тобой, даже не разговаривает."
     sean "Не уверен, что она вообще знает о нашем существовании."
     sean "У тебя нет шансов, [mcname]!"
-    img 901422
+    music Step_By_Step
+    imgd 901422
     bardi "Посмотрим..."
-    img 901428
+    imgd 901428
     sean "Зря потратишь свое время, бро."
     # если Барди ходил к Шону и была сцена с Бекки
     if mlsBardiSeanDay3Whore1 > 0 or mlsBardiSeanDay3Whore2 > 0:
-        img 901422
+        imgd 901422
         bardi "Ты мне лучше расскажи подробнее про свою 'подружку' Бекки..."
         bardi "Что там у тебя за темы с ней? Или ты все-таки заплатил ей за встречу?"
     # если знакомства с Бекки не было
     else:
-        img 901422
+        imgd 901422
         bardi "Ты мне лучше расскажи, что у тебя за дела такие важные вчера были?"
-    img 901428
+    imgd 901428
     sean "Чувак, я тебе обязательно все расскажу. Только не здесь и не сейчас." # подмигивает и довольно улыбается
-    img 901429
+    sound Jump1
+    imgd 901429
     w
-    img 901422
+    imgd 901422
     sean "У меня сейчас математика, поэтому лучше поторопиться."
     # Шон разворачивается и идет ко входу в колледж, на ходу поворачивается к Барди
-    img 901430
+    sound step_stairs_short
+    imgf 901430
     w
-    img 901431
+    imgd 901431
     sean "Пошли! Чего ты там застрял?"
-    img 901430
+    imgd 901430
     bardi_t "Хмм... Он явно не торопится делиться со мной подробностями..."
     # Барди догоняет Шона и они заходят в колледж
     return
@@ -111,169 +140,191 @@ label ep03_dialogues2_college_1:
 # в холле колледжа, у шкафчика Барди
 label ep03_dialogues2_college_2:
     # Шон уходит по коридору в сторону лестницы, машет Барди рукой
-    img 901432
+    fadeblack 1.0
+    music Shining_Through
+    imgfl 901432
     w
-    img 901433
+    imgf 901433
     sean "Встретимся после занятий, бро!"
-    img 901434
+    imgd 901434
     bardi "Окей."
     # у шкафчиков стоит Эмили, как обычно с телефоном в руке, делает селфи
-    img 910035
+    sound snd_runaway
+    imgd 910035
     w
-    img 901435
+    fadeblack 1.0
+    music Adventures_of_the_Deaf_Dreamer
+    sound2 step_stairs_short
+    imgf 901435
     bardi_t "А вот и красотка Эмили..."
     # две фразы, взависимости от того, присылала ли она ему фотки ранее
-    img 901436
+    imgd 901436
     bardi "Привет, Эмили!"
-    img 901437
+    sound snd_photo_capture
+    imgd 901437
     student_emily "Привет." # продолжая фоткаться
-    img 901436
+    sound snd_photo_capture
+    imgd 901436
     bardi "Делаешь фотки для своей инсты?"
     # если днем, в колледже, Барди смотрел фотку Эмили и выложил в сеть (крыса)
     if mlsBardiDay3College4 > 0:
         # она, не глядя на него, продолжает фоткаться
-        img 901438
+        imgd 901438
         student_emily "Чего тебе? Не видишь, я занята?"
-        img 901439
+        sound snd_photo_capture
+        imgd 901439
         bardi "Да я просто хотел спросить, как дела."
         bardi "Ты вчера была такая расстроенная после разговора со своим парнем..."
         # она отрывается от своего телефона и с подозрением смотрит на Барди
-        img 901440
+        sound Jump1
+        img 901440 hpunch
         student_emily "Что-то я не пойму, с чего ты так интересуешься моими делами?"
         student_emily "И я не была расстроена!"
-        img 901441
+        imgd 901441
         bardi "Ну-ну. Значит, мне показалось."
-        img 901442
+        imgd 901442
+        sound iphone_typing
         student_emily "Вот именно!" # снова отворачивается от него
-        img 901443
+        imgd 901443
         bardi "Слушай, Эмили..."
-        img 901444
+        imgd 901444
         student_emily "Ну что еще?"
-        img 901445
+        imgd 901445
         bardi "Я видел твой аккаунт в инсте. У тебя крутые фотки..."
-        img 901444
+        imgd 901444
         student_emily "Да, но в сеть я выкладываю далеко не все свои фото... Есть еще лучше."
-        img 901445
+        imgd 901445
         bardi "Хм... Я не отказался бы посмотреть на них."
-        img 901446
+        imgd 901446
         student_emily "Намекаешь на то, чтобы я тебе их скинула?" # холодно
     # если днем, в колледже, не смотрел фотку Эмили и сразу отдал телефон (кролик)
     else:
     # Барди говорит, что классные фотки
-        img 901444
+        imgd 901444
         student_emily "Ага. Давно ничего нового не выкладывала."
-        img 901445
+        imgd 901445
         bardi "Мне понравились фотки, которые ты мне прислала..."
-        img 901446
+        imgd 901446
         student_emily "Намекаешь на то, чтобы я тебе еще свои фото скинула?"
     menu:
         "Было бы неплохо...":
-            img 901447
+            music Step_By_Step
+            imgd 901447
             bardi "Да, было бы здорово."
             # тут она загадочно улыбается, глядя на него
-            img 901448
+            imgd 901448
             student_emily "Я подумаю..."
             # если накануне переписывался с Эмили
             if mlsBardiDay3College4 == 0:
-                img 901447
+                imgd 901447
                 bardi "А что насчет небольшой экскурсии по городку?"
                 bardi "Может, договоримся о встрече?"
             # если не перписывался
             else:
-                img 901447
+                imgd 901447
                 bardi "А еще я не против небольшой экскурсии по Санвилю."
                 bardi "В знак благодарности, что я помог тебе найти твой телефон..."
-            img 901449
+            imgd 901449
             student_emily "Хмм..."
             bardi "Встретимся на днях? Можно было бы сходить вместе на пляж..."
-            img 901450
+            imgf 901450
             bardi "Или просто прогуляться. Посмотреть какие-нибудь красивые места..." # взгляд на грудь Эмили
-            img 901449
+            imgd 901449
+            w
             # она улыбается ему
             pass
         "Конечно! Но я хотел спросить не об этом...":
-            img 901447
+            music Step_By_Step
+            imgd 901447
             bardi "Конечно! Но я хотел спросить не об этом..."
             # она на него подозрительно косится
-            img 901451
+            imgd 901451
             student_emily "О чем же?"
-            img 901447
+            imgd 901447
             bardi "Я вчера помог тебе с поиском твоего телефона..."
             # если накануне переписывался с Эмили
             if mlsBardiDay3College4 == 0:
-                img 901447
+#                img 901447
                 bardi "А ты уже дала свое согласие на экскурсию..."
                 bardi "Может, договоримся о встрече?"
             # если не перписывался
             else:
-                img 901447
+#                img 901447
                 bardi "Проведешь мне небольшую экскурсию по городку? В знак благодарности."
-            img 901447
+#            img 901447
             bardi "Я так давно тут не был и совсем забыл Санвиль..."
             # она недружелюбно
-            img 901451
+            imgd 901451
             student_emily "Проблемы с памятью?"
-            img 901447
+            imgd 901447
             bardi "Видимо, да..."
             bardi "Ну так что ты скажешь насчет экскурсии? Как-нибудь на днях..."
             student_emily "..."
             # она с покерфейсом смотрит на него оценивающе, задумчиво
-            img 901452
+            imgd 901452
             student_emily "Хмм..."
-            img 901449
+            imgd 901449
+            w
             # потом внезапно эмоция меняется на улыбку (у нее возникла какая-то идея)
             pass
     $ mlsBardiDay4College1 = day # Эмили согласилась провести Барди экскурсию
-    img 901453
+    music Shining_Through
+    sound2 Jump1
+    img 901453 hpunch
     student_emily "А знаешь... Почему бы и нет?.."
-    img 901445
+    imgd 901445
     bardi "О, круто!"
-    img 901454
+    imgd 901454
     student_emily "Только не в ближайшие дни, у меня уже есть планы..."
     student_emily "Слышал, что Арни Уокер устраивает в воскресенье вечеринку у себя дома?"
     student_emily "Его предки свалили куда-то на выходные."
     student_emily "Кстати, ты там будешь? Или тебя не пригласили?"
-    img 901445
+    imgd 901445
     bardi "Эээм... Первый раз слышу про вечеринку. А он учится с нами в группе?"
-    img 901454
+    imgd 901454
     student_emily "Нет, в параллельной."
     student_emily "В общем, я иду на эту вечеринку. Поэтому нашу экскурсию придется отложить до следующих выходных."
-    img 901445
+    imgd 901445
     bardi "Понял. Окей, договорились."
     # она предупреждающе поднимает руку, указывая на Барди пальчиком
-    img 901440
+    sound Jump2
+    img 901440 vpunch
     student_emily "И никому ни слова, понял?"
     # Барди поднимает руки
-    img 901455
+    sound vjuh3
+    img 901455 hpunch
     bardi "Конечно!"
     # в этот момент к ним подлетает зануда-Сара
     # Эмили закатывает глаза и поспешно утыкается в свой телефон
-    img 901456
+    imgf 901456
     student_sarah "[mcname], Эмили!"
+    music Postcard_From_Hell
     bardi_t "Фак! Только не она!"
     # Сара начинает поучительно вещать
-    img 901457
+    imgd 901457
     w
-    img 901458
+    sound step_stairs_short
+    imgf 901458
     student_sarah "Между прочим, через пять минут начинается занятие по английскому!"
     student_sarah "Вы и так постоянно в числе опаздывающиъ студентов!"
-    img 901459
+    imgd 901459
     student_sarah "Это сказывается негативно на дисциплине всей нашей группы!"
     student_sarah "Идите быстро в кабинет английского!"
     # Эмили недовольно смотрит на Сару, потом на Барди
-    img 901460
+    imgd 901460
     w
-    img 901461
+    imgd 901461
     student_emily "Пошли. А то она не отцепится..."
-    img 901462
+    imgd 901462
     student_sarah "Да, не отцеплюсь!"
     student_sarah "Вообще-то, можно было бы потрудиться прийти вовремя на единственный обязательный предмет сегодня."
     # Эмили перестает ее слушать и отходит от них, направляясь к лестнице на второй этаж
-    img 901463
+    sound highheels_short_walk
+    imgd 901463
     student_sarah "Неужели это так сложно, я не понимаю?!"
-    img 901464
+    imgd 901464
     bardi "Кроме английского больше нет обязательных предметов сегодня?"
-    img 901465
+    imgd 901465
     student_sarah "Нет. Но я надеюсь, что ты записался на какой-либо дополнительный предмет..."
     student_sarah "И не будешь бездельничать оставшуюся часть дня."
     student_sarah "Если ты еще не записался, то можешь прийти..."
@@ -283,8 +334,11 @@ label ep03_dialogues2_college_2:
     bardi "Мы на английский опаздываем, помнишь?"
     # Барди разворачивается и идет вслед за Эмили
     # Сара ворчит
-    img 901466
+    imgf 901466
+    sound step_stairs_short
+    sound2 highheels_short_walk
     student_sarah "Ох!.. Это все из-за тебя и Эмили! Нашли время для пустых разговоров!.."
+    fadeblack 1.0
     # затемнение
     return
 
@@ -294,33 +348,41 @@ label ep03_dialogues2_college_3:
     # остальные студенты уже за своими партами, в том числе и Гарри
     # Гарри смотрит на Эмили, затем переводит злобный взгляд на Барди
     # и, как обычно, показывает ему кулак
-    img 910780
+    music Montana
+    sound2 highheels_short_walk
+    imgfl 910780
     w
-    img 910779
+    imgf 910779
     w
-    img 910781
+    imgd 910781
     w
-    img 910782
+    music Secretions_Vocal
+    sound2 Jump1
+    img 910782 hpunch
     student_harry "Ррр!.."
-    img 910784
+    imgd 910784
+    sound2 ma5
+    w
     # в это время училка по инглишу, миссис Адамс
-    img 910783
+    music Montana
+    imgf 910783
     teacher_adams "Доброе утро, студенты."
     teacher_adams "Занимайте свои места."
     # Барди и Сара с Эмили идут к своим партам
-    img 910785
+    imgd 910785
     teacher_adams "Сегодня нам предстоит подготовительное занятие перед написанием эссе."
     teacher_adams "Надеюсь, вы помните тему?"
     # зануда быстро поднимает руку
+    sound vjuh3
     img 910786
     student_sarah "Я помню, миссис Адамс! Литература 17 века и ее основные тенденции."
     teacher_adams "Спасибо, Сара."
     # Барди уже сидит за партой
-    img 910787
+    imgf 910787
     bardi_t "Какая-то скучная хрень..."
     bardi_t "Я не собираюсь писать никакое эссе!.."
     # смотрит на миссис Адамс
-    img 910788
+    imgd 910788
     bardi_t "Хмм... Эмили сказала, что в воскресенье будет вечеринка у какого-то Уокера..."
     bardi_t "И там будет Эмили..."
     bardi_t "Как бы мне попасть на эту вечеринку?"
@@ -328,198 +390,297 @@ label ep03_dialogues2_college_3:
     # Барди достает телефон и пишет сообщение Шону
     img 910789
     # sean_chat5
+    sound swish
+    imgf 910789
+    sound2 iphone_typing
     bardi "В воскресенье вечеринка у какого-то Уокера."
     bardi "Ты знаешь этого чувака?"
+    sound iphone_text_message2
     sean "Ага. Давай позже. Я на математике."
     # следом от Шона приходит фотка, на которой Кларк орет и тычет пальцем на одного из студентов, которые не в группе Барди, у доски
     # студент стоит, опустив голову, с виноватым видом
     # Барди смотрит на эту фотку
-    img 910790
+    sound2 iphone_text_message2
+    imgd 910790
     bardi_t "Смотрю, миссис Кларк вовсю 'веселится'..."
     bardi_t "Что он сделал? Опоздал на математику?"
     # внезапно раздается голос
-    img 910791
+    music stop
+    sound plastinka1b
+    img 910791 hpunch
     teacher_adams "[mcname], а ты что скажешь?"
     # Барди поднимает голову от телефона - рядом с его партой стоит миссис Адамс и вопросительно смотрит на него
     # Барди тупит и продолжает держать телефон с фоткой Кларк в руках
-    img 910792
+    music Adventures_of_the_Deaf_Dreamer
+    imgd 910792
     w
     img 910793
     bardi "!!!"
     # синеволосый одногруппник отклоняется на своем стуле и заглядывает к нему в телефон
-    img 910794
+    imgd 910794
+    sound laughing_male2
     student_jacob "Ему некогда. Он по ходу собрался дрочить на Кларк."
     # раздаются смешки в классе
     # Барди резко прячет свой телефон
-    img 910795
+    sound Jump2
+    img 910795 vpunch
     bardi "Заткнись!"
     student_jacob "Придурок." # показывает Барди фак и отворачивается
     # училка продолжает стоять над Барди с вопросительным видом
-    img 910793
+    imgf 910793
     bardi "Вы можете повторить ваш вопрос, миссис Адамс?"
-    img 910796
+    imgd 910796
     teacher_adams "Я спрашивала, нашел ли ты себе пару?"
-    img 910793
+    imgd 910793
     bardi "???"
     menu:
         "Я над этим работаю.":
-            img 910797
+            imgd 910797
             bardi "Я над этим работаю..."
             # Адамс удивленно смотрит на него
             # синеволосый снова встревает
-            img 910798
+            imgd 910798
             student_jacob "Рассматривая сиськи математички? Ха-ха-ха!"
+            sound laughing_male2
+            sound2 snd_woman_laugh4a
             # в классе снова хихикают
             # все студенты смотрят на Барди
-            img 910799
+            imgd 910799
             bardi_t "Какого черта все уставились на меня?!"
             pass
         "Вы хотели бы предложить свою кандидатуру?":
-            img 910797
+            imgd 910797
             bardi "Вы хотели бы предложить свою кандидатуру, миссис Адамс?"
             # Адамс удивленно смотрит на него
             # синеволосый встревает
-            img 910798
+            imgd 910798
             student_jacob "Стремный подкат, [mcsurname]. Ты облажался, придурок."
             img 910800
             teacher_adams "Джейкоб!"
             student_jacob "Все-все. Молчу." # отворачивается
-            img 910801
+            imgd 910801
+            w
             pass
-    img 910802
+    music Montana
+    imgf 910802
     teacher_adams "Я не знаю, правильно ли ты меня понял, [mcname]..."
     # Адамс слегка улыбается
-    img 910803
+    imgd 910803
     teacher_adams "Я имела ввиду, нашел ли ты себе в пару студента, с которым будешь работать над эссе?"
     bardi_t "Оу, фак! Вот я кретин!"
     bardi "Я да. То есть, нет... Не нашел еще."
-    img 910802
+    imgd 910802
     teacher_adams "Тебе нужно будет определиться с этим сегодня, [mcname]. И сообщить мне."
-    img 910803
+    imgd 910803
     bardi "Окей. Я понял."
     # она улыбается ему и разворачивается, чтобы идти в сторону доски
     # Барди опускает взгляд на ее попу и ноги, обсматривает (observing -?)
-    img 910804
+    sound highheels_short_walk
+    imgf 910804
     w
-    img 910805
+    imgd 910805
     bardi_t "Зачетная попка у этой Адамс."
     if mlsBardiSeanDay3Whore2 > 0:
         # перед глазами Барди пара кадров со сцены с Бекки, где она стоит в одних трусиках и он представляет Адамс вместо Бекки
+        img white_screen
+        with diss
+        pause 1.0
+        music Stylish_Hip_Hop_Rock
         img 900634
+        show screen dream()
+        with Dissolve(1.0)
         w
         img 900633
+        show screen dream()
+        with fade
         teacher_adams "И еще я просто обожаю, когда член заполняет всю мою киску."
         teacher_adams "Хочу скорее трахнуть тебя, студент!.."
     # Барди смотрит на свою ширинку - у него встал
-    img 910806
+    music stop
+    sound plastinka1b
+    img 910806 hpunch
     bardi_t "Вот черт! Только не сейчас!.."
     # прикрывает стояк руками, оглядывается
-    img 910807
+    music Secretions_Vocal
+    sound2 Jump2
+    img 910807 vpunch
+    w
     # на его попытки скрыть стояк смотрит девочка-фрик Хлоя, потом закатывает глаза и отворачивается
-    img 910808
+    imgd 910808
     w
-    img 910809
+    imgd 910809
     w
-    img 910810
+    imgd 910810
     student_chloe "..."
-    img 910811
-    # Барди смотрит в другую сторону - на него никто не обращает внимания, все слушают училку
-    img 910812
+    imgd 910811
     w
-    img 910807
+    # Барди смотрит в другую сторону - на него никто не обращает внимания, все слушают училку
+    imgd 910812
+    w
+    imgd 910807
     bardi_t "Нужно подумать о чем-то неприятном! Срочно!"
     label ep03_dialogues2_college_3_loop:
+    music Adventures_of_the_Deaf_Dreamer_short
+    imgd 910807
+    bardi_t "!!!"
     menu:
         "Ричардсон.":
             $ ep03_dialogues2_college_3_menu1 = True
-            img 910813
+            imgd 910813
             bardi_t "О, точно! Ричардсон! Монстр в юбке!"
             # кадры директрисы из v1, где она говорит ему
+            img white_screen
+            with diss
+            pause 1.0
             img 900404
+            show screen dream()
+            with Dissolve(1.0)
             w
             img 900405
+            show screen dream()
+            with diss
             principal_richardson "Чтобы никаких нарушений дисциплины в моем колледже, [mcsurname]!"
             principal_richardson "Я этого не терплю! Ясно тебе?"
             # кадры меняются на директрису в латексном черном костюме и она ему подмигивает
+            img white_screen
+            with diss
+            pause 1.0
+            music The_Heat
             img 900422
+            show screen dream()
+            with diss
             w
             img 900423
+            show screen dream()
+            with diss
             bardi_t "О, черт! Только хуже стало!"
             jump ep03_dialogues2_college_3_loop
         "Кларк.":
             $ ep03_dialogues2_college_3_menu2 = True
-            img 910813
+            imgd 910813
             bardi_t "О, это должно сработать!"
             # кадры с урока математики, где Кларк его отчитывает за опоздание
+            img white_screen
+            with diss
+            pause 1.0
             img 900825
+            show screen dream()
+            with Dissolve(1.0)
             w
             img 900826
+            show screen dream()
+            with diss
             teacher_clark "Студент, ты бы еще к концу занятия пришел и стал извиняться!"
             teacher_clark "Ты что, не видел расписания своей группы?!"
             teacher_clark "Имя!"
             # кадры меняются на грудь Кларк крупным планом, видно торчащие соски под блузкой
+            img white_screen
+            with diss
+            pause 1.0
+            music Stylish_Hip_Hop_Rock
             img 900855
+            show screen dream()
+            with diss
             w
             img 900856
+            show screen dream()
+            with diss
             bardi_t "Фаак!"
             jump ep03_dialogues2_college_3_loop
         "Оливия.":
             $ ep03_dialogues2_college_3_menu3 = True
-            img 910813
+            imgd 910813
             bardi_t "Да! Злобная Оливия - это то, что надо!"
             # кадры, на которых Оливия наезжает на него в v1, вечером
+            img white_screen
+            with diss
+            pause 1.0
             img 900134
+            show screen dream()
+            with Dissolve(1.0)
             w
             img 900135
+            show screen dream()
+            with diss
             olivia "О, неудачник вернулся со своей шараги. Да еще и с синяком на лице."
             # кадры меняются на Оливию в душе
+            img white_screen
+            with diss
+            pause 1.0
+            music Stylish_Hip_Hop_Rock
             img 900157
+            show screen dream()
+            with diss
             w
             img 900158
+            show screen dream()
+            with diss
             w
             img 900159
+            show screen dream()
+            with diss
             w
             img 900160
+            show screen dream()
+            with diss
             bardi_t "Твою же мать!!!"
             jump ep03_dialogues2_college_3_loop
         "Гарри." if ep03_dialogues2_college_3_menu1 == True and ep03_dialogues2_college_3_menu2 == True and ep03_dialogues2_college_3_menu3 == True:
             # кадры с v1 после удара Гарри кулаком после инглиша и тот смотрит на лежащего на полу Барди
+            img white_screen
+            with diss
+            pause 1.0
+            music Fly_With_Me_short
             img 910105
+            show screen dream()
+            with diss
             w
+            sound snd_punch_face2
+            sound2 snd_kick_fred1
             img 910106
+            show screen dream()
+            with hpunch
             w
+            sound snd_bodyfall
             img 910107
+            show screen dream()
+            with vpunch
             student_harry "Добро пожаловать, лузер."
             # кадр исчезает, Барди оглядывается на Гарри
             # тот как обычно показывает ему кулак
-            img 910078
+            music Adventures_of_the_Deaf_Dreamer
+            imgf 910078
             student_harry "Ррр!.."
             pass
     # Барди убирает руки с ширинки
-    img 910807
+    imgd 910807
     w
-    img 910814
+    sound vjuh3
+    imgd 910814
     bardi_t "Уф... Вроде помогло..."
     # Адамс тем временем заканчивает занятие
-    img 910081
+    imgd 910081
     teacher_adams "На этом наше сегодняшнее занятие подходит к концу."
     teacher_adams "Прошу всех до конца дня сообщить мне пару, с которой вы будете работать над эссе."
     teacher_adams "Спасибо. Все свободны."
     # студенты встают и идут к выходу, Адамс садится за свой стол
     # Барди как всегда копается, к его парте подходит Роуз
-    img 910815
+    imgf 910815
+    sound highheels_short_walk
+    sound2 step_stairs
     w
-    img 910816
+    imgd 910816
     student_rose "[mcname], привет."
-    img 910817
+    music Montana
+    imgd 910817
     bardi "Привет, Роуз. Как дела?"
     # она очень смущается, опускает глаза
-    img 910818
+    imgd 910818
     student_rose "Все хорошо. Спасибо, что спросил."
-    img 910819
+    imgd 910819
     student_rose "Я тут подумала..."
     student_rose "Если ты еще не знаешь, с кем будешь писать это эссе по английскому..."
-    img 910820
+    imgd 910820
     student_rose "Ты мог бы... Мы могли бы... Сделать это вместе..."
     # если Барди не толкал Гарри и в первый день разговаривал с Роуз
     if mlsBardiFirstDayCollege1 > 0:
@@ -530,39 +691,43 @@ label ep03_dialogues2_college_3:
         $ notif(_("[mcname] прятался от Гарри в женской раздевалке."))
         #
         student_rose "Тем более, за тобой должок. Ты ведь помнишь?"
-    img 910819
+    imgd 910819
     student_rose "Что скажешь?"
-    img 910821
+    imgd 910821
     bardi_t "Хмм... Это же отличный способ не заниматься гребаным эссе!"
     bardi_t "Милашка Роуз все сделает за меня!"
-    img 910822
+    imgd 910822
     bardi "Конечно, Роуз. Я только за..."
     # Роуз обрадованно смотрит на него
     student_rose "Правда?!"
     bardi "Ага. Сделаем это вместе..."
     # она радостно улыбается
-    img 910823
+    music Shining_Through
+    imgd 910823
     student_rose "Как здорово!"
     student_rose "Тогда я сообщу миссис Адамс, что мы работаем вместе!"
-    img 910824
+    imgd 910824
     bardi "Окей."
-    img 910825
+    imgd 910825
     student_rose "И нам нужно будет договориться с тобой, когда мы приступим к работе."
     student_rose "Тебе удобно будет заниматься у меня дома?"
     student_rose "Или будет лучше, если я к тебе буду приходить?"
-    img 910826
+    imgd 910826
     bardi "Эээм... Давай, я к тебе приду."
-    img 910827
+    imgd 910827
     student_rose "Хорошо. Тогда после выходных приступим?"
     bardi "Да, без проблем."
     bardi "Ну, я пошел. До встречи, Роуз."
-    img 910828
+    imgd 910828
     student_rose "Пока, [mcname]."
     # Барди идет к выходу мимо училки, а Роуз подходит к ней
-    img 910829
+    imgf 910829
+    sound highheels_short_walk
+    sound2 step_stairs
     bardi "До свидания, миссис Адамс."
     teacher_adams "До встречи, [mcname]."
     $ mlsBardiDay4College2 = day # Роуз предложила Барди работать над эссе вместе
+    fadeblack 1.0
     return
 
 # мысли Барди после инглиша
@@ -1108,6 +1273,10 @@ label ep03_dialogues2_college_11:
     return
 
 # новая локация на карте - дом Арни
+
+#music Upbeat_Summer
+#music Let_Me_Let_You_Let_Go_Vocal
+#music Kimono
 
 # при клике на локацию
 # Барди стоит перед домом Арни, из дома слышна музыка и смех
