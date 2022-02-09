@@ -14,10 +14,22 @@ label college_life:
     if college_life_last_init_daytime == day_time_idx:
         return
 label college_life_forced:
+    $ college_life_last_init_daytime = day_time_idx
+    $ set_active(False, group="students", scene="college_street", recursive=True)
+    if week_day == 6 or week_day == 7:
+        python:
+            set_active("Crowd1", False, scene="college_street")
+            set_active("Crowd2", False, scene="college_street")
+            set_active("Crowd3", False, scene="college_street")
+            set_active("Crowd4", False, scene="college_street")
+            set_active("Crowd5", False, scene="college_street")
+            set_active("Crowd6", False, scene="college_street")
+            set_active("Crowd7", False, scene="college_street")
+            set_active("Crowd8", False, scene="college_street")
+            set_active("Crowd9", False, scene="college_street")
+            set_active("Classmate1", False, scene="college_street")            
+        return
     python:
-        college_life_last_init_daytime = day_time_idx
-        set_active(False, group="students", scene="college_street", recursive=True)
-
         # улица
         if day_time_idx == 0 or day_time_idx == 1:
             # день

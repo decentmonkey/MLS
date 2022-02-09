@@ -26,6 +26,7 @@ label ep03_dialogues3_family_evening_1:
     # как всегда с недовольным видом, убирает пустые бутылки, оставшиеся со вчерашнего
     # Оливия Барди не видит, стоит к нему попой
     # Барди присвистывает
+    sound run_stairs_floor
     fadeblack 1.5
     music2 night_ambience
     imgfl 901129
@@ -133,6 +134,7 @@ label ep03_dialogues3_family_evening_1:
             img 901147 hpunch
             bardi "Я помогаю!"
             # Оливия распрямляется и грозно тычет в него пальцем
+            call rrmeter(2, "ep03_dialogues3_family_evening_1")
             music Adventures_of_the_Deaf_Dreamer
             imgf 901148
             w
@@ -177,6 +179,7 @@ label ep03_dialogues3_family_evening_1:
             # Барди рассматривает зад Оливии, но не подходит к ней
             imgf 901130
             bardi_t "Оливии не помешает немного поработать ручками."
+            call rrmeter(-2, "ep03_dialogues3_family_evening_1")
             bardi_t "Обойдется без моей помощи..."
             pass
         "Поддержать ее.":
@@ -211,6 +214,10 @@ label ep03_dialogues3_family_evening_1:
             bardi_t "Сама виновата. Мало того, что напилась, так еще и бардак во дворе устроила."
             pass
     # Барди подходит к входной двери
+    return
+
+# Барди заходит в холл
+label ep03_dialogues3_family_evening_2:
     fadeblack
     sound step_stairs_short
     pause 1.5
@@ -220,10 +227,6 @@ label ep03_dialogues3_family_evening_1:
     #####inc bardi_t "Мама говорила, что у нас сегодня гости..."
     bardi_t "И что она меня ждет к ужину. Так что лучше поторопиться, я и так задержался."
     # Барди заходит в дом
-    return
-
-# Барди заходит в холл
-label ep03_dialogues3_family_evening_2:
     # голос Софи из кухни
     music Little_Tomcat
     sound2 step_stairs_short
@@ -597,8 +600,8 @@ label ep03_dialogues3_family_evening_4:
 
                     imgf 900180
                     olivia "Какой обалденный член... Хочется облизываеть его снова и снова."
-                    imgf 900179
-                    w
+#                    imgf 900179
+#                    w
                     sound chpok8
                     imgd 900178
                     w
@@ -1226,41 +1229,12 @@ label ep03_dialogues3_family_evening_4:
                     with diss
                     pause 2.0
                     music Stylish_Hip_Hop_Rock
-                    img 901192
-                    with Dissolve(1.0)
-                    w
-                    imgd 901193
-                    whore "Хочу скорее оттрахать тебя, красавчик!.."
-                    whore "Мне не терпится почувствовать своей киской твой каменный стояк!"
-                    # она лезет на него и, приставив член к своей киске, начинает водить им туда-сюда
-                    # Барди тянет руку и лапает ее грудь, бедра, киску
-                    imgf 901194
-                    w
-                    imgd 901195
-                    whore "О, да!.."
-                    imgd 901196
-                    whore "Ооо!.."
-                    imgd 901195
-                    w
-                    imgf 901197
-                    w
-                    # напрявляет член на киску и вводит
-                    sound lick3
-                    imgd 901198
-                    whore "Оооох!.."
-                    sound chpok6
-                    img 901199 hpunch
-                    bardi "Ееее!.."
-                    # она начинает двигаться на нем
-                    imgf 901200
-                    whore "Оооо!"
-                    #imgd 901201
-                    #w
                     imgd 901202
                     whore "Оооо, обожаю твой член!"
+
+
                     # пара движений и она снимается с члена, наклоняется и вбирает его в рот
-                    fadeblack 0.5
-                    music Stylish_Hip_Hop_Rock
+#                    fadeblack 0.5
                     sound2 chpok6
                     img 901204 hpunch
                     whore "Мпфх!.."
@@ -1293,6 +1267,38 @@ label ep03_dialogues3_family_evening_4:
                     stop music2
                     $ renpy.music.set_volume(1.0, 0.5, channel="music2")
                     $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+                    music Stylish_Hip_Hop_Rock
+                    img 901192
+                    with Dissolve(1.0)
+                    w
+                    imgd 901193
+                    whore "Хочу скорее оттрахать тебя, красавчик!.."
+                    whore "Мне не терпится почувствовать своей киской твой каменный стояк!"
+                    # она лезет на него и, приставив член к своей киске, начинает водить им туда-сюда
+                    # Барди тянет руку и лапает ее грудь, бедра, киску
+                    imgf 901194
+                    w
+                    imgd 901195
+                    whore "О, да!.."
+                    imgd 901196
+                    whore "Ооо!.."
+                    imgd 901195
+                    w
+                    imgf 901197
+                    w
+                    # напрявляет член на киску и вводит
+                    sound lick3
+                    imgd 901198
+                    whore "Оооох!.."
+                    sound chpok6
+                    img 901199 hpunch
+                    bardi "Ееее!.."
+                    # она начинает двигаться на нем
+                    imgf 901200
+                    whore "Оооо!"
+                    #imgd 901201
+                    #w
 
                     # потом снова садится на его член, секс
                     imgfl 901208

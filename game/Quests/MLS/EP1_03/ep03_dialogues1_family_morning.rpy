@@ -395,6 +395,7 @@ label ep03_dialogues1_family_morning_5:
 label ep03_dialogues1_family_morning_6:
     # Барди заходит на кухню
     # Софи стоит на кухне, на столе завтрак, как обычно
+    sound snd_door_open1
     fadeblack 1.5
     sound2 step_stairs_short
     music Little_Tomcat

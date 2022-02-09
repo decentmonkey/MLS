@@ -22,7 +22,10 @@ label college_street:
         $ scene_image = "scene_COLLEGE_Street[day_suffix]"
 
     if day_time_idx < 3:
-        music Market
+        if week_day != 6 and week_day != 7:
+            music Market
+        else:
+            music rich_hotel_park
     else:
         music night_ambience
 

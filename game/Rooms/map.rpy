@@ -91,6 +91,9 @@ label map_environment:
     if obj_name == "Teleport_COLLEGE":
         call process_drive_teleport("COLLEGE", "college_street") from _rcall_process_drive_teleport_2
         return
+    if obj_name == "Teleport_BEACH":
+        call process_drive_teleport("BEACH", "beach_loungers")
+        return
     m "drive!"
     return
 
@@ -146,4 +149,8 @@ label process_change_map_location(target_map_scene):
 label start_walk_direct():
     $ mapChangedTeleportFlag = True
     call change_scene(target_scene, "Fade_long", "run_stairs_floor") from _rcall_change_scene_115
+    return
+
+label map_init_beach:
+    $ map_objects["Teleport_BEACH"] = {"text" : t_("ПЛЯЖ"), "xpos" : 883, "ypos" : 819, "base" : "map_marker", "state" : "visible"}
     return

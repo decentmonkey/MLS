@@ -1185,7 +1185,7 @@ label ep03_dialogues2_college_6:
     # Барди выходит из библиотеки
     img 900923
     w
-    mg 90147
+    img 90147
     bardi_t "Синтии сегодня нет в библиотеке. Я был уверен, что она тут..."
     # если Синтия утром застала Барди в душе
     if mlsBardiDay4FamilyMorning1 > 0:
@@ -1257,7 +1257,7 @@ label ep03_dialogues2_college_8:
 label ep03_dialogues2_college_9:
     ## не рендерить!!
     bardi_t "Сегодня мне там нечего делать."
-    return
+    return False
 
 # при клике на выход из колледжа
 label ep03_dialogues2_college_10:

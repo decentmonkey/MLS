@@ -936,8 +936,8 @@ label ep01_dialogues3_day2_family_7a_dream:
 
                     imgf 900180
                     olivia "Какой обалденный член... Хочется облизываеть его снова и снова."
-                    imgf 900179
-                    w
+#                    imgf 900179
+#                    w
                     sound chpok8
                     imgd 900178
                     w

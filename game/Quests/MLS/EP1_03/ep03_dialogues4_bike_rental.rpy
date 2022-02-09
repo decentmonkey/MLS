@@ -25,6 +25,7 @@ label ep03_dialogues4_bike_rental_1:
 # при клике на локацию
 label ep03_dialogues4_bike_rental_2:
     # Барди стоит на пляже, у пальмы
+    sound run_stairs_floor
     fadeblack 2.0
     music Elle_avait_pas_les_yeux_noirs
     music2 ocean_waves
@@ -137,6 +138,9 @@ label ep03_dialogues4_bike_rental_2:
     label ep03_dialogues4_bike_rental_2a:
     $ mlsBardiDay4BikeRental1 = day # Барди встретился с Райтом на пляже
     # в этот момент приходит смс от Софи на телефон - сигнал
+    fadeblack 1.5
+    music2 stop
+    return
     # sophie_chat5
     sophie "[mcname], мы ждем тебя на ужин. Ты не забыл?"
     sophie "Моя сестра Дейзи уже пришла. Поторопись, пожалуйста, милый."  ##->#####inc
@@ -154,6 +158,7 @@ label ep03_dialogues4_bike_rental_2:
 
 # при клике на пляж
 label ep03_dialogues4_bike_rental_3:
+    sound run_stairs_floor
     # у пальмы его ждет Райт
     fadeblack 2.0
     music Adventures_of_the_Deaf_Dreamer

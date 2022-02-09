@@ -65,7 +65,8 @@ label start: #for blink here
     $ episode = 2
 #    $ debugMode = True
 
-    $ day = 1
+    $ day = 2
+    $ ep13_update_init_flag = True
     $ scenes_data = {"objects": {}, "substs" : {}, "autorun": {}, "hooks": {}}
     $ hooks_stack = []
     $ inventory_objects = {}

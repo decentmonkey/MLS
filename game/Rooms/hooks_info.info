@@ -1,6 +1,9 @@
 house block:
 $ add_hook("Teleport_Street", "ep01_dialogues2_day1_family_1_12", scene="house_floor1", label="house_block", quest="day3")
 
+Блокировка колледжка с улицы
+$ add_hook("Teleport_Coridor1", "ep01_dialogues2_day1_family_1_12", scene="college_street", quest="college_day2")
+
 Камера телефона поверх картинок:
     Значок камеры отображается:
     camera_icon_enabled = True/False

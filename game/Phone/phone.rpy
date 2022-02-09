@@ -45,6 +45,9 @@ label phone_call_contact:
             return
 
     if obj_name == "Sophie":
+        if sophieCallStage == 4:
+            call sophie_chat5()
+            return
         if sophieCallStage == 3:
             call sophie_chat4()
             return
@@ -56,10 +59,10 @@ label phone_call_contact:
             return
 
     if obj_name == "Cynthia":
-        if cynthiaCallStage == 2 and day_suffix != 3:
+        if cynthiaCallStage == 2 and day_time_idx != 3:
             call cynthia_chat3()
             return
-        if cynthiaCallStage == 1 and day_suffix != 3:
+        if cynthiaCallStage == 1 and day_time_idx != 3:
             call cynthia_chat1() from _rcall_cynthia_chat1
             return
         if get_active_objects("Sister2", scene="COLLEGE", recursive=True) != False:
