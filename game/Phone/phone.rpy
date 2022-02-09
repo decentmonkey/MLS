@@ -45,6 +45,9 @@ label phone_call_contact:
             return
 
     if obj_name == "Sophie":
+        if sophieCallStage == 3:
+            call sophie_chat4()
+            return
         if sophieCallStage == 2:
             call sophie_chat3() from _rcall_sophie_chat3
             return
@@ -53,13 +56,20 @@ label phone_call_contact:
             return
 
     if obj_name == "Cynthia":
+        if cynthiaCallStage == 2 and day_suffix != 3:
+            call cynthia_chat3()
+            return
         if cynthiaCallStage == 1 and day_suffix != 3:
             call cynthia_chat1() from _rcall_cynthia_chat1
             return
         if get_active_objects("Sister2", scene="COLLEGE", recursive=True) != False:
             call cynthia_chat2() from _rcall_cynthia_chat2 # регулярный чат днем, Синтия не может говорить, учится
             return
+        
     if obj_name == "Sean":
+        if seanCallStage == 4:
+            call sean_chat5()
+            return
         if seanCallStage == 3:
             call sean_chat4() from _rcall_sean_chat4
             $ questHelp("college_15", True)

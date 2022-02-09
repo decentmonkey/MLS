@@ -160,10 +160,11 @@ label ep03_dialogues2_college_2:
     # две фразы, взависимости от того, присылала ли она ему фотки ранее
     imgd 901436
     bardi "Привет, Эмили!"
-    sound snd_photo_capture
+    $ photoshoot_flash()
     imgd 901437
     student_emily "Привет." # продолжая фоткаться
-    sound snd_photo_capture
+    $ photoshoot_flash()
+#    sound snd_photo_capture
     imgd 901436
     bardi "Делаешь фотки для своей инсты?"
     # если днем, в колледже, Барди смотрел фотку Эмили и выложил в сеть (крыса)
@@ -171,7 +172,8 @@ label ep03_dialogues2_college_2:
         # она, не глядя на него, продолжает фоткаться
         imgd 901438
         student_emily "Чего тебе? Не видишь, я занята?"
-        sound snd_photo_capture
+#        sound snd_photo_capture
+        $ photoshoot_flash()
         imgd 901439
         bardi "Да я просто хотел спросить, как дела."
         bardi "Ты вчера была такая расстроенная после разговора со своим парнем..."
@@ -342,6 +344,11 @@ label ep03_dialogues2_college_2:
     # затемнение
     return
 
+label ep03_dialogues2_college_2a:
+    bardi_t "Нет времени гулять по колледжу."
+    bardi_t "Я опаздываю на Английский!"
+    return False
+
 # кабинет инглиша
 label ep03_dialogues2_college_3:
     # Эмили, Барди и Сара заходят в кабинет
@@ -388,10 +395,11 @@ label ep03_dialogues2_college_3:
     bardi_t "Как бы мне попасть на эту вечеринку?"
     bardi_t "Интересно, а Шон в курсе?"
     # Барди достает телефон и пишет сообщение Шону
-    img 910789
+    imgf 910789
+    return
+
     # sean_chat5
     sound swish
-    imgf 910789
     sound2 iphone_typing
     bardi "В воскресенье вечеринка у какого-то Уокера."
     bardi "Ты знаешь этого чувака?"
@@ -404,7 +412,12 @@ label ep03_dialogues2_college_3:
     imgd 910790
     bardi_t "Смотрю, миссис Кларк вовсю 'веселится'..."
     bardi_t "Что он сделал? Опоздал на математику?"
+    return
+
+label ep03_dialogues2_college_3next1:
     # внезапно раздается голос
+    imgd 910791
+    w
     music stop
     sound plastinka1b
     img 910791 hpunch
@@ -480,6 +493,7 @@ label ep03_dialogues2_college_3:
     w
     imgd 910805
     bardi_t "Зачетная попка у этой Адамс."
+    $ camera_enabled = False
     if mlsBardiSeanDay3Whore2 > 0:
         # перед глазами Барди пара кадров со сцены с Бекки, где она стоит в одних трусиках и он представляет Адамс вместо Бекки
         img white_screen
@@ -495,6 +509,7 @@ label ep03_dialogues2_college_3:
         with fade
         teacher_adams "И еще я просто обожаю, когда член заполняет всю мою киску."
         teacher_adams "Хочу скорее трахнуть тебя, студент!.."
+    $ camera_enabled = True
     # Барди смотрит на свою ширинку - у него встал
     music stop
     sound plastinka1b
@@ -523,6 +538,7 @@ label ep03_dialogues2_college_3:
     music Adventures_of_the_Deaf_Dreamer_short
     imgd 910807
     bardi_t "!!!"
+    $ camera_enabled = False
     menu:
         "Ричардсон.":
             $ ep03_dialogues2_college_3_menu1 = True
@@ -649,9 +665,11 @@ label ep03_dialogues2_college_3:
             # кадр исчезает, Барди оглядывается на Гарри
             # тот как обычно показывает ему кулак
             music Adventures_of_the_Deaf_Dreamer
+            $ camera_enabled = True
             imgf 910078
             student_harry "Ррр!.."
             pass
+    $ camera_enabled = True
     # Барди убирает руки с ширинки
     imgd 910807
     w
@@ -712,6 +730,9 @@ label ep03_dialogues2_college_3:
     student_rose "И нам нужно будет договориться с тобой, когда мы приступим к работе."
     student_rose "Тебе удобно будет заниматься у меня дома?"
     student_rose "Или будет лучше, если я к тебе буду приходить?"
+    menu:
+        "Эээм... Давай, я к тебе приду.":
+            pass
     imgd 910826
     bardi "Эээм... Давай, я к тебе приду."
     imgd 910827

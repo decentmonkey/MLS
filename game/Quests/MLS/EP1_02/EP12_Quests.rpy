@@ -502,9 +502,10 @@ label ep12_quests20_home:
     $ remove_hook(label="college_day2")
     $ remove_hook(label="day2")
     $ steam_achievement("ach_end2")
-    jump end_update
+    call ep13_quests_init()
+#    jump end_update
 
-#    return False
+    return False
 
 
 #

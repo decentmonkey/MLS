@@ -52,6 +52,7 @@ default phone_icon_flashing = False
 # call phone_open_menu(menu_name) - открывается на определенном меню
 # call phone_hide() - закрывается
 # call phone_camera_open() - открывается в режиме камеры
+# call phone_outgoing_call(contact_name, chat_name)
 
 # add_hook("phone_open", "", scene="phone") - open phone
 # add_hook("phone", "", scene="phone") - every phone iteration
@@ -108,6 +109,31 @@ label phone_open_menu(menu_active):
     $ phone_orientation = 0
     call phone_controller() from _rcall_phone_controller_1
     return
+
+label phone_outgoing_call(outgoing_contact_name, outgoing_chat_name):
+    $ obj_name = outgoing_contact_name
+    $ phone_orientation = 0
+    $ phone_contact = phone_get_contact_by_contact_name(obj_name)
+    $ phone_menu_active = "calling_screen"
+    call process_hooks("before_call_contact", "phone")
+    if _return == False:
+        $ phone_menu_active = "main"
+        jump phone_open_loop1
+
+    show screen phone(phone_menu_active)
+    sound snd_phone_notification1
+#    pause
+    pause 1.0
+    $ phone_menu_active = "chat_live"
+    $ phone_current_chat = []
+    call expression outgoing_chat_name
+#    call process_hooks("call_contact", "phone")
+#    if _return == False:
+#        $ phone_menu_active = "main"
+#        jump phone_open_loop1
+    sound snd_phone_notification5
+    call process_hooks("call_contact_end", "phone")
+    jump phone_open_loop1
 
 label phone_incoming_call:
     hide screen phone_icon_focus
@@ -228,7 +254,7 @@ label phone_open_loop1:
         if phone_instagram_mode == 0:
             call process_hooks("instagram", "phone") from _rcall_process_hooks_27
     if phone_menu_active == "instagram_page":
-        call process_hooks("instagram", "phone") from _rcall_process_hooks_52
+        call process_hooks("instagram", "phone") from _rcall_process_hooks_52
 
     if phone_menu_active == "notes":
         call process_hooks("notes", "phone") from _rcall_process_hooks_28

@@ -157,6 +157,7 @@ init python:
                     del questHelpData[questCategory][idx]
         return
 
+    # return: 0-active, 1-completed, -1-False
     def questHelpGetStatus(questHelpName):
         global questHelpDataQuests, questHelpData, questHelpJustUpdated, questHelpUpdatedDay, day, questHelpActivated
         if questHelpDataQuests.has_key(questHelpName) == False:

@@ -1,0 +1,10 @@
+house block:
+$ add_hook("Teleport_Street", "ep01_dialogues2_day1_family_1_12", scene="house_floor1", label="house_block", quest="day3")
+
+Камера телефона поверх картинок:
+    Значок камеры отображается:
+    camera_icon_enabled = True/False
+
+    Камера перечеркнута
+    camera_enabled = True/False
+

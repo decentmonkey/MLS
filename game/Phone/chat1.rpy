@@ -152,8 +152,9 @@ label sean_chat5:
         ["", t_("В воскресенье вечеринка у какого-то Уокера.")],
         ["", t_("Ты знаешь этого чувака?")],
         ["sean", t_("Ага. Давай позже. Я на математике.")],
-        ["sean", "image", "/images/Phone/Photos/sean_adams1.png", 3]
+        ["sean", "image", "/images/Phone/Photos/clark_photo1.png", 3]
     ])
+    $ phone_gallery_add_image("Clark_foto")
     # следом от Шона приходит фотка, на которой Кларк орет и тычет пальцем на одного из студентов, которые не в группе Барди, у доски
     return
 

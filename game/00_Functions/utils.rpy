@@ -175,6 +175,13 @@ init python:
         stage_Molly_Excitement_Last = stage_Molly_Excitement_Current
         return
 
+    def photoshoot_flash():
+        renpy.play("Sounds/snd_photo_capture.ogg", channel="sound")
+        renpy.show_screen("photoshot_screen")
+        renpy.pause(0.7)
+        renpy.hide_screen("photoshot_screen")
+        return
+
 default textonblack_camera_state = False
 
 label mycopytext_label(txt):

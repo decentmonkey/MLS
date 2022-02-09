@@ -164,12 +164,13 @@ label ep03_dialogues1_family_morning_1a:
             bardi_t "..."
             # затемнение, шум воды стихает
             music2 stop
-            pass
+            fadeblack 1.5
+            return True
         "Позже.":
             imgd 910311
             bardi_t "Я пока не хочу принимать душ."
-            pass
-    fadeblack 1.5
+            return False
+#    fadeblack 1.5
     return
 
 # двери в комнаты сестер и спальню Софи закрыты
@@ -180,6 +181,7 @@ label ep03_dialogues1_family_morning_2:
     # Барди заходит на кухню
     # Софи стоит на кухне, на столе завтрак, как обычно
     # озадаченно смотрит на него, потом опускает глаза
+    sound snd_door_open1
     fadeblack 1.5
     sound2 step_stairs_short
     music Little_Tomcat
