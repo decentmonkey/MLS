@@ -1565,19 +1565,30 @@ label ep03_dialogues3_family_evening_6:
     imgd 901303
     bardi_t "Было бы классно заполучить фотки в нижнем белье одной из преподавательниц в колледже..."
     # показываем арт, где профессорша в одном бра
+    music stop
     img white_screen
     with diss
-    pause 1.0
+    pause 0.5
     music The_Heat
+    $ camera_icon_enabled = False
+    pause 0.5
     img 901304
-    bardi_t "К примеру, профессора Ричардсон."
     show screen dream()
     with Dissolve(1.0)
+    show screen image_shake("/images/Slides/img_901304.jpg")
+    bardi_t "К примеру, профессора Ричардсон."
     w
+    $ camera_icon_enabled = True
     # арт сменяется снова на Дейзи
     # она многозначительно улыбается
-    imgf 901305
+    music stop
+    img white_screen
+    with diss
+    pause 0.5
     music Shining_Through
+    pause 0.5
+    img 901305
+    with Dissolve(1.0)
     daisy "Еще есть предположения?"
     # Барди предполагает вытянув руку ладонью вверх на уровне груди, кончики пальцев направлены в сторону Дэйзи
     imgd 901306
@@ -1594,18 +1605,30 @@ label ep03_dialogues3_family_evening_6:
     imgd 901308
     bardi "О, это будет весьма мило привозить клиентам плюшевых мишек и-и..."
     # внезапно кадр меняется - профессор Ричердсон в том же нижнем белье стоит, обнимая плюшевого мишку
+    $ camera_icon_enabled = False
+    music stop
     img white_screen
     with diss
-    pause 1.0
+    pause 0.5
     music The_Heat
+    pause 0.5
     img 901309
-    bardi_t "И с чего она взяла, что мне будет интересно смотреть на фотки плюшевых зверей?"
-    bardi "Хотя, это весьма мило..."
     show screen dream()
     with Dissolve(1.0)
+    show screen image_shake("/images/Slides/img_901309.jpg")
     w
+    bardi_t "И с чего она взяла, что мне будет интересно смотреть на фотки плюшевых зверей?"
+    bardi "Хотя, это весьма мило..."
+    w
+    $ camera_icon_enabled = True
     # кадр снова меняется на тетю - Дэйзи кладет руку на его бедро и он замолкает
-    imgf 901310
+    img white_screen
+    with diss
+    pause 0.5
+#    music The_Heat
+    pause 0.5
+    img 901310
+    with Dissolve(1.0)
     w
     sound Jump2
     img 901311 hpunch
@@ -1634,19 +1657,30 @@ label ep03_dialogues3_family_evening_6:
     img 901310 hpunch
     bardi "?!?!"
     # смена кадра снова на директрису - она в своем черном кожанном БДСМ костюме, с дилдо, в откровенной позе (резкий контраст с предыдущими кадрами директрисы)
+    $ camera_icon_enabled = False
+    music stop
     img white_screen
     with diss
-    pause 1.0
+    pause 0.5
     music The_Heat
+    pause 0.5
     img 901315
-    bardi_t "Ну нихрена себе!"
     show screen dream()
     with Dissolve(1.0)
+    show screen image_shake("/images/Slides/img_901315.jpg")
+    bardi_t "Ну нихрена себе!"
     w
     # Дэйзи все также сидит положив ладонь на бедро Барди и поглядывает на его пах
     # у него начинает вставать но это не особо заметно. Гг слегка удивленно смотрит на Дэйзи
-    imgf 901316
+    $ camera_icon_enabled = True
+    music stop
+    img white_screen
+    with diss
+    pause 0.5
     music Step_By_Step
+    pause 0.5
+    img 901316
+    with Dissolve(1.0)
     bardi "Для взрослых? То есть... Все эти штуки?.."
     imgd 901317
     daisy "Да. Дилдо, вибраторы... Также есть лубриканты, презервативы... Ну и все тому подобное..."
@@ -1675,80 +1709,113 @@ label ep03_dialogues3_family_evening_6:
     bardi_t "А вот это интересно..."
     menu:
         "Одногруппница.":
+            music stop
+            $ camera_icon_enabled = False
             img white_screen
             with diss
-            pause 1.0
+            pause 0.5
             music Stylish_Hip_Hop_Rock
+            pause 0.5
             img 901321 #Кэти
             show screen dream()
             with Dissolve(1.0)
+            show screen image_shake("/images/Slides/img_901321.jpg")
             w
             img 901322
             show screen dream()
             with fade
+            show screen image_shake("/images/Slides/img_901322.jpg")
             w
             pass
         "Сара.":
+            music stop
+            $ camera_icon_enabled = False
             img white_screen
             with diss
-            pause 1.0
+            pause 0.5
             music Stylish_Hip_Hop_Rock
+            pause 0.5
             img 901323 #Сара
             show screen dream()
             with Dissolve(1.0)
+            show screen image_shake("/images/Slides/img_901323.jpg")
             w
             img 901324
             show screen dream()
             with fade
+            show screen image_shake("/images/Slides/img_901324.jpg")
             w
             pass
         "Хлоя.":
+            music stop
+            $ camera_icon_enabled = False
             img white_screen
             with diss
-            pause 1.0
+            pause 0.5
             music Stylish_Hip_Hop_Rock
+            pause 0.5
             img 901325 #Хлоя
             show screen dream()
             with Dissolve(1.0)
+            show screen image_shake("/images/Slides/img_901325.jpg")
             w
             img 901326
             show screen dream()
             with fade
+            show screen image_shake("/images/Slides/img_901326.jpg")
             w
             pass
         "Роуз.":
+            music stop
+            $ camera_icon_enabled = False
             img white_screen
             with diss
-            pause 1.0
+            pause 0.5
             music Stylish_Hip_Hop_Rock
+            pause 0.5
             img 901327 #Роуз
             show screen dream()
             with Dissolve(1.0)
+            show screen image_shake("/images/Slides/img_901327.jpg")
             w
             img 901328
             show screen dream()
             with fade
+            show screen image_shake("/images/Slides/img_901328.jpg")
             w
             pass
         "Эмили.":
+            music stop
+            $ camera_icon_enabled = False
             img white_screen
             with diss
-            pause 1.0
+            pause 0.5
             music Stylish_Hip_Hop_Rock
+            pause 0.5
             img 901329 #Эмили
             show screen dream()
             with Dissolve(1.0)
+            show screen image_shake("/images/Slides/img_901329.jpg")
             w
             img 901330
             show screen dream()
             with fade
+            show screen image_shake("/images/Slides/img_901330.jpg")
             w
             pass
+    $ camera_icon_enabled = True
+    music stop
+    img white_screen
+    with diss
+    pause 0.5
+    music Step_By_Step
+    pause 0.5
     # смена кадра на Дейзи
     # Дэйзи видит что Барди заинтересовался и с ухмылкой продолжает эротично наклонившись к нему
     # нужно показать ее с красивых ракурсов, будто она пытается соблазнить Барди. кладет руку на бедро и так далее.
     # Барди переводит взгляд на ее лицо
-    imgf 901333
+    img 901333
+    with Dissolve(1.0)
     daisy "Ну а другая половина - мои ровесницы..."
     # Барди смотрит на прелести Дэйзи
     imgd 901334
@@ -1757,61 +1824,86 @@ label ep03_dialogues3_family_evening_6:
     # смена кадра - миссис Морис в сексуальной позе в нижнем белье
     menu:
         "Миссис Морис.":
+            music stop
+            $ camera_icon_enabled = False
             img white_screen
             with diss
-            pause 1.0
+            pause 0.5
+            music Stylish_Hip_Hop_Rock
+            pause 0.5
             img 901331 #Морис
             show screen dream()
             with Dissolve(1.0)
+            show screen image_shake("/images/Slides/img_901331.jpg")
             bardi_t "Очень даже интересно..."
             daisy "И плюс ко всему этому - ты будешь еще и зарабатывать. По 5 баксов за выход на работу."
             img 901332
             show screen dream()
             with fade
+            show screen image_shake("/images/Slides/img_901332.jpg")
             bardi "Ага. Заманчиво..."
             pass
         "Миссис Кларк.":
+            music stop
+            $ camera_icon_enabled = False
             img white_screen
             with diss
-            pause 1.0
+            pause 0.5
+            music Stylish_Hip_Hop_Rock
+            pause 0.5
             img 901412 #Кларк
             show screen dream()
             with Dissolve(1.0)
+#            show screen image_shake("/images/Slides/img_901412.jpg")
             bardi_t "Очень даже интересно..."
             daisy "И плюс ко всему этому - ты будешь еще и зарабатывать. По 5 баксов за выход на работу."
             img 901413
             show screen dream()
             with fade
+            show screen image_shake("/images/Slides/img_901413.jpg")
             bardi "Ага. Заманчиво..."
             pass
         "Мисс Янг.":
+            music stop
+            $ camera_icon_enabled = False
             img white_screen
             with diss
-            pause 1.0
+            pause 0.5
+            music Stylish_Hip_Hop_Rock
+            pause 0.5
             img 901414 #Янг
             show screen dream()
             with Dissolve(1.0)
+#            show screen image_shake("/images/Slides/img_901414.jpg")
             bardi_t "Очень даже интересно..."
             daisy "И плюс ко всему этому - ты будешь еще и зарабатывать. По 5 баксов за выход на работу."
             img 901415
             show screen dream()
             with fade
+            show screen image_shake("/images/Slides/img_901415.jpg")
             bardi "Ага. Заманчиво..."
             pass
         "Миссис Адамс.":
+            music stop
+            $ camera_icon_enabled = False
             img white_screen
             with diss
-            pause 1.0
+            pause 0.5
+            music Stylish_Hip_Hop_Rock
+            pause 0.5
             img 901416 #Адамс
             show screen dream()
             with Dissolve(1.0)
+#            show screen image_shake("/images/Slides/img_901416.jpg")
             bardi_t "Очень даже интересно..."
             daisy "И плюс ко всему этому - ты будешь еще и зарабатывать. По 5 баксов за выход на работу."
             img 901417
             show screen dream()
             with fade
+            show screen image_shake("/images/Slides/img_901417.jpg")
             bardi "Ага. Заманчиво..."
             pass
+    $ camera_icon_enabled = True
     # фантазия рушится (смена кадра на тетю), Барди возвращается в реальность ошарашенный
     music stop
     sound plastinka1b

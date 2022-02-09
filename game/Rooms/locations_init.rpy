@@ -82,6 +82,20 @@ label locations_beach1:
     $ add_location("beach_loungers", caption=t_("ПЛЯЖ"), label="beach_loungers", init_label="beach_loungers_init", parent="BEACH")
     return
 
+label locations_beach2:
+    $ add_location("beach_park", caption=t_("ПАРК"), label="beach_park", init_label="beach_park_init", parent="BEACH")
+    return
+
+label locations_daisy1:
+    $ add_location("DAISY", caption="", label="empty_label", parent="World")
+    $ add_location("daisy_street", caption=t_("ДОМ ДЕЙЗИ"), label="daisy_street", init_label="daisy_street_init", parent="DAISY")
+    return
+
+label locations_arnie1:
+    $ add_location("ARNIE", caption="", label="empty_label", parent="World")
+    $ add_location("arnie_street", caption=t_("ДОМ АРНИ"), label="arnie_street", init_label="arnie_street_init", parent="ARNIE")
+    return
+
 
 
 

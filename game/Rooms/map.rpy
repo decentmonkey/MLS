@@ -94,6 +94,16 @@ label map_environment:
     if obj_name == "Teleport_BEACH":
         call process_drive_teleport("BEACH", "beach_loungers")
         return
+    if obj_name == "Teleport_PARK":
+        call process_drive_teleport("PARK", "beach_park")
+        return
+    if obj_name == "Teleport_DAISY":
+        call process_drive_teleport("DAISY", "daisy_street")
+        return
+    if obj_name == "Teleport_ARNIE":
+        call process_drive_teleport("ARNIE", "arnie_street")
+        return
+        
     m "drive!"
     return
 
@@ -153,4 +163,16 @@ label start_walk_direct():
 
 label map_init_beach:
     $ map_objects["Teleport_BEACH"] = {"text" : t_("ПЛЯЖ"), "xpos" : 883, "ypos" : 819, "base" : "map_marker", "state" : "visible"}
+    return
+
+label map_init_park:
+    $ map_objects["Teleport_PARK"] = {"text" : t_("ПАРК"), "xpos" : 1354, "ypos" : 815, "base" : "map_marker", "state" : "visible"}
+    return
+
+label map_init_daisy:
+    $ map_objects["Teleport_DAISY"] = {"text" : t_("ДОМ ДЕЙЗИ"), "xpos" : 1475, "ypos" : 305, "base" : "map_marker", "state" : "visible"}
+    return
+
+label map_init_arnie:
+    $ map_objects["Teleport_ARNIE"] = {"text" : t_("ДОМ АРНИ"), "xpos" : 989, "ypos" : 569, "base" : "map_marker", "state" : "visible"}
     return

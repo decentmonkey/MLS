@@ -2,8 +2,12 @@ default sister1RoomDoorLocked = False
 default sister2RoomDoorLocked = False
 default landLordRoomDoorLocked = False
 default bathroomDoorLocked = False
+default houseLifeStage = 0
 
+# houseLifeStage == 1 - никого нет, все открыто, кроме спальни
+# houseLifeStage == 2 - все дома, все закрыто
 label house_life:
+
     if day_time_idx == 0:
         # утро
         python:
@@ -106,5 +110,24 @@ label house_life:
             # Генри
             move_object("Henry", "house_bedroom_landlord")
             houseBedroomLandlordHenrySuffix = renpy.random.randint(1, 3)
+
+    if houseLifeStage == 1:
+        python:
+            move_object("Sister1", "empty")
+            move_object("Sister2", "empty")
+            move_object("Sophie", "empty")
+            sister1RoomDoorLocked = False
+            sister2RoomDoorLocked = False
+            landLordRoomDoorLocked = True
+        return
+    if houseLifeStage == 2:
+        python:
+            move_object("Sister1", "house_sister1")
+            move_object("Sister2", "house_sister2")
+            move_object("Sophie", "house_bedroom_landlord")
+            sister1RoomDoorLocked = True
+            sister2RoomDoorLocked = True
+            landLordRoomDoorLocked = True
+        return
 
     return

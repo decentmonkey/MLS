@@ -331,18 +331,81 @@ label ep13_quests8_home1_breakfast:
     $ set_object_follow("Teleport_BEACH", scene="map")
 
     $ add_hook("Teleport_Coridor1", "ep01_dialogues2_day1_family_1_12", scene="college_street", quest="day4")
-    $ add_hook("before_open", "ep13_quests9_beach1", scene="beach_loungers")
+    $ add_hook("before_open", "ep13_quests9_beach1", scene="beach_loungers", once=True, quest="day4")
     call refresh_scene_fade_long()
     return
 
 label ep13_quests9_beach1:
     call ep03_dialogues4_bike_rental_3()
+    call beach_loungers_init2()
+    call locations_beach2()
+    call map_init_park()
+
+    $ remove_hook(label="ep13_quests8_home1_breakfast")
+
+    $ clear_object_follow_all()
+
     $ questHelp("work_2", True)
+    $ houseLifeStage = 1
+    $ add_hook("FatherFriend", "ep03_dialogues4_bike_rental_3a", scene="beach_park", label="fatherfriend_park")
+
+    call ep13_quests10_daisy_init()
+
     call changeDayTime("day")
+    call process_change_map_location("PARK")
+    call change_scene("beach_park", "Fade_long")
     return
 
+label ep13_quests10_daisy_init:
+    $ questHelp("work_3")
+    call locations_daisy1()
+    call map_init_daisy()
+    $ add_hook("before_open", "ep13_quests10_daisy_evening", scene="daisy_street", quest="day4", once=True)
+    $ add_hook("Teleport_LivingRoom", "ep13_quests10_daisy1", scene="daisy_street", quest="day4", once=True)
+    $ add_hook("enter_scene", "ep03_dialogues3_family_evening_5", scene="daisy_street", quest="day4", once=True)
+    $ set_object_follow("Teleport_Map", scene="beach_loungers")
+    $ set_object_follow("Teleport_Map", scene="beach_park")
+    $ set_object_follow("Teleport_LivingRoom", scene="daisy_street")
+    $ set_object_follow("Teleport_DAISY", scene="map")
+    return
 
+label ep13_quests10_daisy_evening:
+    $ houseLifeStage = 2
+    call changeDayTime("evening")
+    return
 
+label ep13_quests10_daisy1:
+    call ep03_dialogues3_family_evening_6()
+    $ questLog(15, True)
+    $ questHelp("work_3", True)
+    $ clear_object_follow_all()
+    $ add_hook("enter_scene", "ep13_quests11_party1", scene="daisy_street", quest="day4", once=True)
+    call change_scene("house_street")
+    call change_scene("daisy_street")
+    call refresh_scene_fade_long()
+    return False
+
+label ep13_quests11_party1:
+    $ add_hook("phone_close", "ep13_quests11_party2", scene="phone", once=True, quest="college_day3")
+    $ seanCallStage = 5
+    $ phone_incoming_call("Sean")
+    return
+
+label ep13_quests11_party2:
+    $ questHelp("college_27")
+    call locations_arnie1()
+    call map_init_arnie()
+    $ set_object_follow("Teleport_Map", scene="daisy_street")
+    $ set_object_follow("Teleport_LivingRoom", scene="arnie_street")
+    $ set_object_follow("Teleport_ARNIE", scene="map")
+    $ add_hook("Teleport_LivingRoom", "ep13_quests11_party3", scene="arnie_street", quest="day4", once=True)
+
+    return
+
+label ep13_quests11_party3:
+    $ questHelp("college_27", True)
+    call ep03_dialogues2_college_12()
+    return False
 
 
 

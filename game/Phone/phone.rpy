@@ -70,6 +70,9 @@ label phone_call_contact:
             return
         
     if obj_name == "Sean":
+        if seanCallStage == 5:
+            call sean_chat6()
+            return
         if seanCallStage == 4:
             call sean_chat5()
             return
