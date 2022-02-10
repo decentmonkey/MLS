@@ -375,7 +375,31 @@ define offsets_table = {
     "college_algebra_visitor7_1_overlay":(437,1583,694,1766),
     "college_algebra_ruler_mask":(59,1185,127,1237),
     "college_algebra_teleport_coridor5_mask":(82,454,452,537),
-    "housefriend_livingroom_tv_mask":(320,276,605,660)
+    "housefriend_livingroom_tv_mask":(320,276,605,660),
+    "auntie_street_enter_mask":(606,1023,734,1167),
+    "party1_alco1_mask":(648,721,967,917),
+    "party1_alco2_mask":(574,864,877,1028),
+    "party1_alco3_mask":(616,1609,709,1734),
+    "beach_park_fatherfriend":(564,894,713,995),
+    "beach_park_fatherfriend_overlay":(575,792,738,1013),
+    "party1_classmate10":(288,1142,764,1266),
+    "party1_classmate10_overlay":(654,1123,938,1253),
+    "party1_classmate1classmate11":(387,551,801,775),
+    "party1_classmate1classmate11_overlay":(382,431,842,767),
+    "party1_classmate3":(629,839,1023,1243),
+    "party1_classmate3_overlay":(690,821,1079,1289),
+    "party1_classmate7":(226,1639,1079,1892),
+    "party1_classmate7_overlay":(894,1609,1079,1919),
+    "party1_classmate9classmatenerd":(437,359,914,772),
+    "party1_classmate9classmatenerd_overlay":(566,349,932,758),
+    "party1_classmatefrik":(510,1361,881,1649),
+    "party1_classmatefrik_overlay":(532,1355,1079,1787),
+    "party1_girlfrik":(267,1412,804,1558),
+    "party1_girlfrik_overlay":(710,1382,1079,1560),
+    "party1_harryemily":(349,769,779,1074),
+    "party1_harryemily_overlay":(305,676,784,1139),
+    "party1_nicoleclassmate1":(211,110,1079,353),
+    "party1_nicoleclassmate1_overlay":(866,58,1079,404)
 }
 
 init python:
