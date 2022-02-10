@@ -516,8 +516,6 @@ define offsets_blink = {
     "img_901404" : {"Father_friend":[816,210,5,"1"]},
     "img_901406" : {"Father_friend":[867,200,5,"1"]},
     "img_901407" : {"Father_friend":[913,200,5,"1"]},
-    "img_901412" : {"Teacher8":[925,140,5,"3"]},
-    "img_901414" : {"Principal_secretary":[990,175,5,"3"]},
     "img_901416" : {"Teacher5":[985,135,5,"1"]},
     "img_901421" : {"Bardie_friend_black":[761,355,5,"1"]},
     "img_901422" : {"Bardie_friend_black":[895,315,5,"1"]},
@@ -607,7 +605,9 @@ define offsets_blink = {
     "img_910970" : {"Classmate1":[768,250,5,"5"]},
     "img_910990" : {"Nicole":[870,165,5,"1"]},
     "img_911006" : {"Classmate1":[1280,205,5,"1"],"Nicole":[590,285,5,"1"]},
-    "img_911011" : {"Nicole":[921,240,5,"1"]}
+    "img_911011" : {"Nicole":[921,240,5,"1"]},
+    "img_901412" : {"Teacher8":[920,135,5,"3"]},
+    "img_901414" : {"Principal_secretary":[945,120,5,"3"]}
 #offsets_blink_finish
 }
 
