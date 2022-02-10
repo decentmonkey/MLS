@@ -405,6 +405,8 @@ label ep13_quests11_party2:
 label ep13_quests11_party3:
     $ questHelp("college_27", True)
     call ep03_dialogues2_college_12()
+    call locations_party1()
+    call change_scene("party1", "Fade_long")
     return False
 
 

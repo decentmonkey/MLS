@@ -96,6 +96,10 @@ label locations_arnie1:
     $ add_location("arnie_street", caption=t_("ДОМ АРНИ"), label="arnie_street", init_label="arnie_street_init", parent="ARNIE")
     return
 
+label locations_party1:
+    $ add_location("party1", caption=t_("ДОМ АРНИ"), label="party1", init_label="party1_init", parent="arnie_street")
+    return
+
 
 
 
