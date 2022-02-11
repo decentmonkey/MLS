@@ -878,10 +878,10 @@ label ep01_dialogues1_start_1b1:
 label ep01_dialogues1_start_1b:
     scene black_screen
     with Dissolve(1)
-    music stop
-    call textonblack(t_("НЕДАЛЕКОЕ БУДУЩЕЕ"))
-    scene black_screen
-    with Dissolve(1)
+#    music stop
+#    call textonblack(t_("НЕДАЛЕКОЕ БУДУЩЕЕ"))
+#    scene black_screen
+#    with Dissolve(1)
     fadeblack 1.5
     # темный коридор, в конце коридора через щель приоткрытой двери виден свет
     # взволнованное тяжелое дыхание, затем осторожные шаги и скрип пола
