@@ -438,6 +438,8 @@ label ep13_quests11_party4:
         $ set_active("GirlFrik", False, scene="party1")
         $ set_active("NicoleClassmate1", True, scene="party1")
 
+    if obj_name == "ClassmateFrik":
+        call ep03_dialogues2_college_20()
     
     if obj_name == "NicoleClassmate1":
         # при клике на парочку целующихся девчонок
