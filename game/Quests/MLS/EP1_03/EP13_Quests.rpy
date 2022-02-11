@@ -1,4 +1,9 @@
 default ep13_update_init_flag = False
+
+default ep13_after_chloe_flag = False
+default ep13_after_leo_flag = False
+default ep13_end_update_type = 0
+
 label ep13_update_init:
     if ep13_update_init_flag == True:
         return
@@ -409,5 +414,51 @@ label ep13_quests11_party3:
     call change_scene("party1", "Fade_long")
     return False
 
+label ep13_quests11_party4:
+    if obj_name == "Alco1" or obj_name == "Alco2" or obj_name == "Alco3":
+        # при клике на столик с алкоголем
+        call ep03_dialogues2_college_13()
+    
+    if obj_name == "Classmate9ClassmateNerd":
+        if ep13_after_chloe_flag == False:
+            # при клике на Лео до общения с Хлоей
+            call ep03_dialogues2_college_13a()
+        else:
+            call ep03_dialogues2_college_14()
+            $ ep13_after_leo_flag = True
+
+    if obj_name == "HarryEmily":
+        # при клике на Эмили и Гарри
+        call ep03_dialogues2_college_15()
+
+    if obj_name == "GirlFrik":
+        # при клике на фрика Хлою
+        call ep03_dialogues2_college_16()
+        $ set_active("ClassmateFrik", False, scene="party1")
+        $ set_active("GirlFrik", False, scene="party1")
+        $ set_active("NicoleClassmate1", True, scene="party1")
+
+    
+    if obj_name == "NicoleClassmate1":
+        # при клике на парочку целующихся девчонок
+        call ep03_dialogues2_college_19()
+        $ ep13_end_update_type = 1
+        jump ep13_quests11_party5_end
+
+    if obj_name == "Classmate7":
+        call ep03_dialogues2_college_16_sarah()
+        if _return == 2:
+            $ set_active("Classmate7", False, scene="party1")
+#            $ ep13_end_update_type = 2
+#            jump ep13_quests11_party5_end
+
+
+    call refresh_scene_fade()
+    return
+
+
+label ep13_quests11_party5_end:
+    jump end_update
+    return
 
 
