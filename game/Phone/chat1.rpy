@@ -149,7 +149,7 @@ label sean_chat4:
 label sean_chat5:
     $ phone_start_new_chat("sean_chat5", "Sean")
     call phone_chat([
-        ["", t_("В воскресенье вечеринка у какого-то Уокера.")],
+        ["", t_("В субботу вечеринка у какого-то Уокера.")],
         ["", t_("Ты знаешь этого чувака?")],
         ["sean", t_("Ага. Давай позже. Я на математике.")],
         ["sean", "image", "/images/Phone/Photos/clark_photo1.png", 3]
