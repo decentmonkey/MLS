@@ -1526,9 +1526,11 @@ screen blink_screen1(blink_image, blink_offset, blink_preset):
         blur1Scaled = im.FactorScale(blur1, imageSizeRatio[0], height=imageSizeRatio[1])
         image2 = AlphaMask(blink1, blur1Scaled)
     fixed:
-        add image2:
+        if blur_effect == 0:
+            add image2
             xpos getRes(blink_offset[0])
             ypos getRes(blink_offset[1])
+
 
 screen blink_screen2(blink_image, blink_offset, blink_preset):
     layer "master"
@@ -1542,9 +1544,10 @@ screen blink_screen2(blink_image, blink_offset, blink_preset):
         blur1Scaled = im.FactorScale(blur1, imageSizeRatio[0], height=imageSizeRatio[1])
         image2 = AlphaMask(blink1, blur1Scaled)
     fixed:
-        add image2:
-            xpos getRes(blink_offset[0])
-            ypos getRes(blink_offset[1])
+        if blur_effect == 0:
+            add image2:
+                xpos getRes(blink_offset[0])
+                ypos getRes(blink_offset[1])
 
 screen blink_screen3(blink_image, blink_offset, blink_preset):
     layer "master"
@@ -1558,9 +1561,10 @@ screen blink_screen3(blink_image, blink_offset, blink_preset):
         blur1Scaled = im.FactorScale(blur1, imageSizeRatio[0], height=imageSizeRatio[1])
         image2 = AlphaMask(blink1, blur1Scaled)
     fixed:
-        add image2:
-            xpos getRes(blink_offset[0])
-            ypos getRes(blink_offset[1])
+        if blur_effect == 0:
+            add image2:
+                xpos getRes(blink_offset[0])
+                ypos getRes(blink_offset[1])
 
 screen blink_screen4(blink_image, blink_offset, blink_preset):
     layer "master"
@@ -1574,9 +1578,10 @@ screen blink_screen4(blink_image, blink_offset, blink_preset):
         blur1Scaled = im.FactorScale(blur1, imageSizeRatio[0], height=imageSizeRatio[1])
         image2 = AlphaMask(blink1, blur1Scaled)
     fixed:
-        add image2:
-            xpos getRes(blink_offset[0])
-            ypos getRes(blink_offset[1])
+        if blur_effect == 0:
+            add image2:
+                xpos getRes(blink_offset[0])
+                ypos getRes(blink_offset[1])
 
 screen blink_screen5(blink_image, blink_offset, blink_preset):
     layer "master"
@@ -1590,9 +1595,10 @@ screen blink_screen5(blink_image, blink_offset, blink_preset):
         blur1Scaled = im.FactorScale(blur1, imageSizeRatio[0], height=imageSizeRatio[1])
         image2 = AlphaMask(blink1, blur1Scaled)
     fixed:
-        add image2:
-            xpos getRes(blink_offset[0])
-            ypos getRes(blink_offset[1])
+        if blur_effect == 0:
+            add image2:
+                xpos getRes(blink_offset[0])
+                ypos getRes(blink_offset[1])
 
 screen blink_screen6(blink_image, blink_offset, blink_preset):
     layer "master"
@@ -1606,9 +1612,10 @@ screen blink_screen6(blink_image, blink_offset, blink_preset):
         blur1Scaled = im.FactorScale(blur1, imageSizeRatio[0], height=imageSizeRatio[1])
         image2 = AlphaMask(blink1, blur1Scaled)
     fixed:
-        add image2:
-            xpos getRes(blink_offset[0])
-            ypos getRes(blink_offset[1])
+        if blur_effect == 0:
+            add image2:
+                xpos getRes(blink_offset[0])
+                ypos getRes(blink_offset[1])
 
 ################################################################################
 ## In-game screens

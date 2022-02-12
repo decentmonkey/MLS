@@ -2,6 +2,7 @@ label party1:
     $ miniMapData = []
     $ sceneIsStreet = True
     $ scene_image = "scene_Party1"
+#    music party_ambience
     return
 
 label party1_init:

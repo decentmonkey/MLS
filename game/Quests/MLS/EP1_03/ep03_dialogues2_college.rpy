@@ -1449,7 +1449,7 @@ label ep03_dialogues2_college_12:
     img 901559 hpunch
     w
     sound step_stairs_short
-    imgf 901600
+    imgf 901560
     w
     # после чего синеволосый показывает Барди фак и заходит в дом
     # classmate4 смотрит на Барди
@@ -1932,10 +1932,11 @@ label ep03_dialogues2_college_14:
     sound bottle1
     w
     sound2 snd_drinking_water
-    imgf 901580
-    w
-    imgd 901581
-    w
+    if get_active_objects("Classmate7", scene="party1") != False:
+        imgf 901580
+        w
+        imgd 901581
+        w
     # пьет и смотрит в сторону зануды Сары, которая недовольная стоит в углу
     $ mlsBardiDay4College6 = day # Барди пообщался на вечеринке с ботаном Лео
     return
@@ -2035,6 +2036,7 @@ label ep03_dialogues2_college_18:
     pause 1.5
     music Shining_Through
     sound2 sex_moan_man
+    music2 male_masturbation1
     imgfl 911077
     w
     imgf 911078
@@ -2043,6 +2045,7 @@ label ep03_dialogues2_college_18:
     bardi "Эй, чувак! Тебя там ищет какая-то девчонка."
     bardi "Сказала, что ждет тебя в гостиной."
     # парень испуганно-полупьяно подрывается и натягивает штаны
+    music2 stop
     sound Jump2
     img 911080 hpunch
     student_boy2 "Я уже все. Ухожу!"
@@ -2142,6 +2145,12 @@ label ep03_dialogues2_college_18:
     img 911102 hpunch
     sound2 snd_drinking_water
     bardi "Хм. Давно пора."
+    $ blur_effect = 1
+    imgd 911102
+    w
+    $ blur_effect = 0
+    imgd 911102
+    w
     imgd 911103
     bardi "Ну так что?"
     student_sarah "Не хочется!"
@@ -2159,6 +2168,12 @@ label ep03_dialogues2_college_18:
     sound snd_drinking_water
     imgd 911107
     bardi "Эй-эй, полегче! Не так быстро..."
+    $ blur_effect = 2
+    imgd 911107
+    w
+    $ blur_effect = 0
+    imgd 911107
+    w
     # она отлепляется от бутылки и вытирает рот
     imgd 911108
     student_sarah "Вообще, это не твое дело, [mcname], встречалась ли я с кем-нибудь или нет!.."
@@ -2190,6 +2205,8 @@ label ep03_dialogues2_college_18:
     student_sarah "Не называй меня так!.."
     student_sarah "И, вообще-то, я умею ВСЕ!"
     bardi "Тогда докажи..."
+    student_sarah "..."
+    student_sarah "......"
     # Сара пьяно и задумчиво смотрит на Барди
     imgd 911113
     student_sarah "Садись."
@@ -2203,7 +2220,12 @@ label ep03_dialogues2_college_18:
     w
     imgd 911116
     student_sarah "Снимай штаны."
+    $ blur_effect = 2
+    imgd 911116
     bardi "Ахаха! Ты чего? Зачем?"
+    $ blur_effect = 0
+    imgd 911116
+    w
     # в такой же важной позе Сара указывает на Барди пальцем.
     # Изобразите ее как важную фифу, вот она стоит полубоком
     # и из прошлой позы разворачивает правую руку от локтя в сторону Барди, кисть расслабленна, тыльной стороной вниз, а указательный палец направлен в сторону Барди.
@@ -2381,7 +2403,7 @@ label ep03_dialogues2_college_18:
     imgf 911151
     bardi_t "Опа! А вот это уже интересно!"
     bardi_t "Надо скорее избавляться от пьяной зануды..."
-    steam_achievement("ach_nerd1")
+    $ steam_achievement("ach_nerd1")
 
     # затемнение, звук мотора
     fadeblack
@@ -2428,8 +2450,9 @@ label ep03_dialogues2_college_19:
     bardi "Может, пойдем в более тихое место? Поболтаем?"
     # Сара в этот момент бросает на Барди уничтожающий взгляд и снова отворачивается
     ### проверка, есть ли Сара в помещении
-#    imgf 911163
-#    student_sarah "!!!"
+    if get_active_objects("Classmate7", scene="party1") != False:
+        imgf 911163
+        student_sarah "!!!"
     # девочка с каре улыбается Барди и подмигивает подружке
     imgd 911161
     student_girl3 "Отличная идея!"
@@ -2438,9 +2461,10 @@ label ep03_dialogues2_college_19:
     imgd 911162
     w
     ### проверка, есть ли Сара в помещении
-#    sound highheels_short_walk
-#    imgf 911164
-#    w
+    if get_active_objects("Classmate7", scene="party1") != False:
+        sound highheels_short_walk
+        imgf 911164
+        w
     # смена кадра - они втроем заходят на кухню
     # смена кадра на кухню дома
     # на кухне та же полутьма и такой же бардак, как в гостиной - везде бутылки и стаканчики
@@ -3268,7 +3292,10 @@ label ep03_dialogues2_college_19:
     # Барди остраняется от Кэти и падает на кровать
     # девчонки обнимают его
     # затемнение - конец v3
-    fadeblack 2.0
+    img white_screen
+    with Dissolve(2.0)
+    w
+#    fadeblack 2.0
     return
 
 label ep03_dialogues2_college_20:
@@ -3281,7 +3308,7 @@ label ep03_dialogues2_college_20:
 
 label ep03_dialogues2_college_21:
     # смотрит на целующуюся парочку на диване
-    img 911225
+    imgf 911225
     bardi_t "Воу! Нет, им сейчас уж точно не до меня..."
 #    bardi_t "Да и два хрена - это хорошо лишь в том случае, когда между ними есть хотя бы одна девушка."
 #    bardi_t "Стоп! Это что, девушка?!"
@@ -3290,7 +3317,7 @@ label ep03_dialogues2_college_21:
 
 label ep03_dialogues2_college_22:
     # смотрит на пьяное тело, лежащее у стола
-    img 911224
+    imgf 911224
     bardi_t "Твою мать, это еще кто? Он живой вообще?"
     bardi_t "Хотя, кому какая разница?.. Он пришел не со мной, а значит мне, как и всем, насрать."
     bardi_t "Знать бы только, чем он так убился?.. Не хотелось бы закончить сегодняшний вечер, как этот тип."

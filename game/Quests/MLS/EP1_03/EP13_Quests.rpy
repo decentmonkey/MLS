@@ -411,15 +411,18 @@ label ep13_quests11_party3:
     $ questHelp("college_27", True)
     call ep03_dialogues2_college_12()
     call locations_party1()
+    $ homeButtonEnabled = False
     call change_scene("party1", "Fade_long")
     return False
 
 label ep13_quests11_party4:
     if obj_name == "Alco1" or obj_name == "Alco2" or obj_name == "Alco3":
         # при клике на столик с алкоголем
+        music Let_Me_Let_You_Let_Go_Vocal
         call ep03_dialogues2_college_13()
     
     if obj_name == "Classmate9ClassmateNerd":
+        music Let_Me_Let_You_Let_Go_Vocal
         if ep13_after_chloe_flag == False and 1==2:
             # при клике на Лео до общения с Хлоей
             call ep03_dialogues2_college_13a()
@@ -451,6 +454,7 @@ label ep13_quests11_party4:
         call ep03_dialogues2_college_16_sarah()
         if _return == 2:
             $ set_active("Classmate7", False, scene="party1")
+            music Let_Me_Let_You_Let_Go_Vocal
 #            $ ep13_end_update_type = 2
 #            jump ep13_quests11_party5_end
 
