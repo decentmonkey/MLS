@@ -420,7 +420,7 @@ label ep13_quests11_party4:
         call ep03_dialogues2_college_13()
     
     if obj_name == "Classmate9ClassmateNerd":
-        if ep13_after_chloe_flag == False:
+        if ep13_after_chloe_flag == False and 1==2:
             # при клике на Лео до общения с Хлоей
             call ep03_dialogues2_college_13a()
         else:
@@ -454,12 +454,22 @@ label ep13_quests11_party4:
 #            $ ep13_end_update_type = 2
 #            jump ep13_quests11_party5_end
 
+    if obj_name == "Classmate10":
+        call ep03_dialogues2_college_23()
+        return
+
+    if obj_name == "Classmate1Classmate11":
+        call ep03_dialogues2_college_21()
+
+    if obj_name == "Classmate3":
+        call ep03_dialogues2_college_22()
 
     call refresh_scene_fade()
     return
 
 
 label ep13_quests11_party5_end:
+    $ steam_achievement("ach_end3")
     jump end_update
     return
 

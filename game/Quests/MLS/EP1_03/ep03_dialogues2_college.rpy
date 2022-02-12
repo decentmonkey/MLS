@@ -1692,7 +1692,8 @@ label ep03_dialogues2_college_16_sarah:
 #    menu:
 #        "Подойти к зануде.":
             # если Барди выпил виски в начале вечеринки
-    if mlsBardiDay4College5 > 0 and ep13_after_leo_flag == True:
+    if ep13_after_chloe_flag == True or ep13_after_leo_flag == True:
+#    if mlsBardiDay4College5 > 0 and ep13_after_chloe_flag == True:
         img 901579
         bardi_t "Интересно, не откажется ли зануда от выпивки?.."
         jump ep03_dialogues2_college_18
@@ -2158,6 +2159,8 @@ label ep03_dialogues2_college_18:
     img 911151
     bardi_t "Опа! А вот это уже интересно!"
     bardi_t "Надо скорее избавляться от пьяной зануды..."
+    steam_achievement("ach_nerd1")
+
     # затемнение, звук мотора
     return 2
 
@@ -2835,4 +2838,18 @@ label ep03_dialogues2_college_20:
     img 911223
     student_jacob "Придурок." # показывает Барди фак и отворачивается
     return
+
+label ep03_dialogues2_college_21:
+    # смотрит на целующуюся парочку на диване
+    return
+
+label ep03_dialogues2_college_22:
+    # смотрит на пьяное тело, лежащее у стола
+    return
+
+label ep03_dialogues2_college_23:
+    # делает комментарий о девочке, которая потом танцует на столе (справа от Элими с Гарри)
+    # без арта
+    return
+
 # в v4 он проснется утром с диким похмельем у себя дома, не помня как пришел домой

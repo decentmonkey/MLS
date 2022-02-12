@@ -13,7 +13,7 @@ label party1_init:
     $ add_object_to_scene("GirlFrik", {"type" : 2, "base" : "Party1_GirlFrik", "click" : "party1_environment", "actions" : "l", "zorder":0}, scene="party1")
     $ add_object_to_scene("ClassmateFrik", {"type" : 2, "base" : "Party1_ClassmateFrik", "click" : "party1_environment", "actions" : "l", "zorder":2}, scene="party1")
     $ add_object_to_scene("Classmate9ClassmateNerd", {"type" : 2, "base" : "Party1_Classmate9ClassmateNerd", "click" : "party1_environment", "actions" : "l", "zorder":6}, scene="party1")
-    $ add_object_to_scene("Classmate10", {"type" : 2, "base" : "Party1_Classmate10", "click" : "party1_environment", "actions" : "l", "zorder":0, "selectable": False}, scene="party1")
+    $ add_object_to_scene("Classmate10", {"type" : 2, "base" : "Party1_Classmate10", "click" : "party1_environment", "actions" : "l", "zorder":0}, scene="party1")
     $ add_object_to_scene("Classmate3", {"type" : 2, "base" : "Party1_Classmate3", "click" : "party1_environment", "actions" : "l", "zorder":6}, scene="party1")
     $ add_object_to_scene("Classmate1Classmate11", {"type" : 2, "base" : "Party1_Classmate1Classmate11", "click" : "party1_environment", "actions" : "l", "zorder":2}, scene="party1")
     $ add_object_to_scene("Classmate7", {"type" : 2, "base" : "Party1_Classmate7", "click" : "party1_environment", "actions" : "l", "zorder":10}, scene="party1")
