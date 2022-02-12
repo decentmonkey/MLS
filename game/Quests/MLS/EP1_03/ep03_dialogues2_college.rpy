@@ -1019,7 +1019,7 @@ label ep03_dialogues2_college_5:
     img 901530
     show screen dream()
     with diss
-    show screen image_shake("/images/Slides/img_901530.jpg")
+#    show screen image_shake("/images/Slides/img_901530.jpg")
     w
     # внезапно кадр меняется - Морис в своей обычной одежде стоит перед Барди у его мольберта, напротив Барди (мольберт между ними, она не видит его творение)
     $ camera_icon_enabled = True
