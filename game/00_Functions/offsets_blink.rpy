@@ -854,6 +854,12 @@ define blink_presets = {
 }
 default blinksListStopped = []
 default blinksListActive = []
+default blink1 = False
+default blink2 = False
+default blink3 = False
+default blink4 = False
+default blink5 = False
+default blink6 = False
 
 init python:
     blink_preset = False

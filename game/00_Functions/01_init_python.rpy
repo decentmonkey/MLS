@@ -63,7 +63,7 @@ python early:
         return (l.simple_expression(), "fl")
 
     def img_exec(s_in):
-        global dialogue_active_flag, screenActionHappened, config, blink_preset, blink_preset2, blink_preset3, blink_preset4, blink_preset5, blink_preset6, images_history_list, day, current_slide, blinksListStopped, blinksListActive, current_slide_image
+        global dialogue_active_flag, screenActionHappened, config, blink_preset, blink_preset2, blink_preset3, blink_preset4, blink_preset5, blink_preset6, images_history_list, day, current_slide, blinksListStopped, blinksListActive, current_slide_image, blink1, blink2, blink3, blink4, blink5, blink6
 #        config.has_autosave = False
 #        config.autosave_on_choice = False
         s = s_in[0]
@@ -112,37 +112,42 @@ python early:
                     blinkImage = "images/Overlays/Blink/" + blinkBase + "_blink_" + blink_character + ".png"
                     blinksListActive.append(blinkImage)
                     blinkPresetId = blink_data[3]
-                    blink1 = BlinkStrip(blinkImage, blink_data[2], blink_presets[blinkPresetId])
                     if blinkCharacterIdx == 0:
                         if blink_preset != False:
                             blinkPresetId = blink_preset
                             blink_preset = False
+                        blink1 = BlinkStrip(blinkImage, blink_data[2], blink_presets[blinkPresetId])
                         renpy.show_screen("blink_screen1a", blinkImage, blink_data, blink_presets[blinkPresetId], blink1)
                     if blinkCharacterIdx == 1:
                         if blink_preset2 != False:
                             blinkPresetId = blink_preset2
                             blink_preset2 = False
-                        renpy.show_screen("blink_screen2a", blinkImage, blink_data, blink_presets[blinkPresetId])
+                        blink2 = BlinkStrip(blinkImage, blink_data[2], blink_presets[blinkPresetId])
+                        renpy.show_screen("blink_screen2a", blinkImage, blink_data, blink_presets[blinkPresetId], blink2)
                     if blinkCharacterIdx == 2:
                         if blink_preset3 != False:
                             blinkPresetId = blink_preset3
                             blink_preset3 = False
-                        renpy.show_screen("blink_screen3a", blinkImage, blink_data, blink_presets[blinkPresetId])
+                        blink3 = BlinkStrip(blinkImage, blink_data[2], blink_presets[blinkPresetId])
+                        renpy.show_screen("blink_screen3a", blinkImage, blink_data, blink_presets[blinkPresetId], blink3)
                     if blinkCharacterIdx == 3:
                         if blink_preset4 != False:
                             blinkPresetId = blink_preset4
                             blink_preset4 = False
-                        renpy.show_screen("blink_screen4a", blinkImage, blink_data, blink_presets[blinkPresetId])
+                        blink4 = BlinkStrip(blinkImage, blink_data[2], blink_presets[blinkPresetId])
+                        renpy.show_screen("blink_screen4a", blinkImage, blink_data, blink_presets[blinkPresetId], blink4)
                     if blinkCharacterIdx == 4:
                         if blink_preset5 != False:
                             blinkPresetId = blink_preset5
                             blink_preset5 = False
-                        renpy.show_screen("blink_screen5a", blinkImage, blink_data, blink_presets[blinkPresetId])
+                        blink5 = BlinkStrip(blinkImage, blink_data[2], blink_presets[blinkPresetId])
+                        renpy.show_screen("blink_screen5a", blinkImage, blink_data, blink_presets[blinkPresetId], blink5)
                     if blinkCharacterIdx == 5:
                         if blink_preset6 != False:
                             blinkPresetId = blink_preset6
                             blink_preset6 = False
-                        renpy.show_screen("blink_screen6a", blinkImage, blink_data, blink_presets[blinkPresetId])
+                        blink6 = BlinkStrip(blinkImage, blink_data[2], blink_presets[blinkPresetId])
+                        renpy.show_screen("blink_screen6a", blinkImage, blink_data, blink_presets[blinkPresetId], blink6)
                     blinkCharacterIdx += 1
 
         current_slide_image = imagePath
