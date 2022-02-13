@@ -84,7 +84,7 @@ label start: #for blink here
     call locations_init() from _rcall_locations_init
 
 #########
-#    call ep03_dialogues2_college_19() # при клике на парочку целующихся девчонок
+#    call test_video()
 #########
 
 

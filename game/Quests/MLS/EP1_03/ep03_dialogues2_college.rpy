@@ -788,16 +788,31 @@ label ep03_dialogues2_college_4:
         # он наклоняется, чтобы поднять телефон (рюкзак) с пола и обсматривает ноги Морис
         imgd 901492
         w
+
         sound vjuh3
         img 901493 hpunch
         w
         sound2 down7
         imgd 901494
         w
-        music The_Heat
         imgf 901495
         w
-        imgd 901496
+        music The_Heat
+
+        # video
+        # v_Observe_Teacher11_3_25
+        img black_screen
+        with diss
+        pause 1.0
+        scene black
+        image videov_Observe_Teacher11_3_25 = Movie(play="video/v_Observe_Teacher11_3_25.mkv", fps=25, loop=False, image="/images/Slides/img_901496.jpg")
+        show videov_Observe_Teacher11_3_25
+        $ renpy.pause(0.5, hard=True)
+        pause 6.0
+        img 901496
+        show screen image_shake("/images/Slides/img_901496.jpg")
+        w
+        bardi "!!!"
         teacher_morris "Ты новый студент? Я тебя здесь раньше не видела."
         imgd 901497
         bardi "Ага." # пялится на нее, выпрямляется, подняв с пола телефон (рюкзак)
@@ -1005,6 +1020,7 @@ label ep03_dialogues2_college_5:
     teacher_morris "Давай я тебе немного помогу. Возьми кисть вот так и выводи контур..."
     # Барди, продолжая возюкать кистью по холсту, не смотря на него, пялится на Морис
     # холст Барди не показываем
+
     imgd 901527
     bardi_t "Какая клевая поза, миссис Морис..."
     bardi_t "Интересно, а будут занятия по написанию картин с натуры?.."
@@ -1022,16 +1038,33 @@ label ep03_dialogues2_college_5:
     with Dissolve(1.0)
     show screen image_shake("/images/Slides/img_901528.jpg")
     bardi_t "Это было бы круто!.."
+
     img 901529
     show screen dream()
     with fade
     show screen image_shake("/images/Slides/img_901529.jpg")
     bardi_t "Я не отказалася бы..."
+
     img 901530
     show screen dream()
     with diss
 #    show screen image_shake("/images/Slides/img_901530.jpg")
     w
+
+    # video
+    # v_Observe_Teacher11_4_25
+    img black_screen
+    with diss
+    pause 1.0
+    scene black
+    image videov_Observe_Teacher11_4_25 = Movie(play="video/v_Observe_Teacher11_4_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observe_Teacher11_4_end.jpg")
+    show videov_Observe_Teacher11_4_25
+    $ renpy.pause(0.5, hard=True)
+    pause 4.5
+    img v_Observe_Teacher11_4_end
+    show screen image_shake("/images/Slides/v_Observe_Teacher11_4_end.jpg")
+    w
+    bardi_t "Ееее!"
     # внезапно кадр меняется - Морис в своей обычной одежде стоит перед Барди у его мольберта, напротив Барди (мольберт между ними, она не видит его творение)
     $ camera_icon_enabled = True
     music stop
@@ -1585,6 +1618,21 @@ label ep03_dialogues2_college_15:
     w
     imgd 911212
     w
+    # video
+    # v_Observe_Classmate10_1_25
+    img black_screen
+    with diss
+    pause 1.0
+    scene black
+    sound2 snd_applause3
+    image videov_Observe_Classmate10_1_25 = Movie(play="video/v_Observe_Classmate10_1_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observe_Classmate10_1_end.jpg")
+    show videov_Observe_Classmate10_1_25
+    $ renpy.pause(0.5, hard=True)
+    pause 4.5
+    img v_Observe_Classmate10_1_end
+    show screen image_shake("/images/Slides/v_Observe_Classmate10_1_end.jpg")
+    w
+
     imgd 911213
     student_leo "Ого!"
     imgf 911215
@@ -2774,7 +2822,6 @@ label ep03_dialogues2_college_19:
             # Кэти проводит рукой по своему бедру
             imgf 910901
             w
-            sound vjuh3
             imgd 910902
             w
             imgf 910891
@@ -3022,7 +3069,10 @@ label ep03_dialogues2_college_19:
     bardi_t "Только во сне..."
     # Эбби тянется к нему за поцелуем
     imgd 910937
-    student_abby "Ты отпадно целуешься. Хочу еще..."
+    if checkImageShown("img_910857") != False: # арт показывался
+        student_abby "Ты отпадно целуешься. Хочу еще..."
+    else:
+        w
     # поцелуй
     sound snd_walk_barefoot
     imgf 910938
@@ -3124,7 +3174,7 @@ label ep03_dialogues2_college_19:
     # минет
     imgf 910963
     w
-    sound chpok7
+    sound chpok6
     img 910964 hpunch
     student_abby "Мпфх..."
     imgf 910965
@@ -3275,8 +3325,7 @@ label ep03_dialogues2_college_19:
     # Эбби в этот момент берет ее за голову и прижимает лицом к своей киске, стоя перед ней на коленях с широко разведенными ногами
     imgd 910988
     w
-    sound Jump1
-    img 910984 hpunch
+    imgd 910984
     student_abby "О, дааа! Кэти!"
     imgd 910989
     student_abby "Ох, это просто улет!"

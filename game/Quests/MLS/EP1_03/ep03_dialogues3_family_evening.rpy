@@ -1512,6 +1512,7 @@ label ep03_dialogues3_family_evening_6:
     imgd 901286
     bardi "Шампанского?"
     # она улыбается и подмигивает ему
+
     imgd 901287
     daisy "Да. Совсем немного, чтобы расслабиться."
     sound Jump1
@@ -1519,6 +1520,22 @@ label ep03_dialogues3_family_evening_6:
     daisy "Уверена, моя сестра была бы не против..."
     imgd 901289
     bardi "..."
+
+    music Future_Bass
+    # video
+    # v_Observe_Auntie_1_25
+    img black_screen
+    with diss
+    pause 1.0
+    scene black
+    image videov_Observe_Auntie_1_25 = Movie(play="video/v_Observe_Auntie_1_25.mkv", fps=25, loop=False, image="/images/Slides/img_911222.jpg")
+    show videov_Observe_Auntie_1_25
+    $ renpy.pause(0.5, hard=True)
+    pause 7.0
+    img 911222
+    show screen image_shake("/images/Slides/img_911222.jpg")
+    w
+
     # Дейзи поворачивается к Барди, закидывает ногу на ногу
     # ведет себя, демонстрируя свое расположение к Барди
     imgf 901291
@@ -1532,6 +1549,7 @@ label ep03_dialogues3_family_evening_6:
     bardi_t "Мне кажется или она флиртует со мной?!"
     bardi_t "Хах, может Шон все же немного подождет?.."
     # Дэйзи отстраняется от Барди
+    music Shining_Through
     imgf 901294
     daisy "Но, думаю, у нас еще будет на это время. Не будем заставлять твоих друзей ждать..."
     imgd 901295
