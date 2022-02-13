@@ -2432,17 +2432,25 @@ screen main_menu():
                     null height 10
                     hbox:
                         xsize gui.resolution.main_menu.lang.width2
+                        xmaximum gui.resolution.main_menu.lang.width2
                         vbox:
+                            xsize gui.resolution.main_menu.lang.width2
+                            xmaximum gui.resolution.main_menu.lang.width2
                             textbutton "English" + persistent.lang_suffixes["english"] action Language("english"):
                                 text_size gui.resolution.main_menu.font_size2
+                                xmaximum gui.resolution.main_menu.lang.width2
                             textbutton "German" + persistent.lang_suffixes["german"] action Language("german"):
                                 text_size gui.resolution.main_menu.font_size2
+                                xmaximum gui.resolution.main_menu.lang.width2
                             textbutton "French" + persistent.lang_suffixes["french"] action Language("french"):
                                 text_size gui.resolution.main_menu.font_size2
+                                xmaximum gui.resolution.main_menu.lang.width2
                             textbutton "Spanish" + persistent.lang_suffixes["spanish"] action Language("spanish"):
                                 text_size gui.resolution.main_menu.font_size2
+                                xmaximum gui.resolution.main_menu.lang.width2
                             textbutton "Czech" + persistent.lang_suffixes["czech"] action Language("czech"):
                                 text_size gui.resolution.main_menu.font_size2
+                                xmaximum gui.resolution.main_menu.lang.width2
         #                textbutton "Italian (beta)" action Language("italian"):
         #                    text_size gui.resolution.main_menu.font_size2
         #                textbutton "Spanish (beta)" action Language("spanish"):
