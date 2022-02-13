@@ -940,6 +940,7 @@ label ep03_dialogues2_college_5:
     sound step_stairs_short
     imgf 901509
     w
+    sound step_stairs_short
     imgd 901508
     w
     imgd 901510
@@ -958,7 +959,7 @@ label ep03_dialogues2_college_5:
     imgd 901514
     teacher_morris "Ну что, ребята? Приступаем к работе!"
     sound snd_slap1
-    img 901515 vpunch
+    imgd 901515
     w
     # все студенты, кроме Барди, берут в руки кисти и начинают творить, усердно глядя в свои холсты
     # Барди не торопится хвататься за кисть, смотрит на остальных
@@ -1040,7 +1041,7 @@ label ep03_dialogues2_college_5:
     music Montana
     pause 0.5
     img 901531
-    with Dissolve(1.0)
+    with Dissolve(0.5)
     teacher_morris "[mcname], как у тебя дела с натюрмортом?"
     imgd 901532
     bardi "Эээм..."
@@ -1064,7 +1065,7 @@ label ep03_dialogues2_college_5:
             bardi "Уверен."
             bardi "Я покажу вам свою работу, когда завершу ее... На следующем занятии..."
             # она улыбается и обходит мольберт, чтобы все-таки взглянуть на работу Барди
-            sound Jump2
+            sound vjuh3
             img 901534 hpunch
             teacher_morris "Я заинтригована, [mcname]. Все-таки, я хочу взглянуть на твои наброски..."
             bardi_t "Фак!"
@@ -1072,7 +1073,7 @@ label ep03_dialogues2_college_5:
             # она берет его за руку и пытается отвести ее в сторону от рисунка
             # при этом она стоит совсем близко
             music Story_of_One_Success_short
-            sound2 vjuh3
+            sound2 Jump1
             img 911015 vpunch
             bardi "Миссис Морис, давайте не сейчас!.."
             teacher_morris "Сейчас, [mcname]."
@@ -1082,7 +1083,7 @@ label ep03_dialogues2_college_5:
             imgd 911017
             bardi "Но!.."
             teacher_morris "Никаких 'но'!.."
-            sound Jump1
+            sound vjuh3
             img 911018 hpunch
             w
             # она предпринимает еще одну попытку и не специально прижимается к нему еще плотнее
