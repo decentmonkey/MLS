@@ -46,10 +46,10 @@ label phone_call_contact:
 
     if obj_name == "Sophie":
         if sophieCallStage == 4:
-            call sophie_chat5()
+            call sophie_chat5() from _rcall_sophie_chat5
             return
         if sophieCallStage == 3:
-            call sophie_chat4()
+            call sophie_chat4() from _rcall_sophie_chat4
             return
         if sophieCallStage == 2:
             call sophie_chat3() from _rcall_sophie_chat3
@@ -60,7 +60,7 @@ label phone_call_contact:
 
     if obj_name == "Cynthia":
         if cynthiaCallStage == 2 and day_time_idx != 3:
-            call cynthia_chat3()
+            call cynthia_chat3() from _rcall_cynthia_chat3
             return
         if cynthiaCallStage == 1 and day_time_idx != 3:
             call cynthia_chat1() from _rcall_cynthia_chat1
@@ -71,10 +71,10 @@ label phone_call_contact:
         
     if obj_name == "Sean":
         if seanCallStage == 5:
-            call sean_chat6()
+            call sean_chat6() from _rcall_sean_chat6
             return
         if seanCallStage == 4:
-            call sean_chat5()
+            call sean_chat5() from _rcall_sean_chat5
             return
         if seanCallStage == 3:
             call sean_chat4() from _rcall_sean_chat4

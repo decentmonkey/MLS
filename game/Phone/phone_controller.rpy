@@ -115,7 +115,7 @@ label phone_outgoing_call(outgoing_contact_name, outgoing_chat_name):
     $ phone_orientation = 0
     $ phone_contact = phone_get_contact_by_contact_name(obj_name)
     $ phone_menu_active = "calling_screen"
-    call process_hooks("before_call_contact", "phone")
+    call process_hooks("before_call_contact", "phone") from _rcall_process_hooks_53
     if _return == False:
         $ phone_menu_active = "main"
         jump phone_open_loop1
@@ -132,7 +132,7 @@ label phone_outgoing_call(outgoing_contact_name, outgoing_chat_name):
 #        $ phone_menu_active = "main"
 #        jump phone_open_loop1
     sound snd_phone_notification5
-    call process_hooks("call_contact_end", "phone")
+    call process_hooks("call_contact_end", "phone") from _rcall_process_hooks_54
     jump phone_open_loop1
 
 label phone_incoming_call:

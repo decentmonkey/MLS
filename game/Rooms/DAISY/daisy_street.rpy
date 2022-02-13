@@ -17,10 +17,10 @@ label daisy_street_init:
 
 label daisy_street_environment:
     if obj_name == "Teleport_Map":
-        call map_show()
+        call map_show() from _rcall_map_show_7
         return
     if obj_name == "Teleport_LivingRoom":
-        call ep01_dialogues2_day1_family_1_12()
+        call ep01_dialogues2_day1_family_1_12() from _rcall_ep01_dialogues2_day1_family_1_12_1
         return
 #        call change_scene("daisy_livingroom")
 #        return

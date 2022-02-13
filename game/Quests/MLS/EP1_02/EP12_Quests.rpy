@@ -343,7 +343,7 @@ label ep12_quests15_home:
     $ miniMapDisabled["HOUSE"] = ["House_Street"]
 
     if day_time != "evening":
-        call changeDayTime("evening")
+        call changeDayTime("evening") from _rcall_changeDayTime_16
     $ move_object("Sophie", "empty")
     $ move_object("Henry", "empty")
     $ move_object("Sister1", "house_sister1")
@@ -378,7 +378,7 @@ label ep12_quests17_home:
     $ remove_hook()
 
     if day_time != "evening": # костыль
-        call changeDayTime("evening")
+        call changeDayTime("evening") from _rcall_changeDayTime_17
         $ move_object("Sophie", "empty")
         $ move_object("Henry", "empty")
         $ move_object("Sister1", "house_sister1")
@@ -502,7 +502,7 @@ label ep12_quests20_home:
     $ remove_hook(label="college_day2")
     $ remove_hook(label="day2")
     $ steam_achievement("ach_end2")
-    call ep13_quests_init()
+    call ep13_quests_init() from _rcall_ep13_quests_init
 #    jump end_update
 
     return False

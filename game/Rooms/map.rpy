@@ -92,16 +92,16 @@ label map_environment:
         call process_drive_teleport("COLLEGE", "college_street") from _rcall_process_drive_teleport_2
         return
     if obj_name == "Teleport_BEACH":
-        call process_drive_teleport("BEACH", "beach_loungers")
+        call process_drive_teleport("BEACH", "beach_loungers") from _rcall_process_drive_teleport_3
         return
     if obj_name == "Teleport_PARK":
-        call process_drive_teleport("PARK", "beach_park")
+        call process_drive_teleport("PARK", "beach_park") from _rcall_process_drive_teleport_4
         return
     if obj_name == "Teleport_DAISY":
-        call process_drive_teleport("DAISY", "daisy_street")
+        call process_drive_teleport("DAISY", "daisy_street") from _rcall_process_drive_teleport_5
         return
     if obj_name == "Teleport_ARNIE":
-        call process_drive_teleport("ARNIE", "arnie_street")
+        call process_drive_teleport("ARNIE", "arnie_street") from _rcall_process_drive_teleport_6
         return
         
     m "drive!"

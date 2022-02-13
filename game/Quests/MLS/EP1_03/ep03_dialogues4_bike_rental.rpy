@@ -309,7 +309,7 @@ label ep03_dialogues4_bike_rental_3a:
     mr_wright "Думаю, ты сможешь что-нибудь придумать, чтобы привлечь как можно больше клиентов!"
     mr_wright "Больше клиентов - больше заработок!"
     music2 stop
-    call refresh_scene_fade()
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_30
     return
 
 # далее ep03_dialogues3_family_evening_5 - мысли перед посещением Дейзи

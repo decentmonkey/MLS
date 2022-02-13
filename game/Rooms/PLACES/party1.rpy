@@ -27,5 +27,5 @@ label party1_init:
 #                            $ contrast_adjustment = 1.3
 
 label party1_environment:
-    call ep13_quests11_party4()
+    call ep13_quests11_party4() from _rcall_ep13_quests11_party4
     return

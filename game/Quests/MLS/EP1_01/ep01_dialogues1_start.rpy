@@ -1162,7 +1162,7 @@ label ep01_dialogues1_start_1b:
     fadeblack
     sound run_stairs_floor
     bardi_t "Черт! Твою мать!!!"
-    call rrmeter(-5, "intro1")
+    call rrmeter(-5, "intro1") from _rcall_rrmeter_17
     pause 4.0
     # затемнение, звук быстрых шагов по коридору, бег
     # потом все затихает и сразу резкая смена кадра на поезд

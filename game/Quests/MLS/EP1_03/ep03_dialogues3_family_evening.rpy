@@ -134,7 +134,7 @@ label ep03_dialogues3_family_evening_1:
             img 901147 hpunch
             bardi "Я помогаю!"
             # Оливия распрямляется и грозно тычет в него пальцем
-            call rrmeter(2, "ep03_dialogues3_family_evening_1")
+            call rrmeter(2, "ep03_dialogues3_family_evening_1") from _rcall_rrmeter_18
             music Adventures_of_the_Deaf_Dreamer
             imgf 901148
             w
@@ -179,7 +179,7 @@ label ep03_dialogues3_family_evening_1:
             # Барди рассматривает зад Оливии, но не подходит к ней
             imgf 901130
             bardi_t "Оливии не помешает немного поработать ручками."
-            call rrmeter(-2, "ep03_dialogues3_family_evening_1")
+            call rrmeter(-2, "ep03_dialogues3_family_evening_1") from _rcall_rrmeter_19
             bardi_t "Обойдется без моей помощи..."
             pass
         "Поддержать ее.":

@@ -21,10 +21,10 @@ label beach_park_init:
 
 label beach_park_environment:
     if obj_name == "Teleport_Map":
-        call map_show()
+        call map_show() from _rcall_map_show_6
         return
     if obj_name == "Teleport_Beach_Loungers":
-        call process_change_map_location("BEACH")
-        call change_scene("beach_loungers", "Fade_long", "run_stairs_floor")
+        call process_change_map_location("BEACH") from _rcall_process_change_map_location_3
+        call change_scene("beach_loungers", "Fade_long", "run_stairs_floor") from _rcall_change_scene_141
         return
     return
