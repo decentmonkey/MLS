@@ -1462,7 +1462,7 @@ label ep03_dialogues3_family_evening_6:
     sound2 highheels_short_walk
     w
     imgd 901272
-    daisy " Ох, [mcname], а я тебя уже заждалась..."
+    daisy "Ох, [mcname], а я тебя уже заждалась..."
     imgd 901273
     bardi "Да, привет."
     imgd 901274
