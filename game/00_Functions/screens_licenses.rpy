@@ -21,7 +21,8 @@ init python:
         ["Stylish Hip Hop Rock (ALEXGROHL)", "Music/Stylish_Hip_Hop_Rock.ogg"],
         ["The Heat (INFRACTION)", "Music/The_Heat.ogg"],
         ["Visions Of Plenty (KEN VERHEECKE)", "Music/Visions_Of_Plenty.ogg"],
-        ["Write Your Story (JOYSTOCK)", "Music/Write_Your_Story.ogg"]
+        ["Write Your Story (JOYSTOCK)", "Music/Write_Your_Story.ogg"],
+        ["Kimono (SEVENNOTES)", "Music/Kimono.ogg"]
     ]
     licenses_music_list_playing_idx = -1
 
