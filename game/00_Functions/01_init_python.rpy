@@ -1,14 +1,16 @@
 python early:
-    language_fields = {None:1, "english":2, "german":3, "spanish":4, "chinese":5, "french":6, "turkish":7, "italian":8, "ukrainian":9, "hungarian":10}
+    language_fields = {None:1, "english":2, "german":3, "spanish":4, "chinese":5, "french":6, "turkish":7, "italian":8, "ukrainian":9, "hungarian":10, "czech":11}
 
     language_credits = {
         "english": "Thanks for the English translation to\n[Aesthetic Dialectic] & [bambam]",
         "german": "Thanks for the German translation to\n[Ragnaroekr] & [Londo Mollari]",
-#        "spanish": "Thanks for the Spanish translation to\n[CG7]",
+        "spanish": "Thanks for the Spanish translation to\n[kt9]",
         "french": "Thanks for the French translation to\n[Jay Staff] & [Wissssss]",
 #        "italian": "Thanks for the Italian translation to\n[5n4k3]",
-        "turkish": "Thanks for the Turkish translation to\n[Shtofig]",
+        "turkish": "Thanks for the Turkish translation to\n[LEGOLAS] & [Shtofig]",
         "ukrainian": "Thanks for the Ukrainian translation to\n[EraRamp]",
+        "chinese": "Thanks for the Ukrainian translation to\n[freeacer]",
+        "czech" : "Thanks for the Ukrainian translation to\n[Mr_Missclick]",
         "None": "Thanks for the Russian proofread to\n[Ms. Mansfield] & [EraRamp]"
     }
 

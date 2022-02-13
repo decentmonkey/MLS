@@ -2418,7 +2418,7 @@ screen main_menu():
         if 1==1:
             frame:
     #            pos (get_resolution_x(1570), get_resolution_y(650))
-                pos (gui.resolution.main_menu.lang.left, get_resolution_y(660))
+                pos (gui.resolution.main_menu.lang.left, get_resolution_y(1080 - gui.resolution.main_menu.lang.height - 100))
                 padding (gui.resolution.main_menu.lang.padding1,gui.resolution.main_menu.lang.padding2)
                 xysize (get_resolution_x(gui.resolution.main_menu.lang.width), get_resolution_y(gui.resolution.main_menu.lang.height))
                 anchor (0,0)
@@ -2430,26 +2430,36 @@ screen main_menu():
                     label t__("Language"):
                         text_size gui.resolution.main_menu.font_size1
                     null height 10
-                    textbutton "English" + persistent.lang_suffixes["english"] action Language("english"):
-                        text_size gui.resolution.main_menu.font_size2
-                    textbutton "German" + persistent.lang_suffixes["german"] action Language("german"):
-                        text_size gui.resolution.main_menu.font_size2
-                    textbutton "French" + persistent.lang_suffixes["french"] action Language("french"):
-                        text_size gui.resolution.main_menu.font_size2
-                    textbutton "Turkish" + persistent.lang_suffixes["turkish"] action Language("turkish"):
-                        text_size gui.resolution.main_menu.font_size2
-                    textbutton "Ukrainian" + persistent.lang_suffixes["ukrainian"] action Language("ukrainian"):
-                        text_size gui.resolution.main_menu.font_size2
-    #                textbutton "Italian (beta)" action Language("italian"):
-    #                    text_size gui.resolution.main_menu.font_size2
-    #                textbutton "Spanish (beta)" action Language("spanish"):
-    #                    text_size gui.resolution.main_menu.font_size2
-                    textbutton "Russian" + persistent.lang_suffixes[None] action Language(None):
-                        text_size gui.resolution.main_menu.font_size2
+                    hbox:
+                        xsize gui.resolution.main_menu.lang.width2
+                        vbox:
+                            textbutton "English" + persistent.lang_suffixes["english"] action Language("english"):
+                                text_size gui.resolution.main_menu.font_size2
+                            textbutton "German" + persistent.lang_suffixes["german"] action Language("german"):
+                                text_size gui.resolution.main_menu.font_size2
+                            textbutton "French" + persistent.lang_suffixes["french"] action Language("french"):
+                                text_size gui.resolution.main_menu.font_size2
+                            textbutton "Spanish" + persistent.lang_suffixes["spanish"] action Language("spanish"):
+                                text_size gui.resolution.main_menu.font_size2
+                            textbutton "Czech" + persistent.lang_suffixes["czech"] action Language("czech"):
+                                text_size gui.resolution.main_menu.font_size2
+        #                textbutton "Italian (beta)" action Language("italian"):
+        #                    text_size gui.resolution.main_menu.font_size2
+        #                textbutton "Spanish (beta)" action Language("spanish"):
+        #                    text_size gui.resolution.main_menu.font_size2
+                        vbox:
+                            textbutton "Turkish" + persistent.lang_suffixes["turkish"] action Language("turkish"):
+                                text_size gui.resolution.main_menu.font_size2
+                            textbutton "Ukrainian" + persistent.lang_suffixes["ukrainian"] action Language("ukrainian"):
+                                text_size gui.resolution.main_menu.font_size2
+                            textbutton "Chinese" + persistent.lang_suffixes["chinese"] action Language("chinese"):
+                                text_size gui.resolution.main_menu.font_size2
+                            textbutton "Russian" + persistent.lang_suffixes[None] action Language(None):
+                                text_size gui.resolution.main_menu.font_size2
 
             if language_credits.has_key(str(_preferences.language)) and steamVersion == False:
                 frame:
-                    pos (gui.resolution.main_menu.lang.left + getRes(20), get_resolution_y(660) + get_resolution_y(gui.resolution.main_menu.lang.height) + getRes(10))
+                    pos (gui.resolution.main_menu.lang.left + getRes(20), get_resolution_y(1080 - gui.resolution.main_menu.lang.height - 100) + get_resolution_y(gui.resolution.main_menu.lang.height) + getRes(10))
                     anchor (0, 0)
                     background None
                     text t__(language_credits[str(_preferences.language)]) style "main_menu_credits_text"
@@ -3012,7 +3022,9 @@ screen preferences():
                     textbutton "Turkish" + persistent.lang_suffixes["turkish"] action Language("turkish")
                     textbutton "Ukrainian" + persistent.lang_suffixes["ukrainian"] action Language("ukrainian")
 #                    textbutton "Italian (beta)" action Language("italian")
-#                    textbutton "Spanish (beta)" action Language("spanish")
+                    textbutton "Spanish" + persistent.lang_suffixes["spanish"] action Language("spanish")
+                    textbutton "Czech" + persistent.lang_suffixes["czech"] action Language("czech")
+                    textbutton "Chinese" + persistent.lang_suffixes["chinese"] action Language("chinese")
                     textbutton "Russian" + persistent.lang_suffixes[None] action Language(None)
 
 
