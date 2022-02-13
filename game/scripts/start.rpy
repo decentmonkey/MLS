@@ -83,7 +83,7 @@ label start: #for blink here
     call locations_init() from _rcall_locations_init
 
 #########
-#    call ep01_dialogues1_start_1b() # Оливия, старт
+#    call ep03_dialogues2_college_4() # встреча в холле с Миссис Морис
 #########
 
 

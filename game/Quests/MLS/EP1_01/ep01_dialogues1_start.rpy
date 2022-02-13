@@ -6,9 +6,9 @@
 #define v_Mark_Sister_Older_Sex2_25_sound_name = "v_Mark_Sister_Older_Sex2_25"
 #define v_Mark_Sister_Older_Sex3_sound_name = "v_Mark_Sister_Older_Sex3"
 #define v_Mark_Sister_Older_Sex3b_sound_name = "v_Mark_Sister_Older_Sex3b"
-define v_Olivia_Masturbating1_25_sound_name = "v_Mark_Sister_Older_Licking1_25" # все три звука пока левые
-define v_Olivia_Masturbating2_25_sound_name = "v_Mark_Sister_Older_Licking1_25"
-define v_Olivia_Masturbating3_25_sound_name = "v_Mark_Sister_Older_Licking1_25"
+define v_Olivia_Masturbating1_25_sound_name = "v_Olivia_Masturbating1_25"
+define v_Olivia_Masturbating2_25_sound_name = "v_Olivia_Masturbating2_25"
+define v_Olivia_Masturbating3_25_sound_name = "v_Olivia_Masturbating3_25"
 
 define v_MC_Intro1_25_sound_name = "v_MC_Intro1_25"
 define v_MC_Intro_Titjob1_25_sound_name = "v_MC_Intro_Titjob1_25"

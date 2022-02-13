@@ -15,7 +15,7 @@ default mlsBardiDay4College3 = 0 # Барди солгал Морис, что з
 default mlsBardiDay4College5 = 0 # Барди выпил виски в начале вечеринки
 default mlsBardiDay4College6 = 0 # Барди пообщался на вечеринке с ботаном Лео
 default mlsBardiDay4College7 = 0 # Барди пообщался на вечеринке с фриком Хлоей
-default mlsBardiDay4College8 = 0 # Барди на вечеринке ахнул зануду Сару
+#default mlsBardiDay4College8 = 0 # Барди на вечеринке общался с Сарой
 default mlsBardiDay4College9 = 0 # Барди на вечеринке ахнул двух подружек
 
 default ep03_dialogues2_college_3_menu1 = False
@@ -30,6 +30,13 @@ default ep03_dialogues2_college_18_menu2 = False
 
 default ep03_dialogues2_college_19_menu1 = False
 default ep03_dialogues2_college_19_menu2 = False
+
+define v_MC_Classmate_Nicole1_25_sound_name = "v_MC_Classmate_Nicole1_25"
+define v_MC_Classmate_Nicole2_25_sound_name = "v_MC_Classmate_Nicole2_25"
+define v_MC_Classmate_Nicole3_25_sound_name = "v_MC_Classmate_Nicole3_25"
+define v_MC_Classmate_Nicole4_25_sound_name = "v_MC_Classmate_Nicole4_25"
+define v_MC_Classmate_Nicole5_25_sound_name = "v_MC_Classmate_Nicole5_25"
+define v_MC_Classmate_Nicole6_25_sound_name = "v_MC_Classmate_Nicole6_25"
 
 #call ep03_dialogues2_college_1() # разговор с Шоном у колледжа
 #call ep03_dialogues2_college_2() # разговор у шкафчиков с Эмили
@@ -271,8 +278,8 @@ label ep03_dialogues2_college_2:
             pass
     $ mlsBardiDay4College1 = day # Эмили согласилась провести Барди экскурсию
     music Shining_Through
-    sound2 Jump1
-    img 901453 hpunch
+#    sound2 Jump1
+    imgd 901453
     student_emily "А знаешь... Почему бы и нет?.."
     imgd 901445
     bardi "О, круто!"
@@ -293,8 +300,8 @@ label ep03_dialogues2_college_2:
     img 901440 vpunch
     student_emily "И никому ни слова, понял?"
     # Барди поднимает руки
-    sound vjuh3
-    img 901455 hpunch
+#    sound vjuh3
+    img 901455
     bardi "Конечно!"
     # в этот момент к ним подлетает зануда-Сара
     # Эмили закатывает глаза и поспешно утыкается в свой телефон
@@ -360,12 +367,13 @@ label ep03_dialogues2_college_3:
     imgfl 910780
     w
     imgf 910779
+    sound highheels_short_walk
     w
     imgd 910781
     w
     music Secretions_Vocal
-    sound2 Jump1
-    img 910782 hpunch
+    sound2 Jump2
+    img 910782
     student_harry "Ррр!.."
     imgd 910784
     sound2 ma5
@@ -381,7 +389,7 @@ label ep03_dialogues2_college_3:
     teacher_adams "Надеюсь, вы помните тему?"
     # зануда быстро поднимает руку
     sound vjuh3
-    img 910786
+    imgd 910786
     student_sarah "Я помню, миссис Адамс! Литература 17 века и ее основные тенденции."
     teacher_adams "Спасибо, Сара."
     # Барди уже сидит за партой
@@ -395,11 +403,12 @@ label ep03_dialogues2_college_3:
     bardi_t "Как бы мне попасть на эту вечеринку?"
     bardi_t "Интересно, а Шон в курсе?"
     # Барди достает телефон и пишет сообщение Шону
+    sound swish
     imgf 910789
+    w
     return
 
     # sean_chat5
-    sound swish
     sound2 iphone_typing
     bardi "В субботу вечеринка у какого-то Уокера."
     bardi "Ты знаешь этого чувака?"
@@ -416,17 +425,18 @@ label ep03_dialogues2_college_3:
 
 label ep03_dialogues2_college_3next1:
     # внезапно раздается голос
+#    imgd 910791
+#    w
+    sound highheels_short_walk
     imgd 910791
-    w
-    music stop
-    sound plastinka1b
-    img 910791 hpunch
     teacher_adams "[mcname], а ты что скажешь?"
     # Барди поднимает голову от телефона - рядом с его партой стоит миссис Адамс и вопросительно смотрит на него
     # Барди тупит и продолжает держать телефон с фоткой Кларк в руках
-    music Adventures_of_the_Deaf_Dreamer
-    imgd 910792
+    music stop
+    sound plastinka1b
+    img 910792 hpunch
     w
+    music Adventures_of_the_Deaf_Dreamer
     img 910793
     bardi "!!!"
     # синеволосый одногруппник отклоняется на своем стуле и заглядывает к нему в телефон
@@ -435,9 +445,9 @@ label ep03_dialogues2_college_3next1:
     student_jacob "Ему некогда. Он по ходу собрался дрочить на Кларк."
     # раздаются смешки в классе
     # Барди резко прячет свой телефон
+    bardi "Заткнись!"
     sound Jump2
     img 910795 vpunch
-    bardi "Заткнись!"
     student_jacob "Придурок." # показывает Барди фак и отворачивается
     # училка продолжает стоять над Барди с вопросительным видом
     imgf 910793
@@ -664,7 +674,6 @@ label ep03_dialogues2_college_3next1:
             student_harry "Добро пожаловать, лузер."
             # кадр исчезает, Барди оглядывается на Гарри
             # тот как обычно показывает ему кулак
-            music Adventures_of_the_Deaf_Dreamer
             $ camera_enabled = True
             imgf 910078
             student_harry "Ррр!.."
@@ -677,6 +686,7 @@ label ep03_dialogues2_college_3next1:
     imgd 910814
     bardi_t "Уф... Вроде помогло..."
     # Адамс тем временем заканчивает занятие
+    music Adventures_of_the_Deaf_Dreamer
     imgd 910081
     teacher_adams "На этом наше сегодняшнее занятие подходит к концу."
     teacher_adams "Прошу всех до конца дня сообщить мне пару, с которой вы будете работать над эссе."
@@ -780,8 +790,8 @@ label ep03_dialogues2_college_4:
         w
         sound vjuh3
         img 901493 hpunch
-        sound2 down7
         w
+        sound2 down7
         imgd 901494
         w
         music The_Heat
@@ -799,7 +809,7 @@ label ep03_dialogues2_college_4:
         imgd 910178
         teacher_morris "Меня зовут миссис Морис."
         # меню диалога с Морис (использовать имеющиеся арты)
-        label ep03_dialogues2_college_4_loop:
+        label ep03_dialogues2_college_4_loop1:
         imgd 910176
         bardi "..."
         menu:
@@ -2825,10 +2835,33 @@ label ep03_dialogues2_college_19:
             w
             sound lick3
             imgd 910914
+            w
+
+            # video
+            # v_MC_Classmate_Nicole2_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Classmate_Nicole2_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Classmate_Nicole2_25 = Movie(play="video/v_MC_Classmate_Nicole2_25.mkv", fps=25)
+            show videov_MC_Classmate_Nicole2_25
+            wclean
             student_katie "Ооо, да!.."
+            wclean
+            student_katie "Мммм..."
+            wclean
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
             # Эбби опускается еще ниже и снимает с нее трусики
             # проводит пальцами по ее киске
-            imgd 910915
+            imgf 910915
             w
             sound vjuh3
             img 910916 hpunch
@@ -2837,10 +2870,33 @@ label ep03_dialogues2_college_19:
             w
             imgd 910917
             sound ahhh13
-            student_katie "Мммм..."
+            w
             sound2 snd_longkiss1
             imgd 910918
+            w
+
+            # video
+            # v_MC_Classmate_Nicole1_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Classmate_Nicole1_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Classmate_Nicole1_25 = Movie(play="video/v_MC_Classmate_Nicole1_25.mkv", fps=25)
+            show videov_MC_Classmate_Nicole1_25
+            wclean
+            student_katie "Мммм..."
+            wclean
             student_katie "Снимай скорее с себя все, Эбби!.."
+            wclean
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
             # Эби начинает раздеваться
             # Кэти тем временем поворачивается к Барди
             # он сидит со стояком
@@ -2906,9 +2962,7 @@ label ep03_dialogues2_college_19:
             imgd 910926
             w
             imgd 910927
-            student_katie "Мммм... Какая у тебя красивая грудь, Эбби."
-            student_katie "Так люблю целовать твои сосочки..."
-            student_abby "О, да..."
+            w
             # Кэти наклоняется и целует соски Эбби, потом отстраняется и говорит Эбби, смотря на стояк Барди
             imgf 910928
             w
@@ -2916,7 +2970,31 @@ label ep03_dialogues2_college_19:
             w
             imgd 910930
             w
-            imgd 910931
+
+            # video
+            # v_MC_Classmate_Nicole3_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Classmate_Nicole3_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Classmate_Nicole3_25 = Movie(play="video/v_MC_Classmate_Nicole3_25.mkv", fps=25)
+            show videov_MC_Classmate_Nicole3_25
+            wclean
+            student_katie "Мммм... Какая у тебя красивая грудь, Эбби."
+            wclean
+            student_katie "Так люблю целовать твои сосочки..."
+            student_abby "О, да..."
+            wclean
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+            imgf 910931
             w
             imgd 910932
             student_katie "Эбби, я так хочу почувствовать его член в своей киске!.."
@@ -3075,20 +3153,36 @@ label ep03_dialogues2_college_19:
     sound drkanje5
     imgd 910959
     w
-    sound drkanje5
-    imgd 910958
-    w
-    sound drkanje5
-    imgd 910959
-    w
-    imgd 910970
-    sound ahhh11
+
+    # video
+    # v_MC_Classmate_Nicole4_25
+    $ localSoundVolume = 1.0
+    $ localSoundName = v_MC_Classmate_Nicole4_25_sound_name
+    img black_screen
+    with diss
+    stop music2
+    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+    scene black
+    image videov_MC_Classmate_Nicole4_25 = Movie(play="video/v_MC_Classmate_Nicole4_25.mkv", fps=25)
+    show videov_MC_Classmate_Nicole4_25
+    wclean
     student_katie "Ааах, я сейчас так кончу!"
+    wclean
     student_katie "Я хочу тебя!.. Войди в меня скорее, [mcname]!"
+    wclean
+    stop music2
+    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+    imgf 910970
+    sound ahhh11
+    student_katie "Ооох!.."
     # Эбби выпускает его член изо рта и отодвигается
     # Барди направляет член в киску Кэти
     # водит им несколько раз по киске, потом резко и глубоко вводит его
-    imgf 910964
+    imgd 910964
     w
     sound chpok9
     imgd 910963
@@ -3121,13 +3215,36 @@ label ep03_dialogues2_college_19:
     imgd 910978
     w
     imgf 910979
-    student_katie "Какой у тебя клевый член!.."
+    w
     imgd 910981
-    bardi "Мммм..."
     student_katie "Даа!.."
     sound ahhh12
     imgd 910975
+    w
+
+    # video
+    # v_MC_Classmate_Nicole5_25
+    $ localSoundVolume = 1.0
+    $ localSoundName = v_MC_Classmate_Nicole5_25_sound_name
+    img black_screen
+    with diss
+    stop music2
+    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+    scene black
+    image videov_MC_Classmate_Nicole5_25 = Movie(play="video/v_MC_Classmate_Nicole5_25.mkv", fps=25)
+    show videov_MC_Classmate_Nicole5_25
+    wclean
     student_katie "Как же кайфово!"
+    wclean
+    student_katie "Какой у тебя клевый член!.."
+    bardi "Мммм..."
+    wclean
+    stop music2
+    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
     # Барди ахает Кэти, а Эбби в этом время ласкает свою киску и смотрит на них
     # потом Эбби говорит Барди
     imgf 910982
@@ -3158,7 +3275,6 @@ label ep03_dialogues2_college_19:
     imgd 910989
     student_abby "Ох, это просто улет!"
     # Кэти вылизывает киску Эбби
-    student_katie "Мпфх!.."
     imgf 911000
     w
     imgd 910998
@@ -3170,7 +3286,6 @@ label ep03_dialogues2_college_19:
     imgd 910992
     sound ahhh12
     student_abby "Аааа!"
-    student_abby "Оттрахай Кэти! Оттрахай как грязную шлюшку!"
     imgf 910993
     w
     sound drkanje5
@@ -3181,7 +3296,31 @@ label ep03_dialogues2_college_19:
     w
     sound drkanje5
     imgd 910994
+    w
+
+    # video
+    # v_MC_Classmate_Nicole6_25
+    $ localSoundVolume = 1.0
+    $ localSoundName = v_MC_Classmate_Nicole6_25_sound_name
+    img black_screen
+    with diss
+    stop music2
+    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+    scene black
+    image videov_MC_Classmate_Nicole6_25 = Movie(play="video/v_MC_Classmate_Nicole6_25.mkv", fps=25)
+    show videov_MC_Classmate_Nicole6_25
+    wclean
+    student_katie "Мпфх!.."
+    wclean
+    student_abby "Оттрахай Кэти! Оттрахай как грязную шлюшку!"
     bardi "О, ееее!.."
+    wclean
+    stop music2
+    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
     imgf 910995
     w
     sound lick3
