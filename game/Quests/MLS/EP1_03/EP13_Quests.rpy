@@ -125,6 +125,7 @@ label ep13_quests3_english_lesson:
     return False
 
 label ep13_quests3_english_after:
+    $ questHelpDesc("college_desc12")
     call ep03_dialogues2_college_3a() from _rcall_ep03_dialogues2_college_3a
     $ sophieCallStage = 3
     # sophie_chat4
@@ -240,6 +241,7 @@ label ep13_quests7_home2:
     $ remove_hook(label="meet_daisy")
     call ep03_dialogues3_family_evening_2() from _rcall_ep03_dialogues3_family_evening_2
     $ questHelp("house_20")
+    $ questHelpDesc("work_desc0")
     $ add_hook("before_open", "ep13_quests7_home3", scene="house_floor2", quest="day3", label="meet_olivia")
     $ add_hook("before_open", "ep13_quests7_home3", scene="house_bedroom_mc", quest="day3", label="meet_olivia")
     $ add_hook("Bed", "ep13_quests7_home4_sleep", scene="house_bedroom_mc", quest="day3")
@@ -351,6 +353,7 @@ label ep13_quests9_beach1:
     $ clear_object_follow_all()
 
     $ questHelp("work_2", True)
+    $ questHelpDesc("work_desc1")
     $ houseLifeStage = 1
     $ add_hook("FatherFriend", "ep03_dialogues4_bike_rental_3a", scene="beach_park", label="fatherfriend_park")
 
@@ -363,6 +366,7 @@ label ep13_quests9_beach1:
 
 label ep13_quests10_daisy_init:
     $ questHelp("work_3")
+    $ questHelpDesc("work_desc2")
     call locations_daisy1() from _rcall_locations_daisy1
     call map_init_daisy() from _rcall_map_init_daisy
     $ add_hook("before_open", "ep13_quests10_daisy_evening", scene="daisy_street", quest="day4", once=True)
