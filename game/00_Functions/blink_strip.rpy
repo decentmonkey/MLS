@@ -2,9 +2,11 @@ init python:
     class BlinkStrip(renpy.Displayable):
         def __init__(self, image, blinkAmount, preset, **kwargs):
             super(BlinkStrip, self).__init__(**kwargs)
+            self.imageName = image
             self.image = Image(image)
             self.image_size = im.cache.get(self.image).get_size()
             self.preset = preset
+            self.play = True
 
             width, height = self.image_size
             width = width/blinkAmount
@@ -22,6 +24,7 @@ init python:
             self.firstBlink = True
 
         def render(self, width, height, st, at):
+            global blinksListStopped
             if self.stage == 0:
                 if self.index == 0:
                     # choose random preset part
@@ -55,9 +58,15 @@ init python:
             child_render = renpy.render(t, width, height, st, at)
             render = renpy.Render(self.width, self.height)
             render.blit(child_render, (0, 0))
-            renpy.redraw(self, delay1)
+            if self.imageName not in blinksListStopped:
+#            blinksList.append(self)
+#            if self.play == True:
+                renpy.redraw(self, delay1)
             return render
 
+        def stop(self):
+            self.play = False
+            return
 
         def visit(self):
             return [self.image]

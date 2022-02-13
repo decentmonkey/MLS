@@ -49,6 +49,7 @@ default phoneNotifications = []
 default obj_follow_list = {}
 default images_history_list = {}
 default current_slide = False
+default current_slide_image = False
 define steamVersion = False
 default rrmeterValue = 0
 

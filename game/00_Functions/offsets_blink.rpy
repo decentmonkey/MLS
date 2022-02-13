@@ -852,6 +852,8 @@ define blink_presets = {
     "5": [[1.5, 0.02, 0.02, 0.3], [0.1, 0.1, 0.01, 0.1], [2.0, 0.02, 0.03, 0.1], [0.5, 0.02, 0.02, 0.3], [1.0, 0.02, 0.02, 0.3]] # часто
 
 }
+default blinksListStopped = []
+default blinksListActive = []
 
 init python:
     blink_preset = False
