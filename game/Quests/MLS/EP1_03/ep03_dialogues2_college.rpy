@@ -775,7 +775,7 @@ label ep03_dialogues2_college_4:
     music Montana
     sound2 step_stairs_short
     # если до этого не разговаривал с Моррис
-    if mlsBardiFirstDayCollege1 == 0 or mlsBardiDay3College5 == 0:
+    if mlsBardiFirstDayCollege1 == 0 and mlsBardiDay3College5 == 0:
         imgfl 901489
         bardi_t "Ух ты! Какая красотка!.."
         # она идет в его сторону и равняется с ним
@@ -810,7 +810,7 @@ label ep03_dialogues2_college_4:
         $ renpy.pause(0.5, hard=True)
         pause 6.0
         img 901496
-        show screen image_shake("/images/Slides/img_901496.jpg")
+#        show screen image_shake("/images/Slides/img_901496.jpg")
         w
         bardi "!!!"
         teacher_morris "Ты новый студент? Я тебя здесь раньше не видела."
@@ -864,7 +864,8 @@ label ep03_dialogues2_college_4:
                 pass
         pass
     # если уже знаком с Морис
-    if mlsBardiFirstDayCollege1 > 0 or mlsBardiDay3College5 > 0:
+    else:
+#    if mlsBardiFirstDayCollege1 > 0 or mlsBardiDay3College5 > 0:
         # она идет в его сторону и равняется с ним
         imgfl 901489
         w
@@ -1039,17 +1040,10 @@ label ep03_dialogues2_college_5:
     show screen image_shake("/images/Slides/img_901528.jpg")
     bardi_t "Это было бы круто!.."
 
-    img 901529
-    show screen dream()
-    with fade
-    show screen image_shake("/images/Slides/img_901529.jpg")
-    bardi_t "Я не отказалася бы..."
-
-    img 901530
-    show screen dream()
-    with diss
-#    show screen image_shake("/images/Slides/img_901530.jpg")
-    w
+#    img 901529
+#    show screen dream()
+#    with fade
+#    show screen image_shake("/images/Slides/img_901529.jpg")
 
     # video
     # v_Observe_Teacher11_4_25
@@ -1062,9 +1056,21 @@ label ep03_dialogues2_college_5:
     $ renpy.pause(0.5, hard=True)
     pause 4.5
     img v_Observe_Teacher11_4_end
+    show screen dream()
+    with diss
     show screen image_shake("/images/Slides/v_Observe_Teacher11_4_end.jpg")
     w
+    bardi_t "Я не отказалася бы..."
+
+
+    img 901530
+    show screen dream()
+    with Dissolve(1.0)
+#    show screen image_shake("/images/Slides/img_901530.jpg")
+    w
     bardi_t "Ееее!"
+
+
     # внезапно кадр меняется - Морис в своей обычной одежде стоит перед Барди у его мольберта, напротив Барди (мольберт между ними, она не видит его творение)
     $ camera_icon_enabled = True
     music stop

@@ -115,6 +115,9 @@ label ep13_quests3_english_lesson:
     call phone_outgoing_call("Sean", "sean_chat5") from _rcall_phone_outgoing_call
     call ep03_dialogues2_college_3next1() from _rcall_ep03_dialogues2_college_3next1
 
+    $ clear_object_follow_all()
+    $ set_object_follow("Teleport_Coridor7", scene="college_coridor6")
+    
     $ miniMapDisabled["COLLEGE"] = []
     call changeDayTime("day") from _rcall_changeDayTime_19
     $ set_active("Student14", False, scene="college_coridor6")
@@ -148,6 +151,7 @@ label ep13_quests3_english_after2:
     return
 
 label ep13_quests4_maurice_meet:
+    $ clear_object_follow_all()
     $ remove_hook(label="maurice_meet")
     call ep03_dialogues2_college_4() from _rcall_ep03_dialogues2_college_4
     call ep03_dialogues2_college_5() from _rcall_ep03_dialogues2_college_5
@@ -232,6 +236,7 @@ label ep13_quests7_home1:
     # меняем на вечер
     $ remove_hook(label="return_home_process")
     call changeDayTime("evening") from _rcall_changeDayTime_20
+    $ move_object("Henry", "empty")
     call ep03_dialogues3_family_evening_1() from _rcall_ep03_dialogues3_family_evening_1
     call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_15
     return
