@@ -1215,6 +1215,7 @@ label ep03_dialogues2_college_5:
 label ep03_dialogues2_college_5a:
     # внезапно к Барди подлетает Шон и хлопает его по плечу
     music Adventures_of_the_Deaf_Dreamer
+    sound2 step_stairs_short
     imgd 901481
     w
     sound Jump1
@@ -1552,8 +1553,8 @@ label ep03_dialogues2_college_12:
 
 # при клике на столик с алкоголем
 label ep03_dialogues2_college_13:
-    imgf 901579
     sound bottle1
+    imgf 901579
     bardi_t "О, отлично! Возьму еще одну бутылку."
     # у Барди в руке появляется бутылка пива
     return
@@ -1761,6 +1762,7 @@ label ep03_dialogues2_college_16:
                     imgd 911188
                     bardi_t "Лучше воспользоваться моментом и потрогать ее еще немного..."
                     imgd 911187
+                    w
                     # Хлоя смотрит на него и видит, что тот залип на ее груди
                     imgd 911184
                     w
@@ -1939,8 +1941,8 @@ label ep03_dialogues2_college_14:
     sound step_stairs_short
     imgf 901578
     bardi_t "Возьму себе еще пива."
-    imgd 901579
     sound bottle1
+    imgd 901579
     w
     sound2 snd_drinking_water
     if get_active_objects("Classmate7", scene="party1") != False:
@@ -2088,8 +2090,8 @@ label ep03_dialogues2_college_18:
     imgd 911085
     student_sarah "Сара."
     # Барди берет в руку бутылку, которую забрал у студента по пути в ванную
-    imgd 911087
     sound bottle1
+    imgd 911087
     w
     imgd 911088
     bardi "Ну, за знакомство, Сара!.."
@@ -2216,10 +2218,10 @@ label ep03_dialogues2_college_18:
     student_sarah "Не называй меня так!.."
     student_sarah "И, вообще-то, я умею ВСЕ!"
     bardi "Тогда докажи..."
-    student_sarah "..."
-    student_sarah "......"
     # Сара пьяно и задумчиво смотрит на Барди
     imgd 911113
+    student_sarah "..."
+    student_sarah "......"
     student_sarah "Садись."
     # Сара указывает рукой на унитаз (сделайте ее пьяной, чуть шатающейся)
     sound vjuh3
@@ -2308,8 +2310,8 @@ label ep03_dialogues2_college_18:
     w
     imgd 911123
     student_sarah "Он у тебя сломан. Может ты импотент?"
-    bardi "Ахаха! Нет, не может!"
     sound laughing_male2
+    bardi "Ахаха! Нет, не может!"
     # Сара рассерженно смотрит на Барди
     imgd 911125
     student_sarah "Тогда что с ним?!"
@@ -2332,13 +2334,15 @@ label ep03_dialogues2_college_18:
     # Барди вскакивает с унитаза и Сара начинает блевать в толчок (сам процесс не показываем, она резко склоняется над унитазом + звуки)
     sound Jump1
     img 911135 hpunch
-    bardi "Мать твою! И это называется, что ты умеешь?!"
     sound2 chavc26
+    bardi "Мать твою! И это называется, что ты умеешь?!"
     bardi "Господи! Нафиг надо!"
     bardi "Возвращайся, когда будешь трезвой! Алкашка!"
     # в этот момент раздается звонок телефона, Сара продолжает блевать. Барди вытаскивает из ее кармана телефон
     # отвечает на звонок
-    sound snd_phone_ring
+    fadeblack 1.0
+    sound2 snd_phone_ring
+    music Shining_Through
     imgf 911136
     w
     imgd 911137
@@ -2346,6 +2350,7 @@ label ep03_dialogues2_college_18:
     imgf 911138
     bardi "Такси? Да, вызывали."
     bardi "Да, скоро будем, секунду."
+    sound snd_phone_short_beeps
     # звук сброшенного вызова.
     # Сара в обнимку с унитазом
     imgd 911139
@@ -2506,8 +2511,8 @@ label ep03_dialogues2_college_19:
     w
     # голова Шона снова скрывается за столом
     # девочка с каре с невозмутимым видом проходит мимо стола, берет бутылку вискаря и идет к выходу
-    imgf 911169
     sound bottle1
+    imgf 911169
     student_girl3 "..."
     # затемнение, шаги
     # смена кадра на спальню
