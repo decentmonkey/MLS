@@ -674,7 +674,13 @@ define offsets_blink = {
     "img_911199" : {"Classmate4":[830,345,5,"3"]},
     "img_911202" : {"Classmate4":[557,296,5,"1"]},
     "img_911203" : {"Classmate4":[1018,260,5,"1"]},
-    "img_911205" : {"Classmate4":[833,285,5,"4"]}
+    "img_911205" : {"Classmate4":[833,285,5,"4"]},
+    "img_901561" : {"Classmate4":[1055,190,5,"4"]},
+    "img_901566" : {"Classmate9":[1190,215,5,"4"]},
+    "img_901570" : {"Classmate9":[1077,320,5,"3"]},
+    "img_910881" : {"Classmate1":[792,270,5,"1"]},
+    "img_910990" : {"Nicole":[870,165,5,"1"]},
+    "img_911200" : {"Pretty_girl":[918,248,5,"1"]}
 #offsets_blink_finish
 }
 
