@@ -39,6 +39,10 @@ Jay Staff
 Wissssss
 Shtofig
 EraRamp
+LEGOLAS
+freeacer
+Mr_Missclick
+kt9
 \n
 renpytom (Tom Rothamel)\nfor the Ren'Py Game Engine
 \n
