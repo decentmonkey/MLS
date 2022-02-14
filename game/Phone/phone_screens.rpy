@@ -154,6 +154,9 @@ screen phone_main():
                                 ]
                             null height 8
                             text t__(phone_button["caption"]) style "phone_main_icon_caption":
+                                if _preferences.language == "chinese":
+                                    font gui.text_font_chinese
+                                    size 14
                                 xoffset 0
                                 xanchor 0.5
                                 xpos 0.5
@@ -166,6 +169,9 @@ screen phone_contacts():
         background None
         xmaximum 378
         text t__("Контакты") style "phone_header1":
+            if _preferences.language == "chinese":
+                font gui.text_font_chinese
+                size 32
             xpos -8
             ypos 16
 
@@ -205,6 +211,9 @@ screen phone_contacts():
     #                            xsize 65
     #                            ysize 65
                             text t__(contact["caption"]) style "phone_contact_name":
+                                if _preferences.language == "chinese":
+                                    font gui.text_font_chinese
+                                    size 25
                                 xpos 83
                                 ypos 5
                             add "/images/Phone/mess/ico1.png":
@@ -212,6 +221,8 @@ screen phone_contacts():
                                 xsize 15
                                 ysize 15
                             text t__("Сообщения") style "phone_contact_name_underline":
+                                if _preferences.language == "chinese":
+                                    font gui.text_font_chinese
                                 xpos 102
                                 ypos 43
                             action [
@@ -234,6 +245,9 @@ screen phone_calling_screen():
                 pos(0.5, 200)
 
             text t__(phone_contact["caption"]) style "phone_contact_name_calling":
+                if _preferences.language == "chinese":
+                    font gui.text_font_chinese
+                    size 35
                 xanchor 0.5
                 pos(0.5, 430)
 
@@ -256,6 +270,8 @@ screen phone_chat_live_screen():
             xmaximum 378
             xpos 24
             text t__(phone_contact["caption"]) style "phone_contact_name_chatting":
+                if _preferences.language == "chinese":
+                    font gui.text_font_chinese
                 xanchor 0.5
                 pos(0.5, 130)
 
@@ -301,6 +317,8 @@ screen phone_chat_live_screen():
                                         fit "cover"
                                 else:
                                     text t__(chat_line[1], speaker) style "phone_chatting_bubble_right":
+                                        if _preferences.language == "chinese":
+                                            font gui.text_font_chinese
     #                                    justify True
                                         xmaximum 250
                         else:
@@ -318,6 +336,8 @@ screen phone_chat_live_screen():
                                         fit "cover"
                                 else:
                                     text t__(chat_line[1], speaker) style "phone_chatting_bubble_left":
+                                        if _preferences.language == "chinese":
+                                            font gui.text_font_chinese
 #                                    justify True
                                         xmaximum 250
                     null ysize 10
@@ -328,7 +348,9 @@ screen phone_chat_live_screen():
         if phone_typing == True:
             fixed:
                 pos(50,795)
-                text t__(phone_typing_name) + " " + t__("печатает...") style "phone_chatting_typing"
+                text t__(phone_typing_name) + " " + t__("печатает...") style "phone_chatting_typing":
+                    if _preferences.language == "chinese":
+                        font gui.text_font_chinese
 
 screen phone_messages_list_screen():
     frame:
@@ -337,6 +359,9 @@ screen phone_messages_list_screen():
         background None
         xmaximum 378
         text t__("История") style "phone_header1":
+            if _preferences.language == "chinese":
+                font gui.text_font_chinese
+                size 32
             xpos -8
             ypos 16
 
@@ -362,8 +387,12 @@ screen phone_messages_list_screen():
                             $ message = ""
                             if len(history_cell["chat_content"]) > 0:
                                 $ message = t__(history_cell["chat_content"][0][1])
-                                if len(message) > 25:
-                                    $ message = message[:25] + "..."
+                                if _preferences.language != "chinese":
+                                    if len(message) > 25:
+                                        $ message = message[:25] + "..."
+                                else:
+                                    if len(message) > 15:
+                                        $ message = message[:10] + "..."
                             $ contactImg = Transform(contact["img"], size=(28,28))
                             $ contactImgCircle = Transform("/images/Phone/mess/contact_circle.png", size=(28,28))
                             $ newMessage = False
@@ -390,12 +419,18 @@ screen phone_messages_list_screen():
         #                        add contactImg:
                                     pos (18,9)
                                 text t__(contact_caption) style "phone_contact_name_history":
+                                    if _preferences.language == "chinese":
+                                        font gui.text_font_chinese
+                                        size 19
                                     if newMessage == True:
                                         xpos 75
                                     else:
                                         xpos 56
                                     ypos 10
                                 text t__(message) style "phone_contact_name_history_text":
+                                    if _preferences.language == "chinese":
+                                        font gui.text_font_chinese
+                                        size 19
                                     xmaximum 370 - 42
                                     xpos 18
                                     ypos 42
@@ -423,6 +458,8 @@ screen phone_open_history_chat_screen():
             xmaximum 378
             xpos 24
             text t__(phone_contact["caption"]) style "phone_contact_name_chatting":
+                if _preferences.language == "chinese":
+                    font gui.text_font_chinese
                 xanchor 0.5
                 pos(0.5, 130)
 
@@ -469,6 +506,9 @@ screen phone_open_history_chat_screen():
                                         fit "cover"
                                 else:
                                     text t__(chat_line[1], speaker) style "phone_chatting_bubble_right":
+                                        if _preferences.language == "chinese":
+                                            font gui.text_font_chinese
+                                            size 22
     #                                    justify True
                                         xmaximum 250
                         else:
@@ -485,6 +525,9 @@ screen phone_open_history_chat_screen():
                                         fit "cover"
                                 else:
                                     text t__(chat_line[1], speaker) style "phone_chatting_bubble_left":
+                                        if _preferences.language == "chinese":
+                                            font gui.text_font_chinese
+                                            size 22
 #                                    justify True
                                         xmaximum 250
                     null ysize 10
@@ -517,6 +560,9 @@ screen phone_live_chat_menu_screen(chat_menu):
                         top_padding 10
                         bottom_padding 10
                         text t__(chat_menu[idx]) style "phone_chatting_menu_option":
+                            if _preferences.language == "chinese":
+                                font gui.text_font_chinese
+                                size 22
                             xmaximum 250
                         action [
                             Return(idx)
@@ -529,6 +575,9 @@ screen phone_preferences_list_screen():
         background None
         xmaximum 378
         text t__("Настройки") style "phone_header1":
+            if _preferences.language == "chinese":
+                font gui.text_font_chinese
+                size 32
             xpos -8
             ypos 16
 
@@ -557,6 +606,9 @@ screen phone_preferences_list_screen():
                         idle_background "#feffff"
                         hover_background "#e0e0e0"
                         text t__(preferences_cell["caption"]) style "phone_preferences_menu":
+                            if _preferences.language == "chinese":
+                                font gui.text_font_chinese
+                                size 28
                             pos (20,10)
                         action [
                             Return([preferences_cell["name"]])

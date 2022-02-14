@@ -190,3 +190,14 @@ style phone_instagram_contact_name:
     color "#151516"
     size 28
     font "fonts/SF-Pro-Display-Regular.otf"
+
+style phone_notes_category_text_chinese:
+    underline True
+    size 28
+    color "#38383a"
+    font "fonts/NotoSerifCJKsc-Regular.otf"
+
+style phone_notes_text_new_chinese:
+    size 26
+    color "#90383a"
+    font "fonts/NotoSerifCJKsc-Regular.otf"

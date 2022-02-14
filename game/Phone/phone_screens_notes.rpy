@@ -12,6 +12,9 @@ screen phone_notes_screen():
                 padding (20,10)
                 background None
                 xsize 368
-                text phone_notes_text style "phone_notes_text"
+                text phone_notes_text style "phone_notes_text":
+                    if _preferences.language == "chinese":
+                        font gui.text_font_chinese
+                        size 26
 
     vbar value YScrollValue("vp9") xpos 396 ypos 96 xsize 8 ysize 730

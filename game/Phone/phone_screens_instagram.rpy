@@ -42,6 +42,8 @@ screen phone_instagram_screen():
                             background "#ffffff"
                             pos(10,485)
                             text t__(post[1]) style "phone_instagram_caption":
+                                if _preferences.language == "chinese":
+                                    font gui.text_font_chinese
                                 pos(0, 0.5)
                                 yanchor 0.5
                                 line_spacing 3
@@ -60,6 +62,9 @@ screen phone_instagram_list_screen():
         background None
         xmaximum 378
         text t__("Instagram") style "phone_header1":
+            if _preferences.language == "chinese":
+                font gui.text_font_chinese
+                size 32
             xpos -8
             ypos 16
 
@@ -111,6 +116,9 @@ screen phone_instagram_list_screen():
     #                            xsize 65
     #                            ysize 65
                             text t__(contact["caption"]) style "phone_instagram_contact_name":
+                                if _preferences.language == "chinese":
+                                    font gui.text_font_chinese
+                                    size 24
                                 if newPosts == True:
                                     xpos 105
                                 else:

@@ -42,6 +42,9 @@ screen phone_preferences_backgrounds():
         background None
         xmaximum 378
         text t__("Фон") style "phone_header1":
+            if _preferences.language == "chinese":
+                font gui.text_font_chinese
+                size 32
             xpos -8
             ypos 16
     fixed:

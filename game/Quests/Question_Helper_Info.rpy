@@ -265,10 +265,16 @@ label show_questlog:
                     lastCategory = t__(questLogLine[3])
                     if firstCategory != True:
                         inText = inText + "\n"
-                    inText = inText + "{=phone_notes_category_text}{u}" + t__(lastCategory) + "{/u}{/=questlog_text_category_style}\n{vspace=5}"
+                    if _preferences.language != "chinese":
+                        inText = inText + "{=phone_notes_category_text}{u}" + t__(lastCategory) + "{/u}{/=questlog_text_category_style}\n{vspace=5}"
+                    else:
+                        inText = inText + "{=phone_notes_category_text_chinese}{u}" + t__(lastCategory) + "{/u}{/=questlog_text_category_style}\n{vspace=5}"
                     firstCategory = False
                 if str(questLogLine[0]) in questLogLinesUpdated:
-                    inText = inText + "{=phone_notes_text_new}" + t__(questLogLine[1]) + "{/=phone_notes_text_new}\n"
+                    if _preferences.language != "chinese":
+                        inText = inText + "{=phone_notes_text_new}" + t__(questLogLine[1]) + "{/=phone_notes_text_new}\n"
+                    else:
+                        inText = inText + "{=phone_notes_text_new_chinese}" + t__(questLogLine[1]) + "{/=phone_notes_text_new}\n"
                 else:
                     inText = inText + t__(questLogLine[1]) + "\n"
 #    sound open_map

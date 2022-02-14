@@ -6,6 +6,9 @@ screen phone_gallery_screen:
         background None
         xmaximum 378
         text t__("Галерея") style "phone_header1":
+            if _preferences.language == "chinese":
+                font gui.text_font_chinese
+                size 32
             xpos -8
             ypos 16
         frame:
@@ -16,10 +19,14 @@ screen phone_gallery_screen:
             button:
                 if phone_gallery_delete_mode == False:
                     text t__("Удалить") style "phone_gallery_delete_button":
+                        if _preferences.language == "chinese":
+                            font gui.text_font_chinese
                         xanchor 1.0
                         xpos 1.0
                 else:
                     text t__("Удалить") style "phone_gallery_delete_button_selected":
+                        if _preferences.language == "chinese":
+                            font gui.text_font_chinese
                         xanchor 1.0
                         xpos 1.0
                 action [
@@ -72,6 +79,8 @@ screen phone_gallery_screen:
                                 xsize 180
                                 ysize 110
                             text t__("Удалить") style "phone_gallery_delete_caption":
+                                if _preferences.language == "chinese":
+                                    font gui.text_font_chinese
                                 xanchor 0.5
                                 yanchor 0.5
                                 xpos 0.5
