@@ -100,15 +100,18 @@ init python:
             else:
                 sKey = False
         if sKey:
-            st = language_dict[sKey][language_fields[lang]]
-            if st == "":
-                st = language_dict[s][language_fields[lang]]
+            if len(language_dict[sKey]) > language_fields[lang]:
+                st = language_dict[sKey][language_fields[lang]]
                 if st == "":
-                    st = language_dict[sKey][language_fields["english"]]
+                    st = language_dict[s][language_fields[lang]]
                     if st == "":
-                        st = language_dict[s][language_fields["english"]]
+                        st = language_dict[sKey][language_fields["english"]]
                         if st == "":
-                            st = s
+                            st = language_dict[s][language_fields["english"]]
+                            if st == "":
+                                st = s
+            else:
+                st = s
             st = st.split("#")[0]
         return parse_tstr(st)
 

@@ -2600,10 +2600,14 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     use navigation
 
-    textbutton t__("Return"):
-        style "return_button"
-
-        action Return()
+    if _preferences.language != "chinese":
+        textbutton t__("Return"):
+            style "return_button"
+            action Return()
+    else:
+        textbutton t__("Return") + "\n(Return)":
+            style "return_button"
+            action Return()
 
     label t__(title)
 
@@ -3139,8 +3143,15 @@ screen history():
                     yfit True
 
                 if h.who:
+                    python:
+                        try:
+                            eWho = eval(h.who)
+                            who_name = eWho.name
+                        except:
+                            who_name = h.who
                     if _preferences.language != "chinese":
-                        label t__(h.who):
+#                        label t__(h.who):
+                        label t__(who_name):
                             style "history_name"
 
                             ## Take the color of the who text from the Character, if
@@ -3148,7 +3159,8 @@ screen history():
                             if "color" in h.who_args:
                                 text_color h.who_args["color"]
                     else:
-                        label t__(h.who) text_style "text_chinese":
+#                        label t__(h.who) text_style "text_chinese":
+                        label t__(who_name) text_style "text_chinese":
                             style "history_name"
                             if "color" in h.who_args:
                                 text_color h.who_args["color"]
