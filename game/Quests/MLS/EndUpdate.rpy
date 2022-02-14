@@ -3,6 +3,8 @@ screen end_update_screen():
         add "/images/Other/end_update.jpg" at end_update_img
 
         text t__("Следующее обновление уже в пути!") style "end_update_text1":
+            if _preferences.language == "chinese":
+                font gui.text_font_chinese
             if steamVersion == False:
                 xanchor 0.5
                 pos(1920/2, 460)
@@ -13,10 +15,14 @@ screen end_update_screen():
                 at transform_end_update_text1b
         if steamVersion == True:
             text ("This is the Early Access game. It will get regular free updates in the future") style "end_update_text2":
+                if _preferences.language == "chinese":
+                    font gui.text_font_chinese
                 xanchor 0.5
                 pos(1920/2, 560)
                 at transform_end_update_text2
             text ("Follow the game news: {a=https://steamcommunity.com/app/1794470/}https://steamcommunity.com/app/1794470/{/a}") style "end_update_text2":
+                if _preferences.language == "chinese":
+                    font gui.text_font_chinese
                 xanchor 0.5
                 pos(1920/2, 630)
                 at transform_end_update_text3
@@ -34,12 +40,18 @@ screen end_update_screen():
                     first_spacing 0
                     box_wrap_spacing 0
 
-                    text t__("Мы убеждены в том, что игры должны быть качественными") style "end_update_text2" at transform_end_update_text2
+                    text t__("Мы убеждены в том, что игры должны быть качественными") style "end_update_text2" at transform_end_update_text2:
+                        if _preferences.language == "chinese":
+                            font gui.text_font_chinese
     #                    pos(0, 0)
-                    text t__("И обновления выходить регулярно и вовремя!") style "end_update_text2" at transform_end_update_text3
+                    text t__("И обновления выходить регулярно и вовремя!") style "end_update_text2" at transform_end_update_text3:
+                        if _preferences.language == "chinese":
+                            font gui.text_font_chinese
     #                    pos
                     null height 30
-                    text t__("Станьте частью чего-то большего и поддержите нашу идею подпиской на {color=#303030}{a=https://patreon.com/L7team}Patreon{/a}{/color}!") style "end_update_text2" at transform_end_update_text4
+                    text t__("Станьте частью чего-то большего и поддержите нашу идею подпиской на {color=#303030}{a=https://patreon.com/L7team}Patreon{/a}{/color}!") style "end_update_text2" at transform_end_update_text4:
+                        if _preferences.language == "chinese":
+                            font gui.text_font_chinese
             frame:
     #            background "#30303080"
                 background None
@@ -51,8 +63,12 @@ screen end_update_screen():
                     spacing 0
                     first_spacing 0
                     box_wrap_spacing 0
-                    text t__("Если вы поддерживаете то, что вам нравится, сегодня") style "end_update_text3" at transform_end_update_text5
-                    text t__("Вы получите больше того, что вам нравится, завтра! ;-)") style "end_update_text3" at transform_end_update_text6
+                    text t__("Если вы поддерживаете то, что вам нравится, сегодня") style "end_update_text3" at transform_end_update_text5:
+                        if _preferences.language == "chinese":
+                            font gui.text_font_chinese
+                    text t__("Вы получите больше того, что вам нравится, завтра! ;-)") style "end_update_text3" at transform_end_update_text6:
+                        if _preferences.language == "chinese":
+                            font gui.text_font_chinese
             imagebutton:
                 xpos 970
                 ypos 915
