@@ -1974,7 +1974,7 @@ screen choice(items):
                                 button_obj["caption"] = str1
                                 button_obj["active"] = False
 
-                    if " (disabled)" in imenu.caption or " (désactivé)" in imenu.caption or " (deaktiviert)" in imenu.caption or " (déactivé)" in imenu.caption or " (devredışı)" in imenu.caption or " (disabilitato)" in imenu.caption or " (Disabled)" in imenu.caption or " (Deaktiviert)" in imenu.caption or " (Déactivé)" in imenu.caption or " (Devredışı)" in imenu.caption or " (Disabilitato)" in imenu.caption:
+                    if " (disabled)" in imenu.caption or " (désactivé)" in imenu.caption or " (deaktiviert)" in imenu.caption or " (déactivé)" in imenu.caption or " (devredışı)" in imenu.caption or " (disabilitato)" in imenu.caption or " (Disabled)" in imenu.caption or " (Deaktiviert)" in imenu.caption or " (Déactivé)" in imenu.caption or " (Devredışı)" in imenu.caption or " (Disabilitato)" in imenu.caption or " (devre dışı)" in imenu.caption or " (disabilito)" in imenu.caption or " (禁止)" in imenu.caption or " （禁用）" in imenu.caption:
 #                        str1 = t__(imenu.caption)
                         str1 = str1.replace(" (disabled)", "")
                         str1 = str1.replace(" (deaktiviert)", "")
@@ -1989,6 +1989,9 @@ screen choice(items):
                         str1 = str1.replace(" (Disabilitato)", "")
                         str1 = str1.replace(" (devre dışı)", "")
                         str1 = str1.replace(" (disabilito)", "")
+                        str1 = str1.replace(" (禁止)", "")
+                        str1 = str1.replace(" （禁用）", "")
+                        
                         button_obj["caption"] = str1
                         button_obj["active"] = False
 
@@ -2428,28 +2431,31 @@ screen main_menu():
                             text_size gui.resolution.main_menu.font_size1
                     else:
                         label "Language":
-                            text_size gui.resolution.main_menu.font_size1
+                            text_size gui.resolution.main_menu.font_size1_chinese
                     null height 10
                     hbox:
                         xsize gui.resolution.main_menu.lang.width2
                         xmaximum gui.resolution.main_menu.lang.width2
+                        $ languagesFontSize = gui.resolution.main_menu.font_size2
+                        if _preferences.language == "chinese":
+                            $ languagesFontSize = gui.resolution.main_menu.font_size2_chinese
                         vbox:
                             xsize gui.resolution.main_menu.lang.width2
                             xmaximum gui.resolution.main_menu.lang.width2
                             textbutton "English" + persistent.lang_suffixes["english"] action Language("english"):
-                                text_size gui.resolution.main_menu.font_size2
+                                text_size languagesFontSize
                                 xmaximum gui.resolution.main_menu.lang.width2
                             textbutton "German" + persistent.lang_suffixes["german"] action Language("german"):
-                                text_size gui.resolution.main_menu.font_size2
+                                text_size languagesFontSize
                                 xmaximum gui.resolution.main_menu.lang.width2
                             textbutton "French" + persistent.lang_suffixes["french"] action Language("french"):
-                                text_size gui.resolution.main_menu.font_size2
+                                text_size languagesFontSize
                                 xmaximum gui.resolution.main_menu.lang.width2
                             textbutton "Spanish" + persistent.lang_suffixes["spanish"] action Language("spanish"):
-                                text_size gui.resolution.main_menu.font_size2
+                                text_size languagesFontSize
                                 xmaximum gui.resolution.main_menu.lang.width2
                             textbutton "Czech" + persistent.lang_suffixes["czech"] action Language("czech"):
-                                text_size gui.resolution.main_menu.font_size2
+                                text_size languagesFontSize
                                 xmaximum gui.resolution.main_menu.lang.width2
         #                textbutton "Italian (beta)" action Language("italian"):
         #                    text_size gui.resolution.main_menu.font_size2
@@ -2457,13 +2463,13 @@ screen main_menu():
         #                    text_size gui.resolution.main_menu.font_size2
                         vbox:
                             textbutton "Turkish" + persistent.lang_suffixes["turkish"] action Language("turkish"):
-                                text_size gui.resolution.main_menu.font_size2
+                                text_size languagesFontSize
                             textbutton "Ukrainian" + persistent.lang_suffixes["ukrainian"] action Language("ukrainian"):
-                                text_size gui.resolution.main_menu.font_size2
+                                text_size languagesFontSize
                             textbutton "Chinese" + persistent.lang_suffixes["chinese"] action Language("chinese"):
-                                text_size gui.resolution.main_menu.font_size2
+                                text_size languagesFontSize
                             textbutton "Russian" + persistent.lang_suffixes[None] action Language(None):
-                                text_size gui.resolution.main_menu.font_size2
+                                text_size languagesFontSize
 
             if language_credits.has_key(str(_preferences.language)) and steamVersion == False:
                 frame:
