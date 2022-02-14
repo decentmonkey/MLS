@@ -9,8 +9,8 @@ python early:
 #        "italian": "Thanks for the Italian translation to\n[5n4k3]",
         "turkish": "Thanks for the Turkish translation to\n[LEGOLAS] & [Shtofig]",
         "ukrainian": "Thanks for the Ukrainian translation to\n[EraRamp]",
-        "chinese": "Thanks for the Ukrainian translation to\n[freeacer]",
-        "czech" : "Thanks for the Ukrainian translation to\n[Mr_Missclick]",
+        "chinese": "Thanks for the Chinese translation to\n[freeacer]",
+        "czech" : "Thanks for the Czech translation to\n[Mr_Missclick]",
         "None": "Thanks for the Russian proofread to\n[Ms. Mansfield] & [EraRamp]"
     }
 
