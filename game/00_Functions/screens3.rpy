@@ -62,6 +62,8 @@ screen questhelp_screen():
                                             categoryStyle = categoryStyle + "_selected"
                                 if categoryStyle != False:
                                     textbutton t__(category) style categoryStyle:
+                                        if _preferences.language == "chinese":
+                                            text_font gui.text_font_chinese
                                         xsize getRes(350)
                                         xpadding gui.questhelp.category.xpadding1
                                         top_padding gui.questhelp.category.top_padding
@@ -87,6 +89,8 @@ screen questhelp_screen():
                                             categoryStyle = categoryStyle + "_selected"
                                 if categoryStyle != False and categoryStatus == 0:
                                     textbutton t__(category) style categoryStyle:
+                                        if _preferences.language == "chinese":
+                                            text_font gui.text_font_chinese
                                         xsize getRes(350)
                                         xpadding gui.questhelp.category.xpadding1
                                         top_padding gui.questhelp.category.top_padding
@@ -114,6 +118,8 @@ screen questhelp_screen():
                                             categoryStyle = categoryStyle + "_selected"
                                 if categoryStyle != False and categoryStatus != 0:
                                     textbutton t__(category) style categoryStyle:
+                                        if _preferences.language == "chinese":
+                                            text_font gui.text_font_chinese
                                         xsize getRes(350)
                                         xpadding gui.questhelp.category.xpadding1
                                         top_padding gui.questhelp.category.top_padding
