@@ -810,7 +810,7 @@ label ep03_dialogues2_college_4:
         $ renpy.pause(0.5, hard=True)
         pause 6.0
         img 901496
-#        show screen image_shake("/images/Slides/img_901496.jpg")
+        show screen image_shake("/images/Slides/img_901496.jpg")
         w
         bardi "!!!"
         teacher_morris "Ты новый студент? Я тебя здесь раньше не видела."
