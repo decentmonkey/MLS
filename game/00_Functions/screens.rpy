@@ -2427,8 +2427,12 @@ screen main_menu():
                     pos (0,0)
                     anchor (0,0)
                     style_prefix "navigation"
-                    label t__("Language"):
-                        text_size gui.resolution.main_menu.font_size1
+                    if _preferences.language != "chinese":
+                        label t__("Language"):
+                            text_size gui.resolution.main_menu.font_size1
+                    else:
+                        label "Language":
+                            text_size gui.resolution.main_menu.font_size1
                     null height 10
                     hbox:
                         xsize gui.resolution.main_menu.lang.width2

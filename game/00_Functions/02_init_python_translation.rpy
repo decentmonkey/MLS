@@ -1,4 +1,15 @@
 #python early:
+translate chinese python:
+    gui.text_font = "fonts/NotoSerifCJKsc-Regular.otf"
+    gui.interface_text_font = "fonts/NotoSerifCJKsc-Regular.otf"
+    gui.button_text_font = "fonts/NotoSerifCJKsc-Regular.otf"
+
+#translate chinese python:
+#    gui.text_size = 24
+#    define gui.interface_text_font = "fonts/NotoSerifCJKsc-Regular.otf"
+#    define gui.interface_text_font = "fonts/NotoSerifCJKsc-Regular.otf"
+#    define gui.button_text_font = "fonts/NotoSerifCJKsc-Regular.otf"
+
 init python:
     language_dict = {}
     list_files = renpy.list_files()

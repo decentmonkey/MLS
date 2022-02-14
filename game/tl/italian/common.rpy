@@ -112,21 +112,21 @@ translate italian strings:
 
     # renpy/common/_developer/developer.rpym:63
     old "Image Attributes"
-    new ""
+    new "Image Attributes"
 
     # renpy/common/_developer/developer.rpym:90
     old "[name] [attributes] (hidden)"
-    new ""
+    new "[name] [attributes] (hidden)"
 
     # renpy/common/_developer/developer.rpym:94
     old "[name] [attributes]"
-    new ""
+    new "[name] [attributes]"
 
     # renpy/common/_developer/developer.rpym:154
     old "Hide deleted"
-    new ""
+    new "Hide deleted"
 
     # renpy/common/_developer/developer.rpym:154
     old "Show deleted"
-    new ""
+    new "Show deleted"
 
