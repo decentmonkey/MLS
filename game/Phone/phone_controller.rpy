@@ -217,14 +217,39 @@ label phone_init:
         {"name":"preferences_rrmeter", "caption": t_("RR Meter")},
         {"name":"preferences_backgrounds", "caption": t_("Изменить фон")}
     ]
-    $ phone_backgrounds_list = [
-        "/images/Phone/bg_1.png",
-        "/images/Phone/option/bg_2.png"
-    ]
+    call phone_backgrounds_init()
     $ phone_inited = True
 
     return
 
+label phone_backgrounds_init:
+    $ phone_backgrounds_list = [
+        "/images/Phone/bg_1.png",
+        "/images/Phone/option/bg_2.png",
+        "/images/Phone/option/backgrounds/bg_3.png",
+        "/images/Phone/option/backgrounds/bg_4.png",
+        "/images/Phone/option/backgrounds/bg_5.png",
+        "/images/Phone/option/backgrounds/bg_6.png",
+        "/images/Phone/option/backgrounds/bg_7.png",
+        "/images/Phone/option/backgrounds/bg_8.png",
+        "/images/Phone/option/backgrounds/bg_9.png",
+        "/images/Phone/option/backgrounds/bg_10.png",
+        "/images/Phone/option/backgrounds/bg_11.png",
+        "/images/Phone/option/backgrounds/bg_12.png",
+        "/images/Phone/option/backgrounds/bg_13.png",
+        "/images/Phone/option/backgrounds/bg_14.png",
+        "/images/Phone/option/backgrounds/bg_15.png",
+        "/images/Phone/option/backgrounds/bg_16.png",
+        "/images/Phone/option/backgrounds/bg_17.png",
+        "/images/Phone/option/backgrounds/bg_18.png",
+        "/images/Phone/option/backgrounds/bg_19.png",
+        "/images/Phone/option/backgrounds/bg_20.png",
+        "/images/Phone/option/backgrounds/bg_21.png",
+        "/images/Phone/option/backgrounds/bg_22.png",
+        "/images/Phone/option/backgrounds/bg_23.png",
+        "/images/Phone/option/backgrounds/bg_24.png"
+    ]
+    return
 label phone_controller:
 
 label phone_open_loop1:
