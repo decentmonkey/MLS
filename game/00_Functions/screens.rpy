@@ -2068,11 +2068,11 @@ screen choice(items):
             if button_data["native"] == True:
                 if button_data["active"] == True:
                     hbox:
-                        if _preferences.language != "chinese":
-                            $ buttonTextStyle = "choice_button_text"
-                        else:
-                            $ buttonTextStyle = "text_chinese"
+                        $ buttonTextStyle = "choice_button_text"
                         textbutton t__(button_data["caption"]) text_style buttonTextStyle:
+                            if _preferences.language == "chinese":
+                                text_font gui.text_font_chinese
+
                             if currentMenuItem == idx1:
                                 background Frame("/gui/button/choice_hover_background.png")
                                 text_color "#ffffff"
@@ -2099,12 +2099,10 @@ screen choice(items):
                                 xoffset -200
                                 xanchor 0.0
                 else:
-                    if _preferences.language != "chinese":
-                        $ buttonTextStyle = "choice_button_disabled_text"
-                    else:
-                        $ buttonTextStyle = "choice_button_disabled_text_chinese"
-
+                    $ buttonTextStyle = "choice_button_disabled_text"
                     textbutton t__(button_data["caption"]) text_style buttonTextStyle:
+                        if _preferences.language == "chinese":
+                            text_font gui.text_font_chinese
                         if currentMenuItem == idx1:
                             background Frame("/gui/button/choice_idle_background_keyboard.png")
                         hovered [
@@ -2117,11 +2115,10 @@ screen choice(items):
                 if button_data["active"] == True:
                     $ menuLastName = menuName
                     hbox:
-                        if _preferences.language != "chinese":
-                            $ buttonTextStyle = "choice_button_text"
-                        else:
-                            $ buttonTextStyle = "text_chinese"
+                        $ buttonTextStyle = "choice_button_text"
                         textbutton t__(button_data["caption"]) text_style buttonTextStyle:
+                            if _preferences.language == "chinese":
+                                text_font gui.text_font_chinese
                             if currentMenuItem == idx1:
                                 background Frame("/gui/button/choice_hover_background.png")
                                 text_color "#ffffff"
@@ -2149,11 +2146,10 @@ screen choice(items):
                                     yoffset button_data["yoffset"]
                                 xoffset -200
                 else:
-                    if _preferences.language != "chinese":
-                        $ buttonTextStyle = "choice_button_disabled_text"
-                    else:
-                        $ buttonTextStyle = "choice_button_disabled_text_chinese"
+                    $ buttonTextStyle = "choice_button_disabled_text"
                     textbutton t__(button_data["caption"]) text_style buttonTextStyle:
+                        if _preferences.language == "chinese":
+                            text_font gui.text_font_chinese
                         if currentMenuItem == idx1:
                             background Frame("/gui/button/choice_idle_background_keyboard.png")
                         hovered [
