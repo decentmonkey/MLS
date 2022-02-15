@@ -43,15 +43,25 @@ screen end_update_screen():
                     text t__("Мы убеждены в том, что игры должны быть качественными") style "end_update_text2" at transform_end_update_text2:
                         if _preferences.language == "chinese":
                             font gui.text_font_chinese
+                        else:
+                            if _preferences.language != "None" and _preferences.language != "english":
+                                font "fonts/Ubuntu-Condensed.ttf"
+
     #                    pos(0, 0)
                     text t__("И обновления выходить регулярно и вовремя!") style "end_update_text2" at transform_end_update_text3:
                         if _preferences.language == "chinese":
                             font gui.text_font_chinese
+                        else:
+                            if _preferences.language != "None" and _preferences.language != "english":
+                                font "fonts/Ubuntu-Condensed.ttf"
     #                    pos
                     null height 30
                     text t__("Станьте частью чего-то большего и поддержите нашу идею подпиской на {color=#303030}{a=https://patreon.com/L7team}Patreon{/a}{/color}!") style "end_update_text2" at transform_end_update_text4:
                         if _preferences.language == "chinese":
                             font gui.text_font_chinese
+                        else:
+                            if _preferences.language != "None" and _preferences.language != "english":
+                                font "fonts/Ubuntu-Condensed.ttf"
             frame:
     #            background "#30303080"
                 background None

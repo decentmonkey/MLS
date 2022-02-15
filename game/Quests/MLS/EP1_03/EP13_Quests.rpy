@@ -84,7 +84,7 @@ label ep13_quests3_college_enter:
     if questHelpGetStatus("house_18") == 0: # если не принимали душ, то fail
         $ questHelp("house_18", False)
         $ remove_hook(label="ep13_quests2_bathroom")
-    
+
     call ep03_dialogues2_college_1() from _rcall_ep03_dialogues2_college_1
     call ep03_dialogues2_college_2() from _rcall_ep03_dialogues2_college_2
     $ miniMapEnabledOnly = ["none"]
@@ -117,7 +117,7 @@ label ep13_quests3_english_lesson:
 
     $ clear_object_follow_all()
     $ set_object_follow("Teleport_Coridor7", scene="college_coridor6")
-    
+
     $ miniMapDisabled["COLLEGE"] = []
     call changeDayTime("day") from _rcall_changeDayTime_19
     $ set_active("Student14", False, scene="college_coridor6")
@@ -427,11 +427,11 @@ label ep13_quests11_party3:
 label ep13_quests11_party4:
     if obj_name == "Alco1" or obj_name == "Alco2" or obj_name == "Alco3":
         # при клике на столик с алкоголем
-        music Let_Me_Let_You_Let_Go_Vocal
+        music She_Is
         call ep03_dialogues2_college_13() from _rcall_ep03_dialogues2_college_13
-    
+
     if obj_name == "Classmate9ClassmateNerd":
-        music Let_Me_Let_You_Let_Go_Vocal
+        music She_Is
         if ep13_after_chloe_flag == False and 1==2:
             # при клике на Лео до общения с Хлоей
             call ep03_dialogues2_college_13a() from _rcall_ep03_dialogues2_college_13a
@@ -452,7 +452,7 @@ label ep13_quests11_party4:
 
     if obj_name == "ClassmateFrik":
         call ep03_dialogues2_college_20() from _rcall_ep03_dialogues2_college_20
-    
+
     if obj_name == "NicoleClassmate1":
         # при клике на парочку целующихся девчонок
         call ep03_dialogues2_college_19() from _rcall_ep03_dialogues2_college_19
@@ -463,7 +463,7 @@ label ep13_quests11_party4:
         call ep03_dialogues2_college_16_sarah() from _rcall_ep03_dialogues2_college_16_sarah
         if _return == 2:
             $ set_active("Classmate7", False, scene="party1")
-            music Let_Me_Let_You_Let_Go_Vocal
+            music She_Is
 #            $ ep13_end_update_type = 2
 #            jump ep13_quests11_party5_end
 
@@ -485,5 +485,3 @@ label ep13_quests11_party5_end:
     $ steam_achievement("ach_end3")
     jump end_update
     return
-
-

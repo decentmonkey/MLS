@@ -2482,14 +2482,15 @@ label ep03_dialogues2_college_18:
     pause 3.0
     sound snd_door_open1
     pause 1.5
+#    music She_Is
     return 2
 
 # при клике на парочку целующихся девчонок
 label ep03_dialogues2_college_19:
     # Барди подходит к девочкам, те перестают целоваться и с любопытством смотрят на него
     # по ним видно, что они очень не трезвы
-    music2 party_ambience
     music She_Is
+    music2 party_ambience
     sound2 step_stairs_short
     imgfl 911154
     w
