@@ -1460,7 +1460,7 @@ label ep03_dialogues2_college_11:
 # новая локация на карте - дом Арни
 
 #music Upbeat_Summer
-#music Let_Me_Let_You_Let_Go_Vocal
+#music She_Is
 #music Kimono
 
 # при клике на локацию
@@ -1529,7 +1529,7 @@ label ep03_dialogues2_college_12:
     fadeblack 1.0
     music2 party_ambience
     imgfl 911193
-    music Let_Me_Let_You_Let_Go_Vocal
+    music She_Is
     w
     imgf 911194
     w
@@ -1905,7 +1905,7 @@ label ep03_dialogues2_college_16:
     label ep03_dialogues2_college_16_1:
     # Барди стоит один и смотрит на остальных студентов
     fadeblack 1.0
-    music Let_Me_Let_You_Let_Go_Vocal
+    music She_Is
     imgf 911191
     bardi_t "Похоже, здесь все сегодня друг с другом перетрахаются..."
     $ ep13_after_chloe_flag = True
@@ -2489,7 +2489,7 @@ label ep03_dialogues2_college_19:
     # Барди подходит к девочкам, те перестают целоваться и с любопытством смотрят на него
     # по ним видно, что они очень не трезвы
     music2 party_ambience
-    music Let_Me_Let_You_Let_Go_Vocal
+    music She_Is
     sound2 step_stairs_short
     imgfl 911154
     w
