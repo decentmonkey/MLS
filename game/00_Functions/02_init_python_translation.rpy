@@ -182,5 +182,6 @@ init python:
         st = re.sub("Mr\.\\n", "Mr. ", st)
         st = re.sub("Mrs\.\\n", "Mrs. ", st)
         st = re.sub("Ms\.\\n", "Ms. ", st)
+        st = re.sub("M\.\\n", "M. ", st)
         st = re.sub("prof.\\n", "prof. ", st)
         return st

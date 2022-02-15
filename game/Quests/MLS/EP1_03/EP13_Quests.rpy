@@ -2,6 +2,7 @@ default ep13_update_init_flag = False
 
 default ep13_after_chloe_flag = False
 default ep13_after_leo_flag = False
+default ep13_after_sarah_flag = False
 default ep13_end_update_type = 0
 
 label ep13_update_init:
@@ -418,6 +419,7 @@ label ep13_quests11_party2:
 
 label ep13_quests11_party3:
     $ questHelp("college_27", True)
+    $ questHelp("college_28")
     call ep03_dialogues2_college_12() from _rcall_ep03_dialogues2_college_12
     call locations_party1() from _rcall_locations_party1
     $ homeButtonEnabled = False
@@ -463,7 +465,9 @@ label ep13_quests11_party4:
         call ep03_dialogues2_college_16_sarah() from _rcall_ep03_dialogues2_college_16_sarah
         if _return == 2:
             $ set_active("Classmate7", False, scene="party1")
+            $ ep13_after_sarah_flag = True
             music She_Is
+            $ questHelp("college_28", True)
 #            $ ep13_end_update_type = 2
 #            jump ep13_quests11_party5_end
 
@@ -482,6 +486,8 @@ label ep13_quests11_party4:
 
 
 label ep13_quests11_party5_end:
+    if ep13_after_sarah_flag == False:
+        $ questHelp("college_28", False)
     $ steam_achievement("ach_end3")
     jump end_update
     return

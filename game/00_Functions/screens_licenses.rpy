@@ -22,7 +22,8 @@ init python:
         ["The Heat (INFRACTION)", "Music/The_Heat.ogg"],
         ["Visions Of Plenty (KEN VERHEECKE)", "Music/Visions_Of_Plenty.ogg"],
         ["Write Your Story (JOYSTOCK)", "Music/Write_Your_Story.ogg"],
-        ["Kimono (SEVENNOTES)", "Music/Kimono.ogg"]
+        ["Kimono (SEVENNOTES)", "Music/Kimono.ogg"],
+        ["She Is (KALINA & KIANA)", "Music/She_Is.ogg"]
     ]
     licenses_music_list_playing_idx = -1
 

@@ -1991,7 +1991,7 @@ screen choice(items):
                         str1 = str1.replace(" (disabilito)", "")
                         str1 = str1.replace(" (禁止)", "")
                         str1 = str1.replace(" （禁用）", "")
-                        
+
                         button_obj["caption"] = str1
                         button_obj["active"] = False
 
@@ -2454,16 +2454,17 @@ screen main_menu():
                             textbutton "Spanish" + persistent.lang_suffixes["spanish"] action Language("spanish"):
                                 text_size languagesFontSize
                                 xmaximum gui.resolution.main_menu.lang.width2
-                            textbutton "Czech" + persistent.lang_suffixes["czech"] action Language("czech"):
+                            textbutton "Turkish" + persistent.lang_suffixes["turkish"] action Language("turkish"):
                                 text_size languagesFontSize
                                 xmaximum gui.resolution.main_menu.lang.width2
+#                            textbutton "Czech" + persistent.lang_suffixes["czech"] action Language("czech"):
+#                                text_size languagesFontSize
+#                                xmaximum gui.resolution.main_menu.lang.width2
         #                textbutton "Italian (beta)" action Language("italian"):
         #                    text_size gui.resolution.main_menu.font_size2
         #                textbutton "Spanish (beta)" action Language("spanish"):
         #                    text_size gui.resolution.main_menu.font_size2
                         vbox:
-                            textbutton "Turkish" + persistent.lang_suffixes["turkish"] action Language("turkish"):
-                                text_size languagesFontSize
                             textbutton "Ukrainian" + persistent.lang_suffixes["ukrainian"] action Language("ukrainian"):
                                 text_size languagesFontSize
                             textbutton "Chinese" + persistent.lang_suffixes["chinese"] action Language("chinese"):
@@ -3041,7 +3042,7 @@ screen preferences():
                     textbutton "Ukrainian" + persistent.lang_suffixes["ukrainian"] action Language("ukrainian")
 #                    textbutton "Italian (beta)" action Language("italian")
                     textbutton "Spanish" + persistent.lang_suffixes["spanish"] action Language("spanish")
-                    textbutton "Czech" + persistent.lang_suffixes["czech"] action Language("czech")
+#                    textbutton "Czech" + persistent.lang_suffixes["czech"] action Language("czech")
                     textbutton "Chinese" + persistent.lang_suffixes["chinese"] action Language("chinese")
                     textbutton "Russian" + persistent.lang_suffixes[None] action Language(None)
 
