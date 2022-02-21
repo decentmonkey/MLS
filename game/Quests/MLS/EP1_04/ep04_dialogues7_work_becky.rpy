@@ -194,6 +194,9 @@ label ep04_dialogues7_work_becky_1:
     $ menu_data = {
         "Бесплатная услуга.":{"enabled":True if mlsBardiWorkDay1BikeRental3 > 0 and mlsBardiWorkDay1BikeRental5 == 0 else False} # доступно, если Барди не соглашасля на бартер с Бекки в прокате
         }
+    $ menu_data = {
+        "Анал.":{"extra":True}
+        }
     menu:
         "Бесплатная услуга.": # доступно только один раз
             $ mlsBardiWorkMallBecky1 = day # Барди воспользовался пунктом Бесплатная услуга
@@ -246,6 +249,9 @@ label ep04_dialogues7_work_becky_1:
             bardi "Оу... Спасибо."
             becky "Ладно, давай выбирай. На этот раз - одна услуга бесплатно. Но больше это не прокатит."
             bardi "Это мы еще увидим..."
+            $ menu_data = {
+                "Анал.":{"extra":True}
+                }
             menu:
                 "Работа ручками.": # 15
                     jump ep04_dialogues7_work_becky_1_1
