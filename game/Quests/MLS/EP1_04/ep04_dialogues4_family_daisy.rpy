@@ -343,7 +343,6 @@ label ep04_dialogues4_family_daisy_1:
             imgd 911452
             daisy "Оу... [mcname], да ты гурман!.."
             pass
-        pass
     #Дэйзи сексуально улыбается.
     imgd 901953
     bardi "Так вышло. Просто ты очень сексуальная..."

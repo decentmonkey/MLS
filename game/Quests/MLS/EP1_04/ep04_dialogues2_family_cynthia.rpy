@@ -29,10 +29,10 @@ label ep04_dialogues2_family_cynthia_1:
     #в конце сцены она схватит ее и убежит по делам. подберите что-то миленькое под стать ее наряду в конце.
     #Синти стоит спиной к Барду голая. (если точнее 3\4 но со спины). подбирает одежду.
     sound snd_door_open1
-    fadeblack 1.5
-    sound2 step_stairs_short
+    fadeblack 1.0
     imgfl 901687
-    music Future_Bass
+    music Stylish_Hip_Hop_Rock
+    sound2 wow
     bardi_t "Оу! Ни хрена себе!.."
     imgf 901688
     cynthia "Ой, а я уже заждалась тебя..."
@@ -47,7 +47,7 @@ label ep04_dialogues2_family_cynthia_1:
     sound2 fear2
     cynthia "Ой!.."
     #Бард отвернулся.
-    sound vjuh3
+    sound Jump2
     img 901690 vpunch
     bardi "Ой! Прости!"
     music Step_By_Step
@@ -59,7 +59,7 @@ label ep04_dialogues2_family_cynthia_1:
     bardi_t "А где эти клишированные крики и визги, как в фильмах?"
     bardi_t "Фак! А фигура то у нее офигенная!.."
     bardi_t "Так, стоп! Не думай об этом! Только бы не возбудиться..."
-    sound2 put_dress
+#    sound2 put_dress
     cynthia "Все. Можешь смотреть."
     #Бард оборачивается и смотрит на Сини.
     #Синти стоит перед бардом в нижнем белье в какой-то милой позе с вопросительным выражением лица и легкой улыбкой.
@@ -75,15 +75,16 @@ label ep04_dialogues2_family_cynthia_1:
     bardi "А? Нет-нет."
     bardi "Белье отпад. Тебе очень идет, Синтия."
     #Синти задумчивая смотрит в сторону. Будто витает в своих мыслях..
-    music Future_Bass
-    imgf 901694
-    sound2 wow
+    music Stylish_Hip_Hop_Rock
+    imgfl 901694
+#    sound2 wow
     w
-    imgd 901695
+    imgf 901695
+    show screen image_shake("/images/Slides/img_901695.jpg")
     w
     imgd 901696
-    music Little_Tomcat
     cynthia "Хмм... Мне тоже так кажется, но нужно посмотреть и другие комплекты."
+    music Little_Tomcat
     imgd 901697
     bardi_t "Что? Ей вообще плевать, что я завалился к ней, когда она была голой?.."
     bardi "Слушай, прости, что так неожиданно ввалился когда ты переодевалась... Я правда не знал."
@@ -112,7 +113,7 @@ label ep04_dialogues2_family_cynthia_1:
     bardi_t "Я парень, а у тебя офигенное сексуальное тело!"
     bardi_t "При этом впервые мы увиделись несколько дней назад! Я чисто физически не могу воспринимать тебя как сестру!"
     #Синти с ошарашенным выражением лица.(Не прям офигевшим, но таким, будто она внезапно поняла что-то)
-    sound2 fear2
+#    sound2 fear2
     img 901705 hpunch
     cynthia "Ой!.."
     #Синти виноватым взглядом смотрит на Барда.
