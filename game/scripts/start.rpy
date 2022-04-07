@@ -84,20 +84,7 @@ label start: #for blink here
     call locations_init() from _rcall_locations_init
 
 #########
-#    call ep04_dialogues2_family_cynthia_1() # разговор с Синтией в ее комнате
-#    call ep04_dialogues2_family_cynthia_2() # комната Барди, мечты о Синтии
-
-#    call ep04_dialogues3_family_olivia_1() # комната Барди
-#    call ep04_dialogues3_family_olivia_2() # Оливия в комнате Синтии
-#    call ep04_dialogues3_family_olivia_3() # утро, комната Барди
-#    call ep04_dialogues3_family_olivia_4() # мысли Барди перед тем, как открыть дверь Софи и Синтии
-#    call ep04_dialogues3_family_olivia_5() # при клике на комнату Синтии до того, как открыл дверь
-#    call ep04_dialogues3_family_olivia_6() # при клике на комнату Оливии до того, как открыл дверь
-#    call ep04_dialogues3_family_olivia_7() # разговор с Софи и Синтией на кухне
-
-#    call ep04_dialogues4_family_daisy_1() # сцена у Дейзи дома
 #    call ep04_dialogues4_family_daisy_2() # работа курьером
-#    call ep04_dialogues4_family_daisy_3() # если повторно пришел к Дейзи после сцены
 #########
 
 

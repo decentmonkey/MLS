@@ -488,12 +488,13 @@ label ep04_dialogues4_family_daisy_2:
     #Барди у рандомного дома звонит в звонок.
     #Нам не нужен весь дом. Просто рендер как Барди стоит перед дверью.
     #Дверь открывает девушка.
-    music Postcard_From_Hell
+    music Adventures_of_the_Deaf_Dreamer
     imgfl 911446
     w
     sound snd_door_bell1
     imgf 911447
-    bardi "Здрасьте. Ваш заказ."
+    w
+#    bardi "Здрасьте. Ваш заказ."
     #Барди отдает заказ.
     #Девушка закрывает дверь
     # затемнение
@@ -509,12 +510,17 @@ label ep04_dialogues4_family_daisy_2:
     #Просветление.
     #Барди у рандомного дома звонит в звонок.
     #Дверь открывает третья девушка.
-    fadeblack 1.0
-    music Postcard_From_Hell
+    scene black_screen
+    with Dissolve(1)
+    sound step_stairs_short
+    pause 1.0
+#    fadeblack 1.0
+#    music Adventures_of_the_Deaf_Dreamer
     imgfl 911449
     w
-    sound snd_door_bell1
+    sound snd_door_knock
     imgf 911450
+    sound2 snd_door_open1
     bardi "Здрасьте. Ваш заказ."
     #Барди отдает заказ.
     #Девушка закрывает дверь
@@ -527,7 +533,6 @@ label ep04_dialogues4_family_daisy_2:
     scene black_screen
     with Dissolve(1)
     music2 night_ambience
-    w
     music Adventures_of_the_Deaf_Dreamer
     imgfl 901159
     bardi_t "Фух... Вот и все..."
