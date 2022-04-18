@@ -84,7 +84,7 @@ label start: #for blink here
     call locations_init() from _rcall_locations_init
 
 #########
-#    call ep04_dialogues4_family_daisy_2() # работа курьером
+#    call ep04_dialogues5_college_emily_6() # свидание с Эмили
 #########
 
 
