@@ -101,6 +101,7 @@ label ep04_dialogues4_family_daisy_1:
     #Дэйзи ведет Барди на склад. Т.е они просто заходят в определенную темную комнату под звук открывания двери.
     #Дэйзи закрывает за Барди дверь и барди офигевает. Все, буквально все в писюнах!
     #А дэйзи довольная гордая своей коллекцией стоит рядом с диваном задрав нос
+    label video_test:
     fadeblack 1.0
     sound2 highheels_short_walk
     imgfl 901921
@@ -210,30 +211,36 @@ label ep04_dialogues4_family_daisy_1:
     ## !!сделать листание фоток, по аналогии с листанием ленты в Инсте
     #Барди листает фотки и всячески комментирует их у себя в голове.
     music The_Heat
-    imgf Daisy_foto_1
-    img 911737
+    #imgf Daisy_foto_1
+    imgf 911737
     sound2 wow
     bardi_t "Ну нихрена себе! Господи! А выглядит очень даже горячо..."
-    imgd Daisy_foto_2
-    img 911738
+    #imgd Daisy_foto_2
+    sound phone_click
+    imgd 911738
     bardi_t "Вау!"
-    imgd Daisy_foto_5
-    img 911741
+    #imgd Daisy_foto_5
+    sound phone_click
+    imgd 911741
     bardi_t "Фак! Это прям так что ли?! Вау!"
-    imgd Daisy_foto_4
-    img 911740
+    #imgd Daisy_foto_4
+    sound phone_click
+    imgd 911740
     bardi_t "Так вот для чего это было нужно!.."
     bardi_t "О, Боже! Где тут верх, а где низ вообще?!"
-    imgd Daisy_foto_3
-    img 911739
-    sound wow
+    #imgd Daisy_foto_3
+    sound phone_click
+    imgd 911739
+    sound2 wow
     bardi_t "Оу, какая же она гибкая... И такая сексуальная..."
-    imgd Daisy_foto_6
-    img 911742
+    #imgd Daisy_foto_6
+    sound phone_click
+    imgd 911742
     bardi_t "Воу! Это еще что за хардкор?!"
     bardi "Ну нихрена себе!"
     #Фотки заканчиваются.
-    img 911737
+    sound phone_click
+    imgd 911737
     bardi_t "Хмм... Это все?"
 
     #Барди переводит взгляд на Дэйзи. Она в свою очередь вальяжно расселась на диване,
