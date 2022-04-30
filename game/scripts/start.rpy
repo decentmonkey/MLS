@@ -84,7 +84,7 @@ label start: #for blink here
     call locations_init() from _rcall_locations_init
 
 #########
-#    jump video_test
+#    call ep04_dialogues6_college_sarah_2() # сцена в спортзале
 #########
 
 
