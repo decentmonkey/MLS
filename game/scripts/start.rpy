@@ -84,7 +84,8 @@ label start: #for blink here
     call locations_init() from _rcall_locations_init
 
 #########
-#    call ep04_dialogues6_college_sarah_2() # сцена в спортзале
+    #call ep04_dialogues7_work_becky_1() # клик на Бекки у ТЦ
+    #call ep04_dialogues7_work_becky_2() # если Барди снова приходит к Бекки у ТЦ
 #########
 
 
