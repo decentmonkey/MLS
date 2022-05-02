@@ -2037,6 +2037,15 @@ screen choice(items):
                             button_obj["yoffset"] = menu_data_row["yoffset"]
                         if menu_data_row.has_key("color"):
                             str1 = "{color=" + menu_data_row["color"] + "}" + str1 + "{/color}"
+                        if menu_data_row.has_key("money"):
+                            if money >= menu_data_row["money"]:
+                                str1 = str1 + "  {color=#31e8b1}$ " + '{:5,.2f}'.format(menu_data_row["money"]) + "{/color}"
+                                button_obj["caption"] = str1
+                            else:
+                                str1 = str1 + "  {color=#880000}$ " + '{:5,.2f}'.format(menu_data_row["money"]) + "{/color}"
+                                button_obj["caption"] = str1
+                                button_obj["active"] = False
+
                     if obj_follow_list.has_key("menu_!_" + imenu.caption):
                         str1 = "{color=#31e8b1}" + str1 + "{/color}"
                     button_obj["caption"] = str1

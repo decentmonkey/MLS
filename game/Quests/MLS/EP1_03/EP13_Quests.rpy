@@ -489,5 +489,6 @@ label ep13_quests11_party5_end:
     if ep13_after_sarah_flag == False:
         $ questHelp("college_28", False)
     $ steam_achievement("ach_end3")
-    jump end_update
+    call ep14_update_init()
+#    jump end_update
     return
