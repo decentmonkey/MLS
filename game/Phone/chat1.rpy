@@ -508,6 +508,13 @@ label emily_chat4:
     ])
     return
 
+label emily_chat5:
+    # chat emily
+    $ phone_start_new_chat("emily_chat5", "Emily")
+    call phone_chat([
+        ["student_emily", "image", "/images/Phone/Photos/emily_photo3.png", 3]
+    ])
+    return
 
 label daisy_chat1:
     $ phone_start_new_chat("daisy_chat1", "Daisy")

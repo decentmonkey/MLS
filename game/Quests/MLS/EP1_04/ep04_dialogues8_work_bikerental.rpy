@@ -541,6 +541,10 @@ label ep04_dialogues8_work_bikerental_3:
     music2 city_park
     imgf 911743
     bardi "Ну... Пришло время делать бабки..."
+    scene black_screen
+    with Dissolve(1)
+    call textonblack(t_("НЕКОТОРОЕ ВРЕМЯ СПУСТЯ"))
+    scene black_screen
     #Затемнение.
     #Звук открывания замка.
     #Просветление.

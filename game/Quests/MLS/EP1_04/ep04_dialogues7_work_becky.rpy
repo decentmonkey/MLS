@@ -342,8 +342,11 @@ label ep04_dialogues7_work_becky_1:
     imgf 902464
     bardi "..."
     $ menu_data = {
-        "Бесплатная услуга.":{"enabled":True if mlsBardiWorkDay1BikeRental6 > 0 else False},
-        "Анал.":{"extra":True}
+        "Бесплатная услуга.":{"enabled":True if mlsBardiWorkDay1BikeRental6 > 0 and mlsBardiWorkMallwhore1 == 0 else False},
+        "Работа ручками.":{"money":15.0},
+        "Минет":{"money":30.0},
+        "Классика.":{"money":70.0},
+        "Анал.":{"extra":True, "money":90.0}
         }
     menu:
         "Бесплатная услуга.": # доступно только один раз

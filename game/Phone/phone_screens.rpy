@@ -265,7 +265,7 @@ screen phone_chat_live_screen():
         add "#c2c2c2" xsize 374 ysize 1 pos(28,130+660)
         $ contactImg = Transform(phone_contact["img"], size=(65,65))
         add AlphaMask(contactImg, "/images/Phone/mess/contact_circle.png"):
-            pos (180,60)
+            pos (180,62)
         fixed:
             xmaximum 378
             xpos 24

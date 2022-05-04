@@ -100,6 +100,11 @@ label locations_party1:
     $ add_location("party1", caption=t_("ДОМ АРНИ"), label="party1", init_label="party1_init", parent="arnie_street")
     return
 
+label locations_mall1:
+    $ add_location("MALL", caption="", label="empty_label", parent="World")
+    $ add_location("mall_street", caption=t_("МОЛЛ"), label="mall_street", init_label="mall_street_init", parent="MALL")
+    return
+
 
 
 

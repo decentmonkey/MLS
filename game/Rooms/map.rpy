@@ -103,6 +103,9 @@ label map_environment:
     if obj_name == "Teleport_ARNIE":
         call process_drive_teleport("ARNIE", "arnie_street") from _rcall_process_drive_teleport_6
         return
+    if obj_name == "Teleport_MALL":
+        call process_drive_teleport("MALL", "mall_street")
+        return
         
     m "drive!"
     return
@@ -175,4 +178,8 @@ label map_init_daisy:
 
 label map_init_arnie:
     $ map_objects["Teleport_ARNIE"] = {"text" : t_("ДОМ АРНИ"), "xpos" : 989, "ypos" : 569, "base" : "map_marker", "state" : "visible"}
+    return
+
+label map_init_mall:
+    $ map_objects["Teleport_MALL"] = {"text" : t_("МОЛЛ"), "xpos" : 380, "ypos" : 325, "base" : "map_marker", "state" : "visible"}
     return

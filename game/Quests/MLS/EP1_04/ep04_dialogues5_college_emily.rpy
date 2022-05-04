@@ -789,6 +789,9 @@ label ep04_dialogues5_college_emily_6:
     imgd 911490
     student_emily "Ладно, я пошла. Пока."
     #Эмили Уже собирается уходить. развернулась полубогом, взгляд на барда.
+    menu:
+        "Потянуть Эмили к себе.":
+            pass
     sound Jump1
     img 911491 hpunch
     bardi "Подожди!"
@@ -809,6 +812,8 @@ label ep04_dialogues5_college_emily_6:
     imgd 911495
     $ photoshoot_flash()
     w
+    $ phone_gallery_add_image("foto_MC_Emely")
+
     music stop
     sound plastinka1b
     img 911496 hpunch
@@ -850,6 +855,10 @@ label ep04_dialogues5_college_emily_6:
     student_emily "Я представляю, как Гарри будет беситься!!!"
     imgd 911504
     w
+    $ menu_data = {
+        "Да, без проблем.":{"info_rat":True},
+        "Отработай.":{"info_rabbit":True}
+        }
     menu:
         "Отработай.": # Rabbit
             $ mlsBardiCollegeEmily4 = day # Барди заставил Эмили отрабатывать на пляже
@@ -1126,9 +1135,17 @@ label ep04_dialogues5_college_emily_6:
             #Эмили смотрит на барда.
             imgd 911548
             student_emily "Скажи честно, у тебя уже были девушки до меня?"
-            imgd 911549
-            bardi_t "Ну нихрена себе вопросы!.."
-            bardi "За кого ты вообще меня принимаешь?! Конечно, были!"
+            menu:
+                "Были.":
+                    imgd 911549
+                    bardi "За кого ты вообще меня принимаешь?! Конечно, были!"
+                    bardi_t "Ну нихрена себе! Что за вопрос?!"
+                "Не были.":
+                    imgd 911549
+                    bardi "Никого не было. Ты первая..."
+#            imgd 911549
+#            bardi_t "Ну нихрена себе вопросы!.."
+#            bardi "За кого ты вообще меня принимаешь?! Конечно, были!"
             #Эмили удивленная смотрит на член.
             imgd 911547
             student_emily_t "Как?! Это вообще возможно?"
@@ -1371,6 +1388,7 @@ label ep04_dialogues5_college_emily_6:
             imgd 911586
             bardi "Ладно, вот фотки."
             #Бард достает телефон, открывает контакт с эмили, отсылает фотографии.
+            call phone_outgoing_call("Emily", "emily_chat5")
             #Эмили достает телефон, просматривает фотографии.
             imgf 911587
             student_emily_t "Хах! А у [mcname] все-таки есть яица!"
@@ -1412,13 +1430,14 @@ label ep04_dialogues5_college_emily_6:
             #Игрок получает свободу действий. время - вечер.
             music2 stop
             fadeblack 1.5
-            return
+            return 1
         "Да, без проблем.": # Rat
             imgf 911595
             sound iphone_typing
             bardi "Да, без проблем."
+            call phone_outgoing_call("Emily", "emily_chat5")
             bardi_t "Ох, и пожалею я об этом..."
-            sound2 iphone_text_message2
+#            sound2 iphone_text_message2
             #Бард отстраняется от Эмили.
             #Бард достает телефон. открывает чат с Эмили. Отсылает фото.
             bardi "..."
@@ -1650,7 +1669,11 @@ label ep04_dialogues5_college_emily_6:
             #Бард смотрит на свой стояк.
             # звук снимаемой одежды
             #sound snd_fabric1
-            imgd 902011
+            imgd 911838
+            w
+            sound erection1
+            img 902011
+            with Dissolve(1.0)
             bardi_t "..."
             #эмили отодвигает шторку и встает перед бардом в комплекте кружевного белья.
             #Эмили стоит перед бардом в сексуальной позе
@@ -2012,8 +2035,12 @@ label ep04_dialogues5_college_emily_6:
             imgd 902077
             student_emily "Скажи честно, у тебя уже были девушки до меня?"
             imgd 902078
-            bardi_t "Ну нихрена себе! Что за вопрос?!"
-            bardi "За кого ты вообще меня принимаешь?! Конечно, были!"
+            menu:
+                "Были.":
+                    bardi "За кого ты вообще меня принимаешь?! Конечно, были!"
+                    bardi_t "Ну нихрена себе! Что за вопрос?!"
+                "Не были.":
+                    bardi "Никого не было. Ты первая..."
             #Эмили удивленная смотрит на член.
             imgd 902079
             student_emily_t "Как?! Это вообще возможно?"
@@ -2265,6 +2292,8 @@ label ep04_dialogues5_college_emily_6:
             student_emily "Ладно, насчет фото..."
             imgd 901978
             bardi_t "Ах да... Совсем забыл об этом..."
+#            imgd foto_MC_Emely
+#            w
             imgd 901975
             student_emily "Я замажу на фото твое лицо. Если будет нужно, то поговорю с Гарри. Хорошо?"
             imgd 901974
@@ -2295,12 +2324,16 @@ label ep04_dialogues5_college_emily_6:
             call rrmeter(-5, "ep04_dialogues5_college_emily_6")
             #Конец сцены по этой ветке. Игрок получает свободу действий. время - ночь.
             fadeblack 1.5
+            return 2
     return
 
 # мысли после свидания с Эмили
 label ep04_dialogues5_college_emily_6a:
-    bardi_t "Так. Колледж я прогулял, но зато у меня было офигенное свидание с красоткой Эмили."
-    bardi_t "У меня еще куча свободного времени сегодня. Почему бы мне не поработать?"
+    if day_time_idx < 2:
+        bardi_t "Так. Колледж я прогулял, но зато у меня было офигенное свидание с красоткой Эмили."
+        bardi_t "У меня еще куча свободного времени сегодня. Почему бы мне не поработать?"
+    else:
+        call ep01_dialogues2_day1_family_1_12()
     return False
 
 # мысли при клике на любую другую локацию, кроме пляжа (до встречи с Эмили)

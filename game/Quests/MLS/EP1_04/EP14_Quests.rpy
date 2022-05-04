@@ -12,6 +12,8 @@ default collegeLastDay = 0
 default ep14_sister2_room_visited = False
 default ep14_call_emily_flag = False
 
+default ep14_mall_becky_lastday = 0
+
 label ep14_update_init:
     if ep14_update_init_flag == True:
         return
@@ -158,11 +160,35 @@ label ep14_quests3_daisy1:
     return False
 
 label ep14_quests3_bikerent1:
+    $ clear_object_follow_all()
     
+    if ep14_bikerent_work_count >= 2:
+        call ep04_dialogues8_work_bikerental_2()
+        $ ep14_bikerent_work_count += 1
+        $ questHelp("work_7", True)
+
     if ep14_bikerent_work_count == 1:
         call ep04_dialogues8_work_bikerental_3()
         $ ep14_bikerent_work_count = 2
         $ questHelpDesc("work_desc4")
+        call locations_mall1()
+        call map_init_mall()
+        python:
+            clear_object_follow_all()
+            move_object("Whore", "mall_street")
+            set_object_follow("Teleport_Map", scene="beach_park")
+            set_object_follow("Teleport_MALL", scene="map")
+            add_hook("Whore", "ep14_quests7_whore_mall1", scene="mall_street", label="whore_mall")
+            add_hook("enter_scene", "ep14_quests7_mall1", scene="mall_street", label="enter_mall_street")
+            add_hook("enter_scene", "ep14_quests7_mall2", scene="mall_street", label="enter_mall_street")
+            questHelp("becky_1")
+            questHelp("work_6", True)
+            questHelp("work_7")
+            ep14_bikerent_work_lastday = day
+        call changeDayTime("evening")
+        call refresh_scene_fade()
+        return False
+
     if ep14_bikerent_work_count == 0:
         call ep04_dialogues8_work_bikerental_1()
         $ ep14_bikerent_work_count = 1
@@ -391,11 +417,65 @@ label ep14_quests6_beach_emily1:
     if scene_name != "beach_loungers" or ep14_call_emily_flag != True:
         return
     $ remove_hook(label="emily_dating1")
+    $ emilyCallStage = 0
     call ep04_dialogues5_college_emily_6()
     $ questHelpDesc("college_desc11", "college_desc14")
     $ questHelp("college_31", True)
-    $ emilyCallStage = 0
     $ add_hook("Teleport_Coridor1", "ep04_dialogues5_college_emily_6a", scene="college_street", label="college_block", quest="day7")
-    $ autorun_to_object("ep04_dialogues5_college_emily_6a", scene="beach_loungers")
-    call refresh_scene_fade_long()
+    $ unfocus_map()
+    if _return == 2:
+        $ autorun_to_object("ep04_dialogues5_college_emily_6a", scene="mall_street")
+        call locations_mall1()
+        call map_init_mall()
+        call process_change_map_location("MALL")
+        python:
+            clear_object_follow_all()
+            move_object("Whore", "empty")
+            set_object_follow("Teleport_Map", scene="mall_street")
+            set_object_follow("Teleport_PARK", scene="map")
+
+        call change_scene("mall_street", "Fade_long")
+        call refresh_scene_fade_long()
+    else:
+        python:
+            clear_object_follow_all()
+            set_object_follow("Teleport_Beach_Park", scene="beach_loungers")
+            set_object_follow("Teleport_PARK", scene="map")
+        $ autorun_to_object("ep04_dialogues5_college_emily_6a", scene="beach_loungers")
+        call refresh_scene_fade_long()
+
+    $ emilyCallStage = 0
+    $ questHelp("house_29")
+    $ add_hook("Bed", "ep14_quests8_sleep", scene="house_bedroom_mc", label="sleep_v4")
+
     return
+
+label ep14_quests7_mall1:
+    if day_time_idx < 2:
+        $ remove_hook()
+        call ep04_dialogues7_work_becky_1a()
+    return
+label ep14_quests7_mall2:
+    if day_time_idx >= 2:
+        $ remove_hook()
+        call ep04_dialogues7_work_becky_1b()
+    return
+label ep14_quests7_whore_mall1:
+    if ep14_mall_becky_lastday == 0:
+        call ep04_dialogues7_work_becky_1()
+    else:
+        call ep04_dialogues7_work_becky_2()
+    $ questHelp("becky_1", True)
+    $ ep14_mall_becky_lastday = day
+    return False
+
+label ep14_quests8_sleep:
+    if day_time_idx < 2:
+        return
+    $ remove_hook(label="sleep_v4")
+    $ remove_hook(quest="day7")
+    call ep04_dialogues7_work_becky_3()
+    call ep03_dialogues3_family_evening_4()
+    jump end_update
+#    return False
+
