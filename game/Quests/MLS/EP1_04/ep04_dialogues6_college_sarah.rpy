@@ -21,6 +21,7 @@ label ep04_dialogues6_college_sarah_1:
     sound step_stairs_short
     img 902111
     music Adventures_of_the_Deaf_Dreamer
+    with vpunch
     trainer_brooks "Студент! А ну стоять!"
     bardi_t "Фак!."
     #Барди разворачивается и мы снова видим тренера. она в такой же позе. Образ Строгой училки в общем.

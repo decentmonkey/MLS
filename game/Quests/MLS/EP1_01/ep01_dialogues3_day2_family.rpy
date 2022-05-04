@@ -258,6 +258,10 @@ label ep01_dialogues3_day2_family_5:
             imgd 900060
             sophie "Хорошо, [mcname]. Спасибо."
             jump ep01_dialogues3_day2_family_5_loop1
+
+        "Могу я тебе чем-то помочь?":
+            jump ep04_dialogues1_family_sophie_2
+
         "Уйти.":
             imgd 900061
             #bardi "Нет, ничего."

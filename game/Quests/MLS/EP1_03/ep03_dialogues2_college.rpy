@@ -1416,6 +1416,12 @@ label ep03_dialogues2_college_9:
     return False
 
 # при клике на выход из колледжа
+label ep03_dialogues2_college_10b:
+    scene black_screen
+    with Dissolve(1)
+    call textonblack(t_("НЕКОТОРОЕ ВРЕМЯ СПУСТЯ"))
+    scene black_screen
+
 label ep03_dialogues2_college_10:
     music Step_By_Step
     imgfl 901479

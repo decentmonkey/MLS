@@ -107,6 +107,7 @@ label ep04_dialogues4_family_daisy_1:
     music Step_By_Step
     bardi "!!!"
     bardi "!!!!"
+    with vpunch
     bardi "НУ НИХРЕНА СЕБЕ!"
     imgf 901923
     daisy "Вижу, ты слегка поражен ассортиментом моего маленького магазинчика, [mcname]?"
