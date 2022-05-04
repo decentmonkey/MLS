@@ -3,6 +3,7 @@ define daisy_t = Character(t_("Дейзи"), who_color=c_pink, what_color=c_gray
 default mlsBardiFamilyV4Daisy1 = 0 # Барди был на складе товаров у Дейзи
 default mlsBardiFamilyV4Daisy2 = 0 # Барди отработал первый рабочий день у Дейзи
 
+default mlsBardiFamilyV4Daisy_photo_amount = 0
 #call ep04_dialogues4_family_daisy_1() # сцена у Дейзи дома
 #call ep04_dialogues4_family_daisy_2() # работа курьером
 #call ep04_dialogues4_family_daisy_3() # если повторно пришел к Дейзи после сцены
@@ -251,12 +252,16 @@ label ep04_dialogues4_family_daisy_1:
     imgd 901938
     bardi "Что?"
     #Дэйзи переводит взгляд на член барда. следуя за ее взглядом Барди делает то же самое.
-    imgd 901939
+    imgd 911837
     w
-    imgf 901940
-    daisy_t "Вау! Ну и громадина!.. Впервые вижу настоящий член таких размеров..."
+    sound erection1
     imgd 901941
     bardi "О, фак!"
+    imgd 901939
+    w
+
+    imgf 901940
+    daisy_t "Вау! Ну и громадина!.. Впервые вижу настоящий член таких размеров..."
     imgf 901942
     bardi "Это не могло не произойти! Ты слишком сексуальна, Дейзи."
     #Дэйзи сексуально ухмыляясь смотрит оценивающим взглядом на Барди. Так, словно пожирает глазами. поза сексуальная.
@@ -337,26 +342,108 @@ label ep04_dialogues4_family_daisy_1:
     #Если читатель закончил то он просто нажимает на выбор "Завершить".
 
     menu:
-        "Скинуть на свой телефон все фото.":
-            fadeblack 1.0
-            music Shining_Through
-            imgf 911451
-            bardi "Вроде все."
-            #Дейзи переводит удивленный взгляд на Бардаи
-            imgd 911452
-            daisy "Все фото?!"
-            imgd 911453
-            daisy "Не думала что тебе настолько понравилось..."
-            pass
         "Выбрать фото.":
-            fadeblack 1.0
-            music Shining_Through
-            imgf 911451
-            bardi "Вроде все."
-            #Барди передает телефон обратно Дейзи. Дейзи смотрит удивленная в экран.
-            imgd 911452
-            daisy "Оу... [mcname], да ты гурман!.."
             pass
+    $ menu_choice_down_forced_flag = True
+    music The_Heat
+    #imgf Daisy_foto_1
+    sound phone_click
+    imgf 911737
+    menu:
+        "Скинуть фото.":
+            sound iphone_text_message2
+            $ notif(t__("Фото отправлено"))
+            $ phone_gallery_add_image("Daisy_foto_1")
+            $ mlsBardiFamilyV4Daisy_photo_amount += 1
+            w
+        "Дальше.":
+            pass
+    #imgd Daisy_foto_2
+    sound phone_click
+    imgd 911738
+    menu:
+        "Скинуть фото.":
+            sound iphone_text_message2
+            $ notif(t__("Фото отправлено"))
+            $ phone_gallery_add_image("Daisy_foto_2")
+            $ mlsBardiFamilyV4Daisy_photo_amount += 1
+            w
+        "Дальше.":
+            pass
+    #imgd Daisy_foto_5
+    sound phone_click
+    imgd 911741
+    menu:
+        "Скинуть фото.":
+            sound iphone_text_message2
+            $ notif(t__("Фото отправлено"))
+            $ phone_gallery_add_image("Daisy_foto_5")
+            $ mlsBardiFamilyV4Daisy_photo_amount += 1
+            w
+        "Дальше.":
+            pass
+    #imgd Daisy_foto_4
+    sound phone_click
+    imgd 911740
+    menu:
+        "Скинуть фото.":
+            sound iphone_text_message2
+            $ notif(t__("Фото отправлено"))
+            $ phone_gallery_add_image("Daisy_foto_4")
+            $ mlsBardiFamilyV4Daisy_photo_amount += 1
+            w
+        "Дальше.":
+            pass
+    #imgd Daisy_foto_3
+    sound phone_click
+    imgd 911739
+    menu:
+        "Скинуть фото.":
+            sound iphone_text_message2
+            $ notif(t__("Фото отправлено"))
+            $ phone_gallery_add_image("Daisy_foto_3")
+            $ mlsBardiFamilyV4Daisy_photo_amount += 1
+            w
+        "Дальше.":
+            pass
+    #imgd Daisy_foto_6
+    sound phone_click
+    imgd 911742
+    menu:
+        "Скинуть фото.":
+            sound iphone_text_message2
+            $ notif(t__("Фото отправлено"))
+            $ phone_gallery_add_image("Daisy_foto_6")
+            $ mlsBardiFamilyV4Daisy_photo_amount += 1
+            w
+        "Дальше.":
+            pass
+    #Фотки заканчиваются.
+    $ menu_choice_down_forced_flag = False
+
+    if mlsBardiFamilyV4Daisy_photo_amount >= 6:
+#    menu:
+#        "Скинуть на свой телефон все фото.":
+        fadeblack 1.0
+        music Shining_Through
+        imgf 911451
+        bardi "Вроде все."
+        #Дейзи переводит удивленный взгляд на Бардаи
+        imgd 911452
+        daisy "Все фото?!"
+        imgd 911453
+        daisy "Не думала что тебе настолько понравилось..."
+    else:
+#        "Выбрать фото.":
+        fadeblack 1.0
+        music Shining_Through
+        imgf 911451
+        bardi "Вроде все."
+        #Барди передает телефон обратно Дейзи. Дейзи смотрит удивленная в экран.
+        imgd 911452
+        daisy "Оу... [mcname], да ты гурман!.."
+
+
     #Дэйзи сексуально улыбается.
     imgd 901953
     bardi "Так вышло. Просто ты очень сексуальная..."
@@ -586,11 +673,11 @@ label ep04_dialogues4_family_daisy_3:
             bardi "Дэйзи напишет, когда ей будет удобно начать краш-тест."
             bardi "А до тех пор мне там делать нечего."
             jump ep04_dialogues4_family_daisy_3_loop
-        "Поработать.":
-            imgf 901903
-            bardi "Так... Время поработать курьером..."
-            #Затемнение.
-            jump ep04_dialogues4_family_daisy_2
+#        "Поработать.":
+#            imgf 901903
+#            bardi "Так... Время поработать курьером..."
+#            #Затемнение.
+#            jump ep04_dialogues4_family_daisy_2
         "Уйти.":
             imgf 901903
             bardi_t "Не сейчас. Займусь пока другими делами."

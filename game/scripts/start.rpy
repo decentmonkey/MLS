@@ -54,6 +54,7 @@ default rrmeterValue = 0
 define steamVersion = False
 
 default menu_data = {}
+default menu_choice_down_forced_flag = False
 
 #temp vars
 default maxRRMeter = 100
