@@ -6,6 +6,10 @@ default mlsBardiCollegeEmily3 = 0 # Барди в женской раздева�
 default mlsBardiCollegeEmily4 = 0 # Барди заставил Эмили отрабатывать на пляже, чтобы он скинул ей фотки
 default mlsBardiCollegeEmily5 = 0 # Барди подглядывал за Эмили в примерочной
 
+define v_MC_Pretty_Girl_handjob_1_25_sound_name = "v_MC_Emily_Handjob1_25" ## звук левый
+define v_MC_Pretty_girl_blowjob_1_25_sound_name = "v_MC_Whore_Blowjob2_25" ## звук левый
+define v_MC_Pretty_Girl_licking_1_25_sound_name = "v_MC_Emily_Handjob1_25" ## звук левый
+
 #call ep04_dialogues5_college_emily_1() # сцена с Эмили в колледже
 #call ep04_dialogues5_college_emily_2() # chat emily, если Барди напишет ей не в среду
 #call ep04_dialogues5_college_emily_3() # мысли Барди перед посещением пляжа
@@ -1214,12 +1218,35 @@ label ep04_dialogues5_college_emily_6:
             w
             sound chpok7
             imgd 911564
+            w
+
+            # video
+            # v_MC_Pretty_girl_blowjob_1_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Pretty_girl_blowjob_1_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Pretty_girl_blowjob_1_25 = Movie(play="video/v_MC_Pretty_girl_blowjob_1_25.mkv", fps=25)
+            show videov_MC_Pretty_girl_blowjob_1_25
+            wclean
             bardi "Мммм... Продолжай, да..."
             student_emily "Мпфхфмм..."
+            wclean
+            bardi "Как же это охрененно!"
+            wclean
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
             imgf 911566
             w
             imgd 911567
-            bardi "Как же это охрененно!"
+            w
             imgd 911568
             bardi "Быстрее!.."
             imgf 911569
@@ -2015,9 +2042,33 @@ label ep04_dialogues5_college_emily_6:
             #Эмили берется за головку и начинает дрочить ее
             sound drkanje5
             imgd 902085
+            w
+
+            # video
+            # v_MC_Pretty_Girl_handjob_1_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Pretty_Girl_handjob_1_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Pretty_Girl_handjob_1_25 = Movie(play="video/v_MC_Pretty_Girl_handjob_1_25.mkv", fps=25)
+            show videov_MC_Pretty_Girl_handjob_1_25
+            wclean
+            bardi "Мммм... Продолжай, да..."
             student_emily "Офигеть, как ты живешь с таким аппаратом в штанах?.."
-            imgf 902086
+            wclean
             bardi "Приходится, но пока еще никто не жаловался."
+            wclean
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+            imgf 902086
+            w
             #Эмили смотрит на барда с робкой улыбкой тип: "Блин, я сказала это вслух!?"
             imgd 902087
             student_emily "Да?"
@@ -2061,19 +2112,38 @@ label ep04_dialogues5_college_emily_6:
             bardi "Ох, даааа! Продолжай!.."
             sound lick3
             imgd 902095
-            student_emily_t "Черт! И как это может хоть в ком-то поместиться?!"
+            w
             sound lick3
             imgd 902094
-            student_emily_t "Он в три раза больше, чем у Гарри!"
+            w
             sound lick3
             imgd 902093
-            student_emily_t "Если не в четыре!"
-            sound lick3
-            imgd 902094
-            student_emily_t "Кажется, я начинаю возбуждаться. Стоит уже заканчивать с этим..."
-            sound lick3
-            imgd 902095
             bardi "Ммммм..."
+
+            # video
+            # v_MC_Pretty_Girl_licking_1_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Pretty_Girl_licking_1_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Pretty_Girl_licking_1_25 = Movie(play="video/v_MC_Pretty_Girl_licking_1_25.mkv", fps=25)
+            show videov_MC_Pretty_Girl_licking_1_25
+            wclean
+            student_emily_t "Черт! И как это может хоть в ком-то поместиться?!"
+            student_emily_t "Он в три раза больше, чем у Гарри!"
+            wclean
+            student_emily_t "Если не в четыре!"
+            student_emily_t "Кажется, я начинаю возбуждаться. Стоит уже заканчивать с этим..."
+            wclean
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
             imgf 902096
             bardi "Продолжай!.."
             bardi "Ты просто супер, малышка!"

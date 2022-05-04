@@ -5,6 +5,7 @@ default mlsBardiWorkDay1BikeRental4 = 0 # Барди сразу верно на�
 default mlsBardiWorkDay1BikeRental5 = 0 # Барди согласился на бартер с Бекки
 default mlsBardiWorkDay1BikeRental6 = 0 # Барди дал Бекки велик бесплатно
 
+define v_MC_Whore_blowjob_bikerental_1_25_sound_name = "v_MC_Whore_Blowjob2_25" ## звук левый
 
 #call ep04_dialogues8_work_bikerental_1() # работа в велопрокате 1-й день с Райтом (обучает)
 #call ep04_dialogues8_work_bikerental_1a() # chat sophie, сообщение в конце рабочего дня
@@ -1352,11 +1353,36 @@ label ep04_dialogues8_work_bikerental_3:
             img 902376 hpunch
             sound2 chpok12
             bardi "Ох нихрена ж себе!.. Оооо!.."
+            imgf 902378
+            w
             imgd 902377
+            w
+
+            # video
+            # v_MC_Whore_blowjob_bikerental_1_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Whore_blowjob_bikerental_1_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Whore_blowjob_bikerental_1_25 = Movie(play="video/v_MC_Whore_blowjob_bikerental_1_25.mkv", fps=25)
+            show videov_MC_Whore_blowjob_bikerental_1_25
+            wclean
             bardi "Какой же у тебя классный язычок!.. Оооо!.."
             bardi "О, дааа! Я уже скоро!"
-            imgf 902378
+            wclean
             bardi "Продолжай!.. Быстрее!"
+            whore "Мммм..."
+            wclean
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+
             menu:
                 "Кончить в рот Бекки.":
                     #Барди кончает в рот Бекки.

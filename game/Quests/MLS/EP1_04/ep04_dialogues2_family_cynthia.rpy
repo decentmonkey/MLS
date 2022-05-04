@@ -2,6 +2,8 @@ define cynthia_t = Character(t_("Синтия"), who_color=c_green, what_color=c
 
 default mlsBardiFamilyV4Cynthia1 = 0 # Барди помогал Синтии собираться на пижамную вечеринку
 
+define v_MC_Cynthia_Handjob1_25_sound_name = "v_MC_Emily_Handjob1_25" ## звук левый
+
 #call ep04_dialogues2_family_cynthia_1() # разговор с Синтией в ее комнате
 #call ep04_dialogues2_family_cynthia_2() # комната Барди, мечты о Синтии
 
@@ -716,15 +718,38 @@ label ep04_dialogues2_family_cynthia_2:
     img 911288
     show screen dream()
     with diss
+    imgd 911288
+    w
+
+    # video
+    # v_Observe_Sister_younger_kitty_25
+    img black_screen
+    with diss
+    pause 1.0
+    scene black
+    image videov_Observe_Sister_younger_kitty_25 = Movie(play="video/v_Observe_Sister_younger_kitty_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observe_Sister_younger_kitty_end.jpg")
+    show videov_Observe_Sister_younger_kitty_25
+    $ renpy.pause(0.5, hard=True)
+    pause 6.0
+    img 901496
+    show screen image_shake("/images/Slides/v_Observe_Sister_younger_kitty_end.jpg")
+    w
+#    bardi "!!!"
+
     cynthia "[mcname], ты уверен, что этот костюм мне идет?" ##->#####inc
     #####inc cynthia "Братик, ты уверен, что этот костюм мне идет?"
+    #Синти смущенно косится на Барда
+
+    imgf 911288
     cynthia "Просто, мне так непривычно..."
     cynthia "Это очень смущает..."
+
     bardi "Более чем, зайка. Ты безумно милая и сексуальная."
     #Синти смущенно косится на Барда
     img 911289
     show screen dream()
     with diss
+
     cynthia "Ну... Раз ты так говоришь..."
     $ menu_data = {
         "Позвать Синтию к себе на кровать.":{"extra":True}
@@ -985,16 +1010,41 @@ label ep04_dialogues2_family_cynthia_2:
     img 911314
     show screen dream()
     with fade
-    bardi "Боже, малышка..."
+    w
     sound drkanje5
     img 911315
     show screen dream()
     with diss
-    bardi "Я уже скоро!"
-    sound drkanje5
-    img 911314
+	w
+    imgf 911314
     show screen dream()
     with diss
+    w
+
+    # video
+    # v_MC_Cynthia_Handjob1_25
+    $ localSoundVolume = 1.0
+    $ localSoundName = v_MC_Cynthia_Handjob1_25_sound_name
+    img black_screen
+    with diss
+    stop music2
+    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+    scene black
+    image videov_MC_Cynthia_Handjob1_25 = Movie(play="video/v_MC_Cynthia_Handjob1_25.mkv", fps=25)
+    show videov_MC_Cynthia_Handjob1_25
+    wclean
+    bardi "Боже, малышка..."
+    bardi "О, дааа!.."
+    wclean
+    bardi "Я уже скоро!"
+    wclean
+    stop music2
+    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+    imgf 911314
     w
     sound drkanje5
     img 911315

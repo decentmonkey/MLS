@@ -1,5 +1,8 @@
 default mlsBardiFamilyV4Olivia1 = 0 # Барди застукал Оливию в комнате Синтии
 
+define v_Olivia_solo_1_25_sound_name = "v_Olivia_Masturbating1_25" ## звук левый
+define v_Olivia_solo_2_25_sound_name = "v_Olivia_Masturbating2_25" ## звук левый
+
 #call ep04_dialogues3_family_olivia_1() # комната Барди
 #call ep04_dialogues3_family_olivia_2() # Оливия в комнате Синтии
 #call ep04_dialogues3_family_olivia_3() # утро, комната Барди
@@ -181,10 +184,33 @@ label ep04_dialogues3_family_olivia_2:
     imgd 911348
     w
     imgf 911349
+    w
+
+    # video
+    # v_Olivia_solo_1_25
+    $ localSoundVolume = 1.0
+    $ localSoundName = v_Olivia_solo_1_25_sound_name
+    img black_screen
+    with diss
+    stop music2
+    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+    scene black
+    image videov_Olivia_solo_1_25 = Movie(play="video/v_Olivia_solo_1_25.mkv", fps=25)
+    show videov_Olivia_solo_1_25
+    wclean
     olivia "Господи, зайка! Какие же у тебя ласковые, проворные пальчики!"
+    olivia "Ааах!.."
+    wclean
     bardi_t "Ох!.. Твои пальчики, Оливия, тоже очень даже ничего..." ##->#####inc
     #####inc bardi_t "Ох!.. Твои пальчики, сестра, тоже очень даже ничего..."
     bardi_t "Фак... Как же это возбуждает..."
+    wclean
+    stop music2
+    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
     #Оливия вставляет пальцы внутрь.
     imgd 911350
     sound ahhh10
@@ -202,16 +228,39 @@ label ep04_dialogues3_family_olivia_2:
     bardi_t "Хах! Какая же восхитительная у тебя фантазия, Оливия..."
     #Оливия переворачивается на спину и раздвигая ноги начинает дрочить.
     imgf 911354
+    w
+
+    # video
+    # v_Olivia_solo_2_25
+    $ localSoundVolume = 1.0
+    $ localSoundName = v_Olivia_solo_2_25_sound_name
+    img black_screen
+    with diss
+    stop music2
+    $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+    $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+    play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+    scene black
+    image videov_Olivia_solo_2_25 = Movie(play="video/v_Olivia_solo_2_25.mkv", fps=25)
+    show videov_Olivia_solo_2_25
+    wclean
+    olivia "Ааах!.."
+    olivia "О да, зайка! Да!.."
+    wclean
     bardi_t "Ох, твою же мать!"
     bardi_t "Да ты, Оливия, как будто знаешь, что я здесь... Для меня что ли позируешь?.."
-    bardi_t "..."
-    imgd 911355
+    wclean
+    stop music2
+    $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+    $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+    imgf 911355
     bardi_t "Может, оставить ее в покое? Пусть каждый дрочит, как он хочет..."
     bardi_t "Хотя, нет!.."
     bardi_t "Если бы она застала меня утром за дрочкой после того, как Синтия ушла..."
     bardi_t "Об этом уже знал бы весь дом..."
     #Оливия дрочит.
-    imgf 911356
+    imgd 911356
     sound ahhh10
     olivia "Господи, малышка!.. Ооох!.."
     sound2 drkanje5
@@ -223,7 +272,7 @@ label ep04_dialogues3_family_olivia_2:
     bardi_t "Как же мне хочется, чтоб она меня сейчас спалила!"
     bardi_t "Интересно, какая у нее будет реакция?.."
     imgd 911358
-    olivia "О да, зайка! Да!.."
+    w
     imgf 911359
     sound ahhh8
     olivia "Этот спермотоксикозный придурок ни за что тебя не получит!"
@@ -521,12 +570,14 @@ label ep04_dialogues3_family_olivia_2:
     w
     sound phone_click
     imgd 901874
-    bardi "..."
+    olivia "Зачем ты мне дал заблокированный телефон, придурок?"
+    bardi "Давай разблокирую. Без проблем."
     imgd 901875
-    w
+    olivia "Хмм..."
+    olivia "Ну ладно. Допустим, я тебе верю..."
     sound swish
     imgd 901876
-    w
+    bardi_t "Фух... Пронесло!.."
     #Ничего не найдя кладет телефон на стол ничего не говоря.
     #Бард берет свой телефон.
     imgd 901877

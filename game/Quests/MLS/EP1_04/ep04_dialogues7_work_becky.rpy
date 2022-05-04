@@ -4,6 +4,10 @@ default mlsBardiWorkMallwhore3 = 0 # Барди воспользовался п�
 default mlsBardiWorkMallwhore4 = 0 # Барди воспользовался пунктом Классика
 default mlsBardiWorkMallwhore5 = 0 # Барди воспользовался пунктом Анал
 
+define v_MC_Whore_WCMall_handjob_1_25_sound_name = "v_MC_Emily_Handjob1_25" ## звук левый
+define v_MC_Whore_WCMall_blowjob_1_25_sound_name = "v_MC_Whore_Blowjob2_25" ## звук левый
+define v_MC_Whore_WCMall_anal_1_25_sound_name = "v_MC_Whore_Sex3_25" ## звук левый
+
 #call ep04_dialogues7_work_becky_1a() # мысли при клике на локацию ТЦ днем
 #call ep04_dialogues7_work_becky_1b() # мысли при клике на локацию ТЦ вечером
 #call ep04_dialogues7_work_becky_1() # клик на Бекки у ТЦ
@@ -523,13 +527,36 @@ label ep04_dialogues7_work_becky_1:
             sound drkanje5
             imgd 902479
             whore "А затем оседлать твоего здоровяка, красавчик."
-            imgd 902480
-            bardi "Ох... Так чего же ты ждешь, я только за!"
-            whore "Денег."
-            imgf 902481
+
+            # video
+            # v_MC_Whore_WCMall_handjob_1_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Whore_WCMall_handjob_1_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Whore_WCMall_handjob_1_25 = Movie(play="video/v_MC_Whore_WCMall_handjob_1_25.mkv", fps=25)
+            show videov_MC_Whore_WCMall_handjob_1_25
+            wclean
             whore "О, Боже! Он так близко, и не во мне!.."
-            imgd 902482
+            wclean
             whore "Черт!.. Я уже вся мокрая!.."
+            whore "Мммм..."
+            wclean
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+            imgf 902480
+            bardi "Ох... Так чего же ты ждешь, я только за!"
+            imgd 902481
+            w
+            imgd 902482
+            whore "Денег."
             imgd 902483
             bardi "Твою мать, Бекки, еще одно слово и я поставлю тебя раком прямо здесь! Оооох!"
             imgd 902482
@@ -708,14 +735,37 @@ label ep04_dialogues7_work_becky_1:
             whore "Мпфхф..."
             imgf 902503
             sound chpok12
-            bardi "Ох... Ты действительно лучшая в этом деле!.."
+            bardi "О, да!.."
             bardi "Давай!"
             bardi "Быстрее!"
             #Бекки ускоряется еще сильнее.
             imgd 902504
+            w
+
+            # video
+            # v_MC_Whore_WCMall_blowjob_1_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Whore_WCMall_blowjob_1_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Whore_WCMall_blowjob_1_25 = Movie(play="video/v_MC_Whore_WCMall_blowjob_1_25.mkv", fps=25)
+            show videov_MC_Whore_WCMall_blowjob_1_25
+            wclean
+            bardi "Ох... Ты действительно лучшая в этом деле!.."
+            whore "Мммм..."
+            wclean
             bardi "О, как охренительно! Да!"
             bardi "Я уже скоро!"
-            bardi "О, да!.."
+            wclean
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
             menu:
                 "Кончить в рот Бекки.":
                     #Барди хватает Бекки за голову и заталкивает член в глотку.
@@ -1314,7 +1364,7 @@ label ep04_dialogues7_work_becky_1:
             whore "Как же это кайфово!"
             whore "Я чувствую, как он расширяет мою дырочку!"
             imgf 911819
-            bardi "Ееее!.. Какая же узкая у тебя попка!"
+            w
             imgd 911820
             bardi "Я собираюсь ускориться! Твоя попка готова?"
             whore "Черт! [mcname]! Да-да!"
@@ -1366,7 +1416,7 @@ label ep04_dialogues7_work_becky_1:
             w
             sound drkanje5
             imgd 911806
-            whore "Давай! Заполни мою попку!"
+            w
             # Бекки кончает
             sound drkanje5
             imgd 911801
@@ -1389,10 +1439,37 @@ label ep04_dialogues7_work_becky_1:
             whore "АААААААА!!!"
             show screen photoshot_screen()
             with hpunch
+            sound2 woman_moan12
             pause 0.7
             hide screen photoshot_screen
-            sound2 woman_moan12
+            w
             #Барди заталкивает член в задницу.
+
+            # video
+            # v_MC_Whore_WCMall_anal_1_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Whore_WCMall_anal_1_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Whore_WCMall_anal_1_25 = Movie(play="video/v_MC_Whore_WCMall_anal_1_25.mkv", fps=25)
+            show videov_MC_Whore_WCMall_anal_1_25
+            wclean
+            bardi "Ееее!.. Какая же узкая у тебя попка!"
+            whore "Мммм..."
+            wclean
+            bardi "О, как охренительно! Да!"
+            bardi "Я уже скоро!"
+            whore "Давай! Заполни мою попку!"
+            wclean
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
             menu:
                 "Кончить в попу Бекки.":
                     pass
