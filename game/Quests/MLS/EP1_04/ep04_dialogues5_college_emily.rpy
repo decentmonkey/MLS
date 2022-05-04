@@ -582,9 +582,16 @@ label ep04_dialogues5_college_emily_3:
     bardi_t "Может, стоит написать и спросить, все ли в силе?"
     return
 
+label ep04_dialogues5_college_emily_3a:
+    ## не рендерить!
+    bardi_t "Хмм... А мы ведь договаривались погулять с Эмили в среду днем..."
+    bardi_t "Может, стоит написать и спросить, все ли в силе?"
+    return False
+
 #Если написать Эмили, находясь на локации на Пляж
 label ep04_dialogues5_college_emily_4:
     # chat emily
+    # emily_chat3
     bardi "Привет, Эмили!"
     student_emily "Привет, [mcname]! :)"
     bardi "Я тут на пляже. Мы договаривались погулять, помнишь?"
@@ -598,6 +605,7 @@ label ep04_dialogues5_college_emily_4:
 #Если читатель решит написать эмили не находясь на пляже..
 label ep04_dialogues5_college_emily_5:
     # chat emily
+    # emily_chat4
     bardi "Привет, Эмили!"
     student_emily "Привет, [mcname]! :)"
     bardi "Я тут на пляже. Мы договаривались погулять, помнишь?"
@@ -2293,7 +2301,7 @@ label ep04_dialogues5_college_emily_6:
 label ep04_dialogues5_college_emily_6a:
     bardi_t "Так. Колледж я прогулял, но зато у меня было офигенное свидание с красоткой Эмили."
     bardi_t "У меня еще куча свободного времени сегодня. Почему бы мне не поработать?"
-    return
+    return False
 
 # мысли при клике на любую другую локацию, кроме пляжа (до встречи с Эмили)
 label ep04_dialogues5_college_emily_6b:

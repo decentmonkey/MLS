@@ -9,6 +9,8 @@ default ep14_bikerent_work_lastday = 0
 default ep14_home_afterwork_stage = 0
 
 default collegeLastDay = 0
+default ep14_sister2_room_visited = False
+default ep14_call_emily_flag = False
 
 label ep14_update_init:
     if ep14_update_init_flag == True:
@@ -329,15 +331,71 @@ label ep14_quests6_home2_sister1:
         add_hook("Teleport_Kitchen", "ep04_dialogues3_family_olivia_4", scene="house_floor1", label="morning_block")
         add_hook("Teleport_Bathroom", "ep04_dialogues3_family_olivia_4", scene="house_floor1", label="morning_block")
         add_hook("Teleport_Sister1", "ep04_dialogues3_family_olivia_6", scene="house_floor2", label="morning_block")
-        add_hook("Teleport_Sister2", "ep04_dialogues3_family_olivia_5", scene="house_floor2", label="morning_block")
+        add_hook("Teleport_Sister2", "ep04_dialogues3_family_olivia_5", scene="house_floor2", label="morning_block", once=True)
+        add_hook("Teleport_Street", "ep14_quests6_home3_kitchen", scene="house_floor1", label="morning_block")
 
         set_object_follow("Teleport_Floor2", scene="house_bedroom_mc")
         set_object_follow("Teleport_Floor1", scene="house_floor2")
         set_object_follow("Teleport_Street", scene="house_floor1")
         set_object_follow("Floor1", scene="minimap")
 
+        questHelp("house_27")
+        questHelp("house_28")
+
+        move_object("Sister2", "empty")
+        move_object("Sophie", "empty")
+        move_object("Henry", "empty")
+        move_object("Sister1", "house_sister1")
+
         map_enabled = False
         miniMapDisabled["HOUSE"] = ["House_Street"]
 
+        questHelpDesc("house_desc11")
+        sophieCallStage = 0
+        cynthiaCallStage = 3
 
+
+    return
+
+
+label ep14_quests6_home3_kitchen:
+    $ remove_hook(label="morning_block")
+    $ questHelp("house_27", True)
+    if ep14_sister2_room_visited != True:
+        $ questHelp("house_28", False)
+    call ep04_dialogues3_family_olivia_7()
+    call changeDayTime("day")
+    $ sister2RoomDoorLocked = True
+    python:
+        sister1RoomDoorLocked = True
+        landLordRoomDoorLocked = True
+        move_object("Sister2", "house_sister2")
+        move_object("Sophie", "house_bedroom_landlord")
+        move_object("Henry", "empty")
+        move_object("Sister1", "house_sister1")
+        miniMapDisabled["HOUSE"] = []
+        questHelp("college_31")
+    $ map_enabled = True
+    $ cynthiaCallStage = 0
+    $ autorun_to_object("ep04_dialogues5_college_emily_3", scene="house_floor2")
+    $ emilyCallStage = 3
+    $ add_hook("phone_close", "ep14_quests6_beach_emily1", scene="phone", label="emily_dating1")
+    $ add_hook("enter_scene", "ep14_quests6_beach_emily1", scene="beach_loungers", label="emily_dating1")
+    $ add_hook("Teleport_Beach_Park", "ep04_dialogues5_college_emily_3a", scene="beach_loungers", label="emily_dating1")
+    $ unfocus_map()
+    $ focus_map("Teleport_BEACH", "ep04_dialogues5_college_emily_3")
+    call change_scene("house_floor2", "Fade_long")
+    return False
+
+label ep14_quests6_beach_emily1:
+    if scene_name != "beach_loungers" or ep14_call_emily_flag != True:
+        return
+    $ remove_hook(label="emily_dating1")
+    call ep04_dialogues5_college_emily_6()
+    $ questHelpDesc("college_desc11", "college_desc14")
+    $ questHelp("college_31", True)
+    $ emilyCallStage = 0
+    $ add_hook("Teleport_Coridor1", "ep04_dialogues5_college_emily_6a", scene="college_street", label="college_block", quest="day7")
+    $ autorun_to_object("ep04_dialogues5_college_emily_6a", scene="beach_loungers")
+    call refresh_scene_fade_long()
     return

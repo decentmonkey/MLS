@@ -34,6 +34,14 @@ label phone_before_call_contact:
 
 label phone_call_contact:
     if obj_name == "Emily":
+        if emilyCallStage == 3:
+            $ ep14_call_emily_flag = True
+            if scene_name == "beach_loungers":
+                call emily_chat3()
+            else:
+                call emily_chat4()
+            return
+
         if emilyCallStage == 1:
             call emily_chat1() from _rcall_emily_chat1
             return
@@ -67,6 +75,10 @@ label phone_call_contact:
             return
 
     if obj_name == "Cynthia":
+        if cynthiaCallStage == 3:
+            call cynthia_chat4()
+            return
+
         if cynthiaCallStage == 2 and day_time_idx != 3:
             call cynthia_chat3() from _rcall_cynthia_chat3
             return
