@@ -12,12 +12,44 @@ default mlsBardiFamilyV4Cynthia1 = 0 # Барди помогал Синтии с
 #Триггер сцены - утром в любой будний день кликнуть но дверь Синти.
 #ВНИМАНИЕ! СЦЕНА ОЛИВИИ И СИНТИИ СВЯЗАНЫ т.е если была сцена Синтии то сцена Оливии автоматически проигрывается перед сном.
 
+
+#Барди просыпается утром от будильника
+label ep04_dialogues2_family_cynthia_1a:
+    # звонит будильник
+    scene black_screen
+    with Dissolve(1)
+    call textonblack(t_("ВТОРНИК"))
+    scene black_screen
+    fadeblack 2.0
+    music iphone_alarm
+    imgfl 901088
+    bardi_t "Что, уже утро?!"
+    imgd 900063
+    bardi_t "..."
+    # голос Софи из-за двери
+    music Adventures_of_the_Deaf_Dreamer
+    imgd 901089
+    sophie "[mcname], ты уже встал?" ##->#####inc
+    #####inc mother "Сынок, ты уже встал?"
+    bardi "Да!"
+    sophie "Доброе утро, милый!"
+    sound snd_walk_barefoot
+    imgf 901087
+    w
+    fadeblack
+    sound put_dress
+    pause 1.5
+    # Барди встает с постели
+    # переход на движок
+    return
+
 # при клике на дверь в комнату Синтии
 label ep04_dialogues2_family_cynthia_1:
     music Adventures_of_the_Deaf_Dreamer
     sound2 step_stairs_short
     imgf 901685
-    bardi_t "Хм... Почему бы не поговорить с Синтией?.."
+    bardi_t "Хм..."
+    bardi_t "Как там дела у Синтии?.."
     #Бард стучит в комнату ситни
     sound snd_door_knock
     imgd 901686
