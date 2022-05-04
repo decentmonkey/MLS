@@ -86,12 +86,7 @@ label start: #for blink here
     call locations_init() from _rcall_locations_init
 
 #########
-    #call ep04_dialogues8_work_bikerental_1() # работа в велопрокате 1-й день с Райтом (обучает)
-    #call ep04_dialogues8_work_bikerental_2() # рабочий день в прокате (самостоятельно)
-    #call ep04_dialogues8_work_bikerental_3() # рабочий день в прокате (встреча с Бекки)
-
-    #call ep04_dialogues7_work_becky_1() # клик на Бекки у ТЦ
-    #call ep04_dialogues7_work_becky_2() # если Барди снова приходит к Бекки у ТЦ
+#    jump video_test
 #########
 
 

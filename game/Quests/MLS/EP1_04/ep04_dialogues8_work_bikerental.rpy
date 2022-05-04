@@ -3,6 +3,8 @@ default mlsBardiWorkDay1BikeRental2 = 0 # Барди работал день в 
 default mlsBardiWorkDay1BikeRental3 = 0 # Барди встретил в прокате Бекки
 default mlsBardiWorkDay1BikeRental4 = 0 # Барди сразу верно назвал профессию Бекки
 default mlsBardiWorkDay1BikeRental5 = 0 # Барди согласился на бартер с Бекки
+default mlsBardiWorkDay1BikeRental6 = 0 # Барди дал Бекки велик бесплатно
+
 
 #call ep04_dialogues8_work_bikerental_1() # работа в велопрокате 1-й день с Райтом (обучает)
 #call ep04_dialogues8_work_bikerental_1a() # chat sophie, сообщение в конце рабочего дня
@@ -196,15 +198,13 @@ label ep04_dialogues8_work_bikerental_1:
     imgd 902262
     girl1 "Здрасьте. Сколько стоит прокат?"
     imgd 902263
-    sound wow
-    w
     mr_wright "100 баксов за час."
     #Все смотрят на райта офигевшими взглядами. Включая самого барди. Райт невозмутимо смотрит на девушек.
     music stop
     sound plastinka1b
     img 902264 hpunch
     girl2 "Сколько?!"
-    music Step_By_Step
+    music Adventures_of_the_Deaf_Dreamer_short
     bardi "Сто баксов?!"
     imgd 902265
     mr_wright "100 баксов! Не слышите что ли?"
@@ -237,22 +237,25 @@ label ep04_dialogues8_work_bikerental_1:
     mr_wright "!!!"
     #Райт с отвращением смотрит в сторону в которую ушли девушки.
     sound steps_park
-    imgf 902274
+    imgd 902274
     mr_wright "Гребаные фрики!.."
-    imgd 902275
+    music The_Heat
+    imgf 902275
     show screen image_shake("/images/Slides/img_902275.jpg")
+    sound wow
     w
     bardi "Да подумаешь, фрики... Что в этом такого?"
     #Райт смотрит на Барди с удивлением.
+    music Step_By_Step
     imgd 902276
     mr_wright "Что такого?!"
     #Райт откинувшись в кресле прикрывает лицо рукой.
-    sound Jump1
+    sound Jump2
     imgd 902277
     mr_wright "Ох... Учить тебя всему и учить, [mcname]..."
     #Райт протягивает Барди коктейль с отвращением глядя вслед девушкам.
     #Барди пьет коктейль.
-    music Shining_Through
+    #music Shining_Through
     imgd 902278
     mr_wright "Да нахрена мне отсос от пары этих шлюх?!"
     #Барди подавился коктейлем и начинает кашлять. Райт с удивлением смотрит на барди.
@@ -414,6 +417,8 @@ label ep04_dialogues8_work_bikerental_1:
     #Барди собрал велики в фургон.
     scene black_screen
     with Dissolve(1)
+    sound snd_keys_door_open
+    pause 1.0
     imgf 902409
     bardi_t "Ну, вот и все. А сейчас - домой..."
     #Конец сцены. Игрок получает свободу действий. Сцена заканчивается вечером.
@@ -477,6 +482,7 @@ label ep04_dialogues8_work_bikerental_2:
     girl1 "Привет. Нам нужно два велика на час."
     bardi "Да, без проблем..."
     imgf 911747
+    sound bicycle_bell
     w
     # затемнение
     #День. Барди сидит в кресле к нему подходят парень с девушкой,
@@ -488,10 +494,10 @@ label ep04_dialogues8_work_bikerental_2:
     bardi_t "О, еще клиенты!"
     bardi_t "Это уже пятая пара за день! Отлично!"
     imgd 911749
-    sound wow
     show screen image_shake("/images/Slides/img_911749.jpg")
     w
     imgf 911750
+    sound bicycle_bell
     w
     imgd 911751
     w
@@ -501,10 +507,12 @@ label ep04_dialogues8_work_bikerental_2:
     #их показываем слайдами, без диалогов
     scene black_screen
     with Dissolve(1)
+    sound snd_paper1
     imgf 911752
     w
     scene black_screen
     with Dissolve(1)
+    sound snd_paper1
     imgf 911753
     w
     # затемнение
@@ -563,7 +571,7 @@ label ep04_dialogues8_work_bikerental_3:
     sound steps_park
     imgf 902286
     if mlsBardiSeanDay3Whore1 > 0 or mlsBardiSeanDay3Whore2 > 0:
-        bardi_t "Она действительно кажется мне какой-то знакомой..."
+        #bardi_t "Она действительно кажется мне какой-то знакомой..."
         bardi_t "Если это так, надеюсь, она не потребует скидку. Мне нужны бабки!"
     else:
         bardi_t "Черт, и что за взгляд?.. Надеюсь, она не торговаться пришла. Мне нужны бабки!"
@@ -574,7 +582,7 @@ label ep04_dialogues8_work_bikerental_3:
     imgd 902288
     w
     sound chpok9
-    img 902289 vpunch
+    imgd 902289
     bardi_t "Ну нихрена себе! Окей, беру свои слова назад. Я согласен на скидочку..."
     # если Барди ходил к Шону и была сцена с Бекки
     if mlsBardiSeanDay3Whore1 > 0 or mlsBardiSeanDay3Whore2 > 0:
@@ -948,9 +956,10 @@ label ep04_dialogues8_work_bikerental_3:
             imgd 902329
             whore "Ну кем еще может работать нимфоманка с офигенным телом?.. И вечным недотрахом... Кроме как жрицей любви."
             imgf 902330
-            bardi_t "Фак! Точно!"
-            bardi_t "Ну был же такой вариант в голове!"
-            bardi_t "Но черт! Как вообще это выразить?! Не говорить же девушке, что она выглядит, как проститутка!"
+            w
+            #bardi_t "Фак! Точно!"
+            #bardi_t "Ну был же такой вариант в голове!"
+            #bardi_t "Но черт! Как вообще это выразить?! Не говорить же девушке, что она выглядит, как проститутка!"
             #Бекки ухмыляется глядя на Барди.
             imgd 902328
             bardi "Ого! Никогда бы о таком не подумал..."
@@ -1086,7 +1095,7 @@ label ep04_dialogues8_work_bikerental_3:
             if mlsBardiSeanDay3Whore1 == 0 and mlsBardiSeanDay3Whore2 == 0:
                 imgf 902330
                 bardi_t "Да ни на кого, блин!"
-                bardi_t "Почему нельзя сказать просто, что ты шлюха и дать свой номер?!"
+                #bardi_t "Почему нельзя сказать просто, что ты шлюха и дать свой номер?!"
                 bardi_t "Нахрена все эти трудности?!"
             imgd 902328
             bardi "С твоим телом ты вполне могла оказаться какой-нибудь моделью."
@@ -1200,6 +1209,7 @@ label ep04_dialogues8_work_bikerental_3:
     imgd 902346
     menu:
         "Мы еще сочтемся, бери бесплатно.":
+            $ mlsBardiWorkDay1BikeRental6 = day # Барди дал Бекки велик бесплатно
             music Adventures_of_the_Deaf_Dreamer
             imgf 902351
             bardi_t "Если я планирую превратить это место в нормальную прибыльную точку..."
@@ -1231,6 +1241,7 @@ label ep04_dialogues8_work_bikerental_3:
             bardi "Удачи. Только привези его, как накатаешься."
             #Бекки уезжает. Барди провожает его взглядом.
             imgf 902358
+            sound bicycle_bell
             bardi "Хммм... Вечером у торгового центра?.."
             bardi "Надо будет заглянуть..."
             pass
@@ -1478,6 +1489,7 @@ label ep04_dialogues8_work_bikerental_3:
             bardi "Удачи. Только привези его, как накатаешься."
             #Бекки уезжает. Барди провожает его взглядом.
             imgf 902358
+            sound bicycle_bell
             bardi "Хммм... Вечером у торгового центра?.."
             bardi "Надо будет заглянуть..."
             pass
