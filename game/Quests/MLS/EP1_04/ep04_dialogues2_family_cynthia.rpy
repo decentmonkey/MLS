@@ -718,8 +718,6 @@ label ep04_dialogues2_family_cynthia_2:
     img 911288
     show screen dream()
     with diss
-    imgd 911288
-    w
 
     # video
     # v_Observe_Sister_younger_kitty_25
@@ -740,7 +738,9 @@ label ep04_dialogues2_family_cynthia_2:
     #####inc cynthia "Братик, ты уверен, что этот костюм мне идет?"
     #Синти смущенно косится на Барда
 
-    imgf 911288
+    img 911288
+    show screen dream()
+    with fade
     cynthia "Просто, мне так непривычно..."
     cynthia "Это очень смущает..."
 
@@ -1016,7 +1016,7 @@ label ep04_dialogues2_family_cynthia_2:
     show screen dream()
     with diss
 	w
-    imgf 911314
+    img 911314
     show screen dream()
     with diss
     w
@@ -1044,7 +1044,9 @@ label ep04_dialogues2_family_cynthia_2:
     $ renpy.music.set_volume(1.0, 0.5, channel="music2")
     $ renpy.music.set_volume(1.0, 0.5, channel="music")
 
-    imgf 911314
+    img 911314
+    show screen dream()
+    with fade
     w
     sound drkanje5
     img 911315
