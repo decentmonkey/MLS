@@ -718,6 +718,7 @@ label ep04_dialogues2_family_cynthia_2:
     img 911288
     show screen dream()
     with diss
+    w
 
     # video
     # v_Observe_Sister_younger_kitty_25
@@ -1015,7 +1016,7 @@ label ep04_dialogues2_family_cynthia_2:
     img 911315
     show screen dream()
     with diss
-	w
+    w
     img 911314
     show screen dream()
     with diss
