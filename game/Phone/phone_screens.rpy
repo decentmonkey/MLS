@@ -616,7 +616,7 @@ screen phone_preferences_list_screen():
         vbar value YScrollValue("vp5") xpos 343 ypos 70 xsize 8 ysize 654
 
 screen phone_icon_focus(): # фокусировка на телефон
-    layer "master"
+    layer "hud"
     zorder 500
     fixed:
         pos(-6,-6)

@@ -3,6 +3,7 @@ default cynthiaCallStage = 0
 default seanCallStage = 0
 default whoreCallStage = 0
 default emilyCallStage = 0
+default daisyCallStage = 0
 
 label phone1:
     $ add_hook("before_call_contact", "phone_before_call_contact", scene="phone", label="phone_before_call_contact")
@@ -36,6 +37,10 @@ label phone_call_contact:
         if emilyCallStage == 1:
             call emily_chat1() from _rcall_emily_chat1
             return
+        if emilyCallStage == 2:
+            call emily_chat2()
+            return
+
     if obj_name == "Whore":
         if whoreCallStage == 2:
             call whore_chat2() from _rcall_whore_chat2
@@ -45,6 +50,9 @@ label phone_call_contact:
             return
 
     if obj_name == "Sophie":
+        if sophieCallStage == 5:
+            call sophie_chat6()
+            return
         if sophieCallStage == 4:
             call sophie_chat5() from _rcall_sophie_chat5
             return
@@ -89,6 +97,11 @@ label phone_call_contact:
             return
         if get_active_objects("Friend_Bardie", scene="COLLEGE", recursive=True) != False:
             call sean_chat2() from _rcall_sean_chat2 # регулярный чат днем, Шон не может говорить, учится
+            return
+
+    if obj_name == "Daisy":
+        if daisyCallStage == 1:
+            call daisy_chat1()
             return
 
     sound snd_phone_short_beeps

@@ -238,6 +238,9 @@ label ep04_dialogues3_family_olivia_2:
     imgf 911361
     olivia "О да! Оооо!.."
     olivia "Я уже почти, малышка!.."
+    menu:
+        "Зайти в комнату.":
+            pass
     #Бард резко открывает дверь в комнату
 #    sound door_creaky
 #    pause 1.0
@@ -719,6 +722,9 @@ label ep04_dialogues3_family_olivia_2:
     sound step_stairs_short
     imgf 911396
     bardi_t "И с каких пор я нанялся заметать следы твоих косяков?!"
+    menu:
+        "Отнести Оливию в ее комнату.":
+            pass
     sound vjuh3
     imgd 911397
     w
@@ -837,7 +843,7 @@ label ep04_dialogues3_family_olivia_4:
     ## не рендерить!!
     bardi_t "Так, это позже. Сейчас нужно открыть дверь Синтии и Софи." ##->#####inc
     #####inc bardi_t "Так, это позже. Сейчас нужно открыть дверь маме и сестре."
-    return
+    return False
 
 #При клике на комнату Синти. Плюс к кролику.
 label ep04_dialogues3_family_olivia_5:

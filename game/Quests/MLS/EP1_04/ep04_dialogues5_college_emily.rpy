@@ -108,6 +108,11 @@ label ep04_dialogues5_college_emily_1:
     #ее кофта задралась. Гарри хмуро смотрит на нее.
     imgd 901609
     bardi_t "А вот это уже перебор!"
+    $ menu_data = {
+        "Стоять в стороне.":{"info_rat":True},
+        "Вмешаться.":{"info_rabbit":True}
+        }
+
     menu:
         "Стоять в стороне.": # (+Rat)
             #img 901609
@@ -562,13 +567,7 @@ label ep04_dialogues5_college_emily_1a:
 #Диалог в телефоне если Барди пишет Эмили.
 ## чат, не рендерить!
 label ep04_dialogues5_college_emily_2:
-    # chat emily
-    bardi "Привет, Эмили!"
-    bardi "Как насчет погулять сегодня?"
-    student_emily "Привет, [mcname]."
-    student_emily "Сегодня не получится, я занята :("
-    student_emily "Давай, в среду днем, как и договаривались."
-    bardi "Окей."
+    # emily_chat2
     return
 
 #Не обязательно приходить на локацию пляжа чтоб начать сцену свидания с Эмили.

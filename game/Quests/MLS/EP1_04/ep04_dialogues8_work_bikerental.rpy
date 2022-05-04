@@ -430,23 +430,7 @@ label ep04_dialogues8_work_bikerental_1:
 # в конце рабочего дня на телефон приходит сообщение
 # chat sophie
 label ep04_dialogues8_work_bikerental_1a:
-    sound iphone_text_message1
-    sophie "[mcname], как у тебя дела?"
-    sophie "Мы уже поужинали, не дождались тебя."
-    sophie "Время позднее. У тебя все в порядке?"
-    menu:
-        "Скоро буду дома.":
-            sound iphone_typing
-            bardi "У меня были важные дела. Прости, что не предупредил."
-            bardi "Скоро буду дома."
-            sound iphone_text_message2
-            sophie "Хорошо, милый. Жду :)"
-            sound iphone_typing
-            bardi "Окей :)"
-            return
-        "Не отвечать.":
-            bardi_t "Позже ей отвечу."
-            return
+    # sophie_chat6
     return
 
 # вечером при клике на любую локацию, кроме дома Барди

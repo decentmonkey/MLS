@@ -8,6 +8,50 @@ default houseLifeStage = 0
 # houseLifeStage == 2 - все дома, все закрыто
 label house_life:
 
+    if houseLifeStage == 3:
+        if day_time_idx == 0:
+            python:
+                move_object("Sister1", "house_sister1")
+                move_object("Sister2", "college_empty")
+                move_object("Sophie", "house_kitchen")
+                move_object("Henry", "empty")
+                houseKitchenSophieSuffix = renpy.random.randint(1, 3)
+                sister1RoomDoorLocked = True
+                sister2RoomDoorLocked = False
+                landLordRoomDoorLocked = True
+
+        if day_time_idx == 1:
+            python:
+                move_object("Sister1", "house_sister1")
+                move_object("Sister2", "college_empty")
+                move_object("Sophie", "house_kitchen")
+                move_object("Henry", "empty")
+                houseKitchenSophieSuffix = renpy.random.randint(1, 3)
+                sister1RoomDoorLocked = True
+                sister2RoomDoorLocked = False
+                landLordRoomDoorLocked = True
+
+        if day_time_idx == 2:
+            python:
+                move_object("Sister1", "house_sister1")
+                move_object("Sister2", "house_sister2")
+                move_object("Sophie", "house_livingroomhall")
+                move_object("Henry", "empty")
+                houseLivingRoomSophieSuffix = 1
+                sister1RoomDoorLocked = True
+                sister2RoomDoorLocked = True
+                landLordRoomDoorLocked = True
+
+        if day_time_idx == 3:
+            python:
+                move_object("Sister1", "house_sister1")
+                move_object("Sister2", "house_sister2")
+                move_object("Sophie", "house_bedroom_landlord")
+                sister1RoomDoorLocked = True
+                sister2RoomDoorLocked = True
+                landLordRoomDoorLocked = True
+        return
+    
     if day_time_idx == 0:
         # утро
         python:
@@ -129,5 +173,9 @@ label house_life:
             sister2RoomDoorLocked = True
             landLordRoomDoorLocked = True
         return
+
+
+
+
 
     return

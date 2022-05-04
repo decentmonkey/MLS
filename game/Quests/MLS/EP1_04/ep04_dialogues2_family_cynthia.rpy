@@ -66,6 +66,7 @@ label ep04_dialogues2_family_cynthia_1:
     imgfl 901687
     music Stylish_Hip_Hop_Rock
     sound2 wow
+    with vpunch
     bardi_t "Оу! Ни хрена себе!.."
     imgf 901688
     cynthia "Ой, а я уже заждалась тебя..."
@@ -111,6 +112,7 @@ label ep04_dialogues2_family_cynthia_1:
     music Stylish_Hip_Hop_Rock
     imgfl 901694
 #    sound2 wow
+    show screen image_shake("/images/Slides/img_901694.jpg")
     w
     imgf 901695
     show screen image_shake("/images/Slides/img_901695.jpg")
@@ -202,6 +204,12 @@ label ep04_dialogues2_family_cynthia_1:
     #Синти возмущенная смотрит на барда.
     cynthia "Вот хочу и буду видеть в тебе своего..."
     #Синти косится на вставший член барда. взглядом будто она зависла.
+    imgd 911836
+    w
+    sound erection1
+    img 901714
+    with Dissolve(1.0)
+    pause 0.5
     music stop
     sound plastinka1b
     img 901714 hpunch
@@ -695,22 +703,28 @@ label ep04_dialogues2_family_cynthia_2:
     #она стоит перед ним в этом костюмчике.
     #Робкая зажатая красная от смущения. поза как у этой анимешной шняги косплеящей кошек тим "Ня!"
     #тип кулачки подняты почти на уровне лица и опущены костяшками вниз. Синти от смущения отворачивает лицо и косится в сторону.
+    $ camera_enabled = False
     music stop
     img white_screen
     with diss
     pause 2.0
     music Stylish_Hip_Hop_Rock
     img 911287
+    show screen dream()
     with Dissolve(1.0)
     w
-    imgd 911288
+    img 911288
+    show screen dream()
+    with diss
     cynthia "[mcname], ты уверен, что этот костюм мне идет?" ##->#####inc
     #####inc cynthia "Братик, ты уверен, что этот костюм мне идет?"
     cynthia "Просто, мне так непривычно..."
     cynthia "Это очень смущает..."
     bardi "Более чем, зайка. Ты безумно милая и сексуальная."
     #Синти смущенно косится на Барда
-    imgd 911289
+    img 911289
+    show screen dream()
+    with diss
     cynthia "Ну... Раз ты так говоришь..."
     $ menu_data = {
         "Позвать Синтию к себе на кровать.":{"extra":True}
@@ -749,151 +763,247 @@ label ep04_dialogues2_family_cynthia_2:
             # затемнение
             #Конец сцены. игрок получает свободу действий.
             fadeblack 1.5
+            $ camera_enabled = True
             return
     # Барди позывает Синтию к себе
-    imgd 911293
+    img 911293
+    show screen dream()
+    with diss
     bardi "Подойди ко мне, Синтия." ##->#####inc
     #####inc bardi "Подойди ко мне, сестренка."
     cynthia "..."
     #Синти очень смущается, но подходит. Смущенно косится на Барди. Поза робкая зажатая
     sound highheels_short_walk
-    imgd 911294
+    img 911294
+    show screen dream()
+    with diss
     bardi "Ложись рядом."
-    imgd 911295
+    img 911295
+    show screen dream()
+    with diss
     cynthia "Но... Мы не должны... Мы же с тобой..."
     #Синти смущенно смотрит в пол, указательные пальцы выпрямлены и упираются друг в друга на уровне груди.
-    imgd 911296
+    img 911296
+    show screen dream()
+    with diss
     bardi "Я бы никогда не заставил тебя сделать то, чего ты не хочешь..."
     bardi "Тебе не о чем переживать, Синтия."
     cynthia  "Я..."
     #Синти смущенно смотрит на барда в той же позе.
-    imgd 911295
+    img 911295
+    show screen dream()
+    with diss
     cynthia "Л-ладно."
     #Синти на залезает на кровать и на четвереньках подползает к Барду и ложится рядом.
     #(Ну как ложится, она в такой позе чтоб читателю был обеспечен сексуальный ракурс а ей было удобно дрочить Барди.)
     #Синти смущенная косится на член Барди.
     sound vjuh3
-    img 911297 vpunch
+    img 911297
+    show screen dream()
+    with vpunch
     w
     sound Jump2
-    img 911298 hpunch
+    img 911298
+    show screen dream()
+    with hpunch
     cynthia "..."
     bardi "Возьмешь его в руку?"
     #Синти смущенная смотрит снова на Барди.
-    imgd 911299
+    img 911299
+    show screen dream()
+    with diss
     cynthia "Можно?"
     bardi "Конечно."
     #В двух рендерах изобразите как Синти нерешительно берет в руку член Барди. Тип сначала потянулась к нему и тронула его, а потом взяла в руки.
-    imgf 911300
+    img 911300
+    show screen dream()
+    with fade
     w
-    imgd 911301
+    img 911301
+    show screen dream()
+    with diss
     w
-    imgd 911300
+    img 911300
+    show screen dream()
+    with diss
     w
-    imgd 911302
+    img 911302
+    show screen dream()
+    with diss
     w
-    imgf 911303
+    img 911303
+    show screen dream()
+    with fade
     cynthia "Он огромный..."
     cynthia "И что мне с ним делать?"
-    imgd 911304
+    img 911304
+    show screen dream()
+    with diss
     bardi "Не строй из себя саму невинность. Уверен, ты уже давно представляла это и успела почитать об этом..."
     #Синти бросила на Барди смущенный нерешительный взгляд. красная от стыда. Отвела взгляд и зажмурилась.
-    imgd 911305
+    img 911305
+    show screen dream()
+    with diss
     w
-    imgd 911306
+    img 911306
+    show screen dream()
+    with diss
     cynthia "Ну, я... Я видела пару обучающих видео..."
     #Синти зажмурившись дрочит Барди в нескольких рендерах.
-    imgf 911302
+    img 911302
+    show screen dream()
+    with fade
     w
-    imgd 911307
-    w
-    sound drkanje5
-    imgd 911308
-    w
-    sound drkanje5
-    imgd 911307
+    img 911307
+    show screen dream()
+    with diss
     w
     sound drkanje5
-    imgd 911308
+    img 911308
+    show screen dream()
+    with diss
     w
     sound drkanje5
-    imgd 911307
+    img 911307
+    show screen dream()
+    with diss
     w
     sound drkanje5
-    imgd 911308
+    img 911308
+    show screen dream()
+    with diss
     w
-    imgf 911306
+    sound drkanje5
+    img 911307
+    show screen dream()
+    with diss
     w
-    imgd 911309
+    sound drkanje5
+    img 911308
+    show screen dream()
+    with diss
+    w
+    img 911306
+    show screen dream()
+    with fade
+    w
+    img 911309
+    show screen dream()
+    with diss
     cynthia "Вот так?"
     bardi "Ох, да. Только побыстрее..."
     cynthia "Л-ладно..."
     #Синти приоткрыв один глаз косится на член Берди и до безумия смущенная дрочит ему.
-    imgd 911310
+    img 911310
+    show screen dream()
+    with diss
     w
     sound drkanje5
-    imgd 911311
+    img 911311
+    show screen dream()
+    with diss
     w
     sound drkanje5
-    imgd 911310
+    img 911310
+    show screen dream()
+    with diss
     bardi "Ох... Да..."
     sound drkanje5
-    imgd 911311
+    img 911311
+    show screen dream()
+    with diss
     w
     sound drkanje5
-    imgd 911310
+    img 911310
+    show screen dream()
+    with diss
     w
     sound drkanje5
-    imgd 911311
+    img 911311
+    show screen dream()
+    with diss
     w
-    imgf 911309
+    img 911309
+    show screen dream()
+    with fade
     cynthia "Тебе хорошо?"
     bardi "Да."
-    imgd 911306
+    img 911306
+    show screen dream()
+    with diss
     cynthia "Мне делать это еще быстрее?"
     bardi "Да, давай."
     #Синти ускоряется.
-    imgf 911312
+    img 911312
+    show screen dream()
+    with fade
     bardi "Боже, Синтия! У тебя охрененно умелые ручки!"
-    imgd 911313
+    img 911313
+    show screen dream()
+    with diss
     cynthia "..."
-    imgd 911302
+    img 911302
+    show screen dream()
+    with diss
     bardi "Ах..."
     sound drkanje5
-    imgd 911307
+    img 911307
+    show screen dream()
+    with diss
     w
     sound drkanje5
-    imgd 911308
+    img 911308
+    show screen dream()
+    with diss
     bardi "Это просто улет!"
     #Синти ускоряется еще быстрее.
     sound drkanje5
-    imgd 911307
+    img 911307
+    show screen dream()
+    with diss
     w
     sound drkanje5
-    imgd 911302
+    img 911302
+    show screen dream()
+    with diss
     w
     sound drkanje5
-    imgd 911308
+    img 911308
+    show screen dream()
+    with diss
     w
     sound drkanje5
-    imgd 911302
+    img 911302
+    show screen dream()
+    with diss
     w
     sound drkanje5
-    imgd 911308
+    img 911308
+    show screen dream()
+    with diss
     bardi "О да!"
-    imgf 911314
+    img 911314
+    show screen dream()
+    with fade
     bardi "Боже, малышка..."
     sound drkanje5
-    imgd 911315
+    img 911315
+    show screen dream()
+    with diss
     bardi "Я уже скоро!"
     sound drkanje5
-    imgd 911314
+    img 911314
+    show screen dream()
+    with diss
     w
     sound drkanje5
-    imgd 911315
+    img 911315
+    show screen dream()
+    with diss
     bardi "Не останавливайся!"
     #Бард кончает на руку Синтии.
     img 911316
+    show screen dream()
     sound2 fear2
     sound bulk1
     show screen photoshot_screen()
@@ -909,17 +1019,25 @@ label ep04_dialogues2_family_cynthia_2:
     sound man moan8
     bardi "ОООО!!!"
     sound2 chpok5
-    imgd 911317
+    img 911317
+    show screen dream()
+    with diss
     w
     #Синти чуть опустив голову косится на Барди со смущенной улыбкой.
-    imgd 911318
+    img 911318
+    show screen dream()
+    with diss
     cynthia "Тебе понравилось, [mcname]?" ##->#####inc
     #####inc cynthia "Тебе понравилось, братик?"
-    imgd 911319
+    img 911319
+    show screen dream()
+    with diss
     bardi "Это было отпадно!"
     bardi "Но, все же, тебе предстоит еще многому научиться..."
     #Синти отводит взгляд.
-    imgd 911320
+    img 911320
+    show screen dream()
+    with diss
     cynthia "Только если ты научишь меня всему. Ладно?"
     bardi "Конечно, малышка." ##->#####inc
     #####inc bardi "Конечно, сестренка."
@@ -932,4 +1050,5 @@ label ep04_dialogues2_family_cynthia_2:
     bardi "Обязательно научу..."
     #Конец сцены. игрок получает свободу действий.
     fadeblack 1.5
+    $ camera_enabled = True
     return

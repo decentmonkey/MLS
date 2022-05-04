@@ -1078,7 +1078,7 @@ screen hud_screen(hud_presets):
                 #кнопка домой
                 null:
                     width 7
-                if homeButtonEnabled == True and mapStreetCheckShowing == True:
+                if homeButtonEnabled == True and mapStreetCheckShowing == True and (len(mapFocusedObjects) == 0 or map_objects["Teleport_HOUSE"]["state"] == "visible"):
                     imagebutton:
                         yoffset -2
                         xanchor 2

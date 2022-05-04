@@ -258,6 +258,29 @@ label sophie_chat5:
     ])
     return
 
+label sophie_chat6:
+    $ phone_start_new_chat("sophie_chat6", "Sophie")
+    call phone_chat([
+        ["sophie", t_("[mcname], как у тебя дела?")],
+        ["sophie", t_("Мы уже поужинали, не дождались тебя.")],
+        ["sophie", t_("Время позднее. У тебя все в порядке?")],
+        ["", t_("Окей. Уже иду домой.")],
+        ["sophie", t_("Хорошо :)")]
+    ])
+    call phone_chat_menu([
+        t__("Скоро буду дома."),
+        t__("Не отвечать.")
+    ])
+    if _return == 0:
+        call phone_chat([
+            ["", t_("У меня были важные дела. Прости, что не предупредил.")],
+            ["", t_("Скоро буду дома.")],
+            ["sophie", t_("Хорошо, милый. Жду :)")],
+            ["", t_("Окей :)")]
+        ])
+    else:
+        bardi_t "Позже ей отвечу."
+    return
 
 label college_chat1:
     $ phone_add_history("college_chat1", "College", [
@@ -361,7 +384,7 @@ label whore_chat2:
     return
 
 label emily_chat1:
-    $ phone_start_new_chat("whore_chat2", "Emily")
+    $ phone_start_new_chat("emily_chat1", "Emily")
     call phone_chat([
         ["student_emily", "image", "/images/Phone/Photos/emily_photo1.png", 3],
         ["student_emily", t_("Собираюсь спать. Решила написать, что я согласна провести тебе небольшую экскурсию.")]
@@ -429,6 +452,33 @@ label emily_chat1:
     $ phone_gallery_add_image("Emily_Cat")
     $ phone_gallery_add_image("900758")
 
+    return
+
+label emily_chat2:
+    # chat emily
+    $ phone_start_new_chat("emily_chat2", "Emily")
+    call phone_chat([
+        ["", t_("Привет, Эмили!")],
+        ["", t_("Как насчет погулять сегодня?")],
+        ["student_emily", t_("Привет, [mcname].")],
+        ["student_emily", t_("Сегодня не получится, я занята :(")],
+        ["student_emily", t_("Давай, в среду днем, как и договаривались.")],
+        ["", t_("Окей.")]
+    ])
+    return
+
+
+label daisy_chat1:
+    $ phone_start_new_chat("daisy_chat1", "Daisy")
+    call phone_chat([
+        ["", t_("Дейзи, привет.")],
+        ["daisy", t_("Привет, [mcname] :)")],
+        ["", t_("Как дела на работе? Помощь не нужна?")],
+        ["daisy", t_("Ахаха! Я тебе напишу, когда мне нужна будет твоя помощь с краш-тестами.")],
+        ["daisy", t_("Наберись терпения, красавчик ;)")],
+        ["", t_("Окей. Буду ждать :)")],
+        ["daisy", t_("Чмоки!")]
+    ])
     return
 
 

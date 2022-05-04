@@ -685,7 +685,7 @@ label ep04_dialogues4_family_daisy_3:
             imgf 901903
             bardi_t "Не сейчас. Займусь пока другими делами."
             fadeblack 1.5
-            return
+            return -1
     return
 
 # при клике на дом Дейзи вечером после того, как уже был у нее на складе
@@ -698,13 +698,7 @@ label ep04_dialogues4_family_daisy_1a:
 
 # chat daisy, если написать ей после сцены у нее дома
 label ep04_dialogues4_family_daisy_1b:
-    bardi "Дейзи, привет."
-    daisy "Привет, [mcname] :)"
-    bardi "Как дела на работе? Помощь не нужна?"
-    daisy "Ахаха! Я тебе напишу, когда мне нужна будет твоя помощь с краш-тестами."
-    daisy "Наберись терпения, красавчик ;)"
-    bardi "Окей. Буду ждать :)"
-    daisy "Чмоки!"
+    #daisy_chat1
     return
 
 #Вот и все. Удачи дорогим иллюстраторам)

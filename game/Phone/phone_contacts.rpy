@@ -37,3 +37,9 @@ label phone_contact5:
     $ phone_set_new("contacts")
     $ phone_contacts.append({"name": "Emily", "caption":t_("Emily"), "img":"/images/Phone/contacts/Contacts_Emily.png", "visible":True})
     return
+
+label phone_contact6:
+    $ notif(t__("Добавлен новый контакт"))
+    $ phone_set_new("contacts")
+    $ phone_contacts.append({"name": "Daisy", "caption":t_("Daisy"), "img":"/images/Phone/contacts/Contacts_Daisy.png", "visible":True})
+    return
