@@ -399,7 +399,11 @@ define offsets_table = {
     "party1_harryemily":(349,769,779,1074),
     "party1_harryemily_overlay":(305,676,784,1139),
     "party1_nicoleclassmate1":(211,110,1079,353),
-    "party1_nicoleclassmate1_overlay":(866,58,1079,404)
+    "party1_nicoleclassmate1_overlay":(866,58,1079,404),
+    "house_livingroomhall_evening_mother_1":(430,136,986,622),
+    "house_livingroomhall_evening_mother_1_overlay":(607,60,1025,666),
+    "mall_street_whore1_evening":(684,970,1031,1072),
+    "mall_street_whore1_evening_overlay":(984,902,1079,1086)
 }
 
 init python:
