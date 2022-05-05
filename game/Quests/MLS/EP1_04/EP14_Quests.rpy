@@ -33,7 +33,7 @@ label ep14_update_init:
         move_object("Sister1", "house_sister1")
         move_object("Sister2", "college_empty")
         move_object("Friend_Bardie", "college_empty")
-        
+
         #move_object("Sister2", "house_sister2")
         sister1RoomDoorLocked = True
         #sister2RoomDoorLocked = True
@@ -161,7 +161,7 @@ label ep14_quests3_daisy1:
 
 label ep14_quests3_bikerent1:
     $ clear_object_follow_all()
-    
+
     if ep14_bikerent_work_count >= 2:
         call ep04_dialogues8_work_bikerental_2()
         $ ep14_bikerent_work_count += 1
@@ -478,4 +478,3 @@ label ep14_quests8_sleep:
     call ep03_dialogues3_family_evening_4()
     jump end_update
 #    return False
-
