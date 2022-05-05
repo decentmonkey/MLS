@@ -37,16 +37,16 @@ label phone_call_contact:
         if emilyCallStage == 3:
             $ ep14_call_emily_flag = True
             if scene_name == "beach_loungers":
-                call emily_chat3()
+                call emily_chat3() from _rcall_emily_chat3
             else:
-                call emily_chat4()
+                call emily_chat4() from _rcall_emily_chat4
             return
 
         if emilyCallStage == 1:
             call emily_chat1() from _rcall_emily_chat1
             return
         if emilyCallStage == 2:
-            call emily_chat2()
+            call emily_chat2() from _rcall_emily_chat2
             return
 
     if obj_name == "Whore":
@@ -59,7 +59,7 @@ label phone_call_contact:
 
     if obj_name == "Sophie":
         if sophieCallStage == 5:
-            call sophie_chat6()
+            call sophie_chat6() from _rcall_sophie_chat6
             return
         if sophieCallStage == 4:
             call sophie_chat5() from _rcall_sophie_chat5
@@ -76,7 +76,7 @@ label phone_call_contact:
 
     if obj_name == "Cynthia":
         if cynthiaCallStage == 3:
-            call cynthia_chat4()
+            call cynthia_chat4() from _rcall_cynthia_chat4
             return
 
         if cynthiaCallStage == 2 and day_time_idx != 3:
@@ -113,7 +113,7 @@ label phone_call_contact:
 
     if obj_name == "Daisy":
         if daisyCallStage == 1:
-            call daisy_chat1()
+            call daisy_chat1() from _rcall_daisy_chat1
             return
 
     sound snd_phone_short_beeps

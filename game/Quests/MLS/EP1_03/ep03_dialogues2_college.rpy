@@ -1419,7 +1419,7 @@ label ep03_dialogues2_college_9:
 label ep03_dialogues2_college_10b:
     scene black_screen
     with Dissolve(1)
-    call textonblack(t_("НЕКОТОРОЕ ВРЕМЯ СПУСТЯ"))
+    call textonblack(t_("НЕКОТОРОЕ ВРЕМЯ СПУСТЯ")) from _rcall_textonblack_4
     scene black_screen
 
 label ep03_dialogues2_college_10:

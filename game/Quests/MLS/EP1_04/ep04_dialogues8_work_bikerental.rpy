@@ -542,7 +542,7 @@ label ep04_dialogues8_work_bikerental_3:
     bardi "Ну... Пришло время делать бабки..."
     scene black_screen
     with Dissolve(1)
-    call textonblack(t_("НЕКОТОРОЕ ВРЕМЯ СПУСТЯ"))
+    call textonblack(t_("НЕКОТОРОЕ ВРЕМЯ СПУСТЯ")) from _rcall_textonblack_12
     scene black_screen
     #Затемнение.
     #Звук открывания замка.

@@ -20,7 +20,7 @@ label ep04_dialogues2_family_cynthia_1a:
     # звонит будильник
     scene black_screen
     with Dissolve(1)
-    call textonblack(t_("ВТОРНИК"))
+    call textonblack(t_("ВТОРНИК")) from _rcall_textonblack_8
     scene black_screen
     fadeblack 2.0
     music iphone_alarm

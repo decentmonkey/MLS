@@ -20,7 +20,7 @@ label mall_street_init:
 
 label mall_street_environment:
     if obj_name == "Teleport_Map":
-        call map_show()
+        call map_show() from _rcall_map_show_8
         return
 #        call change_scene("daisy_livingroom")
 #        return

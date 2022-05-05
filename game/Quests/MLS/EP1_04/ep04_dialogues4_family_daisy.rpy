@@ -633,7 +633,7 @@ label ep04_dialogues4_family_daisy_2:
     #Барди стоит у своего дома. уже вечером.
     scene black_screen
     with Dissolve(1)
-    call textonblack(t_("СПУСТЯ ЧАС"))
+    call textonblack(t_("СПУСТЯ ЧАС")) from _rcall_textonblack_10
     scene black_screen
     with Dissolve(1)
     music2 night_ambience

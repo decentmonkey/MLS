@@ -834,7 +834,7 @@ label ep04_dialogues3_family_olivia_3:
     #Бард просыпается от телефонного звонка.
     scene black_screen
     with Dissolve(1)
-    call textonblack(t_("УТРО..."))
+    call textonblack(t_("УТРО...")) from _rcall_textonblack_9
     scene black_screen
     with Dissolve(1)
     music2 snd_phone_ring
@@ -852,7 +852,7 @@ label ep04_dialogues3_family_olivia_3:
 
     # chat cynthia, не рендерить
 #    $ cynthiaCallStage = 3
-    call phone_outgoing_call("Cynthia", "cynthia_chat4")
+    call phone_outgoing_call("Cynthia", "cynthia_chat4") from _rcall_phone_outgoing_call_1
     #
     # Барди думает, лежа в постели
     imgf 900063
@@ -1181,8 +1181,8 @@ label ep04_dialogues3_family_olivia_7:
     #Барду приходит смс от Оливии.
     #Бард перед глазами экран мобильного.
     # chat olivia
-    call phone_contact7()
-    call phone_outgoing_call("Olivia", "olivia_chat1")
+    call phone_contact7() from _rcall_phone_contact7
+    call phone_outgoing_call("Olivia", "olivia_chat1") from _rcall_phone_outgoing_call_2
     if 1==2:
         olivia "Скажи, что мне просто приснился плохой сон."
         bardi "Ой нет. Ну точно нет. Люди, которых мучают кошмары, априори так крепко дрыхнуть не могут."

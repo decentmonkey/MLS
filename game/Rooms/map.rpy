@@ -104,7 +104,7 @@ label map_environment:
         call process_drive_teleport("ARNIE", "arnie_street") from _rcall_process_drive_teleport_6
         return
     if obj_name == "Teleport_MALL":
-        call process_drive_teleport("MALL", "mall_street")
+        call process_drive_teleport("MALL", "mall_street") from _rcall_process_drive_teleport_7
         return
         
     m "drive!"

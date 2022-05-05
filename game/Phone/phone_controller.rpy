@@ -217,7 +217,7 @@ label phone_init:
         {"name":"preferences_rrmeter", "caption": t_("RR Meter")},
         {"name":"preferences_backgrounds", "caption": t_("Изменить фон")}
     ]
-    call phone_backgrounds_init()
+    call phone_backgrounds_init() from _rcall_phone_backgrounds_init
     $ phone_inited = True
 
     return

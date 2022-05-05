@@ -167,7 +167,7 @@ label ep04_dialogues5_college_emily_1:
             imgf 901622
             bardi_t "Черт! И почему я не вмешался?"
             bardi_t "Нужно проверить, как она..."
-            call rrmeter(-5, "ep04_dialogues5_college_emily_1")
+            call rrmeter(-5, "ep04_dialogues5_college_emily_1") from _rcall_rrmeter_22
             pass
         "Вмешаться.": # (+Rabbit)
             $ mlsBardiCollegeEmily1 = day # Барди заступился за Эмили перед Гарри
@@ -242,7 +242,7 @@ label ep04_dialogues5_college_emily_1:
                     imgf 901622
                     bardi_t "Черт, ну и досталось же ей..."
                     bardi_t "Думаю, стоит проверить, все ли хорошо."
-                    call rrmeter(5, "ep04_dialogues5_college_emily_1")
+                    call rrmeter(5, "ep04_dialogues5_college_emily_1") from _rcall_rrmeter_23
                     pass
                 "Да.":
                     $ mlsBardiCollegeEmily2 = day # Барди получил от Гарри
@@ -340,7 +340,7 @@ label ep04_dialogues5_college_emily_1:
                     bardi_t "Интересно, с Эмили все в порядке?"
                     bardi_t "Досталось ей тоже неслабо. Да и переживает, наверное..."
                     bardi_t "Стоит проверить, как она."
-                    call rrmeter(5, "ep04_dialogues5_college_emily_1")
+                    call rrmeter(5, "ep04_dialogues5_college_emily_1") from _rcall_rrmeter_24
                     pass
 
     #Барди входит в женскую раздевалку.
@@ -1388,7 +1388,7 @@ label ep04_dialogues5_college_emily_6:
             imgd 911586
             bardi "Ладно, вот фотки."
             #Бард достает телефон, открывает контакт с эмили, отсылает фотографии.
-            call phone_outgoing_call("Emily", "emily_chat5")
+            call phone_outgoing_call("Emily", "emily_chat5") from _rcall_phone_outgoing_call_3
             #Эмили достает телефон, просматривает фотографии.
             imgf 911587
             student_emily_t "Хах! А у [mcname] все-таки есть яица!"
@@ -1426,7 +1426,7 @@ label ep04_dialogues5_college_emily_6:
             w
             imgf 911594
             bardi_t "Теперь осталось решить, что делать с гребаным Гарри, когда Эмили выложит фото..."
-            call rrmeter(5, "ep04_dialogues5_college_emily_6")
+            call rrmeter(5, "ep04_dialogues5_college_emily_6") from _rcall_rrmeter_25
             #Игрок получает свободу действий. время - вечер.
             music2 stop
             fadeblack 1.5
@@ -1435,7 +1435,7 @@ label ep04_dialogues5_college_emily_6:
             imgf 911595
             sound iphone_typing
             bardi "Да, без проблем."
-            call phone_outgoing_call("Emily", "emily_chat5")
+            call phone_outgoing_call("Emily", "emily_chat5") from _rcall_phone_outgoing_call_4
             bardi_t "Ох, и пожалею я об этом..."
 #            sound2 iphone_text_message2
             #Бард отстраняется от Эмили.
@@ -1494,7 +1494,7 @@ label ep04_dialogues5_college_emily_6:
             music2 stop
             scene black_screen
             with Dissolve(1)
-            call textonblack(t_("НЕКОТОРОЕ ВРЕМЯ СПУСТЯ..."))
+            call textonblack(t_("НЕКОТОРОЕ ВРЕМЯ СПУСТЯ...")) from _rcall_textonblack_11
             scene black_screen
             with Dissolve(1)
             music Adventures_of_the_Deaf_Dreamer
@@ -2321,7 +2321,7 @@ label ep04_dialogues5_college_emily_6:
             bardi_t "Теперь осталось решить, что делать с гребаным Гарри, когда Эмили выложит фото..."
             bardi_t "Что-то мне мало верится, что Эмили хоть как-то сможет сгладить этот момент."
             bardi_t "Хорошо, что он не узнает ничего о том, что произошло дальше..."
-            call rrmeter(-5, "ep04_dialogues5_college_emily_6")
+            call rrmeter(-5, "ep04_dialogues5_college_emily_6") from _rcall_rrmeter_26
             #Конец сцены по этой ветке. Игрок получает свободу действий. время - ночь.
             fadeblack 1.5
             return 2
@@ -2333,7 +2333,7 @@ label ep04_dialogues5_college_emily_6a:
         bardi_t "Так. Колледж я прогулял, но зато у меня было офигенное свидание с красоткой Эмили."
         bardi_t "У меня еще куча свободного времени сегодня. Почему бы мне не поработать?"
     else:
-        call ep01_dialogues2_day1_family_1_12()
+        call ep01_dialogues2_day1_family_1_12() from _rcall_ep01_dialogues2_day1_family_1_12_2
     return False
 
 # мысли при клике на любую другую локацию, кроме пляжа (до встречи с Эмили)

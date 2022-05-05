@@ -16,7 +16,7 @@ label ep04_dialogues1_family_sophie_1a:
     # звонит будильник
     scene black_screen
     with Dissolve(1)
-    call textonblack(t_("ПОНЕДЕЛЬНИК"))
+    call textonblack(t_("ПОНЕДЕЛЬНИК")) from _rcall_textonblack_5
     scene black_screen
     fadeblack 2.0
     music iphone_alarm
@@ -326,7 +326,7 @@ label ep04_dialogues1_family_sophie_1:
             sophie_t "Господи! Какой же он хороший!.."
             #Барди уходит из кухни.
             bardi_t "Фак! Какая же она классная!"
-            call rrmeter(3, "ep04_dialogues1_family_sophie_1")
+            call rrmeter(3, "ep04_dialogues1_family_sophie_1") from _rcall_rrmeter_20
             #Конец сцены. Кролик +1. Игрок получает свободу действий.
             return
     return
@@ -709,7 +709,7 @@ label ep04_dialogues1_family_sophie_4:
                 #В общем, двое преисполненных в сознании интеллектуала.
                 scene black_screen
                 with Dissolve(1)
-                call textonblack(t_("НЕКОТОРОЕ ВРЕМЯ СПУСТЯ..."))
+                call textonblack(t_("НЕКОТОРОЕ ВРЕМЯ СПУСТЯ...")) from _rcall_textonblack_6
                 scene black_screen
                 with Dissolve(1)
                 music Shining_Through
@@ -825,7 +825,7 @@ label ep04_dialogues1_family_sophie_4:
                 #В общем, двое преисполненных в сознании интеллектуала.
                 scene black_screen
                 with Dissolve(1)
-                call textonblack(t_("НЕКОТОРОЕ ВРЕМЯ СПУСТЯ..."))
+                call textonblack(t_("НЕКОТОРОЕ ВРЕМЯ СПУСТЯ...")) from _rcall_textonblack_7
                 scene black_screen
                 with Dissolve(1)
                 music2 stop
@@ -912,7 +912,7 @@ label ep04_dialogues1_family_sophie_4:
             sophie_t "Господи! Какой же он хороший!.."
             #Бардивстает и выходит из гостинной.
             bardi_t "Фак! Какая же она классная!"
-            call rrmeter(3, "ep04_dialogues1_family_sophie_4")
+            call rrmeter(3, "ep04_dialogues1_family_sophie_4") from _rcall_rrmeter_21
             fadeblack 1.5
             #Конец сцены. Кролик +1. Игрок получает свободу действий.
             return
