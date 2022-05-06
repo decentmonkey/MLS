@@ -6,6 +6,8 @@ default mlsBardiCollegeEmily3 = 0 # Барди в женской раздева�
 default mlsBardiCollegeEmily4 = 0 # Барди заставил Эмили отрабатывать на пляже, чтобы он скинул ей фотки
 default mlsBardiCollegeEmily5 = 0 # Барди подглядывал за Эмили в примерочной
 
+default mlsBardiCollegeEmily6 = 0 # сказал что были девушки или нет (0 - не было)
+
 define v_MC_Pretty_Girl_handjob_1_25_sound_name = "v_MC_Emily_Handjob1_25" ## звук левый
 define v_MC_Pretty_girl_blowjob_1_25_sound_name = "v_MC_Whore_Blowjob2_25" ## звук левый
 define v_MC_Pretty_Girl_licking_1_25_sound_name = "v_MC_Emily_Handjob1_25" ## звук левый
@@ -1137,6 +1139,7 @@ label ep04_dialogues5_college_emily_6:
             student_emily "Скажи честно, у тебя уже были девушки до меня?"
             menu:
                 "Были.":
+                    $ mlsBardiCollegeEmily6 = day
                     imgd 911549
                     bardi "За кого ты вообще меня принимаешь?! Конечно, были!"
                     bardi_t "Ну нихрена себе! Что за вопрос?!"
@@ -2037,6 +2040,7 @@ label ep04_dialogues5_college_emily_6:
             imgd 902078
             menu:
                 "Были.":
+                    $ mlsBardiCollegeEmily6 = day
                     bardi "За кого ты вообще меня принимаешь?! Конечно, были!"
                     bardi_t "Ну нихрена себе! Что за вопрос?!"
                 "Не были.":
