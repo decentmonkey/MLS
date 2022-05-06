@@ -7,6 +7,8 @@ default mlsBardiWorkMallwhore5 = 0 # Барди воспользовался п�
 define v_MC_Whore_WCMall_handjob_1_25_sound_name = "v_MC_Emily_Handjob1_25" ## звук левый
 define v_MC_Whore_WCMall_blowjob_1_25_sound_name = "v_MC_Whore_Blowjob2_25" ## звук левый
 define v_MC_Whore_WCMall_anal_1_25_sound_name = "v_MC_Whore_Sex3_25" ## звук левый
+define v_MC_Whore_WCMall_sex_1_25_sound_name = "v_MC_Whore_Sex3_25" ## звук левый
+define v_MC_Whore_WCMall_sex_2_25_sound_name = "v_MC_Whore_Sex3_25" ## звук левый
 
 #call ep04_dialogues7_work_becky_1a() # мысли при клике на локацию ТЦ днем
 #call ep04_dialogues7_work_becky_1b() # мысли при клике на локацию ТЦ вечером
@@ -968,16 +970,41 @@ label ep04_dialogues7_work_becky_1:
             whore "Он входит в меня полностью!"
             imgd 911775
             sound woman_moan7a
-            bardi "Оооо! Как же хорошо!"
+            w
             imgd 911777
+            w
+
+            # video
+            # v_MC_Whore_WCMall_sex_1_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Whore_WCMall_sex_1_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Whore_WCMall_sex_1_25 = Movie(play="video/v_MC_Whore_WCMall_sex_1_25.mkv", fps=25)
+            show videov_MC_Whore_WCMall_sex_1_25
+            wclean
+            bardi "Оооо! Как же хорошо!"
+            whore "Оооох!!! Дааа!"
+            wclean
             whore "Жестче! Трахай меня жестче!"
+            wclean
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+
             #Барди поднимает ее на руки и прижав к стене долбит быстрее.
             #Бекки кайфует.
             imgf 911776
             w
             sound Jump1
             img 911778 hpunch
-            whore "Оооох!!! Дааа!"
+            w
             imgd 911779
             sound woman_moan8a
             w
@@ -1015,12 +1042,35 @@ label ep04_dialogues7_work_becky_1:
             bardi "Дааа! Я тоже! Уже почти!.."
             imgd 911784
             w
-            imgf 911787
+            imgd 911787
+            w
+            imgd 911788
+            w
+
+            # video
+            # v_MC_Whore_WCMall_sex_2_25
+            $ localSoundVolume = 1.0
+            $ localSoundName = v_MC_Whore_WCMall_sex_2_25_sound_name
+            img black_screen
+            with diss
+            stop music2
+            $ renpy.music.set_volume(localSoundVolume, 0.5, channel="music2")
+            $ renpy.music.set_volume(getMusicScenes(0.2), 0.5, channel="music")
+            play music2 "<from " + str((0*1.166)) + " loop 0.0>Sounds/" + localSoundName + ".ogg"
+            scene black
+            image videov_MC_Whore_WCMall_sex_2_25 = Movie(play="video/v_MC_Whore_WCMall_sex_2_25.mkv", fps=25)
+            show videov_MC_Whore_WCMall_sex_2_25
+            wclean
             whore "Не смей вытаскивать! Слышишь?!"
             whore "Кончи в меня!"
-            imgd 911788
+            wclean
             whore "Заполни мою киску!"
-            imgd 911789
+            wclean
+            stop music2
+            $ renpy.music.set_volume(1.0, 0.5, channel="music2")
+            $ renpy.music.set_volume(1.0, 0.5, channel="music")
+
+            imgf 911789
             bardi "О, дааа! Я сейчас!"
             # Бекки кончает
             imgf 911790
