@@ -12,7 +12,7 @@ label phone_contacts1:
 label phone_contacts1a_college:
 #    $ phone_set_new("contacts")
     if check_phone_contact("College") == False:
-    $ phone_contacts.append({"name": "College", "caption":t_("College administration"), "img":"/images/Phone/contacts/empty.png", "visible":False})
+        $ phone_contacts.append({"name": "College", "caption":t_("College administration"), "img":"/images/Phone/contacts/empty.png", "visible":False})
     return
 
 label phone_contacts2:
