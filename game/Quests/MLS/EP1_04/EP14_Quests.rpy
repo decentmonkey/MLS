@@ -25,6 +25,10 @@ label ep14_update_init:
     call process_change_map_location("HOUSE") from _rcall_process_change_map_location_4
     call changeDayTime("morning") from _rcall_changeDayTime_25
     call ep04_dialogues1_family_sophie_1a() from _rcall_ep04_dialogues1_family_sophie_1a
+
+    if questHelpGetStatus("college_15") != 1:
+        $ questHelp("college_15", False)
+
     python:
         sophieKitchenHelpEnabled1 = True
 
@@ -266,6 +270,7 @@ label ep14_quests4_evening_bed:
     call changeDayTime("morning") from _rcall_changeDayTime_30
     call ep04_dialogues2_family_cynthia_1a() from _rcall_ep04_dialogues2_family_cynthia_1a
     $ sophieCallStage = 0
+    $ move_object("Sister2", "house_sister2")
     $ add_hook("exit_scene", "ep14_quests5_sister2", scene="house_bedroom_mc", once=True)
     $ map_enabled = False
     call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_20
@@ -279,6 +284,7 @@ label ep14_quests5_sister2:
     $ miniMapDisabled["HOUSE"] = []
     $ remove_hook(label="house_block")
     $ questHelp("college_30")
+    $ move_object("Sister2", "college_empty")
 
     $ set_object_follow("Teleport_Street", scene="minimap")
     $ set_object_follow("Teleport_Floor1", scene="house_kitchen")
