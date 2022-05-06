@@ -20,9 +20,13 @@ label ep13_update_init:
 label ep13_quests_init:
     call changeDayTime("morning") from _rcall_changeDayTime_18
     call ep03_dialogues1_family_morning_1() from _rcall_ep03_dialogues1_family_morning_1
+
+    if questHelpGetStatus("sean_2") != 1:
+        $ questHelp("sean_2", False)
     python:
         remove_hook(label="ep12_quests20_home")
         remove_hook(quest="day2")
+
 
         map_enabled = False
         add_hook("Teleport_Street", "ep01_dialogues2_day1_family_1_12", scene="house_floor1", label="house_block", quest="day3")

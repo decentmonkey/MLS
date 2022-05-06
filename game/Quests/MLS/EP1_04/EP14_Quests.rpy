@@ -185,6 +185,8 @@ label ep14_quests3_bikerent1:
             questHelp("work_6", True)
             questHelp("work_7")
             ep14_bikerent_work_lastday = day
+        if questHelpGetStatus("sean_2") != 1:
+            $ questHelp("sean_2", False)
         call changeDayTime("evening") from _rcall_changeDayTime_27
         call refresh_scene_fade() from _rcall_refresh_scene_fade_37
         return False
@@ -305,6 +307,7 @@ label ep14_quests5_college1:
     call changeDayTime("day") from _rcall_changeDayTime_31
     $ clear_object_follow_all()
     $ emilyCallStage = 2
+    call phone_contact5()
     $ questHelp("college_30", True)
     $ unfocus_map()
     $ autorun_to_object("ep04_dialogues5_college_emily_1a", scene="college_street")

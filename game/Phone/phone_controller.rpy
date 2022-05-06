@@ -761,4 +761,11 @@ init python:
         del phone_gallery[gal_idx]
         return
 
+    def check_phone_contact(contact_name):
+        global phone_contacts
+        for contact_data in phone_contacts:
+            if contact_data["name"] == contact_name:
+                return True
+        return False
+
 #
