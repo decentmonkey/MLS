@@ -98,7 +98,7 @@ python early:
         renpy.show_screen("phone_camera_capture_hud_screen")
 
         if current_slide_image != imagePath:
-            print "showing blink!"
+#            print "showing blink!"
             #blink controller
             blinksListStopped = []
             for blinkName in blinksListActive:
