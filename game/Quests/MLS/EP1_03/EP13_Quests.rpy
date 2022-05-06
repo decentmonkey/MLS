@@ -495,4 +495,4 @@ label ep13_quests11_party5_end:
     $ steam_achievement("ach_end3")
     call ep14_update_init() from _rcall_ep14_update_init
 #    jump end_update
-    return
+    return False
