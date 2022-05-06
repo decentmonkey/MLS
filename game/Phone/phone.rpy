@@ -107,7 +107,7 @@ label phone_call_contact:
         if seanCallStage == 1:
             call sean_chat1() from _rcall_sean_chat1
             return
-        if get_active_objects("Friend_Bardie", scene="COLLEGE", recursive=True) != False:
+        if get_active_objects("Friend_Bardie", scene="COLLEGE", recursive=True) != False and day_time_idx < 2:
             call sean_chat2() from _rcall_sean_chat2 # регулярный чат днем, Шон не может говорить, учится
             return
 

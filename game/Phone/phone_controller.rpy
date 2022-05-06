@@ -80,6 +80,8 @@ default phone_icon_flashing = False
 
 
 label phone_open:
+#    if renpy.get_screen("phone") != None:
+#        return
     $ phoneNewForced = False
     $ phone_icon_flashing = False
     if phone_incoming_call_active == True:
