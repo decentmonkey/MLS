@@ -8,9 +8,9 @@ default mlsBardiCollegeEmily5 = 0 # Барди подглядывал за Эм�
 
 default mlsBardiCollegeEmily6 = 0 # сказал что были девушки или нет (0 - не было)
 
-define v_MC_Pretty_Girl_handjob_1_25_sound_name = "v_MC_Emily_Handjob1_25" ## звук левый
-define v_MC_Pretty_girl_blowjob_1_25_sound_name = "v_MC_Whore_Blowjob2_25" ## звук левый
-define v_MC_Pretty_Girl_licking_1_25_sound_name = "v_MC_Emily_Handjob1_25" ## звук левый
+define v_MC_Pretty_Girl_handjob_1_25_sound_name = "v_MC_Pretty_Girl_handjob_1_25"
+define v_MC_Pretty_girl_blowjob_1_25_sound_name = "v_MC_Pretty_girl_blowjob_1_25"
+define v_MC_Pretty_Girl_licking_1_25_sound_name = "v_MC_Pretty_Girl_licking_1_25"
 
 #call ep04_dialogues5_college_emily_1() # сцена с Эмили в колледже
 #call ep04_dialogues5_college_emily_2() # chat emily, если Барди напишет ей не в среду

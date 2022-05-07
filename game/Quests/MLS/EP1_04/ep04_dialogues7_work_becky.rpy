@@ -4,11 +4,11 @@ default mlsBardiWorkMallwhore3 = 0 # Барди воспользовался п�
 default mlsBardiWorkMallwhore4 = 0 # Барди воспользовался пунктом Классика
 default mlsBardiWorkMallwhore5 = 0 # Барди воспользовался пунктом Анал
 
-define v_MC_Whore_WCMall_handjob_1_25_sound_name = "v_MC_Emily_Handjob1_25" ## звук левый
-define v_MC_Whore_WCMall_blowjob_1_25_sound_name = "v_MC_Whore_Blowjob2_25" ## звук левый
-define v_MC_Whore_WCMall_anal_1_25_sound_name = "v_MC_Whore_Sex3_25" ## звук левый
-define v_MC_Whore_WCMall_sex_1_25_sound_name = "v_MC_Whore_Sex3_25" ## звук левый
-define v_MC_Whore_WCMall_sex_2_25_sound_name = "v_MC_Whore_Sex3_25" ## звук левый
+define v_MC_Whore_WCMall_handjob_1_25_sound_name = "v_MC_Whore_WCMall_handjob_1_25"
+define v_MC_Whore_WCMall_blowjob_1_25_sound_name = "v_MC_Whore_WCMall_blowjob_1_25"
+define v_MC_Whore_WCMall_anal_1_25_sound_name = "v_MC_Whore_WCMall_anal_1_25"
+define v_MC_Whore_WCMall_sex_1_25_sound_name = "v_MC_Whore_WCMall_sex_1_25"
+define v_MC_Whore_WCMall_sex_2_25_sound_name = "v_MC_Whore_WCMall_sex_2_25"
 
 #call ep04_dialogues7_work_becky_1a() # мысли при клике на локацию ТЦ днем
 #call ep04_dialogues7_work_becky_1b() # мысли при клике на локацию ТЦ вечером

@@ -5,7 +5,7 @@ default mlsBardiWorkDay1BikeRental4 = 0 # Барди сразу верно на�
 default mlsBardiWorkDay1BikeRental5 = 0 # Барди согласился на бартер с Бекки
 default mlsBardiWorkDay1BikeRental6 = 0 # Барди дал Бекки велик бесплатно
 
-define v_MC_Whore_blowjob_bikerental_1_25_sound_name = "v_MC_Whore_Blowjob2_25" ## звук левый
+define v_MC_Whore_blowjob_bikerental_1_25_sound_name = "v_MC_Whore_blowjob_bikerental_1_25"
 
 #call ep04_dialogues8_work_bikerental_1() # работа в велопрокате 1-й день с Райтом (обучает)
 #call ep04_dialogues8_work_bikerental_1a() # chat sophie, сообщение в конце рабочего дня

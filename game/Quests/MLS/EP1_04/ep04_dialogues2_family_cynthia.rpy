@@ -2,7 +2,7 @@ define cynthia_t = Character(t_("Синтия"), who_color=c_green, what_color=c
 
 default mlsBardiFamilyV4Cynthia1 = 0 # Барди помогал Синтии собираться на пижамную вечеринку
 
-define v_MC_Cynthia_Handjob1_25_sound_name = "v_MC_Emily_Handjob1_25" ## звук левый
+define v_MC_Cynthia_Handjob1_25_sound_name = "v_MC_Cynthia_Handjob1_25" 
 
 #call ep04_dialogues2_family_cynthia_1() # разговор с Синтией в ее комнате
 #call ep04_dialogues2_family_cynthia_2() # комната Барди, мечты о Синтии
@@ -1084,7 +1084,7 @@ label ep04_dialogues2_family_cynthia_2:
     show screen dream()
     with diss
     cynthia "Только если ты научишь меня всему. Ладно?"
-    bardi "Конечно, малышка." 
+    bardi "Конечно, малышка."
     #Фантазия заканчивается. Барди в комнате один.
     img white_screen
     with diss

@@ -1,7 +1,7 @@
 default mlsBardiFamilyV4Olivia1 = 0 # Барди застукал Оливию в комнате Синтии
 
-define v_Olivia_solo_1_25_sound_name = "v_Olivia_Masturbating1_25" ## звук левый
-define v_Olivia_solo_2_25_sound_name = "v_Olivia_Masturbating2_25" ## звук левый
+define v_Olivia_solo_1_25_sound_name = "v_Olivia_solo_1_25"
+define v_Olivia_solo_2_25_sound_name = "v_Olivia_solo_2_25"
 
 #call ep04_dialogues3_family_olivia_1() # комната Барди
 #call ep04_dialogues3_family_olivia_2() # Оливия в комнате Синтии
