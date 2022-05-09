@@ -5,7 +5,7 @@ python early:
         "english": "Thanks for the English translation to\n[Aesthetic Dialectic] & [bambam]",
         "german": "Thanks for the German translation to\n[Ragnaroekr] & [Londo Mollari]",
         "spanish": "Thanks for the Spanish translation to\n[kt9]",
-        "french": "Thanks for the French translation to\n[Jay Staff] & [Wissssss]",
+        "french": "Thanks for the French translation to\n[Jay Staff] & [Poussin1er]",
 #        "italian": "Thanks for the Italian translation to\n[5n4k3]",
         "turkish": "Thanks for the Turkish translation to\n[LEGOLAS] & [Shtofig]",
         "ukrainian": "Thanks for the Ukrainian translation to\n[EraRamp]",
