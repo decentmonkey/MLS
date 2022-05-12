@@ -1974,7 +1974,7 @@ screen choice(items):
                                 button_obj["caption"] = str1
                                 button_obj["active"] = False
 
-                    if " (disabled)" in imenu.caption or " (désactivé)" in imenu.caption or " (deaktiviert)" in imenu.caption or " (déactivé)" in imenu.caption or " (devredışı)" in imenu.caption or " (disabilitato)" in imenu.caption or " (Disabled)" in imenu.caption or " (Deaktiviert)" in imenu.caption or " (Déactivé)" in imenu.caption or " (Devredışı)" in imenu.caption or " (Disabilitato)" in imenu.caption or " (devre dışı)" in imenu.caption or " (disabilito)" in imenu.caption or " (禁止)" in imenu.caption or " （禁用）" in imenu.caption:
+                    if " (disabled)" in imenu.caption or " (désactivé)" in imenu.caption or " (deaktiviert)" in imenu.caption or " (déactivé)" in imenu.caption or " (devredışı)" in imenu.caption or " (disabilitato)" in imenu.caption or " (Disabled)" in imenu.caption or " (Deaktiviert)" in imenu.caption or " (Déactivé)" in imenu.caption or " (Devredışı)" in imenu.caption or " (Disabilitato)" in imenu.caption or " (devre dışı)" in imenu.caption or " (disabilito)" in imenu.caption or " (禁止)" in  imenu.caption or " （禁用）" in imenu.caption or " (nelze)" in imenu.caption:
 #                        str1 = t__(imenu.caption)
                         str1 = str1.replace(" (disabled)", "")
                         str1 = str1.replace(" (deaktiviert)", "")
@@ -1991,6 +1991,7 @@ screen choice(items):
                         str1 = str1.replace(" (disabilito)", "")
                         str1 = str1.replace(" (禁止)", "")
                         str1 = str1.replace(" （禁用）", "")
+                        str1 = str1.replace(" (nelze)", "")
 
                         button_obj["caption"] = str1
                         button_obj["active"] = False
