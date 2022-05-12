@@ -448,12 +448,16 @@ label ep04_dialogues7_work_becky_1:
                 }
             menu:
                 "Работа ручками.":
+                    $ steam_achievement("ach_suc_bus")
                     jump ep04_dialogues7_work_becky_1_1
                 "Минет":
+                    $ steam_achievement("ach_suc_bus")
                     jump ep04_dialogues7_work_becky_1_2
                 "Классика.":
+                    $ steam_achievement("ach_suc_bus")
                     jump ep04_dialogues7_work_becky_1_3
                 "Анал.":
+                    $ steam_achievement("ach_suc_bus")
                     jump ep04_dialogues7_work_becky_1_4
                 "Уйти.":
                     jump ep04_dialogues7_work_becky_1_5

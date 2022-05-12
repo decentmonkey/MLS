@@ -419,6 +419,7 @@ label ep04_dialogues8_work_bikerental_1:
     with Dissolve(1)
     sound snd_keys_door_open
     pause 1.0
+    $ steam_achievement("ach_bike_rental1")
     imgf 902409
     bardi_t "Ну, вот и все. А сейчас - домой..."
     #Конец сцены. Игрок получает свободу действий. Сцена заканчивается вечером.
@@ -1501,6 +1502,7 @@ label ep04_dialogues8_work_bikerental_3:
             imgd 902357
             bardi "Удачи. Только привези его, как накатаешься."
             #Бекки уезжает. Барди провожает его взглядом.
+            $ steam_achievement("ach_becky_barter")
             imgf 902358
             sound bicycle_bell
             bardi "Хммм... Вечером у торгового центра?.."

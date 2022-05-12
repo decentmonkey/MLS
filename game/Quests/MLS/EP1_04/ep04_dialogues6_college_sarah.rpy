@@ -776,6 +776,7 @@ label ep04_dialogues6_college_sarah_2:
     bardi "Ну, до встречи..."
     student_sarah "До встречи, [mcname]."
     #Сара уходит.
+    $ steam_achievement("ach_sarah1")
     imgd 911733
     sound step_stairs_short
     bardi "Черт! В какое же дерьмо я вляпался!.."

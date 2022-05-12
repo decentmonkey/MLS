@@ -820,6 +820,7 @@ label ep04_dialogues3_family_olivia_2:
     bardi_t "..."
     imgd 900045
     w
+    $ steam_achievement("ach_olivia_secret")
     #Затемнение. Бард засыпает.
     #Конец сцены.
     fadeblack 1.0

@@ -1427,6 +1427,7 @@ label ep04_dialogues5_college_emily_6:
             imgd 911593
             sound steps_park
             w
+            $ steam_achievement("ach_walk_emily")
             imgf 911594
             bardi_t "Теперь осталось решить, что делать с гребаным Гарри, когда Эмили выложит фото..."
             call rrmeter(5, "ep04_dialogues5_college_emily_6") from _rcall_rrmeter_25
@@ -2321,6 +2322,7 @@ label ep04_dialogues5_college_emily_6:
             sound highheels_short_walk
             imgf 901998
             w
+            $ steam_achievement("ach_shop_emily")
             imgd 901999
             bardi_t "Теперь осталось решить, что делать с гребаным Гарри, когда Эмили выложит фото..."
             bardi_t "Что-то мне мало верится, что Эмили хоть как-то сможет сгладить этот момент."

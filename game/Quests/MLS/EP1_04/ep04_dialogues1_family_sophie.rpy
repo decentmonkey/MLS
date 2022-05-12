@@ -270,6 +270,7 @@ label ep04_dialogues1_family_sophie_1:
             $ questHelpDesc("house_desc4", False)
             $ questHelpDesc("house_desc5", False)
             $ questHelpDesc("house_desc10")
+            $ steam_achievement("ach_help_sophie")
 
             #Конец сцены. Игрок получает свободу действия.
         "Вернуть долг." if mlsBardiDay3SophieMoney2 > 0: # Если у Барди недостаточно денег, то этот пункт не доступен
@@ -326,6 +327,7 @@ label ep04_dialogues1_family_sophie_1:
             sophie_t "Господи! Какой же он хороший!.."
             #Барди уходит из кухни.
             bardi_t "Фак! Какая же она классная!"
+            $ steam_achievement("ach_debt_sophie")
             call rrmeter(3, "ep04_dialogues1_family_sophie_1") from _rcall_rrmeter_20
             #Конец сцены. Кролик +1. Игрок получает свободу действий.
             return
@@ -468,6 +470,7 @@ label ep04_dialogues1_family_sophie_2:
                 #Конец сцены. Игрок получает свободу действий.
                 $ sophieKitchenHelpLastDay = day
                 $ questHelp("house_23", True)
+                $ steam_achievement("ach_help_sophie")
                 return
             "Нет.":
                 imgd 902149
@@ -912,6 +915,7 @@ label ep04_dialogues1_family_sophie_4:
             sophie_t "Господи! Какой же он хороший!.."
             #Бардивстает и выходит из гостинной.
             bardi_t "Фак! Какая же она классная!"
+            $ steam_achievement("ach_debt_sophie")
             call rrmeter(3, "ep04_dialogues1_family_sophie_4") from _rcall_rrmeter_21
             fadeblack 1.5
             #Конец сцены. Кролик +1. Игрок получает свободу действий.
