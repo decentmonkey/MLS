@@ -1,4 +1,5 @@
 define game.extra = True
+define game.web_version = False
 
 define gui.flag720 = False
 define gui.scenes_transitions = True
@@ -603,3 +604,14 @@ style main_menu_credits_text:
     color "#ffffff"
 #    outlines [(0, "#0f0f0f", 2, 2), (0, "#0f0f0f", 2, -2), (0, "#0f0f0f", -2, 2), (0, "#0f0f0f", -2, -2)]
     outlines [(3, "#0f0f0f", 0, 0)]
+
+
+style main_menu_version:
+    text_align 1.0
+    properties gui.text_properties("version")
+    color "f6861f"
+    size 60
+#    outlines [(0, "#000000", 2, 2)]
+    outlines [(6, "#0f0f0f", 0, 0)]
+#    outlines [(0, "#000000", 0, 0)]
+#    outlines [(0, "#696935", 1, 1)]

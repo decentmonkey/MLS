@@ -2390,13 +2390,15 @@ screen main_menu():
         style "mm_root"
     style_prefix "main_menu"
 
-#    add gui.main_menu_background
-    add Movie(size=(1920, 1080)):
-        pos(0,0)
-    on "show" action Play("movie", "video/v_Mainmenu_1b.mkv", loop=True)
-    on "hide" action Stop("movie")
-    on "replace" action Play("movie", "video/v_Mainmenu_1b.mkv", loop=True)
-    on "replaced" action Stop("movie")
+    if game.web_version == False:
+        add Movie(size=(1920, 1080)):
+            pos(0,0)
+        on "show" action Play("movie", "video/v_Mainmenu_1b.mkv", loop=True)
+        on "hide" action Stop("movie")
+        on "replace" action Play("movie", "video/v_Mainmenu_1b.mkv", loop=True)
+        on "replaced" action Stop("movie")
+    else:
+        add gui.main_menu_background
     fixed:
         if steamVersion == False:
             imagebutton:
@@ -2417,16 +2419,16 @@ screen main_menu():
 #            xpos get_resolution_x(1025)
 #            ypos get_resolution_y(00)
         add "gui/logo1.png" at logo1_transform:
-            pos (1024,0)
+            pos (getRes(1024),getRes(0))
         add "gui/logo2.png" at logo2_transform:
-            pos (1024,252)
+            pos (getRes(1024),getRes(252))
 
         if language_count1 != language_count_all:
             frame:
                 background None
                 xanchor 0.0
-                pos (437, 900)
-                xmaximum 1200
+                pos (getRes(437), getRes(900))
+                xmaximum getRes(1200)
                 text "Unofficial modified version detected!\nDeveloper is not responsible for the changes made!" style "modified_version"
 
         if 1==1:
@@ -2510,9 +2512,9 @@ screen main_menu():
                 style "main_menu_title"
         frame:
             background None
-            ypos 435
-            xpos 1600
-            xmaximum 260
+            ypos getRes(435)
+            xpos getRes(1600)
+            xmaximum getRes(260)
             text "[config.version]":
                 style "main_menu_version"
 
@@ -2542,15 +2544,6 @@ style main_menu_text:
 style main_menu_title:
     properties gui.text_properties("title")
 
-style main_menu_version:
-    text_align 1.0
-    properties gui.text_properties("version")
-    color "f6861f"
-    size 60
-#    outlines [(0, "#000000", 2, 2)]
-    outlines [(6, "#0f0f0f", 0, 0)]
-#    outlines [(0, "#000000", 0, 0)]
-#    outlines [(0, "#696935", 1, 1)]
 
 
 ## Game Menu screen ############################################################
