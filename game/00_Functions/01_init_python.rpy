@@ -105,10 +105,13 @@ python early:
                 blinksListStopped.append(blinkName)
             blinksListActive = []
             blinkBase = imagePathExt[1]
-            if offsets_blink.has_key(blinkBase):
+            offsets_blink_process = offsets_blink
+            if gui.flag720 == True:
+                offsets_blink_process = offsets_blink_720p
+            if offsets_blink_process.has_key(blinkBase):
                 blinkCharacterIdx = 0
-                for blink_character in offsets_blink[blinkBase]:
-                    blink_data = offsets_blink[blinkBase][blink_character]
+                for blink_character in offsets_blink_process[blinkBase]:
+                    blink_data = offsets_blink_process[blinkBase][blink_character]
                     blinkImage = "images/Overlays/Blink/" + blinkBase + "_blink_" + blink_character + ".png"
                     blinksListActive.append(blinkImage)
                     blinkPresetId = blink_data[3]

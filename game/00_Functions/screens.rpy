@@ -1528,8 +1528,8 @@ screen blink_screen1(blink_image, blink_offset, blink_preset):
     fixed:
         if blur_effect == 0:
             add image2
-            xpos getRes(blink_offset[0])
-            ypos getRes(blink_offset[1])
+            xpos blink_offset[0]
+            ypos blink_offset[1]
 
 
 screen blink_screen2(blink_image, blink_offset, blink_preset):
@@ -1546,8 +1546,8 @@ screen blink_screen2(blink_image, blink_offset, blink_preset):
     fixed:
         if blur_effect == 0:
             add image2:
-                xpos getRes(blink_offset[0])
-                ypos getRes(blink_offset[1])
+                xpos blink_offset[0]
+                ypos blink_offset[1]
 
 screen blink_screen3(blink_image, blink_offset, blink_preset):
     layer "master"
@@ -1563,8 +1563,8 @@ screen blink_screen3(blink_image, blink_offset, blink_preset):
     fixed:
         if blur_effect == 0:
             add image2:
-                xpos getRes(blink_offset[0])
-                ypos getRes(blink_offset[1])
+                xpos blink_offset[0]
+                ypos blink_offset[1]
 
 screen blink_screen4(blink_image, blink_offset, blink_preset):
     layer "master"
@@ -1580,8 +1580,8 @@ screen blink_screen4(blink_image, blink_offset, blink_preset):
     fixed:
         if blur_effect == 0:
             add image2:
-                xpos getRes(blink_offset[0])
-                ypos getRes(blink_offset[1])
+                xpos blink_offset[0]
+                ypos blink_offset[1]
 
 screen blink_screen5(blink_image, blink_offset, blink_preset):
     layer "master"
@@ -1597,8 +1597,8 @@ screen blink_screen5(blink_image, blink_offset, blink_preset):
     fixed:
         if blur_effect == 0:
             add image2:
-                xpos getRes(blink_offset[0])
-                ypos getRes(blink_offset[1])
+                xpos blink_offset[0]
+                ypos blink_offset[1]
 
 screen blink_screen6(blink_image, blink_offset, blink_preset):
     layer "master"
@@ -1614,8 +1614,8 @@ screen blink_screen6(blink_image, blink_offset, blink_preset):
     fixed:
         if blur_effect == 0:
             add image2:
-                xpos getRes(blink_offset[0])
-                ypos getRes(blink_offset[1])
+                xpos blink_offset[0]
+                ypos blink_offset[1]
 
 
 screen blink_screen1a(blink_image, blink_offset, blink_preset, blinkStripObject):
@@ -1632,8 +1632,8 @@ screen blink_screen1a(blink_image, blink_offset, blink_preset, blinkStripObject)
     fixed:
         if blur_effect == 0:
             add image2
-            xpos getRes(blink_offset[0])
-            ypos getRes(blink_offset[1])
+            xpos blink_offset[0]
+            ypos blink_offset[1]
 
 
 screen blink_screen2a(blink_image, blink_offset, blink_preset, blinkStripObject):
@@ -1650,8 +1650,8 @@ screen blink_screen2a(blink_image, blink_offset, blink_preset, blinkStripObject)
     fixed:
         if blur_effect == 0:
             add image2:
-                xpos getRes(blink_offset[0])
-                ypos getRes(blink_offset[1])
+                xpos blink_offset[0]
+                ypos blink_offset[1]
 
 screen blink_screen3a(blink_image, blink_offset, blink_preset, blinkStripObject):
     layer "master"
@@ -1667,8 +1667,8 @@ screen blink_screen3a(blink_image, blink_offset, blink_preset, blinkStripObject)
     fixed:
         if blur_effect == 0:
             add image2:
-                xpos getRes(blink_offset[0])
-                ypos getRes(blink_offset[1])
+                xpos blink_offset[0]
+                ypos blink_offset[1]
 
 screen blink_screen4a(blink_image, blink_offset, blink_preset, blinkStripObject):
     layer "master"
@@ -1684,8 +1684,8 @@ screen blink_screen4a(blink_image, blink_offset, blink_preset, blinkStripObject)
     fixed:
         if blur_effect == 0:
             add image2:
-                xpos getRes(blink_offset[0])
-                ypos getRes(blink_offset[1])
+                xpos blink_offset[0]
+                ypos blink_offset[1]
 
 screen blink_screen5a(blink_image, blink_offset, blink_preset, blinkStripObject):
     layer "master"
@@ -1701,8 +1701,8 @@ screen blink_screen5a(blink_image, blink_offset, blink_preset, blinkStripObject)
     fixed:
         if blur_effect == 0:
             add image2:
-                xpos getRes(blink_offset[0])
-                ypos getRes(blink_offset[1])
+                xpos blink_offset[0]
+                ypos blink_offset[1]
 
 screen blink_screen6a(blink_image, blink_offset, blink_preset, blinkStripObject):
     layer "master"
@@ -1718,8 +1718,8 @@ screen blink_screen6a(blink_image, blink_offset, blink_preset, blinkStripObject)
     fixed:
         if blur_effect == 0:
             add image2:
-                xpos getRes(blink_offset[0])
-                ypos getRes(blink_offset[1])
+                xpos blink_offset[0]
+                ypos blink_offset[1]
 ################################################################################
 ## In-game screens
 ################################################################################
