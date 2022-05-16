@@ -61,11 +61,14 @@ label ep01_dialogues1_start_1a:
     # здесь ввод имени главного героя [mcname] [mcsurname], по дефолту Барди Джонс (Bardi Jones)
     $ mcname = t__("Томас")
     if renpy.android == True:
+        $ input_value = mcname
         call screen input_softkeyboard
         $ mcname = _return
     else:
         $ mcname = renpy.input(t__("Меня зовут... (enter для ввода)"), mcname)
     if mcname == False:
+        $ mcname = t__("Томас")
+    if mcname == True:
         $ mcname = t__("Томас")
 
     $ bardi = Character((mcname), who_color=c_blue) # ГГ Bardi Jones
@@ -73,11 +76,14 @@ label ep01_dialogues1_start_1a:
 
     $ mcsurname = t__("Джонс")
     if renpy.android == True:
+        $ input_value = mcsurname
         call screen input_softkeyboard
         $ mcsurname = _return
     else:
         $ mcsurname = renpy.input(t__("Меня зовут... (enter для ввода)"), mcsurname)
     if mcsurname == False:
+        $ mcsurname = t__("Джонс")
+    if mcsurname == True:
         $ mcsurname = t__("Джонс")
     imgd 910204
     girl2 "Привет, [mcname]!"

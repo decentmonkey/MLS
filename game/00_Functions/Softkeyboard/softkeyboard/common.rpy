@@ -114,8 +114,8 @@ init python:
 ##############################################################################
 #       KEYS
 ##############################################################################
-    INPUT_VALUE_DEFAULT = "Marylin"
-    INPUT_LABEL_DEFAULT = "Monica's name:"
+    INPUT_VALUE_DEFAULT = "Thomas"
+    INPUT_LABEL_DEFAULT = "Thomas"
 
     softkey_type = [{"alphabet" : "en"}, {"symbols" : "en"}]
 
@@ -140,8 +140,8 @@ init python:
 #       VARIABLES
 ##############################################################################
 init python:
-    input_value = "Marylin"
-    input_label = "Monica's name:"
+    input_value = "Thomas"
+    input_label = "My name:"
     input_keyboard = softkey_type[0].keys()[0]
 
     input_alphabet = SetAlphabet(input_keyboard)
