@@ -1,4 +1,4 @@
-define blogger = Character(_("Блогер"), who_color=c_green) # блогер
+define blogger = Character(t_("Блогер"), who_color=c_green) # блогер
 
 default mlsBardiCollegeSarahLosingWeight1 = 0 # Барди научил Лео клеить девчонок
 default mlsBardiCollegeSarahLosingWeight2 = 0 # Барди притворился, что хочет обнять Сару и обманул
@@ -643,6 +643,30 @@ label ep05_dialogues1_college_sarah_3:
     $ mlsBardiCollegeSarahLosingWeight4 = day # Барди провел тренировку для Сары
     #Конец сцены. Игрок получает свободу действий.
     return
+
+# мысли после сцены с Сарой в холле колледжа
+label ep05_dialogues1_college_sarah_2a:
+    ## не рендерить!
+    bardi_t "Больше мне в этой шараге делать нечего."
+    bardi_t "Нужно валить отсюда, пока не нарваля на какую-нибудь злобную Брукс или Кларк..."
+    return
+
+# мысли во дворе колледжа
+label ep05_dialogues1_college_sarah_2b:
+    ## не рендерить!
+    bardi_t "Итак, чем бы мне теперь заняться?"
+    label ep05_dialogues1_college_sarah_2b_loop:
+    menu:
+        "Пойти работать у Дейзи.":
+            bardi_t "Дейзи мне пока что не написала насчет краш-тестов."
+            bardi_t "Лучше подождать сообщения от нее..."
+            jump ep05_dialogues1_college_sarah_2b_loop
+        "Поработать в велопрокате.":
+            bardi_t "Самое время немного подзаработать в прокате у Райта..."
+            # квест-лог "Идти в велопрокат."
+            pass
+    return
+
 
 # комната Барди, ночь
 # в этот же день, при клике ночью на кровать, чтобы спать до утра
