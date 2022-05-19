@@ -418,5 +418,3 @@ label ep05_dialogues6_family_cynthia_6:
     bardi "Вас понял, госпожа."
     olivia "Да пошел ты!"
     return
-
-#++
