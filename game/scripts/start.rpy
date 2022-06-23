@@ -85,7 +85,7 @@ label start: #for blink here
     call locations_init() from _rcall_locations_init
 
 #########
-#    jump video_test
+#    call ep05_dialogues1_college_sarah_5() # при клике на Сару в спортзале, регулярно
 #########
 
 
