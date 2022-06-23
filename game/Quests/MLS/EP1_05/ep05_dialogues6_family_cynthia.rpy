@@ -1,5 +1,13 @@
 default mlsBardiFamilyV5Cynthia1 = 0 # Барди поговорил с Синтией по просьбе Оливии
 
+#call ep05_dialogues6_family_cynthia_1() # при клике на комнату Синтии
+#call ep05_dialogues6_family_cynthia_2() # при клике на комнату Синтии, если игрок еще не поговорил с Оливией о подарке (2-й разговор с ней)
+#call ep05_dialogues6_family_cynthia_3() # клик на контакт Оливии в телефоне, если еще не разговаривал с Синтией, chat olivia
+#call ep05_dialogues6_family_cynthia_4() # chat olivia, если 2-го разговора с Оливией еще не было
+#call ep05_dialogues6_family_cynthia_5() # клик на контакт Синтии в телефоне после разговора с ней, chat cynthia
+#call ep05_dialogues6_family_cynthia_6() # клик на контакт Оливии в телефоне при условии, что все разговоры состоялись, chat olivia
+
+
 ## суббота утро, после разговора с Оливией
 
 # доступно только при условии, что Барди разговаривал с Оливией (mlsBardiFamilyV5Olivia1 > 0)
