@@ -19,7 +19,7 @@ label ep05_dialogues5_family_olivia_1:
     # выражение лица Оливия пытается делать более повседневным, но это у нее не очень получается
     fadeblack 1.0
     sound2 step_stairs_short
-    music Step_By_Step
+    music Visions_Of_Plenty
     imgfl 902683
     bardi_t "Оппа!.. Душевные диалоги?"
     # Берем девочек крупным планом. Синтия наигранная улыбка. У Оливии примерно такая же, словно обе не знают о чем говорить.
@@ -73,6 +73,7 @@ label ep05_dialogues5_family_olivia_1:
     # Оливия поднимает взгляд на сестру.
     olivia "Да, думаю, так и будет..."
     # Обе снова отводят глаза друг от друга.
+    music Postcard_From_Hell
     imgd 902697
     olivia "..."
     imgd 902698
@@ -96,16 +97,16 @@ label ep05_dialogues5_family_olivia_1:
     # Синтия скрывается за дверью в комнату.
     # Оливия молча смотрит на закрытую дверь пару секунд.
     sound snd_door_locked1
-    imgf 902703
+    imgfl 902703
     olivia "..."
     # затем Оливия закрывает лицо руками. взгляд направлен вверх.
-    music Postcard_From_Hell
     sound2 vjuh3
     img 902704 vpunch
     olivia "Фа-а-а-а-ак!"
     # Руки Оливии сползают с лица на шею.
     olivia "Твою же мать!"
     # тут Оливия смотрит в сторону Барди и замечает его, она удивленно на него смотрит
+    w
     music stop
     sound2 plastinka1b
     img 902705 hpunch
@@ -154,6 +155,7 @@ label ep05_dialogues5_family_olivia_1:
     bardi "Все, что угодно!"
     bardi "Только, пожалуйста, не делай меня соучастником твоих сестрофильских разборок!"
     # Оливия резко оглядывается на барди. Смотрит на него со злостью.
+    music Fly_With_Me_short
     img 902714
     olivia "Тихо! Заткнись, придурок!"
     # Оливия отводит взгляд
@@ -169,9 +171,9 @@ label ep05_dialogues5_family_olivia_1:
     bardi "Я не выспался! Тащил тебя в комнату! И заметал за тобой следы!"
     bardi "Не надо мне больше этого счастья!"
     # Со следующим рендером аккуратно. Оливия стоит со спины Барди и заталкивает его в комнату чуть ли не ногой упираясь руками в дверной косяк.
-    sound anger2
-    sound2 Jump1
+    sound Jump1
     img 902717 hpunch
+    sound2 anger2
     bardi_t "Боже, ну нихрена себе! Настойчивая же!"
     # На следующем рендере Оливия и Барди падают.
     img 902718 vpunch
@@ -201,7 +203,7 @@ label ep05_dialogues5_family_olivia_1:
     bardi "Обидно... Но ожидаемо."
     bardi "Ну, пожалуй, я пойду тогда..."
     # Оливия злая.
-    music Fly_With_Me_short
+    music Adventures_of_the_Deaf_Dreamer_short
     sound2 Jump1
     img 902723 vpunch
     olivia "Стоять извращенец!"
@@ -219,7 +221,7 @@ label ep05_dialogues5_family_olivia_1:
     imgd 902724
     bardi "Ох... Как жестоко..."
     # Барди осматривается.
-    music Adventures_of_the_Deaf_Dreamer
+    music Visions_Of_Plenty
     sound2 step_stairs_short
     imgf 902726
     w
@@ -327,11 +329,11 @@ label ep05_dialogues5_family_olivia_1:
     bardi "У тебя это получается слегка... Агрессивно."
     # Оливия и Барди садятся на кровать друг на против друга. Оливия хмуро отвечает Барди.
     sound step_stairs_short
-    imgf 902743
+    imgfl 902743
     olivia "Я и сама это знаю!"
     olivia "Но что мне делать?! Как быть?!"
     olivia "Я не контролирую себя!"
-    imgd 902744
+    imgf 902744
     olivia "Это вообще все из-за тебя!"
     olivia "Той ссоры не было бы, если бы не ты!"
     bardi "Той ссоры не было бы, если бы ты была более сдержана."
@@ -384,7 +386,7 @@ label ep05_dialogues5_family_olivia_1:
     imgd 902752
     bardi "Тем не менее, давайте вы как-нибудь без меня договоритесь!"
     # Оливия обиженно и хмуро смотрит на Барди.
-    music Adventures_of_the_Deaf_Dreamer_short
+    #music Adventures_of_the_Deaf_Dreamer_short
     imgd 902753
     olivia "Но ты обещал помочь мне, если что!"
     imgd 902752
@@ -436,6 +438,7 @@ label ep05_dialogues5_family_olivia_2:
     fadeblack 1.5
     sound2 step_stairs_short
     imgfl 902759
+    music Visions_Of_Plenty
     w
     imgf 902760
     olivia "Ну как? Узнал что-нибудь?"
@@ -531,7 +534,8 @@ label ep05_dialogues5_family_olivia_3:
             # руки Барди оказываются на Оливии
             img 911976
             w
-            sound snd_bodyfall
+            sound falling_into_bed
+            sound2 ma5
             img 911977 hpunch
             w
             imgd 911978
@@ -684,7 +688,7 @@ label ep05_dialogues5_family_olivia_3:
     img 902788
     olivia "Но вообще-то..."
     # но Барди не дает ей сказать, продолжая
-    imgd 902787
+    img 902787
     bardi "Она считает тебя чистой, офигенной, любящей и заботливой сестрой!"
     bardi "И сейчас все никак не может избавиться от чувства вины перед тобой!"
     bardi "Не понимая, что во всем виновата твоя ревность!"
@@ -785,8 +789,8 @@ label ep05_dialogues5_family_olivia_3:
             # Оливия достает свой телефон и смотрит в экран.
             music Adventures_of_the_Deaf_Dreamer
             imgd 902795
-            w
             sound swish
+            w
             imgd 902796
             olivia "Ладно, сколько я тебе должна?"
             bardi "Что?"
@@ -808,7 +812,7 @@ label ep05_dialogues5_family_olivia_3:
             img 902799 hpunch
             olivia "?!"
             # Оливия убирает телефон в двух рендерах. В одном тип убирает его за спину или в карман, в другом в естественной позе смотрит на Барди. Поза обычная, лицо улыбающееся.
-            music Postcard_From_Hell
+            music Visions_Of_Plenty
             sound2 vjuh3
             imgd 902795
             w
@@ -837,7 +841,7 @@ label ep05_dialogues5_family_olivia_3:
             bardi "Вернемся к нашему разговору..."
             pass
         "А может ты сама свой подарок и проспонсируешь?!": # + Rat
-            music Postcard_From_Hell
+            #music Postcard_From_Hell
             imgd 902791
             bardi "Вообще-то, я надеялся, что ты сама этот подарок и проспонсируешь..."
             bardi "Я как бы тоже не миллионер. Я не знаю, откуда эти деньги брать!"
@@ -858,8 +862,8 @@ label ep05_dialogues5_family_olivia_3:
             bardi "Делает меня жмотом?!"
             # Оливия достает свой телефон и смотрит в экран.
             imgd 902795
-            w
             sound swish
+            w
             imgd 902796
             olivia "Ну и сколько там? Сколько я тебе должна, жмотяра?"
             olivia "Я переведу!"
@@ -872,7 +876,7 @@ label ep05_dialogues5_family_olivia_3:
             img 902799 hpunch
             olivia "?!"
             # Оливия убирает телефон в двух рендерах. В одном тип убирает его за спину или в карман, в другом в естественной позе смотрит на Барди. Поза обычная, лицо безразличное.
-            music Postcard_From_Hell
+            music Visions_Of_Plenty
             sound2 vjuh3
             imgd 902795
             w
@@ -1001,6 +1005,8 @@ label ep05_dialogues5_family_olivia_3:
     bardi "Все будет хорошо. Не переживай."
     bardi "Просто не допускай этого в будущем, окей?"
     # Глаза Оливии чуть влажные.
+    imgd 902778
+    w
     imgd 902806
     bardi "Ну нихрена себе! Оливия может быть такой?!"
     bardi_t "Боже... Мне теперь жаль ее..."
@@ -1061,7 +1067,7 @@ label ep05_dialogues5_family_olivia_3:
     bardi "Ох, наконец-то, ты вернулась, Оливия."
     bardi "А то тут какая-то сентиментальная душа завладела твоим телом..."
     # Оливия хмурая поза и взгляд. Отводит взгляд в сторону.
-    music Adventures_of_the_Deaf_Dreamer
+    music Visions_Of_Plenty
     imgf 902817
     w
     imgd 902781
@@ -1097,7 +1103,7 @@ label ep05_dialogues5_family_olivia_3:
     olivia "И не хмурься так."
     olivia "Может, если все пройдет гладко, тебя тоже будет ждать приз."
     # Оливия ему подмигивает.
-    music Step_By_Step
+    #music Step_By_Step
     imgd 902784
     olivia "Думаю, мы с Синтией устроим посиделки до утра..."
     olivia "И ты даже получишь от меня официальное приглашение..."
@@ -1119,7 +1125,7 @@ label ep05_dialogues5_family_olivia_3:
     imgd 902801
     bardi "Ну нифига себе! Ты сама отправляешь меня куда-то вместе с любовью всей своей жизни?!"
     # Оливия хмурая. Метнула взгляд в Барди.
-    music Adventures_of_the_Deaf_Dreamer
+    #music Visions_Of_Plenty
     sound2 vjuh3
     img 902780
     olivia "А ты не зазнавайся!"
