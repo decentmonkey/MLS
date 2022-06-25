@@ -85,13 +85,7 @@ label start: #for blink here
     call locations_init() from _rcall_locations_init
 
 #########
-#call ep05_dialogues2_family_daisy_1() # сообщение от Дейзи на телефон, chat daisy
-#call ep05_dialogues2_family_daisy_2() # при клике на дом Дейзи днем
-#call ep05_dialogues2_family_daisy_2a() # при повторном клике на дом Дейзи днем
-#call ep05_dialogues2_family_daisy_3() # при клике на дом Дейзи вечером, сцена с Дейзи
-#call ep05_dialogues2_family_daisy_3a() # при повторном клике на дом Дейзи вечером, если Барди ответил ей "не сегодня"
-#call ep05_dialogues2_family_daisy_4() # комната Барди после сцены с Дейзи, chat daisy
-#call ep05_dialogues2_family_daisy_5() # chat daisy, на след. день после сцены
+#    call ep05_dialogues2_family_daisy_3() # при клике на дом Дейзи вечером, сцена с Дейзи
 #########
 
 

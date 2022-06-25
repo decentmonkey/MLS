@@ -87,8 +87,8 @@ label ep05_dialogues2_family_daisy_2:
             sound snd_door_open1
             pause 1.5
             music Shining_Through
-            imgf 901904
             sound2 highheels_short_walk
+            imgf 901904
             w
             imgd 901905
             daisy "О, привет! Ты, наконец-то, пришел поработать?"
@@ -139,8 +139,8 @@ label ep05_dialogues2_family_daisy_2:
             sound snd_door_open1
             pause 1.5
             music Shining_Through
-            imgf 901904
             sound2 highheels_short_walk
+            imgf 901904
             w
             imgd 901905
             daisy "О, [mcname], ты уже пришел?"
@@ -305,7 +305,8 @@ label ep05_dialogues2_family_daisy_3:
     bardi "Твою мать, а это вообще что за штуковина?!"
     bardi "Ее вообще куда?.. И как?.."
     # внезапно голос Дейзи на фоне
-    img 911914
+    sound highheels_short_walk
+    imgd 911914
     daisy "Может быть, потом как-нибудь покажу..."
     # Барди резко поворачивается к двери.
     # Там стоит Дейзи с подносом и двумя чашками кофе. Она смотрит на Барди сексуально улыбаясь.
@@ -421,13 +422,19 @@ label ep05_dialogues2_family_daisy_3:
     w
     bardi_t "Дейзи такая секси..." ##->#####inc
     #####inc bardi_t "Тетя Дейзи такая секси..."
+    img foto_Daisy_1
+    show screen dream()
+    with fade
+    show screen image_shake("/images/Slides/foto_Daisy_1.jpg")
     bardi_t "Черт!.. Кажется, у меня начинает вставать..."
+    w
+    daisy "Эй, [mcname], все хорошо?"
     # фантазия рассеивается
     # Дейзи обеспокоенная смотрит на Барди.
     music stop
     sound2 plastinka1b
     img 911928 hpunch
-    daisy "Эй, [mcname], все хорошо?"
+    w
     music Shining_Through
     bardi "Да, все отлично."
     # Барди смотрит на свою ширинку - у него стояк
@@ -564,9 +571,9 @@ label ep05_dialogues2_family_daisy_3:
     img 911862 hpunch
     w
     imgd 911848
-    sound woman_moan6
     w
-    imgd 911857
+    sound woman_moan6
+    img 911857
     daisy "О Боже! Как же хорошо!.."
     imgd 911863
     daisy "Мммм..."
@@ -622,7 +629,10 @@ label ep05_dialogues2_family_daisy_3:
         "Заканчивать.":
             pass
     # Анимация останавливается
-    imgf 911861
+    imgf 911862
+    w
+    sound chpok5
+    img 911861 vpunch
     bardi_t "Так! Пора заканчивать с этим."
     # Барди высовывает пальцы. Дейзи смотрит на него хмуро и удивленно.
     sound vjuh3
@@ -692,6 +702,9 @@ label ep05_dialogues2_family_daisy_3:
     sound drkanje5
     imgd 911876
     w
+    sound drkanje5
+    imgd 911875
+    w
     sound chpok5
     img 911884 vpunch
     bardi "Все! Хватит с тебя!"
@@ -703,7 +716,7 @@ label ep05_dialogues2_family_daisy_3:
     w
     imgd 911886
     w
-    sound squelch9
+    sound chpok3
     imgf 911887
     daisy "О боже, [mcname]... Но..."
     imgd 911888
@@ -783,7 +796,7 @@ label ep05_dialogues2_family_daisy_3:
     sound vjuh3
     imgd 911902
     w
-    sound2 chpok3
+    sound2 chpok5
     img 911903 hpunch
     bardi_t "!!!"
     # Барди оборачивается на Дейзи. Та смотрит на барда таким сочувствующим, извинительным взглядом.
@@ -870,13 +883,15 @@ label ep05_dialogues2_family_daisy_3:
     imgd 911955
     nicole "Че так долго?"
     # Синтия смотрит на Барди с улыбкой. И отстраняется от Дейзи.
-    imgf 911956
+    sound Jump1
+    imgd 911956
     cynthia "О! [mcname]! Ты тоже тут?!"
     # Николь поднимает удивленный взгляд на Барди. Дейзи смотрит на Барди чуть испуганно, тип "ОЙ ЧО СЕЙЧАС БУ-У-У-УДЕ-Е-ЕТ..."
     imgd 911957
     bardi "Да мы тут работу работаем с Дейзи..." ##->#####inc
     #####inc bardi "Да мы тут работу работаем с тетей Дейзи..."
     bardi_t "Что за бред я несу?! Мысли совсем не в ту сторону думают!"
+    sound vjuh3
     imgd 911958
     daisy "Мы решали кое-какие дела моего магазина..."
     daisy "[mcname] же сейчас работает на меня. Вот и помогал."
@@ -898,6 +913,7 @@ label ep05_dialogues2_family_daisy_3:
     imgd 911961
     daisy "Кстати, [mcname], познакомься. Это моя дочь Николь." ##->#####inc
     #####inc daisy "Кстати, [mcname], ты помнишь мою дочь Николь?"
+    sound vjuh3
     imgd 911962
     daisy "Николь, а это [mcname]." ##->#####inc
     #####inc daisy "Вы в детстве часто играли вместе, когда мы приходили к вам в гости."
@@ -931,6 +947,7 @@ label ep05_dialogues2_family_daisy_3:
     imgd 911966
     bardi "Синтия, не переживай. Расскажешь мне все дома."
     # Дейзи подталкивает Барди к выходу. Оборачиваясь бросает что-то вслед девочкам.
+    sound vjuh3
     imgd 911967
     daisy "Ладно, вы, девочки, идите на кухню, а я провожу [mcname]."
     cynthia "Ну ладно..."
@@ -955,10 +972,11 @@ label ep05_dialogues2_family_daisy_3:
     bardi "Синтия точно нет. Она слишком наивна и невинна для этого мира."
     bardi "А вот твоя дочь... Она явно догоняет за ситуацию."
     # Дейзи опускает голову.
-    img 902553
+    #sound vjuh3
+    imgd 902553
     daisy "Черт!"
     # Дейзи смотрит на Барди игриво.
-    imgd 902554
+    imgf 902554
     daisy "Ладно, сейчас не об этом."
     daisy "Я не чувствую ног, [mcname]! Это было так охрененно!"
     daisy "С этими игрушками я уже совсем забыла, каково это трахаться с парнем!"
@@ -980,7 +998,7 @@ label ep05_dialogues2_family_daisy_3:
     imgd 902558
     daisy "Ладно, я тебя поняла."
     # Затем прильнула к нему, прижала к стене у крыльца. Встала на колени перед ним.
-    sound2 vjuh3
+    sound2 Jump2
     img 902559 hpunch
     music Stylish_Hip_Hop_Rock
     w
@@ -1080,13 +1098,19 @@ label ep05_dialogues2_family_daisy_3:
     sound2 chpok12
     bardi "Мммм... Как же я долго этого ждал!"
     imgd 911937
-    bardi "Весь сегодняшний вечер!"
+    w
     sound drkanje5
     imgd 911938
     daisy "Мпфхф!.."
     sound drkanje5
     imgd 911937
+    bardi "Весь сегодняшний вечер!"
+    sound drkanje5
+    imgd 911938
     bardi "Под этими гребаными таблетками!.."
+    sound drkanje5
+    imgd 911937
+    w
     img 911938
     sound bulk1
     show screen photoshot_screen()
@@ -1138,7 +1162,8 @@ label ep05_dialogues2_family_daisy_3:
     # Барди разворачивается и уходит.
     return
 
-# при повторном клике на дом Дейзи вечером (!), если Барди ответил ей "не сегодня" и игрок хочет вернуться к ней
+# мысли, если Барди ответил ей "не сегодня"
+# + при повторном клике на дом Дейзи вечером (!), если Барди ответил ей "не сегодня" и игрок хочет вернуться к ней
 label ep05_dialogues2_family_daisy_3a:
     ## не рендерить
     bardi_t "Вот я идиот! И зачем я ей так ответил?.."
