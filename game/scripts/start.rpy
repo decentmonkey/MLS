@@ -85,7 +85,7 @@ label start: #for blink here
     call locations_init() from _rcall_locations_init
 
 #########
-#    call ep05_dialogues2_family_daisy_3() # при клике на дом Дейзи вечером, сцена с Дейзи
+#    call ep05_dialogues3_work_daisy_3() # сцена с клиенткой магазина Дейзи
 #########
 
 
