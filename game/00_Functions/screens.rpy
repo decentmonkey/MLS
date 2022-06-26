@@ -75,6 +75,12 @@ style frame:
     padding gui.frame_borders.padding
     background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
 
+screen show_image_screen_movie(movie_name):
+    layer "master"
+    zorder 16
+    fixed:
+        add movie_name
+
 screen show_image_screen_image(image_name):
     layer "master"
     zorder 15
@@ -111,6 +117,14 @@ screen show_image_screen_image(image_name):
                 Return()
             ]
             alternate ShowMenu("save")
+
+    key "l" action ToggleVariable("debugShowImageName", true_value=True, false_value=False)
+
+
+    if debugShowImageName == True:
+        frame:
+            background Solid("#18181a")
+            text str(current_slide) size 40
 
 screen show_image_screen_image_overlay(image_name, canvas_offsets, overlayName):
     layer "master"
