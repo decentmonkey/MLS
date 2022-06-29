@@ -3,6 +3,15 @@ default mlsBardiCollegeEmilyPhotoHarry2 = 0 # Барди вмешался в р�
 default mlsBardiCollegeEmilyPhotoHarry3 = 0 # Барди согласился выйти с Гарри, когда тот узнал, что на фотке с Эмили Барди
 default mlsBardiCollegeEmilyPhotoHarry4 = 0 # Барди врезал Гарри в раздевалке
 
+#call ep05_dialogues4_college_emily_1() # сон (в ночь со среды на четверг)
+#call ep05_dialogues4_college_emily_2() # insta emily
+#call ep05_dialogues4_college_emily_3() # мысли Барди при клике на локацию колледжа
+#call ep05_dialogues4_college_emily_4() # сцена с Эмили и Гарри
+#call ep05_dialogues4_college_emily_5() # сцена с Шоном и Софи
+#call ep05_dialogues4_college_emily_6() # комната Барди, утро следующего дня
+#call ep05_dialogues4_college_emily_7() # chat sean после сцены с ним
+#call ep05_dialogues4_college_emily_8() # chat emily после сцены с ней
+
 
 # сразу же, как выйдет апдейт Барди видит сон (в ночь со среды на четверг)
 label ep05_dialogues4_college_emily_1:
