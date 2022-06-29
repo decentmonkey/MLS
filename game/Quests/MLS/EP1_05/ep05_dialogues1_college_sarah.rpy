@@ -22,13 +22,13 @@ label ep05_dialogues1_college_sarah_1:
     # Утро. Будильник
     #bardi_t "Вот и утро, черт бы его побрал..."
     # Барди сидит в кровати
-    fadeblack 1.0
-    music Jail_Clock
-    imgfl 900077
-    w
-    sound2 swish
-    imgf 900063
+#    fadeblack 1.0
+#    music Jail_Clock
     music Adventures_of_the_Deaf_Dreamer
+    imgf 900077
+    w
+#    sound2 swish
+    imgd 900063
     bardi_t "Тааак... Что там у нас по делам на сегодня?.."
     bardi_t "Твою же мать! Я же на волоске от неуда по физре!"
     bardi_t "Черт!"
