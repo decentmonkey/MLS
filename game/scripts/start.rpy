@@ -87,9 +87,10 @@ label start: #for blink here
 
     call characters_init() from _rcall_characters_init_1
     call locations_init() from _rcall_locations_init
+    #$ money = 0.0 #
 
 #########
-#    call ep05_dialogues4_college_emily_6() # комната Барди, утро следующего дня
+#    call ep05_dialogues8_work_bikerental_1() # сцена с панками в велопрокате
 #########
 
 
