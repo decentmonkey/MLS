@@ -51,8 +51,8 @@ label ep05_dialogues4_college_emily_1:
     # квест-лог "Проверить инстаграмм Эмили."
     music2 stop
     fadeblack
-    sound put_dress
-    pause 1.5
+#    sound put_dress
+#    pause 1.5
     music Adventures_of_the_Deaf_Dreamer
     return
 
