@@ -1,5 +1,6 @@
 define debugMode = False
 
+default debugShowImageName = False
 default gameStage = 0
 default gameSubStage = 0
 default rain = False
@@ -48,8 +49,11 @@ default phoneNotifications = []
 
 default obj_follow_list = {}
 default images_history_list = {}
+default start_video_image = "black"
 default current_slide = False
 default current_slide_image = False
+default current_slide_image_blocked = False
+default current_slide_image_blocked_args = False
 default rrmeterValue = 0
 define steamVersion = False
 
@@ -83,9 +87,10 @@ label start: #for blink here
 
     call characters_init() from _rcall_characters_init_1
     call locations_init() from _rcall_locations_init
+    #$ money = 0.0 #
 
 #########
-#    jump video_test
+#    call ep05_dialogues8_work_bikerental_1() # сцена с панками в велопрокате
 #########
 
 

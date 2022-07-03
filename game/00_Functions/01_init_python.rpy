@@ -218,6 +218,137 @@ python early:
 
     renpy.register_statement("imgc", parse=img_disp, execute=imgcenter_exec, predict=img_pred)
 
+    def playvideo_disp(l):
+        return (l.simple_expression(), l.simple_expression(), l.simple_expression(), l.simple_expression(), l.simple_expression(), l.simple_expression(), l.simple_expression())
+
+    def playvideo_pred(s_in):
+        video_filename_in, sounds_filename_in, from_time_in, sound_volume_in, music_volume_in, loop_in, transition = s_in
+        try:
+            video_filename = renpy.eval(video_filename_in)
+        except:
+            video_filename = video_filename_in
+        try:
+            sounds_filename = renpy.eval(sounds_filename_in)
+        except:
+            sounds_filename = sounds_filename_in
+        try:
+            from_time = renpy.eval(from_time_in)
+        except:
+            from_time = from_time_in
+        try:
+            sound_volume = renpy.eval(sound_volume_in)
+        except:
+            sound_volume = sound_volume_in
+        try:
+            music_volume = renpy.eval(music_volume_in)
+        except:
+            music_volume = music_volume_in
+        try:
+            loop = renpy.eval(loop_in)
+        except:
+            loop = loop_in
+        video_filename = "<from " + str(from_time) + " loop 0.0>" + video_filename
+        sounds_filename = "<from " + str(from_time) + " loop 0.0>" + sounds_filename
+        return [Movie(video_filename, channel="movie", loop=True)]
+
+    def playvideo_exec(s_in):
+        global sound_for_video, sound_for_video_volume, start_video_image, video_audio_duration, current_slide_image_blocked_args
+        current_slide_image_blocked_args = False
+        video_filename_in, sounds_filename_in, from_time_in, sound_volume_in, music_volume_in, loop_in, transition_in = s_in
+        try:
+            video_filename = renpy.eval(video_filename_in)
+        except:
+            video_filename = video_filename_in
+        try:
+            sounds_filename = renpy.eval(sounds_filename_in)
+        except:
+            sounds_filename = sounds_filename_in
+        try:
+            from_time = renpy.eval(from_time_in)
+        except:
+            from_time = from_time_in
+        try:
+            sound_volume = renpy.eval(sound_volume_in)
+        except:
+            sound_volume = sound_volume_in
+        try:
+            music_volume = renpy.eval(music_volume_in)
+        except:
+            music_volume = music_volume_in
+        try:
+            transition = renpy.eval(transition_in)
+        except:
+            transition = transition_in
+        try:
+            loop = renpy.eval(loop_in)
+        except:
+            loop = loop_in
+
+        renpy.scene()
+#        if transition_in == "vpunch" or transition_in == "hpunch" or transition_in == "None" or from_time > 0.0:
+#            renpy.show("black")
+
+#        imagePathExt = img_find_path_ext(start_video_image)
+#        start_image = imagePathExt[0]
+        start_image = start_video_image
+        video_audio_duration = 0
+
+        if loop == True:
+            video_filename = "<from " + str(from_time) + " loop 0.0>" + video_filename
+            if sounds_filename != None and sounds_filename != False and sounds_filename != "False":
+                imagePathExt = img_find_path_ext(sounds_filename)
+                sounds_filename = imagePathExt[0]
+                sounds_filename = "<from " + str(from_time) + " loop 0.0>" + sounds_filename
+            else:
+                sounds_filename = False
+    #        sounds_filename = sounds_filename
+    #        sounds_filename = "<sync music>" + sounds_filename
+            movie1 = Movie(play=video_filename, channel="movie",loop=True, play_callback=playvideo_exec_play_callback, start_image = start_image)
+            renpy.show_screen("show_image_screen_movie", movie1)
+            sound_for_video = False
+            if sounds_filename != False:
+    #            renpy.music.play(sounds_filename, channel="music2", loop=True, fadein=0.5, relative_volume=sound_volume, synchro_start=True)
+                sound_for_video = sounds_filename
+                sound_for_video_volume = sound_volume
+                renpy.music.set_volume(music_volume, delay=0.5, channel="music")
+        else:
+            video_filename = "<from " + str(from_time) + ">" + video_filename
+            if sounds_filename != None and sounds_filename != False and sounds_filename != "False":
+                imagePathExt = img_find_path_ext(sounds_filename)
+                sounds_filename = imagePathExt[0]
+                sounds_filename = "<from " + str(from_time) + ">" + sounds_filename
+            else:
+                sounds_filename = False
+
+            # finding end image
+            baseName = os.path.basename(os.path.splitext(video_filename)[0]).lower()
+            imagePathExt = img_find_path_ext(baseName + "_end")
+
+            movie1 = Movie(play=video_filename, channel="movie",loop=False, play_callback=playvideo_exec_play_callback, image=imagePathExt[1], start_image = start_image)
+            renpy.show_screen("show_image_screen_movie", movie1)
+            sound_for_video = False
+            if sounds_filename != False:
+                sound_for_video = sounds_filename
+                sound_for_video_volume = sound_volume
+                renpy.music.set_volume(music_volume, delay=0.5, channel="music")
+
+        renpy.with_statement(transition)
+
+
+    def playvideo_exec_play_callback(old, new):
+        global sound_for_video, sound_for_video_volume, video_audio_duration
+        renpy.music.play(new._play, channel=new.channel, loop=new.loop, synchro_start=True)
+        if sound_for_video != False:
+#            renpy.music.play(sound_for_video, channel="music2", loop=new.loop, fadein=0.5, relative_volume=sound_for_video_volume, synchro_start=True)
+            renpy.music.play(sound_for_video, channel="music2", loop=new.loop, fadein=0.5, synchro_start=True)
+            renpy.music.set_volume(sound_for_video_volume, delay=0.0, channel="music2")
+            video_audio_duration = renpy.music.get_duration("music2")
+
+    #playvideo "video_file_name" "sound_file_name" from_time sound_volume music_volume transition
+    renpy.register_statement("playvideo", parse=playvideo_disp, execute=playvideo_exec, predict=playvideo_pred)
+
+    renpy.music.register_channel("movie", "music", loop=True, movie=True, framedrop=True)
+
     def saywrapper_parse(lex):
         who = lex.simple_expression()
         what = lex.simple_expression()
