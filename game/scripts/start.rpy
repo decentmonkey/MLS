@@ -1,4 +1,4 @@
-define debugMode = False
+define debugMode = True
 
 default debugShowImageName = False
 default gameStage = 0

@@ -36,7 +36,16 @@ label phone_instagram3: # Emily
             ["/images/Phone/insta/Emily_feed3.jpg", t_("Если мужчина поднял на вас руку, то пусть с этой рукой и коротает все оставшиеся ночи.")],
             ["/images/Phone/insta/Emily_feed4.jpg", t_("Девчонки, а у вас в шкафу тоже живет забавное существо по имени 'Нечего надеть'?")],
             ["/images/Phone/insta/Emily_feed5.jpg", t_("Так устала… Хочу шампанского, клубники, цветов и на ручки!")]
-    ]}
+    ],"comments": {}}
+    $ phone_set_new("instagram")
+    $ phone_instagram_new.append("Emily")
+    return
+
+label phone_instagram3b: # Emily
+    $ phone_instagram_posts_multi["Emily"]["posts"].append(["/images/Phone/insta/Emily_feed6.jpg", t_("Романтика и пляж...")])
+    $ phone_instagram_posts_multi["Emily"]["comments"] = {}
+    $ phone_instagram_posts_multi["Emily"]["comments"]["/images/Phone/insta/Emily_feed6.jpg"] = [["harry.fist111", t_("Кто бы ты ни был, я найду тебя! Ублюдок!")], ["sunshine.emily", t_("Это уже не твое дело!")]]
+
     $ phone_set_new("instagram")
     $ phone_instagram_new.append("Emily")
     return

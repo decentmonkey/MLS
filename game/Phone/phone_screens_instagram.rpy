@@ -7,7 +7,7 @@ screen phone_instagram_screen():
         xpos 28
         ypos 95
         xysize(380, 742)
-        yinitial 0.0
+        yinitial phone_instagram_initial_position
         arrowkeys True
         mousewheel True
         vbox:
@@ -50,6 +50,25 @@ screen phone_instagram_screen():
                     action [
                         Return([False])
                     ]
+                if phone_instagram_mode == 1:
+                    if phone_instagram_posts_multi[phone_instagram_current_name].has_key("comments") and phone_instagram_posts_multi[phone_instagram_current_name]["comments"].has_key(post[0]):
+                        $ comments = phone_instagram_posts_multi[phone_instagram_current_name]["comments"][post[0]]
+                        frame:
+                            background "#ffffff"
+                            xsize postWidth
+                            yminimum 50
+                            xpadding 15
+                            vbox:
+                                for comment_idx in range(0, len(comments)):
+                                    text t__(comments[comment_idx][0]) style "phone_instagram_caption":
+                                        if _preferences.language == "chinese":
+                                            font gui.text_font_chinese
+                                        line_spacing 3
+                                    text t__(comments[comment_idx][1]) style "phone_instagram_comment_text":
+                                        if _preferences.language == "chinese":
+                                            font gui.text_font_chinese
+                                        line_spacing 3
+                                    null height 15
 
     vbar value YScrollValue("vp8") xpos 396 ypos 96 xsize 8 ysize 730
 #        style_prefix "blue"

@@ -28,6 +28,7 @@ default phone_instagram_posts_multi = {}
 default phone_instagram_current_name = False
 default phone_instagram_new = []
 default phone_instagram_mode = 0
+default phone_instagram_initial_position = 0.0
 default phone_inited = False
 default phone_notes_text = ""
 default camera_enabled = True

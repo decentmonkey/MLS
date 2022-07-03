@@ -485,5 +485,6 @@ label ep14_quests8_sleep:
     $ remove_hook(quest="day7")
     call ep04_dialogues7_work_becky_3() from _rcall_ep04_dialogues7_work_becky_3
     call ep03_dialogues3_family_evening_4() from _rcall_ep03_dialogues3_family_evening_4_2
-    jump end_update
-#    return False
+    call ep15_update_init()
+    return False
+#    jump end_update

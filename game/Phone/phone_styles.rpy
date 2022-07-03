@@ -165,6 +165,11 @@ style phone_instagram_caption:
     size 14
     font "fonts/SF-Pro-Display-Bold.otf"
 
+style phone_instagram_comment_text:
+    color "#060606"
+    size 16
+    font "fonts/SF-Pro-Display-Regular.otf"
+
 style phone_notes_text:
     size 28
     color "#38383a"

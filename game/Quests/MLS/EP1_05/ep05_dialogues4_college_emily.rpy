@@ -17,7 +17,7 @@ default mlsBardiCollegeEmilyPhotoHarry4 = 0 # Барди врезал Гарри
 label ep05_dialogues4_college_emily_1:
     # Барди видит сон, где Гарри ломает ему нос (можно сделать новые рендеры где-нибудь во дворе колледжа например, но можно использовать те, что у же были ранее)
     # 2-3 рендера с Гарри (во сне)
-    fadeblack
+    fadeblack 1.5
     img white_screen
     with diss
     pause 1.0
@@ -56,6 +56,11 @@ label ep05_dialogues4_college_emily_1:
     music Adventures_of_the_Deaf_Dreamer
     return
 
+label ep05_dialogues4_college_emily_1a:
+    bardi_t "Интересно, Эмили реально выложила ту фотку с пляжа?"
+    bardi_t "Надеюсь, она испугалась и передумала..."
+    return False
+
 # утро четверга
 
 # при клике на инсту Эмили
@@ -65,8 +70,7 @@ label ep05_dialogues4_college_emily_2:
     # под этой фоткой в инсте будут комменты. Барди может это посмотреть, кликнув на инсту Эмили.
     # Барди видит коммент Гарри.
     # под фоткой 2 комментария
-    student_harry "Кто бы ты ни был, я найду тебя! Ублюдок!"
-    student_emily "Это уже не твое дело!"
+    pause 1.0
     # мысли Барди
     bardi_t "Черт! Она все-таки выложила фото!"
     bardi_t "Твою ма-а-а-ать! Мне жопа!"
@@ -78,6 +82,10 @@ label ep05_dialogues4_college_emily_2:
     bardi_t "Фак! Я труп..."
     $ mlsBardiCollegeEmilyPhotoHarry1 = day # Барди видел фотку с ним в инсте Эмили
     # Конец мини сцены. Барди получает свободу действий.
+    return
+
+    student_harry "Кто бы ты ни был, я найду тебя! Ублюдок!"
+    student_emily "Это уже не твое дело!"
     return
 
 # движок, свободное перемещение игрока по дому.
