@@ -411,7 +411,11 @@ define offsets_table = {
     "house_floor2_sister1_2":(193,337,720,503),
     "house_floor2_sister1_2_overlay":(338,276,751,505),
     "house_floor2_sister2_2":(230,160,731,292),
-    "house_floor2_sister2_2_overlay":(204,40,744,316)
+    "house_floor2_sister2_2_overlay":(204,40,744,316),
+    "house_bedroom_mc_onbed_mc1":(704,387,1079,1562),
+    "house_bedroom_mc_onbed_mc1_overlay":(763,241,1079,1919),
+    "house_bedroom_mc_onbed_mc2":(1017,493,1079,1496),
+    "house_bedroom_mc_onbed_mc2_overlay":(666,150,1079,1919)
 }
 
 init python:
