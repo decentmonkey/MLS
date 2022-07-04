@@ -340,13 +340,30 @@ label ep05_dialogues3_work_daisy_3:
             fadeblack 1.5
             imgfl 911972
             sound2 highheels_short_walk
+            music Stylish_Fashion_Electronic_Rock
             w
-            music Shining_Through
+
+            # video
+            # v_Observing_ClientCarrie_25
+            img black_screen
+            with diss
+            pause 1.0
+            scene black
+            image videov_Observing_ClientCarrie_25 = Movie(play="video/v_Observing_ClientCarrie_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observing_ClientCarrie_end.jpg")
+            show videov_Observing_ClientCarrie_25
+            $ renpy.pause(0.5, hard=True)
+            pause 4.5
+            img v_Observing_ClientCarrie_end
+            show screen image_shake("/images/Slides/v_Observing_ClientCarrie_end.jpg")
+            w
+            bardi_t "Вау!.."
+
             imgf 911985
             client_carrie "Садись, я скоро буду. Только заварю кофе."
+            music Shining_Through
             bardi "Кофе? Но..."
             # Кэрри наигранная строгость.
-            sound Jump1
+            sound2 Jump1
             img 911986
             client_carrie "И не отнекивайся! Я не могу отпустить тебя, даже не напоив кофе."
             client_carrie "Ты как раз устал, наверное."
@@ -363,12 +380,12 @@ label ep05_dialogues3_work_daisy_3:
             imgfl 911989
             sound2 highheels_short_walk
             w
-            music Stylish_Fashion_Electronic_Rock
+            #music Stylish_Fashion_Electronic_Rock
             imgf 911990
             show screen image_shake("/images/Slides/img_911990.jpg")
             sound2 wow
             w
-            bardi "Воу! А сзади то она тоже ничего!.. Думаю сегодня я смогу рассмотреть ее получше..."
+            bardi "Воу! Думаю сегодня я смогу рассмотреть ее получше..."
             # Кэрри ушла на кухню.
             fadeblack 1.0
             imgf 911991
@@ -670,32 +687,52 @@ label ep05_dialogues3_work_daisy_3:
             sound woman_moan6
             client_carrie "Мммм..."
             imgd 912053
-            w
+            client_carrie "О Господи! Подожди!"
             sound drkanje5
             imgd 912054
-            client_carrie "О Господи! Подожди!"
+            w
+            sound drkanje5
+            imgd 912053
+            client_carrie "[mcname]! Помедленнее!"
+            sound drkanje5
+            imgd 912054
+            w
             sound drkanje5
             imgd 912053
             w
             sound drkanje5
             imgd 912054
-            client_carrie "[mcname]! Помедленнее!"
-            imgf 912055
-            client_carrie "Ах!"
-            imgd 912056
-            client_carrie "Дааа!"
-            bardi "Мммм..."
-            imgd 912058
-            sound woman_moan7
-            client_carrie "О Боже!"
-            client_carrie "О да!"
-            bardi "Ееее!.."
-            imgd 912057
             w
-            imgd 912059
-            client_carrie "О Боже! [mcname]!"
-            client_carrie "Прошу только не останавливайся!"
-            client_carrie "О дааа!"
+
+            if game.extra == True: # в экстру
+                imgf 912055
+                client_carrie "Ах!"
+                imgd 912056
+                w
+
+                ## video
+                playvideo "video/v_MC_Client_Carrie_sex_1_25.mkv" "v_MC_Whore_WCMall_sex_1_25" 7.0 1.0 0.2 True fade
+                wclean
+                client_carrie "Дааа!"
+                wclean
+                bardi "Мммм..."
+                wclean
+                client_carrie "О Боже!"
+                wclean
+                bardi "Ееее!.."
+                wclean
+                stopvideo
+
+                imgf 912058
+                w
+                imgd 912057
+                client_carrie "О да!"
+                w
+                sound woman_moan7
+                imgd 912059
+                client_carrie "О Боже! [mcname]!"
+                client_carrie "Прошу только не останавливайся!"
+                client_carrie "О дааа!"
             menu:
                 "Использовать вибратор.":
                     pass
@@ -811,14 +848,27 @@ label ep05_dialogues3_work_daisy_3:
             img 912078
             sound snd_woman_pain1
             client_carrie "ООООО!"
-            bardi "О ееее!.. Узенько же тут у тебя..."
             # Включается анимация. Медленно.
             imgd 912084
             client_carrie "Ох! Боже!"
             imgf 912085
+            w
+
+            ## video
+            playvideo "video/v_MC_Client_Carrie_anal_1_25.mkv" "v_MC_Whore_WCMall_anal_1_25" 7.0 1.0 0.2 True fade
+            wclean
+            bardi "О ееее!.. Узенько же тут у тебя..."
+            wclean
             client_carrie "Он слишком большой!"
-            imgd 912086
+            wclean
             client_carrie "Ты разорвешь меня!"
+            wclean
+            client_carrie "О Боже!"
+            wclean
+            stopvideo
+
+            imgd 912086
+            w
             imgd 912087
             bardi "Тише-тише. Все в порядке."
             menu:

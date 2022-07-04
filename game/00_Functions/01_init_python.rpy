@@ -349,6 +349,18 @@ python early:
 
     renpy.music.register_channel("movie", "music", loop=True, movie=True, framedrop=True)
 
+    def stopvideo_disp(l):
+        return (l.rest())
+    def stopvideo_exec(s_in):
+        global currentMusic2
+        renpy.hide_screen("show_image_screen_movie")
+        renpy.music.stop(channel="music2", fadeout=0.2)
+        renpy.music.set_volume(1.0, delay=0.5, channel="music")
+        renpy.music.set_volume(1.0, delay=0.5, channel="music2")
+        currentMusic2 = False
+
+    renpy.register_statement("stopvideo", parse=stopvideo_disp, execute=stopvideo_exec)
+
     def saywrapper_parse(lex):
         who = lex.simple_expression()
         what = lex.simple_expression()

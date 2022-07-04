@@ -90,7 +90,7 @@ label start: #for blink here
     #$ money = 0.0 #
 
 #########
-#    call ep05_dialogues7_family_sophie_1() # сцена с Софи
+#    call video_test()
 #########
 
 

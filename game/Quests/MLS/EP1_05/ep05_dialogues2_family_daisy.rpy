@@ -611,21 +611,43 @@ label ep05_dialogues2_family_daisy_3:
     imgd 911867
     bardi_t "Я еле сдерживаюсь!.."
     # анимация
-    daisy "Да, малыш..."
-    daisy "Как же хорошо!.."
     # При выборе продолжать, барди дрочит Дейзи до тех пор пока игрок не кликнет по экрану.
     #после клика по экрану вновь появляется этот выбор.
-    label ep05_dialogues2_family_daisy_3_loop:
+    $ menu_data = {
+        "Продолжать.":{"extra":True}
+    }
     menu:
         "Продолжать.":
-            # та же анимация продолжается
-            imgf 911865 ## заменить арт анимацией
-            daisy "Ооох!.."
-            daisy "Не вздумай останавливаться, [mcname]!"
-            bardi_t "И что это вообще за тест-драйв?.. Тест-драйв моих пальцев?!"
+            #sound drkanje5
+            imgd 911867
+            daisy "Продолжай!"
+            sound drkanje5
+            imgd 911868
+            w
+            sound drkanje5
+            imgd 911867
             daisy "О, дааа..."
+            sound drkanje5
+            imgd 911868
+            w
+
+            ## video
+            playvideo "video/v_MC_Daisy_fingers_1_25.mkv" "v_MC_Whore_WCMall_handjob_1_25" 7.0 1.0 0.2 True fade
+            wclean
+            daisy "Не вздумай останавливаться, [mcname]!"
+            wclean
+            daisy "Ооох!.."
+            wclean
+            bardi_t "И что это вообще за тест-драйв?.. Тест-драйв моих пальцев?!"
+            wclean
+            daisy "Да, малыш..."
+            daisy "Как же хорошо!.."
+            wclean
             daisy "Ааах!.."
-            jump ep05_dialogues2_family_daisy_3_loop
+            wclean
+            stopvideo
+
+            pass
         "Заканчивать.":
             pass
     # Анимация останавливается
@@ -670,12 +692,23 @@ label ep05_dialogues2_family_daisy_3:
     imgd 911878
     bardi "Фак! Я сейчас взорвусь нахрен!.."
     daisy "О дааа!"
-    daisy "[mcname]! Быстрее!"
     daisy "О да! Да!"
     imgd 911879
     bardi "Мать твою! Когда же ты, наконец, надрочишься?!"
+
+    ## video
+    playvideo "video/v_MC_Daisy_dildo_1_25.mkv" "v_MC_Whore_WCMall_sex_1_25" 7.0 1.0 0.2 True fade
+    wclean
     daisy "Прошу! Только не останавливайся!"
+    wclean
     daisy "О БОЖЕ! ДА!"
+    wclean
+    daisy "О, дааа..."
+    wclean
+    daisy "[mcname]! Быстрее!"
+    wclean
+    stopvideo
+
     imgf 911880
     bardi_t "Твою мать! Да что со мной?! Меня сейчас разорвет нахрен!"
     bardi_t "Такое чувство, как будто..."
@@ -1053,7 +1086,7 @@ label ep05_dialogues2_family_daisy_3:
     w
     sound drkanje5
     imgd 911938
-    bardi "Какого черта ты вообще решила!.."
+    w
     sound drkanje5
     imgd 911937
     w
@@ -1061,9 +1094,25 @@ label ep05_dialogues2_family_daisy_3:
     imgd 911938
     w
     imgf 911939
+    w
+
+    ## video
+    playvideo "video/v_MC_Daisy_blowjob_1_25.mkv" "v_MC_Whore_WCMall_blowjob_1_25" 7.0 1.0 0.2 True fade
+    wclean
+    bardi "Какого черта ты вообще решила!.."
+    wclean
     bardi "Проверять эти гребаные таблетки!.."
-    imgd 911940
+    wclean
+    daisy "Мпфф!.."
+    wclean
     bardi "Вот и отдувайся теперь!"
+    wclean
+    daisy "Мпфхф!.."
+    wclean
+    stopvideo
+
+    imgd 911940
+    w
     imgd 911937
     w
     sound drkanje5

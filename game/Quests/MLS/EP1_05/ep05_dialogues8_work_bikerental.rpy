@@ -533,18 +533,29 @@ label ep05_dialogues8_work_bikerental_1:
                     sound chpok6
                     img 912185 hpunch
                     punk_emma "Мммм..."
-                    bardi_t "Охренеть, я вообще не ожидал..."
-                    imgf 912187
-                    bardi "Фааак... Обожаю свою работу."
-                    punk_emma "Мпфх!"
+                    imgf 912188
+                    bardi "О, дааа..."
+
+                    ## video
+                    playvideo "video/v_MC_punkEmma_blowjob_1_25.mkv" "v_MC_Whore_WCMall_blowjob_1_25" 7.0 1.0 0.2 True fade
+                    wclean
                     bardi "Ого! Даже так?!"
-                    bardi "Ох, черт! Это охренено!"
-                    imgd 912188
-                    bardi_t "О, дааа..."
+                    wclean
+                    bardi_t "Охренеть, я вообще не ожидал..."
+                    wclean
+                    bardi_t "Фааак... Обожаю свою работу."
                     punk_emma "Мммм..."
-                    bardi "О, да!"
+                    wclean
+                    bardi "Ох, черт! Это охренено!"
+                    wclean
+                    punk_emma "Мпфх!"
+                    wclean
+                    stopvideo
+
+                    imgf 912187
+                    w
                     # Эмма берет уже не так глубоко, думает
-                    imgf 912189
+                    imgd 912189
                     punk_emma_t "Господи! Я же сейчас задохнусь!"
                     punk_emma_t "Откуда он такой огромный?!"
                     sound chpok7

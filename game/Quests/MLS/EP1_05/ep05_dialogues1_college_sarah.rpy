@@ -84,21 +84,38 @@ label ep05_dialogues1_college_sarah_2:
     show screen dream()
     with Dissolve(1.0)
     w
-    img 902848
+    # video
+    # v_Observing_Classmate7_25
+    img black_screen
+    with diss
+    pause 1.0
+    scene black
+    image videov_Observing_Classmate7_25 = Movie(play="video/v_Observing_Classmate7_25.mkv", fps=25, loop=False, image="/images/Slides/v_Observing_Classmate7_end.jpg")
+    show videov_Observing_Classmate7_25
+    $ renpy.pause(0.5, hard=True)
+    pause 4.5
+    img v_Observing_Classmate7_end
     show screen dream()
     with diss
-    show screen image_shake("/images/Slides/img_902848.jpg")
+    show screen image_shake("/images/Slides/v_Observing_Classmate7_end.jpg")
     w
     img 902849
     show screen dream()
     with diss
     show screen image_shake("/images/Slides/img_902849.jpg")
     w
-    #sound wow
-    img 902847
+    img 902848
     show screen dream()
     with diss
+    show screen image_shake("/images/Slides/img_902848.jpg")
     w
+    bardi_t "Ееее..."
+    #sound wow
+#    img 902847
+#    show screen dream()
+#    with diss
+#    w
+
     music stop
     sound2 plastinka1b
     img 902850
