@@ -1,3 +1,6 @@
+default sarahAppearingDisabled = False
+default collegeGymSarahSuffix = 1
+
 label college_gym:
     $ miniMapData = []
     $ scene_image = "scene_COLLEGE_Gym"
@@ -6,6 +9,11 @@ label college_gym:
 label college_gym_init:
     $ default_tint = [1.0, 1.0, 1.0]
     $ add_object_to_scene("Teleport_Coridor2", {"type":3, "text" : t_("КОРИДОР"), "rarrow" : "arrow_right_2", "base":"COLLEGE_Gym_Teleport_Coridor2", "click" : "college_gym_environment", "xpos" : 1343, "ypos" : 994, "zorder":11, "teleport":True, "group":"teleports"}, scene="college_gym")
+    return
+
+label college_gym_init2:
+    $ add_object_to_scene("Sarah", {"type" : 2, "base" : "COLLEGE_Gym_Sarah_[collegeGymSarahSuffix][day_suffix]", "click" : "college_gym_environment", "actions" : "l", "zorder":10}, scene="college_gym")
+
     return
 
 #                            $ brightness_adjustment = 0.1

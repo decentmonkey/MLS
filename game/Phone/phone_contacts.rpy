@@ -57,3 +57,9 @@ label phone_contact7:
         $ phone_contacts.append({"name": "Olivia", "caption":t_("Olivia"), "img":"/images/Phone/contacts/Contacts_Olivia.png", "visible":True})
     return
 
+label phone_contact8_sarah:
+    if check_phone_contact("Sarah") == False:
+        $ notif(t__("Добавлен новый контакт"))
+        $ phone_set_new("contacts")
+        $ phone_contacts.append({"name": "Sarah", "caption":t_("Sarah"), "img":"/images/Phone/contacts/Contacts_Sarah.png", "visible":True})
+    return

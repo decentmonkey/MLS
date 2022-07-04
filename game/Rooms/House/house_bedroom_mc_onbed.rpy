@@ -21,7 +21,7 @@ label house_bedroom_mc_onbed_init2:
 
 label house_bedroom_mc_onbed_environment:
     if obj_name == "Teleport_Bedroom_MC":
-        call change_scene("house_bedroom_mc") from _rcall_change_scene_130
+        call change_scene("house_bedroom_mc", "Fade_long", "put_dress") from _rcall_change_scene_130
         return
 
     return

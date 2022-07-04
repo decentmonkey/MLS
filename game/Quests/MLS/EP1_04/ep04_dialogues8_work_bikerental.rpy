@@ -445,6 +445,7 @@ label ep04_dialogues8_work_bikerental_1b:
 
 # рабочий день в велопрокате
 #При клике на велопрокат.
+default ep04_dialogues8_work_bikerental_2_noevening_day = 0
 label ep04_dialogues8_work_bikerental_2:
     sound steps_park
     pause 1.5
@@ -500,6 +501,10 @@ label ep04_dialogues8_work_bikerental_2:
     sound snd_paper1
     imgf 911753
     w
+    if ep04_dialogues8_work_bikerental_2_noevening_day == day:
+        fadeblack 1.5
+        music2 stop
+        return
     # затемнение
     #Вечер.
     music2 stop

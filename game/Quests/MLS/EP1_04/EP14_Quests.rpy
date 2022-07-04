@@ -170,6 +170,7 @@ label ep14_quests3_bikerent1:
         call ep04_dialogues8_work_bikerental_2() from _rcall_ep04_dialogues8_work_bikerental_2
         $ ep14_bikerent_work_count += 1
         $ questHelp("work_7", True)
+        $ questHelp("work_8")
 
     if ep14_bikerent_work_count == 1:
         call ep04_dialogues8_work_bikerental_3() from _rcall_ep04_dialogues8_work_bikerental_3

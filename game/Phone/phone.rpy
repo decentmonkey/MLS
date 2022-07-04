@@ -4,6 +4,7 @@ default seanCallStage = 0
 default whoreCallStage = 0
 default emilyCallStage = 0
 default daisyCallStage = 0
+default sarahCallStage = 0
 
 label phone1:
     $ add_hook("before_call_contact", "phone_before_call_contact", scene="phone", label="phone_before_call_contact")
@@ -11,6 +12,11 @@ label phone1:
     return
 
 label phone_before_call_contact:
+    if obj_name == "Sarah":
+        if get_active_objects("Sarah", scene=scene_name) != False:
+            bardi_t "Глупо звонить, когда я нахожусь рядом..."
+            return False
+
     if obj_name == "Whore":
         if whoreCallStage == 3:
             call ep02_dialogues3_sean_5b() from _rcall_ep02_dialogues3_sean_5b
@@ -33,7 +39,13 @@ label phone_before_call_contact:
     return
 
 label phone_call_contact:
+    if obj_name == "Sarah":
+        if sarahCallStage == 2:
+            call sarah_chat2()
     if obj_name == "Emily":
+        if emilyCallStage == 6:
+            call emily_chat6()
+            return
         if emilyCallStage == 3:
             $ ep14_call_emily_flag = True
             if scene_name == "beach_loungers":
@@ -90,6 +102,9 @@ label phone_call_contact:
             return
         
     if obj_name == "Sean":
+        if seanCallStage == 7:
+            call sean_chat7()
+            return
         if seanCallStage == 5:
             call sean_chat6() from _rcall_sean_chat6
             return

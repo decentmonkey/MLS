@@ -37,9 +37,16 @@ label ep05_dialogues1_college_sarah_1:
     bardi_t "И как назло, нет ее номера телефона, чтобы узнать!.."
     bardi_t "Что же, придется проведать ее при посещении колледжа сегодня..."
     bardi_t "Круто, что у меня не осталось следов на лице после вчерашеного общения с придурком Гарри!.."
+    return
+label ep05_dialogues1_college_sarah_1a:
     bardi_t "Надеюсь, ему повезло меньше и он ходит с размалеванной рожей!"
     bardi_t "Впрочем, у меня нет никакого желания лишний раз видеть его физиономию..."
+#    fadeblack 1.5
     return
+
+label ep05_dialogues1_college_sarah_1b:
+    bardi_t "У меня остались еще дела здесь..."
+    return False
 
 # теперь Сару нельзя встретить в коридоре. Только в спортзале на тренировке
 
@@ -395,6 +402,7 @@ label ep05_dialogues1_college_sarah_2:
     librarian_wilson "!!!"
     $ mlsBardiCollegeSarahLosingWeight1 = day # Барди научил Лео клеить девчонок
     # Затемнение.
+    fadeblack 1.5
     return
 
 # Барди перед дверями спортзала
@@ -567,6 +575,10 @@ label ep05_dialogues1_college_sarah_3:
     bardi_t "Мдаа... И чего я ожидал?.."
     bardi "Наверное, так оно и есть... Иначе как объяснить то, что у тебя не получается?"
     # Сара стоит с печальным видом
+    $ menu_data = {
+        "Продолжить разговор и переубедить Сару.": {"info_rabbit":True},
+        "Наказать Сару за глупость.": {"info_rat":True}
+    }
     menu:
         "Наказать Сару за глупость.": # + Rat
             $ mlsBardiCollegeSarahLosingWeight2 = day # Барди притворился, что хочет обнять Сару и обманул
@@ -674,6 +686,10 @@ label ep05_dialogues1_college_sarah_3:
     music Postcard_From_Hell
     # Сара начинает плакать.
     student_sarah "Хочууу..."
+    $ menu_data = {
+        "Обнять Сару.": {"info_rabbit":True},
+        "Сама успокоится.": {"info_rat":True}
+    }
     menu:
         "Обнять Сару.": # + Rabbit
             # Барди обнимает Сару, сара заплаканная и удивленная поднимает на него взгляд.
@@ -766,6 +782,10 @@ label ep05_dialogues1_college_sarah_3:
     bardi "И шоколадки тоже!"
     imgd 902926
     student_sarah "Фто?! Кахой уваф!!!"
+    $ menu_data = {
+        "Не заставлять. Пусть дожевывает.": {"info_rabbit":True},
+        "Заставить Сару выплюнуть бургер.": {"info_rat":True}
+    }
     menu:
         "Заставить Сару выплюнуть бургер.": # + Rat
             $ mlsBardiCollegeSarahLosingWeight3 = day # Барди заставил Сару выплюнуть бургер
@@ -1014,6 +1034,7 @@ label ep05_dialogues1_college_sarah_3:
     sound snd_phone1
     # Барди вбивает номер Сары к себе в телефон
     #### + контакт Сары в телефоне Барди
+    call phone_contact8_sarah()
     # Сара смотрит на барди устало.
     scene black_screen
     with Dissolve(1)
