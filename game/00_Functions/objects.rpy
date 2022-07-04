@@ -328,22 +328,12 @@ init python:
 
     def get_rooms_recursive_up(start_room):
         rooms_list = [start_room]
-#        parent = start_room
         room_ptr = start_room
         while scenes_data["objects"].has_key(room_ptr) and scenes_data["objects"][room_ptr].has_key("data") == True and scenes_data["objects"][room_ptr]["data"].has_key("parent") == True:
             parent_room = scenes_data["objects"][room_ptr]["data"]["parent"]
             if parent_room != "none":
                 rooms_list.append(parent_room)
             room_ptr = parent_room
-
-#        cnt = 1
-#        while cnt > 0:
-#            cnt = 0
-#            for room_name in scenes_data["objects"]:
-#                if scenes_data["objects"][room_name].has_key("data") == True and scenes_data["objects"][room_name]["data"].has_key("parent") == True:
-#                    if (scenes_data["objects"][room_name]["data"]["parent"] not in rooms_list):
-#                        cnt = cnt + 1
-#                        rooms_list.append(scenes_data["objects"][room_name]["data"]["parent"])
 
         return rooms_list
 
@@ -361,6 +351,89 @@ init python:
     def clear_object_follow_all():
         global obj_follow_list
         obj_follow_list = {}
+
+    # mark path to target scene
+    # target_scene, from_everywhere=True/False, merge=True/False, scene=current_scene
+    def set_object_follow_way(target_scene, **kwargs):
+        global scene_name
+        from_scene = scene_name
+        if kwargs.has_key("scene") == True:
+            from_scene = kwargs["scene"]
+        from_everywhere = False
+        if kwargs.has_key("from_everywhere") == True:
+            from_everywhere = kwargs["from_everywhere"]
+        merge_flag = False
+        if kwargs.has_key("merge") == True:
+            merge_flag = kwargs["merge"]
+        
+        if merge_flag == False:
+            clear_object_follow_all()
+        
+        rooms_list = [from_scene]
+        if from_everywhere == True:
+            rooms_list = []
+            for room_name in scenes_data["objects"]:
+                rooms_list.append(room_name)
+
+        obj_follow_rooms_planned = []
+
+        for source_name in rooms_list:
+            target_scene_list = get_rooms_recursive_up(target_scene)
+            source_scene_recursive = get_rooms_recursive_up(from_scene)
+            for idx1 in range(0, len(source_scene_recursive)):
+                if source_scene_recursive[idx1] in target_scene_list:
+                    target_idx = target_scene_list.index(source_scene_recursive[idx1])
+
+                    #processing source way
+                    minimap_scene = False
+                    tmp1SkipFlag = False
+                    for idx2 in range(0, idx1):
+                        if tmp1SkipFlag == False:
+                            tmp1 = source_scene_recursive[idx2]
+                        tmp1SkipFlag = False
+                        tmp2 = source_scene_recursive[idx2+1]
+                        if tmp1 == "World":
+                            if object_follow_array["World"].has_key(tmp2):
+                                set_object_follow(object_follow_array["World"][tmp2], scene="map")
+                            else:
+                                tmp1SkipFlag = True
+                        else:
+                            if object_follow_array.has_key(tmp1) and object_follow_array[tmp1].has_key(tmp2):
+                                set_object_follow(object_follow_array[tmp1][tmp2], scene=tmp1)
+                            else:
+                                tmp1SkipFlag = True
+                            if object_follow_array_floors.has_key(tmp2):
+                                minimap_scene = tmp2
+                    if minimap_scene != False:
+                        set_object_follow(object_follow_array_floors[minimap_scene], scene="minimap")
+
+                    # processing target way
+                    minimap_scene = False
+                    tmp1SkipFlag = False
+                    for idx2 in range(target_idx, 0, -1):
+                        if tmp1SkipFlag == False:
+                            tmp1 = target_scene_list[idx2]
+                        tmp1SkipFlag = False
+                        tmp2 = target_scene_list[idx2-1]
+                        if tmp1 == "World":
+                            if object_follow_array["World"].has_key(tmp2):
+                                set_object_follow(object_follow_array["World"][tmp2], scene="map")
+                            else:
+                                tmp1SkipFlag = True
+                        else:
+                            if object_follow_array.has_key(tmp1) and object_follow_array[tmp1].has_key(tmp2):
+                                set_object_follow(object_follow_array[tmp1][tmp2], scene=tmp1)
+                            else:
+                                tmp1SkipFlag = True
+                            if object_follow_array_floors.has_key(tmp2):
+                                set_object_follow(object_follow_array_floors[tmp2], scene="minimap")
+
+                    if minimap_scene != False:
+                        set_object_follow(object_follow_array_floors[minimap_scene], scene="minimap")
+
+        return        
+
+
 
     def set_var(obj_name, **kwargs):
         if kwargs.has_key("scene"):

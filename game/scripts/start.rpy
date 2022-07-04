@@ -60,6 +60,9 @@ define steamVersion = False
 default menu_data = {}
 default menu_choice_down_forced_flag = False
 
+default object_follow_array = {}
+default object_follow_array_floors = {}
+
 #temp vars
 default maxRRMeter = 100
 
@@ -79,6 +82,7 @@ label start: #for blink here
     $ inventory = []
     $ owner = "Bardie"
     call game_init() from _rcall_game_init
+    call object_follow_array_init()
 
     $ objectives_list = []
     $ map_objects = {

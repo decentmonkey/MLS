@@ -14,6 +14,6 @@ label college_france_init:
 
 label college_france_environment:
     if obj_name == "Teleport_Coridor":
-        call change_scene("college_street") from _rcall_change_scene_62
+        call change_scene("college_coridor1") from _rcall_change_scene_62
         return
     return

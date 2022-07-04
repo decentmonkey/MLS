@@ -180,6 +180,285 @@ label define_hudpresets:
     }
     return
 
+label object_follow_array_init:
+    python:
+        object_follow_array = {
+            "World": {
+                "arnie_street" : "ARNIE",
+                "house_street" : "HOUSE",
+                "housefriend_street" : "HOUSE_FRIEND",
+                "college_street" : "COLLEGE",
+                "beach_loungers" : "BEACH",
+                "beach_park" : "PARK",
+                "daisy_street" : "DAISY",
+                "arnie_street" : "ARNIE",
+                "mall_street" : "MALL"
+            },
+
+            "arnie_street" : {
+                "World" : "Teleport_Map",
+                "arnie_livingroom" : "Teleport_LivingRoom"
+            },
+            "beach_loungers" : {
+                "World" : "Teleport_Map",
+                "beach_park" : "Teleport_Beach_Park"
+            },
+            "beach_park" : {
+                "World" : "Teleport_Map",
+                "beach_loungers" : "Teleport_Beach_Loungers"
+            },
+            "college_algebra" : {
+                "college_coridor5" : "Teleport_Coridor5"
+            },
+            "college_artclass" : {
+                "Teleport_Coridor5" : "Teleport_Coridor5"
+            },
+            "college_biology" : {
+                "college_coridor1" : "Teleport_Coridor1"
+            },
+            "college_chemistry" : {
+                "college_coridor2" : "Teleport_Coridor2"
+            },
+            "college_computer" : {
+                "college_coridor7" : "Teleport_Coridor7"
+            },
+            "college_coridor1_locker_mc" : {
+                "college_coridor1" : "Teleport_Coridor1"
+            },
+            "college_coridor1" : {
+                "college_biology" : "Teleport_Biology",
+                "college_hall" : "Teleport_Hall",
+                "college_coridor1_locker_mc" : "Teleport_LockerMC",
+                "college_coridor3" : "Teleport_Stairs",
+                "college_street" : "Teleport_Street"
+            },
+            "college_coridor2" : {
+                "college_coridor3" : "Teleport_Stairs",
+                "college_coridor4" : "Teleport_Coridor4",
+                "college_gym" : "Teleport_Gym",
+                "college_medical" : "Teleport_Medical",
+                "college_chemistry" : "Teleport_Chemistry"
+            },
+            "college_coridor3" : {
+                "college_coridor7" : "Teleport_Floor2",
+                "college_roof" : "Teleport_Floor2",
+                "college_coridor10" : "Teleport_Floor2",
+                "college_coridor3" : "Teleport_Floor2",
+
+                "college_coridor1" : "Teleport_Coridor1",
+                "college_coridor2" : "Teleport_Coridor2",
+                "college_geography" : "Teleport_Geography"
+            },
+            "college_coridor4" : {
+                "college_coridor2" : "Teleport_Coridor2",
+                "college_pool" : "Teleport_Pool",
+                "college_locker_girl" : "Teleport_Locker_Girl",
+                "college_locker_boy" : "Teleport_Locker_Boy",
+                "college_wc_male" : "Teleport_WC_Male",
+                "college_wc_female" : "Teleport_WC_Female"
+            },
+            "college_coridor5" : {
+                "college_coridor6" : "Teleport_Coridor6",
+                "college_algebra" : "Teleport_Algebra",
+                "college_artclass" : "Teleport_ArtClass"
+            },
+            "college_coridor6" : {
+                "college_coridor7" : "Teleport_Coridor7",
+                "college_english" : "Teleport_English",
+                "college_physics" : "Teleport_Physics",
+                "college_coridor5" : "Teleport_Coridor5"
+            },
+            "college_coridor7" : {
+                "college_coridor7" : "Teleport_Stairs",
+                "college_roof" : "Teleport_Stairs",
+                "college_coridor10" : "Teleport_Stairs",
+                "college_coridor3" : "Teleport_Stairs",
+
+                "college_computer" : "Teleport_Computer",
+                "college_coridor6" : "Teleport_Coridor6"
+            },
+            "college_coridor8" : {
+                "college_coridor9" : "Teleport_Coridor9",
+                "college_principal_secretary" : "Teleport_Principal_Secretary"
+            },
+            "college_coridor9" : {
+                "college_coridor10" : "Teleport_Coridor10",
+                "college_teachers" : "Teleport_Teachers",
+                "college_library" : "Teleport_Library",
+                "college_coridor8" : "Teleport_Coridor8"
+            },
+            "college_coridor10" : {
+                "college_coridor7" : "Teleport_Stairs",
+                "college_roof" : "Teleport_Stairs",
+                "college_coridor10" : "Teleport_Stairs",
+                "college_coridor3" : "Teleport_Stairs",
+
+                "college_coridor9" : "Teleport_Coridor9",
+                "college_utilityroom" : "Teleport_UtilityRoom"
+            },
+            "college_english" : {
+                "college_coridor6" : "Teleport_Coridor6"
+            },
+            "college_france" : {
+                "college_coridor1" : "Teleport_Coridor"
+            },
+            "college_geography" : {
+                "college_coridor3" : "Teleport_Coridor3"
+            },
+            "college_gym" : {
+                "college_coridor2" : "Teleport_Coridor2"
+            },
+            "college_hall" : {
+                "college_coridor1" : "Teleport_Coridor1"
+            },
+            "college_library" : {
+                "college_coridor9" : "Teleport_Coridor9"
+            },
+            "college_locker_boy" : {
+                "college_coridor4" : "Teleport_Coridor4"
+            },
+            "college_locker_girl" : {
+                "college_coridor4" : "Teleport_Coridor4"
+            },
+            "college_medical" : {
+                "college_coridor2" : "Teleport_Coridor2"
+            },
+            "college_physics" : {
+                "college_coridor6" : "Teleport_Coridor6"
+            },
+            "college_pool" : {
+                "college_coridor4" : "Teleport_Coridor4"
+            },
+            "college_principal_secretary" : {
+                "college_coridor8" : "Teleport_Coridor8",
+                "college_principal" : "Teleport_Principal"
+            },
+            "college_principal" : {
+                "college_principal_secretary" : "Teleport_Principal_Secretary"
+            },
+            "college_roof" : {
+                "college_coridor10" : "Teleport_Coridor10"
+            },
+            "college_street" : {
+                "World" : "Teleport_Map",
+                "college_coridor1" : "Teleport_Coridor1",
+                "college_streetyard" : "Teleport_StreetYard"
+            },
+            "college_streetyard" : {
+                "college_street" : "Teleport_Street"
+            },
+            "college_teachers" : {
+                "college_coridor9" : "Teleport_Coridor9"
+            },
+            "college_utilityroom" : {
+                "college_coridor10" : "Teleport_Coridor10"
+            },
+            "college_wc_female" : {
+                "college_coridor4" : "Teleport_Coridor4"
+            },
+            "college_wc_male" : {
+                "college_coridor4" : "Teleport_Coridor4"
+            },
+
+            "daisy_street" : {
+                "World" : "Teleport_Map",
+                "Teleport_LivingRoom" : "daisy_livingroom"
+            },
+
+            "house_bathroom" : {
+                "house_floor1" : "Teleport_Floor1"
+            },
+
+            "house_bedroom_landlord" : {
+                "house_floor2" : "Teleport_Floor2"
+            },
+            "house_bedroom_mc_onbed" : {
+                "house_bedroom_mc" : "Teleport_Bedroom_MC"
+            },
+            "house_bedroom_mc_tablenear" : {
+                "house_bedroom_mc" : "Teleport_Bedroom_MC"
+            },
+            "house_bedroom_mc" : {
+                "house_floor2" : "Teleport_Floor2"
+            },
+            "house_floor1" : {
+                "house_livingroomhall" : "Teleport_LivingRoomHall",
+                "house_kitchen" : "Teleport_Kitchen",
+                "house_bathroom" : "Teleport_Bathroom",
+                "house_street" : "Teleport_Street",
+                "house_floor2" : "Teleport_Floor2"
+            },
+            "house_floor2" : {
+                "house_sister2" : "Teleport_Sister2",
+                "house_sister1" : "Teleport_Sister1",
+                "house_bedroom_landlord" : "Teleport_Bedroom_Landlord",
+                "house_floor1" : "Teleport_Floor1",
+                "house_bedroom_mc" : "Teleport_Bedroom_MC"
+            },
+            "house_garage" : {
+                "house_street" : "Teleport_House_Street"
+            },
+            "house_kitchen" : {
+                "house_floor1" : "Teleport_Floor1"
+            },
+            "house_livingroomhall" : {
+                "house_floor1" : "Teleport_Floor1"
+            },
+            "house_sister1" : {
+                "house_floor2" : "Teleport_Floor2"
+            },
+            "house_sister2" : {
+                "house_floor2" : "Teleport_Floor2"
+            },
+            "house_storeroom" : {
+                "house_street" : "Teleport_Street"
+            },
+            "house_street" : {
+                "World" : "Teleport_Map",
+                "house_floor1" : "Teleport_Floor1",
+                "house_garage" : "Teleport_Garage",
+                "house_storeroom" : "Teleport_StoreRoom"
+            },
+            "housefriend_bedroom_parents" : {
+                "housefriend_kitchen" : "Teleport_Kitchen"
+            },
+            "housefriend_kitchen" : {
+                "housefriend_livingroom" : "Teleport_LivingRoom",
+                "housefriend_bedroom_parents" : "Teleport_Bedroom_Parents"
+            },
+            "housefriend_livingroom" : {
+                "housefriend_street" : "Teleport_Street",
+                "housefriend_kitchen" : "Teleport_Kitchen",
+                "housefriend_room" : "Teleport_Room"
+            },
+            "housefriend_room" : {
+                "housefriend_livingroom" : "Teleport_LivingRoom"
+            },
+            "housefriend_street" : {
+                "World" : "Teleport_Map",
+                "housefriend_livingroom" : "Teleport_LivingRoom"
+            },
+
+            "mall_street" : {
+                "World" : "Teleport_Map"
+            }
+
+
+        }
+        object_follow_array_floors = {
+            "house_bedroom_mc" : "House_Bedroom_MC",
+            "house_floor2" : "Floor2",
+            "house_floor1" : "Floor1",
+            "house_street" : "House_Street",
+
+            "college_coridor10" : "COLLEGE_Floor3",
+            "college_coridor7" : "COLLEGE_Floor2",
+            "college_coridor3" : "COLLEGE_Floor1",
+            "college_street" : "COLLEGE_Street"
+        }
+
+    return
+
 label run_after_load:
     call define_hudpresets() from _call_define_hudpresets_2
     call questLog_init() from _call_questLog_init_1
