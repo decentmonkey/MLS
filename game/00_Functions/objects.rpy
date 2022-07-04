@@ -331,6 +331,9 @@ init python:
         room_ptr = start_room
         while scenes_data["objects"].has_key(room_ptr) and scenes_data["objects"][room_ptr].has_key("data") == True and scenes_data["objects"][room_ptr]["data"].has_key("parent") == True:
             parent_room = scenes_data["objects"][room_ptr]["data"]["parent"]
+            if parent_room == room_ptr:
+                return rooms_list # protection from loop room on itself
+
             if parent_room != "none":
                 rooms_list.append(parent_room)
             room_ptr = parent_room
@@ -378,34 +381,37 @@ init python:
         obj_follow_rooms_planned = []
 
         for source_name in rooms_list:
+            from_scene = source_name
             target_scene_list = get_rooms_recursive_up(target_scene)
             source_scene_recursive = get_rooms_recursive_up(from_scene)
             for idx1 in range(0, len(source_scene_recursive)):
                 if source_scene_recursive[idx1] in target_scene_list:
                     target_idx = target_scene_list.index(source_scene_recursive[idx1])
-
-                    #processing source way
-                    minimap_scene = False
-                    tmp1SkipFlag = False
-                    for idx2 in range(0, idx1):
-                        if tmp1SkipFlag == False:
-                            tmp1 = source_scene_recursive[idx2]
+                    
+                    if source_scene_recursive[idx1] != from_scene:
+                        #processing source way
+                        minimap_scene = False
                         tmp1SkipFlag = False
-                        tmp2 = source_scene_recursive[idx2+1]
-                        if tmp1 == "World":
-                            if object_follow_array["World"].has_key(tmp2):
-                                set_object_follow(object_follow_array["World"][tmp2], scene="map")
+                        for idx2 in range(0, idx1):
+                            if tmp1SkipFlag == False:
+                                tmp1 = source_scene_recursive[idx2]
+                            tmp1SkipFlag = False
+                            tmp2 = source_scene_recursive[idx2+1]
+                            if tmp1 == "World":
+                                if object_follow_array["World"].has_key(tmp2):
+                                    set_object_follow(object_follow_array["World"][tmp2], scene="map")
+                                else:
+                                    tmp1SkipFlag = True
                             else:
-                                tmp1SkipFlag = True
-                        else:
-                            if object_follow_array.has_key(tmp1) and object_follow_array[tmp1].has_key(tmp2):
-                                set_object_follow(object_follow_array[tmp1][tmp2], scene=tmp1)
-                            else:
-                                tmp1SkipFlag = True
-                            if object_follow_array_floors.has_key(tmp2):
-                                minimap_scene = tmp2
-                    if minimap_scene != False:
-                        set_object_follow(object_follow_array_floors[minimap_scene], scene="minimap")
+                                if object_follow_array.has_key(tmp1) and object_follow_array[tmp1].has_key(tmp2):
+                                    set_object_follow(object_follow_array[tmp1][tmp2], scene=tmp1)
+                                else:
+                                    tmp1SkipFlag = True
+                                if object_follow_array_floors.has_key(tmp2):
+                                    minimap_scene = tmp2
+
+                        if minimap_scene != False:
+                            set_object_follow(object_follow_array_floors[minimap_scene], scene="minimap")
 
                     # processing target way
                     minimap_scene = False
@@ -430,6 +436,7 @@ init python:
 
                     if minimap_scene != False:
                         set_object_follow(object_follow_array_floors[minimap_scene], scene="minimap")
+                    break
 
         return        
 

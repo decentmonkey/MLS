@@ -74,7 +74,7 @@ label locations_init:
     return
 
 label locations_init2:
-    $ add_location("house_bedroom_mc_onbed", caption=t_("МОЯ КОМНАТА"), label="house_bedroom_mc_onbed", init_label="house_bedroom_mc_onbed_init", parent="house_bedroom_mc_onbed")
+    $ add_location("house_bedroom_mc_onbed", caption=t_("МОЯ КОМНАТА"), label="house_bedroom_mc_onbed", init_label="house_bedroom_mc_onbed_init", parent="house_bedroom_mc")
     return
 
 label locations_beach1:

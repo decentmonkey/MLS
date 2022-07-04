@@ -6,7 +6,10 @@ label ep15_update_init:
     call object_follow_array_init()
     $ questHelp("house_29", True)
     call ep05_dialogues4_college_emily_1()
+
+    call locations_init2()
     call house_bedroom_mc_onbed_init2()
+
     $ house_bedroom_mc_onbed_suffix = 2
     call change_scene("house_bedroom_mc_onbed")
     call process_change_map_location("HOUSE")
@@ -24,10 +27,10 @@ label ep15_update_init:
         move_object("Sophie", "house_kitchen")
         move_object("Henry", "empty")
         move_object("Sister1", "house_sister1")
-        move_object("Sister2", "house_sister2")
+#        move_object("Sister2", "house_sister2")
         move_object("Friend_Bardie", "college_empty")
         sister1RoomDoorLocked = True
-        sister2RoomDoorLocked = True
+#        sister2RoomDoorLocked = True
         landLordRoomDoorLocked = True
         sophieCallStage = 0
         seanCallStage = 0
@@ -54,10 +57,29 @@ label ep15_quests1_emily_instagram_close:
     $ questHelp("college_32")
 
     call change_scene("house_bedroom_mc", "Fade_long")
-    $ set_object_follow_way("college_coridor3")
+    $ set_object_follow_way("college_coridor1", from_everywhere=True)
 #    $ miniMapDisabled["COLLEGE"] = []
+    $ autorun_to_object("ep05_dialogues4_college_emily_3", scene="college_street")
+
+    $ add_hook("Teleport_Coridor1", "ep15_quests2_enter_college", scene="college_street", quest="day8")
+    $ focus_map("Teleport_COLLEGE", "ep04_dialogues1_family_sophie_1b")
 
     sound2 put_dress
     call refresh_scene_fade_long()
     return
+
+label ep15_quests2_enter_college:
+    $ remove_hook()
+    $ questHelp("college_32", True)
+    call ep05_dialogues4_college_emily_4()
+
+    $ unfocus_map()
+    $ add_hook("Teleport_Coridor1", "ep01_dialogues2_day1_family_1_12", scene="college_street", label="college_block", quest="day8") #Мне пока там нечего делать.
+    call changeDayTime("evening")
+
+    call ep05_dialogues4_college_emily_5() # сцена с Шоном и Софи (запускается автоматически сразу после предыдущего лейбла)
+    $ questHelpDesc("sean_desc3")
+    $ questHelpDesc("college_desc14", False)
+
+    return False
 

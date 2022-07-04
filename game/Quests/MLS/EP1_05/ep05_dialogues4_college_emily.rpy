@@ -152,6 +152,10 @@ label ep05_dialogues4_college_emily_4:
     student_harry "Я спрашиваю еще раз! Кто этот урод?!"
     imgd 902984
     bardi_t "Твою же мать... Этот дебил совсем не в адеквате. Эмили может сильно достаться от него!"
+    $ menu_data = {
+        "Вмешаться.": {"info_rabbit":True},
+        "Стоять в стороне.": {"info_rat":True}
+    }
     menu:
         "Вмешаться.": # + Rabbit
             call rrmeter(5, "ep05_dialogues4_college_emily_4(1)")
@@ -296,6 +300,10 @@ label ep05_dialogues4_college_emily_4:
     imgd 903005
     #sound fear2
     student_harry "Пойдем-ка поговорим!"
+    $ menu_data = {
+        "Пойти с Гарри.": {"info_rabbit":True},
+        "Нет.": {"info_rat":True}
+    }
     menu:
         "Пойти с Гарри.":  # + Rabbit
             call rrmeter(3, "ep05_dialogues4_college_emily_4(2)")
