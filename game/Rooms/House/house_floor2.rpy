@@ -1,3 +1,7 @@
+default floor2Sister1Suffix = 1
+default floor2Sister2Suffix = 1
+
+
 label house_floor2:
     $ miniMapData = []
     call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate_6
@@ -18,6 +22,11 @@ label house_floor2_init:
 
     $ add_object_to_scene("Teleport_Floor1", {"type":3, "text" : t_("ЛЕСТНИЦА ВНИЗ"), "rarrow" : "arrow_up_2", "base":"House_Floor2_Teleport_Floor1", "click" : "house_floor2_environment", "xpos" : 1342, "ypos" : 1013, "zorder":11, "teleport":True, "group":"teleports"}, scene="house_floor2")
     $ add_object_to_scene("Teleport_Bedroom_MC", {"type":3, "text" : t_("МОЯ КОМНАТА"), "larrow" : "arrow_up_2_a", "base":"House_Floor2_Teleport_Bedroom_MC", "click" : "house_floor2_environment", "xpos" : 362, "ypos" : 957, "zorder":11, "teleport":True, "group":"teleports"}, scene="house_floor2")
+    return
+
+label house_floor2_init2:
+    $ add_object_to_scene("Sister1", {"type" : 2, "base" : "HOUSE_Floor2_Sister1_[floor2Sister1Suffix]", "click" : "house_floor2_environment", "actions" : "l", "zorder":10}, scene="house_floor2")
+    $ add_object_to_scene("Sister2", {"type" : 2, "base" : "HOUSE_Floor2_Sister2_[floor2Sister2Suffix]", "click" : "house_floor2_environment", "actions" : "l", "zorder":10}, scene="house_floor2")
     return
 
 #                            $ brightness_adjustment = 0.1

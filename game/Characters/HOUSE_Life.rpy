@@ -3,6 +3,7 @@ default sister2RoomDoorLocked = False
 default landLordRoomDoorLocked = False
 default bathroomDoorLocked = False
 default houseLifeStage = 0
+default houseLifeStageSub1 = 0
 
 # houseLifeStage == 1 - никого нет, все открыто, кроме спальни
 # houseLifeStage == 2 - все дома, все закрыто
@@ -19,6 +20,31 @@ label house_life:
                 sister1RoomDoorLocked = True
                 sister2RoomDoorLocked = False
                 landLordRoomDoorLocked = True
+
+            if houseLifeStageSub1 == 1:
+                python:
+                    # сестры на втором этаже
+                    floor2Sister1Suffix = 2
+                    floor2Sister2Suffix = 2
+                    move_object("Sister1", "house_floor2")
+                    move_object("Sister2", "house_floor2")
+                    sister1RoomDoorLocked = False
+                    sister2RoomDoorLocked = False
+
+            if houseLifeStageSub1 == 2:
+                python:
+                    move_object("Sister1", "house_sister1")
+                    move_object("Sister2", "house_sister2")
+                    sister1RoomDoorLocked = True
+                    sister2RoomDoorLocked = True
+
+            if houseLifeStageSub1 == 3:
+                python:
+                    move_object("Sister1", "house_floor2")
+                    move_object("Sister2", "empty")
+                    sister1RoomDoorLocked = True
+                    sister2RoomDoorLocked = True
+
 
         if day_time_idx == 1:
             python:
@@ -50,6 +76,7 @@ label house_life:
                 sister1RoomDoorLocked = True
                 sister2RoomDoorLocked = True
                 landLordRoomDoorLocked = True
+
         return
     
     if day_time_idx == 0:

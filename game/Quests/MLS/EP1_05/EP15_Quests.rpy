@@ -1,10 +1,17 @@
 default ep15_update_init_flag = False
 
 default ep15_bike_rental_scene = 0
-
+default ep15_quests10_sister3_Olivia_phone_day = 0
+default ep15_quests10_sister3_Olivia_day = 0
+default ep15_quests9_daisy3_Flag = False
+default ep15_quests9_daisy3_refuse_day = 0
 label ep15_update_init:
     if ep15_update_init_flag == True:
         return
+
+    python:
+        set_room_parent("house_bedroom_mc_onbed", "house_bedroom_mc")
+
     call object_follow_array_init()
     $ questHelp("house_29", True)
     call ep05_dialogues4_college_emily_1()
@@ -194,6 +201,7 @@ label ep15_quests4_college_after_street:
     $ set_object_follow_way("beach_park", from_everywhere=True)
     $ unfocus_map()
     $ move_object("Sophie", "empty")
+    $ add_hook("bike_rental_end_evening", "ep15_quests6_bikerent_after", scene="global", quest="day9")
 #        move_object("Sophie", "house_kitchen")
 #        move_object("Henry", "empty")
 #        move_object("Sister1", "house_sister1")
@@ -218,6 +226,7 @@ label ep15_quests5_bikerent:
             return False
         call changeDayTime("evening")
         call refresh_scene_fade()
+        call process_hooks("bike_rental_end_evening", "global")
         return False
 
 
@@ -228,6 +237,229 @@ label ep15_quests5_bikerent:
         return False
     call changeDayTime("evening")
     call refresh_scene_fade()
+    call process_hooks("bike_rental_end_evening", "global")
     return False
 
     
+label ep15_quests6_bikerent_after:
+    $ remove_hook()
+    $ clear_object_follow_all()
+    if questHelpGetStatus("becky_1") == 0:
+        $ set_object_follow_way("mall_street")
+
+    $ set_object_follow_way("house_street", merge=True)
+
+    $ add_hook("before_open", "ep15_quests7_bedroom_mc", scene="house_bedroom_mc", quest="day9", once=True)
+
+
+    return
+
+label ep15_quests7_bedroom_mc:
+    call changeDayTime("night")
+    $ add_hook("Bed", "ep15_quests7_bed", scene="house_bedroom_mc", quest="day9")
+    return
+
+label ep15_quests7_bed:
+    sound put_dress
+    fadeblack 1.0
+    $ house_bedroom_mc_onbed_suffix = 2
+    $ add_hook("enter_scene", "ep15_quests7_bed2", scene="house_bedroom_mc_onbed", quest="day9", once=True)
+    call change_scene("house_bedroom_mc_onbed", "Fade_long", False)
+    return False
+
+label ep15_quests7_bed2:
+    $ emilyCallStage = 0
+    $ seanCallStage = 0
+    $ sarahCallStage = 1
+    $ phone_incoming_call("Sarah")
+    $ add_hook("phone_close", "ep15_quests7_bed3", scene="phone", quest="day9", once=True)
+    return
+
+label ep15_quests7_bed3:
+    pause 0.5
+    $ sarahCallStage = 2
+    $ add_hook("Sarah", "ep15_quests8_sarah_gym", scene="college_gym", label="sarah_gym_regular")
+    call ep03_dialogues3_family_evening_4() #регулярный сон
+    $ remove_hook(quest="day9")
+    $ add_hook("change_day_time", "ep15_quests9_morning_daisy", scene="global", label="check_daisy_call2")
+    $ clear_object_follow_all()
+
+    $ houseLifeStageSub1 = 1
+    call house_floor2_init2() # инитим сестер
+    $ add_hook("Sister1", "ep15_quests10_sister1", scene="house_floor2", label="sisters1")
+    $ add_hook("Sister2", "ep15_quests10_sister1", scene="house_floor2", label="sisters1")
+    $ add_hook("Teleport_Sister1", "ep15_quests10_sister1", scene="house_floor2", label="sisters1")
+    $ add_hook("Teleport_Sister2", "ep15_quests10_sister1", scene="house_floor2", label="sisters1")
+
+    call changeDayTime("morning")
+    fadeblack 1.5
+    $ set_room_parent("house_bedroom_mc_onbed", "house_bedroom_mc")
+    $ set_object_follow_way("house_floor2", merge=True)
+
+    $ questHelp("house_31")
+
+#    call change_scene("house_bedroom_mc", False, False)
+#    $ add_hook("enter_scene", "ep15_quests9_morning", scene="house_bedroom_mc_onbed")
+#    call change_scene("house_bedroom_mc_onbed", "Fade_long", False)
+    call refresh_scene_fade_long()
+    return
+
+label ep15_quests8_sarah_gym:
+
+    call refresh_scene_fade_long()
+    return False
+
+
+label ep15_quests9_morning_daisy:
+    if mlsBardiFamilyV4Daisy1 > 0:
+        $ autorun_to_object("ep15_quests9_morning_daisy_call", scene="house_bedroom_mc")
+        $ remove_hook()
+    return
+
+label ep15_quests9_morning_daisy_call:
+    $ add_hook("daisy_call_event2", "ep15_quests9_morning_daisy_init2", scene="events", once=True, label="daisy_init2")
+    $ daisyCallStage = 2
+    $ phone_incoming_call("Daisy")
+    return
+
+label ep15_quests9_morning_daisy_init2: # инитим Дейзи после звонка
+    $ add_hook("Teleport_LivingRoom", "ep15_quests9_daisy3", scene="daisy_street", label="daisy2")
+    $ questHelp("work_9")
+    $ set_object_follow_way("daisy_street", merge=True)
+
+    return
+
+label ep15_quests9_daisy3: # заходим в дом
+    if day_time_idx < 2:
+        if ep15_quests9_daisy3_Flag == True:
+            call ep05_dialogues2_family_daisy_2a()
+            call refresh_scene_fade()
+            return False
+
+        call ep05_dialogues2_family_daisy_2()
+        if _return == False:
+            call refresh_scene_fade()
+            return False
+        if mlsBardiFamilyV4Daisy2 == day:
+            call changeDayTime("evening")
+        $ ep15_quests9_daisy3_Flag = True
+        $ questHelp("work_9", True)
+        $ questHelp("work_10")
+        $ add_hook("Bed", "ep15_quests9_bed_skip_evening", scene="house_bedroom_mc", label=["evening_time_temp", "daisy_evening"])
+
+        call refresh_scene_fade()
+        return False
+
+    # вечер
+    if ep15_quests9_daisy3_refuse_day == day:
+        call ep05_dialogues2_family_daisy_3a()
+        return False
+    $ clear_object_follow_all()
+    $ remove_hook(label="daisy_evening")
+    $ questHelp("work_10", True)
+    call ep05_dialogues2_family_daisy_3()
+    if _return == False:
+        $ ep15_quests9_daisy3_refuse_day = day
+    call refresh_scene_fade()
+
+    return False
+
+label ep15_quests9_bed_skip_evening: # ждать до вечера
+    if day_time_idx >= 2:
+        return
+    call ep05_dialogues2_family_daisy_3b()
+    if _return == 1:
+        $ house_bedroom_mc_onbed_suffix = 1
+        call changeDayTime("evening")
+        call change_scene("house_bedroom_mc_onbed", "Fade_long", False)
+    return False
+
+label ep15_quests10_sister1: # сестры
+    if get_active_objects("Sister2", scene="house_floor2") != False and get_active_objects("Sister1", scene="house_floor2") != False:
+        $ remove_hook(label="sisters1")
+        call ep05_dialogues5_family_olivia_1()
+        $ questHelp("house_31", True)
+        $ questHelp("house_32")
+
+        $ add_hook("Teleport_Sister1", "ep15_quests10_sister2_Olivia", scene="house_floor2", label="sisters2")
+        $ add_hook("Teleport_Sister2", "ep15_quests10_sister2_Cynthia", scene="house_floor2", label="sisters2")
+        $ houseLifeStageSub1 = 2
+        $ oliviaCallStage = 2
+        $ move_object("Sister1", "house_sister1")
+        $ move_object("Sister2", "house_sister2")
+        $ add_hook("enter_scene", "ep15_quests10_sister1a", scene="house_bedroom_mc", label=["sisters2_phone", "sisters2"])
+        $ add_hook("enter_scene", "ep15_quests10_sister1a", scene="house_street", label=["sisters2_phone", "sisters2"])
+        $ set_object_follow_way("house_sister2")
+        call refresh_scene_fade_long()
+        return False
+    return
+label ep15_quests10_sister1a: # сестры
+    $ remove_hook(label="sisters2_phone")
+    $ phone_incoming_call("Olivia")
+    return
+
+label ep15_quests10_sister2_Olivia: #
+    if get_active_objects("Sister1", scene="house_sister1") == False:
+        return
+    if day_time_idx >= 2:
+        $ sister1RoomDoorLocked = True
+        call ep12_quests6_gymclosed()
+        return False
+    call ep05_dialogues5_family_olivia_2()
+    call refresh_scene_fade()
+    return False
+
+label ep15_quests10_sister2_Cynthia: #
+    if get_active_objects("Sister2", scene="house_sister2") == False:
+        return
+    if day_time_idx >= 2:
+        $ sister2RoomDoorLocked = True
+        call ep12_quests6_gymclosed()
+        return False
+    $ remove_hook(label="sisters2")
+    call ep05_dialogues6_family_cynthia_1()
+    $ questHelp("house_32", True)
+    $ floor2Sister1Suffix = 1
+    $ houseLifeStageSub1 == 3
+    $ oliviaCallStage = 3
+    $ cynthiaCallStage = 5
+    $ sister1RoomDoorLocked = True
+    $ add_hook("Sister1", "ep15_quests10_sister3_Olivia", scene="house_floor2", label="sisters3")
+    $ questHelp("house_33")
+    $ move_object("Sister1", "house_floor2")
+    $ clear_object_follow_all()
+    call refresh_scene_fade()
+    return False
+
+label ep15_quests10_sister3_Olivia: #
+    $ remove_hook(label="sisters3")
+    call ep05_dialogues5_family_olivia_3()
+    $ questHelp("house_33", True)
+    $ move_object("Sister1", "house_sister1")
+    if questHelpGetStatus("work_9") == 0:
+        $ set_object_follow_way("daisy_street", from_everywhere = True)
+
+    $ ep15_quests10_sister3_Olivia_day = day
+    $ add_hook("enter_scene", "ep15_quests10_sister3_Olivia_phone", scene="house_bedroom_mc", label=["sisters3_phone"])
+    $ add_hook("enter_scene", "ep15_quests10_sister3_Olivia_phone", scene="house_street", label=["sisters3_phone"])
+    $ oliviaCallStage = 4
+    $ cynthiaCallStage = 5
+    $ houseLifeStageSub1 = 0
+    call refresh_scene_fade()
+    return False
+
+label ep15_quests10_sister3_Olivia_phone: #
+    if ep15_quests10_sister3_Olivia_day == day:
+        return
+    if ep15_quests10_sister3_Olivia_phone_day == day:
+        return
+    $ ep15_quests10_sister3_Olivia_phone_day = day
+    if phone_check_chat("olivia_chat4") == False:
+        $ phone_incoming_call("Olivia")
+        return
+    if phone_check_chat("cynthia_chat5") == False:
+        $ phone_incoming_call("Cynthia")
+    $ remove_hook(label="sisters3_phone")
+    return
+
+

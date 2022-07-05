@@ -454,6 +454,10 @@ init python:
             scenes_data["objects"][room_name][obj_name][var1] = value1
         return True
 
+    def set_room_parent(room_name, parent_room_name):
+        scenes_data["objects"][room_name]["data"]["parent"] = parent_room_name
+        return
+
     def parse_str(str1):
         result = re.findall(r'\[(.*?)\]', str1)
         for var1 in result:

@@ -252,7 +252,7 @@ python early:
         return [Movie(video_filename, channel="movie", loop=True)]
 
     def playvideo_exec(s_in):
-        global sound_for_video, sound_for_video_volume, start_video_image, video_audio_duration, current_slide_image_blocked_args
+        global sound_for_video, sound_for_video_volume, start_video_image, video_audio_duration, current_slide_image_blocked_args, camera_icon_enabled, camera_icon_enabled_stored
         current_slide_image_blocked_args = False
         video_filename_in, sounds_filename_in, from_time_in, sound_volume_in, music_volume_in, loop_in, transition_in = s_in
         try:
@@ -333,6 +333,8 @@ python early:
                 renpy.music.set_volume(music_volume, delay=0.5, channel="music")
 
         renpy.with_statement(transition)
+        camera_icon_enabled_stored = camera_icon_enabled
+        camera_icon_enabled = False
 
 
     def playvideo_exec_play_callback(old, new):
@@ -352,12 +354,13 @@ python early:
     def stopvideo_disp(l):
         return (l.rest())
     def stopvideo_exec(s_in):
-        global currentMusic2
+        global currentMusic2, camera_icon_enabled, camera_icon_enabled_stored
         renpy.hide_screen("show_image_screen_movie")
         renpy.music.stop(channel="music2", fadeout=0.2)
         renpy.music.set_volume(1.0, delay=0.5, channel="music")
         renpy.music.set_volume(1.0, delay=0.5, channel="music2")
         currentMusic2 = False
+        camera_icon_enabled = camera_icon_enabled_stored
 
     renpy.register_statement("stopvideo", parse=stopvideo_disp, execute=stopvideo_exec)
 

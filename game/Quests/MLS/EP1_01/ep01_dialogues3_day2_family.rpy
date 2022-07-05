@@ -232,7 +232,7 @@ label ep01_dialogues3_day2_family_5:
     sophie "Ты что-то хотел, милый?"
     label ep01_dialogues3_day2_family_5_loop1:
     menu:
-        "Спросить, где Генри.":
+        "Спросить, где Генри." if week_day != 7:
             imgd 900061
             bardi "Софи, а где Генри?"
             imgd 900060

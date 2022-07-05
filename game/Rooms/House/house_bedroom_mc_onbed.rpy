@@ -2,7 +2,7 @@ default house_bedroom_mc_onbed_suffix = 1
 
 label house_bedroom_mc_onbed:
     $ miniMapData = []
-    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate_14
+#    call miniMapHouseGenerate() from _rcall_miniMapHouseGenerate_14
     $ scene_image = "scene_House_Bedroom_MC_OnBed[day_suffix]"
     return
 

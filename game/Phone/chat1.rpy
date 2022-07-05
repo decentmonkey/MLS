@@ -76,6 +76,22 @@ label cynthia_chat4:
     ])
     return
 
+label cynthia_chat5:
+    $ phone_start_new_chat("cynthia_chat5", "Cynthia")
+    call phone_chat([
+        ["", t_("Привет, Синтия.")],
+        ["cynthia", t_("Привет! :)")],
+        ["cynthia", t_("Как дела? Все готово?")],
+        ["", t_("Еще нет...")],
+        ["", t_("Но скоро все будет, не переживай.")],
+        ["cynthia", t_("Мне уже не терпится! :)")],
+        ["", t_("Как будет все сделано, я тебе сразу сообщу.")],
+        ["", t_("Хорошо. Жду.")],
+        ["", t_("Спасибо тебе за помощь, [mcname]!")],
+        ["", t_("Ты лучший! :)")]
+    ])
+    return
+
 label sean_chat1:
     $ phone_start_new_chat("sean_chat1", "Sean")
     $ ep1_college_talk_sean_agree = False
@@ -581,6 +597,75 @@ label daisy_chat1:
     ])
     return
 
+label daisy_chat2:
+    $ phone_start_new_chat("daisy_chat2", "Daisy")
+    call phone_chat([
+        ["", t_("Привет, красавчик! :)")]
+    ])
+    call phone_chat_menu([
+        t__("Ответить."),
+        t__("Позже.")
+    ])
+    if _return == 0:
+
+        call phone_chat([
+            ["", t_("О, Дейзи! Привет!")],
+            ["", t_("Как у тебя дела? Как бизнес?")],
+            ["daisy", t_("Ой, все хорошо!")],
+            ["daisy", t_("Как раз пишу тебе, чтобы похвастаться новым поступлением товара :):):):):)")],
+            ["", t_("Ну круто. И что это за товары?")],
+            ["daisy", t_("Вряд ли их названия тебе что-то скажут...")],
+            ["daisy", t_("Но я могу показать фотографии ;)")],
+        ])
+        call phone_chat_menu([
+            t__("Хммм... Ну, давай."),
+        ])
+        call phone_chat([
+            ["", t_("Хммм... Ну, давай.")],
+            ["daisy", t_("Ты сейчас один?")],
+            ["", t_("Да.")],
+            ["daisy", t_("Тогда держи ;)")],
+            ["daisy", "image", "/images/Phone/Photos/phone_daisy_photo1.png", 3],
+            ["daisy", "image", "/images/Phone/Photos/phone_daisy_photo2.png", 3]
+        ])
+        if mlsBardiFamilyDaisyCrashTest1 == 0:
+            $ phone_gallery_add_image("foto_Daisy_1")
+            $ phone_gallery_add_image("foto_Daisy_2")
+        $ phone_close_enabled = False
+        bardi_t "Ну нихрена себе!.."
+        $ phone_close_enabled = True
+        call phone_chat([
+            ["", t_("Вау! Ты безумно секси!")],
+            ["daisy", t_("У тебя встал? :)")],
+            ["", t_("Естественно!")],
+            ["daisy", t_("Я знала. Можешь использовать мои фото, чтобы снять напряжение...")],
+            ["daisy", t_("Ну а если об игрушке...")],
+            ["daisy", t_("Это охрененно!")],
+            ["daisy", t_("Материал безумно приятный для кожи.")],
+            ["daisy", t_("При этом совершенно не раздражает ее, а еще он гипоаллергенный.")],
+            ["daisy", t_("В общем, качество на высоте.")],
+            ["daisy", t_("Да и на практике показывает себя вполне достойно.")],
+            ["daisy", t_("Я кончила с ним 4 раза!")],
+            ["", t_("Я смотрю, ты там веселишься вовсю?")],
+            ["daisy", t_("Ничего подобного! Это рабочий процесс!")],
+            ["", t_("Хах! Охрененная у тебя работа!..")],
+            ["daisy", t_("Я знаю ;)")],
+            ["daisy", t_("Кстати, о работе. Заходи ко мне вечером.")],
+            ["daisy", t_("У меня для тебя есть кое-какая работа.")],
+            ["", t_("Окей. Отлично.")],
+            ["daisy", t_("Ладно, надеюсь, я смогла поднять тебе настроение.")],
+            ["daisy", t_("Пошла дальше работать.")],
+            ["daisy", t_("Удачи :)")],
+            ["", t_("И тебе тоже :)")]
+        ])
+        call process_hooks("daisy_call_event2", "events")
+
+        $ mlsBardiFamilyDaisyCrashTest1 = day # Дейзи прислала Барди свои фотки
+    else:
+        bardi_t "Позже ей напишу."
+    return
+
+
 label olivia_chat1:
     $ phone_start_new_chat("olivia_chat1", "Olivia")
     call phone_chat([
@@ -624,13 +709,52 @@ label olivia_chat1:
     ])
     return
 
+label olivia_chat2:
+    $ phone_start_new_chat("olivia_chat2", "Olivia")
+    call phone_chat([
+        ["", t_("Привет :)")],
+        ["olivia", t_("Ты уже поговорил с Синтией?")],
+        ["", t_("Еще нет. Как раз собираюсь заняться этим вопросом...")],
+        ["olivia", t_("Какого хрена так долго?!")],
+        ["olivia", t_("Давай скорее, я жду!")]
+    ])
+    return
+
+label olivia_chat3:
+    $ phone_start_new_chat("olivia_chat3", "Olivia")
+    call phone_chat([
+        ["", t_("Привет, Оливия!")],
+        ["olivia", t_("Ну? Какие новости?")],
+        ["", t_("Я пообщался с Синтией. Скоро расскажу тебе все.")],
+        ["olivia", t_("Давай скорее, я жду!")]
+    ])
+    return
+
+label olivia_chat4:
+    $ phone_start_new_chat("olivia_chat4", "Olivia")
+    call phone_chat([
+        ["", t_("Привет, Оливия! Как дела?")],
+        ["olivia", t_("Привет. Ты уже нашел деньги для подарка?")],
+        ["", t_("Воу! Не так быстро!")],
+        ["", t_("Нашла миллионера!")],
+        ["", t_("Мне еще надо обдумать, как все это провернуть...")],
+        ["olivia", t_("Сообщи, как все уладишь.")],
+        ["olivia", t_("Я жду.")],
+        ["", t_("Вас понял, госпожа.")],
+        ["olivia", t_("Да пошел ты!")]
+    ])
+    return
+
+
 label sarah_chat1:
     $ phone_start_new_chat("sarah_chat1", "Sarah")
     call phone_chat([
         ["student_sarah", t_("[mcname], привет :)")],
     ])
+    $ phone_close_enabled = False
     bardi_t "Опа... Сара пишет..."
     bardi_t "Наверное, сдаться надумала, да?"
+    $ phone_close_enabled = True
     call phone_chat([
         ["", t_("Привет. Надеюсь, ты там не с бургером сидишь?")],
         ["student_sarah", t_("Конечно, нет! Ты что?!")],
@@ -641,6 +765,7 @@ label sarah_chat1:
         ["", t_("Окей. Удачи!")],
         ["student_sarah", t_("Спасибо. Я не подведу :)")]
     ])
+    return
 
 label sarah_chat2:
     $ phone_start_new_chat("sarah_chat2", "Sarah")
@@ -652,7 +777,7 @@ label sarah_chat2:
         t__("Предложить помощь."),
         t__("Позже.")
     ])
-    if _return == 1:
+    if _return == 0:
 #        "Предложить помощь.":
         call phone_chat([
             ["", t_("Моя помощь нужна?")],

@@ -5,6 +5,7 @@ default phone_buttons_list = []
 default phone_buttons_new = {}
 default phone_menu_active = "main"
 default phone_chat_history = []
+default phone_chat_history_list = []
 default phone_chat_history_new_flags = {}
 default phone_contact = False
 default phone_current_chat = []
@@ -33,6 +34,7 @@ default phone_inited = False
 default phone_notes_text = ""
 default camera_enabled = True
 default camera_icon_enabled = True
+default camera_icon_enabled_stored = True
 default phoneNewForced = False
 default phone_incoming_call_active = False
 default phone_incoming_call_name = False
@@ -606,7 +608,9 @@ init python:
         return
 
     def phone_start_new_chat(chat_name, contact_name):
-        global phone_chat_history, phone_current_chat_name
+        global phone_chat_history, phone_current_chat_name, phone_chat_history_list
+        if chat_name not in phone_chat_history_list:
+            phone_chat_history_list.append(chat_name)
         for idx in range(len(phone_chat_history)-1, -1, -1):
             if phone_chat_history[idx]["chat_name"] == chat_name:
                 # нашли такой же чат, удаляем
@@ -615,6 +619,12 @@ init python:
         phone_chat_history.insert(0, new_chat)
         phone_current_chat_name = chat_name
         return
+
+    def phone_check_chat(chat_name):
+        global phone_chat_history_list
+        if chat_name in phone_chat_history_list:
+            return True
+        return False
 
     def phone_add_history_line(chat_name, chat_line):
         global phone_chat_history

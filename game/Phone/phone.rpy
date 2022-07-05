@@ -5,6 +5,7 @@ default whoreCallStage = 0
 default emilyCallStage = 0
 default daisyCallStage = 0
 default sarahCallStage = 0
+default oliviaCallStage = 0
 
 label phone1:
     $ add_hook("before_call_contact", "phone_before_call_contact", scene="phone", label="phone_before_call_contact")
@@ -32,6 +33,10 @@ label phone_before_call_contact:
         if get_active_objects("Sister2", scene=scene_name) != False:
             bardi_t "Глупо звонить, когда я нахожусь рядом..."
             return False
+    if obj_name == "Olivia":
+        if get_active_objects("Sister1", scene=scene_name) != False:
+            bardi_t "Глупо звонить, когда я нахожусь рядом..."
+            return False
     if obj_name == "Sean":
         if get_active_objects("Friend_Bardie", scene=scene_name) != False:
             bardi_t "Глупо звонить, когда я нахожусь рядом..."
@@ -42,6 +47,10 @@ label phone_call_contact:
     if obj_name == "Sarah":
         if sarahCallStage == 2:
             call sarah_chat2()
+            return
+        if sarahCallStage == 1:
+            call sarah_chat1()
+            return
     if obj_name == "Emily":
         if emilyCallStage == 6:
             call emily_chat6()
@@ -86,7 +95,21 @@ label phone_call_contact:
             call sophie_chat2() from _rcall_sophie_chat2
             return
 
+    if obj_name == "Olivia":
+        if oliviaCallStage == 4:
+            call olivia_chat4()
+            return
+        if oliviaCallStage == 3:
+            call olivia_chat3()
+            return
+        if oliviaCallStage == 2:
+            call olivia_chat2()
+            return
+
     if obj_name == "Cynthia":
+        if cynthiaCallStage == 5:
+            call cynthia_chat5() 
+            return
         if cynthiaCallStage == 3:
             call cynthia_chat4() from _rcall_cynthia_chat4
             return
@@ -97,7 +120,7 @@ label phone_call_contact:
         if cynthiaCallStage == 1 and day_time_idx != 3:
             call cynthia_chat1() from _rcall_cynthia_chat1
             return
-        if get_active_objects("Sister2", scene="COLLEGE", recursive=True) != False:
+        if get_active_objects("Sister2", scene="COLLEGE", recursive=True) != False and week_day != 7:
             call cynthia_chat2() from _rcall_cynthia_chat2 # регулярный чат днем, Синтия не может говорить, учится
             return
         
@@ -127,6 +150,9 @@ label phone_call_contact:
             return
 
     if obj_name == "Daisy":
+        if daisyCallStage == 2:
+            call daisy_chat2()
+            return
         if daisyCallStage == 1:
             call daisy_chat1() from _rcall_daisy_chat1
             return

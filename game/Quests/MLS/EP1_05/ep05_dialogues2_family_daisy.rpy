@@ -128,7 +128,7 @@ label ep05_dialogues2_family_daisy_2:
             fadeblack
             sound snd_door_open1
             pause 1.5
-            return
+            return True
         "Поработать.":
             # Барди звонит в дверь
             # Открывается дверь. Выходит Дейзи. Смотрит на Барди кокетливым игривым, и возбужденным взглядом.
@@ -176,7 +176,7 @@ label ep05_dialogues2_family_daisy_2:
             imgf 901903
             bardi_t "Не сейчас. Займусь пока другими делами."
             # уходим в движок
-            return
+            return False
     return
 
 # при повторном клике на дом Дейзи днем (!), если уже было меню и кликнуть еще раз на дверь
@@ -247,7 +247,7 @@ label ep05_dialogues2_family_daisy_3:
             sound snd_door_open1
             pause 1.5
             ## можно вернуться только на следующий день. а при клике на дверь, оказывается что она закрыта.
-            return
+            return False
     imgd 902532
     bardi "Шутишь что ли?! Как бы я мог забыть?!"
     bardi "Работа для меня превыше всего!"
@@ -632,7 +632,7 @@ label ep05_dialogues2_family_daisy_3:
             w
 
             ## video
-            playvideo "video/v_MC_Daisy_fingers_1_25.mkv" "v_MC_Whore_WCMall_handjob_1_25" 7.0 1.0 0.2 True fade
+            playvideo "video/v_MC_Daisy_fingers_1_25.mkv" "v_MC_Whore_WCMall_handjob_1_25" 0.0 1.0 0.2 True fade
             wclean
             daisy "Не вздумай останавливаться, [mcname]!"
             wclean
@@ -697,7 +697,7 @@ label ep05_dialogues2_family_daisy_3:
     bardi "Мать твою! Когда же ты, наконец, надрочишься?!"
 
     ## video
-    playvideo "video/v_MC_Daisy_dildo_1_25.mkv" "v_MC_Whore_WCMall_sex_1_25" 7.0 1.0 0.2 True fade
+    playvideo "video/v_MC_Daisy_dildo_1_25.mkv" "v_MC_Whore_WCMall_sex_1_25" 0.0 1.0 0.2 True fade
     wclean
     daisy "Прошу! Только не останавливайся!"
     wclean
@@ -1097,7 +1097,7 @@ label ep05_dialogues2_family_daisy_3:
     w
 
     ## video
-    playvideo "video/v_MC_Daisy_blowjob_1_25.mkv" "v_MC_Whore_WCMall_blowjob_1_25" 7.0 1.0 0.2 True fade
+    playvideo "video/v_MC_Daisy_blowjob_1_25.mkv" "v_MC_Whore_WCMall_blowjob_1_25" 0.0 1.0 0.2 True fade
     wclean
     bardi "Какого черта ты вообще решила!.."
     wclean
@@ -1209,7 +1209,7 @@ label ep05_dialogues2_family_daisy_3:
     music2 stop
     #img 901350
     # Барди разворачивается и уходит.
-    return
+    return True
 
 # мысли, если Барди ответил ей "не сегодня"
 # + при повторном клике на дом Дейзи вечером (!), если Барди ответил ей "не сегодня" и игрок хочет вернуться к ней
@@ -1219,6 +1219,14 @@ label ep05_dialogues2_family_daisy_3a:
     bardi_t "Это мог бы быть просто улетный вечер!"
     bardi_t "Ладно... Дейзи сказала, что будет ждать меня."
     bardi_t "Нужно будет прийти сюда как-нибудь вечером..."
+    return
+
+label ep05_dialogues2_family_daisy_3b:
+    menu:
+        "Ждать до вечера.":
+            return 1
+        "Уйти.":
+            return False
     return
 
 ## суббота, вечер
