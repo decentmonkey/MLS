@@ -65,6 +65,8 @@ label ep05_dialogues8_work_bikerental_1:
     # Девушка неформалка рядом с ним, оглядываясь по сторонам, со стыдливым лицом.
     #music Secretions_Vocal
     imgf 912247
+    show screen image_shake("/images/Slides/img_912247.jpg")
+
     #sound2 wow
     punk2 "Нихрена себе!"
     imgd 912248
@@ -72,6 +74,7 @@ label ep05_dialogues8_work_bikerental_1:
     punk2 "Смотри! Тут даже реактивные автотурбины есть!"
     punk_girl2 "Это просто спицы, ушлепок!"
     imgd 912247
+    show screen image_shake("/images/Slides/img_912247.jpg")
     sound wow
     punk2 "Дааа?!"
     punk2 "Оооо!.. Нихрена себе!"
@@ -389,6 +392,9 @@ label ep05_dialogues8_work_bikerental_1:
                     # Эмма смотрит на Барди хмуро.
                     imgd 912124
                     punk_emma "Да сейчас я! Дай собраться..."
+                    menu:
+                        "Спустить штаны.":
+                            pass
                     # Барди расстегивает ширинку. Эмма удивленно смотрит на него.
                     imgf 912166
                     bardi "Я даже немного тебе помогу."
