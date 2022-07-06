@@ -378,6 +378,49 @@ init python:
             for room_name in scenes_data["objects"]:
                 rooms_list.append(room_name)
 
+        for source_name in rooms_list:
+            from_scene = source_name
+            if from_scene != target_scene:
+                path = find_scene_path(from_scene, target_scene)
+                if path != False:
+                    minimap_scene = False
+                    for idx2 in range(0, len(path)-1):
+                        tmp1 = path[idx2]
+                        tmp2 = path[idx2+1]
+                        if tmp1 == "World":
+                            if object_follow_array["World"].has_key(tmp2):
+                                set_object_follow(object_follow_array["World"][tmp2], scene="map")
+                        else:
+                            if object_follow_array.has_key(tmp1) and object_follow_array[tmp1].has_key(tmp2):
+                                set_object_follow(object_follow_array[tmp1][tmp2], scene=tmp1)
+                            if object_follow_array_floors.has_key(tmp2):
+                                minimap_scene = tmp2
+
+                    if minimap_scene != False:
+                        set_object_follow(object_follow_array_floors[minimap_scene], scene="minimap")
+        return        
+        
+    def set_object_follow_way_old(target_scene, **kwargs):
+        global scene_name
+        from_scene = scene_name
+        if kwargs.has_key("scene") == True:
+            from_scene = kwargs["scene"]
+        from_everywhere = False
+        if kwargs.has_key("from_everywhere") == True:
+            from_everywhere = kwargs["from_everywhere"]
+        merge_flag = False
+        if kwargs.has_key("merge") == True:
+            merge_flag = kwargs["merge"]
+        
+        if merge_flag == False:
+            clear_object_follow_all()
+        
+        rooms_list = [from_scene]
+        if from_everywhere == True:
+            rooms_list = []
+            for room_name in scenes_data["objects"]:
+                rooms_list.append(room_name)
+
         obj_follow_rooms_planned = []
 
         for source_name in rooms_list:
@@ -439,6 +482,22 @@ init python:
                     break
 
         return        
+
+    def find_scene_path(source_scene, target_scene, **kwargs):
+        return find_scene_path_recurse(source_scene, target_scene, [])
+
+    def find_scene_path_recurse(current_scene, target_scene, current_way):
+        current_way.append(current_scene)
+        if current_scene == target_scene:
+            return current_way
+        if object_follow_array.has_key(current_scene):
+            for way1 in object_follow_array[current_scene]:
+                if way1 not in current_way:
+                    result = find_scene_path_recurse(way1, target_scene, current_way)
+                    if result != False:
+                        return result
+        current_way.remove(current_scene)
+        return False
 
 
 

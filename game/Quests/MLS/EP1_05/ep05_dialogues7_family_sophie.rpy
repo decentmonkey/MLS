@@ -764,6 +764,10 @@ label ep05_dialogues7_family_sophie_1:
     fadeblack 1.5
     return
 
+label ep05_dialogues7_family_sophie_1a:
+    bardi_t "Мне надо проведать Софи..."
+    return False
+
 ## воскресенье, вечер (ночь)
 ## Барди может только пойти спать
 

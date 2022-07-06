@@ -825,6 +825,7 @@ label ep04_dialogues3_family_olivia_2:
     #Конец сцены.
     fadeblack 1.0
     $ mlsBardiFamilyV4Olivia1 = day # Барди застукал Оливию в комнате Синтии
+    call ep15_quests12_init_sophie()
     return
 
 

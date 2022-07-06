@@ -666,6 +666,55 @@ label daisy_chat2:
     return
 
 
+label daisy_chat3:
+    $ phone_start_new_chat("daisy_chat3", "Daisy")
+    call phone_chat([
+        ["daisy", t_("[mcname], прости за эти таблетки. Как ты?")],
+        ["", t_("Нормально... Ты сама то как?")],
+        ["daisy", t_("Ох, лучше некуда. Только устала как собака...")]
+    ])
+    $ phone_close_enabled = False
+    bardi_t "Это она то устала?! Мне бы так уставать!"
+    $ phone_close_enabled = True
+    call phone_chat([
+        ["", t_("Понимаю...")],
+        ["daisy", t_("В общем, прости за таблетки. И за то, что все так вышло...")],
+        ["daisy", t_("Я не знала, что девочки вернутся так рано.")],
+        ["daisy", t_("Николь говорила, что они будут гулять допоздна...")],
+        ["", t_("Все окей, Дейзи.")],
+        ["", t_("Но то, что я пообещал тебе перед уходом, так все и будет.")],
+        ["daisy", t_("Будто я против ;)")],
+        ["daisy", t_("Когда все лягут спать, я скину тебе кое-что особенное. Так что жди :)")],
+        ["", t_("Окей. Жду :)")]
+    ])
+    return
+
+label daisy_chat4:
+    $ phone_start_new_chat("daisy_chat4", "Daisy")
+    call phone_chat([
+        ["daisy", t_("Привет, красавчик. Я снова тут ;)")],
+        ["daisy", t_("Как и обещала, кидаю тебе несколько фоток, чтобы снять напряжение :)")],
+        ["daisy", "image", "/images/Phone/Photos/phone_daisy_photo_b1.png", 2],
+        ["daisy", "image", "/images/Phone/Photos/phone_daisy_photo_b2.png", 2],
+        ["daisy", "image", "/images/Phone/Photos/phone_daisy_photo_b3.png", 2],
+        ["daisy", "image", "/images/Phone/Photos/phone_daisy_photo_b4.png", 2],
+        ["daisy", "image", "/images/Phone/Photos/phone_daisy_photo_b5.png", 2]
+    ])
+    $ phone_gallery_add_image("Daisy_1")
+    $ phone_gallery_add_image("Daisy_2")
+    $ phone_gallery_add_image("Daisy_3")
+    $ phone_gallery_add_image("Daisy_4")
+    $ phone_gallery_add_image("Daisy_5")
+    $ phone_close_enabled = False
+    bardi_t "Мдаа... Веселая же была ночка..."
+    $ phone_close_enabled = True
+    call phone_chat([
+        ["", t_("Фотки огонь!")],
+        ["", t_("Ты такая секси! ;)")]
+    ])
+    $ daisyCallStage = 0
+    return
+
 label olivia_chat1:
     $ phone_start_new_chat("olivia_chat1", "Olivia")
     call phone_chat([

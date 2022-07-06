@@ -484,6 +484,8 @@ label ep03_dialogues3_family_evening_3:
 # изменено пробуждение, добавлены if'ы в ранее прописанные пункты с Оливией, Роуз и Моррис
 # меню перед сном оставить регулярным
 label ep03_dialogues3_family_evening_4:
+    if ep15_sleep_regular_dialogue_skip_day == day:
+        return
     # ночь, Барди ложится спать
     fadeblack 1.0
     music Jail_Clock

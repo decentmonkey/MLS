@@ -5,6 +5,10 @@ default ep15_quests10_sister3_Olivia_phone_day = 0
 default ep15_quests10_sister3_Olivia_day = 0
 default ep15_quests9_daisy3_Flag = False
 default ep15_quests9_daisy3_refuse_day = 0
+default ep05_dialogues2_family_daisy_visit_day = 0
+default ep15_sleep_regular_dialogue_skip_day = 0
+default ep15_quests12_init_sophie_flag = False
+
 label ep15_update_init:
     if ep15_update_init_flag == True:
         return
@@ -298,6 +302,15 @@ label ep15_quests7_bed3:
 
     $ questHelp("house_31")
 
+    # Суббота
+    # инитим регулярную кровать
+    $ remove_hook(label="ep14_quests4_evening_bed")
+    $ add_hook("Bed", "bed_sleep1", scene="house_bedroom_mc", label="bed_regular")
+    $ add_hook("before_sleep_actions", "bed_sleep1_bedsleep1", scene="global", label="sleep_regular", priority=1)
+    $ add_hook("before_sleep_actions", "ep03_dialogues3_family_evening_4", scene="global", label="before_sleep_regular")
+    $ add_hook("sleep", "bed_sleep1_bedsleep2", scene="global", label="sleep_regular")
+    $ add_hook("after_sleep", "ep15_quests11_sunday_morning", scene="global", label="sunday_morning", once=True)
+
 #    call change_scene("house_bedroom_mc", False, False)
 #    $ add_hook("enter_scene", "ep15_quests9_morning", scene="house_bedroom_mc_onbed")
 #    call change_scene("house_bedroom_mc_onbed", "Fade_long", False)
@@ -309,60 +322,6 @@ label ep15_quests8_sarah_gym:
     call refresh_scene_fade_long()
     return False
 
-
-label ep15_quests9_morning_daisy:
-    if mlsBardiFamilyV4Daisy1 > 0:
-        $ autorun_to_object("ep15_quests9_morning_daisy_call", scene="house_bedroom_mc")
-        $ remove_hook()
-    return
-
-label ep15_quests9_morning_daisy_call:
-    $ add_hook("daisy_call_event2", "ep15_quests9_morning_daisy_init2", scene="events", once=True, label="daisy_init2")
-    $ daisyCallStage = 2
-    $ phone_incoming_call("Daisy")
-    return
-
-label ep15_quests9_morning_daisy_init2: # инитим Дейзи после звонка
-    $ add_hook("Teleport_LivingRoom", "ep15_quests9_daisy3", scene="daisy_street", label="daisy2")
-    $ questHelp("work_9")
-    $ set_object_follow_way("daisy_street", merge=True)
-
-    return
-
-label ep15_quests9_daisy3: # заходим в дом
-    if day_time_idx < 2:
-        if ep15_quests9_daisy3_Flag == True:
-            call ep05_dialogues2_family_daisy_2a()
-            call refresh_scene_fade()
-            return False
-
-        call ep05_dialogues2_family_daisy_2()
-        if _return == False:
-            call refresh_scene_fade()
-            return False
-        if mlsBardiFamilyV4Daisy2 == day:
-            call changeDayTime("evening")
-        $ ep15_quests9_daisy3_Flag = True
-        $ questHelp("work_9", True)
-        $ questHelp("work_10")
-        $ add_hook("Bed", "ep15_quests9_bed_skip_evening", scene="house_bedroom_mc", label=["evening_time_temp", "daisy_evening"])
-
-        call refresh_scene_fade()
-        return False
-
-    # вечер
-    if ep15_quests9_daisy3_refuse_day == day:
-        call ep05_dialogues2_family_daisy_3a()
-        return False
-    $ clear_object_follow_all()
-    $ remove_hook(label="daisy_evening")
-    $ questHelp("work_10", True)
-    call ep05_dialogues2_family_daisy_3()
-    if _return == False:
-        $ ep15_quests9_daisy3_refuse_day = day
-    call refresh_scene_fade()
-
-    return False
 
 label ep15_quests9_bed_skip_evening: # ждать до вечера
     if day_time_idx >= 2:
@@ -460,6 +419,53 @@ label ep15_quests10_sister3_Olivia_phone: #
     if phone_check_chat("cynthia_chat5") == False:
         $ phone_incoming_call("Cynthia")
     $ remove_hook(label="sisters3_phone")
+    return
+
+label ep15_quests11_sunday_morning: # утро воскресения
+    $ autorun_to_object("ep05_dialogues3_work_daisy_1", scene="house_bedroom_mc_onbed")
+#    call ep05_dialogues3_work_daisy_1()
+    $ miniMapHouseGenerate_mode = 1
+    $ add_hook("sleep", "ep15_quests13_sleep", scene="global", label="ep15_end")
+    call ep15_quests12_init_sophie()
+    music Little_Tomcat
+    call refresh_scene_fade_long()
+    return
+
+
+label ep15_quests12_init_sophie: # проверка на Софи
+    if ep15_quests12_init_sophie_flag == True:
+        return
+    if mlsBardiFamilyV4Sophie2 > 0 and mlsBardiFamilyV4Sophie3 > 0 and mlsBardiFamilyV4Olivia1 > 0:
+        $ ep15_quests12_init_sophie_flag = True
+        $ add_hook("before_open", "ep15_quests12_sophie1", scene="house_floor1", label="sophie_evening1")
+        $ add_hook("before_open", "ep15_quests12_sophie2_kitchen", scene="house_kitchen", label="sophie_evening1")
+        $ add_hook("Bed", "ep05_dialogues7_family_sophie_1a", scene="house_bedroom_mc", label="sophie_evening1")
+        $ questHelp("house_34")
+    return
+
+label ep15_quests12_sophie1: # before_open
+    if day_time_idx >= 2:
+        $ move_object("Sophie", "house_kitchen")
+        $ landLordRoomDoorLocked = False
+    return
+
+
+label ep15_quests12_sophie2_kitchen: #
+    if day_time_idx >= 2:
+        $ remove_hook(label="sophie_evening1")
+        call ep05_dialogues7_family_sophie_1()
+        call changeDayTime("night")
+        $ move_object("Sophie", "house_bedroom_landlord")
+        $ landLordRoomDoorLocked = False
+        $ move_object("Sophie", "house_bedroom_landlord")
+        $ questHelp("house_34", True)
+        call change_scene("house_floor2", "Fade_long")
+        call refresh_scene_fade_long()
+        return False
+    return
+
+label ep15_quests13_sleep:
+    jump end_update
     return
 
 

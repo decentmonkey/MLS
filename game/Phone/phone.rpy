@@ -150,6 +150,9 @@ label phone_call_contact:
             return
 
     if obj_name == "Daisy":
+        if daisyCallStage > 2:
+            call expression "daisy_chat" + str(daisyCallStage)
+            return
         if daisyCallStage == 2:
             call daisy_chat2()
             return

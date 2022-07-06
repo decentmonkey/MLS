@@ -41,4 +41,37 @@ label returnHomeButton_step3:
         $ remove_hook(label="return_home_process")
         return
     call change_scene("house_bedroom_mc", "Fade_long") from _rcall_change_scene_3
+    $ remove_hook(label="return_home_process")
+    return
+
+
+
+label minimapTeleportHouse(target_scene_name):
+    
+    $ teleport_path = find_scene_path(scene_name, target_scene_name)
+    if teleport_path == False:
+        $ print "can't find path to scene"
+        sound click_denied
+        return
+
+    call process_change_map_location("HOUSE")
+    $ returnHomeInProcess = True
+    $ returnHomeTick = pause_enter
+    $ scene_refresh_flag = True
+    $ show_scene_loop_flag = True
+    scene black
+    with diss
+    call minimapTeleportHouse_step()
+    return
+
+
+label minimapTeleportHouse_step():
+    if returnHomeTick != pause_enter:
+        $ remove_hook(label="teleport_home_process")
+        return
+    if len(teleport_path) > 1:
+        if object_follow_array[scene_name].has_key(teleport_path[1]):
+            $ add_hook("before_open", "minimapTeleportHouse_step", scene=teleport_path[1], label="teleport_home_process", priority = -1, once=True)
+            $ teleport_path.pop(0)
+            call change_scene(teleport_path[0], "Fade_long")
     return

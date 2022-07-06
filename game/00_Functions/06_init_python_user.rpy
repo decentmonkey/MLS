@@ -80,6 +80,7 @@ label changeDayTime(new_day_time):
     if day_time_idx > 3:
         $ day_time_idx = 0
         $ day += 1
+        $ week_day = (day)%7
         if week_day == 0:
             $ week_day = 7
         if week_day == 6:
@@ -95,6 +96,7 @@ label changeDayTime(new_day_time):
     if day_time_idx > 3:
         $ day_time_idx = 0
         $ day += 1
+        $ week_day = (day)%7
         if week_day == 0:
             $ week_day = 7
         if week_day == 6:
@@ -110,6 +112,7 @@ label changeDayTime(new_day_time):
     if day_time_idx > 3:
         $ day_time_idx = 0
         $ day += 1
+        $ week_day = (day)%7
         if week_day == 0:
             $ week_day = 7
         if week_day == 6:

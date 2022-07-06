@@ -14,6 +14,8 @@ default miniMapHousePreset = "default"
 default minimapBettyFloor2Enabled = False
 default minimapJuliaGenerateEnabled = False
 
+default miniMapHouseGenerate_mode = 0
+
 label miniMapOpen:
     hide screen hud_minimap
     sound metal_slide
@@ -34,10 +36,16 @@ label miniMapHouseGenerate:
     $ miniMapData = []
     if miniMapHousePreset == "default":
         if owner == "Bardie":
-            $ miniMapData.append({"name":"House_Bedroom_MC", "caption":t_("МОЯ КОМНАТА"), "img":"House_Bedroom_MC_Map", "teleport_scene":"house_bedroom_mc", "teleport_type":"scene"})
-            $ miniMapData.append({"name":"Floor2", "caption":t_("ВТОРОЙ ЭТАЖ"), "img":"House_Floor2_Map", "teleport_scene":"house_floor2", "teleport_type":"scene"})
-            $ miniMapData.append({"name":"Floor1", "caption":t_("ПЕРВЫЙ ЭТАЖ"), "img":"House_Floor1_Map", "teleport_scene":"house_floor1", "teleport_type":"scene"})
-            $ miniMapData.append({"name":"House_Street", "caption":t_("ДВОР ДОМА"), "img":"House_Street_Map", "teleport_scene":"house_street", "teleport_type":"scene"})
+            if miniMapHouseGenerate_mode == 1:
+                $ miniMapData.append({"name":"House_Bedroom_MC", "caption":t_("МОЯ КОМНАТА"), "img":"House_Bedroom_MC_Map", "teleport_scene":"house_bedroom_mc", "teleport_type":"function", "function_name" : "minimapTeleportHouse"})
+                $ miniMapData.append({"name":"Floor2", "caption":t_("ВТОРОЙ ЭТАЖ"), "img":"House_Floor2_Map", "teleport_scene":"house_floor2", "teleport_type":"function", "function_name" : "minimapTeleportHouse"})
+                $ miniMapData.append({"name":"Floor1", "caption":t_("ПЕРВЫЙ ЭТАЖ"), "img":"House_Floor1_Map", "teleport_scene":"house_floor1", "teleport_type":"function", "function_name" : "minimapTeleportHouse"})
+                $ miniMapData.append({"name":"House_Street", "caption":t_("ДВОР ДОМА"), "img":"House_Street_Map", "teleport_scene":"house_street", "teleport_type":"function", "function_name" : "minimapTeleportHouse"})
+            if miniMapHouseGenerate_mode == 0:
+                $ miniMapData.append({"name":"House_Bedroom_MC", "caption":t_("МОЯ КОМНАТА"), "img":"House_Bedroom_MC_Map", "teleport_scene":"house_bedroom_mc", "teleport_type":"scene"})
+                $ miniMapData.append({"name":"Floor2", "caption":t_("ВТОРОЙ ЭТАЖ"), "img":"House_Floor2_Map", "teleport_scene":"house_floor2", "teleport_type":"scene"})
+                $ miniMapData.append({"name":"Floor1", "caption":t_("ПЕРВЫЙ ЭТАЖ"), "img":"House_Floor1_Map", "teleport_scene":"house_floor1", "teleport_type":"scene"})
+                $ miniMapData.append({"name":"House_Street", "caption":t_("ДВОР ДОМА"), "img":"House_Street_Map", "teleport_scene":"house_street", "teleport_type":"scene"})
     return
 
 label miniMapCOLLEGEGenerate:
@@ -93,7 +101,7 @@ label miniMapHouseGenerateTeleport(name, minimapCell):
     if _return != False:
         if minimapCell["teleport_type"] == "function":
             $ minimapTeleportButtonName = name
-            call expression minimapCell["teleport_scene"] from _call_expression_11
+            call expression minimapCell["function_name"] pass (minimapCell["teleport_scene"]) from _call_expression_11
         if minimapCell["teleport_type"] == "scene":
             call change_scene(minimapCell["teleport_scene"]) from _call_change_scene_150
     $ scene_refresh_flag = True

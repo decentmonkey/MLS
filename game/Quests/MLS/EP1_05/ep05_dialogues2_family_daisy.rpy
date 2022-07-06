@@ -1064,6 +1064,9 @@ label ep05_dialogues2_family_daisy_3:
     sound drkanje5
     imgd 902566
     w
+    menu:
+        "Насадить Дейзи на свой член.":
+            pass
     sound vjuh3
     img 911935 vpunch
     sound2 fear2
@@ -1146,7 +1149,13 @@ label ep05_dialogues2_family_daisy_3:
     bardi "Весь сегодняшний вечер!"
     sound drkanje5
     imgd 911938
+
     bardi "Ееее!.."
+    ## video
+    playvideo "video/v_MC_Daisy_blowjob_1_25.mkv" "v_MC_Whore_WCMall_blowjob_1_25" 12.0 1.0 0.2 True fade
+    wclean
+    stopvideo
+
     sound drkanje5
     imgd 911937
     w
@@ -1239,6 +1248,7 @@ label ep05_dialogues2_family_daisy_4:
     sound2 vjuh3
     imgd 911970
     w
+    return
     # Сообщение от Дейзи. Барди открывает чат с ней. Содержимое чата ниже.
     ## chat daisy
     ## не рендерить
@@ -1252,10 +1262,11 @@ label ep05_dialogues2_family_daisy_4:
     bardi "Все окей, Дейзи."
     daisy "Когда все лягут спать, я скину тебе кое-что особенное. Так что жди :)"
     bardi "Окей. Жду :)"
+label ep05_dialogues2_family_daisy_4b:
     # Барди откладывает телефон и ложится спать.
     music Jail_Clock
     imgfl 900143
-    bardi_t "Чтобы потом снова мучаться со стояком? Ну нет!"
+#    bardi_t "Чтобы потом снова мучаться со стояком? Ну нет!"
     bardi_t "Я спать."
     imgf 900045
     w
