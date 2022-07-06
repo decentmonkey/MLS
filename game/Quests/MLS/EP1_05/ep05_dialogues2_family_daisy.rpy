@@ -627,7 +627,7 @@ label ep05_dialogues2_family_daisy_3:
             w
 
             ## video
-            playvideo "video/v_MC_Daisy_fingers_1_25.mkv" "v_MC_Whore_WCMall_handjob_1_25" 0.0 1.0 0.2 True fade
+            playvideo "video/v_MC_Daisy_fingers_1_25.mkv" "v_MC_Daisy_fingers_1_25" 0.0 1.0 0.2 True fade
             wclean
             daisy "Не вздумай останавливаться, [mcname]!"
             wclean
@@ -691,7 +691,7 @@ label ep05_dialogues2_family_daisy_3:
     bardi "Ох, черт! Я еле сдерживаюсь!.."
 
     ## video
-    playvideo "video/v_MC_Daisy_dildo_1_25.mkv" "v_MC_Whore_WCMall_sex_1_25" 0.0 1.0 0.2 True fade
+    playvideo "video/v_MC_Daisy_dildo_1_25.mkv" "v_MC_Daisy_dildo_1_25" 0.0 1.0 0.2 True fade
     wclean
     daisy "Прошу! Только не останавливайся!"
     wclean
@@ -1092,7 +1092,7 @@ label ep05_dialogues2_family_daisy_3:
     w
 
     ## video
-    playvideo "video/v_MC_Daisy_blowjob_1_25.mkv" "v_MC_Whore_WCMall_blowjob_1_25" 0.0 1.0 0.2 True fade
+    playvideo "video/v_MC_Daisy_blowjob_1_25.mkv" "v_MC_Daisy_blowjob_1_25" 0.0 1.0 0.2 True fade
     wclean
     daisy "Мпфф!.."
     wclean
@@ -1152,7 +1152,7 @@ label ep05_dialogues2_family_daisy_3:
 
     bardi "Ееее!.."
     ## video
-    playvideo "video/v_MC_Daisy_blowjob_1_25.mkv" "v_MC_Whore_WCMall_blowjob_1_25" 12.0 1.0 0.2 True fade
+    playvideo "video/v_MC_Daisy_blowjob_1_25.mkv" "v_MC_Daisy_blowjob_1_25" 12.0 1.0 0.2 True fade
     wclean
     stopvideo
 

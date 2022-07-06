@@ -697,7 +697,7 @@ label ep05_dialogues3_work_daisy_3:
                 w
 
                 ## video
-                playvideo "video/v_MC_Client_Carrie_sex_1_25.mkv" "v_MC_Whore_WCMall_sex_1_25" 0.0 1.0 0.2 True fade
+                playvideo "video/v_MC_Client_Carrie_sex_1_25.mkv" "v_MC_Client_Carrie_sex_1_25" 0.0 1.0 0.2 True fade
                 wclean
                 client_carrie "Дааа!"
                 wclean
@@ -842,7 +842,7 @@ label ep05_dialogues3_work_daisy_3:
             w
 
             ## video
-            playvideo "video/v_MC_Client_Carrie_anal_1_25.mkv" "v_MC_Whore_WCMall_anal_1_25" 0.0 1.0 0.2 True fade
+            playvideo "video/v_MC_Client_Carrie_anal_1_25.mkv" "v_MC_Client_Carrie_anal_1_25" 0.0 1.0 0.2 True fade
             wclean
             bardi "О ееее!.. Узенько же тут у тебя..."
             wclean

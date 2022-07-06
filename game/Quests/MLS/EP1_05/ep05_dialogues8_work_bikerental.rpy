@@ -491,7 +491,7 @@ label ep05_dialogues8_work_bikerental_1:
                     bardi "О, дааа..."
 
                     ## video
-                    playvideo "video/v_MC_punkEmma_blowjob_1_25.mkv" "v_MC_Whore_WCMall_blowjob_1_25" 0.0 1.0 0.2 True fade
+                    playvideo "video/v_MC_punkEmma_blowjob_1_25.mkv" "v_MC_punkEmma_blowjob_1_25" 0.0 1.0 0.2 True fade
                     wclean
                     bardi "Ого! Даже так?!"
                     wclean
