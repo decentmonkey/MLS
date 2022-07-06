@@ -46,14 +46,14 @@ label phone_before_call_contact:
 label phone_call_contact:
     if obj_name == "Sarah":
         if sarahCallStage == 2:
-            call sarah_chat2()
+            call sarah_chat2() from _rcall_sarah_chat2
             return
         if sarahCallStage == 1:
-            call sarah_chat1()
+            call sarah_chat1() from _rcall_sarah_chat1
             return
     if obj_name == "Emily":
         if emilyCallStage == 6:
-            call emily_chat6()
+            call emily_chat6() from _rcall_emily_chat6
             return
         if emilyCallStage == 3:
             $ ep14_call_emily_flag = True
@@ -97,18 +97,18 @@ label phone_call_contact:
 
     if obj_name == "Olivia":
         if oliviaCallStage == 4:
-            call olivia_chat4()
+            call olivia_chat4() from _rcall_olivia_chat4
             return
         if oliviaCallStage == 3:
-            call olivia_chat3()
+            call olivia_chat3() from _rcall_olivia_chat3
             return
         if oliviaCallStage == 2:
-            call olivia_chat2()
+            call olivia_chat2() from _rcall_olivia_chat2
             return
 
     if obj_name == "Cynthia":
         if cynthiaCallStage == 5:
-            call cynthia_chat5() 
+            call cynthia_chat5()  from _rcall_cynthia_chat5
             return
         if cynthiaCallStage == 3:
             call cynthia_chat4() from _rcall_cynthia_chat4
@@ -126,7 +126,7 @@ label phone_call_contact:
         
     if obj_name == "Sean":
         if seanCallStage == 7:
-            call sean_chat7()
+            call sean_chat7() from _rcall_sean_chat7
             return
         if seanCallStage == 5:
             call sean_chat6() from _rcall_sean_chat6
@@ -151,10 +151,10 @@ label phone_call_contact:
 
     if obj_name == "Daisy":
         if daisyCallStage > 2:
-            call expression "daisy_chat" + str(daisyCallStage)
+            call expression "daisy_chat" + str(daisyCallStage) from _rcall_expression "daisy_chat" + str
             return
         if daisyCallStage == 2:
-            call daisy_chat2()
+            call daisy_chat2() from _rcall_daisy_chat2
             return
         if daisyCallStage == 1:
             call daisy_chat1() from _rcall_daisy_chat1

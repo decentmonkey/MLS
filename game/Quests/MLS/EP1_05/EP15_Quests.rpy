@@ -16,17 +16,17 @@ label ep15_update_init:
     python:
         set_room_parent("house_bedroom_mc_onbed", "house_bedroom_mc")
 
-    call object_follow_array_init()
+    call object_follow_array_init() from _rcall_object_follow_array_init
     $ questHelp("house_29", True)
-    call ep05_dialogues4_college_emily_1()
+    call ep05_dialogues4_college_emily_1() from _rcall_ep05_dialogues4_college_emily_1
 
-    call locations_init2()
-    call house_bedroom_mc_onbed_init2()
+    call locations_init2() from _rcall_locations_init2_1
+    call house_bedroom_mc_onbed_init2() from _rcall_house_bedroom_mc_onbed_init2
 
     $ house_bedroom_mc_onbed_suffix = 2
-    call change_scene("house_bedroom_mc_onbed")
-    call process_change_map_location("HOUSE")
-    call changeDayTime("morning")
+    call change_scene("house_bedroom_mc_onbed") from _rcall_change_scene_151
+    call process_change_map_location("HOUSE") from _rcall_process_change_map_location_7
+    call changeDayTime("morning") from _rcall_changeDayTime_38
     $ questHelp("house_30")
     $ phone_focus_icon(False)
     $ map_enabled = True
@@ -35,7 +35,7 @@ label ep15_update_init:
 
     $ miniMapEnabledOnly = ["none"]
     $ add_hook("Teleport_Bedroom_MC", "ep05_dialogues4_college_emily_1a", scene="house_bedroom_mc_onbed", label="morning_block")
-    call phone_instagram3b()
+    call phone_instagram3b() from _rcall_phone_instagram3b
     $ add_hook("instagram", "ep15_quests1_emily_instagram", scene="phone")
 
     python:
@@ -57,7 +57,7 @@ label ep15_quests1_emily_instagram:
         return
     $ remove_hook()
     $ phone_instagram_initial_position = 1.0
-    call ep05_dialogues4_college_emily_2()
+    call ep05_dialogues4_college_emily_2() from _rcall_ep05_dialogues4_college_emily_2
     $ questHelp("house_30", True)
     $ remove_hook(label="morning_block")
     $ add_hook("phone_close", "ep15_quests1_emily_instagram_close", scene="phone")
@@ -71,7 +71,7 @@ label ep15_quests1_emily_instagram_close:
     $ miniMapEnabledOnly = []
     $ questHelp("college_32")
 
-    call change_scene("house_bedroom_mc", "Fade_long")
+    call change_scene("house_bedroom_mc", "Fade_long") from _rcall_change_scene_152
     $ set_object_follow_way("college_coridor1", from_everywhere=True)
 #    $ miniMapDisabled["COLLEGE"] = []
     $ autorun_to_object("ep05_dialogues4_college_emily_3", scene="college_street")
@@ -80,28 +80,28 @@ label ep15_quests1_emily_instagram_close:
     $ focus_map("Teleport_COLLEGE", "ep04_dialogues1_family_sophie_1b")
 
     sound2 put_dress
-    call refresh_scene_fade_long()
+    call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_23
     return
 
 label ep15_quests2_enter_college:
     $ remove_hook()
     $ questHelp("college_32", True)
-    call ep05_dialogues4_college_emily_4()
+    call ep05_dialogues4_college_emily_4() from _rcall_ep05_dialogues4_college_emily_4
 
     $ unfocus_map()
     $ add_hook("Teleport_Coridor1", "ep01_dialogues2_day1_family_1_12", scene="college_street", label="college_block", quest="day8") #Мне пока там нечего делать.
-    call changeDayTime("evening")
+    call changeDayTime("evening") from _rcall_changeDayTime_39
 
-    call ep05_dialogues4_college_emily_5() # сцена с Шоном и Софи (запускается автоматически сразу после предыдущего лейбла)
+    call ep05_dialogues4_college_emily_5() from _rcall_ep05_dialogues4_college_emily_5 # сцена с Шоном и Софи (запускается автоматически сразу после предыдущего лейбла)
     $ questHelpDesc("sean_desc3")
     $ questHelpDesc("college_desc14", False)
 
     $ remove_hook(quest="day8")
 
-    call changeDayTime("morning")
+    call changeDayTime("morning") from _rcall_changeDayTime_40
 
-    call ep05_dialogues4_college_emily_6()
-    call ep05_dialogues1_college_sarah_1()
+    call ep05_dialogues4_college_emily_6() from _rcall_ep05_dialogues4_college_emily_6
+    call ep05_dialogues1_college_sarah_1() from _rcall_ep05_dialogues1_college_sarah_1
 
     $ seanCallStage = 7
     $ emilyCallStage = 6
@@ -120,12 +120,12 @@ label ep15_quests2_enter_college:
     $ autorun_to_object("ep15_quests3_morning", scene="house_bedroom_mc_onbed")
 
     $ house_bedroom_mc_onbed_suffix = 2
-    call change_scene("house_bedroom_mc_onbed", "Fade_long", False)
+    call change_scene("house_bedroom_mc_onbed", "Fade_long", False) from _rcall_change_scene_153
     return False
 
 label ep15_quests3_morning:
-    call ep05_dialogues1_college_sarah_1a()
-    call process_change_map_location("HOUSE")
+    call ep05_dialogues1_college_sarah_1a() from _rcall_ep05_dialogues1_college_sarah_1a
+    call process_change_map_location("HOUSE") from _rcall_process_change_map_location_8
 #    $ phone_focus_icon(True)
     $ set_object_follow_way("college_coridor1", from_everywhere=True)
     $ questHelp("college_33")
@@ -143,9 +143,9 @@ label ep15_quests3_morning:
 
 label ep15_quests3_morning2:
     pause 0.5
-    call change_scene("house_bedroom_mc", "Fade_long", "put_dress")
+    call change_scene("house_bedroom_mc", "Fade_long", "put_dress") from _rcall_change_scene_154
     sound2 put_dress
-    call refresh_scene_fade_long()
+    call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_24
     return
 
 #label ep15_quests3_morning2_emily_call:
@@ -159,7 +159,7 @@ label ep15_quests4_college:
     $ remove_hook()
     $ questHelp("college_33", True)
     $ questHelp("college_34", True)
-    call ep05_dialogues1_college_sarah_2() # клик на колледж, библиотека
+    call ep05_dialogues1_college_sarah_2() from _rcall_ep05_dialogues1_college_sarah_2 # клик на колледж, библиотека
 
     $ miniMapDisabled["COLLEGE"] = ["COLLEGE_Floor2", "COLLEGE_Floor3", "COLLEGE_Street"]
 
@@ -172,16 +172,16 @@ label ep15_quests4_college:
     $ questHelp("college_35")
     $ sarahAppearingDisabled = True
     $ set_object_follow_way("college_gym", from_everywhere=True)
-    call college_gym_init2()
+    call college_gym_init2() from _rcall_college_gym_init2
 #    $ add_hook("Sarah", "ep15_quests4_college_sarah", scene="college_gym", quest="day9")
     $ add_hook("Teleport_Gym", "ep15_quests4_college_sarah", scene="college_coridor2", quest="day9")
-    call change_scene("college_coridor2", "Fade_long")
+    call change_scene("college_coridor2", "Fade_long") from _rcall_change_scene_155
     return False
 
 label ep15_quests4_college_sarah:
-    call ep05_dialogues1_college_sarah_3()
+    call ep05_dialogues1_college_sarah_3() from _rcall_ep05_dialogues1_college_sarah_3
     $ questHelp("college_35", True)
-    call changeDayTime("day")
+    call changeDayTime("day") from _rcall_changeDayTime_41
     $ autorun_to_object("ep05_dialogues1_college_sarah_2a", scene="college_gym")
     $ set_object_follow_way("college_street", from_everywhere=True)
     $ move_object("Sarah", "empty")
@@ -198,12 +198,12 @@ label ep15_quests4_college_after:
     $ add_hook("Teleport_Coridor1", "ep01_dialogues2_day1_family_1_12", scene="college_street", label="college_block", quest="day9") #Мне пока там нечего делать.
     $ miniMapDisabled["COLLEGE"] = ["COLLEGE_Floor1", "COLLEGE_Floor2", "COLLEGE_Floor3"]
     $ add_hook("enter_scene", "ep15_quests4_college_after_street", scene="college_street", quest="day9", once=True)
-    call change_scene("college_street", "Fade_long")
+    call change_scene("college_street", "Fade_long") from _rcall_change_scene_156
 
     return False
 
 label ep15_quests4_college_after_street:
-    call ep05_dialogues1_college_sarah_2b()
+    call ep05_dialogues1_college_sarah_2b() from _rcall_ep05_dialogues1_college_sarah_2b
     $ remove_hook(label="bikerent_work")
     $ add_hook("FatherFriend", "ep15_quests5_bikerent", scene="beach_park", label="bikerent_work")
     if questHelpGetStatus("work_7") == 0:
@@ -226,29 +226,29 @@ label ep15_quests5_bikerent:
         $ ep15_bike_rental_scene = day
         if ep14_bikerent_work_count < 3:
             $ ep04_dialogues8_work_bikerental_2_noevening_day = day
-            call ep04_dialogues8_work_bikerental_2()
-        call ep05_dialogues8_work_bikerental_1()
+            call ep04_dialogues8_work_bikerental_2() from _rcall_ep04_dialogues8_work_bikerental_2_1
+        call ep05_dialogues8_work_bikerental_1() from _rcall_ep05_dialogues8_work_bikerental_1
         $ ep14_bikerent_work_count += 1
         $ questHelp("work_8", True)
 
         $ ep14_bikerent_work_lastday = day
-        call process_hooks("bike_rental_end", "global")
+        call process_hooks("bike_rental_end", "global") from _rcall_process_hooks_60
         if _return == False:
             return False
-        call changeDayTime("evening")
-        call refresh_scene_fade()
-        call process_hooks("bike_rental_end_evening", "global")
+        call changeDayTime("evening") from _rcall_changeDayTime_42
+        call refresh_scene_fade() from _rcall_refresh_scene_fade_40
+        call process_hooks("bike_rental_end_evening", "global") from _rcall_process_hooks_61
         return False
 
 
-    call ep04_dialogues8_work_bikerental_2()
+    call ep04_dialogues8_work_bikerental_2() from _rcall_ep04_dialogues8_work_bikerental_2_2
     $ ep14_bikerent_work_count += 1
-    call process_hooks("bike_rental_end", "global")
+    call process_hooks("bike_rental_end", "global") from _rcall_process_hooks_62
     if _return == False:
         return False
-    call changeDayTime("evening")
-    call refresh_scene_fade()
-    call process_hooks("bike_rental_end_evening", "global")
+    call changeDayTime("evening") from _rcall_changeDayTime_43
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_41
+    call process_hooks("bike_rental_end_evening", "global") from _rcall_process_hooks_63
     return False
 
     
@@ -266,7 +266,7 @@ label ep15_quests6_bikerent_after:
     return
 
 label ep15_quests7_bedroom_mc:
-    call changeDayTime("night")
+    call changeDayTime("night") from _rcall_changeDayTime_44
     $ add_hook("Bed", "ep15_quests7_bed", scene="house_bedroom_mc", quest="day9")
     return
 
@@ -275,7 +275,7 @@ label ep15_quests7_bed:
     fadeblack 1.0
     $ house_bedroom_mc_onbed_suffix = 2
     $ add_hook("enter_scene", "ep15_quests7_bed2", scene="house_bedroom_mc_onbed", quest="day9", once=True)
-    call change_scene("house_bedroom_mc_onbed", "Fade_long", False)
+    call change_scene("house_bedroom_mc_onbed", "Fade_long", False) from _rcall_change_scene_157
     return False
 
 label ep15_quests7_bed2:
@@ -290,19 +290,19 @@ label ep15_quests7_bed3:
     pause 0.5
     $ sarahCallStage = 2
     $ add_hook("Sarah", "ep15_quests8_sarah_gym", scene="college_gym", label="sarah_gym_regular")
-    call ep03_dialogues3_family_evening_4() #регулярный сон
+    call ep03_dialogues3_family_evening_4() from _rcall_ep03_dialogues3_family_evening_4_3 #регулярный сон
     $ remove_hook(quest="day9")
     $ add_hook("change_day_time", "ep15_quests9_morning_daisy", scene="global", label="check_daisy_call2")
     $ clear_object_follow_all()
 
     $ houseLifeStageSub1 = 1
-    call house_floor2_init2() # инитим сестер
+    call house_floor2_init2() from _rcall_house_floor2_init2 # инитим сестер
     $ add_hook("Sister1", "ep15_quests10_sister1", scene="house_floor2", label="sisters1")
     $ add_hook("Sister2", "ep15_quests10_sister1", scene="house_floor2", label="sisters1")
     $ add_hook("Teleport_Sister1", "ep15_quests10_sister1", scene="house_floor2", label="sisters1")
     $ add_hook("Teleport_Sister2", "ep15_quests10_sister1", scene="house_floor2", label="sisters1")
 
-    call changeDayTime("morning")
+    call changeDayTime("morning") from _rcall_changeDayTime_45
     fadeblack 1.5
     $ set_room_parent("house_bedroom_mc_onbed", "house_bedroom_mc")
     $ set_object_follow_way("house_floor2", merge=True)
@@ -324,29 +324,29 @@ label ep15_quests7_bed3:
 #    call change_scene("house_bedroom_mc", False, False)
 #    $ add_hook("enter_scene", "ep15_quests9_morning", scene="house_bedroom_mc_onbed")
 #    call change_scene("house_bedroom_mc_onbed", "Fade_long", False)
-    call refresh_scene_fade_long()
+    call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_25
     return
 
 label ep15_quests8_sarah_gym:
-    call ep05_dialogues1_college_sarah_5()
-    call refresh_scene_fade_long()
+    call ep05_dialogues1_college_sarah_5() from _rcall_ep05_dialogues1_college_sarah_5
+    call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_26
     return False
 
 
 label ep15_quests9_bed_skip_evening: # ждать до вечера
     if day_time_idx >= 2:
         return
-    call ep05_dialogues2_family_daisy_3b()
+    call ep05_dialogues2_family_daisy_3b() from _rcall_ep05_dialogues2_family_daisy_3b
     if _return == 1:
         $ house_bedroom_mc_onbed_suffix = 1
-        call changeDayTime("evening")
-        call change_scene("house_bedroom_mc_onbed", "Fade_long", False)
+        call changeDayTime("evening") from _rcall_changeDayTime_46
+        call change_scene("house_bedroom_mc_onbed", "Fade_long", False) from _rcall_change_scene_158
     return False
 
 label ep15_quests10_sister1: # сестры
     if get_active_objects("Sister2", scene="house_floor2") != False and get_active_objects("Sister1", scene="house_floor2") != False:
         $ remove_hook(label="sisters1")
-        call ep05_dialogues5_family_olivia_1()
+        call ep05_dialogues5_family_olivia_1() from _rcall_ep05_dialogues5_family_olivia_1
         $ questHelp("house_31", True)
         $ questHelp("house_32")
 
@@ -359,7 +359,7 @@ label ep15_quests10_sister1: # сестры
         $ add_hook("enter_scene", "ep15_quests10_sister1a", scene="house_bedroom_mc", label=["sisters2_phone", "sisters2"])
         $ add_hook("enter_scene", "ep15_quests10_sister1a", scene="house_street", label=["sisters2_phone", "sisters2"])
         $ set_object_follow_way("house_sister2")
-        call refresh_scene_fade_long()
+        call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_27
         return False
     return
 label ep15_quests10_sister1a: # сестры
@@ -372,10 +372,10 @@ label ep15_quests10_sister2_Olivia: #
         return
     if day_time_idx >= 2:
         $ sister1RoomDoorLocked = True
-        call ep12_quests6_gymclosed()
+        call ep12_quests6_gymclosed() from _rcall_ep12_quests6_gymclosed
         return False
-    call ep05_dialogues5_family_olivia_2()
-    call refresh_scene_fade()
+    call ep05_dialogues5_family_olivia_2() from _rcall_ep05_dialogues5_family_olivia_2
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_42
     return False
 
 label ep15_quests10_sister2_Cynthia: #
@@ -383,10 +383,10 @@ label ep15_quests10_sister2_Cynthia: #
         return
     if day_time_idx >= 2:
         $ sister2RoomDoorLocked = True
-        call ep12_quests6_gymclosed()
+        call ep12_quests6_gymclosed() from _rcall_ep12_quests6_gymclosed_1
         return False
     $ remove_hook(label="sisters2")
-    call ep05_dialogues6_family_cynthia_1()
+    call ep05_dialogues6_family_cynthia_1() from _rcall_ep05_dialogues6_family_cynthia_1
     $ questHelp("house_32", True)
     $ floor2Sister1Suffix = 1
     $ houseLifeStageSub1 = 3
@@ -397,12 +397,12 @@ label ep15_quests10_sister2_Cynthia: #
     $ questHelp("house_33")
     $ move_object("Sister1", "house_floor2")
     $ clear_object_follow_all()
-    call refresh_scene_fade()
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_43
     return False
 
 label ep15_quests10_sister3_Olivia: #
     $ remove_hook(label="sisters3")
-    call ep05_dialogues5_family_olivia_3()
+    call ep05_dialogues5_family_olivia_3() from _rcall_ep05_dialogues5_family_olivia_3
     $ questHelp("house_33", True)
     $ move_object("Sister1", "house_sister1")
     if questHelpGetStatus("work_9") == 0:
@@ -418,7 +418,7 @@ label ep15_quests10_sister3_Olivia: #
     $ questHelpDesc("house_desc7", False)
     $ questHelpDesc("house_desc9", False)
 
-    call refresh_scene_fade()
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_44
     return False
 
 label ep15_quests10_sister3_Olivia_phone: #
@@ -440,9 +440,9 @@ label ep15_quests11_sunday_morning: # утро воскресения
     $ miniMapHouseGenerate_mode = 1
     $ add_hook("before_sleep_actions", "ep15_quests13_sleep", scene="global", label="ep15_end")
     $ remove_hook(label="house_block")
-    call ep15_quests12_init_sophie()
+    call ep15_quests12_init_sophie() from _rcall_ep15_quests12_init_sophie
     music Little_Tomcat
-    call refresh_scene_fade_long()
+    call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_28
     return
 
 
@@ -469,23 +469,23 @@ label ep15_quests12_sophie1: # before_open
 label ep15_quests12_sophie2_kitchen: #
     if day_time_idx >= 2:
         $ remove_hook(label="sophie_evening1")
-        call ep05_dialogues7_family_sophie_1()
-        call changeDayTime("night")
+        call ep05_dialogues7_family_sophie_1() from _rcall_ep05_dialogues7_family_sophie_1
+        call changeDayTime("night") from _rcall_changeDayTime_47
         $ landLordRoomDoorLocked = False
         $ questHelp("house_34", True)
-        call house_bedroom_landlord_init()
+        call house_bedroom_landlord_init() from _rcall_house_bedroom_landlord_init
         $ move_object("Henry", "empty")
         $ move_object("Sophie", "house_bedroom_landlord")
         $ add_hook("Sophie", "ep15_quests12_sophie3_sleep", scene="house_bedroom_landlord", label="evening_time_temp")
         $ houseBedroomLandlordSophieSuffix = "Sleep1"
-        call change_scene("house_floor2", "Fade_long")
-        call refresh_scene_fade_long()
+        call change_scene("house_floor2", "Fade_long") from _rcall_change_scene_159
+        call refresh_scene_fade_long() from _rcall_refresh_scene_fade_long_30
         return False
     return
 
 label ep15_quests12_sophie3_sleep: #
-    call ep05_dialogues7_family_sophie_1b()
-    call refresh_scene_fade()
+    call ep05_dialogues7_family_sophie_1b() from _rcall_ep05_dialogues7_family_sophie_1b
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_45
     return
 
 label ep15_quests13_sleep:

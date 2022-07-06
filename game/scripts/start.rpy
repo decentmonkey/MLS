@@ -82,7 +82,7 @@ label start: #for blink here
     $ inventory = []
     $ owner = "Bardie"
     call game_init() from _rcall_game_init
-    call object_follow_array_init()
+    call object_follow_array_init() from _rcall_object_follow_array_init_1
 
     $ objectives_list = []
     $ map_objects = {

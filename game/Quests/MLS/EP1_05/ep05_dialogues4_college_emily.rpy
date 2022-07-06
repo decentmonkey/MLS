@@ -158,7 +158,7 @@ label ep05_dialogues4_college_emily_4:
     }
     menu:
         "Вмешаться.": # + Rabbit
-            call rrmeter(5, "ep05_dialogues4_college_emily_4(1)")
+            call rrmeter(5, "ep05_dialogues4_college_emily_4(1)") from _rcall_rrmeter_34
             # Эмили смотрит на Гарри.
             imgf 902985
             student_harry "Кто?!"
@@ -198,7 +198,7 @@ label ep05_dialogues4_college_emily_4:
             $ mlsBardiCollegeEmilyPhotoHarry2 = day # Барди вмешался в разговор Гарри и Эмили в холле колледжа
             pass
         "Стоять в стороне.": # + Rat
-            call rrmeter(-5, "ep05_dialogues4_college_emily_4(1)")
+            call rrmeter(-5, "ep05_dialogues4_college_emily_4(1)") from _rcall_rrmeter_35
             #img 902984
             bardi_t "Черт... Она говорила, что разберется с этим сама..."
             # Эмили смотрит на Гарри.
@@ -305,7 +305,7 @@ label ep05_dialogues4_college_emily_4:
     }
     menu:
         "Пойти с Гарри.":  # + Rabbit
-            call rrmeter(3, "ep05_dialogues4_college_emily_4(2)")
+            call rrmeter(3, "ep05_dialogues4_college_emily_4(2)") from _rcall_rrmeter_36
             $ mlsBardiCollegeEmilyPhotoHarry3 = day # Барди согласился выйти с Гарри, когда тот узнал, что на фотке с Эмили Барди
             # Эмили злая и напуганная, тычет в Гарри пальцем.
             imgd 903006
@@ -349,7 +349,7 @@ label ep05_dialogues4_college_emily_4:
             #student_harry "!!!"
             pass
         "Нет.":  # + Rat
-            call rrmeter(-3, "ep05_dialogues4_college_emily_4(2)")
+            call rrmeter(-3, "ep05_dialogues4_college_emily_4(2)") from _rcall_rrmeter_37
             # Эмили злая и напуганная, тычет в Гарри пальцем.
             imgd 903006
             student_emily "Эй! Не трогай его!"
@@ -1235,7 +1235,7 @@ label ep05_dialogues4_college_emily_4:
 label ep05_dialogues4_college_emily_5:
     scene black_screen
     with Dissolve(1)
-    call textonblack(t_("НЕКОТОРОЕ ВРЕМЯ СПУСТЯ..."))
+    call textonblack(t_("НЕКОТОРОЕ ВРЕМЯ СПУСТЯ...")) from _rcall_textonblack_15
     scene black_screen
     with Dissolve(1)
     music2 night_ambience
@@ -1554,7 +1554,7 @@ label ep05_dialogues4_college_emily_6:
     # Софи сидит перед ним, на кровати Барди.
     scene black_screen
     with Dissolve(1)
-    call textonblack(t_("ПЯТНИЦА"))
+    call textonblack(t_("ПЯТНИЦА")) from _rcall_textonblack_16
     scene black_screen
     fadeblack 2.0
     music Little_Tomcat

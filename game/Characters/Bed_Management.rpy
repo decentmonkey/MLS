@@ -24,37 +24,37 @@ label bed_management:
 
 label bed_sleep1:
     if day_time_idx < bed_sleep_time:
-        call ep01_dialogues2_day1_family_1_1()
+        call ep01_dialogues2_day1_family_1_1() from _rcall_ep01_dialogues2_day1_family_1_1
         return False
     $ house_bedroom_mc_onbed_suffix = 1
     $ add_hook("enter_scene", "bed_sleep1_bed", scene="house_bedroom_mc_onbed", label="get_sleep", once=True)
-    call change_scene("house_bedroom_mc_onbed", "Fade_long", "put_dress")
+    call change_scene("house_bedroom_mc_onbed", "Fade_long", "put_dress") from _rcall_change_scene_149
 
     return False
 
 label bed_sleep1_bed:
-    call process_hooks("before_sleep", "global")
+    call process_hooks("before_sleep", "global") from _rcall_process_hooks_55
     if _return == False:
         return
-    call ep01_dialogues2_day1_family_3b()
+    call ep01_dialogues2_day1_family_3b() from _rcall_ep01_dialogues2_day1_family_3b
     if _return == False:
         return
-    call process_hooks("before_sleep_actions", "global")
+    call process_hooks("before_sleep_actions", "global") from _rcall_process_hooks_56
     if _return != False:
-        call process_hooks("sleep", "global")
+        call process_hooks("sleep", "global") from _rcall_process_hooks_57
     return
 
 label bed_sleep1_bedsleep1:
-    call process_hooks("sleep", "global")
+    call process_hooks("sleep", "global") from _rcall_process_hooks_58
     return
 
 label bed_sleep1_bedsleep2:
     fadeblack 1.5
-    call changeDayTime("morning")
+    call changeDayTime("morning") from _rcall_changeDayTime_35
     $ house_bedroom_mc_onbed_suffix = 2
-    call process_hooks("after_sleep", "global")
+    call process_hooks("after_sleep", "global") from _rcall_process_hooks_59
     if _return == False:
         return
-    call refresh_scene_fade()
+    call refresh_scene_fade() from _rcall_refresh_scene_fade_39
     return
 

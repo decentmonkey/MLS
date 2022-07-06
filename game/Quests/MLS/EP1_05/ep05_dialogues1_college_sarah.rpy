@@ -582,7 +582,7 @@ label ep05_dialogues1_college_sarah_3:
             imgd 902900
             bardi "Могу лишь предположить, что тебе не следовало вместо тренировок..."
             bardi "Покупать за огромные бабки бесполезные курсы и есть все подряд?!"
-            call rrmeter(2, "ep05_dialogues1_college_sarah_3(1)")
+            call rrmeter(2, "ep05_dialogues1_college_sarah_3(1)") from _rcall_rrmeter_27
             imgd 902899
             student_sarah "Но..."
             pass
@@ -648,7 +648,7 @@ label ep05_dialogues1_college_sarah_3:
             sound step_stairs_short
             imgf 902919
             bardi "Помогу. От этого ведь и моя оценка зависит..."
-            call rrmeter(1, "ep05_dialogues1_college_sarah_3(2)")
+            call rrmeter(1, "ep05_dialogues1_college_sarah_3(2)") from _rcall_rrmeter_28
             pass
         "Сама успокоится.": # + Rat
             # Барди не пытается ее успокоить
@@ -658,7 +658,7 @@ label ep05_dialogues1_college_sarah_3:
             student_sarah "Ты поможешь мне, [mcname]?"
             imgd 902900
             bardi "Помогу. От этого ведь и моя оценка зависит..."
-            call rrmeter(-1, "ep05_dialogues1_college_sarah_3(2)")
+            call rrmeter(-1, "ep05_dialogues1_college_sarah_3(2)") from _rcall_rrmeter_29
             pass
     # Сара смотрит на барди заплаканными глазами.
     imgd 902914
@@ -730,7 +730,7 @@ label ep05_dialogues1_college_sarah_3:
             # Барди указывает рукой на Сару
             imgd 902928
             bardi "И вообще, выплевывай!"
-            call rrmeter(-3, "ep05_dialogues1_college_sarah_3(3)")
+            call rrmeter(-3, "ep05_dialogues1_college_sarah_3(3)") from _rcall_rrmeter_30
             # Сара вообще в шоке.
             # она смотрит на Барди глазами полными слез. позу меняйте на зажатую робкую и обиженную. Барди указывает пальцем на пакет из под бургера.
             imgd 902929
@@ -760,7 +760,7 @@ label ep05_dialogues1_college_sarah_3:
             # Барди указывает рукой на Сару
             imgd 902928
             bardi "Дожевывай!"
-            call rrmeter(3, "ep05_dialogues1_college_sarah_3(3)")
+            call rrmeter(3, "ep05_dialogues1_college_sarah_3(3)") from _rcall_rrmeter_31
             fadeblack
             sound eating_burger
             pause 2.0
@@ -896,7 +896,7 @@ label ep05_dialogues1_college_sarah_3:
     # Сара стоит перед Барди измученная.
     scene black_screen
     with Dissolve(1)
-    call textonblack(t_("НЕКОТОРОЕ ВРЕМЯ СПУСТЯ..."))
+    call textonblack(t_("НЕКОТОРОЕ ВРЕМЯ СПУСТЯ...")) from _rcall_textonblack_13
     scene black_screen
     with Dissolve(1)
     music Shining_Through
@@ -966,7 +966,7 @@ label ep05_dialogues1_college_sarah_3:
     sound snd_phone1
     # Барди вбивает номер Сары к себе в телефон
     #### + контакт Сары в телефоне Барди
-    call phone_contact8_sarah()
+    call phone_contact8_sarah() from _rcall_phone_contact8_sarah
     # Сара смотрит на барди устало.
     scene black_screen
     with Dissolve(1)

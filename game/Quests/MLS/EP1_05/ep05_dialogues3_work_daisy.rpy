@@ -217,7 +217,7 @@ label ep05_dialogues3_work_daisy_3:
             # Барди смотрит на Кэрри. Кэрри в предвкушении.
             imgf 902596
             bardi "Простите, мисс Кэрри, но, к сожалению, сейчас я не могу задержаться."
-            call rrmeter(5, "ep05_dialogues3_work_daisy_3")
+            call rrmeter(5, "ep05_dialogues3_work_daisy_3") from _rcall_rrmeter_32
             # Кэрри расстроенная, но лишь едва заметно расстроенная.
             music Adventures_of_the_Deaf_Dreamer
             imgd 902597
@@ -295,7 +295,7 @@ label ep05_dialogues3_work_daisy_3:
             # Барди смотрит на Кэрри. Кэрри в предвкушении.
             imgf 902596
             bardi "Да... Думаю, я не сильно отстану если задержусь..."
-            call rrmeter(-5, "ep05_dialogues3_work_daisy_3")
+            call rrmeter(-5, "ep05_dialogues3_work_daisy_3") from _rcall_rrmeter_33
             # Кэрри радостно улыбнулась Барди
             bardi "В прошлый раз возникли какие-то проблемы с товаром?"
             # Кэрри улыбаясь отнекивается. Это что-то типо виноватой улыбки.
@@ -1170,7 +1170,7 @@ label ep05_dialogues3_work_daisy_3:
     # Барди стоит у своего дома (вечер воскресенья)
     scene black_screen
     with Dissolve(1)
-    call textonblack(t_("СПУСТЯ ЧАС"))
+    call textonblack(t_("СПУСТЯ ЧАС")) from _rcall_textonblack_14
     scene black_screen
     with Dissolve(1)
     music2 night_ambience

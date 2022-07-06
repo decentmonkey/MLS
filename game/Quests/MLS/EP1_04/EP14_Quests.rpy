@@ -149,7 +149,7 @@ label ep14_quests3_daisy1:
         if day < 11:
             call ep14_quests4_evening_afterwork() from _rcall_ep14_quests4_evening_afterwork
         else:
-            call changeDayTime("evening")
+            call changeDayTime("evening") from _rcall_changeDayTime_36
     else:
         call ep04_dialogues4_family_daisy_1() from _rcall_ep04_dialogues4_family_daisy_1
         call ep04_dialogues4_family_daisy_2() from _rcall_ep04_dialogues4_family_daisy_2
@@ -166,7 +166,7 @@ label ep14_quests3_daisy1:
         if day < 11:
             call ep14_quests4_evening_afterwork() from _rcall_ep14_quests4_evening_afterwork_1
         else:
-            call changeDayTime("evening")
+            call changeDayTime("evening") from _rcall_changeDayTime_37
     return False
 
 label ep14_quests3_bikerent1:
@@ -320,7 +320,7 @@ label ep14_quests5_college1:
     call changeDayTime("day") from _rcall_changeDayTime_31
     $ clear_object_follow_all()
     $ emilyCallStage = 2
-    call phone_contact5()
+    call phone_contact5() from _rcall_phone_contact5_1
     $ questHelp("college_30", True)
     $ unfocus_map()
     $ autorun_to_object("ep04_dialogues5_college_emily_1a", scene="college_street")
@@ -492,6 +492,6 @@ label ep14_quests8_sleep:
     $ remove_hook(quest="day7")
     call ep04_dialogues7_work_becky_3() from _rcall_ep04_dialogues7_work_becky_3
     call ep03_dialogues3_family_evening_4() from _rcall_ep03_dialogues3_family_evening_4_2
-    call ep15_update_init()
+    call ep15_update_init() from _rcall_ep15_update_init
     return False
 #    jump end_update

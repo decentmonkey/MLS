@@ -219,7 +219,7 @@ label ep05_dialogues8_work_bikerental_1:
         "Нет, спасибо. Лучше рассчитаемся всем известной валютой.": # + Rabbit
             imgd 912272
             bardi "Нет, спасибо. Лучше рассчитаемся всем известной валютой."
-            call rrmeter(1, "ep05_dialogues8_work_bikerental_1(1)")
+            call rrmeter(1, "ep05_dialogues8_work_bikerental_1(1)") from _rcall_rrmeter_40
             bardi "Я, конечно, все понимаю..."
             bardi "Но мне кажется, что ее такое положение дел совсем не устраивает."
             # Клайд хмурится. Девушка рядом с ним смущена. Отводит взгляд.
@@ -385,7 +385,7 @@ label ep05_dialogues8_work_bikerental_1:
             }
             menu:
                 "Посмотреть, что будет дальше.": # + Rat
-                    call rrmeter(-2, "ep05_dialogues8_work_bikerental_1(2)")
+                    call rrmeter(-2, "ep05_dialogues8_work_bikerental_1(2)") from _rcall_rrmeter_41
                     imgd 912123
                     bardi_t "Ладно, теперь мне даже интересно, во что все это выльется..."
                     bardi "Так мы и будем продолжать в этом же духе?"
@@ -776,7 +776,7 @@ label ep05_dialogues8_work_bikerental_1:
                     img 912121 hpunch
                     sound2 fear2
                     bardi "Слушай, давай уже прекращать этот цирк."
-                    call rrmeter(2, "ep05_dialogues8_work_bikerental_1(2)")
+                    call rrmeter(2, "ep05_dialogues8_work_bikerental_1(2)") from _rcall_rrmeter_42
                     imgd 912124
                     punk_emma "Эй, ты чего? Какой еще цирк?!"
                     bardi "Может ты встанешь?"

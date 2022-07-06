@@ -54,14 +54,14 @@ label minimapTeleportHouse(target_scene_name):
         sound click_denied
         return
 
-    call process_change_map_location("HOUSE")
+    call process_change_map_location("HOUSE") from _rcall_process_change_map_location_6
     $ returnHomeInProcess = True
     $ returnHomeTick = pause_enter
     $ scene_refresh_flag = True
     $ show_scene_loop_flag = True
     scene black
     with diss
-    call minimapTeleportHouse_step()
+    call minimapTeleportHouse_step() from _rcall_minimapTeleportHouse_step
     return
 
 
@@ -73,5 +73,5 @@ label minimapTeleportHouse_step():
         if object_follow_array[scene_name].has_key(teleport_path[1]):
             $ add_hook("before_open", "minimapTeleportHouse_step", scene=teleport_path[1], label="teleport_home_process", priority = -1, once=True)
             $ teleport_path.pop(0)
-            call change_scene(teleport_path[0], "Fade_long")
+            call change_scene(teleport_path[0], "Fade_long") from _rcall_change_scene_150
     return

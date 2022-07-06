@@ -656,7 +656,7 @@ label ep05_dialogues5_family_olivia_3:
         "Ну не мог же я позволить ей подобное. Она слишком наивна для этого.": # + Rabbit
             imgd 902791
             bardi "Ну не мог же я позволить ей подобное. Она слишком наивна для этого."
-            call rrmeter(5, "ep05_dialogues5_family_olivia_3")
+            call rrmeter(5, "ep05_dialogues5_family_olivia_3") from _rcall_rrmeter_38
             # Оливия улыбается.
             imgd 902790
             olivia "Ну ничего себе! У тебя действительно есть совесть?"
@@ -747,7 +747,7 @@ label ep05_dialogues5_family_olivia_3:
             imgd 902791
             bardi "Вообще-то, я надеялся, что ты сама этот подарок и проспонсируешь..."
             bardi "Я как бы тоже не миллионер. Я не знаю, откуда эти деньги брать!"
-            call rrmeter(-5, "ep05_dialogues5_family_olivia_3")
+            call rrmeter(-5, "ep05_dialogues5_family_olivia_3") from _rcall_rrmeter_39
             # Оливия смотрит на Барди с отвращением.
             imgd 902781
             olivia "Ах, нет... Я поторопилась. Все-таки ты кретин."
