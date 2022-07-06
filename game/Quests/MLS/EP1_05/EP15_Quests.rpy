@@ -29,7 +29,9 @@ label ep15_update_init:
     call changeDayTime("morning")
     $ questHelp("house_30")
     $ phone_focus_icon(False)
-
+    $ map_enabled = True
+    $ remove_hook(label="house_block")
+    $ remove_hook(label="home_afterwork")
 
     $ miniMapEnabledOnly = ["none"]
     $ add_hook("Teleport_Bedroom_MC", "ep05_dialogues4_college_emily_1a", scene="house_bedroom_mc_onbed", label="morning_block")
@@ -132,6 +134,7 @@ label ep15_quests3_morning:
     $ focus_map("Teleport_COLLEGE", "ep04_dialogues1_family_sophie_1b")
     $ add_hook("phone_close", "ep15_quests3_morning2", scene="phone", once=True, quest="day9")
     $ phone_incoming_call("Emily")
+    $ remove_hook(label="house_block")
 #    $ phone_incoming_call("Sean")
 
 #    $ add_hook("enter_scene", "ep15_quests3_morning2_emily_call", scene="house_bedroom_mc", once=True, quest="day9")
@@ -303,6 +306,9 @@ label ep15_quests7_bed3:
     $ questHelp("house_31")
 
     # Суббота
+    # блокируем колледж
+    $ add_hook("Teleport_Coridor1", "ep01_dialogues2_day1_family_1_12", scene="college_street", label="college_block")
+
     # инитим регулярную кровать
     $ remove_hook(label="ep14_quests4_evening_bed")
     $ add_hook("Bed", "bed_sleep1", scene="house_bedroom_mc", label="bed_regular")
@@ -379,7 +385,7 @@ label ep15_quests10_sister2_Cynthia: #
     call ep05_dialogues6_family_cynthia_1()
     $ questHelp("house_32", True)
     $ floor2Sister1Suffix = 1
-    $ houseLifeStageSub1 == 3
+    $ houseLifeStageSub1 = 3
     $ oliviaCallStage = 3
     $ cynthiaCallStage = 5
     $ sister1RoomDoorLocked = True
@@ -423,9 +429,9 @@ label ep15_quests10_sister3_Olivia_phone: #
 
 label ep15_quests11_sunday_morning: # утро воскресения
     $ autorun_to_object("ep05_dialogues3_work_daisy_1", scene="house_bedroom_mc_onbed")
-#    call ep05_dialogues3_work_daisy_1()
     $ miniMapHouseGenerate_mode = 1
-    $ add_hook("sleep", "ep15_quests13_sleep", scene="global", label="ep15_end")
+    $ add_hook("before_sleep_actions", "ep15_quests13_sleep", scene="global", label="ep15_end")
+    $ remove_hook(label="house_block")
     call ep15_quests12_init_sophie()
     music Little_Tomcat
     call refresh_scene_fade_long()
@@ -435,12 +441,14 @@ label ep15_quests11_sunday_morning: # утро воскресения
 label ep15_quests12_init_sophie: # проверка на Софи
     if ep15_quests12_init_sophie_flag == True:
         return
-    if mlsBardiFamilyV4Sophie2 > 0 and mlsBardiFamilyV4Sophie3 > 0 and mlsBardiFamilyV4Olivia1 > 0:
-        $ ep15_quests12_init_sophie_flag = True
-        $ add_hook("before_open", "ep15_quests12_sophie1", scene="house_floor1", label="sophie_evening1")
-        $ add_hook("before_open", "ep15_quests12_sophie2_kitchen", scene="house_kitchen", label="sophie_evening1")
-        $ add_hook("Bed", "ep05_dialogues7_family_sophie_1a", scene="house_bedroom_mc", label="sophie_evening1")
-        $ questHelp("house_34")
+    $ print "init sophie!!!"
+    if mlsBardiFamilyV4Sophie2 == 0 or mlsBardiFamilyV4Sophie3 == 0:
+        return
+    $ ep15_quests12_init_sophie_flag = True
+    $ add_hook("before_open", "ep15_quests12_sophie1", scene="house_floor1", label="sophie_evening1")
+    $ add_hook("before_open", "ep15_quests12_sophie2_kitchen", scene="house_kitchen", label="sophie_evening1")
+    $ add_hook("Bed", "ep05_dialogues7_family_sophie_1a", scene="house_bedroom_mc", label="sophie_evening1")
+    $ questHelp("house_34")
     return
 
 label ep15_quests12_sophie1: # before_open
@@ -455,16 +463,25 @@ label ep15_quests12_sophie2_kitchen: #
         $ remove_hook(label="sophie_evening1")
         call ep05_dialogues7_family_sophie_1()
         call changeDayTime("night")
-        $ move_object("Sophie", "house_bedroom_landlord")
         $ landLordRoomDoorLocked = False
-        $ move_object("Sophie", "house_bedroom_landlord")
         $ questHelp("house_34", True)
+        call house_bedroom_landlord_init()
+        $ move_object("Henry", "empty")
+        $ move_object("Sophie", "house_bedroom_landlord")
+        $ add_hook("Sophie", "ep15_quests12_sophie3_sleep", scene="house_bedroom_landlord", label="evening_time_temp")
+        $ houseBedroomLandlordSophieSuffix = "Sleep1"
         call change_scene("house_floor2", "Fade_long")
         call refresh_scene_fade_long()
         return False
     return
 
+label ep15_quests12_sophie3_sleep: #
+    call ep05_dialogues7_family_sophie_1b()
+    call refresh_scene_fade()
+    return
+
 label ep15_quests13_sleep:
+    $ houseBedroomLandlordSophieSuffix = 1
     jump end_update
     return
 

@@ -167,6 +167,7 @@ label end_update:
     $ camera_icon_enabled = False
     stop music
     sound snd_cinematic_impact
+    scene black
     img black_screen
     $ renpy.pause(3.0, hard=True)
     music Corporate_BPM120

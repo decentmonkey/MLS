@@ -82,7 +82,7 @@ label ep04_dialogues1_family_sophie_1:
         "Помочь с делами.":
             label ep04_dialogues1_family_sophie_2_1:
             $ mlsBardiFamilyV4Sophie2 = day # Барди помогал Софи с готовкой
-            call ep15_quests12_init_sophie()
+#            call ep15_quests12_init_sophie()
             #Если спросить у Софи "Нужна ли ей помощь в чем-то. Конкретно эта сцена скипает день до следующего времени суток."
             imgd 902131
             bardi "Да я просто спросить хотел, может тебе помощь какая-то нужна?"
@@ -771,7 +771,7 @@ label ep04_dialogues1_family_sophie_4:
                 bardi_t "Фак..."
                 bardi_t "Даже и не думал, что такая ерунда с минимумом логики, может быть такой интересной..."
                 $ mlsBardiFamilyV4Sophie3 = day # Барди вечером смотрел с Софи ТВ
-                call ep15_quests12_init_sophie()
+#                call ep15_quests12_init_sophie()
                 #Конец сцены. Читатель получает свободу действий. Но пойти может только спать.
                 fadeblack 1.5
                 return 2

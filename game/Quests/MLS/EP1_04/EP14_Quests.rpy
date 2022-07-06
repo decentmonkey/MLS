@@ -146,7 +146,10 @@ label ep14_quests3_daisy1:
         call ep04_dialogues4_family_daisy_3() from _rcall_ep04_dialogues4_family_daisy_3
         if _return == -1:
             return False
-        call ep14_quests4_evening_afterwork() from _rcall_ep14_quests4_evening_afterwork
+        if day < 11:
+            call ep14_quests4_evening_afterwork() from _rcall_ep14_quests4_evening_afterwork
+        else:
+            call changeDayTime("evening")
     else:
         call ep04_dialogues4_family_daisy_1() from _rcall_ep04_dialogues4_family_daisy_1
         call ep04_dialogues4_family_daisy_2() from _rcall_ep04_dialogues4_family_daisy_2
@@ -160,7 +163,10 @@ label ep14_quests3_daisy1:
             $ phone_focus_icon(True)
             $ phone_incoming_call("Sophie")
 
-        call ep14_quests4_evening_afterwork() from _rcall_ep14_quests4_evening_afterwork_1
+        if day < 11:
+            call ep14_quests4_evening_afterwork() from _rcall_ep14_quests4_evening_afterwork_1
+        else:
+            call changeDayTime("evening")
     return False
 
 label ep14_quests3_bikerent1:

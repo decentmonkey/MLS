@@ -768,6 +768,12 @@ label ep05_dialogues7_family_sophie_1a:
     bardi_t "Мне надо проведать Софи..."
     return False
 
+label ep05_dialogues7_family_sophie_1b:
+    music Little_Tomcat
+    imgfl "912399b"
+    bardi_t "Нужно хотя бы мне пытаться поддерживать ее по мере своих сил..."
+    return
+
 ## воскресенье, вечер (ночь)
 ## Барди может только пойти спать
 
