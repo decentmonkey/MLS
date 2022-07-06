@@ -68,6 +68,13 @@ default maxRRMeter = 100
 
 label start: #for blink here
 
+#    img 903061
+#    w
+#    img 911965
+#    w
+#    img 912332
+#    w
+
     #new game
     $ after_load_ready_to_render = True
     $ refresh_list_files_forced()

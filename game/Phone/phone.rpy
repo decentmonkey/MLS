@@ -151,7 +151,7 @@ label phone_call_contact:
 
     if obj_name == "Daisy":
         if daisyCallStage > 2:
-            call expression "daisy_chat" + str(daisyCallStage) from _rcall_expression "daisy_chat" + str
+            call expression "daisy_chat" + str(daisyCallStage) from _rcall_expression_daisy_chatstr
             return
         if daisyCallStage == 2:
             call daisy_chat2() from _rcall_daisy_chat2
