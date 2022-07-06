@@ -26,6 +26,8 @@ label ep15_quests9_daisy3: # заходим в дом
         call ep05_dialogues3_work_daisy_2()
         call ep05_dialogues3_work_daisy_4() # сцена с клиенткой
         call changeDayTime("evening")
+        $ questHelpDesc("work_desc5")
+        $ questHelpDesc("work_desc3", False)
         $ clear_object_follow_all()
         $ questHelp("work_11", True)
         call refresh_scene_fade()

@@ -187,6 +187,10 @@ label ep15_quests4_college_sarah:
     $ move_object("Sarah", "empty")
     $ miniMapDisabled["COLLEGE"] = ["COLLEGE_Floor1", "COLLEGE_Floor2", "COLLEGE_Floor3", "COLLEGE_Street"]
     $ add_hook("Teleport_Coridor2", "ep15_quests4_college_after", scene="college_gym", quest="day9")
+    $ questHelpDesc("college_desc15")
+    $ questHelpDesc("college_desc1", False)
+    $ questHelpDesc("college_desc13", False)
+    
 #    $ miniMapDisabled["COLLEGE"] = ["COLLEGE_Floor1", "COLLEGE_Floor2", "COLLEGE_Floor3"]
     return
 
@@ -324,7 +328,7 @@ label ep15_quests7_bed3:
     return
 
 label ep15_quests8_sarah_gym:
-
+    call ep05_dialogues1_college_sarah_5()
     call refresh_scene_fade_long()
     return False
 
@@ -410,6 +414,10 @@ label ep15_quests10_sister3_Olivia: #
     $ oliviaCallStage = 4
     $ cynthiaCallStage = 5
     $ houseLifeStageSub1 = 0
+    $ questHelpDesc("house_desc12")
+    $ questHelpDesc("house_desc7", False)
+    $ questHelpDesc("house_desc9", False)
+
     call refresh_scene_fade()
     return False
 
