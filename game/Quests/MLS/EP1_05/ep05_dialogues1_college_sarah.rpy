@@ -574,15 +574,15 @@ label ep05_dialogues1_college_sarah_3:
     imgf 902904
     bardi_t "Мдаа... И чего я ожидал?.."
     # Сара стоит с печальным видом
-    $ menu_data = {
-        "Продолжить разговор и переубедить Сару.": {"info_rabbit":True}
-    }
+#    $ menu_data = {
+#        "Продолжить разговор и переубедить Сару.": {"info_rabbit":True}
+#    }
     menu:
         "Продолжить разговор и переубедить Сару.": # + Rabbit
             imgd 902900
             bardi "Могу лишь предположить, что тебе не следовало вместо тренировок..."
             bardi "Покупать за огромные бабки бесполезные курсы и есть все подряд?!"
-            call rrmeter(2, "ep05_dialogues1_college_sarah_3(1)") from _rcall_rrmeter_27
+#            call rrmeter(2, "ep05_dialogues1_college_sarah_3(1)") from _rcall_rrmeter_27
             imgd 902899
             student_sarah "Но..."
             pass

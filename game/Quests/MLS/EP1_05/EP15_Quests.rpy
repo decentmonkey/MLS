@@ -293,6 +293,8 @@ label ep15_quests7_bed3:
     call ep03_dialogues3_family_evening_4() from _rcall_ep03_dialogues3_family_evening_4_3 #регулярный сон
     $ remove_hook(quest="day9")
     $ add_hook("change_day_time", "ep15_quests9_morning_daisy", scene="global", label="check_daisy_call2")
+    $ add_hook("change_day_time", "ep15_iphone_alarm", scene="global", once=True, label="iphone_alarm")
+
     $ clear_object_follow_all()
 
     $ houseLifeStageSub1 = 1
@@ -494,3 +496,7 @@ label ep15_quests13_sleep:
     return
 
 
+label ep15_iphone_alarm:
+    pause 1.0
+    sound2 iphone_alarm
+    return
