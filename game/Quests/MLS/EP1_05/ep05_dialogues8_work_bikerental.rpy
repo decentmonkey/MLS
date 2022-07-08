@@ -253,7 +253,7 @@ label ep05_dialogues8_work_bikerental_1:
             bardi_t "Ладно... Видимо, у нее на это есть свои причины. И это уже не мое дело..."
             # +1 к шкале кролика.
             pass
-        "Да, почему бы и  нет?": # не влияет на RR-meter
+        "Да, почему бы и нет?": # не влияет на RR-meter
             $ mlsBardiWorkDayV5BikeRental1 = day # Барди согласился на минет от девушки-неформалки в прокате
             music Stylish_Fashion_Electronic_Rock
             imgf 912278
