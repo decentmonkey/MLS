@@ -690,7 +690,7 @@ label ep05_dialogues3_work_daisy_3:
             imgd 912054
             w
 
-            if game.extra == True: # в экстру
+            if game.extra == True or steamVersion == True: # в экстру
                 imgf 912055
                 client_carrie "Ах!"
                 imgd 912056
