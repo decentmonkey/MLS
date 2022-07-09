@@ -67,7 +67,6 @@ default object_follow_array_floors = {}
 default maxRRMeter = 100
 
 label start: #for blink here
-
     #new game
     $ after_load_ready_to_render = True
     $ refresh_list_files_forced()

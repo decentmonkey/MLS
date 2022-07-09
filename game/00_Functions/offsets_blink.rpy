@@ -1709,7 +1709,6 @@ define offsets_blink = {
     "img_902996" : {"Pretty_girl":[1167,205,5,"1"]},
     "img_902997" : {"Pretty_girl":[1153,210,5,"3"],"School_hooligan":[555,215,5,"3"]},
     "img_902998" : {"Pretty_girl":[1203,225,5,"3"]},
-    "img_902999" : {"Pretty_girl":[1180,215,5,"3"],"School_hooligan":[513,230,5,"3"]},
     "img_903005" : {"Pretty_girl":[1181,185,5,"5"],"School_hooligan":[549,285,5,"3"]},
     "img_903006" : {"Pretty_girl":[1122,215,5,"3"],"School_hooligan":[533,285,5,"3"]},
     "img_903007" : {"Pretty_girl":[1168,195,5,"3"],"School_hooligan":[533,285,5,"3"]},
@@ -1860,7 +1859,8 @@ define offsets_blink = {
     "img_912397" : {"Mother":[978,239,5,"1"]},
     "img_903061" : {"Bardie_friend_black":[740,365,5,"1"]},
     "img_911965" : {"Sister_girlfriend":[870,190,5,"1"]},
-    "img_912332" : {"Mother":[833,295,5,"4"]}
+    "img_912332" : {"Mother":[833,295,5,"4"]},
+    "img_902999" : {"Pretty_girl":[1180,210,5,"3"],"School_hooligan":[513,230,5,"3"]}
 #offsets_blink_finish
 }
 

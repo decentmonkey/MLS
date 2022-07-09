@@ -2405,6 +2405,8 @@ screen main_menu():
     style_prefix "main_menu"
 
     if game.web_version == False:
+        add gui.main_menu_background:
+            pos (0,0)
         add Movie(size=(1920, 1080)):
             pos(0,0)
         on "show" action Play("movie", "video/v_Mainmenu_1b.mkv", loop=True)
