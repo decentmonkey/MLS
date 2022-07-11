@@ -2505,7 +2505,7 @@ screen main_menu():
                             textbutton "Russian" + persistent.lang_suffixes[None] action Language(None):
                                 text_size languagesFontSize
 
-            if language_credits.has_key(str(_preferences.language)) and steamVersion == False:
+            if language_credits.has_key(str(_preferences.language)):
                 frame:
                     pos (gui.resolution.main_menu.lang.left + getRes(20), get_resolution_y(1080 - gui.resolution.main_menu.lang.height - 100) + get_resolution_y(gui.resolution.main_menu.lang.height) + getRes(10))
                     anchor (0, 0)
