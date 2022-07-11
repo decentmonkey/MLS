@@ -600,7 +600,7 @@ label daisy_chat1:
 label daisy_chat2:
     $ phone_start_new_chat("daisy_chat2", "Daisy")
     call phone_chat([
-        ["", t_("Привет, красавчик! :)")]
+        ["daisy", t_("Привет, красавчик! :)")]
     ])
     call phone_chat_menu([
         t__("Ответить."),
