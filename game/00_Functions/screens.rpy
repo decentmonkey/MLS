@@ -2809,7 +2809,7 @@ screen file_slots(title):
 
                         if _name:
                             null height 10
-                            text _name:
+                            text clean_tstr(_name):
                                 style "slot_name_text"
                                 size 27
                         else:

@@ -81,6 +81,9 @@ init python:
                 else:
                     str1 = str1.replace("[" + var1 + "]", "{c}" + var2 + "{/c}")
         return str1
+    def clean_tstr(str1):
+        str1 = re.sub(r'\[|\]|\$|\%', " ", str1)
+        return str1
     def t_(s):
         return s
     def t__(s, speaker = None):
